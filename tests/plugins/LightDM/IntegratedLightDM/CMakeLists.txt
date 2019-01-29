@@ -13,6 +13,7 @@ add_executable(GreeterDBusTestExec
 # make seems to work but ninja breaks without it
 add_dependencies(GreeterDBusTestExec MockLightDM)
 target_link_libraries(GreeterDBusTestExec
+    ${Intl_LIBRARIES}
     Qt5::Core Qt5::DBus Qt5::Quick Qt5::Test
     MockLightDM
     )
@@ -85,6 +86,7 @@ add_executable(GreeterUsersModelTestExec
 # make seems to work but ninja breaks without it
 add_dependencies(GreeterUsersModelTestExec MockLightDM)
 target_link_libraries(GreeterUsersModelTestExec
+    ${Intl_LIBRARIES}
     Qt5::Core Qt5::Test
     MockLightDM
     )
@@ -112,6 +114,7 @@ add_executable(GreeterPromptsModelTestExec
 # make seems to work but ninja breaks without it
 add_dependencies(GreeterPromptsModelTestExec MockLightDM)
 target_link_libraries(GreeterPromptsModelTestExec
+    ${Intl_LIBRARIES}
     Qt5::Core Qt5::Test
     MockLightDM
     )

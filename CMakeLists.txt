@@ -81,6 +81,7 @@ find_package(Qt5Test 5.6 REQUIRED)
 find_package(Qt5Svg 5.6 REQUIRED)
 find_package(Qt5Network 5.6 REQUIRED)
 find_package(Qt5Xml 5.6 REQUIRED)
+find_package(Intl REQUIRED)
 
 pkg_check_modules(APPLICATION_API REQUIRED lomiri-shell-application=28)
 pkg_check_modules(QTMIRSERVER REQUIRED qtmirserver>=0.6.0)
