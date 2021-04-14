@@ -28,8 +28,8 @@
 #define IFACE_LOMIRI_INPUT           QStringLiteral("com.lomiri.AccountsService.Input")
 #define IFACE_LOMIRI_SECURITY        QStringLiteral("com.lomiri.AccountsService.SecurityPrivacy")
 #define IFACE_LOMIRI_SECURITY_OLD    QStringLiteral("com.lomiri.touch.AccountsService.SecurityPrivacy")
-#define IFACE_LOMIRI                  QStringLiteral("com.canonical.lomiri.AccountsService")
-#define IFACE_LOMIRI_PRIVATE          QStringLiteral("com.canonical.lomiri.AccountsService.Private")
+#define IFACE_LOMIRI                  QStringLiteral("com.ubports.lomiri.AccountsService")
+#define IFACE_LOMIRI_PRIVATE          QStringLiteral("com.ubports.lomiri.AccountsService.Private")
 
 #define PROP_BACKGROUND_FILE                   QStringLiteral("BackgroundFile")
 #define PROP_DEMO_EDGES                        QStringLiteral("DemoEdges2")
