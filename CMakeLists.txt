@@ -84,10 +84,6 @@ pkg_check_modules(QMENUMODEL REQUIRED qmenumodel)
 pkg_check_modules(GD3 REQUIRED gnome-desktop-3.0)
 pkg_check_modules(UAL REQUIRED lomiri-app-launch-0)
 pkg_check_modules(LOMIRIGESTURES REQUIRED LomiriGestures)
-pkg_check_modules(QTDBUSTEST REQUIRED
-    libqtdbustest-1
-    libqtdbusmock-1
-    )
 pkg_check_modules(MIRAL REQUIRED miral)
 pkg_check_modules(DEVICEINFO REQUIRED deviceinfo)
 
@@ -189,6 +185,10 @@ add_subdirectory(qml)
 # Tests
 set(NO_TESTS OFF CACHE BOOL "Disable tests.")
 if (NOT NO_TESTS)
+    pkg_check_modules(QTDBUSTEST REQUIRED
+        libqtdbustest-1
+        libqtdbusmock-1
+        )
     include(CTest)
     enable_testing()
     add_subdirectory(tests)
