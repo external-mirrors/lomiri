@@ -10,6 +10,7 @@ include_directories(
     ${GSETTINGS_QT_INCLUDE_DIRS}
     ${CONNECTIVITY_INCLUDE_DIRS}
     ${QTMIRSERVER_INCLUDE_DIRS}
+    ${MIROIL_INCLUDE_DIRS}
 )
 
 include_directories(
@@ -61,6 +62,7 @@ target_link_libraries(${SHELL_APP}
     ${GSETTINGS_QT_LDFLAGS}
     ${QTMIRSERVER_LDFLAGS}
     ${SYSTEMD_LDFLAGS}
+    ${MIROIL_LDFLAGS}
     LomiriGestures
     ayatana-connectivity-qt1
     lomiri-private

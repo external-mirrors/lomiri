@@ -17,15 +17,15 @@
 #ifndef LOMIRI_DISPLAYCONFIGURATIONSTORAGE_H
 #define LOMIRI_DISPLAYCONFIGURATIONSTORAGE_H
 
-#include <qtmir/miral/display_configuration_storage.h>
+#include <miroil/display_configuration_storage.h>
 
-class DisplayConfigurationStorage : public miral::DisplayConfigurationStorage
+class DisplayConfigurationStorage : public miroil::DisplayConfigurationStorage
 {
 public:
     DisplayConfigurationStorage();
 
-    void save(const miral::DisplayId& displayId, const miral::DisplayConfigurationOptions& options) override;
-    bool load(const miral::DisplayId& displayId, miral::DisplayConfigurationOptions& options) const override;
+    void save(const miroil::DisplayId& displayId, const miroil::DisplayConfigurationOptions& options) override;
+    bool load(const miroil::DisplayId& displayId, miroil::DisplayConfigurationOptions& options) const override;
 };
 
 #endif // LOMIRI_DISPLAYCONFIGURATIONSTORAGE_H

@@ -23,7 +23,7 @@
 
 namespace {
 
-inline QString stringFromEdid(const miral::Edid& edid)
+inline QString stringFromEdid(const miroil::Edid& edid)
 {
     QString str;
     str += QString::fromStdString(edid.vendor);
@@ -41,7 +41,7 @@ DisplayConfigurationStorage::DisplayConfigurationStorage()
 {
 }
 
-void DisplayConfigurationStorage::save(const miral::DisplayId &displayId, const miral::DisplayConfigurationOptions &options)
+void DisplayConfigurationStorage::save(const miroil::DisplayId &displayId, const miroil::DisplayConfigurationOptions &options)
 {
     const QString dbPath = QStandardPaths::writableLocation(QStandardPaths::GenericCacheLocation) + QStringLiteral("/lomiri/");
     QFile f(dbPath + stringFromEdid(displayId.edid) + ".edid");
@@ -69,7 +69,7 @@ void DisplayConfigurationStorage::save(const miral::DisplayId &displayId, const 
     }
 }
 
-bool DisplayConfigurationStorage::load(const miral::DisplayId &displayId, miral::DisplayConfigurationOptions &options) const
+bool DisplayConfigurationStorage::load(const miroil::DisplayId &displayId, miroil::DisplayConfigurationOptions &options) const
 {
     const QString dbPath = QStandardPaths::writableLocation(QStandardPaths::GenericCacheLocation) + QStringLiteral("/lomiri/");
     QFile f(dbPath + stringFromEdid(displayId.edid) + ".edid");
@@ -88,7 +88,7 @@ bool DisplayConfigurationStorage::load(const miral::DisplayId &displayId, miral:
                 QString sz(jsonMode["size"].toString());
                 QStringList geo = sz.split("x", QString::SkipEmptyParts);
                 if (geo.count() == 2) {
-                    miral::DisplayConfigurationOptions::DisplayMode mode;
+                    miroil::DisplayConfigurationOptions::DisplayMode mode;
                     mode.size = mir::geometry::Size(geo[0].toInt(), geo[1].toInt());
                     mode.refresh_rate = jsonMode["refresh_rate"].toDouble();
                     options.mode = mode;
