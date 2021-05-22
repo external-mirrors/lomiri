@@ -20,7 +20,7 @@ testskip_architectures := arm64 powerpc ppc64el s390x
 override_dh_auto_configure:
 	# Debian defines CMAKE_INSTALL_LOCALSTATEDIR as /usr/var, which is wrong.
 	# So until Debian bug 719148 is fixed, do it ourselves.
-	dh_auto_configure -- -DCMAKE_INSTALL_LOCALSTATEDIR="/var"
+	dh_auto_configure -- -DCMAKE_INSTALL_LOCALSTATEDIR="/var" -DNO_TESTS=ON
 
 override_dh_auto_build:
 	# doc is not a default target
@@ -30,13 +30,13 @@ override_dh_auto_test:
 	# Run the entire test battery
 	# Parallel tests have a risk of starting xvfb on the same DISPLAY multiple times,
 	# causing the whole battery to fail.
-ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
-ifneq (,$(filter $(DEB_HOST_ARCH),$(testskip_architectures)))
-	-dh_auto_test --no-parallel -- -O -k xvfballtests
-else
-	dh_auto_test --no-parallel -- -O -k xvfballtests
-endif
-endif
+#ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
+#ifneq (,$(filter $(DEB_HOST_ARCH),$(testskip_architectures)))
+#	-dh_auto_test --no-parallel -- -O -k xvfballtests
+#else
+#	dh_auto_test --no-parallel -- -O -k xvfballtests
+#endif
+#endif
 
 override_dh_install:
 	# install autopilot tests
