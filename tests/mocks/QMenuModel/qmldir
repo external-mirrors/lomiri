@@ -3,4 +3,4 @@ plugin qmenumodel
 typeinfo QMenuModel.qmltypes
 
 QDBusActionGroup 0.1 QDBusActionGroup.qml
-AyatanaMenuAction 0.1 AyatanaMenuAction.qml
+UnityMenuAction 0.1 UnityMenuAction.qml

@@ -16,15 +16,15 @@
  * Authors: Nick Dedekind <nick.dedekind@canonical.com>
  */
 
-#ifndef MOCK_AYATANAMENUMODEL_H
-#define MOCK_AYATANAMENUMODEL_H
+#ifndef MOCK_UNITYMENUMODEL_H
+#define MOCK_UNITYMENUMODEL_H
 
 #include <QAbstractListModel>
 class QQmlComponent;
-class AyatanaMenuAction;
+class UnityMenuAction;
 class ActionStateParser;
 
-class Q_DECL_EXPORT AyatanaMenuModel : public QAbstractListModel
+class Q_DECL_EXPORT UnityMenuModel : public QAbstractListModel
 {
     Q_OBJECT
     Q_PROPERTY(QByteArray busName READ busName WRITE setBusName NOTIFY busNameChanged)
@@ -37,8 +37,8 @@ class Q_DECL_EXPORT AyatanaMenuModel : public QAbstractListModel
     Q_PROPERTY(QVariant modelData READ modelData WRITE setModelData NOTIFY modelDataChanged)
 
 public:
-    AyatanaMenuModel(QObject *parent = nullptr);
-    virtual ~AyatanaMenuModel();
+    UnityMenuModel(QObject *parent = nullptr);
+    virtual ~UnityMenuModel();
 
     Q_INVOKABLE void insertRow(int row, const QVariant& data);
     Q_INVOKABLE void appendRow(const QVariant& data);
@@ -76,8 +76,8 @@ public:
     Q_INVOKABLE void aboutToShow(int index);
     Q_INVOKABLE void changeState(int index, const QVariant& parameter);
 
-    void registerAction(AyatanaMenuAction* action);
-    void unregisterAction(AyatanaMenuAction* action);
+    void registerAction(UnityMenuAction* action);
+    void unregisterAction(UnityMenuAction* action);
 
 Q_SIGNALS:
     void busNameChanged();
@@ -98,7 +98,7 @@ private:
 
     class Row;
     QVariantList m_modelData;
-    QList<AyatanaMenuModel*> submenus;
+    QList<UnityMenuModel*> submenus;
 
     QByteArray m_busName;
     QVariantMap m_actions;
@@ -112,4 +112,4 @@ private:
     RowCountStatus m_rowCountStatus;
 };
 
-#endif // MOCK_AYATANAMENUMODEL_H
+#endif // MOCK_UNITYMENUMODEL_H

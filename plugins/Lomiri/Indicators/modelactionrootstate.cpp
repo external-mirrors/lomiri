@@ -20,7 +20,7 @@
 #include "modelactionrootstate.h"
 #include "indicators.h"
 
-#include <ayatanamenumodel.h>
+#include <unitymenumodel.h>
 #include <QVariant>
 #include <QIcon>
 
@@ -40,12 +40,12 @@ ModelActionRootState::~ModelActionRootState()
 {
 }
 
-AyatanaMenuModel* ModelActionRootState::menu() const
+UnityMenuModel* ModelActionRootState::menu() const
 {
     return m_menu;
 }
 
-void ModelActionRootState::setMenu(AyatanaMenuModel* menu)
+void ModelActionRootState::setMenu(UnityMenuModel* menu)
 {
     if (m_menu != menu) {
         bool wasValid = valid();
@@ -56,11 +56,11 @@ void ModelActionRootState::setMenu(AyatanaMenuModel* menu)
         m_menu = menu;
 
         if (m_menu) {
-            connect(m_menu, &AyatanaMenuModel::rowsInserted, this, &ModelActionRootState::onModelRowsAdded);
-            connect(m_menu, &AyatanaMenuModel::rowsRemoved, this, &ModelActionRootState::onModelRowsRemoved);
-            connect(m_menu, &AyatanaMenuModel::dataChanged, this, &ModelActionRootState::onModelDataChanged);
+            connect(m_menu, &UnityMenuModel::rowsInserted, this, &ModelActionRootState::onModelRowsAdded);
+            connect(m_menu, &UnityMenuModel::rowsRemoved, this, &ModelActionRootState::onModelRowsRemoved);
+            connect(m_menu, &UnityMenuModel::dataChanged, this, &ModelActionRootState::onModelDataChanged);
 
-            connect(m_menu, &AyatanaMenuModel::destroyed, this, &ModelActionRootState::reset);
+            connect(m_menu, &UnityMenuModel::destroyed, this, &ModelActionRootState::reset);
         }
         updateActionState();
         updateOtherActions();

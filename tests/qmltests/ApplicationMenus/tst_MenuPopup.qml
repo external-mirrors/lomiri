@@ -50,7 +50,7 @@ Item {
                 topMargin: units.gu(3)
             }
 
-            lomiriMenuModel: AyatanaMenuModel {
+            lomiriMenuModel: UnityMenuModel {
                 modelData: [{
                         "rowData": {
                             "label": "Short",

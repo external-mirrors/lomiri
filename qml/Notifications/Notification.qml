@@ -192,7 +192,7 @@ StyledItem {
             menuObjectPathHint: "menuPath"
         }
 
-        AyatanaMenuModel {
+        UnityMenuModel {
             id: lomiriMenuModel
 
             property string lastNameOwner: ""

@@ -70,7 +70,7 @@ LocalComponents.Page {
         return imageName;
     }
 
-    QMenuModel.AyatanaMenuModel {
+    QMenuModel.UnityMenuModel {
         id: menuModel
         busName: "com.canonical.indicator.network"
         actions: { "indicator": "/com/canonical/indicator/network" }
@@ -90,7 +90,7 @@ LocalComponents.Page {
             property QtObject menuData: null
             property var lomiriMenuModel: menuModel
             property var extendedData: menuData && menuData.ext || undefined
-            property var strengthAction: QMenuModel.AyatanaMenuAction {
+            property var strengthAction: QMenuModel.UnityMenuAction {
                 model: lomiriMenuModel
                 index: menuIndex
                 name: getExtendedProperty(extendedData, "xCanonicalWifiApStrengthAction", "")

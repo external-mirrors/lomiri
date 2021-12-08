@@ -21,7 +21,7 @@
 #define MODELPRINTER_H
 
 #include <QSortFilterProxyModel>
-class AyatanaMenuModel;
+class UnityMenuModel;
 
 // This class acts as a namespace only, with the addition that its enums
 // are registered to be exposed on the QML side.
@@ -29,13 +29,13 @@ class ModelPrinter : public QObject
 {
     Q_OBJECT
 
-    Q_PROPERTY(AyatanaMenuModel* model READ sourceModel WRITE setSourceModel NOTIFY modelChanged)
+    Q_PROPERTY(UnityMenuModel* model READ sourceModel WRITE setSourceModel NOTIFY modelChanged)
     Q_PROPERTY(QString text READ text NOTIFY textChanged)
 public:
     ModelPrinter(QObject* parent=nullptr);
 
-    void setSourceModel(AyatanaMenuModel* sourceModel);
-    AyatanaMenuModel* sourceModel() const;
+    void setSourceModel(UnityMenuModel* sourceModel);
+    UnityMenuModel* sourceModel() const;
 
     Q_INVOKABLE QString text();
 
@@ -44,13 +44,13 @@ Q_SIGNALS:
     void textChanged();
 
 private:
-    QString getModelDataString(AyatanaMenuModel* sourceModel, int level);
-    QString getRowSring(AyatanaMenuModel* sourceModel, int index, int depth) const;
+    QString getModelDataString(UnityMenuModel* sourceModel, int level);
+    QString getRowSring(UnityMenuModel* sourceModel, int index, int depth) const;
     QString getVariantString(const QString& roleName, const QVariant &vData, int depth) const;
     QString getVariantString(const QVariant&) const;
 
-    AyatanaMenuModel* m_model;
-    QList<AyatanaMenuModel*> m_children;
+    UnityMenuModel* m_model;
+    QList<UnityMenuModel*> m_children;
 };
 
 #endif // MODELPRINTER_H

@@ -30,7 +30,7 @@ Item {
 
     IndicatorMenuItemFactory {
         id: factory
-        menuModel: AyatanaMenuModel {}
+        menuModel: UnityMenuModel {}
     }
 
     Loader {
