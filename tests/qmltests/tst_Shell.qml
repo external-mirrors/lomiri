@@ -704,6 +704,32 @@ Rectangle {
             mockNotificationsModel.append(n)
         }
 
+        function swipeAwayGreeterCover() {
+            var greeter = findChild(shell, "greeter");
+
+            if (!greeter.shown) {
+                console.log("Greeter not shown. Not swiping.");
+                return;
+            }
+
+            var greeterView = findChild(greeter, "GreeterView");
+            var lockscreen = findChild(greeter, "lockscreen");
+
+            tryCompare(lockscreen, "shown", true);
+
+            tryCompare(greeter, "fullyShown", true);
+            waitForGreeterToStabilize();
+            removeTimeConstraintsFromSwipeAreas(greeter);
+
+            var touchX = shell.width - (shell.edgeSize / 2);
+            var touchY = shell.height / 2;
+            touchFlick(shell, touchX, touchY, shell.width * 0.1, touchY);
+
+            var coverPage = findChild(greeterView, "coverPage");
+            tryCompare(coverPage, "showProgress", 0);
+            waitForRendering(greeterView);
+        }
+
         function swipeAwayGreeter() {
             var greeter = findChild(shell, "greeter");
 
@@ -998,14 +1024,13 @@ Rectangle {
         }
 
         function test_greeterStartsCorrectSession() {
-            loadShell("desktop");
             setLightDMMockMode("full");
+            loadShell("desktop");
 
             LightDMController.sessionMode = "full"
             LightDMController.numSessions = LightDMController.numAvailableSessions;
             var greeter = findChild(shell, "greeter");
-            var view = findChild(greeter, "WideView");
-            verify(view, "This test requires WideView to be loaded");
+            var view = findChild(greeter, "GreeterView");
 
             var loginList = findChild(view, "loginList");
 
@@ -1405,8 +1430,9 @@ Rectangle {
         }
 
         function test_tabletLogin(data) {
-            loadShell("tablet");
             setLightDMMockMode("full");
+            loadShell("tablet");
+            swipeAwayGreeterCover();
 
             selectUser(data.user);
 
@@ -1429,8 +1455,10 @@ Rectangle {
         }
 
         function test_appLaunchDuringGreeter(data) {
-            loadShell("tablet");
             setLightDMMockMode("full");
+            loadShell("tablet");
+
+            swipeAwayGreeterCover();
 
             selectUser(data.user)
 
@@ -1446,9 +1474,11 @@ Rectangle {
         }
 
         function test_manualLoginFlow() {
-            loadShell("desktop");
-            LightDMController.showManualLoginHint = true;
             setLightDMMockMode("full");
+            LightDMController.showManualLoginHint = true;
+            loadShell("desktop");
+
+            swipeAwayGreeterCover();
 
             var i = selectUser("*other");
             var greeter = findChild(shell, "greeter");
@@ -2605,8 +2635,8 @@ Rectangle {
 
         function test_fullShellModeHasNoInitialGreeter() {
             shellRect.mode = "full-shell";
-            loadShell("phone");
             setLightDMMockMode("single-pin");
+            loadShell("phone");
             waitForRendering(shell);
 
             var greeter = findChild(shell, "greeter");
