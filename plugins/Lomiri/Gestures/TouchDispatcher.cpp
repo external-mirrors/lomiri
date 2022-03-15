@@ -244,7 +244,7 @@ QTouchEvent *TouchDispatcher::createQTouchEvent(QEvent::Type eventType,
         QWindow *window,
         ulong timestamp)
 {
-    Qt::TouchPointStates eventStates = 0;
+    Qt::TouchPointStates eventStates;
     for (int i = 0; i < touchPoints.count(); i++)
         eventStates |= touchPoints[i].state();
     // if all points have the same state, set the event type accordingly
@@ -378,7 +378,7 @@ QEvent::Type TouchDispatcher::resolveEventType(const QList<QTouchEvent::TouchPoi
 {
     QEvent::Type eventType;
 
-    Qt::TouchPointStates eventStates = 0;
+    Qt::TouchPointStates eventStates;
     for (int i = 0; i < touchPoints.count(); i++)
         eventStates |= touchPoints[i].state();
 
