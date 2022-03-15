@@ -39,7 +39,7 @@ private Q_SLOTS:
         QVERIFY(m_inactiveShortcut);
         m_view->show();
         m_view->requestActivate();
-        QTest::qWaitForWindowExposed(m_view);
+        QVERIFY(QTest::qWaitForWindowExposed(m_view));
     }
 
     void cleanupTestCase()
