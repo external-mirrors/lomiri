@@ -20,6 +20,7 @@
 #include <QDebug>
 #include <QDateTime>
 #include <QTimer>
+#include <QRandomGenerator>
 
 MockAppDrawerModel::MockAppDrawerModel(QObject *parent):
     AppDrawerModelInterface(parent),
@@ -51,8 +52,6 @@ MockAppDrawerModel::MockAppDrawerModel(QObject *parent):
     m_list.append(item);
     item = new MockLauncherItem("libreoffice", "/usr/share/applications/libreoffice.desktop","Libre Office Writer", "libreoffice", this);
     m_list.append(item);
-
-    qsrand(QDateTime::currentMSecsSinceEpoch() / 1000);
 }
 
 int MockAppDrawerModel::rowCount(const QModelIndex & /*parent*/) const
@@ -70,7 +69,7 @@ QVariant MockAppDrawerModel::data(const QModelIndex &index, int role) const
     case RoleIcon:
         return m_list.at(index.row())->icon();
     case RoleUsage:
-        return qrand();
+        return QRandomGenerator::global()->generate();
     }
 
     return QVariant();
