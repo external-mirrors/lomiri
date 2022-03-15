@@ -22,6 +22,7 @@
 #include <QList>
 #include <QObject>
 #include <QString>
+#include <QHash>
 
 #include <sys/types.h>
 
@@ -54,6 +55,7 @@ public:
     virtual ~UsersModelPrivate() = default;
 
     QList<Entry> entries;
+    QHash<int, QByteArray> roles;
 
 Q_SIGNALS:
     void dataChanged(int);

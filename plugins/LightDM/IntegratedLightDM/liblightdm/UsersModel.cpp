@@ -40,18 +40,19 @@ UsersModel::UsersModel(QObject *parent) :
     QAbstractListModel(parent),
     d_ptr(new UsersModelPrivate(this))
 {
+    Q_D(UsersModel);
+
     // Extend roleNames (we want to keep the "display" role)
-    QHash<int, QByteArray> roles = roleNames();
-    roles[NameRole] = "name";
-    roles[RealNameRole] = "realName";
-    roles[LoggedInRole] = "loggedIn";
-    roles[BackgroundRole] = "background";
-    roles[BackgroundPathRole] = "backgroundPath";
-    roles[SessionRole] = "session";
-    roles[HasMessagesRole] = "hasMessages";
-    roles[ImagePathRole] = "imagePath";
-    roles[UidRole] = "uid";
-    setRoleNames(roles);
+    d->roles = roleNames();
+    d->roles[NameRole] = "name";
+    d->roles[RealNameRole] = "realName";
+    d->roles[LoggedInRole] = "loggedIn";
+    d->roles[BackgroundRole] = "background";
+    d->roles[BackgroundPathRole] = "backgroundPath";
+    d->roles[SessionRole] = "session";
+    d->roles[HasMessagesRole] = "hasMessages";
+    d->roles[ImagePathRole] = "imagePath";
+    d->roles[UidRole] = "uid";
 
     connect(d_ptr, &UsersModelPrivate::dataChanged, this, [this](int i) {
         QModelIndex index = createIndex(i, 0);
@@ -105,6 +106,13 @@ QVariant UsersModel::data(const QModelIndex &index, int role) const
     default:
         return QVariant();
     }
+}
+
+QHash<int, QByteArray> UsersModel::roleNames() const
+{
+    Q_D(const UsersModel);
+
+    return d->roles;
 }
 
 }

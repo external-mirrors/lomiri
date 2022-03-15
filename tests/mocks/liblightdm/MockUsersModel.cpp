@@ -48,24 +48,26 @@ class UsersModelPrivate
 {
 public:
     QList<Entry> entries;
+    QHash<int, QByteArray> roles;
 };
 
 UsersModel::UsersModel(QObject *parent)
     : QAbstractListModel(parent)
     , d_ptr(new UsersModelPrivate)
 {
+    Q_D(UsersModel);
+
     // Extend roleNames (we want to keep the "display" role)
-    QHash<int, QByteArray> roles = roleNames();
-    roles[NameRole] = "name";
-    roles[RealNameRole] = "realName";
-    roles[LoggedInRole] = "loggedIn";
-    roles[BackgroundRole] = "background";
-    roles[BackgroundPathRole] = "backgroundPath";
-    roles[SessionRole] = "session";
-    roles[HasMessagesRole] = "hasMessages";
-    roles[ImagePathRole] = "imagePath";
-    roles[UidRole] = "uid";
-    setRoleNames(roles);
+    d->roles = roleNames();
+    d->roles[NameRole] = "name";
+    d->roles[RealNameRole] = "realName";
+    d->roles[LoggedInRole] = "loggedIn";
+    d->roles[BackgroundRole] = "background";
+    d->roles[BackgroundPathRole] = "backgroundPath";
+    d->roles[SessionRole] = "session";
+    d->roles[HasMessagesRole] = "hasMessages";
+    d->roles[ImagePathRole] = "imagePath";
+    d->roles[UidRole] = "uid";
 
     connect(MockController::instance(), &MockController::hasGuestAccountHintChanged,
             this, &UsersModel::resetEntries);
@@ -220,6 +222,13 @@ void UsersModel::resetEntries()
     }
 
     endResetModel();
+}
+
+QHash<int, QByteArray> UsersModel::roleNames() const
+{
+    Q_D(const UsersModel);
+
+    return d->roles;
 }
 
 }
