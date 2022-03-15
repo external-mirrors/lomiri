@@ -101,13 +101,20 @@ void tst_PressedOutsideNotifier::mousePressOutsideAreaTriggersSignal()
 
     QSignalSpy pressedOutsideSpy(m_notifier, &PressedOutsideNotifier::pressedOutside);
 
+    // Silly gcc thinks this is using the depricated QFlag (with the same name)....
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
     QTest::mousePress(m_view, Qt::LeftButton, 0 /*modifiers*/, mousePos);
+#pragma GCC diagnostic pop
 
     qApp->processEvents();
 
     QCOMPARE(pressedOutsideSpy.count(), 1);
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
     QTest::mouseRelease(m_view, Qt::LeftButton, 0 /*modifiers*/, mousePos);
+#pragma GCC diagnostic pop
 }
 
 void tst_PressedOutsideNotifier::mousePresssInsideAreaHasNoEffect()
@@ -117,13 +124,19 @@ void tst_PressedOutsideNotifier::mousePresssInsideAreaHasNoEffect()
 
     QSignalSpy pressedOutsideSpy(m_notifier, &PressedOutsideNotifier::pressedOutside);
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
     QTest::mousePress(m_view, Qt::LeftButton, 0 /*modifiers*/, mousePos);
+#pragma GCC diagnostic pop
 
     qApp->processEvents();
 
     QCOMPARE(pressedOutsideSpy.count(), 0);
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
     QTest::mouseRelease(m_view, Qt::LeftButton, 0 /*modifiers*/, mousePos);
+#pragma GCC diagnostic pop
 }
 
 void tst_PressedOutsideNotifier::nothingHappensWhileDisabled()
