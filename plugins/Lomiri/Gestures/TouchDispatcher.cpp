@@ -278,7 +278,11 @@ void TouchDispatcher::transformTouchPoints(QList<QTouchEvent::TouchPoint> &touch
     QMatrix4x4 transformMatrix(transform);
     for (int i=0; i<touchPoints.count(); i++) {
         QTouchEvent::TouchPoint &touchPoint = touchPoints[i];
-        touchPoint.setRect(transform.mapRect(touchPoint.sceneRect()));
+
+        // Should be the same as god'ol screenRect()
+        // https://github.com/qt/qtbase/commit/68916fede41d1eca5d07eb6b1db518d41a007616
+        touchPoint.setPos(transform.map(touchPoint.screenPos()));
+        touchPoint.setEllipseDiameters(touchPoint.ellipseDiameters());
         touchPoint.setStartPos(transform.map(touchPoint.startScenePos()));
         touchPoint.setLastPos(transform.map(touchPoint.lastScenePos()));
         touchPoint.setVelocity(transformMatrix.mapVector(touchPoint.velocity()).toVector2D());
