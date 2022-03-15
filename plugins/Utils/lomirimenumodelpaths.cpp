@@ -22,7 +22,7 @@
 
 static QVariant parseVariantData(const QVariant& var);
 
-const QDBusArgument &operator>>(const QDBusArgument &arg, QVariantMap &map)
+const QDBusArgument &operator>>(const QDBusArgument &arg, QMultiMap<QString, QVariant> &map)
 {
     arg.beginMap();
     map.clear();
@@ -32,7 +32,7 @@ const QDBusArgument &operator>>(const QDBusArgument &arg, QVariantMap &map)
         arg.beginMapEntry();
 
         arg >> key >> value;
-        map.insertMulti(key, parseVariantData(value)); // re-parse for qdbusargument
+        map.insert(key, parseVariantData(value)); // re-parse for qdbusargument
 
         arg.endMapEntry();
     }
@@ -44,7 +44,7 @@ static QVariant parseVariantData(const QVariant& var) {
     if ((int)var.type() == QMetaType::User && var.userType() == qMetaTypeId<QDBusArgument>()) {
         QDBusArgument arg(var.value<QDBusArgument>());
         if (arg.currentType() == QDBusArgument::MapType) {
-            QVariantMap map;
+            QMultiMap<QString, QVariant> map;
             arg >> map;
             return map;
         }
