@@ -30,9 +30,9 @@ ScreenshotDirectory::ScreenshotDirectory(QObject *parent)
     if (qEnvironmentVariableIsSet("LOMIRI_TESTING")) {
         QTemporaryDir tDir;
         tDir.setAutoRemove(false);
-        screenshotsDir = tDir.path();
+        screenshotsDir.setPath(tDir.path());
     } else {
-        screenshotsDir = QStandardPaths::writableLocation(QStandardPaths::PicturesLocation);
+        screenshotsDir.setPath(QStandardPaths::writableLocation(QStandardPaths::PicturesLocation));
     }
     screenshotsDir.mkpath(QStringLiteral("Screenshots"));
     screenshotsDir.cd(QStringLiteral("Screenshots"));
