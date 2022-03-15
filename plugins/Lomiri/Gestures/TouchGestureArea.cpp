@@ -798,7 +798,15 @@ int TouchGestureArea::touchPoint_count(QQmlListProperty<GestureTouchPoint> *list
 GestureTouchPoint *TouchGestureArea::touchPoint_at(QQmlListProperty<GestureTouchPoint> *list, int index)
 {
     TouchGestureArea *q = static_cast<TouchGestureArea*>(list->object);
-    return (q->m_cachedTouchPoints.begin()+index).value();
+
+    // Because qt did a qute thing....
+    // + operator is depricated and no .at() exists
+    // so lets loop over as operator ++ is still here
+    auto p = q->m_cachedTouchPoints.begin();
+    for (int i = 0; i < index; i++)
+        p++;
+
+    return p.value();
 }
 
 GestureTouchPoint* TouchGestureArea::addTouchPoint(QTouchEvent::TouchPoint const* tp)
