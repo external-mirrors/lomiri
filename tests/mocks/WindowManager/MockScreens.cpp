@@ -100,9 +100,12 @@ public:
     uint currentModeIndex() const override { return m_currentModeIndex; }
     bool isActive() const override { return m_active; }
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
     QQmlListProperty<qtmir::ScreenMode> availableModes() override {
         return QQmlListProperty<qtmir::ScreenMode>(this, m_sizes);
     }
+#pragma GCC diagnostic pop
 
     void setActive(bool active) override {
         if (m_active != active) {
