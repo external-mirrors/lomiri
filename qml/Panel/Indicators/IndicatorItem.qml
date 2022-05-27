@@ -116,7 +116,13 @@ IndicatorDelegate {
                         width: implicitWidth > 0 && implicitHeight > 0 ? (implicitWidth / implicitHeight * height) : implicitWidth;
                         source: modelData
                         color: root.color
-                        Behavior on color { ColorAnimation { duration: LomiriAnimation.FastDuration; easing: LomiriAnimation.StandardEasing } }
+                        Behavior on color { ColorAnimation { duration: UbuntuAnimation.FastDuration; easing: UbuntuAnimation.StandardEasing } }
+
+                        // Workaround indicators getting stretched/squished when (un)plugging external/virtual monitor
+                        onHeightChanged: {
+                            source = ""
+                            source = modelData
+                        }
                     }
                 }
             }
