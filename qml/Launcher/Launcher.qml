@@ -32,7 +32,6 @@ FocusScope {
     property bool available: true // can be used to disable all interactions
     property alias inverted: panel.inverted
     property Item blurSource: null
-    property bool interactiveBlur: false
     property int topPanelHeight: 0
     property bool drawerEnabled: true
     property alias privateMode: panel.privateMode
@@ -377,7 +376,7 @@ FocusScope {
         id: backgroundBlur
         anchors.fill: parent
         anchors.topMargin: root.inverted ? 0 : -root.topPanelHeight
-        visible: root.interactiveBlur && root.blurSource && drawer.x > -drawer.width
+        visible: root.blurSource && drawer.x > -drawer.width
         sourceItem: root.blurSource
         blurRect: Qt.rect(panel.width,
                           root.topPanelHeight,
@@ -399,7 +398,6 @@ FocusScope {
         width: Math.min(root.width, units.gu(81))
         panelWidth: panel.width
         allowSlidingAnimation: !dragArea.dragging && !launcherDragArea.drag.active && panel.animate
-        staticBlurEnabled: !root.interactiveBlur
 
         onApplicationSelected: {
             root.launcherApplicationSelected(appId)

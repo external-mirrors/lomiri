@@ -34,7 +34,6 @@ FocusScope {
     readonly property real delegateWidth: units.gu(10)
     property url background
     property alias backgroundSourceSize: background.sourceSize
-    property bool staticBlurEnabled : true
     visible: x > -width
     property var fullyOpen: x === 0
     property var fullyClosed: x === -width
@@ -157,33 +156,6 @@ FocusScope {
     Rectangle {
         anchors.fill: parent
         color: "#BF000000"
-
-        Wallpaper {
-            id: background
-            objectName: "drawerBackground"
-            visible: staticBlurEnabled
-            enabled: staticBlurEnabled
-            anchors.fill: parent
-            source: root.background
-        }
-
-        FastBlur {
-            anchors.fill: background
-            visible: staticBlurEnabled
-            enabled: staticBlurEnabled
-            source: background
-            radius: 64
-            cached: true
-        }
-
-        // Images with fastblur can't use opacity, so we'll put this on top
-        Rectangle {
-            anchors.fill: background
-            visible: staticBlurEnabled
-            enabled: staticBlurEnabled
-            color: parent.color
-            opacity: 0.67
-        }
 
         MouseArea {
             id: drawerHandle
