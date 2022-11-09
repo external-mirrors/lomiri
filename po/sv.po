@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-29 11:42-0600\n"
-"PO-Revision-Date: 2021-07-26 20:33+0000\n"
-"Last-Translator: Rondy Andersson <rondarius@vivaldi.net>\n"
-"Language-Team: Swedish <https://translate.ubports.com/projects/ubports/"
-"lomiri/sv/>\n"
+"PO-Revision-Date: 2022-11-10 12:46+0000\n"
+"Last-Translator: Luna Jernberg <droidbittin@gmail.com>\n"
+"Language-Team: Swedish <https://hosted.weblate.org/projects/lomiri/lomiri/sv/"
+">\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.11.3\n"
+"X-Generator: Weblate 4.15-dev\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:36+0000\n"
 
 #: plugins/LightDM/Greeter.cpp:199
@@ -26,15 +26,15 @@ msgstr "Lösenord: "
 
 #: plugins/LightDM/Greeter.cpp:214
 msgid "Username"
-msgstr ""
+msgstr "Användarnamn"
 
 #: plugins/LightDM/Greeter.cpp:258
 msgid "Failed to authenticate"
-msgstr ""
+msgstr "Misslyckades att autentisera"
 
 #: plugins/LightDM/Greeter.cpp:260
 msgid "Invalid password, please try again"
-msgstr ""
+msgstr "Ogiltigt lösenord, försök igen"
 
 #: plugins/LightDM/Greeter.cpp:270
 msgid "Log In"
@@ -46,11 +46,11 @@ msgstr "Försök igen"
 
 #: plugins/LightDM/UsersModel.cpp:157
 msgid "Login"
-msgstr ""
+msgstr "Inloggning"
 
 #: plugins/LightDM/UsersModel.cpp:165
 msgid "Guest Session"
-msgstr ""
+msgstr "Gästsession"
 
 #: plugins/Unity/Launcher/launcheritem.cpp:48
 #: plugins/Unity/Launcher/launcheritem.cpp:122
@@ -131,10 +131,8 @@ msgid "Restart"
 msgstr "Starta om"
 
 #: qml/Components/Dialogs.qml:276
-#, fuzzy
-#| msgid "Takes a screenshot."
 msgid "Screenshot"
-msgstr "Tar en skärmbild."
+msgstr "Skärmbild"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:41
 msgid "Keyboard Shortcuts"
@@ -142,7 +140,7 @@ msgstr "Tangentbordsgenvägar"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:55
 msgid "Lomiri"
-msgstr ""
+msgstr "Lomiri"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:62
 msgid "PrtScr"
@@ -157,10 +155,8 @@ msgid "Alt + PrtScr"
 msgstr "Alt + PrtScr"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:80
-#, fuzzy
-#| msgid "Takes a screenshot of a window."
 msgid "Takes a screenshot of the current window."
-msgstr "Tar en skärmbild av ett fönster."
+msgstr "Tar en skärmbild av det aktuella fönstret."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:88
 msgid "Super + Space"
@@ -179,16 +175,12 @@ msgid "Switches to previous keyboard layout."
 msgstr "Byter till tidigare tangentbordslayout."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:114
-#, fuzzy
-#| msgid "Ctrl + Super + D"
 msgid "Ctrl + Alt + T"
-msgstr "Ctrl + Super + D"
+msgstr "Ctrl + Alt + T"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:119
-#, fuzzy
-#| msgid "Switches between applications."
 msgid "Starts the Terminal application."
-msgstr "Växlar mellan program."
+msgstr "Startar Terminal-applikationen."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:131
 msgid "Launcher"
@@ -219,20 +211,16 @@ msgid "Switches applications via the launcher."
 msgstr "Byter program via Programstartaren."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:177
-#, fuzzy
-#| msgid "Super + 0 to 9"
 msgid "Super + 1 to 0"
-msgstr "Super + 0 till 9"
+msgstr "Super + 1 till 0"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:182
 msgid "Same as clicking on a launcher icon."
 msgstr "Samma som att klicka på en ikon i Programstartaren."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:190
-#, fuzzy
-#| msgid "Super + W"
 msgid "Super + A"
-msgstr "Super + W"
+msgstr "Super + A"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:195
 #, fuzzy
@@ -374,22 +362,20 @@ msgstr ""
 "styrplatta för att interagera med pekaren."
 
 #: qml/Components/VirtualTouchPad.qml:327
-#, fuzzy
-#| msgid "Tap to return to call..."
 msgid "Tap left button to click."
-msgstr "Tryck för att återgå till samtal…"
+msgstr "Tryck på vänster knapp för att klicka."
 
 #: qml/Components/VirtualTouchPad.qml:339
 msgid "Tap right button to right click."
-msgstr ""
+msgstr "Tryck på höger knapp för att högerklicka."
 
 #: qml/Components/VirtualTouchPad.qml:351
 msgid "Swipe with two fingers to scroll."
-msgstr ""
+msgstr "Svep med två fingrar för att scrolla."
 
 #: qml/Components/VirtualTouchPad.qml:396
 msgid "Find more settings in the system settings."
-msgstr ""
+msgstr "Hitta fler inställningar i systeminställningarna."
 
 #: qml/Greeter/CoverPage.qml:127
 msgid "Unlock"
@@ -419,16 +405,12 @@ msgid "Try again"
 msgstr "Försök igen"
 
 #: qml/Greeter/Greeter.qml:551
-#, fuzzy
-#| msgid "Enter passphrase"
 msgid "Enter passphrase to unlock"
-msgstr "Ange lösenfras"
+msgstr "Ange lösenfras för att låsa upp"
 
 #: qml/Greeter/Greeter.qml:552
-#, fuzzy
-#| msgid "Enter passcode"
 msgid "Enter passcode to unlock"
-msgstr "Ange lösenkod"
+msgstr "Ange lösenkod för att låsa upp"
 
 #: qml/Greeter/NarrowView.qml:235
 msgid "Emergency"
@@ -447,10 +429,8 @@ msgid "Select desktop environment"
 msgstr "Välj skrivbordsmiljö"
 
 #: qml/Launcher/Drawer.qml:250
-#, fuzzy
-#| msgid "Search"
 msgid "Search…"
-msgstr "Sök"
+msgstr "Sök…"
 
 #: qml/Launcher/PullToRefreshScopeStyle.qml:56
 msgid "Pull to refresh…"
@@ -557,7 +537,7 @@ msgstr "Dra ett program från ett fönster till det andra med tre fingrar"
 
 #: qml/Stage/Stage.qml:671
 msgid "No running apps"
-msgstr ""
+msgstr "Inga appar som körs"
 
 #: qml/Tutorial/TutorialLeftLong.qml:49
 #, fuzzy
@@ -699,12 +679,9 @@ msgstr ""
 "kommer enheten att startas om automatiskt."
 
 #: qml/Wizard/Pages/79-system-update.qml:76
-#, fuzzy
-#| msgctxt "string identifying name of the update"
-#| msgid "Ubuntu system"
 msgctxt "string identifying name of the update"
 msgid "Ubuntu Touch system"
-msgstr "Ubuntusystem"
+msgstr "Ubuntu Touch system"
 
 #: qml/Wizard/Pages/79-system-update.qml:83
 #, qt-format
