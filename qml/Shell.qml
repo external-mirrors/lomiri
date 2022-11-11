@@ -622,7 +622,6 @@ StyledItem {
             drawerEnabled: !greeter.active && tutorial.launcherLongSwipeEnabled
             privateMode: greeter.active
             background: wallpaperResolver.background
-            backgroundSourceSize: shell.largestScreenDimension
 
             // It can be assumed that the Launcher and Panel would overlap if
             // the Panel is open and taking up the full width of the shell

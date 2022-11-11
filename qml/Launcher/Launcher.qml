@@ -36,7 +36,6 @@ FocusScope {
     property bool drawerEnabled: true
     property alias privateMode: panel.privateMode
     property url background
-    property alias backgroundSourceSize: drawer.backgroundSourceSize
 
     property int panelWidth: units.gu(10)
     property int dragAreaWidth: units.gu(1)
