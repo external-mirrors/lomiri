@@ -33,6 +33,7 @@ import "Indicators"
 
 Item {
     id: root
+
     readonly property real panelHeight: panelArea.y + minimizedPanelHeight
     readonly property bool fullyClosed: indicators.fullyClosed && applicationMenus.fullyClosed
 
@@ -48,6 +49,8 @@ Item {
     property bool greeterShown: false
     property bool hasKeyboard: false
     property bool supportsMultiColorLed: true
+
+    property var blurSource : null
 
     // Whether our expanded menus should take up the full width of the panel
     property bool partialWidth: width >= units.gu(60)
@@ -275,6 +278,11 @@ Item {
             enableHint: !callHint.active && !fullscreenMode
             showOnClick: false
             panelColor: panelAreaBackground.color
+            blurSource: root.blurSource
+            blurRect: Qt.rect(x,
+                              0,
+                              root.width,
+                              root.height)
 
             onShowTapped: {
                 if (callHint.active) {
@@ -324,6 +332,7 @@ Item {
             enabled: d.enableTouchMenus
             opacity: d.showTouchMenu ? 1 : 0
             visible: opacity != 0
+            clip: true
             Behavior on opacity { LomiriNumberAnimation { duration: LomiriAnimation.SnapDuration } }
 
             onEnabledChanged: {
@@ -397,6 +406,11 @@ Item {
             enableHint: !callHint.active && !fullscreenMode
             showOnClick: !callHint.visible
             panelColor: panelAreaBackground.color
+            blurSource: root.blurSource
+            blurRect: Qt.rect(x,
+                              0,
+                              root.width,
+                              root.height)
 
             // On small screens, the Indicators' handle area is the entire top
             // bar unless there is an application menu. In that case, our handle
@@ -465,6 +479,7 @@ Item {
 
             enabled: !applicationMenus.expanded
             opacity: !callHint.visible && !applicationMenus.expanded ? 1 : 0
+            clip: true
             Behavior on opacity { LomiriNumberAnimation { duration: LomiriAnimation.SnapDuration } }
 
             onEnabledChanged: {
