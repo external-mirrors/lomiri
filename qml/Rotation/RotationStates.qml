@@ -133,7 +133,7 @@ StateGroup {
         // cause the wrong transitions to be chosen for the state changes.
         function resolveAnimationType() {
             if (d.startingUp) {
-                // During start up, inital property values are still settling while we're still
+                // During start up, initial property values are still settling while we're still
                 // to render the very first frame
                 d.animationType = d.noAnimation;
             } else if (Powerd.status === Powerd.Off) {
