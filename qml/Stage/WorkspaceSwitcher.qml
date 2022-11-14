@@ -57,8 +57,8 @@ Item {
         d.shown = true;
         focus = true;
 
-        d.highlightedScreenIndex = screensProxy.activeScreen;
-        var activeScreen = screensProxy.get(screensProxy.activeScreen);
+        d.highlightedScreenIndex = root.screensProxy.activeScreen;
+        var activeScreen = root.screensProxy.get(root.screensProxy.activeScreen);
         d.highlightedWorkspaceIndex = activeScreen.workspaces.indexOf(activeScreen.currentWorkspace)
     }
 
@@ -79,17 +79,17 @@ Item {
             highlightedWorkspaceIndex = Math.max(highlightedWorkspaceIndex - 1, 0);
         }
         function nextWorkspace() {
-            var screen = screensProxy.get(highlightedScreenIndex);
+            var screen = root.screensProxy.get(highlightedScreenIndex);
             highlightedWorkspaceIndex = Math.min(highlightedWorkspaceIndex + 1, screen.workspaces.count - 1);
         }
         function previousScreen() {
             highlightedScreenIndex = Math.max(highlightedScreenIndex - 1, 0);
-            var screen = screensProxy.get(highlightedScreenIndex);
+            var screen = root.screensProxy.get(highlightedScreenIndex);
             highlightedWorkspaceIndex = Math.min(highlightedWorkspaceIndex, screen.workspaces.count - 1)
         }
         function nextScreen() {
-            highlightedScreenIndex = Math.min(highlightedScreenIndex + 1, screensProxy.count - 1);
-            var screen = screensProxy.get(highlightedScreenIndex);
+            highlightedScreenIndex = Math.min(highlightedScreenIndex + 1, root.screensProxy.count - 1);
+            var screen = root.screensProxy.get(highlightedScreenIndex);
             highlightedWorkspaceIndex = Math.min(highlightedWorkspaceIndex, screen.workspaces.count - 1)
         }
     }
@@ -129,7 +129,7 @@ Item {
             d.active = false;
             hideTimer.start();
             focus = false;
-            screensProxy.get(d.highlightedScreenIndex).workspaces.get(d.highlightedWorkspaceIndex).activate();
+            root.screensProxy.get(d.highlightedScreenIndex).workspaces.get(d.highlightedWorkspaceIndex).activate();
         }
     }
 
@@ -153,7 +153,7 @@ Item {
 
             Repeater {
                 id: screensRepeater
-                model: screensProxy
+                model: root.screensProxy
 
                 delegate: Item {
                     height: d.rowHeight
