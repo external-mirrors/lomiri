@@ -409,8 +409,9 @@ StyledItem {
         anchors.fill: parent
         sourceComponent: {
             if (shell.mode != "shell") {
-                if (screenWindow.primary) return integratedGreeter;
-                return secondaryGreeter;
+                //if (screenWindow.primary) return integratedGreeter;
+                //return secondaryGreeter;
+                return integratedGreeter;
             }
             return Qt.createComponent(Qt.resolvedUrl("Greeter/ShimGreeter.qml"));
         }
@@ -859,7 +860,7 @@ StyledItem {
 
         z: itemGrabber.z + 1
         topBoundaryOffset: panel.panelHeight
-        enabled: shell.hasMouse && screenWindow.active
+        enabled: shell.hasMouse // && screenWindow.active
         visible: enabled
 
         property bool mouseNeverMoved: true

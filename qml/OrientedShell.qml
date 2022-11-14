@@ -37,7 +37,7 @@ Item {
     property bool lightIndicators: false
 
     onWidthChanged: calculateUsageMode();
-    property var overrideDeviceName: screens.count > 1 ? "desktop" : false
+    property var overrideDeviceName: Screens.count > 1 ? "desktop" : shell.usageScenario // false
 
     DeviceConfiguration {
         id: _deviceConfiguration
@@ -116,9 +116,9 @@ Item {
         if (lomiriSettings.usageMode === undefined)
             return; // gsettings isn't loaded yet, we'll try again in Component.onCompleted
 
-        console.log("Calculating new usage mode. Pointer devices:", pointerInputDevices, "current mode:", lomiriSettings.usageMode, "old device count", miceModel.oldCount + touchPadModel.oldCount, "root width:", root.width / units.gu(1), "height:", root.height / units.gu(1))
+        console.log("Calculating new usage mode. Pointer devices:", pointerInputDevices, "current mode:", lomiriSettings.usageMode, "old device count", miceModel.oldCount + touchPadModel.oldCount, "root width:", root.width, "height:", root.height)
         if (lomiriSettings.usageMode === "Windowed") {
-            if (Math.min(root.width, root.height) > units.gu(60)) {
+            if (Math.min(root.width, root.height) > units.gu(1)) {
                 if (pointerInputDevices === 0) {
                     // All pointer devices have been unplugged. Move to staged.
                     lomiriSettings.usageMode = "Staged";
@@ -128,7 +128,7 @@ Item {
                 lomiriSettings.usageMode = "Staged";
             }
         } else {
-            if (Math.min(root.width, root.height) > units.gu(60)) {
+            if (Math.min(root.width, root.height) > units.gu(1)) {
                 if (pointerInputDevices > 0 && pointerInputDevices > miceModel.oldCount + touchPadModel.oldCount) {
                     lomiriSettings.usageMode = "Windowed";
                 }
