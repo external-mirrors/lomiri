@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-29 11:42-0600\n"
-"PO-Revision-Date: 2022-11-10 12:46+0000\n"
+"PO-Revision-Date: 2022-11-17 12:47+0000\n"
 "Last-Translator: Luna Jernberg <droidbittin@gmail.com>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/lomiri/lomiri/sv/"
 ">\n"
@@ -223,10 +223,8 @@ msgid "Super + A"
 msgstr "Super + A"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:195
-#, fuzzy
-#| msgid "Open the launcher"
 msgid "Opens the Application Drawer."
-msgstr "Öppna programstartaren"
+msgstr "Öppna Applåda."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:235
 msgid "Switching"
@@ -540,10 +538,8 @@ msgid "No running apps"
 msgstr "Inga appar som körs"
 
 #: qml/Tutorial/TutorialLeftLong.qml:49
-#, fuzzy
-#| msgid "Long swipe from the left edge to open the Today scope"
 msgid "Long swipe from the left edge to open the Application Drawer"
-msgstr "Gör ett lång svep från vänstra kanten för öppna vyn Idag"
+msgstr "Gör ett lång svep från vänstra kanten för öppna Applåda"
 
 #: qml/Tutorial/TutorialLeft.qml:47
 msgid "Short swipe from the left edge to open the launcher"
