@@ -163,18 +163,18 @@ void ModelActionRootState::updateOtherActions()
     if (m_menu && m_menu->rowCount() > 0) {
         QVariantMap map;
         map[QStringLiteral("submenu-action")] = QStringLiteral("string");
-        map[QStringLiteral("x-canonical-scroll-action")] = QStringLiteral("string");
-        map[QStringLiteral("x-canonical-secondary-action")] = QStringLiteral("string");
+        map[QStringLiteral("x-ayatana-scroll-action")] = QStringLiteral("string");
+        map[QStringLiteral("x-ayatana-secondary-action")] = QStringLiteral("string");
         m_menu->loadExtendedAttributes(0, map);
         QVariantMap extMap = m_menu->get(0, "ext").toMap();
 
-        QString secondaryAction = extMap.value(QStringLiteral("xCanonicalSecondaryAction")).toString();
+        QString secondaryAction = extMap.value(QStringLiteral("xAyatanaSecondaryAction")).toString();
         if (m_secondaryAction != secondaryAction) {
             m_secondaryAction = secondaryAction;
             Q_EMIT secondaryActionChanged();
         }
 
-        QString scrollAction = extMap.value(QStringLiteral("xCanonicalScrollAction")).toString();
+        QString scrollAction = extMap.value(QStringLiteral("xAyatanaScrollAction")).toString();
         if (m_scrollAction != scrollAction) {
             m_scrollAction = scrollAction;
             Q_EMIT scrollActionChanged();

@@ -40,14 +40,14 @@ Item {
     property string secondaryAction: {
         if (!menu) return "";
         var ext = menu.get(0, "ext");
-        var action = ext ? ext["x-canonical-secondary-action"] : undefined;
+        var action = ext ? ext["x-ayatana-secondary-action"] : undefined;
         return action ? action : ""
     }
 
     property string scrollAction: {
         if (!menu) return "";
         var ext = menu.get(0, "ext");
-        var action = ext ? ext["x-canonical-scroll-action"] : undefined;
+        var action = ext ? ext["x-ayatana-scroll-action"] : undefined;
         return action ? action : ""
     }
 
@@ -61,10 +61,10 @@ Item {
             var action = ext ? ext["submenu-action"] : undefined;
             submenuAction = action ? action : ""
 
-            action = ext ? ext["x-canonical-secondary-action"] : undefined;
+            action = ext ? ext["x-ayatana-secondary-action"] : undefined;
             secondaryAction = action ? action : ""
 
-            action = ext ? ext["x-canonical-scroll-action"] : undefined;
+            action = ext ? ext["x-ayatana-scroll-action"] : undefined;
             scrollAction = action ? action : ""
         }
     }
