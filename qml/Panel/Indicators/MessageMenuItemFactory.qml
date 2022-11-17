@@ -38,8 +38,8 @@ Loader {
     QtObject {
         id: priv
         property var extendedData: menuData && menuData.ext || undefined
-        property var actionsDescription: getExtendedProperty(extendedData, "xCanonicalMessageActions", undefined)
-        property date time: new Date(getExtendedProperty(extendedData, "xCanonicalTime", 0) / 1000)
+        property var actionsDescription: getExtendedProperty(extendedData, "xAyatanaMessageActions", undefined)
+        property date time: new Date(getExtendedProperty(extendedData, "xAyatanaTime", 0) / 1000)
         property string timeString: i18n.relativeDateTime(time)
     }
     LiveTimer {
@@ -83,11 +83,11 @@ Loader {
 
     function loadAttributes() {
         if (!menuModel || menuIndex == -1) return;
-        menuModel.loadExtendedAttributes(menuIndex, {'x-canonical-time': 'int64',
-                                                     'x-canonical-text': 'string',
-                                                     'x-canonical-message-actions': 'variant',
+        menuModel.loadExtendedAttributes(menuIndex, {'x-ayatana-time': 'int64',
+                                                     'x-ayatana-text': 'string',
+                                                     'x-ayatana-message-actions': 'variant',
                                                      'icon': 'icon',
-                                                     'x-canonical-app-icon': 'icon'});
+                                                     'x-ayatana-app-icon': 'icon'});
     }
 
     function getExtendedProperty(object, propertyName, defaultValue) {
@@ -106,10 +106,10 @@ Loader {
             // text
             title: menuData && menuData.label || ""
             time: priv.timeString
-            body: getExtendedProperty(priv.extendedData, "xCanonicalText", "")
+            body: getExtendedProperty(priv.extendedData, "xAyatanaText", "")
             // icons
             avatar: getExtendedProperty(priv.extendedData, "icon", "image://theme/contact")
-            icon: getExtendedProperty(priv.extendedData, "xCanonicalAppIcon", "image://theme/message")
+            icon: getExtendedProperty(priv.extendedData, "xAyatanaAppIcon", "image://theme/message")
             // actions
             enabled: menuData && menuData.sensitive || false
             removable: !selected
@@ -147,12 +147,12 @@ Loader {
             // text
             title: menuData && menuData.label || ""
             time: priv.timeString
-            body: getExtendedProperty(priv.extendedData, "xCanonicalText", "")
+            body: getExtendedProperty(priv.extendedData, "xAyatanaText", "")
             replyButtonText: getExtendedProperty(replyActionDescription, "label", i18n.ctr("Button: Send a reply message", "Send"))
             replyHintText: i18n.ctr("Label: Hint in message indicator line edit", "Reply")
             // icons
             avatar: getExtendedProperty(priv.extendedData, "icon", "image://theme/contact")
-            icon: getExtendedProperty(priv.extendedData, "xCanonicalAppIcon", "image://theme/message")
+            icon: getExtendedProperty(priv.extendedData, "xAyatanaAppIcon", "image://theme/message")
             // actions
             replyEnabled: replyAction.valid && replyAction.enabled
             enabled: menuData && menuData.sensitive || false
@@ -205,12 +205,12 @@ Loader {
             // text
             title: menuData && menuData.label || ""
             time: priv.timeString
-            body: getExtendedProperty(priv.extendedData, "xCanonicalText", "")
+            body: getExtendedProperty(priv.extendedData, "xAyatanaText", "")
             actionButtonText: getExtendedProperty(activateActionDescription, "label", i18n.ctr("Button: Call back on phone", "Call back"))
             replyButtonText: getExtendedProperty(replyActionDescription, "label", i18n.ctr("Button: Send a reply message", "Send"))
             // icons
             avatar: getExtendedProperty(priv.extendedData, "icon", "image://theme/contact")
-            icon: getExtendedProperty(priv.extendedData, "xCanonicalAppIcon", "image://theme/missed-call")
+            icon: getExtendedProperty(priv.extendedData, "xAyatanaAppIcon", "image://theme/missed-call")
             // actions
             actionEnabled: activateAction.valid && activateAction.enabled
             replyEnabled: replyAction.valid && replyAction.enabled
