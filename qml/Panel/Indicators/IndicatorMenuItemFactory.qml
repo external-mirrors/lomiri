@@ -950,17 +950,17 @@ Item {
             property var playAction: AyatanaMenuAction {
                 model: menuModel
                 index: menuIndex
-                name: getExtendedProperty(extendedData, "xCanonicalPlayAction", "")
+                name: getExtendedProperty(extendedData, "xAyatanaPlayAction", "")
             }
             property var nextAction: AyatanaMenuAction {
                 model: menuModel
                 index: menuIndex
-                name: getExtendedProperty(extendedData, "xCanonicalNextAction", "")
+                name: getExtendedProperty(extendedData, "xAyatanaNextAction", "")
             }
             property var previousAction: AyatanaMenuAction {
                 model: menuModel
                 index: menuIndex
-                name: getExtendedProperty(extendedData, "xCanonicalPreviousAction", "")
+                name: getExtendedProperty(extendedData, "xAyatanaPreviousAction", "")
             }
 
             playing: playAction.state === "Playing"
@@ -988,9 +988,9 @@ Item {
 
             function loadAttributes() {
                 if (!menuModel || menuIndex == -1) return;
-                menuModel.loadExtendedAttributes(modelIndex, {'x-canonical-play-action': 'string',
-                                                              'x-canonical-next-action': 'string',
-                                                              'x-canonical-previous-action': 'string'});
+                menuModel.loadExtendedAttributes(modelIndex, {'x-ayatana-play-action': 'string',
+                                                              'x-ayatana-next-action': 'string',
+                                                              'x-ayatana-previous-action': 'string'});
             }
         }
     }

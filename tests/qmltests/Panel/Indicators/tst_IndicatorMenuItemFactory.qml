@@ -762,9 +762,9 @@ Item {
             menuData.type = "com.canonical.lomiri.playback-item";
             menuData.sensitive = data.enabled;
             menuData.ext = {
-                'xCanonicalPlayAction': data.playAction,
-                'xCanonicalNextAction': data.nextAction,
-                'xCanonicalPreviousAction': data.previousAction
+                'xAyatanaPlayAction': data.playAction,
+                'xAyatanaNextAction': data.nextAction,
+                'xAyatanaPreviousAction': data.previousAction
             };
 
             loadData(menuData);
