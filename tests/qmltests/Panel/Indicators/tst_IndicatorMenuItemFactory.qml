@@ -410,7 +410,7 @@ Item {
             menuData.sensitive = data.enabled;
             menuData.icon = data.icon;
             menuData.ext = {
-                'xCanonicalTime': data.time.getTime() / 1000 // expected in seconds
+                'xAyatanaTime': data.time.getTime() / 1000 // expected in seconds
             };
 
             loadData(menuData);
@@ -437,8 +437,8 @@ Item {
             menuData.sensitive = data.enabled;
             menuData.icon = data.icon;
             menuData.ext = {
-                'xCanonicalColor': data.color,
-                'xCanonicalTime': data.time.getTime() / 1000 // expected in seconds
+                'xAyatanaColor': data.color,
+                'xAyatanaTime': data.time.getTime() / 1000 // expected in seconds
             };
 
             loadData(menuData);

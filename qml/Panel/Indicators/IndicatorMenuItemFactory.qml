@@ -508,7 +508,7 @@ Item {
             property int menuIndex: -1
             property var extendedData: menuData && menuData.ext || undefined
 
-            readonly property date serverTime: new Date(getExtendedProperty(extendedData, "xCanonicalTime", 0) * 1000)
+            readonly property date serverTime: new Date(getExtendedProperty(extendedData, "xAyatanaTime", 0) * 1000)
             LiveTimer {
                 frequency: LiveTimer.Relative
                 relativeTime: alarmItem.serverTime
@@ -533,7 +533,7 @@ Item {
 
             function loadAttributes() {
                 if (!menuModel || menuIndex == -1) return;
-                menuModel.loadExtendedAttributes(menuIndex, {'x-canonical-time': 'int64'});
+                menuModel.loadExtendedAttributes(menuIndex, {'x-ayatana-time': 'int64'});
             }
         }
     }
@@ -549,7 +549,7 @@ Item {
             property int menuIndex: -1
             property var extendedData: menuData && menuData.ext || undefined
 
-            readonly property date serverTime: new Date(getExtendedProperty(extendedData, "xCanonicalTime", 0) * 1000)
+            readonly property date serverTime: new Date(getExtendedProperty(extendedData, "xAyatanaTime", 0) * 1000)
 
             LiveTimer {
                 frequency: LiveTimer.Relative
@@ -560,7 +560,7 @@ Item {
             text: menuData && menuData.label || ""
             iconSource: menuData && menuData.icon || "image://theme/calendar"
             time: i18n.relativeDateTime(serverTime)
-            eventColor: getExtendedProperty(extendedData, "xCanonicalColor", Qt.rgba(0.0, 0.0, 0.0, 0.0))
+            eventColor: getExtendedProperty(extendedData, "xAyatanaColor", Qt.rgba(0.0, 0.0, 0.0, 0.0))
             enabled: menuData && menuData.sensitive || false
             highlightWhenPressed: false
 
@@ -576,8 +576,8 @@ Item {
 
             function loadAttributes() {
                 if (!menuModel || menuIndex == -1) return;
-                menuModel.loadExtendedAttributes(menuIndex, {'x-canonical-color': 'string',
-                                                             'x-canonical-time': 'int64'});
+                menuModel.loadExtendedAttributes(menuIndex, {'x-ayatana-color': 'string',
+                                                             'x-ayatana-time': 'int64'});
             }
         }
     }

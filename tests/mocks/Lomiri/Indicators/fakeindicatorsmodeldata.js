@@ -68,10 +68,10 @@ var fakeMenuData = {
                         "type": "com.canonical.indicator.messages.messageitem",
                         "ext": {
                             "icon": Qt.resolvedUrl("../../../../../tests/graphics/avatars/funky@12.png"),
-                            "xCanonicalAppIcon": Qt.resolvedUrl("../../../../../tests/graphics/applicationIcons/messages-app@18.png"),
-                            "xCanonicalMessageActions": [ { "parameter-type": "s" } ],
-                            "xCanonicalText": "This is a message sent to an awesome Lomiri phone.",
-                            "xCanonicalTime": ((new Date).getTime() - 35 * 1000) * 1000
+                            "xAyatanaAppIcon": Qt.resolvedUrl("../../../../../tests/graphics/applicationIcons/messages-app@18.png"),
+                            "xAyatanaMessageActions": [ { "parameter-type": "s" } ],
+                            "xAyatanaText": "This is a message sent to an awesome Lomiri phone.",
+                            "xAyatanaTime": ((new Date).getTime() - 35 * 1000) * 1000
                         },
                         "isCheck": false,
                         "isRadio": false,
@@ -89,9 +89,9 @@ var fakeMenuData = {
                         "icon": "image://theme/missed-call",
                         "type": "com.canonical.indicator.messages.messageitem",
                         "ext": {
-                                "xCanonicalMessageActions": [ { "parameter-type": "_s" } ],
-                                "xCanonicalText": "1 Missed call.",
-                                "xCanonicalTime": ((new Date).getTime() - 350 * 1000) * 1000,
+                                "xAyatanaMessageActions": [ { "parameter-type": "_s" } ],
+                                "xAyatanaText": "1 Missed call.",
+                                "xAyatanaTime": ((new Date).getTime() - 350 * 1000) * 1000,
                         },
                         "action": "indicator.telephony-service-missed-call.call.CALL_ID",
                         "actionState": {},
@@ -718,7 +718,7 @@ var fakeMenuData = {
                         "action": "indicator.phone.open-appointment",
                         "actionState": {},
                         "ext": {
-                            "xCanonicalTime": (new Date).getTime() / 1000 + 55 * 60
+                            "xAyatanaTime": (new Date).getTime() / 1000 + 55 * 60
                         },
                         "icon": "image://theme/alarm-clock",
                         "isCheck": false,
@@ -735,8 +735,8 @@ var fakeMenuData = {
                         "action": "indicator.phone.open-appointment",
                         "actionState": {},
                         "ext": {
-                            "xCanonicalColor": Qt.rgba(32,74,135,1),
-                            "xCanonicalTime": (new Date).getTime() / 1000 + 35000
+                            "xAyatanaColor": Qt.rgba(32,74,135,1),
+                            "xAyatanaTime": (new Date).getTime() / 1000 + 35000
                         },
                         "icon": "",
                         "isCheck": false,
@@ -753,8 +753,8 @@ var fakeMenuData = {
                         "action": "indicator.phone.open-appointment",
                         "actionState": {},
                         "ext": {
-                            "xCanonicalColor": Qt.rgba(32,74,135,1),
-                            "xCanonicalTime": (new Date).getTime() / 1000 + 50474
+                            "xAyatanaColor": Qt.rgba(32,74,135,1),
+                            "xAyatanaTime": (new Date).getTime() / 1000 + 50474
                         },
                         "icon": "",
                         "isCheck": false,
@@ -771,8 +771,8 @@ var fakeMenuData = {
                         "action": "indicator.phone.open-appointment",
                         "actionState": {},
                         "ext": {
-                            "xCanonicalColor": Qt.rgba(32,74,135,1),
-                            "xCanonicalTime": (new Date).getTime() / 1000 + 385000
+                            "xAyatanaColor": Qt.rgba(32,74,135,1),
+                            "xAyatanaTime": (new Date).getTime() / 1000 + 385000
                         },
                         "icon": "",
                         "isCheck": false,
@@ -789,8 +789,8 @@ var fakeMenuData = {
                         "action": "indicator.phone.open-appointment",
                         "actionState": {},
                         "ext": {
-                            "xCanonicalColor": Qt.rgba(32,74,135,1),
-                            "xCanonicalTime": (new Date).getTime() / 1000 + 3500050
+                            "xAyatanaColor": Qt.rgba(32,74,135,1),
+                            "xAyatanaTime": (new Date).getTime() / 1000 + 3500050
                         },
                         "icon": "",
                         "isCheck": false,
