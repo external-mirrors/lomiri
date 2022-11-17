@@ -226,7 +226,7 @@ Item {
                                                              'max-value': 'double',
                                                              'min-icon': 'icon',
                                                              'max-icon': 'icon',
-                                                             'x-canonical-sync-action': 'string'});
+                                                             'x-ayatana-sync-action': 'string'});
             }
 
             ServerPropertySynchroniser {
@@ -247,7 +247,7 @@ Item {
             AyatanaMenuAction {
                 model: menuModel
                 index: menuIndex
-                name: getExtendedProperty(extendedData, "xCanonicalSyncAction", "")
+                name: getExtendedProperty(extendedData, "xAyatanaSyncAction", "")
                 onStateChanged: {
                     sliderPropertySync.reset();
                     sliderPropertySync.updateUserValue();

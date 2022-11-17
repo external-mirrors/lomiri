@@ -549,7 +549,7 @@ var fakeMenuData = {
                             "maxValue": 1,
                             "minIcon": "image://theme/audio-volume-low-zero-panel",
                             "minValue": 0,
-                            "xCanonicalSyncAction": "indicator.volume-sync"
+                            "xAyatanaSyncAction": "indicator.volume-sync"
                         },
                         "icon": "",
                         "isCheck": false,
