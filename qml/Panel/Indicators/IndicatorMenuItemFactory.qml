@@ -657,7 +657,7 @@ Item {
             property var menuModel: menuFactory.menuModel
             property int menuIndex: -1
             property var extendedData: menuData && menuData.ext || undefined
-            readonly property string tz: getExtendedProperty(extendedData, "xCanonicalTimezone", "UTC")
+            readonly property string tz: getExtendedProperty(extendedData, "xAyatanaTimezone", "UTC")
             property var updateTimer: Timer {
                 repeat: true
                 running: tzMenuItem.visible // only run when we're open
@@ -691,7 +691,7 @@ Item {
 
             function loadAttributes() {
                 if (!menuModel || menuIndex == -1) return;
-                menuModel.loadExtendedAttributes(menuIndex, {'x-canonical-timezone': 'string'});
+                menuModel.loadExtendedAttributes(menuIndex, {'x-ayatana-timezone': 'string'});
             }
         }
     }
