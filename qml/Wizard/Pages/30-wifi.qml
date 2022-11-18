@@ -93,21 +93,21 @@ LocalComponents.Page {
             property var strengthAction: QMenuModel.AyatanaMenuAction {
                 model: lomiriMenuModel
                 index: menuIndex
-                name: getExtendedProperty(extendedData, "xCanonicalWifiApStrengthAction", "")
+                name: getExtendedProperty(extendedData, "xAyatanaWifiApStrengthAction", "")
             }
-            readonly property bool secure: getExtendedProperty(extendedData, "xCanonicalWifiApIsSecure", false)
-            readonly property bool adHoc: getExtendedProperty(extendedData, "xCanonicalWifiApIsAdhoc", false)
+            readonly property bool secure: getExtendedProperty(extendedData, "xAyatanaWifiApIsSecure", false)
+            readonly property bool adHoc: getExtendedProperty(extendedData, "xAyatanaWifiApIsAdhoc", false)
             readonly property bool isConnected: menuData && menuData.actionState
-            readonly property bool isEnterprise: getExtendedProperty(extendedData, "xCanonicalWifiApIsEnterprise", false)
+            readonly property bool isEnterprise: getExtendedProperty(extendedData, "xAyatanaWifiApIsEnterprise", false)
             readonly property int signalStrength: strengthAction.valid ? strengthAction.state : 0
             property int menuIndex: -1
 
             function loadAttributes() {
                 if (!lomiriMenuModel || menuIndex == -1) return;
-                lomiriMenuModel.loadExtendedAttributes(menuIndex, {'x-canonical-wifi-ap-is-adhoc': 'bool',
-                                                          'x-canonical-wifi-ap-is-secure': 'bool',
-                                                          'x-canonical-wifi-ap-is-enterprise': 'bool',
-                                                          'x-canonical-wifi-ap-strength-action': 'string'});
+                lomiriMenuModel.loadExtendedAttributes(menuIndex, {'x-ayatana-wifi-ap-is-adhoc': 'bool',
+                                                          'x-ayatana-wifi-ap-is-secure': 'bool',
+                                                          'x-ayatana-wifi-ap-is-enterprise': 'bool',
+                                                          'x-ayatana-wifi-ap-strength-action': 'string'});
             }
 
             Icon {

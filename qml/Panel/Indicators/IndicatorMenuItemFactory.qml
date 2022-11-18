@@ -738,14 +738,14 @@ Item {
             property var strengthAction: AyatanaMenuAction {
                 model: menuModel
                 index: menuIndex
-                name: getExtendedProperty(extendedData, "xCanonicalWifiApStrengthAction", "")
+                name: getExtendedProperty(extendedData, "xAyatanaWifiApStrengthAction", "")
             }
 
             text: menuData && menuData.label || ""
             enabled: menuData && menuData.sensitive || false
             active: serverChecked
-            secure: getExtendedProperty(extendedData, "xCanonicalWifiApIsSecure", false)
-            adHoc: getExtendedProperty(extendedData, "xCanonicalWifiApIsAdhoc", false)
+            secure: getExtendedProperty(extendedData, "xAyatanaWifiApIsSecure", false)
+            adHoc: getExtendedProperty(extendedData, "xAyatanaWifiApIsAdhoc", false)
             signalStrength: {
                 if (strengthAction.valid) {
                     var state = strengthAction.state; // handle both int and uchar
@@ -768,9 +768,9 @@ Item {
 
             function loadAttributes() {
                 if (!menuModel || menuIndex == -1) return;
-                menuModel.loadExtendedAttributes(menuIndex, {'x-canonical-wifi-ap-is-adhoc': 'bool',
-                                                             'x-canonical-wifi-ap-is-secure': 'bool',
-                                                             'x-canonical-wifi-ap-strength-action': 'string'});
+                menuModel.loadExtendedAttributes(menuIndex, {'x-ayatana-wifi-ap-is-adhoc': 'bool',
+                                                             'x-ayatana-wifi-ap-is-secure': 'bool',
+                                                             'x-ayatana-wifi-ap-strength-action': 'string'});
             }
 
             ServerPropertySynchroniser {

@@ -1068,9 +1068,9 @@ var fakeMenuData = {
                         "action": "indicator.accesspoint.1",
                         "actionState": true,
                         "ext": {
-                            "xCanonicalWifiApIsAdhoc": 0,
-                            "xCanonicalWifiApIsSecure": 1,
-                            "xCanonicalWifiApStrengthAction": "indicator.accesspoint.1::strength"
+                            "xAyatanaWifiApIsAdhoc": 0,
+                            "xAyatanaWifiApIsSecure": 1,
+                            "xAyatanaWifiApStrengthAction": "indicator.accesspoint.1::strength"
                         },
                         "icon": "",
                         "isCheck": true,
@@ -1087,9 +1087,9 @@ var fakeMenuData = {
                         "action": "indicator.accesspoint.2",
                         "actionState": false,
                         "ext": {
-                            "xCanonicalWifiApIsAdhoc": 0,
-                            "xCanonicalWifiApIsSecure": 1,
-                            "xCanonicalWifiApStrengthAction": "indicator.accesspoint.2::strength"
+                            "xAyatanaWifiApIsAdhoc": 0,
+                            "xAyatanaWifiApIsSecure": 1,
+                            "xAyatanaWifiApStrengthAction": "indicator.accesspoint.2::strength"
                         },
                         "icon": "",
                         "isCheck": true,
@@ -1106,9 +1106,9 @@ var fakeMenuData = {
                         "action": "indicator.accesspoint.3",
                         "actionState": false,
                         "ext": {
-                            "xCanonicalWifiApIsAdhoc": 0,
-                            "xCanonicalWifiApIsSecure": 0,
-                            "xCanonicalWifiApStrengthAction": "indicator.accesspoint.3::strength"
+                            "xAyatanaWifiApIsAdhoc": 0,
+                            "xAyatanaWifiApIsSecure": 0,
+                            "xAyatanaWifiApStrengthAction": "indicator.accesspoint.3::strength"
                         },
                         "icon": "",
                         "isCheck": true,
@@ -1125,9 +1125,9 @@ var fakeMenuData = {
                         "action": "indicator.accesspoint.4",
                         "actionState": false,
                         "ext": {
-                            "xCanonicalWifiApIsAdhoc": 0,
-                            "xCanonicalWifiApIsSecure": 0,
-                            "xCanonicalWifiApStrengthAction": "indicator.accesspoint.4::strength"
+                            "xAyatanaWifiApIsAdhoc": 0,
+                            "xAyatanaWifiApIsSecure": 0,
+                            "xAyatanaWifiApStrengthAction": "indicator.accesspoint.4::strength"
                         },
                         "icon": "",
                         "isCheck": true,

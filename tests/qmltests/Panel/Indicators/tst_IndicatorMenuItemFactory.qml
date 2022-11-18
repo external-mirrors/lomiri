@@ -590,9 +590,9 @@ Item {
             menuData.sensitive = data.enabled;
             menuData.isToggled = data.active;
             menuData.ext = {
-                'xCanonicalWifiApStrengthAction': "action::strength",
-                'xCanonicalWifiApIsSecure': data.secure,
-                'xCanonicalWifiApIsAdhoc': data.adHoc,
+                'xAyatanaWifiApStrengthAction': "action::strength",
+                'xAyatanaWifiApIsSecure': data.secure,
+                'xAyatanaWifiApIsAdhoc': data.adHoc,
             };
 
             loadData(menuData);
