@@ -1120,7 +1120,7 @@ Item {
             highlightWhenPressed: false
             text: menuData && menuData.label || ""
             foregroundColor: theme.palette.normal.backgroundText
-            buttonText: getExtendedProperty(extendedData, "xCanonicalExtraLabel", "")
+            buttonText: getExtendedProperty(extendedData, "xAyatanaExtraLabel", "")
 
             onMenuModelChanged: {
                 loadAttributes();
@@ -1130,7 +1130,7 @@ Item {
             }
             function loadAttributes() {
                 if (!menuModel || menuIndex == -1) return;
-                menuModel.loadExtendedAttributes(menuIndex, {'x-canonical-extra-label': 'string'});
+                menuModel.loadExtendedAttributes(menuIndex, {'x-ayatana-extra-label': 'string'});
             }
 
             onButtonClicked: menuModel.activate(menuIndex);

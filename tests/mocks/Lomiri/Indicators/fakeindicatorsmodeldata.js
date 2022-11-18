@@ -861,7 +861,7 @@ var fakeMenuData = {
                         "action": "indicator.pause-all",
                         "actionState": {},
                         "ext": {
-                            "xCanonicalExtraLabel": "Pause all"
+                            "xAyatanaExtraLabel": "Pause all"
                         },
                         "icon": "",
                         "isCheck": false,
@@ -910,7 +910,7 @@ var fakeMenuData = {
                         "action": "indicator.clear-all",
                         "actionState": {},
                         "ext": {
-                            "xCanonicalExtraLabel": "Clear all"
+                            "xAyatanaExtraLabel": "Clear all"
                         },
                         "icon": "",
                         "isCheck": false,

@@ -545,7 +545,7 @@ Item {
             menuData.sensitive = data.enabled;
             menuData.icon = data.icon;
             menuData.ext = {
-                'xCanonicalExtraLabel': data.buttonText
+                'xAyatanaExtraLabel': data.buttonText
             };
 
             loadData(menuData);
