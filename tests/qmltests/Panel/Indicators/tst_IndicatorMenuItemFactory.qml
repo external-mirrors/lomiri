@@ -382,7 +382,7 @@ Item {
             menuData.icon = data.icon;
             menuData.isToggled = data.checked;
             menuData.ext = {
-                'xCanonicalSubtitleAction': data.subtitleAction,
+                'xAyatanaSubtitleAction': data.subtitleAction,
             };
 
             loadData(menuData);

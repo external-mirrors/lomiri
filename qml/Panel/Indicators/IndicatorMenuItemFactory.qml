@@ -457,7 +457,7 @@ Item {
             property var subtitleAction: AyatanaMenuAction {
                 model: menuModel
                 index: menuIndex
-                name: getExtendedProperty(extendedData, "xCanonicalSubtitleAction", "")
+                name: getExtendedProperty(extendedData, "xAyatanaSubtitleAction", "")
             }
             subtitle.text: subtitleAction.valid ? subtitleAction.state : ""
 
@@ -470,7 +470,7 @@ Item {
 
             function loadAttributes() {
                 if (!menuModel || menuIndex == -1) return;
-                menuModel.loadExtendedAttributes(menuIndex, {'x-canonical-subtitle-action': 'string'});
+                menuModel.loadExtendedAttributes(menuIndex, {'x-ayatana-subtitle-action': 'string'});
             }
 
             ServerPropertySynchroniser {
