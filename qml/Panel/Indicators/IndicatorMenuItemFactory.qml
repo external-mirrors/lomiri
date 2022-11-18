@@ -66,6 +66,8 @@ Item {
             "com.canonical.indicator.calendar": calendarMenu,
             "com.canonical.indicator.location": timezoneMenu,
 
+            "com.lomiri.indicator.transfer"       : transferMenu,
+
             "org.ayatana.indicator.button"         : buttonMenu,
             "org.ayatana.indicator.div"            : separatorMenu,
             "org.ayatana.indicator.section"        : sectionMenu,
