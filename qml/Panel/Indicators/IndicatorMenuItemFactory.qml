@@ -1005,7 +1005,7 @@ Item {
             property var menuModel: menuFactory.menuModel
             property int menuIndex: -1
             property var extendedData: menuData && menuData.ext || undefined
-            property var uid: getExtendedProperty(extendedData, "xCanonicalUid", undefined)
+            property var uid: getExtendedProperty(extendedData, "xAyatanaUid", undefined)
 
             text: menuData && menuData.label || ""
             iconSource: menuData && menuData.icon || "image://theme/transfer-none"
@@ -1100,7 +1100,7 @@ Item {
 
             function loadAttributes() {
                 if (!menuModel || menuIndex == -1) return;
-                menuModel.loadExtendedAttributes(menuIndex, {'x-canonical-uid': 'string'});
+                menuModel.loadExtendedAttributes(menuIndex, {'x-ayatana-uid': 'string'});
             }
         }
     }

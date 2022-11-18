@@ -878,7 +878,7 @@ var fakeMenuData = {
                         "action": "indicator.activate-transfer",
                         "actionState": {},
                         "ext": {
-                            "xCanonicalUid": 1003
+                            "xAyatanaUid": 1003
                         },
                         "icon": "image://theme/webbrowser-app-symbolic",
                         "isCheck": false,
@@ -927,7 +927,7 @@ var fakeMenuData = {
                         "action": "indicator.activate-transfer",
                         "actionState": {},
                         "ext": {
-                            "xCanonicalUid": 1002
+                            "xAyatanaUid": 1002
                         },
                         "icon": "image://theme/webbrowser-app-symbolic",
                         "isCheck": false,
@@ -944,7 +944,7 @@ var fakeMenuData = {
                         "action": "indicator.activate-transfer",
                         "actionState": {},
                         "ext": {
-                            "xCanonicalUid": 1001
+                            "xAyatanaUid": 1001
                         },
                         "icon": "image://theme/webbrowser-app-symbolic",
                         "isCheck": false,

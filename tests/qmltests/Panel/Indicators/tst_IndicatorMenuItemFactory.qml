@@ -518,7 +518,7 @@ Item {
             menuData.isToggled = data.active;
             menuData.icon = data.icon;
             menuData.ext = {
-                'xCanonicalUid': data.tag
+                'xAyatanaUid': data.tag
             };
 
             loadData(menuData);
