@@ -1058,13 +1058,13 @@ Item {
             tryCompare(surfaceItem, "activeFocus", true);
         }
 
-        function test_ignoreSavedStateIfInitalIsFullscreenAndLowChrome() {
+        function test_ignoreSavedStateIfInitialIsFullscreenAndLowChrome() {
             WindowStateStorage.saveState("camera-app", WindowStateStorage.WindowStateNormal);
             var appDelegate = startApplication("camera-app");
             tryCompare(appDelegate, "state", "restored");
         }
 
-        function test_ignoreSavedStateIfInitalIsFullscreen() {
+        function test_ignoreSavedStateIfInitialIsFullscreen() {
             WindowStateStorage.saveState("camera-app3", WindowStateStorage.WindowStateNormal);
             var appDelegate = startApplication("camera-app3");
             tryCompare(appDelegate, "state", "fullscreen");

@@ -1261,13 +1261,13 @@ FocusScope {
                             // thats the default value of stateStorage, this will result in the app
                             // having the "restored state" as it will not make a fullscreen
                             // call after the app has started.
-                            console.log("Inital window state is fullscreen, not using saved state.");
+                            console.log("Initial window state is fullscreen, not using saved state.");
                             state = window.state;
                         } else if (loadedMirState == Mir.FullscreenState) {
-                            // If saved state is fullscreen, we should use app inital state
+                            // If saved state is fullscreen, we should use app initial state
                             // Example of why: if you open browser with youtube video at fullscreen
                             // and close this app, it will be fullscreen next time you open the app.
-                            console.log("Saved window state is fullscreen, using inital window state");
+                            console.log("Saved window state is fullscreen, using initial window state");
                             state = window.state;
                         }
 

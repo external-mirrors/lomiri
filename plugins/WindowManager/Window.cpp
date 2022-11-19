@@ -187,7 +187,7 @@ void Window::setSurface(lomiriapi::MirSurfaceInterface *surface)
 
         // Surface should never be focused at this point!
         if (m_surface->focused()) {
-            WARNING_MSG << "Inital surface is focused!";
+            WARNING_MSG << "Initial surface is focused!";
         }
 
         // bring it up to speed
