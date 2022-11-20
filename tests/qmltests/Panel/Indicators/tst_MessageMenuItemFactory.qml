@@ -79,10 +79,10 @@ Item {
             menuData.label = data.title;
             menuData.sensitive = data.enabled;
             menuData.ext = {
-                'xCanonicalTime': data.time.getTime()*1000, // expected in microseconds
-                'xCanonicalText': data.body,
+                'xAyatanaTime': data.time.getTime()*1000, // expected in microseconds
+                'xAyatanaText': data.body,
                 'icon': data.avatar,
-                'xCanonicalAppIcon': data.icon,
+                'xAyatanaAppIcon': data.icon,
             };
             factory.menuData = menuData;
 
@@ -107,11 +107,11 @@ Item {
             menuData.label = data.title;
             menuData.sensitive = data.enabled;
             menuData.ext = {
-                'xCanonicalTime': data.time.getTime()*1000, // expected in microseconds
-                'xCanonicalText': data.body,
+                'xAyatanaTime': data.time.getTime()*1000, // expected in microseconds
+                'xAyatanaText': data.body,
                 'icon': data.avatar,
-                'xCanonicalAppIcon': data.icon,
-                'xCanonicalMessageActions': [{
+                'xAyatanaAppIcon': data.icon,
+                'xAyatanaMessageActions': [{
                         'parameter-type': "s",
                         'name': "action::reply",
                         'label': "Reply1"
@@ -142,11 +142,11 @@ Item {
             menuData.label = data.title;
             menuData.sensitive = data.enabled;
             menuData.ext = {
-                'xCanonicalTime': data.time.getTime()*1000, // expected in microseconds
-                'xCanonicalText': data.body,
+                'xAyatanaTime': data.time.getTime()*1000, // expected in microseconds
+                'xAyatanaText': data.body,
                 'icon': data.avatar,
-                'xCanonicalAppIcon': data.icon,
-                'xCanonicalMessageActions': [{
+                'xAyatanaAppIcon': data.icon,
+                'xAyatanaMessageActions': [{
                         'name': "action::callback",
                         'label': "Callback1"
                     },{

@@ -66,6 +66,8 @@ Item {
             "com.canonical.indicator.calendar": calendarMenu,
             "com.canonical.indicator.location": timezoneMenu,
 
+            "com.lomiri.indicator.transfer"       : transferMenu,
+
             "org.ayatana.indicator.button"         : buttonMenu,
             "org.ayatana.indicator.div"            : separatorMenu,
             "org.ayatana.indicator.section"        : sectionMenu,
@@ -226,7 +228,7 @@ Item {
                                                              'max-value': 'double',
                                                              'min-icon': 'icon',
                                                              'max-icon': 'icon',
-                                                             'x-canonical-sync-action': 'string'});
+                                                             'x-ayatana-sync-action': 'string'});
             }
 
             ServerPropertySynchroniser {
@@ -247,7 +249,7 @@ Item {
             AyatanaMenuAction {
                 model: menuModel
                 index: menuIndex
-                name: getExtendedProperty(extendedData, "xCanonicalSyncAction", "")
+                name: getExtendedProperty(extendedData, "xAyatanaSyncAction", "")
                 onStateChanged: {
                     sliderPropertySync.reset();
                     sliderPropertySync.updateUserValue();
@@ -457,7 +459,7 @@ Item {
             property var subtitleAction: AyatanaMenuAction {
                 model: menuModel
                 index: menuIndex
-                name: getExtendedProperty(extendedData, "xCanonicalSubtitleAction", "")
+                name: getExtendedProperty(extendedData, "xAyatanaSubtitleAction", "")
             }
             subtitle.text: subtitleAction.valid ? subtitleAction.state : ""
 
@@ -470,7 +472,7 @@ Item {
 
             function loadAttributes() {
                 if (!menuModel || menuIndex == -1) return;
-                menuModel.loadExtendedAttributes(menuIndex, {'x-canonical-subtitle-action': 'string'});
+                menuModel.loadExtendedAttributes(menuIndex, {'x-ayatana-subtitle-action': 'string'});
             }
 
             ServerPropertySynchroniser {
@@ -508,7 +510,7 @@ Item {
             property int menuIndex: -1
             property var extendedData: menuData && menuData.ext || undefined
 
-            readonly property date serverTime: new Date(getExtendedProperty(extendedData, "xCanonicalTime", 0) * 1000)
+            readonly property date serverTime: new Date(getExtendedProperty(extendedData, "xAyatanaTime", 0) * 1000)
             LiveTimer {
                 frequency: LiveTimer.Relative
                 relativeTime: alarmItem.serverTime
@@ -533,7 +535,7 @@ Item {
 
             function loadAttributes() {
                 if (!menuModel || menuIndex == -1) return;
-                menuModel.loadExtendedAttributes(menuIndex, {'x-canonical-time': 'int64'});
+                menuModel.loadExtendedAttributes(menuIndex, {'x-ayatana-time': 'int64'});
             }
         }
     }
@@ -549,7 +551,7 @@ Item {
             property int menuIndex: -1
             property var extendedData: menuData && menuData.ext || undefined
 
-            readonly property date serverTime: new Date(getExtendedProperty(extendedData, "xCanonicalTime", 0) * 1000)
+            readonly property date serverTime: new Date(getExtendedProperty(extendedData, "xAyatanaTime", 0) * 1000)
 
             LiveTimer {
                 frequency: LiveTimer.Relative
@@ -560,7 +562,7 @@ Item {
             text: menuData && menuData.label || ""
             iconSource: menuData && menuData.icon || "image://theme/calendar"
             time: i18n.relativeDateTime(serverTime)
-            eventColor: getExtendedProperty(extendedData, "xCanonicalColor", Qt.rgba(0.0, 0.0, 0.0, 0.0))
+            eventColor: getExtendedProperty(extendedData, "xAyatanaColor", Qt.rgba(0.0, 0.0, 0.0, 0.0))
             enabled: menuData && menuData.sensitive || false
             highlightWhenPressed: false
 
@@ -576,8 +578,8 @@ Item {
 
             function loadAttributes() {
                 if (!menuModel || menuIndex == -1) return;
-                menuModel.loadExtendedAttributes(menuIndex, {'x-canonical-color': 'string',
-                                                             'x-canonical-time': 'int64'});
+                menuModel.loadExtendedAttributes(menuIndex, {'x-ayatana-color': 'string',
+                                                             'x-ayatana-time': 'int64'});
             }
         }
     }
@@ -657,7 +659,7 @@ Item {
             property var menuModel: menuFactory.menuModel
             property int menuIndex: -1
             property var extendedData: menuData && menuData.ext || undefined
-            readonly property string tz: getExtendedProperty(extendedData, "xCanonicalTimezone", "UTC")
+            readonly property string tz: getExtendedProperty(extendedData, "xAyatanaTimezone", "UTC")
             property var updateTimer: Timer {
                 repeat: true
                 running: tzMenuItem.visible // only run when we're open
@@ -691,7 +693,7 @@ Item {
 
             function loadAttributes() {
                 if (!menuModel || menuIndex == -1) return;
-                menuModel.loadExtendedAttributes(menuIndex, {'x-canonical-timezone': 'string'});
+                menuModel.loadExtendedAttributes(menuIndex, {'x-ayatana-timezone': 'string'});
             }
         }
     }
@@ -738,14 +740,14 @@ Item {
             property var strengthAction: AyatanaMenuAction {
                 model: menuModel
                 index: menuIndex
-                name: getExtendedProperty(extendedData, "xCanonicalWifiApStrengthAction", "")
+                name: getExtendedProperty(extendedData, "xAyatanaWifiApStrengthAction", "")
             }
 
             text: menuData && menuData.label || ""
             enabled: menuData && menuData.sensitive || false
             active: serverChecked
-            secure: getExtendedProperty(extendedData, "xCanonicalWifiApIsSecure", false)
-            adHoc: getExtendedProperty(extendedData, "xCanonicalWifiApIsAdhoc", false)
+            secure: getExtendedProperty(extendedData, "xAyatanaWifiApIsSecure", false)
+            adHoc: getExtendedProperty(extendedData, "xAyatanaWifiApIsAdhoc", false)
             signalStrength: {
                 if (strengthAction.valid) {
                     var state = strengthAction.state; // handle both int and uchar
@@ -768,9 +770,9 @@ Item {
 
             function loadAttributes() {
                 if (!menuModel || menuIndex == -1) return;
-                menuModel.loadExtendedAttributes(menuIndex, {'x-canonical-wifi-ap-is-adhoc': 'bool',
-                                                             'x-canonical-wifi-ap-is-secure': 'bool',
-                                                             'x-canonical-wifi-ap-strength-action': 'string'});
+                menuModel.loadExtendedAttributes(menuIndex, {'x-ayatana-wifi-ap-is-adhoc': 'bool',
+                                                             'x-ayatana-wifi-ap-is-secure': 'bool',
+                                                             'x-ayatana-wifi-ap-strength-action': 'string'});
             }
 
             ServerPropertySynchroniser {
@@ -950,17 +952,17 @@ Item {
             property var playAction: AyatanaMenuAction {
                 model: menuModel
                 index: menuIndex
-                name: getExtendedProperty(extendedData, "xCanonicalPlayAction", "")
+                name: getExtendedProperty(extendedData, "xAyatanaPlayAction", "")
             }
             property var nextAction: AyatanaMenuAction {
                 model: menuModel
                 index: menuIndex
-                name: getExtendedProperty(extendedData, "xCanonicalNextAction", "")
+                name: getExtendedProperty(extendedData, "xAyatanaNextAction", "")
             }
             property var previousAction: AyatanaMenuAction {
                 model: menuModel
                 index: menuIndex
-                name: getExtendedProperty(extendedData, "xCanonicalPreviousAction", "")
+                name: getExtendedProperty(extendedData, "xAyatanaPreviousAction", "")
             }
 
             playing: playAction.state === "Playing"
@@ -988,9 +990,9 @@ Item {
 
             function loadAttributes() {
                 if (!menuModel || menuIndex == -1) return;
-                menuModel.loadExtendedAttributes(modelIndex, {'x-canonical-play-action': 'string',
-                                                              'x-canonical-next-action': 'string',
-                                                              'x-canonical-previous-action': 'string'});
+                menuModel.loadExtendedAttributes(modelIndex, {'x-ayatana-play-action': 'string',
+                                                              'x-ayatana-next-action': 'string',
+                                                              'x-ayatana-previous-action': 'string'});
             }
         }
     }
@@ -1005,7 +1007,7 @@ Item {
             property var menuModel: menuFactory.menuModel
             property int menuIndex: -1
             property var extendedData: menuData && menuData.ext || undefined
-            property var uid: getExtendedProperty(extendedData, "xCanonicalUid", undefined)
+            property var uid: getExtendedProperty(extendedData, "xAyatanaUid", undefined)
 
             text: menuData && menuData.label || ""
             iconSource: menuData && menuData.icon || "image://theme/transfer-none"
@@ -1100,7 +1102,7 @@ Item {
 
             function loadAttributes() {
                 if (!menuModel || menuIndex == -1) return;
-                menuModel.loadExtendedAttributes(menuIndex, {'x-canonical-uid': 'string'});
+                menuModel.loadExtendedAttributes(menuIndex, {'x-ayatana-uid': 'string'});
             }
         }
     }
@@ -1120,7 +1122,7 @@ Item {
             highlightWhenPressed: false
             text: menuData && menuData.label || ""
             foregroundColor: theme.palette.normal.backgroundText
-            buttonText: getExtendedProperty(extendedData, "xCanonicalExtraLabel", "")
+            buttonText: getExtendedProperty(extendedData, "xAyatanaExtraLabel", "")
 
             onMenuModelChanged: {
                 loadAttributes();
@@ -1130,7 +1132,7 @@ Item {
             }
             function loadAttributes() {
                 if (!menuModel || menuIndex == -1) return;
-                menuModel.loadExtendedAttributes(menuIndex, {'x-canonical-extra-label': 'string'});
+                menuModel.loadExtendedAttributes(menuIndex, {'x-ayatana-extra-label': 'string'});
             }
 
             onButtonClicked: menuModel.activate(menuIndex);

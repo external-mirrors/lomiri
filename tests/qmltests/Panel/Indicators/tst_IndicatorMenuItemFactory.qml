@@ -382,7 +382,7 @@ Item {
             menuData.icon = data.icon;
             menuData.isToggled = data.checked;
             menuData.ext = {
-                'xCanonicalSubtitleAction': data.subtitleAction,
+                'xAyatanaSubtitleAction': data.subtitleAction,
             };
 
             loadData(menuData);
@@ -410,7 +410,7 @@ Item {
             menuData.sensitive = data.enabled;
             menuData.icon = data.icon;
             menuData.ext = {
-                'xCanonicalTime': data.time.getTime() / 1000 // expected in seconds
+                'xAyatanaTime': data.time.getTime() / 1000 // expected in seconds
             };
 
             loadData(menuData);
@@ -437,8 +437,8 @@ Item {
             menuData.sensitive = data.enabled;
             menuData.icon = data.icon;
             menuData.ext = {
-                'xCanonicalColor': data.color,
-                'xCanonicalTime': data.time.getTime() / 1000 // expected in seconds
+                'xAyatanaColor': data.color,
+                'xAyatanaTime': data.time.getTime() / 1000 // expected in seconds
             };
 
             loadData(menuData);
@@ -518,7 +518,7 @@ Item {
             menuData.isToggled = data.active;
             menuData.icon = data.icon;
             menuData.ext = {
-                'xCanonicalUid': data.tag
+                'xAyatanaUid': data.tag
             };
 
             loadData(menuData);
@@ -545,7 +545,7 @@ Item {
             menuData.sensitive = data.enabled;
             menuData.icon = data.icon;
             menuData.ext = {
-                'xCanonicalExtraLabel': data.buttonText
+                'xAyatanaExtraLabel': data.buttonText
             };
 
             loadData(menuData);
@@ -590,9 +590,9 @@ Item {
             menuData.sensitive = data.enabled;
             menuData.isToggled = data.active;
             menuData.ext = {
-                'xCanonicalWifiApStrengthAction': "action::strength",
-                'xCanonicalWifiApIsSecure': data.secure,
-                'xCanonicalWifiApIsAdhoc': data.adHoc,
+                'xAyatanaWifiApStrengthAction': "action::strength",
+                'xAyatanaWifiApIsSecure': data.secure,
+                'xAyatanaWifiApIsAdhoc': data.adHoc,
             };
 
             loadData(menuData);
@@ -762,9 +762,9 @@ Item {
             menuData.type = "com.canonical.lomiri.playback-item";
             menuData.sensitive = data.enabled;
             menuData.ext = {
-                'xCanonicalPlayAction': data.playAction,
-                'xCanonicalNextAction': data.nextAction,
-                'xCanonicalPreviousAction': data.previousAction
+                'xAyatanaPlayAction': data.playAction,
+                'xAyatanaNextAction': data.nextAction,
+                'xAyatanaPreviousAction': data.previousAction
             };
 
             loadData(menuData);

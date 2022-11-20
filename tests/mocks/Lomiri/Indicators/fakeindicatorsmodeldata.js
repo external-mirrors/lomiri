@@ -47,10 +47,10 @@ var fakeMenuData = {
                         "type": "com.canonical.indicator.messages.messageitem",
                         "ext": {
                                 "icon": "image://theme/preferences-system-updates-symbolic",
-                                "xCanonicalAppIcon": "image://theme/system-settings",
-                                "xCanonicalMessageActions": null,
-                                "xCanonicalText": "Tap to open the system updater.",
-                                "xCanonicalTime": ((new Date).getTime() - 350 * 1000) * 1000,
+                                "xAyatanaAppIcon": "image://theme/system-settings",
+                                "xAyatanaMessageActions": null,
+                                "xAyatanaText": "Tap to open the system updater.",
+                                "xAyatanaTime": ((new Date).getTime() - 350 * 1000) * 1000,
                         },
                         "action": "indicator.lomiri-system-settings",
                         "actionState": {},
@@ -68,10 +68,10 @@ var fakeMenuData = {
                         "type": "com.canonical.indicator.messages.messageitem",
                         "ext": {
                             "icon": Qt.resolvedUrl("../../../../../tests/graphics/avatars/funky@12.png"),
-                            "xCanonicalAppIcon": Qt.resolvedUrl("../../../../../tests/graphics/applicationIcons/messages-app@18.png"),
-                            "xCanonicalMessageActions": [ { "parameter-type": "s" } ],
-                            "xCanonicalText": "This is a message sent to an awesome Lomiri phone.",
-                            "xCanonicalTime": ((new Date).getTime() - 35 * 1000) * 1000
+                            "xAyatanaAppIcon": Qt.resolvedUrl("../../../../../tests/graphics/applicationIcons/messages-app@18.png"),
+                            "xAyatanaMessageActions": [ { "parameter-type": "s" } ],
+                            "xAyatanaText": "This is a message sent to an awesome Lomiri phone.",
+                            "xAyatanaTime": ((new Date).getTime() - 35 * 1000) * 1000
                         },
                         "isCheck": false,
                         "isRadio": false,
@@ -89,9 +89,9 @@ var fakeMenuData = {
                         "icon": "image://theme/missed-call",
                         "type": "com.canonical.indicator.messages.messageitem",
                         "ext": {
-                                "xCanonicalMessageActions": [ { "parameter-type": "_s" } ],
-                                "xCanonicalText": "1 Missed call.",
-                                "xCanonicalTime": ((new Date).getTime() - 350 * 1000) * 1000,
+                                "xAyatanaMessageActions": [ { "parameter-type": "_s" } ],
+                                "xAyatanaText": "1 Missed call.",
+                                "xAyatanaTime": ((new Date).getTime() - 350 * 1000) * 1000,
                         },
                         "action": "indicator.telephony-service-missed-call.call.CALL_ID",
                         "actionState": {},
@@ -549,7 +549,7 @@ var fakeMenuData = {
                             "maxValue": 1,
                             "minIcon": "image://theme/audio-volume-low-zero-panel",
                             "minValue": 0,
-                            "xCanonicalSyncAction": "indicator.volume-sync"
+                            "xAyatanaSyncAction": "indicator.volume-sync"
                         },
                         "icon": "",
                         "isCheck": false,
@@ -718,7 +718,7 @@ var fakeMenuData = {
                         "action": "indicator.phone.open-appointment",
                         "actionState": {},
                         "ext": {
-                            "xCanonicalTime": (new Date).getTime() / 1000 + 55 * 60
+                            "xAyatanaTime": (new Date).getTime() / 1000 + 55 * 60
                         },
                         "icon": "image://theme/alarm-clock",
                         "isCheck": false,
@@ -735,8 +735,8 @@ var fakeMenuData = {
                         "action": "indicator.phone.open-appointment",
                         "actionState": {},
                         "ext": {
-                            "xCanonicalColor": Qt.rgba(32,74,135,1),
-                            "xCanonicalTime": (new Date).getTime() / 1000 + 35000
+                            "xAyatanaColor": Qt.rgba(32,74,135,1),
+                            "xAyatanaTime": (new Date).getTime() / 1000 + 35000
                         },
                         "icon": "",
                         "isCheck": false,
@@ -753,8 +753,8 @@ var fakeMenuData = {
                         "action": "indicator.phone.open-appointment",
                         "actionState": {},
                         "ext": {
-                            "xCanonicalColor": Qt.rgba(32,74,135,1),
-                            "xCanonicalTime": (new Date).getTime() / 1000 + 50474
+                            "xAyatanaColor": Qt.rgba(32,74,135,1),
+                            "xAyatanaTime": (new Date).getTime() / 1000 + 50474
                         },
                         "icon": "",
                         "isCheck": false,
@@ -771,8 +771,8 @@ var fakeMenuData = {
                         "action": "indicator.phone.open-appointment",
                         "actionState": {},
                         "ext": {
-                            "xCanonicalColor": Qt.rgba(32,74,135,1),
-                            "xCanonicalTime": (new Date).getTime() / 1000 + 385000
+                            "xAyatanaColor": Qt.rgba(32,74,135,1),
+                            "xAyatanaTime": (new Date).getTime() / 1000 + 385000
                         },
                         "icon": "",
                         "isCheck": false,
@@ -789,8 +789,8 @@ var fakeMenuData = {
                         "action": "indicator.phone.open-appointment",
                         "actionState": {},
                         "ext": {
-                            "xCanonicalColor": Qt.rgba(32,74,135,1),
-                            "xCanonicalTime": (new Date).getTime() / 1000 + 3500050
+                            "xAyatanaColor": Qt.rgba(32,74,135,1),
+                            "xAyatanaTime": (new Date).getTime() / 1000 + 3500050
                         },
                         "icon": "",
                         "isCheck": false,
@@ -861,7 +861,7 @@ var fakeMenuData = {
                         "action": "indicator.pause-all",
                         "actionState": {},
                         "ext": {
-                            "xCanonicalExtraLabel": "Pause all"
+                            "xAyatanaExtraLabel": "Pause all"
                         },
                         "icon": "",
                         "isCheck": false,
@@ -878,7 +878,7 @@ var fakeMenuData = {
                         "action": "indicator.activate-transfer",
                         "actionState": {},
                         "ext": {
-                            "xCanonicalUid": 1003
+                            "xAyatanaUid": 1003
                         },
                         "icon": "image://theme/webbrowser-app-symbolic",
                         "isCheck": false,
@@ -910,7 +910,7 @@ var fakeMenuData = {
                         "action": "indicator.clear-all",
                         "actionState": {},
                         "ext": {
-                            "xCanonicalExtraLabel": "Clear all"
+                            "xAyatanaExtraLabel": "Clear all"
                         },
                         "icon": "",
                         "isCheck": false,
@@ -927,7 +927,7 @@ var fakeMenuData = {
                         "action": "indicator.activate-transfer",
                         "actionState": {},
                         "ext": {
-                            "xCanonicalUid": 1002
+                            "xAyatanaUid": 1002
                         },
                         "icon": "image://theme/webbrowser-app-symbolic",
                         "isCheck": false,
@@ -944,7 +944,7 @@ var fakeMenuData = {
                         "action": "indicator.activate-transfer",
                         "actionState": {},
                         "ext": {
-                            "xCanonicalUid": 1001
+                            "xAyatanaUid": 1001
                         },
                         "icon": "image://theme/webbrowser-app-symbolic",
                         "isCheck": false,
@@ -1068,9 +1068,9 @@ var fakeMenuData = {
                         "action": "indicator.accesspoint.1",
                         "actionState": true,
                         "ext": {
-                            "xCanonicalWifiApIsAdhoc": 0,
-                            "xCanonicalWifiApIsSecure": 1,
-                            "xCanonicalWifiApStrengthAction": "indicator.accesspoint.1::strength"
+                            "xAyatanaWifiApIsAdhoc": 0,
+                            "xAyatanaWifiApIsSecure": 1,
+                            "xAyatanaWifiApStrengthAction": "indicator.accesspoint.1::strength"
                         },
                         "icon": "",
                         "isCheck": true,
@@ -1087,9 +1087,9 @@ var fakeMenuData = {
                         "action": "indicator.accesspoint.2",
                         "actionState": false,
                         "ext": {
-                            "xCanonicalWifiApIsAdhoc": 0,
-                            "xCanonicalWifiApIsSecure": 1,
-                            "xCanonicalWifiApStrengthAction": "indicator.accesspoint.2::strength"
+                            "xAyatanaWifiApIsAdhoc": 0,
+                            "xAyatanaWifiApIsSecure": 1,
+                            "xAyatanaWifiApStrengthAction": "indicator.accesspoint.2::strength"
                         },
                         "icon": "",
                         "isCheck": true,
@@ -1106,9 +1106,9 @@ var fakeMenuData = {
                         "action": "indicator.accesspoint.3",
                         "actionState": false,
                         "ext": {
-                            "xCanonicalWifiApIsAdhoc": 0,
-                            "xCanonicalWifiApIsSecure": 0,
-                            "xCanonicalWifiApStrengthAction": "indicator.accesspoint.3::strength"
+                            "xAyatanaWifiApIsAdhoc": 0,
+                            "xAyatanaWifiApIsSecure": 0,
+                            "xAyatanaWifiApStrengthAction": "indicator.accesspoint.3::strength"
                         },
                         "icon": "",
                         "isCheck": true,
@@ -1125,9 +1125,9 @@ var fakeMenuData = {
                         "action": "indicator.accesspoint.4",
                         "actionState": false,
                         "ext": {
-                            "xCanonicalWifiApIsAdhoc": 0,
-                            "xCanonicalWifiApIsSecure": 0,
-                            "xCanonicalWifiApStrengthAction": "indicator.accesspoint.4::strength"
+                            "xAyatanaWifiApIsAdhoc": 0,
+                            "xAyatanaWifiApIsSecure": 0,
+                            "xAyatanaWifiApStrengthAction": "indicator.accesspoint.4::strength"
                         },
                         "icon": "",
                         "isCheck": true,

@@ -167,7 +167,7 @@ Loader {
             property var pinMinMaxAction : AyatanaMenuAction {
                 model: menuModel
                 index: menuIndex
-                name: getExtendedProperty(extendedData, "xCanonicalPinMinMax", "")
+                name: getExtendedProperty(extendedData, "xAyatanaPinMinMax", "")
 
                 onStateChanged: {
                     var min = pinMinMaxAction.state[0];
@@ -184,7 +184,7 @@ Loader {
             property var popupAction: AyatanaMenuAction {
                 model: menuModel
                 index: menuIndex
-                name: getExtendedProperty(extendedData, "xCanonicalPinPopup", "")
+                name: getExtendedProperty(extendedData, "xAyatanaPinPopup", "")
                 onStateChanged: {
                     if (state !== "")
                         showInfoPopup("", state);
@@ -206,7 +206,7 @@ Loader {
             property var errorAction: AyatanaMenuAction {
                 model: menuModel
                 index: menuIndex
-                name: getExtendedProperty(extendedData, "xCanonicalPinError", "")
+                name: getExtendedProperty(extendedData, "xAyatanaPinError", "")
                 onStateChanged: {
                     errorText = state;
                     if (state !== "") {
@@ -218,9 +218,9 @@ Loader {
 
             function loadAttributes() {
                 if (!menuModel || menuIndex == -1) return;
-                menuModel.loadExtendedAttributes(menuIndex, {'x-canonical-pin-min-max': 'string',
-                                                             'x-canonical-pin-popup': 'string',
-                                                             'x-canonical-pin-error': 'string'});
+                menuModel.loadExtendedAttributes(menuIndex, {'x-ayatana-pin-min-max': 'string',
+                                                             'x-ayatana-pin-popup': 'string',
+                                                             'x-ayatana-pin-error': 'string'});
             }
             Component.onCompleted: {
                 loadAttributes();
