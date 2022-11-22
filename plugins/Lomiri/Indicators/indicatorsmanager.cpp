@@ -57,7 +57,7 @@ void IndicatorsManager::load()
 
     m_fsWatcher.reset(new QFileSystemWatcher(this));
 
-    for (const auto xdgPath : shellDataDirs()) {
+    for (const auto &xdgPath : shellDataDirs()) {
         // For legacy reasons we keep the old unity indicator path
         const auto unityPath = QDir::cleanPath(xdgPath + "/unity/indicators");
         if (QFile::exists(unityPath)) {

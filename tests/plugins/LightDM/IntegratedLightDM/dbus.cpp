@@ -65,7 +65,7 @@ private Q_SLOTS:
         QVERIFY(greeter);
         QVERIFY(greeter->authenticationUser() == "");
         view->show();
-        QTest::qWaitForWindowExposed(view);
+        QVERIFY(QTest::qWaitForWindowExposed(view));
 
         dbusMain = new QDBusInterface("com.lomiri.LomiriGreeter",
                                       "/com/lomiri/LomiriGreeter",

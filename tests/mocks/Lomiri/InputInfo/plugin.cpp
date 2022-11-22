@@ -24,9 +24,8 @@
 #include "qdeclarativeinputdevicemodel_p.h"
 #include "mockcontroller.h"
 
-static QObject *backendProvider(QQmlEngine *engine, QJSEngine *scriptEngine)
+static QObject *backendProvider(QQmlEngine* /* engine */, QJSEngine* /* scriptEngine */)
 {
-    Q_UNUSED(scriptEngine)
     return MockController::instance();
 }
 
