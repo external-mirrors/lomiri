@@ -409,6 +409,7 @@ StyledItem {
         anchors.fill: parent
         sourceComponent: {
             if (shell.mode != "shell") {
+                // TODO: investigate the necessity for a secondary greeter
                 //if (screenWindow.primary) return integratedGreeter;
                 //return secondaryGreeter;
                 return integratedGreeter;
