@@ -180,20 +180,10 @@ Item {
     }
 
     Component.onDestruction: {
-        console.log("LOOK AT ME")
-
         var from_workspaces = root.screen.workspaces
         var from_workspaces_size = from_workspaces.count
-        //var to_workspaces = Screens.get(Screens.count - 1).workspaces
-        //var to_workspaces_size = to_workspaces.count
-
-        //console.log(from_workspaces + ", " + from_workspaces_size + ", " +
-        //            to_workspaces + ", " + to_workspaces_size)
         for (var i = 0; i < from_workspaces_size; i++) {
             var from = from_workspaces.get(i)
-            //var to = to_workspaces.get(i % to_workspaces_size)
-            //console.log(from + ", " + to)
-            //WorkspaceManager.moveWorkspaceContentToWorkspace(from, to)
             WorkspaceManager.destroyWorkspace(from)
         }
     }
@@ -292,9 +282,8 @@ Item {
 
         // Since we dont have proper multiscreen support yet
         // hardcode screen count to only show osk on this screen
-        // when it's the only one connected.
-        // FIXME once multiscreen has landed
-        oskEnabled: (!hasKeyboard && Screens.count === 1) ||
+        // when it's a phone or tablet screen formfactor.
+        oskEnabled: (!hasKeyboard && root.screen.formFactor == 1 || root.screen.formFactor == 2) ||
                     lomiriSettings.alwaysShowOsk || forceOSKEnabled
 
         usageScenario: {

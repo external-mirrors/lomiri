@@ -25,22 +25,13 @@ ScreenWindow {
 
     color: "black"
     title: "Lomiri Shell"
-    property bool primary: false
-
-    Connections {
-        target: Screens
-        onScreenRemoved: {
-            if (screenWindow.screen != screen)
-                return
-            //screenWindow.screen = null
-            screenWindow.visible = false
-            loader.active = false
-            screenWindow.destroy()
-        }
-    }
 
     DeviceConfiguration {
         id: deviceConfiguration
+    }
+
+    function isPrimary() {
+        return (screenWindow.screen.formFactor == 1 || screenWindow.screen.formFactor == 2)
     }
 
     Loader {
@@ -48,15 +39,12 @@ ScreenWindow {
         width: screenWindow.width
         height: screenWindow.height
 
-        function getSourceComponent() {
-            var count = Screens.count
-            if (count > 1 && screenWindow.primary && deviceConfiguration.category !== "desktop") {
+        sourceComponent: {
+            if (Screens.count > 1 && isPrimary() && deviceConfiguration.category !== "desktop") {
                 return disabledScreenComponent;
             }
             return shellComponent;
         }
-
-        sourceComponent: getSourceComponent()
     }
 
     Component {
@@ -65,6 +53,7 @@ ScreenWindow {
             implicitWidth: screenWindow.width
             implicitHeight: screenWindow.height
             screen: screenWindow.screen
+            visible: true
 
             deviceConfiguration {
                 overrideName: Screens.count > 1 ? "desktop" : false
@@ -75,6 +64,7 @@ ScreenWindow {
     Component {
         id: disabledScreenComponent
         DisabledScreenNotice {
+            screen: screenWindow.screen
             oskEnabled: Screens.count > 1
         }
     }
