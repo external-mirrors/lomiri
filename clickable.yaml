@@ -18,7 +18,7 @@ libraries:
     - g++:native
     - gdb
     - graphviz
-    - gsettings-ubuntu-schemas
+    - lomiri-schemas
     - libandroid-properties-dev
     - liblomiri-connectivity-qt1-dev
     - libevdev-dev
@@ -45,7 +45,7 @@ libraries:
     - liblomirigestures5-dev
     - liblomirigestures5-private-dev
     - libudev-dev
-    - libunity-api-dev
+    - liblomiri-api-dev
     - libusermetricsoutput1-dev
     - libx11-dev
     - libxcb1-dev
@@ -73,8 +73,8 @@ libraries:
     - qtdeclarative5-dev-tools
     - qtdeclarative5-private-dev
     - qtdeclarative5-ubuntu-content1
-    - ttf-ubuntu-font-family
-    - ubports-wallpapers
+    - fonts-ubuntu
+    - lomiri-wallpapers
     - xvfb
     - qtmir
     - qml-module-qtmir
@@ -94,7 +94,7 @@ dependencies_target:
 - g++:native
 - gdb
 - graphviz
-- gsettings-ubuntu-schemas
+- lomiri-schemas
 - libandroid-properties-dev
 - liblomiri-connectivity-qt1-dev
 - libevdev-dev
@@ -121,7 +121,7 @@ dependencies_target:
 - liblomirigestures5-dev
 - liblomirigestures5-private-dev
 - libudev-dev
-- libunity-api-dev
+- liblomiri-api-dev
 - libusermetricsoutput1-dev
 - libx11-dev
 - libxcb1-dev
@@ -149,8 +149,8 @@ dependencies_target:
 - qtdeclarative5-dev-tools
 - qtdeclarative5-private-dev
 - qtdeclarative5-ubuntu-content1
-- ttf-ubuntu-font-family
-- ubports-wallpapers
+- fonts-ubuntu
+- lomiri-wallpapers
 - xvfb
 - qtmir
 - qml-module-qtmir
