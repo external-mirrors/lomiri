@@ -42,6 +42,8 @@ void ScreenWindow::setScreenWrapper(ConcreteScreen *screen)
         Q_EMIT screenWrapperChanged(screen);
     }
 
-    if (screen && screen->qscreen())
+    if (screen)
         QQuickWindow::setScreen(screen->qscreen());
+    else
+        QQuickWindow::setScreen(nullptr);
 }
