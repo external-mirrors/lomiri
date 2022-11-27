@@ -45,6 +45,12 @@ FocusScope {
     readonly property int widthIncrement: surface ? surface.widthIncrement : 0
     readonly property int heightIncrement: surface ? surface.heightIncrement : 0
 
+    property bool ready : false
+    Connections {
+        target: surface
+        onReady: root.ready = true
+    }
+
     onSurfaceChanged: {
         // The order in which the instructions are executed here matters, to that the correct state
         // transitions in stateGroup take place.
@@ -122,7 +128,7 @@ FocusScope {
     Loader {
         id: splashLoader
         visible: active
-        active: false
+        active: !root.ready
         anchors.fill: parent
         z: 1
         sourceComponent: Component {
@@ -197,14 +203,13 @@ FocusScope {
         id: stateGroup
         objectName: "applicationWindowStateGroup"
         states: [
-            State{
+            State {
                 name: "surface"
-                when: (root.surface && d.surfaceInitialized) || d.hadSurface
+                when: ((root.surface && d.surfaceInitialized) || d.hadSurface) && root.ready
             },
             State {
                 name: "splash"
-                when: !root.surface && !d.surfaceInitialized && !d.hadSurface
-                PropertyChanges { target: splashLoader; active: true }
+                when: (!root.surface && !d.surfaceInitialized && !d.hadSurface)
             }
         ]
     }
