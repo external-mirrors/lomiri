@@ -17,6 +17,7 @@
 
 import QtQuick 2.4
 import QtGraphicalEffects 1.0
+import Lomiri.Components 1.3
 
 Item {
     id: root
@@ -31,6 +32,7 @@ Item {
         hideSource: root.occluding
         sourceRect: root.blurRect
         live: false
+        enabled: sourceItem != null
     }
 
     FastBlur {
@@ -39,12 +41,21 @@ Item {
         source: shaderEffectSource
         radius: units.gu(3)
         cached: false
+        visible: sourceItem != null
+        enabled: visible
     }
 
     Timer {
         interval: 48
-        repeat: root.visible
+        repeat: root.visible && (sourceItem != null)
         running: repeat
         onTriggered: shaderEffectSource.scheduleUpdate()
     }
- }
+
+    // When blur is disabled
+    Rectangle {
+        anchors.fill: parent
+        color: theme.palette.highlighted.background
+        visible: sourceItem == null
+    }
+}

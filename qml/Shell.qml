@@ -551,7 +551,7 @@ StyledItem {
             id: panel
             objectName: "panel"
             anchors.fill: parent //because this draws indicator menus
-            blurSource: greeter.shown ? greeter : stages
+            blurSource: settings.enableBlur ? (greeter.shown ? greeter : stages) : null
 
             mode: shell.usageScenario == "desktop" ? "windowed" : "staged"
             minimizedPanelHeight: units.gu(3)
@@ -617,7 +617,7 @@ StyledItem {
             superTabPressed: physicalKeysMapper.superTabPressed
             panelWidth: units.gu(settings.launcherWidth)
             lockedVisible: (lockedByUser || shell.atDesktop) && lockAllowed
-            blurSource: greeter.shown ? greeter : stages
+            blurSource: settings.enableBlur ? (greeter.shown ? greeter : stages) : null
             topPanelHeight: panel.panelHeight
             drawerEnabled: !greeter.active && tutorial.launcherLongSwipeEnabled
             privateMode: greeter.active
