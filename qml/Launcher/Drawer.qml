@@ -33,7 +33,6 @@ FocusScope {
     readonly property Item searchTextField: searchField
     readonly property real delegateWidth: units.gu(10)
     property url background
-    property alias backgroundSourceSize: background.sourceSize
     visible: x > -width
     property var fullyOpen: x === 0
     property var fullyClosed: x === -width
@@ -155,29 +154,7 @@ FocusScope {
 
     Rectangle {
         anchors.fill: parent
-        color: "#111111"
-        opacity: 0.99
-
-        Wallpaper {
-            id: background
-            objectName: "drawerBackground"
-            anchors.fill: parent
-            source: root.background
-        }
-
-        FastBlur {
-            anchors.fill: background
-            source: background
-            radius: 64
-            cached: true
-        }
-
-        // Images with fastblur can't use opacity, so we'll put this on top
-        Rectangle {
-            anchors.fill: background
-            color: parent.color
-            opacity: 0.67
-        }
+        color: "#BF000000"
 
         MouseArea {
             id: drawerHandle

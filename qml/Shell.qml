@@ -551,6 +551,7 @@ StyledItem {
             id: panel
             objectName: "panel"
             anchors.fill: parent //because this draws indicator menus
+            blurSource: settings.enableBlur ? (greeter.shown ? greeter : stages) : null
 
             mode: shell.usageScenario == "desktop" ? "windowed" : "staged"
             minimizedPanelHeight: units.gu(3)
@@ -616,11 +617,11 @@ StyledItem {
             superTabPressed: physicalKeysMapper.superTabPressed
             panelWidth: units.gu(settings.launcherWidth)
             lockedVisible: (lockedByUser || shell.atDesktop) && lockAllowed
+            blurSource: settings.enableBlur ? (greeter.shown ? greeter : stages) : null
             topPanelHeight: panel.panelHeight
             drawerEnabled: !greeter.active && tutorial.launcherLongSwipeEnabled
             privateMode: greeter.active
             background: wallpaperResolver.background
-            backgroundSourceSize: shell.largestScreenDimension
 
             // It can be assumed that the Launcher and Panel would overlap if
             // the Panel is open and taking up the full width of the shell

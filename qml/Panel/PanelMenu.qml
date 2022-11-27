@@ -41,6 +41,9 @@ Showable {
     property alias rowItemDelegate: bar.rowItemDelegate
     property alias pageDelegate: content.pageDelegate
 
+    property var blurSource : null
+    property rect blurRect : Qt.rect(0, 0, 0, 0)
+
     readonly property real unitProgress: Math.max(0, (height - minimizedPanelHeight) / (openedHeight - minimizedPanelHeight))
     readonly property bool fullyOpened: unitProgress >= 1
     readonly property bool partiallyOpened: unitProgress > 0 && unitProgress < 1.0
@@ -89,6 +92,17 @@ Showable {
 
     onUnitProgressChanged: d.updateState()
 
+    BackgroundBlur {
+        x: 0
+        y: 0
+        width: root.blurRect.width
+        height: root.blurRect.height
+        visible: root.height > root.minimizedPanelHeight
+        sourceItem: root.blurSource
+        blurRect: root.blurRect
+        occluding: false
+    }
+
     Item {
         anchors {
             left: parent.left
@@ -97,6 +111,11 @@ Showable {
             bottom: parent.bottom
         }
         clip: root.partiallyOpened
+
+        Rectangle {
+            color: "#DA000000"
+            anchors.fill: parent
+        }
 
         // eater
         MouseArea {
@@ -135,21 +154,6 @@ Showable {
         height: units.gu(2)
         active: d.activeDragHandle ? true : false
         visible: !root.fullyClosed
-
-        //small shadow gradient at bottom of menu
-        Rectangle {
-            anchors {
-                left: parent.left
-                right: parent.right
-                bottom: parent.top
-            }
-            height: units.gu(0.5)
-            gradient: Gradient {
-                GradientStop { position: 0.0; color: "transparent" }
-                GradientStop { position: 1.0; color: theme.palette.normal.background }
-            }
-            opacity: 0.3
-        }
     }
 
     Rectangle {
