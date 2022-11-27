@@ -431,9 +431,9 @@ Item {
                 readonly property bool overflow: parent.width - (x - __indicators.rowContentX) > __indicators.overFlowWidth
                 readonly property bool hidden: !expanded && (overflow || !indicatorVisible || hideSessionIndicator || hideKeyboardIndicator)
                 // HACK for indicator-session
-                readonly property bool hideSessionIndicator: identifier == "indicator-session" && Math.min(Screen.width, Screen.height) <= units.gu(60)
+                readonly property bool hideSessionIndicator: identifier == "ayatana-indicator-session" && Math.min(Screen.width, Screen.height) <= units.gu(60)
                 // HACK for indicator-keyboard
-                readonly property bool hideKeyboardIndicator: identifier == "indicator-keyboard" && !hasKeyboard
+                readonly property bool hideKeyboardIndicator: identifier == "ayatana-indicator-keyboard" && !hasKeyboard
 
                 height: parent.height
                 expanded: indicators.expanded

@@ -119,7 +119,7 @@ var fakeMenuData = {
         }
     ],
 
-    "fake-indicator-session": [
+    "fake-ayatana-indicator-session": [
         {
             "rowData": {
                 "action": "indicator._header",
@@ -241,7 +241,7 @@ var fakeMenuData = {
                         "isToggled": false,
                         "label": "Guest Session",
                         "sensitive": true,
-                        "type": "indicator.guest-menu-item"
+                        "type": "org.ayatana.indicator.guest-menu-item"
                     }
                 },
                 {
@@ -256,7 +256,7 @@ var fakeMenuData = {
                         "isToggled": false,
                         "label": "Marco",
                         "sensitive": true,
-                        "type": "indicator.user-menu-item"
+                        "type": "org.ayatana.indicator.user-menu-item"
                     }
                 },
                 {
@@ -271,7 +271,7 @@ var fakeMenuData = {
                         "isToggled": false,
                         "label": "Lomiri",
                         "sensitive": true,
-                        "type": "indicator.user-menu-item"
+                        "type": "org.ayatana.indicator.user-menu-item"
                     }
                 },
                 {
@@ -1212,7 +1212,7 @@ var fakeMenuData = {
         }
     ],
 
-    "indicator-keyboard": [
+    "ayatana-indicator-keyboard": [
         {
             "rowData": {
                 "action": "indicator.indicator",
