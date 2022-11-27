@@ -154,21 +154,6 @@ Showable {
         height: units.gu(2)
         active: d.activeDragHandle ? true : false
         visible: !root.fullyClosed
-
-        //small shadow gradient at bottom of menu
-        Rectangle {
-            anchors {
-                left: parent.left
-                right: parent.right
-                bottom: parent.top
-            }
-            height: units.gu(0.5)
-            gradient: Gradient {
-                GradientStop { position: 0.0; color: "transparent" }
-                GradientStop { position: 1.0; color: theme.palette.normal.background }
-            }
-            opacity: 0.3
-        }
     }
 
     Rectangle {

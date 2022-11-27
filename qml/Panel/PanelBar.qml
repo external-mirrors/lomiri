@@ -169,17 +169,6 @@ Item {
         }
     }
 
-    Rectangle {
-        id: grayLine
-        height: units.dp(2)
-        width: parent.width
-        anchors.bottom: parent.bottom
-
-        color: "#888888"
-        opacity: expanded ? 1.0 : 0.0
-        Behavior on opacity { NumberAnimation { duration: LomiriAnimation.SnapDuration } }
-    }
-
     Item {
         id: rowContainer
         anchors.fill: parent

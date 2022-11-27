@@ -17,9 +17,8 @@
 import QtQuick 2.4
 import Lomiri.Components 1.3
 
-Rectangle {
+Item {
     id: handle
-    color: theme.palette.normal.foreground
     height: units.gu(2)
     property bool active: false
 
