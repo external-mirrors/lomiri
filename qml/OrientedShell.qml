@@ -15,7 +15,7 @@
  */
 
 import QtQuick 2.4
-import QtQuick.Window 2.2
+import QtQuick.Window 2.2 as QtQuickWindow
 import Lomiri.InputInfo 0.1
 import Lomiri.Session 0.1
 import WindowManager 1.0
@@ -77,7 +77,7 @@ Item {
         schema.id: "com.lomiri.keyboard.maliit"
     }
 
-    property int physicalOrientation: Screen.orientation
+    property int physicalOrientation: QtQuickWindow.Screen.orientation
     property bool orientationLocked: OrientationLock.enabled
     property var orientationLock: OrientationLock
 
@@ -212,7 +212,7 @@ Item {
 
     property int acceptedOrientationAngle: {
         if (orientation & supportedOrientations) {
-            return Screen.angleBetween(orientations.native_, orientation);
+            return QtQuickWindow.Screen.angleBetween(orientations.native_, orientation);
         } else if (shell.orientation & supportedOrientations) {
             // stay where we are
             return shell.orientationAngle;
@@ -222,16 +222,16 @@ Item {
             // rotate to some supported orientation as we can't stay where we currently are
             // TODO: Choose the closest to the current one
             if (supportedOrientations & Qt.PortraitOrientation) {
-                return Screen.angleBetween(orientations.native_, Qt.PortraitOrientation);
+                return QtQuickWindow.Screen.angleBetween(orientations.native_, Qt.PortraitOrientation);
             } else if (supportedOrientations & Qt.LandscapeOrientation) {
-                return Screen.angleBetween(orientations.native_, Qt.LandscapeOrientation);
+                return QtQuickWindow.Screen.angleBetween(orientations.native_, Qt.LandscapeOrientation);
             } else if (supportedOrientations & Qt.InvertedPortraitOrientation) {
-                return Screen.angleBetween(orientations.native_, Qt.InvertedPortraitOrientation);
+                return QtQuickWindow.Screen.angleBetween(orientations.native_, Qt.InvertedPortraitOrientation);
             } else if (supportedOrientations & Qt.InvertedLandscapeOrientation) {
-                return Screen.angleBetween(orientations.native_, Qt.InvertedLandscapeOrientation);
+                return QtQuickWindow.Screen.angleBetween(orientations.native_, Qt.InvertedLandscapeOrientation);
             } else {
                 // if all fails, fallback to primary orientation
-                return Screen.angleBetween(orientations.native_, orientations.primary);
+                return QtQuickWindow.Screen.angleBetween(orientations.native_, orientations.primary);
             }
         }
     }
@@ -283,7 +283,7 @@ Item {
         // Since we dont have proper multiscreen support yet
         // hardcode screen count to only show osk on this screen
         // when it's a phone or tablet screen formfactor.
-        oskEnabled: (!hasKeyboard && (root.screen.formFactor == WindowManager.Screen.Phone || root.screen.formFactor == WindowManager.Screen.Tablet)) ||
+        oskEnabled: (!hasKeyboard && (root.screen.formFactor == Screen.Phone || root.screen.formFactor == Screen.Tablet)) ||
                     lomiriSettings.alwaysShowOsk || forceOSKEnabled
 
         usageScenario: {
