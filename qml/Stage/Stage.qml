@@ -697,7 +697,7 @@ FocusScope {
 
         ScreensAndWorkspaces {
             id: screensAndWorkspaces
-            anchors { left: parent.left; top: parent.top; right: parent.right; leftMargin: root.leftMargin }
+            anchors { left: parent.left; top: parent.top; right: parent.right; leftMargin: root.launcherLeftMargin }
             height: Math.max(units.gu(30), parent.height * .3)
             background: root.background
             opacity: 0
