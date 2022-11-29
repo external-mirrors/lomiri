@@ -74,7 +74,7 @@ Item {
     GSettings {
         id: oskSettings
         objectName: "oskSettings"
-        schema.id: "com.canonical.keyboard.maliit"
+        schema.id: "com.lomiri.keyboard.maliit"
     }
 
     property int physicalOrientation: Screen.orientation
