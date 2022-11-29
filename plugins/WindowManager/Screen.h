@@ -31,12 +31,23 @@ class Screen: public QObject
 {
     Q_OBJECT
 
+public:
+    enum FormFactor {
+        Unknown = qtmir::FormFactorUnknown,
+        Phone = qtmir::FormFactorPhone,
+        Tablet = qtmir::FormFactorTablet,
+        Monitor = qtmir::FormFactorMonitor,
+        TV = qtmir::FormFactorTV,
+        Projector = qtmir::FormFactorProjector,
+    };
+    Q_ENUM(FormFactor)
+
     Q_PROPERTY(bool active READ isActive WRITE setActive NOTIFY activeChanged)
     Q_PROPERTY(bool used READ used NOTIFY usedChanged)
     Q_PROPERTY(QString name READ name NOTIFY nameChanged)
     Q_PROPERTY(qtmir::OutputTypes outputType READ outputType NOTIFY outputTypeChanged)
     Q_PROPERTY(float scale READ scale NOTIFY scaleChanged)
-    Q_PROPERTY(qtmir::FormFactor formFactor READ formFactor NOTIFY formFactorChanged)
+    Q_PROPERTY(Screen::FormFactor formFactor READ formFactor NOTIFY formFactorChanged)
     Q_PROPERTY(MirPowerMode powerMode READ powerMode NOTIFY powerModeChanged)
     Q_PROPERTY(Qt::ScreenOrientation orientation READ orientation NOTIFY orientationChanged)
     Q_PROPERTY(QPoint position READ position NOTIFY positionChanged)
@@ -46,12 +57,12 @@ class Screen: public QObject
     Q_PROPERTY(QString outputTypeName READ outputTypeName NOTIFY outputTypeChanged)
     Q_PROPERTY(WorkspaceModel* workspaces READ workspaces CONSTANT)
     Q_PROPERTY(Workspace* currentWorkspace READ currentWorkspace WRITE setCurrentWorkspace2 NOTIFY currentWorkspaceChanged)
-public:
+
     bool used() const;
     QString name() const;
     float scale() const;
     QSizeF physicalSize() const;
-    qtmir::FormFactor formFactor() const;
+    Screen::FormFactor formFactor() const;
     qtmir::OutputTypes outputType() const;
     MirPowerMode powerMode() const;
     Qt::ScreenOrientation orientation() const;
