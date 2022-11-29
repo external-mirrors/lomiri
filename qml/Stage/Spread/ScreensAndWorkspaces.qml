@@ -49,7 +49,7 @@ Item {
                 id: delegateItem
                 height: root.height - units.gu(6)
                 width: workspaces.width
-                visible: model.screen.formFactor != 1 // Hides a phone's internal display
+                visible: model.screen.formFactor != WindowManager.Screen.Phone // Hides a phone's internal display
 
                 Item {
                     id: header

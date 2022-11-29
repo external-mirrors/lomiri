@@ -180,11 +180,11 @@ Item {
     }
 
     Component.onDestruction: {
-        var from_workspaces = root.screen.workspaces
-        var from_workspaces_size = from_workspaces.count
+        const from_workspaces = root.screen.workspaces;
+        const from_workspaces_size = from_workspaces.count;
         for (var i = 0; i < from_workspaces_size; i++) {
-            var from = from_workspaces.get(i)
-            WorkspaceManager.destroyWorkspace(from)
+            const from = from_workspaces.get(i);
+            WorkspaceManager.destroyWorkspace(from);
         }
     }
 
@@ -283,7 +283,7 @@ Item {
         // Since we dont have proper multiscreen support yet
         // hardcode screen count to only show osk on this screen
         // when it's a phone or tablet screen formfactor.
-        oskEnabled: (!hasKeyboard && root.screen.formFactor == 1 || root.screen.formFactor == 2) ||
+        oskEnabled: (!hasKeyboard && (root.screen.formFactor == WindowManager.Screen.Phone || root.screen.formFactor == WindowManager.Screen.Tablet)) ||
                     lomiriSettings.alwaysShowOsk || forceOSKEnabled
 
         usageScenario: {

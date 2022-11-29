@@ -198,7 +198,6 @@ Showable {
         }
 
         function selectUser(index) {
-            console.log("SELECTUSER")
             if (index < 0 || index >= LightDMService.users.count)
                 return;
             currentIndex = index;

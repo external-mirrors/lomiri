@@ -31,7 +31,7 @@ ScreenWindow {
     }
 
     function isPrimary() {
-        return (screenWindow.screen.formFactor == 1 || screenWindow.screen.formFactor == 2)
+        return (screenWindow.screen.formFactor == WindowManager.Screen.Phone || screenWindow.screen.formFactor == WindowManager.Screen.Tablet)
     }
 
     Loader {
