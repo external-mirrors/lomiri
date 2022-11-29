@@ -51,6 +51,11 @@ FocusScope {
         onReady: root.ready = true
     }
 
+    Component.onCompleted: {
+        if (surface && surface.live)
+            root.ready = true
+    }
+
     onSurfaceChanged: {
         // The order in which the instructions are executed here matters, to that the correct state
         // transitions in stateGroup take place.
