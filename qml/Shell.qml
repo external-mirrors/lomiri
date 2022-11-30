@@ -331,9 +331,9 @@ StyledItem {
             availableDesktopArea: availableDesktopAreaItem
             launcherLeftMargin: launcher.visibleWidth
 
-            //property string usageScenario: shell.usageScenario === "phone" || greeter.hasLockedApp
-            //                                           ? "phone"
-            //                                           : shell.usageScenario
+            property string usageScenario: shell.usageScenario === "phone" || greeter.hasLockedApp
+                                                       ? "phone"
+                                                       : shell.usageScenario
 
             mode: usageScenario == "phone" ? "staged"
                      : usageScenario == "tablet" ? "stagedWithSideStage"
