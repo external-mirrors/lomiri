@@ -27,6 +27,7 @@ import LightDM.FullLightDM 0.1 as LightDM
 import Powerd 0.1
 import Lomiri.InputInfo 0.1
 import Utils 0.1
+import WindowManager 1.0
 
 import "../../qml"
 import "../../qml/Components"
@@ -85,8 +86,18 @@ Rectangle {
     }
 
     QtObject {
+        id: _screen
+        property int formFactor: Screen.Phone
+        property var workspaces : QtObject {
+            property int count : 0
+        }
+    }
+    property alias screen: _screen
+
+    QtObject {
         id: _screenWindow
         property bool primary: true
+        property var screen: _screen
     }
     property alias screenWindow: _screenWindow
 
@@ -173,6 +184,7 @@ Rectangle {
             orientationLock: mockOrientationLock
             overrideDeviceName: deviceName
             lightIndicators: true
+            screen: root.screen
         }
     }
 
@@ -1072,18 +1084,18 @@ Rectangle {
 
         function  test_attachRemoveInputDevices_data() {
             return [
-                { tag: "small screen, no devices", screenWidth: units.gu(50), mouse: false, kbd: false, expectedMode: "phone", oskExpected: true },
-                { tag: "medium screen, no devices", screenWidth: units.gu(100), mouse: false, kbd: false, expectedMode: "phone", oskExpected: true },
-                { tag: "big screen, no devices", screenWidth: units.gu(200), mouse: false, kbd: false, expectedMode: "phone", oskExpected: true },
-                { tag: "small screen, mouse", screenWidth: units.gu(50), mouse: true, kbd: false, expectedMode: "phone", oskExpected: true },
-                { tag: "medium screen, mouse", screenWidth: units.gu(100), mouse: true, kbd: false, expectedMode: "desktop", oskExpected: true },
-                { tag: "big screen, mouse", screenWidth: units.gu(200), mouse: true, kbd: false, expectedMode: "desktop", oskExpected: true },
-                { tag: "small screen, kbd", screenWidth: units.gu(50), mouse: false, kbd: true, expectedMode: "phone", oskExpected: false },
-                { tag: "medium screen, kbd", screenWidth: units.gu(100), mouse: false, kbd: true, expectedMode: "phone", oskExpected: false },
-                { tag: "big screen, kbd", screenWidth: units.gu(200), mouse: false, kbd: true, expectedMode: "phone", oskExpected: false },
-                { tag: "small screen, mouse & kbd", screenWidth: units.gu(50), mouse: true, kbd: true, expectedMode: "phone", oskExpected: false },
-                { tag: "medium screen, mouse & kbd", screenWidth: units.gu(100), mouse: true, kbd: true, expectedMode: "desktop", oskExpected: false },
-                { tag: "big screen, mouse & kbd", screenWidth: units.gu(200), mouse: true, kbd: true, expectedMode: "desktop", oskExpected: false },
+                { tag: "phone screen, no devices", formFactor: Screen.Phone, mouse: false, kbd: false, expectedMode: "phone", oskExpected: true },
+                { tag: "tablet screen, no devices", formFactor: Screen.Tablet, mouse: false, kbd: false, expectedMode: "tablet", oskExpected: true },
+                { tag: "PC screen, no devices", formFactor: Screen.Monitor, mouse: false, kbd: false, expectedMode: "desktop", oskExpected: true },
+                { tag: "phone screen, mouse", formFactor: Screen.Phone, mouse: true, kbd: false, expectedMode: "phone", oskExpected: true },
+                { tag: "tablet screen, mouse", formFactor: Screen.Tablet, mouse: true, kbd: false, expectedMode: "tablet", oskExpected: true },
+                { tag: "PC screen, mouse", formFactor: Screen.Monitor, mouse: true, kbd: false, expectedMode: "desktop", oskExpected: true },
+                { tag: "phone screen, kbd", formFactor: Screen.Phone, mouse: false, kbd: true, expectedMode: "phone", oskExpected: false },
+                { tag: "tablet screen, kbd", formFactor: Screen.Tablet, mouse: false, kbd: true, expectedMode: "tablet", oskExpected: false },
+                { tag: "PC screen, kbd", formFactor: Screen.Monitor, mouse: false, kbd: true, expectedMode: "desktop", oskExpected: false },
+                { tag: "phone screen, mouse & kbd", formFactor: Screen.Phone, mouse: true, kbd: true, expectedMode: "phone", oskExpected: false },
+                { tag: "tablet screen, mouse & kbd", sformFactor: Screen.Tablet, mouse: true, kbd: true, expectedMode: "desktop", oskExpected: false },
+                { tag: "PC screen, mouse & kbd", formFactor: Screen.Monitor, mouse: true, kbd: true, expectedMode: "desktop", oskExpected: false },
             ]
         }
 
@@ -1093,12 +1105,12 @@ Rectangle {
             MockInputDeviceBackend.removeDevice("/indicator_kbd0");
             var inputMethod = findChild(shell, "inputMethod");
 
-            var oldWidth = shellRect.width;
-            shellRect.width = data.screenWidth;
-
             tryCompare(shell, "usageScenario", "phone");
             tryCompare(inputMethod, "enabled", true);
             tryCompare(oskSettings, "disableHeight", false);
+
+            var oldFormFactor = screen.formFactor;
+            screen.formFactor = data.formFactor;
 
             if (data.kbd) {
                 MockInputDeviceBackend.addMockDevice("/kbd0", InputInfo.Keyboard);
@@ -1111,8 +1123,8 @@ Rectangle {
             tryCompare(inputMethod, "enabled", data.oskExpected);
             tryCompare(oskSettings, "disableHeight", data.expectedMode == "desktop" || data.kbd);
 
-            // Restore width
-            shellRect.width = oldWidth;
+            // Restore formFactor
+            screen.formFactor = oldFormFactor;
         }
 
         function test_screenSizeChanges() {
