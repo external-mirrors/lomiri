@@ -120,13 +120,23 @@ Item {
 
         console.log("Calculating new usage mode. Pointer devices:", pointerInputDevices, "current mode:", lomiriSettings.usageMode, "old device count", miceModel.oldCount + touchPadModel.oldCount, "root width:", root.width, "height:", root.height)
         if (lomiriSettings.usageMode === "Windowed") {
-            if (pointerInputDevices === 0) {
-                // All pointer devices have been unplugged. Move to staged.
+            if (Math.min(root.width, root.height) > units.gu(60)) {
+                if (pointerInputDevices === 0) {
+                    // All pointer devices have been unplugged. Move to staged.
+                    lomiriSettings.usageMode = "Staged";
+                }
+            } else {
+                // The display is not large enough, use staged.
                 lomiriSettings.usageMode = "Staged";
             }
         } else {
-            if (pointerInputDevices > 0 && pointerInputDevices > miceModel.oldCount + touchPadModel.oldCount) {
-                lomiriSettings.usageMode = "Windowed";
+            if (Math.min(root.width, root.height) > units.gu(60)) {
+                if (pointerInputDevices > 0 && pointerInputDevices > miceModel.oldCount + touchPadModel.oldCount) {
+                    lomiriSettings.usageMode = "Windowed";
+                }
+            } else {
+                // Make sure we initialize to something sane
+                lomiriSettings.usageMode = "Staged";
             }
         }
         miceModel.oldCount = miceModel.count;
