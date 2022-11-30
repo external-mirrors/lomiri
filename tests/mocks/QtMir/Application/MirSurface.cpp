@@ -106,6 +106,10 @@ MirSurface::MirSurface(const QString& name,
     m_zombieTimer.setSingleShot(true);
     connect(&m_zombieTimer, &QTimer::timeout, this, [this](){ this->setLive(false); });
 
+    m_readyTimer.setInterval(200);
+    m_readyTimer.setSingleShot(true);
+    connect(&m_readyTimer, &QTimer::timeout, this, [this](){ Q_EMIT ready(); });
+
     updateInputBoundsAfterResize();
 }
 
@@ -186,6 +190,11 @@ void MirSurface::setLive(bool live)
     DEBUG_MSG(live);
     m_live = live;
     Q_EMIT liveChanged(live);
+
+    // A window's surface might take some time to draw the first frame
+    if (live && !m_readyTimer.isActive()) {
+        m_readyTimer.start();
+    }
 
     if (!m_live && m_views.count() == 0) {
         deleteLater();
