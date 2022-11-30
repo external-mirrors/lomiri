@@ -220,6 +220,11 @@ Item {
                 ? orientations.native_
                 : deviceConfiguration.supportedOrientations)
 
+    // During desktop mode switches back to phone mode Qt seems to swallow
+    // supported orientations by itself, not emitting them. Cause them to be emitted
+    // using the attached property here.
+    QtQuickWindow.Screen.orientationUpdateMask: supportedOrientations
+
     property int acceptedOrientationAngle: {
         if (orientation & supportedOrientations) {
             return QtQuickWindow.Screen.angleBetween(orientations.native_, orientation);
