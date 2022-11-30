@@ -383,7 +383,7 @@ FocusScope {
             y: 0
             width: drawer.width
             height: drawer.height
-            visible: root.blurSource && drawer.x > -drawer.width
+            visible: drawer.x > -drawer.width
             sourceItem: root.blurSource
             blurRect: Qt.rect(0,
                               root.topPanelHeight,
