@@ -26,21 +26,13 @@ ScreenWindow {
     color: "black"
     title: "Lomiri Shell"
 
-    DeviceConfiguration {
-        id: deviceConfiguration
-    }
-
-    function isPrimary() {
-        return (screenWindow.screen.formFactor == Screen.Phone || screenWindow.screen.formFactor == Screen.Tablet)
-    }
-
     Loader {
         id: loader
         width: screenWindow.width
         height: screenWindow.height
 
         sourceComponent: {
-            if (Screens.count > 1 && isPrimary() && deviceConfiguration.category !== "desktop") {
+            if (Screens.count > 1 && screenWindow.screen.formFactor === Screen.Phone) {
                 return disabledScreenComponent;
             }
             return shellComponent;

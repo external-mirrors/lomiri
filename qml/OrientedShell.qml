@@ -294,21 +294,25 @@ Item {
         hasTouchscreen: touchScreensModel.count > 0
         supportsMultiColorLed: deviceConfiguration.supportsMultiColorLed
         lightIndicators: root.lightIndicators
-
-        // Since we dont have proper multiscreen support yet
-        // hardcode screen count to only show osk on this screen
-        // when it's a phone or tablet screen formfactor.
         oskEnabled: (!hasKeyboard && (root.screen.formFactor == Screen.Phone || root.screen.formFactor == Screen.Tablet)) ||
                     lomiriSettings.alwaysShowOsk || forceOSKEnabled
 
+        // Multiscreen support: rather than judging by the device type, go by the screen type.
+        // This allows very flexible usecases beyond the typical "connect a phone to a monitor".
+        // Status quo setups:
+        // - phone + external monitor: virtual touchpad on the device
+        // - tablet + external monitor: dual-screen desktop
+        // - desktop: Has all the bells and whistles of a fully fledged PC/laptop shell
         usageScenario: {
             if (lomiriSettings.usageMode === "Windowed") {
                 return "desktop";
             } else {
-                if (deviceConfiguration.category === "phone") {
+                if (screen.formFactor === Screen.Tablet) {
+                    return "tablet";
+                } else if (screen.formFactor === Screen.Phone) {
                     return "phone";
                 } else {
-                    return "tablet";
+                    return "desktop";
                 }
             }
         }
