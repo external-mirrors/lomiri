@@ -697,6 +697,19 @@ int TopLevelWindowModel::idAt(int index) const
 
 void TopLevelWindowModel::raiseId(int id)
 {
+    const int index = indexForId(id);
+    if (index == -1)
+        return;
+
+    auto application = applicationAt(index);
+    if (application) {
+        if (application->state() == lomiriapi::ApplicationInfoInterface::State::Stopped) {
+            application->setRequestedState(lomiriapi::ApplicationInfoInterface::RequestedState::RequestedRunning);
+            deleteAt(index);
+            return;
+        }
+    }
+
     if (m_modelState == IdleState) {
         DEBUG_MSG << "(id=" << id << ") - do it now.";
         doRaiseId(id);
