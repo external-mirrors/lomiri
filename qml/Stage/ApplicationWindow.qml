@@ -131,7 +131,7 @@ FocusScope {
         repeat: true
         running: root.surface && !d.surfaceInitialized
         onTriggered: {
-            if (root.surface && root.surface.live) {
+            if (root.surface) {
                 d.surfaceInitialized = true;
                 d.hadSurface = true;
                 d.surfaceOldEnoughToBeResized = true;
@@ -219,12 +219,12 @@ FocusScope {
         states: [
             State {
                 name: "surface"
-                when: ((root.surface && d.surfaceInitialized) || d.hadSurface)
+                when: (root.surface && d.surfaceInitialized)
                 PropertyChanges { target: splashLoader; active: false }
             },
             State {
                 name: "splash"
-                when: (!root.surface || !d.surfaceInitialized && !d.hadSurface)
+                when: (!root.surface || !d.surfaceInitialized) || !root.surface.live || d.hadSurface
                 PropertyChanges { target: splashLoader; active: true }
             }
         ]

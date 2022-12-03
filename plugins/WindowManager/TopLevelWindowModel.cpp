@@ -750,7 +750,7 @@ void TopLevelWindowModel::setFocusedWindow(Window *window)
         m_focusedWindow = window;
         Q_EMIT focusedWindowChanged(m_focusedWindow);
 
-        if (m_previousWindow && m_previousWindow->focused() && !m_previousWindow->surface()) {
+        if (m_previousWindow && (m_previousWindow->focused() || !m_previousWindow->surface())) {
             // do it ourselves. miral doesn't know about this window
             m_previousWindow->setFocused(false);
         }

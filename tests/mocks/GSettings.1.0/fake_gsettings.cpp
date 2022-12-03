@@ -259,7 +259,7 @@ GSettingsSchemaQml * GSettingsQml::schema() const {
 
 QVariant GSettingsQml::disableHeight() const
 {
-    if (m_valid && m_schema->id() == "com.canonical.keyboard.maliit") {
+    if (m_valid && m_schema->id() == "com.lomiri.keyboard.maliit") {
         return GSettingsControllerQml::instance()->disableHeight();
     } else {
         return QVariant();
@@ -268,7 +268,7 @@ QVariant GSettingsQml::disableHeight() const
 
 void GSettingsQml::setDisableHeight(const QVariant &val)
 {
-    if (m_valid && m_schema->id() == "com.canonical.keyboard.maliit") {
+    if (m_valid && m_schema->id() == "com.lomiri.keyboard.maliit") {
         GSettingsControllerQml::instance()->setDisableHeight(val.toBool());
     }
 }

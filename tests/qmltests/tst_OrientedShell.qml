@@ -69,7 +69,7 @@ Rectangle {
 
     GSettings {
         id: oskSettings
-        schema.id: "com.canonical.keyboard.maliit"
+        schema.id: "com.lomiri.keyboard.maliit"
     }
 
     InputDeviceModel {
