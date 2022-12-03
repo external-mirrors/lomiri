@@ -1153,7 +1153,13 @@ FocusScope {
                     if (model.window.focused) {
                         updateQmlFocusFromMirSurfaceFocus();
                     } else {
-                        model.window.activate();
+                        if (model.window.surface.live) {
+                            // Activate the window since it has a surface (with a running app) backing it
+                            model.window.activate();
+                        } else {
+                            // Otherwise, cause a respawn of the app, and trigger it's refocusing as the last window
+                            topLevelSurfaceList.raiseId(model.window.id);
+                        }
                     }
                 }
                 function requestMaximize() { model.window.requestState(Mir.MaximizedState); }

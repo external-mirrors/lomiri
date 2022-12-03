@@ -182,7 +182,7 @@ void TopLevelWindowModel::prependSurface(lomiriapi::MirSurfaceInterface *surface
     bool filledPlaceholder = false;
     for (int i = 0; i < m_windowModel.count() && !filledPlaceholder; ++i) {
         ModelEntry &entry = m_windowModel[i];
-        if (entry.application == application && entry.window->surface() == nullptr) {
+        if (entry.application == application && (entry.window->surface() == nullptr || !entry.window->surface()->live())) {
             entry.window->setSurface(surface);
             INFO_MSG << " appId=" << application->appId() << " surface=" << surface
                       << ", filling out placeholder. after: " << toString();
@@ -730,7 +730,7 @@ void TopLevelWindowModel::doRaiseId(int id)
     // can't raise something that doesn't exist or that it's already on top
     if (fromIndex != -1 && fromIndex != 0) {
         auto surface = m_windowModel[fromIndex].window->surface();
-        if (surface) {
+        if (surface && surface->live()) {
             m_surfaceManager->raise(surface);
         } else {
             // move it ourselves. Since there's no mir::scene::Surface/miral::Window, there's nothing
@@ -821,7 +821,7 @@ void TopLevelWindowModel::activateTopMostWindowWithoutId(int forbiddenId)
     for (int i = 0; i < m_windowModel.count(); ++i) {
         Window *window = m_windowModel[i].window;
         if (window->id() != forbiddenId) {
-            window->activate();
+            raiseId(window->id());
             break;
         }
     }
