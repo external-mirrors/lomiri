@@ -130,6 +130,7 @@ void TopLevelWindowModel::setSurfaceManager(lomiriapi::SurfaceManagerInterface *
     if (m_surfaceManager) {
         connect(m_surfaceManager, &lomiriapi::SurfaceManagerInterface::surfacesAddedToWorkspace, this, &TopLevelWindowModel::onSurfacesAddedToWorkspace);
         connect(m_surfaceManager, &lomiriapi::SurfaceManagerInterface::surfacesRaised, this, &TopLevelWindowModel::onSurfacesRaised);
+        connect(m_surfaceManager, &lomiriapi::SurfaceManagerInterface::surfaceRemoved, this, &TopLevelWindowModel::onSurfaceDestroyed);
         connect(m_surfaceManager, &lomiriapi::SurfaceManagerInterface::modificationsStarted, this, &TopLevelWindowModel::onModificationsStarted);
         connect(m_surfaceManager, &lomiriapi::SurfaceManagerInterface::modificationsEnded, this, &TopLevelWindowModel::onModificationsEnded);
     }
@@ -317,11 +318,11 @@ void TopLevelWindowModel::activateEmptyWindow(Window *window)
 void TopLevelWindowModel::connectSurface(lomiriapi::MirSurfaceInterface *surface)
 {
     connect(surface, &lomiriapi::MirSurfaceInterface::liveChanged, this, [this, surface](bool live){
-            if (!live) {
-                onSurfaceDied(surface);
-            }
-        });
-    connect(surface, &QObject::destroyed, this, [this, surface](){ this->onSurfaceDestroyed(surface); });
+        if (!live) {
+            onSurfaceDied(surface);
+        }
+    });
+    connect(surface, &QObject::destroyed, this, [this, surface](QObject*){ this->onSurfaceDestroyed(surface); });
 }
 
 void TopLevelWindowModel::onSurfaceDied(lomiriapi::MirSurfaceInterface *surface)
@@ -341,16 +342,14 @@ void TopLevelWindowModel::onSurfaceDied(lomiriapi::MirSurfaceInterface *surface)
     DEBUG_MSG << " application->name()=" << application->name()
               << " application->state()=" << application->state();
 
-    if (application->state() == lomiriapi::ApplicationInfoInterface::Running
-        || application->state() == lomiriapi::ApplicationInfoInterface::Starting) {
-        m_windowModel[i].removeOnceSurfaceDestroyed = true;
-    } else {
-        // assume it got killed by the out-of-memory daemon.
-        //
-        // So leave entry in the model and only remove its surface, so shell can display a screenshot
-        // in its place.
+    // assume it got killed by the out-of-memory daemon.
+    //
+    // Leave at most 1 entry in the model and only remove its surface, so shell can display a screenshot
+    // in its place.
+    if (application->surfaceList()->count() == 1)
         m_windowModel[i].removeOnceSurfaceDestroyed = false;
-    }
+    else
+        m_windowModel[i].removeOnceSurfaceDestroyed = true;
 }
 
 void TopLevelWindowModel::onSurfaceDestroyed(lomiriapi::MirSurfaceInterface *surface)
@@ -364,7 +363,6 @@ void TopLevelWindowModel::onSurfaceDestroyed(lomiriapi::MirSurfaceInterface *sur
         deleteAt(i);
     } else {
         auto window = m_windowModel[i].window;
-        window->setSurface(nullptr);
         window->setFocused(false);
         m_allSurfaces.remove(surface);
         INFO_MSG << " Removed surface from entry. After: " << toString();
@@ -697,19 +695,6 @@ int TopLevelWindowModel::idAt(int index) const
 
 void TopLevelWindowModel::raiseId(int id)
 {
-    const int index = indexForId(id);
-    if (index == -1)
-        return;
-
-    auto application = applicationAt(index);
-    if (application) {
-        if (application->state() == lomiriapi::ApplicationInfoInterface::State::Stopped) {
-            application->setRequestedState(lomiriapi::ApplicationInfoInterface::RequestedState::RequestedRunning);
-            deleteAt(index);
-            return;
-        }
-    }
-
     if (m_modelState == IdleState) {
         DEBUG_MSG << "(id=" << id << ") - do it now.";
         doRaiseId(id);
@@ -750,7 +735,7 @@ void TopLevelWindowModel::setFocusedWindow(Window *window)
         m_focusedWindow = window;
         Q_EMIT focusedWindowChanged(m_focusedWindow);
 
-        if (m_previousWindow && (m_previousWindow->focused() || !m_previousWindow->surface())) {
+        if (m_previousWindow && m_previousWindow->focused() && !m_previousWindow->surface()) {
             // do it ourselves. miral doesn't know about this window
             m_previousWindow->setFocused(false);
         }
@@ -821,7 +806,7 @@ void TopLevelWindowModel::activateTopMostWindowWithoutId(int forbiddenId)
     for (int i = 0; i < m_windowModel.count(); ++i) {
         Window *window = m_windowModel[i].window;
         if (window->id() != forbiddenId) {
-            raiseId(window->id());
+            window->activate();
             break;
         }
     }
