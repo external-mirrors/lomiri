@@ -26,6 +26,34 @@ ScreenWindow {
     color: "black"
     title: "Lomiri Shell"
 
+    property int screenIndex: -1
+    property bool primary: {
+        if (loader.sourceComponent == disabledScreenComponent)
+            return false;
+
+        // If this is the only screen then it's the primary one
+        if (Screens.count === 1)
+            return true;
+
+        const thisFormFactor = screenWindow.screen.formFactor;
+
+        // Tablet & phone devices can only have 2 screens at max
+        if (Screens.count === 2) {
+            const internalFormFactor = Screens.get(0).formFactor;
+
+            if (thisFormFactor === internalFormFactor === Screen.Tablet)
+                return true;
+
+            if (internalFormFactor === Screen.Phone && thisFormFactor !== Screen.Phone)
+                return true;
+
+            if (internalFormFactor === Screen.Phone && thisFormFactor === Screen.Phone)
+                return false;
+        }
+
+        return (Screens.count >= 1 && screenIndex === 0);
+    }
+
     Loader {
         id: loader
         width: screenWindow.width

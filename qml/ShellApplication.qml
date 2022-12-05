@@ -27,6 +27,7 @@ Instantiator {
         id: window
         objectName: "screen"+index
         screen: model.screen
+        screenIndex: index
         visible: screen != null
         visibility: applicationArguments.hasFullscreen ? Window.FullScreen : Window.Windowed
         flags: applicationArguments.hasFrameless ? Qt.FramelessWindowHint : 0

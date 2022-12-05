@@ -37,6 +37,10 @@ Item {
     property bool lightIndicators: false
 
     property var screen: null
+    Connections {
+        target: screen
+        onFormFactorChanged: calculateUsageMode();
+    }
 
     onWidthChanged: calculateUsageMode();
     property var overrideDeviceName: Screens.count > 1 ? "desktop" : false
@@ -297,7 +301,7 @@ Item {
         oskEnabled: (!hasKeyboard && (root.screen.formFactor == Screen.Phone || root.screen.formFactor == Screen.Tablet)) ||
                     lomiriSettings.alwaysShowOsk || forceOSKEnabled
 
-        // Multiscreen support: rather than judging by the device type, go by the screen type.
+        // Multiscreen support: in addition to judging by the device type, go by the screen type.
         // This allows very flexible usecases beyond the typical "connect a phone to a monitor".
         // Status quo setups:
         // - phone + external monitor: virtual touchpad on the device
@@ -306,7 +310,11 @@ Item {
         usageScenario: {
             if (lomiriSettings.usageMode === "Windowed") {
                 return "desktop";
-            } else {
+            } else if (deviceConfiguration.category === "phone") {
+                return "phone";
+            } else if (deviceConfiguration.category === "tablet") {
+                return "tablet";
+            } else {
                 if (screen.formFactor === Screen.Tablet) {
                     return "tablet";
                 } else if (screen.formFactor === Screen.Phone) {

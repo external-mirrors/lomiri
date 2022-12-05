@@ -1149,11 +1149,22 @@ FocusScope {
                 readonly property string appId: model.application.appId
                 readonly property alias clientAreaItem: decoratedWindow.clientAreaItem
 
+                // It is Lomiri policy to close any window but the last one during OOM teardown
+/*
+                Connections {
+                    target: model.window.surface
+                    onLiveChanged: {
+                        if ((!surface.live && application && application.surfaceCount > 1) || !application)
+                            topLevelSurfaceList.removeAt(appRepeater.indexOf(appDelegate));
+                    }
+                }
+*/
+
                 function activate() {
                     if (model.window.focused) {
                         updateQmlFocusFromMirSurfaceFocus();
                     } else {
-                        if (model.window.surface.live) {
+                        if (surface.live) {
                             // Activate the window since it has a surface (with a running app) backing it
                             model.window.activate();
                         } else {
