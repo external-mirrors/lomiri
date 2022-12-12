@@ -47,6 +47,7 @@ Item {
             delegate: Item {
                 height: root.height - units.gu(6)
                 width: workspaces.width
+                visible: model.screen.formFactor != Screen.Phone // Hides a phone's internal display
 
                 Item {
                     id: header

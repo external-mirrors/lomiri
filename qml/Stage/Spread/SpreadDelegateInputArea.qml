@@ -126,10 +126,10 @@ Item {
                 dragDelegate.y = coords.y - dragDelegate.Drag.hotSpot.y
                 dragDelegate.Drag.active = true;
                 dragDelegate.surface = model.window.surface;
-
             } else {
                 if (root.closeable) {
-                    d.distance = value
+                    if (value != 0)
+                        d.distance = value
                 } else {
                     d.distance = Math.sqrt(Math.abs(value)) * (value < 0 ? -1 : 1) * 3
                 }
@@ -178,7 +178,7 @@ Item {
         property bool requestClose: false
 
         function animate(direction) {
-            animation.from = dragArea.distance;
+            animation.from = d.distance;
             switch (direction) {
             case "up":
                 animation.to = -root.height * 1.5;

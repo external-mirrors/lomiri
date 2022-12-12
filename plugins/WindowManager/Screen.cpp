@@ -76,10 +76,10 @@ QSizeF Screen::physicalSize() const
     return m_wrapped->physicalSize();
 }
 
-qtmir::FormFactor Screen::formFactor() const
+Screen::FormFactor Screen::formFactor() const
 {
-    if (!m_wrapped) return qtmir::FormFactorUnknown;
-    return m_wrapped->formFactor();
+    if (!m_wrapped) return static_cast<Screen::FormFactor>(qtmir::FormFactorUnknown);
+    return static_cast<Screen::FormFactor>(m_wrapped->formFactor());
 }
 
 qtmir::OutputTypes Screen::outputType() const

@@ -15,7 +15,7 @@
  */
 
 import QtQuick 2.4
-import QtQuick.Window 2.2
+import QtQuick.Window 2.2 as QtQuickWindow
 import Lomiri.InputInfo 0.1
 import Lomiri.Session 0.1
 import WindowManager 1.0
@@ -36,8 +36,14 @@ Item {
     property alias orientations: d.orientations
     property bool lightIndicators: false
 
+    property var screen: null
+    Connections {
+        target: screen
+        onFormFactorChanged: calculateUsageMode();
+    }
+
     onWidthChanged: calculateUsageMode();
-    property var overrideDeviceName: screens.count > 1 ? "desktop" : false
+    property var overrideDeviceName: Screens.count > 1 ? "desktop" : false
 
     DeviceConfiguration {
         id: _deviceConfiguration
@@ -72,10 +78,10 @@ Item {
     GSettings {
         id: oskSettings
         objectName: "oskSettings"
-        schema.id: "com.canonical.keyboard.maliit"
+        schema.id: "com.lomiri.keyboard.maliit"
     }
 
-    property int physicalOrientation: Screen.orientation
+    property int physicalOrientation: QtQuickWindow.Screen.orientation
     property bool orientationLocked: OrientationLock.enabled
     property var orientationLock: OrientationLock
 
@@ -116,7 +122,7 @@ Item {
         if (lomiriSettings.usageMode === undefined)
             return; // gsettings isn't loaded yet, we'll try again in Component.onCompleted
 
-        console.log("Calculating new usage mode. Pointer devices:", pointerInputDevices, "current mode:", lomiriSettings.usageMode, "old device count", miceModel.oldCount + touchPadModel.oldCount, "root width:", root.width / units.gu(1), "height:", root.height / units.gu(1))
+        console.log("Calculating new usage mode. Pointer devices:", pointerInputDevices, "current mode:", lomiriSettings.usageMode, "old device count", miceModel.oldCount + touchPadModel.oldCount, "root width:", root.width, "height:", root.height)
         if (lomiriSettings.usageMode === "Windowed") {
             if (Math.min(root.width, root.height) > units.gu(60)) {
                 if (pointerInputDevices === 0) {
@@ -187,6 +193,15 @@ Item {
         oskSettings.disableHeight = !shell.oskEnabled || shell.usageScenario == "desktop"
     }
 
+    Component.onDestruction: {
+        const from_workspaces = root.screen.workspaces;
+        const from_workspaces_size = from_workspaces.count;
+        for (var i = 0; i < from_workspaces_size; i++) {
+            const from = from_workspaces.get(i);
+            WorkspaceManager.destroyWorkspace(from);
+        }
+    }
+
     // we must rotate to a supported orientation regardless of shell's preference
     property bool orientationChangesEnabled:
         (shell.orientation & supportedOrientations) === 0 ? true
@@ -209,9 +224,14 @@ Item {
                 ? orientations.native_
                 : deviceConfiguration.supportedOrientations)
 
+    // During desktop mode switches back to phone mode Qt seems to swallow
+    // supported orientations by itself, not emitting them. Cause them to be emitted
+    // using the attached property here.
+    QtQuickWindow.Screen.orientationUpdateMask: supportedOrientations
+
     property int acceptedOrientationAngle: {
         if (orientation & supportedOrientations) {
-            return Screen.angleBetween(orientations.native_, orientation);
+            return QtQuickWindow.Screen.angleBetween(orientations.native_, orientation);
         } else if (shell.orientation & supportedOrientations) {
             // stay where we are
             return shell.orientationAngle;
@@ -221,16 +241,16 @@ Item {
             // rotate to some supported orientation as we can't stay where we currently are
             // TODO: Choose the closest to the current one
             if (supportedOrientations & Qt.PortraitOrientation) {
-                return Screen.angleBetween(orientations.native_, Qt.PortraitOrientation);
+                return QtQuickWindow.Screen.angleBetween(orientations.native_, Qt.PortraitOrientation);
             } else if (supportedOrientations & Qt.LandscapeOrientation) {
-                return Screen.angleBetween(orientations.native_, Qt.LandscapeOrientation);
+                return QtQuickWindow.Screen.angleBetween(orientations.native_, Qt.LandscapeOrientation);
             } else if (supportedOrientations & Qt.InvertedPortraitOrientation) {
-                return Screen.angleBetween(orientations.native_, Qt.InvertedPortraitOrientation);
+                return QtQuickWindow.Screen.angleBetween(orientations.native_, Qt.InvertedPortraitOrientation);
             } else if (supportedOrientations & Qt.InvertedLandscapeOrientation) {
-                return Screen.angleBetween(orientations.native_, Qt.InvertedLandscapeOrientation);
+                return QtQuickWindow.Screen.angleBetween(orientations.native_, Qt.InvertedLandscapeOrientation);
             } else {
                 // if all fails, fallback to primary orientation
-                return Screen.angleBetween(orientations.native_, orientations.primary);
+                return QtQuickWindow.Screen.angleBetween(orientations.native_, orientations.primary);
             }
         }
     }
@@ -278,22 +298,29 @@ Item {
         hasTouchscreen: touchScreensModel.count > 0
         supportsMultiColorLed: deviceConfiguration.supportsMultiColorLed
         lightIndicators: root.lightIndicators
-
-        // Since we dont have proper multiscreen support yet
-        // hardcode screen count to only show osk on this screen
-        // when it's the only one connected.
-        // FIXME once multiscreen has landed
-        oskEnabled: (!hasKeyboard && Screens.count === 1) ||
+        oskEnabled: (!hasKeyboard && (root.screen.formFactor == Screen.Phone || root.screen.formFactor == Screen.Tablet)) ||
                     lomiriSettings.alwaysShowOsk || forceOSKEnabled
 
+        // Multiscreen support: in addition to judging by the device type, go by the screen type.
+        // This allows very flexible usecases beyond the typical "connect a phone to a monitor".
+        // Status quo setups:
+        // - phone + external monitor: virtual touchpad on the device
+        // - tablet + external monitor: dual-screen desktop
+        // - desktop: Has all the bells and whistles of a fully fledged PC/laptop shell
         usageScenario: {
             if (lomiriSettings.usageMode === "Windowed") {
                 return "desktop";
-            } else {
-                if (deviceConfiguration.category === "phone") {
+            } else if (deviceConfiguration.category === "phone") {
+                return "phone";
+            } else if (deviceConfiguration.category === "tablet") {
+                return "tablet";
+            } else {
+                if (screen.formFactor === Screen.Tablet) {
+                    return "tablet";
+                } else if (screen.formFactor === Screen.Phone) {
                     return "phone";
                 } else {
-                    return "tablet";
+                    return "desktop";
                 }
             }
         }

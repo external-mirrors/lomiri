@@ -45,6 +45,25 @@ FocusScope {
     readonly property int widthIncrement: surface ? surface.widthIncrement : 0
     readonly property int heightIncrement: surface ? surface.heightIncrement : 0
 
+    Connections {
+        target: surface
+        onReady: {
+            d.surfaceInitialized = true;
+            d.hadSurface = true;
+            d.surfaceOldEnoughToBeResized = true;
+        }
+    }
+
+    // Best effort scenario: after a desktop mode switch we don't know the ready status
+    // FIXME: Expose ready property as part of the lomiri-api MirSurfaceInterface
+    Component.onCompleted: {
+        if (surface && surface.live) {
+            d.surfaceInitialized = true;
+            d.hadSurface = true;
+            d.surfaceOldEnoughToBeResized = true;
+        }
+    }
+
     onSurfaceChanged: {
         // The order in which the instructions are executed here matters, to that the correct state
         // transitions in stateGroup take place.
@@ -52,7 +71,6 @@ FocusScope {
         // other instructions.
         if (surface) {
             surfaceContainer.surface = surface;
-            surfaceInitTimer.start();
         } else {
             d.surfaceInitialized = false;
             surfaceContainer.surface = null;
@@ -110,8 +128,10 @@ FocusScope {
     Timer {
         id: surfaceInitTimer
         interval: 100
+        repeat: true
+        running: root.surface && !d.surfaceInitialized
         onTriggered: {
-            if (root.surface && root.surface.live) {
+            if (root.surface) {
                 d.surfaceInitialized = true;
                 d.hadSurface = true;
                 d.surfaceOldEnoughToBeResized = true;
@@ -197,13 +217,14 @@ FocusScope {
         id: stateGroup
         objectName: "applicationWindowStateGroup"
         states: [
-            State{
+            State {
                 name: "surface"
-                when: (root.surface && d.surfaceInitialized) || d.hadSurface
+                when: (root.surface && d.surfaceInitialized)
+                PropertyChanges { target: splashLoader; active: false }
             },
             State {
                 name: "splash"
-                when: !root.surface && !d.surfaceInitialized && !d.hadSurface
+                when: (!root.surface || !d.surfaceInitialized) || !root.surface.live || d.hadSurface
                 PropertyChanges { target: splashLoader; active: true }
             }
         ]

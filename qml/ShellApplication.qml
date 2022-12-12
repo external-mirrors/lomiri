@@ -27,7 +27,9 @@ Instantiator {
         id: window
         objectName: "screen"+index
         screen: model.screen
-        visibility:  applicationArguments.hasFullscreen ? Window.FullScreen : Window.Windowed
+        screenIndex: index
+        visible: screen != null
+        visibility: applicationArguments.hasFullscreen ? Window.FullScreen : Window.Windowed
         flags: applicationArguments.hasFrameless ? Qt.FramelessWindowHint : 0
 
         Binding {
@@ -43,8 +45,7 @@ Instantiator {
             value: applicationArguments.windowGeometry.height
         }
 
-        Component.onCompleted: screen.active = primary
-        primary: index == 0
+        Component.onCompleted: screen.active = true
     }
 
     property var windowManagerSurfaceManagerBinding: Binding {

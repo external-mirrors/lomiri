@@ -27,6 +27,7 @@ Item {
 
     property var workspace
 
+    property QtObject screen
     property string background
     property int screenHeight
 
@@ -49,8 +50,8 @@ Item {
             delegate: Item {
                 width: surfaceItem.width
                 height: surfaceItem.height + decorationHeight * previewScale
-                x: model.window.position.x * previewScale
-                y: (model.window.position.y - decorationHeight) * previewScale
+                x: (model.window.position.x - screen.position.x) * previewScale
+                y: (model.window.position.y - screen.position.y - decorationHeight) * previewScale
                 z: topLevelSurfaceRepeater.count - index
                 visible: model.window.state !== Mir.MinimizedState && model.window.state !== Mir.HiddenState
 

@@ -61,7 +61,7 @@ FocusScope {
     property string mode: "staged"
 
     readonly property var temporarySelectedWorkspace: state == "spread" ? screensAndWorkspaces.activeWorkspace : null
-    property bool workspaceEnabled: (mode == "windowed" || settings.forceEnableWorkspace) && settings.enableWorkspace
+    property bool workspaceEnabled: (mode == "windowed" && settings.enableWorkspace) || settings.forceEnableWorkspace
 
     // Used by the tutorial code
     readonly property real rightEdgeDragProgress: rightEdgeDragArea.dragging ? rightEdgeDragArea.progress : 0 // How far left the stage has been dragged
@@ -697,7 +697,7 @@ FocusScope {
 
         ScreensAndWorkspaces {
             id: screensAndWorkspaces
-            anchors { left: parent.left; top: parent.top; right: parent.right; leftMargin: root.leftMargin }
+            anchors { left: parent.left; top: parent.top; right: parent.right; leftMargin: root.launcherLeftMargin }
             height: Math.max(units.gu(30), parent.height * .3)
             background: root.background
             opacity: 0
@@ -1149,11 +1149,28 @@ FocusScope {
                 readonly property string appId: model.application.appId
                 readonly property alias clientAreaItem: decoratedWindow.clientAreaItem
 
+                // It is Lomiri policy to close any window but the last one during OOM teardown
+/*
+                Connections {
+                    target: model.window.surface
+                    onLiveChanged: {
+                        if ((!surface.live && application && application.surfaceCount > 1) || !application)
+                            topLevelSurfaceList.removeAt(appRepeater.indexOf(appDelegate));
+                    }
+                }
+*/
+
                 function activate() {
                     if (model.window.focused) {
                         updateQmlFocusFromMirSurfaceFocus();
                     } else {
-                        model.window.activate();
+                        if (surface.live) {
+                            // Activate the window since it has a surface (with a running app) backing it
+                            model.window.activate();
+                        } else {
+                            // Otherwise, cause a respawn of the app, and trigger it's refocusing as the last window
+                            topLevelSurfaceList.raiseId(model.window.id);
+                        }
                     }
                 }
                 function requestMaximize() { model.window.requestState(Mir.MaximizedState); }

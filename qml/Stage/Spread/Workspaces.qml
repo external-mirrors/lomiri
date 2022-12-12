@@ -263,6 +263,7 @@ Item {
                     id: workspacePreview
                     height: listView.height
                     width: listView.itemWidth
+                    screen: root.screen
                     background: root.background
                     screenHeight: listView.screenHeight
                     containsDragLeft: listView.hoveredWorkspaceIndex == index && listView.hoveredHalf == "left"
@@ -384,6 +385,7 @@ Item {
                     id: fakeDragItem
                     height: listView.height
                     width: listView.itemWidth
+                    screen: root.screen
                     background: root.background
                     screenHeight: screen.availableModes[screen.currentModeIndex].size.height
                     visible: Drag.active

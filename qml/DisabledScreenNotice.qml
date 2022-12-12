@@ -19,13 +19,13 @@ import QtQuick.Layouts 1.1
 import Lomiri.Components 1.3
 import Lomiri.Session 0.1
 import QtQuick.Window 2.2
+import WindowManager 1.0
 import "Components"
 
 Item {
     id: root
 
-    // For testing
-    property var screen: Screen
+    property var screen: null
     property var orientationLock: OrientationLock
     property alias overrideDeviceName: root.deviceConfiguration.overrideName
 

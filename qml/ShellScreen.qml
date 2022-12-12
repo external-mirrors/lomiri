@@ -25,10 +25,33 @@ ScreenWindow {
 
     color: "black"
     title: "Lomiri Shell"
-    property bool primary: false
 
-    DeviceConfiguration {
-        id: deviceConfiguration
+    property int screenIndex: -1
+    property bool primary: {
+        if (loader.sourceComponent == disabledScreenComponent)
+            return false;
+
+        // If this is the only screen then it's the primary one
+        if (Screens.count === 1)
+            return true;
+
+        const thisFormFactor = screenWindow.screen.formFactor;
+
+        // Tablet & phone devices can only have 2 screens at max
+        if (Screens.count === 2) {
+            const internalFormFactor = Screens.get(0).formFactor;
+
+            if (thisFormFactor === internalFormFactor === Screen.Tablet)
+                return true;
+
+            if (internalFormFactor === Screen.Phone && thisFormFactor !== Screen.Phone)
+                return true;
+
+            if (internalFormFactor === Screen.Phone && thisFormFactor === Screen.Phone)
+                return false;
+        }
+
+        return (Screens.count >= 1 && screenIndex === 0);
     }
 
     Loader {
@@ -37,7 +60,7 @@ ScreenWindow {
         height: screenWindow.height
 
         sourceComponent: {
-            if (Screens.count > 1 && primary && deviceConfiguration.category !== "desktop") {
+            if (Screens.count > 1 && screenWindow.screen.formFactor === Screen.Phone) {
                 return disabledScreenComponent;
             }
             return shellComponent;
@@ -49,6 +72,8 @@ ScreenWindow {
         OrientedShell {
             implicitWidth: screenWindow.width
             implicitHeight: screenWindow.height
+            screen: screenWindow.screen
+            visible: true
 
             deviceConfiguration {
                 overrideName: Screens.count > 1 ? "desktop" : false
@@ -59,6 +84,7 @@ ScreenWindow {
     Component {
         id: disabledScreenComponent
         DisabledScreenNotice {
+            screen: screenWindow.screen
             oskEnabled: Screens.count > 1
         }
     }

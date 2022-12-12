@@ -27,6 +27,7 @@ import LightDM.FullLightDM 0.1 as LightDM
 import Powerd 0.1
 import Lomiri.InputInfo 0.1
 import Utils 0.1
+import WindowManager 1.0
 
 import "../../qml"
 import "../../qml/Components"
@@ -68,7 +69,7 @@ Rectangle {
 
     GSettings {
         id: oskSettings
-        schema.id: "com.canonical.keyboard.maliit"
+        schema.id: "com.lomiri.keyboard.maliit"
     }
 
     InputDeviceModel {
@@ -85,8 +86,18 @@ Rectangle {
     }
 
     QtObject {
+        id: _screen
+        property int formFactor: Screen.Phone
+        property var workspaces : QtObject {
+            property int count : 0
+        }
+    }
+    property alias screen: _screen
+
+    QtObject {
         id: _screenWindow
         property bool primary: true
+        property var screen: _screen
     }
     property alias screenWindow: _screenWindow
 
@@ -113,6 +124,10 @@ Rectangle {
                 physicalOrientation270: Qt.LandscapeOrientation
                 primaryOrientationAngle: 0
             }
+            PropertyChanges {
+                target: screen
+                formFactor: Screen.Phone
+            }
         },
         State {
             name: "manta"
@@ -128,6 +143,10 @@ Rectangle {
                 physicalOrientation270: Qt.InvertedPortraitOrientation
                 physicalOrientation0: Qt.LandscapeOrientation
                 primaryOrientationAngle: 0
+            }
+            PropertyChanges {
+                target: screen
+                formFactor: Screen.Tablet
             }
         },
         State {
@@ -145,6 +164,10 @@ Rectangle {
                 physicalOrientation180: Qt.LandscapeOrientation
                 primaryOrientationAngle: 90
             }
+            PropertyChanges {
+                target: screen
+                formFactor: Screen.Tablet
+            }
         },
         State {
             name: "desktop"
@@ -161,6 +184,10 @@ Rectangle {
                 physicalOrientation180: Qt.InvertedLandscapeOrientation
                 primaryOrientationAngle: 0
             }
+            PropertyChanges {
+                target: screen
+                formFactor: Screen.Monitor
+            }
         }
     ]
 
@@ -173,6 +200,7 @@ Rectangle {
             orientationLock: mockOrientationLock
             overrideDeviceName: deviceName
             lightIndicators: true
+            screen: root.screen
         }
     }
 
@@ -1546,6 +1574,7 @@ Rectangle {
             if (appRepeater) {
                 appRepeaterConnections.target = appRepeater;
             }
+
             return orientedShell;
         }
 

@@ -26,6 +26,9 @@ Item {
     property rect blurRect: Qt.rect(0,0,0,0)
     property bool occluding: false
 
+    readonly property int minRadius : Math.max(units.gu(4), 64)
+    readonly property int blurRadius : Math.min(minRadius, 128)
+
     ShaderEffectSource {
         id: shaderEffectSource
         sourceItem: root.sourceItem
@@ -39,7 +42,7 @@ Item {
         id: fastBlur
         anchors.fill: parent
         source: shaderEffectSource
-        radius: units.gu(3)
+        radius: root.blurRadius
         cached: false
         visible: sourceItem != null
         enabled: visible

@@ -168,6 +168,7 @@ Q_SIGNALS:
     void heightChanged();
     void slowToResizeChanged();
     void exposedChanged(bool exposed);
+    void ready();
 
     ////
     // internal mock stuff
@@ -223,6 +224,8 @@ private:
     bool m_exposed{false};
 
     QTimer m_zombieTimer;
+
+    QTimer m_readyTimer;
 
     QRect m_inputBounds;
 

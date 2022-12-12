@@ -130,6 +130,7 @@ void TopLevelWindowModel::setSurfaceManager(lomiriapi::SurfaceManagerInterface *
     if (m_surfaceManager) {
         connect(m_surfaceManager, &lomiriapi::SurfaceManagerInterface::surfacesAddedToWorkspace, this, &TopLevelWindowModel::onSurfacesAddedToWorkspace);
         connect(m_surfaceManager, &lomiriapi::SurfaceManagerInterface::surfacesRaised, this, &TopLevelWindowModel::onSurfacesRaised);
+        connect(m_surfaceManager, &lomiriapi::SurfaceManagerInterface::surfaceRemoved, this, &TopLevelWindowModel::onSurfaceDestroyed);
         connect(m_surfaceManager, &lomiriapi::SurfaceManagerInterface::modificationsStarted, this, &TopLevelWindowModel::onModificationsStarted);
         connect(m_surfaceManager, &lomiriapi::SurfaceManagerInterface::modificationsEnded, this, &TopLevelWindowModel::onModificationsEnded);
     }
@@ -182,7 +183,7 @@ void TopLevelWindowModel::prependSurface(lomiriapi::MirSurfaceInterface *surface
     bool filledPlaceholder = false;
     for (int i = 0; i < m_windowModel.count() && !filledPlaceholder; ++i) {
         ModelEntry &entry = m_windowModel[i];
-        if (entry.application == application && entry.window->surface() == nullptr) {
+        if (entry.application == application && (entry.window->surface() == nullptr || !entry.window->surface()->live())) {
             entry.window->setSurface(surface);
             INFO_MSG << " appId=" << application->appId() << " surface=" << surface
                       << ", filling out placeholder. after: " << toString();
@@ -317,11 +318,11 @@ void TopLevelWindowModel::activateEmptyWindow(Window *window)
 void TopLevelWindowModel::connectSurface(lomiriapi::MirSurfaceInterface *surface)
 {
     connect(surface, &lomiriapi::MirSurfaceInterface::liveChanged, this, [this, surface](bool live){
-            if (!live) {
-                onSurfaceDied(surface);
-            }
-        });
-    connect(surface, &QObject::destroyed, this, [this, surface](){ this->onSurfaceDestroyed(surface); });
+        if (!live) {
+            onSurfaceDied(surface);
+        }
+    });
+    connect(surface, &QObject::destroyed, this, [this, surface](QObject*){ this->onSurfaceDestroyed(surface); });
 }
 
 void TopLevelWindowModel::onSurfaceDied(lomiriapi::MirSurfaceInterface *surface)
@@ -341,16 +342,14 @@ void TopLevelWindowModel::onSurfaceDied(lomiriapi::MirSurfaceInterface *surface)
     DEBUG_MSG << " application->name()=" << application->name()
               << " application->state()=" << application->state();
 
-    if (application->state() == lomiriapi::ApplicationInfoInterface::Running
-        || application->state() == lomiriapi::ApplicationInfoInterface::Starting) {
-        m_windowModel[i].removeOnceSurfaceDestroyed = true;
-    } else {
-        // assume it got killed by the out-of-memory daemon.
-        //
-        // So leave entry in the model and only remove its surface, so shell can display a screenshot
-        // in its place.
+    // assume it got killed by the out-of-memory daemon.
+    //
+    // Leave at most 1 entry in the model and only remove its surface, so shell can display a screenshot
+    // in its place.
+    if (application->surfaceList()->count() == 1)
         m_windowModel[i].removeOnceSurfaceDestroyed = false;
-    }
+    else
+        m_windowModel[i].removeOnceSurfaceDestroyed = true;
 }
 
 void TopLevelWindowModel::onSurfaceDestroyed(lomiriapi::MirSurfaceInterface *surface)
@@ -364,7 +363,6 @@ void TopLevelWindowModel::onSurfaceDestroyed(lomiriapi::MirSurfaceInterface *sur
         deleteAt(i);
     } else {
         auto window = m_windowModel[i].window;
-        window->setSurface(nullptr);
         window->setFocused(false);
         m_allSurfaces.remove(surface);
         INFO_MSG << " Removed surface from entry. After: " << toString();
@@ -717,7 +715,7 @@ void TopLevelWindowModel::doRaiseId(int id)
     // can't raise something that doesn't exist or that it's already on top
     if (fromIndex != -1 && fromIndex != 0) {
         auto surface = m_windowModel[fromIndex].window->surface();
-        if (surface) {
+        if (surface && surface->live()) {
             m_surfaceManager->raise(surface);
         } else {
             // move it ourselves. Since there's no mir::scene::Surface/miral::Window, there's nothing
