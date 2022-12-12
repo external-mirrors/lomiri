@@ -3,6 +3,7 @@ data/test.sensors etc/lomirisensors/
 usr/bin/lomiri
 usr/lib/systemd/user/*
 usr/libexec/lomiri-systemd-wrapper
+usr/libexec/Xwayland.lomiri
 usr/share/applications/lomiri.desktop
 usr/share/lomiri/ApplicationMenus
 usr/share/lomiri/DeviceConfiguration.qml

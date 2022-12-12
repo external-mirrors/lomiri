@@ -27,3 +27,8 @@ install(PROGRAMS
     lomiri-systemd-wrapper
     DESTINATION ${CMAKE_INSTALL_FULL_LIBEXECDIR}
 )
+
+install(PROGRAMS
+    Xwayland.lomiri
+    DESTINATION ${CMAKE_INSTALL_FULL_LIBEXECDIR}
+)
