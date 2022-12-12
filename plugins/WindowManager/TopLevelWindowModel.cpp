@@ -359,6 +359,11 @@ void TopLevelWindowModel::onSurfaceDestroyed(lomiriapi::MirSurfaceInterface *sur
         return;
     }
 
+    auto application = m_windowModel[i].application;
+    if (application->appId() == QStringLiteral("xwayland.qtmir")) {
+        m_windowModel[i].removeOnceSurfaceDestroyed = true;
+    }
+
     if (m_windowModel[i].removeOnceSurfaceDestroyed) {
         deleteAt(i);
     } else {
