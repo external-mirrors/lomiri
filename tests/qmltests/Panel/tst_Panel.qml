@@ -548,7 +548,7 @@ PanelUI {
         }
 
         function test_hidingKeyboardIndicator(data) {
-            var item = findChild(panel, "indicator-keyboard-panelItem");
+            var item = findChild(panel, "ayatana-indicator-keyboard-panelItem");
             AccountsService.keymaps = data.keymaps;
             panel.hasKeyboard = data.keyboard;
             if (data.keyboard) {

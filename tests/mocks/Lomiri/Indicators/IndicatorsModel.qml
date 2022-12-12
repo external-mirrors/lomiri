@@ -29,7 +29,7 @@ Indicators.FakeIndicatorsModel {
 
     property var originalModelData: [
         {
-            "identifier": "indicator-keyboard",
+            "identifier": "ayatana-indicator-keyboard",
             "indicatorProperties": {
                 "enabled": true,
                 "busName": "com.canonical.indicators.fake0",
@@ -101,7 +101,7 @@ Indicators.FakeIndicatorsModel {
             }
         },
         {
-            "identifier": "fake-indicator-session",
+            "identifier": "fake-ayatana-indicator-session",
             "indicatorProperties": {
                 "enabled": true,
                 "busName": "com.canonical.indicators.fake8",
@@ -112,7 +112,7 @@ Indicators.FakeIndicatorsModel {
     ]
 
     Component.onCompleted: {
-        // init data for the fake indicator-keyboard
+        // init data for the fake ayatana-indicator-keyboard
         MockInputDeviceBackend.addMockDevice("/indicator_kbd0", InputInfo.Keyboard);
         AccountsService.keymaps = ["us", "cs"];
     }
@@ -127,7 +127,7 @@ Indicators.FakeIndicatorsModel {
         root.modelData = originalModelData;
 
         Indicators.LomiriMenuModelCache.setCachedModelData("/com/canonical/indicators/fake0",
-                                           getLomiriMenuModelData("indicator-keyboard",
+                                           getLomiriMenuModelData("ayatana-indicator-keyboard",
                                                                  "English (F)",
                                                                  "",
                                                                  [ "image://theme/input-keyboard-symbolic" ],
@@ -175,7 +175,7 @@ Indicators.FakeIndicatorsModel {
                                                                  [],
                                                                  root.light));
         Indicators.LomiriMenuModelCache.setCachedModelData("/com/canonical/indicators/fake8",
-                                           getLomiriMenuModelData("fake-indicator-session",
+                                           getLomiriMenuModelData("fake-ayatana-indicator-session",
                                                                  "System (F)",
                                                                  "",
                                                                  ["image://theme/system-devices-panel"],

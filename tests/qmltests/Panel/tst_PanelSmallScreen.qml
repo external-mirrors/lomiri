@@ -33,7 +33,7 @@ import ".."
 
 PanelUI {
     id: root
-    width: units.gu(71)
+    width: units.gu(75)
 
     LomiriTestCase {
         name: "PanelSmallScreen"
