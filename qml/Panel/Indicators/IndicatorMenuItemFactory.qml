@@ -485,15 +485,14 @@ Item {
                 userProperty: "checked"
 
                 onSyncTriggered: {
-                    if (menuData && menuData.type === 'org.ayatana.indicator.switch') {
-                        // Workaround action change for Ayatana Indicators.
-                        // https://github.com/AyatanaIndicators/qmenumodel/issues/21
-                        // https://gitlab.com/ubports/development/core/lomiri/-/issues/17
-                        // FIXME: when the permanent fix is merged, look at this again.
-                        menuModel.activate(switchItem.menuIndex, switchItem.checked);
-                    } else {
-                        menuModel.activate(switchItem.menuIndex);
-                    }
+                    /* Works with:
+                     * - com.canonical.indicator.switch
+                     * - org.ayatana.indicator.switch (with fix)
+                     * - com.canonical.indicator.switch mis-labled as
+                     *   org.ayatana.indicator.switch
+                     *   https://gitlab.com/ubports/development/core/lomiri-indicator-network/-/issues/87#note_1206883970
+                     */
+                    menuModel.changeState(switchItem.menuIndex, switchItem.checked);
                 }
             }
         }
