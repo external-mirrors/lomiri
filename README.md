@@ -27,3 +27,13 @@ Now you can use the full suite of tools provided by this repository's [clickable
 * `clickable ide 'cd build/x86_64-linux-gnu/unity8/ && make tryShell'` and similar commands that replace the `Shell` with another test target defined in [tests/qmltests/CMakeLists.txt](tests/qmltests/CMakeLists.txt) allow trying out some Lomiri components in a mock environment. You can use this to try out your changes to Lomiri as you develop.
 * `clickable ide 'cd build/x86_64-linux-gnu/unity8/ && make xvfbtestShell'` and similar commands that replace the `Shell` with another test target defined in [tests/qmltests/CMakeLists.txt](tests/qmltests/CMakeLists.txt) allow running a single TestCase. You can remove the `xvfb` part of the make target to run the test case graphically, which might help you see what is causing the test to fail.
 --->
+
+## i18n: Translating Lomiri into your Language
+
+You can easily contribute to the localization of this project (i.e. the
+translation into your language) by visiting (and signing up with) the
+Hosted Weblate service:
+https://hosted.weblate.org/projects/lomiri/lomiri
+
+The localization platform of this project is sponsored by Hosted Weblate
+via their free hosting plan for Libre and Open Source Projects.
