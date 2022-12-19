@@ -1,26 +1,27 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Canonical Ltd.
-# This file is distributed under the same license as the lomiri package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Kurdish translation for unity8
+# Copyright (c) 2014 Rosetta Contributors and Canonical Ltd 2014
+# This file is distributed under the same license as the unity8 package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: lomiri\n"
+"Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-17 14:18+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"POT-Creation-Date: 2021-01-29 11:42-0600\n"
+"PO-Revision-Date: 2014-09-10 13:14+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language-Team: Kurdish <ku@li.org>\n"
+"Language: ku\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Launchpad-Export-Date: 2016-11-23 06:35+0000\n"
+"X-Generator: Launchpad (build 18269)\n"
 
 #: plugins/LightDM/Greeter.cpp:199
 msgid "Password: "
-msgstr ""
+msgstr "Şîfre: "
 
 #: plugins/LightDM/Greeter.cpp:214
 msgid "Username"
@@ -50,58 +51,18 @@ msgstr ""
 msgid "Guest Session"
 msgstr ""
 
-#: plugins/Lomiri/Launcher/launcheritem.cpp:48
-#: plugins/Lomiri/Launcher/launcheritem.cpp:122
+#: plugins/Unity/Launcher/launcheritem.cpp:48
+#: plugins/Unity/Launcher/launcheritem.cpp:122
 msgid "Pin shortcut"
-msgstr ""
+msgstr "Kurteriyê pêveke"
 
-#: plugins/Lomiri/Launcher/launcheritem.cpp:54
+#: plugins/Unity/Launcher/launcheritem.cpp:54
 msgid "Quit"
 msgstr ""
 
-#: plugins/Lomiri/Launcher/launcheritem.cpp:122
+#: plugins/Unity/Launcher/launcheritem.cpp:122
 msgid "Unpin shortcut"
-msgstr ""
-
-#: plugins/WindowManager/Screen.cpp:160
-msgid "Unknown"
-msgstr ""
-
-#: plugins/WindowManager/Screen.cpp:162
-msgid "VGA"
-msgstr ""
-
-#: plugins/WindowManager/Screen.cpp:166
-msgid "DVI"
-msgstr ""
-
-#: plugins/WindowManager/Screen.cpp:168
-msgid "Composite"
-msgstr ""
-
-#: plugins/WindowManager/Screen.cpp:170
-msgid "S-Video"
-msgstr ""
-
-#: plugins/WindowManager/Screen.cpp:174
-msgid "Internal"
-msgstr ""
-
-#: plugins/WindowManager/Screen.cpp:176
-msgid "Component"
-msgstr ""
-
-#: plugins/WindowManager/Screen.cpp:178
-msgid "DisplayPort"
-msgstr ""
-
-#: plugins/WindowManager/Screen.cpp:181
-msgid "HDMI"
-msgstr ""
-
-#: plugins/WindowManager/Screen.cpp:183
-msgid "TV"
-msgstr ""
+msgstr "Derzîdanka kurteriyê rake"
 
 #: qml/Components/Dialogs.qml:176
 msgctxt "Title: Lock/Log out dialog"
@@ -110,7 +71,7 @@ msgstr ""
 
 #: qml/Components/Dialogs.qml:177
 msgid "Are you sure you want to log out?"
-msgstr ""
+msgstr "Ji dil dixwazî derkevî?"
 
 #: qml/Components/Dialogs.qml:180
 msgctxt "Button: Lock the system"
@@ -123,10 +84,10 @@ msgid "Log Out"
 msgstr ""
 
 #: qml/Components/Dialogs.qml:199 qml/Components/Dialogs.qml:284
-#: qml/Greeter/NarrowView.qml:218 qml/Wizard/Pages/passcode-confirm.qml:32
+#: qml/Greeter/NarrowView.qml:215 qml/Wizard/Pages/passcode-confirm.qml:32
 #: qml/Wizard/Pages/passcode-set.qml:32
 msgid "Cancel"
-msgstr ""
+msgstr "Betal bike"
 
 #: qml/Components/Dialogs.qml:211
 msgctxt "Title: Reboot dialog"
@@ -135,15 +96,15 @@ msgstr ""
 
 #: qml/Components/Dialogs.qml:212
 msgid "Are you sure you want to reboot?"
-msgstr ""
+msgstr "Ji dil dixwazî bidî destpêkirin?"
 
 #: qml/Components/Dialogs.qml:215
 msgid "No"
-msgstr ""
+msgstr "Na"
 
 #: qml/Components/Dialogs.qml:223
 msgid "Yes"
-msgstr ""
+msgstr "Erê"
 
 #: qml/Components/Dialogs.qml:243
 msgctxt "Title: Power off/Restart dialog"
@@ -155,6 +116,8 @@ msgid ""
 "Are you sure you would like\n"
 "to power off?"
 msgstr ""
+"Ji dil dixwazî\n"
+"kompîturê bigirî?"
 
 #: qml/Components/Dialogs.qml:248
 msgctxt "Button: Power off the system"
@@ -262,88 +225,98 @@ msgstr ""
 msgid "Opens the Application Drawer."
 msgstr ""
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:211
+#: qml/Components/KeyboardShortcutsOverlay.qml:235
 msgid "Switching"
 msgstr ""
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:218
+#: qml/Components/KeyboardShortcutsOverlay.qml:242
 msgid "Alt + Tab"
 msgstr ""
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:223
+#: qml/Components/KeyboardShortcutsOverlay.qml:247
 msgid "Switches between applications."
 msgstr ""
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:231
+#: qml/Components/KeyboardShortcutsOverlay.qml:255
 msgid "Super + W"
 msgstr ""
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:236
+#: qml/Components/KeyboardShortcutsOverlay.qml:260
 msgid "Opens the desktop spread."
 msgstr ""
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:244
+#: qml/Components/KeyboardShortcutsOverlay.qml:268
 msgid "Cursor Left or Right"
 msgstr ""
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:249
+#: qml/Components/KeyboardShortcutsOverlay.qml:273
 msgid "Moves the focus."
 msgstr ""
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:261
+#: qml/Components/KeyboardShortcutsOverlay.qml:285
 msgid "Windows"
 msgstr ""
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:268
+#: qml/Components/KeyboardShortcutsOverlay.qml:292
 msgid "Ctrl + Super + D"
 msgstr ""
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:273
+#: qml/Components/KeyboardShortcutsOverlay.qml:297
 msgid "Minimizes all windows."
 msgstr ""
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:281
+#: qml/Components/KeyboardShortcutsOverlay.qml:305
 msgid "Ctrl + Super + Up"
 msgstr ""
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:286
+#: qml/Components/KeyboardShortcutsOverlay.qml:310
 msgid "Maximizes the current window."
 msgstr ""
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:294
+#: qml/Components/KeyboardShortcutsOverlay.qml:318
 msgid "Ctrl + Super + Down"
 msgstr ""
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:299
+#: qml/Components/KeyboardShortcutsOverlay.qml:323
 msgid "Minimizes or restores the current window."
 msgstr ""
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:307
+#: qml/Components/KeyboardShortcutsOverlay.qml:331
 msgid "Ctrl + Super + Left or Right"
 msgstr ""
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:312
+#: qml/Components/KeyboardShortcutsOverlay.qml:336
 msgid "Semi-maximizes the current window."
 msgstr ""
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:320
+#: qml/Components/KeyboardShortcutsOverlay.qml:344
 msgid "Alt + F4"
 msgstr ""
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:325
+#: qml/Components/KeyboardShortcutsOverlay.qml:349
 msgid "Closes the current window."
 msgstr ""
 
-#: qml/Components/Lockscreen.qml:214 qml/Greeter/NarrowView.qml:238
+#: qml/Components/Lockscreen.qml:212 qml/Greeter/NarrowView.qml:235
 msgid "Return to Call"
 msgstr ""
 
-#: qml/Components/Lockscreen.qml:214
+#: qml/Components/Lockscreen.qml:212
 msgid "Emergency Call"
+msgstr "Lêgerîna Lezgîn"
+
+#: qml/Components/Lockscreen.qml:245
+msgid "OK"
+msgstr "BAŞ E"
+
+#: qml/Components/MediaServices/VideoPlayerControls.qml:44
+#, qt-format
+msgid "%1:%2:%3"
 msgstr ""
 
-#: qml/Components/Lockscreen.qml:247
-msgid "OK"
+#: qml/Components/MediaServices/VideoPlayerControls.qml:49
+#, qt-format
+msgid "%1:%2"
 msgstr ""
 
 #: qml/Components/ModeSwitchWarningDialog.qml:33
@@ -376,29 +349,31 @@ msgstr ""
 msgid "Preview Share Item"
 msgstr ""
 
-#: qml/Components/VirtualTouchPad.qml:312
+#: qml/Components/VirtualTouchPad.qml:317
 msgid ""
 "Your device is now connected to an external display. Use this screen as a "
 "touch pad to interact with the pointer."
 msgstr ""
 
-#: qml/Components/VirtualTouchPad.qml:322
+#: qml/Components/VirtualTouchPad.qml:327
+#, fuzzy
+#| msgid "Tap to return to call..."
 msgid "Tap left button to click."
-msgstr ""
+msgstr "Ji bo vegerî lêgerînê bipelîne..."
 
-#: qml/Components/VirtualTouchPad.qml:334
+#: qml/Components/VirtualTouchPad.qml:339
 msgid "Tap right button to right click."
 msgstr ""
 
-#: qml/Components/VirtualTouchPad.qml:346
+#: qml/Components/VirtualTouchPad.qml:351
 msgid "Swipe with two fingers to scroll."
 msgstr ""
 
-#: qml/Components/VirtualTouchPad.qml:391
+#: qml/Components/VirtualTouchPad.qml:396
 msgid "Find more settings in the system settings."
 msgstr ""
 
-#: qml/Greeter/CoverPage.qml:158
+#: qml/Greeter/CoverPage.qml:127
 msgid "Unlock"
 msgstr ""
 
@@ -421,27 +396,27 @@ msgid_plural "Please wait %1 minutes and then try again…"
 msgstr[0] ""
 msgstr[1] ""
 
-#: qml/Greeter/Greeter.qml:595
+#: qml/Greeter/Greeter.qml:550
 msgid "Try again"
 msgstr ""
 
-#: qml/Greeter/Greeter.qml:596
+#: qml/Greeter/Greeter.qml:551
 msgid "Enter passphrase to unlock"
 msgstr ""
 
-#: qml/Greeter/Greeter.qml:597
+#: qml/Greeter/Greeter.qml:552
 msgid "Enter passcode to unlock"
 msgstr ""
 
-#: qml/Greeter/NarrowView.qml:238
+#: qml/Greeter/NarrowView.qml:235
 msgid "Emergency"
 msgstr ""
 
-#: qml/Greeter/PromptList.qml:132
+#: qml/Greeter/PromptList.qml:126
 msgid "Passphrase"
 msgstr ""
 
-#: qml/Greeter/PromptList.qml:132
+#: qml/Greeter/PromptList.qml:126
 msgid "Passcode"
 msgstr ""
 
@@ -449,9 +424,11 @@ msgstr ""
 msgid "Select desktop environment"
 msgstr ""
 
-#: qml/Launcher/Drawer.qml:235
+#: qml/Launcher/Drawer.qml:250
+#, fuzzy
+#| msgid "Search"
 msgid "Search…"
-msgstr ""
+msgstr "Lêgerîn"
 
 #: qml/Launcher/PullToRefreshScopeStyle.qml:56
 msgid "Pull to refresh…"
@@ -463,74 +440,74 @@ msgstr ""
 
 #: qml/Notifications/NotificationMenuItemFactory.qml:124
 msgid "Show password"
-msgstr ""
+msgstr "Şîfreyê nîşan bide"
 
 #: qml/Panel/ActiveCallHint.qml:79
 msgid "Tap to return to call..."
-msgstr ""
+msgstr "Ji bo vegerî lêgerînê bipelîne..."
 
-#: qml/Panel/ActiveCallHint.qml:93
+#: qml/Panel/ActiveCallHint.qml:92
 msgid "Conference"
-msgstr ""
+msgstr "Konferans"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:924
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:869
 msgid "Nothing is playing"
 msgstr ""
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1052
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:997
 #, qt-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
 msgstr[0] ""
 msgstr[1] ""
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1056
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1001
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
 msgstr[0] ""
 msgstr[1] ""
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1061
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1006
 #, qt-format
 msgid "%1 second"
 msgid_plural "%1 seconds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1064
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1009
 msgid "0 seconds"
 msgstr ""
 
 #. Translators: String like "1 hour, 2 minutes, 3 seconds remaining"
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1066
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1011
 #, qt-format
 msgid "%1 remaining"
 msgstr ""
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1072
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1017
 msgid "In queue…"
-msgstr ""
+msgstr "Li bendê ye..."
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1076
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1021
 msgid "Downloading"
-msgstr ""
+msgstr "Jêbar dibe..."
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1078
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1023
 msgid "Paused, tap to resume"
-msgstr ""
+msgstr "Hat rawestandin, ji bo dewam bike bipelîne"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1080
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1025
 msgid "Canceled"
-msgstr ""
+msgstr "Hat betalkirin"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1082
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1027
 msgid "Finished"
-msgstr ""
+msgstr "Qediya"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1084
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1029
 msgid "Failed, tap to retry"
-msgstr ""
+msgstr "Bi ser neket, ji bo dewam bike bipelîne"
 
 #: qml/Panel/Indicators/MessageMenuItemFactory.qml:151
 #: qml/Panel/Indicators/MessageMenuItemFactory.qml:210
@@ -552,17 +529,19 @@ msgstr ""
 msgid "Back"
 msgstr ""
 
-#: qml/Stage/SideStage.qml:80
+#: qml/Stage/SideStage.qml:76
 msgid "Drag using 3 fingers any application from one window to the other"
 msgstr ""
 
-#: qml/Stage/Stage.qml:826
+#: qml/Stage/Stage.qml:671
 msgid "No running apps"
 msgstr ""
 
 #: qml/Tutorial/TutorialLeftLong.qml:49
+#, fuzzy
+#| msgid "Try swiping from the top edge to access the indicators"
 msgid "Long swipe from the left edge to open the Application Drawer"
-msgstr ""
+msgstr "JI bo xwe bigihînî danezanan ji kêleka jorê kaş bike"
 
 #: qml/Tutorial/TutorialLeft.qml:47
 msgid "Short swipe from the left edge to open the launcher"
@@ -592,7 +571,7 @@ msgstr ""
 #: qml/Wizard/Pages/10-welcome.qml:176
 #: qml/Wizard/Pages/10-welcome-update.qml:126
 #: qml/Wizard/Pages/11-changelog.qml:74 qml/Wizard/Pages/20-keyboard.qml:152
-#: qml/Wizard/Pages/30-wifi.qml:213 qml/Wizard/Pages/50-timezone.qml:270
+#: qml/Wizard/Pages/30-wifi.qml:214 qml/Wizard/Pages/50-timezone.qml:272
 #: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/70-passwd-type.qml:146
 #: qml/Wizard/Pages/passcode-desktop.qml:154
 #: qml/Wizard/Pages/password-set.qml:153
@@ -612,8 +591,9 @@ msgid "What's new"
 msgstr ""
 
 #: qml/Wizard/Pages/11-changelog.qml:74
+#, fuzzy
 msgid "Loading..."
-msgstr ""
+msgstr "Diaxive..."
 
 #: qml/Wizard/Pages/20-keyboard.qml:31
 msgid "Select Keyboard"
@@ -627,7 +607,7 @@ msgstr ""
 msgid "Keyboard layout"
 msgstr ""
 
-#: qml/Wizard/Pages/20-keyboard.qml:152 qml/Wizard/Pages/30-wifi.qml:213
+#: qml/Wizard/Pages/20-keyboard.qml:152 qml/Wizard/Pages/30-wifi.qml:214
 #: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/79-system-update.qml:144
 #: qml/Wizard/Pages/sim.qml:101
 msgid "Skip"
@@ -653,7 +633,7 @@ msgstr ""
 msgid "Time Zone"
 msgstr ""
 
-#: qml/Wizard/Pages/50-timezone.qml:182
+#: qml/Wizard/Pages/50-timezone.qml:183
 msgid "Enter your city"
 msgstr ""
 
@@ -696,7 +676,7 @@ msgstr ""
 
 #: qml/Wizard/Pages/79-system-update.qml:76
 msgctxt "string identifying name of the update"
-msgid "Lomiri Touch system"
+msgid "Ubuntu Touch system"
 msgstr ""
 
 #: qml/Wizard/Pages/79-system-update.qml:83
@@ -718,7 +698,7 @@ msgid "Welcome Back"
 msgstr ""
 
 #: qml/Wizard/Pages/80-finished.qml:91
-msgid "Welcome to Lomiri"
+msgid "Welcome to Ubuntu"
 msgstr ""
 
 #: qml/Wizard/Pages/80-finished.qml:106
@@ -843,3 +823,156 @@ msgstr ""
 #: qml/Wizard/PasswordMeter.qml:101
 msgid "Very weak password"
 msgstr ""
+
+#~ msgid "Remove from Favorites"
+#~ msgstr "Ji nav Bijareyan rake"
+
+#~ msgid "Add to Favorites"
+#~ msgstr "Li Bijareyan zêde bike"
+
+#~ msgid "More..."
+#~ msgstr "Zêdetir..."
+
+#~ msgid "Less..."
+#~ msgstr "Hindiktir..."
+
+#~ msgid "Send"
+#~ msgstr "Bişîne"
+
+#~ msgid "Rate this"
+#~ msgstr "Deng bidê"
+
+#~ msgid "Add a review"
+#~ msgstr "Binirxîne"
+
+#, fuzzy
+#~ msgid "Please wait..."
+#~ msgstr "Bar dike. Tika ye li bendê bî..."
+
+#, fuzzy
+#~ msgid "Download"
+#~ msgstr "Jêbar dibe..."
+
+#, fuzzy
+#~ msgid "Downloaded"
+#~ msgstr "Jêbar dibe..."
+
+#~ msgid "Log out"
+#~ msgstr "Derkeve"
+
+#~ msgid "Are you sure you want to shut down?"
+#~ msgstr "Ji dil dixwazî bigirî?"
+
+#~ msgid "Reboot"
+#~ msgstr "Dîsdestpêkirin"
+
+#~ msgid "Shut down"
+#~ msgstr "Bigire"
+
+#~ msgid "Close"
+#~ msgstr "Bigire"
+
+#~ msgid "Well done"
+#~ msgstr "Aferim"
+
+#~ msgid "See all"
+#~ msgstr "Tevî bibîne"
+
+#~ msgid "Settings"
+#~ msgstr "Eyar"
+
+#~ msgid "See less"
+#~ msgstr "Hindiktir bibîne"
+
+#~ msgid "Power"
+#~ msgstr "Hêz"
+
+#~ msgid "Top edge"
+#~ msgstr "Kêleka jorê"
+
+#~ msgid "Skip intro"
+#~ msgstr "Danasînê derbas bike"
+
+#~ msgid "Try swiping from the right edge to unlock the phone"
+#~ msgstr "Ji bo kilîdê vekî ji kêleka rastê kaş bike"
+
+#~ msgid "Right edge"
+#~ msgstr "Kêleka rastê"
+
+#~ msgid "Swipe up again to close the settings screen"
+#~ msgstr "Ji bo girtina ekrana eyaran dîsa bi jorê ve kaş bike"
+
+#~ msgid "Left edge"
+#~ msgstr "Kêleka çepê"
+
+#~ msgid "Swipe from the left to reveal the launcher for quick access to apps"
+#~ msgstr ""
+#~ "Ji bo vekirina gihînera lezgîn ya bernamokan ji kêleka çepê kaş bike"
+
+#~ msgid ""
+#~ "You have now mastered the edge gestures and can start using the "
+#~ "phone<br><br>Tap on the screen to start"
+#~ msgstr ""
+#~ "Tu tevgerên kêlekê fêr bûyî<br><br>Ji bo destpêkirinê ekranê bipelîne"
+
+#~ msgid "Power off"
+#~ msgstr "Bigire"
+
+#~ msgid "Type or say a command"
+#~ msgstr "Fermanekê bêje yan binivîse"
+
+#~ msgid "Speak Now..."
+#~ msgstr "Niha biaxive..."
+
+#~ msgid "All"
+#~ msgstr "Hemû"
+
+#~ msgid "Confirm"
+#~ msgstr "Erê bike"
+
+#~ msgid "Favorites"
+#~ msgstr "Bijare"
+
+#~ msgid "Store"
+#~ msgstr "Firoşgeh"
+
+#~ msgid "Done"
+#~ msgstr "Qediya"
+
+#~ msgid "Sorry, incorrect %1"
+#~ msgstr "Bibore, %1 çewt e"
+
+#~ msgid "Sorry, incorrect passphrase"
+#~ msgstr "Bibore, parola çewt e"
+
+#~ msgid "Unlock SIM"
+#~ msgstr "Kilîda SIMê veke"
+
+#~ msgid "Roaming"
+#~ msgstr "Geriyan"
+
+#~ msgid "Sorry, incorrect passcode"
+#~ msgstr "Bibore, parola çewrt e"
+
+#~ msgid "Sorry, incorrect passphrase."
+#~ msgstr "Bibore, parola çewt e."
+
+#~ msgid "Sorry, incorrect passcode."
+#~ msgstr "Bibore, parola çewt e."
+
+#~ msgid ""
+#~ "If passcode is entered incorrectly, your phone will conduct a factory "
+#~ "reset and all personal data will be deleted."
+#~ msgstr ""
+#~ "Eger parola çewt bê nivîsandin, telefona te dê vegere eyarên fabrîkayê û "
+#~ "hemû daneyên te yên taybet dê bên jêbirin."
+
+#~ msgid ""
+#~ "If passphrase is entered incorrectly, your phone will conduct a factory "
+#~ "reset and all personal data will be deleted."
+#~ msgstr ""
+#~ "Eger parola çewt bê nivîsandin, telefona te dê vegere eyarên fabrîkayê û "
+#~ "hemû daneyên te yên taybet dê bên jêbirin."
+
+#~ msgid "This will be your last attempt."
+#~ msgstr "Ev ê ceribandina dawiyê be."
