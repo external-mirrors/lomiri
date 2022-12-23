@@ -38,8 +38,8 @@ echo "DBUS_SESSION_BUS_ADDRESS=${DBUS_SESSION_BUS_ADDRESS}" >"$XDG_RUNTIME_DIR/d
 
 # If touch session script (which sets up grid units and mir variables) is available, use it
 TOUCH_WRAPPER=
-if which lomiri-touch-session >/dev/null; then
-    TOUCH_WRAPPER=lomiri-touch-session
+if which ubuntu-touch-session-greeter >/dev/null; then
+    TOUCH_WRAPPER=ubuntu-touch-session-greeter
 fi
 
 # Advertise as a lomiri session, so that indicator-network will start.
