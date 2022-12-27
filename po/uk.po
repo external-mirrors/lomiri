@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-29 11:42-0600\n"
-"PO-Revision-Date: 2022-12-17 13:07+0000\n"
+"PO-Revision-Date: 2022-12-28 23:54+0000\n"
 "Last-Translator: Dan <denqwerta@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/lomiri/lomiri/"
 "uk/>\n"
@@ -185,7 +185,7 @@ msgstr "Ctrl + Alt + T"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:119
 msgid "Starts the Terminal application."
-msgstr "Запустити програму Термінал."
+msgstr "Запустити застосунок Термінал."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:131
 msgid "Launcher"
