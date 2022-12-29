@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-29 11:42-0600\n"
+"POT-Creation-Date: 2022-12-17 14:18+0100\n"
 "PO-Revision-Date: 2020-10-01 20:11+0000\n"
 "Last-Translator: Soohan Park <soobak0313@gmail.com>\n"
 "Language-Team: Korean <https://translate.ubports.com/projects/unity8/unity8/"
@@ -52,18 +52,58 @@ msgstr "로그인"
 msgid "Guest Session"
 msgstr "손님 세션"
 
-#: plugins/Unity/Launcher/launcheritem.cpp:48
-#: plugins/Unity/Launcher/launcheritem.cpp:122
+#: plugins/Lomiri/Launcher/launcheritem.cpp:48
+#: plugins/Lomiri/Launcher/launcheritem.cpp:122
 msgid "Pin shortcut"
 msgstr "바로 가기를 고정"
 
-#: plugins/Unity/Launcher/launcheritem.cpp:54
+#: plugins/Lomiri/Launcher/launcheritem.cpp:54
 msgid "Quit"
 msgstr "끝내기"
 
-#: plugins/Unity/Launcher/launcheritem.cpp:122
+#: plugins/Lomiri/Launcher/launcheritem.cpp:122
 msgid "Unpin shortcut"
 msgstr "바로 가기를 고정 해제"
+
+#: plugins/WindowManager/Screen.cpp:160
+msgid "Unknown"
+msgstr ""
+
+#: plugins/WindowManager/Screen.cpp:162
+msgid "VGA"
+msgstr ""
+
+#: plugins/WindowManager/Screen.cpp:166
+msgid "DVI"
+msgstr ""
+
+#: plugins/WindowManager/Screen.cpp:168
+msgid "Composite"
+msgstr ""
+
+#: plugins/WindowManager/Screen.cpp:170
+msgid "S-Video"
+msgstr ""
+
+#: plugins/WindowManager/Screen.cpp:174
+msgid "Internal"
+msgstr ""
+
+#: plugins/WindowManager/Screen.cpp:176
+msgid "Component"
+msgstr ""
+
+#: plugins/WindowManager/Screen.cpp:178
+msgid "DisplayPort"
+msgstr ""
+
+#: plugins/WindowManager/Screen.cpp:181
+msgid "HDMI"
+msgstr ""
+
+#: plugins/WindowManager/Screen.cpp:183
+msgid "TV"
+msgstr ""
 
 #: qml/Components/Dialogs.qml:176
 msgctxt "Title: Lock/Log out dialog"
@@ -85,7 +125,7 @@ msgid "Log Out"
 msgstr "로그아웃"
 
 #: qml/Components/Dialogs.qml:199 qml/Components/Dialogs.qml:284
-#: qml/Greeter/NarrowView.qml:215 qml/Wizard/Pages/passcode-confirm.qml:32
+#: qml/Greeter/NarrowView.qml:218 qml/Wizard/Pages/passcode-confirm.qml:32
 #: qml/Wizard/Pages/passcode-set.qml:32
 msgid "Cancel"
 msgstr "취소"
@@ -226,99 +266,89 @@ msgstr "Super + A"
 msgid "Opens the Application Drawer."
 msgstr "어플리케이션 서랍을 엽니다."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:235
+#: qml/Components/KeyboardShortcutsOverlay.qml:211
 msgid "Switching"
 msgstr "전환"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:242
+#: qml/Components/KeyboardShortcutsOverlay.qml:218
 msgid "Alt + Tab"
 msgstr "Alt + Tab"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:247
+#: qml/Components/KeyboardShortcutsOverlay.qml:223
 msgid "Switches between applications."
 msgstr "어플리케이션을 전환합니다."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:255
+#: qml/Components/KeyboardShortcutsOverlay.qml:231
 msgid "Super + W"
 msgstr "Super + W"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:260
+#: qml/Components/KeyboardShortcutsOverlay.qml:236
 msgid "Opens the desktop spread."
 msgstr "데스크탑 펼치기를 엽니다."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:268
+#: qml/Components/KeyboardShortcutsOverlay.qml:244
 msgid "Cursor Left or Right"
 msgstr "커서 왼쪽 혹은 오른쪽"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:273
+#: qml/Components/KeyboardShortcutsOverlay.qml:249
 msgid "Moves the focus."
 msgstr "초점을 이동합니다."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:285
+#: qml/Components/KeyboardShortcutsOverlay.qml:261
 msgid "Windows"
 msgstr "창"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:292
+#: qml/Components/KeyboardShortcutsOverlay.qml:268
 msgid "Ctrl + Super + D"
 msgstr "Ctrl + Super + D"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:297
+#: qml/Components/KeyboardShortcutsOverlay.qml:273
 msgid "Minimizes all windows."
 msgstr "모든 창을 최소화합니다."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:305
+#: qml/Components/KeyboardShortcutsOverlay.qml:281
 msgid "Ctrl + Super + Up"
 msgstr "Ctrl + Super + 위쪽 화살표"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:310
+#: qml/Components/KeyboardShortcutsOverlay.qml:286
 msgid "Maximizes the current window."
 msgstr "현재 창을 최대화합니다."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:318
+#: qml/Components/KeyboardShortcutsOverlay.qml:294
 msgid "Ctrl + Super + Down"
 msgstr "Ctrl + Super + 아래 화살표"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:323
+#: qml/Components/KeyboardShortcutsOverlay.qml:299
 msgid "Minimizes or restores the current window."
 msgstr "현재 창을 최소화하거나 원래 크기로 되돌립니다."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:331
+#: qml/Components/KeyboardShortcutsOverlay.qml:307
 msgid "Ctrl + Super + Left or Right"
 msgstr "Ctrl + Super + 왼쪽 또는 오른쪽 화살표"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:336
+#: qml/Components/KeyboardShortcutsOverlay.qml:312
 msgid "Semi-maximizes the current window."
 msgstr "현재 창을 좌우 절반에 채웁니다."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:344
+#: qml/Components/KeyboardShortcutsOverlay.qml:320
 msgid "Alt + F4"
 msgstr "Alt + F4"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:349
+#: qml/Components/KeyboardShortcutsOverlay.qml:325
 msgid "Closes the current window."
 msgstr "현재 창을 닫습니다."
 
-#: qml/Components/Lockscreen.qml:212 qml/Greeter/NarrowView.qml:235
+#: qml/Components/Lockscreen.qml:214 qml/Greeter/NarrowView.qml:238
 msgid "Return to Call"
 msgstr "다시 전화하기"
 
-#: qml/Components/Lockscreen.qml:212
+#: qml/Components/Lockscreen.qml:214
 msgid "Emergency Call"
 msgstr "긴급 통화"
 
-#: qml/Components/Lockscreen.qml:245
+#: qml/Components/Lockscreen.qml:247
 msgid "OK"
 msgstr "확인"
-
-#: qml/Components/MediaServices/VideoPlayerControls.qml:44
-#, qt-format
-msgid "%1:%2:%3"
-msgstr "%1:%2:%3"
-
-#: qml/Components/MediaServices/VideoPlayerControls.qml:49
-#, qt-format
-msgid "%1:%2"
-msgstr "%1:%2"
 
 #: qml/Components/ModeSwitchWarningDialog.qml:33
 msgid "Apps may have unsaved data:"
@@ -350,7 +380,7 @@ msgstr "모두 닫기"
 msgid "Preview Share Item"
 msgstr "공유 항목 미리 보기"
 
-#: qml/Components/VirtualTouchPad.qml:317
+#: qml/Components/VirtualTouchPad.qml:312
 msgid ""
 "Your device is now connected to an external display. Use this screen as a "
 "touch pad to interact with the pointer."
@@ -358,23 +388,23 @@ msgstr ""
 "장치를 외부 디스플레이에 연결했습니다. 포인터를 사용하려면 화면을 터치 패드"
 "로 사용해주십시오."
 
-#: qml/Components/VirtualTouchPad.qml:327
+#: qml/Components/VirtualTouchPad.qml:322
 msgid "Tap left button to click."
 msgstr "왼쪽 단추를 눌러 클릭하세요."
 
-#: qml/Components/VirtualTouchPad.qml:339
+#: qml/Components/VirtualTouchPad.qml:334
 msgid "Tap right button to right click."
 msgstr "오른쪽 단추를 눌러 오른쪽 클릭하세요."
 
-#: qml/Components/VirtualTouchPad.qml:351
+#: qml/Components/VirtualTouchPad.qml:346
 msgid "Swipe with two fingers to scroll."
 msgstr "두 손가락으로 쓸어 스크롤하세요."
 
-#: qml/Components/VirtualTouchPad.qml:396
+#: qml/Components/VirtualTouchPad.qml:391
 msgid "Find more settings in the system settings."
 msgstr "시스템 설정에서 더 많은 설정을 찾아보세요."
 
-#: qml/Greeter/CoverPage.qml:127
+#: qml/Greeter/CoverPage.qml:158
 msgid "Unlock"
 msgstr "잠금 해제"
 
@@ -396,27 +426,27 @@ msgid "Please wait %1 minute and then try again…"
 msgid_plural "Please wait %1 minutes and then try again…"
 msgstr[0] "%1분 정도 기다린 후 다시 시독해주십시오…"
 
-#: qml/Greeter/Greeter.qml:550
+#: qml/Greeter/Greeter.qml:595
 msgid "Try again"
 msgstr "다시 시도"
 
-#: qml/Greeter/Greeter.qml:551
+#: qml/Greeter/Greeter.qml:596
 msgid "Enter passphrase to unlock"
 msgstr "잠금을 해제하려면 암호를 입력해 주세요"
 
-#: qml/Greeter/Greeter.qml:552
+#: qml/Greeter/Greeter.qml:597
 msgid "Enter passcode to unlock"
 msgstr "비밀번호를 입력해 주세요"
 
-#: qml/Greeter/NarrowView.qml:235
+#: qml/Greeter/NarrowView.qml:238
 msgid "Emergency"
 msgstr "응급 상황"
 
-#: qml/Greeter/PromptList.qml:126
+#: qml/Greeter/PromptList.qml:132
 msgid "Passphrase"
 msgstr "암호"
 
-#: qml/Greeter/PromptList.qml:126
+#: qml/Greeter/PromptList.qml:132
 msgid "Passcode"
 msgstr "비밀번호"
 
@@ -424,7 +454,7 @@ msgstr "비밀번호"
 msgid "Select desktop environment"
 msgstr "데스크탑 환경 선택하기"
 
-#: qml/Launcher/Drawer.qml:250
+#: qml/Launcher/Drawer.qml:235
 msgid "Search…"
 msgstr "검색…"
 
@@ -444,63 +474,63 @@ msgstr "암호 표시"
 msgid "Tap to return to call..."
 msgstr "다시 통화하려면 두드려주십시오."
 
-#: qml/Panel/ActiveCallHint.qml:92
+#: qml/Panel/ActiveCallHint.qml:93
 msgid "Conference"
 msgstr "회의"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:869
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:924
 msgid "Nothing is playing"
 msgstr "연주하는 항목 없음"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:997
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1052
 #, qt-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
 msgstr[0] "%1시간"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1001
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1056
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
 msgstr[0] "%1분"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1006
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1061
 #, qt-format
 msgid "%1 second"
 msgid_plural "%1 seconds"
 msgstr[0] "%1초"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1009
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1064
 msgid "0 seconds"
 msgstr "0초"
 
 #. Translators: String like "1 hour, 2 minutes, 3 seconds remaining"
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1011
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1066
 #, qt-format
 msgid "%1 remaining"
 msgstr "%1 남음"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1017
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1072
 msgid "In queue…"
 msgstr "대기 중…"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1021
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1076
 msgid "Downloading"
 msgstr "다운로드 중"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1023
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1078
 msgid "Paused, tap to resume"
 msgstr "일시 중지되었습니다. 계속하려면 눌러 주세요"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1025
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1080
 msgid "Canceled"
 msgstr "취소함"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1027
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1082
 msgid "Finished"
 msgstr "완료함"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1029
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1084
 msgid "Failed, tap to retry"
 msgstr "실패, 다시 시도하려면 눌러 주세요"
 
@@ -527,12 +557,12 @@ msgstr "부재중 번호로 전화"
 msgid "Back"
 msgstr "뒤로"
 
-#: qml/Stage/SideStage.qml:76
+#: qml/Stage/SideStage.qml:80
 msgid "Drag using 3 fingers any application from one window to the other"
 msgstr ""
 "어떤 어플리케이션이든 한 창에서 다른 창으로 세 손가락을 사용해 끌어놓으세요"
 
-#: qml/Stage/Stage.qml:671
+#: qml/Stage/Stage.qml:826
 msgid "No running apps"
 msgstr "실행 중인 앱 없음"
 
@@ -568,7 +598,7 @@ msgstr "언어"
 #: qml/Wizard/Pages/10-welcome.qml:176
 #: qml/Wizard/Pages/10-welcome-update.qml:126
 #: qml/Wizard/Pages/11-changelog.qml:74 qml/Wizard/Pages/20-keyboard.qml:152
-#: qml/Wizard/Pages/30-wifi.qml:214 qml/Wizard/Pages/50-timezone.qml:272
+#: qml/Wizard/Pages/30-wifi.qml:213 qml/Wizard/Pages/50-timezone.qml:270
 #: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/70-passwd-type.qml:146
 #: qml/Wizard/Pages/passcode-desktop.qml:154
 #: qml/Wizard/Pages/password-set.qml:153
@@ -604,7 +634,7 @@ msgstr "키보드 언어"
 msgid "Keyboard layout"
 msgstr "키보드 배열"
 
-#: qml/Wizard/Pages/20-keyboard.qml:152 qml/Wizard/Pages/30-wifi.qml:214
+#: qml/Wizard/Pages/20-keyboard.qml:152 qml/Wizard/Pages/30-wifi.qml:213
 #: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/79-system-update.qml:144
 #: qml/Wizard/Pages/sim.qml:101
 msgid "Skip"
@@ -630,7 +660,7 @@ msgstr "연결할 수 있는 와이파이 네트워크 없음"
 msgid "Time Zone"
 msgstr "시간대"
 
-#: qml/Wizard/Pages/50-timezone.qml:183
+#: qml/Wizard/Pages/50-timezone.qml:182
 msgid "Enter your city"
 msgstr "살고 계신 도시를 입력해 주세요"
 
@@ -674,8 +704,11 @@ msgstr ""
 "니다."
 
 #: qml/Wizard/Pages/79-system-update.qml:76
+#, fuzzy
+#| msgctxt "string identifying name of the update"
+#| msgid "Ubuntu Touch system"
 msgctxt "string identifying name of the update"
-msgid "Ubuntu Touch system"
+msgid "Lomiri Touch system"
 msgstr "Ubuntu Touch 시스템"
 
 #: qml/Wizard/Pages/79-system-update.qml:83
@@ -697,8 +730,9 @@ msgid "Welcome Back"
 msgstr "돌아오신 것을 환영합니다"
 
 #: qml/Wizard/Pages/80-finished.qml:91
-msgid "Welcome to Ubuntu"
-msgstr "Ubuntu에 오신 것을 환영합니다"
+#, fuzzy
+msgid "Welcome to Lomiri"
+msgstr "환영합니다 "
 
 #: qml/Wizard/Pages/80-finished.qml:106
 msgid "You are ready to use your device now"
@@ -822,6 +856,17 @@ msgstr "약한 암호"
 #: qml/Wizard/PasswordMeter.qml:101
 msgid "Very weak password"
 msgstr "아주 약한 암호"
+
+#, qt-format
+#~ msgid "%1:%2:%3"
+#~ msgstr "%1:%2:%3"
+
+#, qt-format
+#~ msgid "%1:%2"
+#~ msgstr "%1:%2"
+
+#~ msgid "Welcome to Ubuntu"
+#~ msgstr "Ubuntu에 오신 것을 환영합니다"
 
 #~ msgid "Unity 8"
 #~ msgstr "유니티 8"

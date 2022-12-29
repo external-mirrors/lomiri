@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-29 11:42-0600\n"
+"POT-Creation-Date: 2022-12-17 14:18+0100\n"
 "PO-Revision-Date: 2022-11-06 22:02+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/lomiri/lomiri/"
@@ -53,18 +53,58 @@ msgstr "Prijava"
 msgid "Guest Session"
 msgstr "Sesija gosta"
 
-#: plugins/Unity/Launcher/launcheritem.cpp:48
-#: plugins/Unity/Launcher/launcheritem.cpp:122
+#: plugins/Lomiri/Launcher/launcheritem.cpp:48
+#: plugins/Lomiri/Launcher/launcheritem.cpp:122
 msgid "Pin shortcut"
 msgstr "Pričvrsti kraticu"
 
-#: plugins/Unity/Launcher/launcheritem.cpp:54
+#: plugins/Lomiri/Launcher/launcheritem.cpp:54
 msgid "Quit"
 msgstr "Zatvori"
 
-#: plugins/Unity/Launcher/launcheritem.cpp:122
+#: plugins/Lomiri/Launcher/launcheritem.cpp:122
 msgid "Unpin shortcut"
 msgstr "Ukloni kraticu"
+
+#: plugins/WindowManager/Screen.cpp:160
+msgid "Unknown"
+msgstr ""
+
+#: plugins/WindowManager/Screen.cpp:162
+msgid "VGA"
+msgstr ""
+
+#: plugins/WindowManager/Screen.cpp:166
+msgid "DVI"
+msgstr ""
+
+#: plugins/WindowManager/Screen.cpp:168
+msgid "Composite"
+msgstr ""
+
+#: plugins/WindowManager/Screen.cpp:170
+msgid "S-Video"
+msgstr ""
+
+#: plugins/WindowManager/Screen.cpp:174
+msgid "Internal"
+msgstr ""
+
+#: plugins/WindowManager/Screen.cpp:176
+msgid "Component"
+msgstr ""
+
+#: plugins/WindowManager/Screen.cpp:178
+msgid "DisplayPort"
+msgstr ""
+
+#: plugins/WindowManager/Screen.cpp:181
+msgid "HDMI"
+msgstr ""
+
+#: plugins/WindowManager/Screen.cpp:183
+msgid "TV"
+msgstr ""
 
 #: qml/Components/Dialogs.qml:176
 msgctxt "Title: Lock/Log out dialog"
@@ -86,7 +126,7 @@ msgid "Log Out"
 msgstr "Odjava"
 
 #: qml/Components/Dialogs.qml:199 qml/Components/Dialogs.qml:284
-#: qml/Greeter/NarrowView.qml:215 qml/Wizard/Pages/passcode-confirm.qml:32
+#: qml/Greeter/NarrowView.qml:218 qml/Wizard/Pages/passcode-confirm.qml:32
 #: qml/Wizard/Pages/passcode-set.qml:32
 msgid "Cancel"
 msgstr "Odustani"
@@ -227,99 +267,89 @@ msgstr "Super + A"
 msgid "Opens the Application Drawer."
 msgstr "Otvara ladicu programa."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:235
+#: qml/Components/KeyboardShortcutsOverlay.qml:211
 msgid "Switching"
 msgstr "Prebacivanje"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:242
+#: qml/Components/KeyboardShortcutsOverlay.qml:218
 msgid "Alt + Tab"
 msgstr "Alt + Tab"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:247
+#: qml/Components/KeyboardShortcutsOverlay.qml:223
 msgid "Switches between applications."
 msgstr "Prebacuje između aplikacija."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:255
+#: qml/Components/KeyboardShortcutsOverlay.qml:231
 msgid "Super + W"
 msgstr "Super + W"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:260
+#: qml/Components/KeyboardShortcutsOverlay.qml:236
 msgid "Opens the desktop spread."
 msgstr "Otvara rasprostiranje radne površine."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:268
+#: qml/Components/KeyboardShortcutsOverlay.qml:244
 msgid "Cursor Left or Right"
 msgstr "Lijeva ili desna tipka strelice"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:273
+#: qml/Components/KeyboardShortcutsOverlay.qml:249
 msgid "Moves the focus."
 msgstr "Pomiče fokus."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:285
+#: qml/Components/KeyboardShortcutsOverlay.qml:261
 msgid "Windows"
 msgstr "Prozori"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:292
+#: qml/Components/KeyboardShortcutsOverlay.qml:268
 msgid "Ctrl + Super + D"
 msgstr "Ctrl + Super + D"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:297
+#: qml/Components/KeyboardShortcutsOverlay.qml:273
 msgid "Minimizes all windows."
 msgstr "Smanjuje sve prozore."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:305
+#: qml/Components/KeyboardShortcutsOverlay.qml:281
 msgid "Ctrl + Super + Up"
 msgstr "Ctrl + Super + Gore"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:310
+#: qml/Components/KeyboardShortcutsOverlay.qml:286
 msgid "Maximizes the current window."
 msgstr "Povećava trenutni prozor."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:318
+#: qml/Components/KeyboardShortcutsOverlay.qml:294
 msgid "Ctrl + Super + Down"
 msgstr "Ctrl + Super + Dolje"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:323
+#: qml/Components/KeyboardShortcutsOverlay.qml:299
 msgid "Minimizes or restores the current window."
 msgstr "Smanjuje trenutni prozor."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:331
+#: qml/Components/KeyboardShortcutsOverlay.qml:307
 msgid "Ctrl + Super + Left or Right"
 msgstr "Ctrl + Super + Lijevo ili desno"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:336
+#: qml/Components/KeyboardShortcutsOverlay.qml:312
 msgid "Semi-maximizes the current window."
 msgstr "Polovično povećava trenutni prozor."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:344
+#: qml/Components/KeyboardShortcutsOverlay.qml:320
 msgid "Alt + F4"
 msgstr "Alt + F4"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:349
+#: qml/Components/KeyboardShortcutsOverlay.qml:325
 msgid "Closes the current window."
 msgstr "Zatvara trenutni prozor."
 
-#: qml/Components/Lockscreen.qml:212 qml/Greeter/NarrowView.qml:235
+#: qml/Components/Lockscreen.qml:214 qml/Greeter/NarrowView.qml:238
 msgid "Return to Call"
 msgstr "Vrati na poziv"
 
-#: qml/Components/Lockscreen.qml:212
+#: qml/Components/Lockscreen.qml:214
 msgid "Emergency Call"
 msgstr "Hitni poziv"
 
-#: qml/Components/Lockscreen.qml:245
+#: qml/Components/Lockscreen.qml:247
 msgid "OK"
 msgstr "U redu"
-
-#: qml/Components/MediaServices/VideoPlayerControls.qml:44
-#, qt-format
-msgid "%1:%2:%3"
-msgstr "%1:%2:%3"
-
-#: qml/Components/MediaServices/VideoPlayerControls.qml:49
-#, qt-format
-msgid "%1:%2"
-msgstr "%1:%2"
 
 #: qml/Components/ModeSwitchWarningDialog.qml:33
 msgid "Apps may have unsaved data:"
@@ -353,7 +383,7 @@ msgstr "Zatvori sve"
 msgid "Preview Share Item"
 msgstr "Pregled stavki dijeljenja"
 
-#: qml/Components/VirtualTouchPad.qml:317
+#: qml/Components/VirtualTouchPad.qml:312
 msgid ""
 "Your device is now connected to an external display. Use this screen as a "
 "touch pad to interact with the pointer."
@@ -361,23 +391,23 @@ msgstr ""
 "Vaš uređaj je sada povezan s vanjskim uređajem. Koristite ovaj zaslon kao "
 "dodirnik za interakciju s pokazivačem."
 
-#: qml/Components/VirtualTouchPad.qml:327
+#: qml/Components/VirtualTouchPad.qml:322
 msgid "Tap left button to click."
 msgstr "Dodirni lijevi gumb za pritiskanje."
 
-#: qml/Components/VirtualTouchPad.qml:339
+#: qml/Components/VirtualTouchPad.qml:334
 msgid "Tap right button to right click."
 msgstr "Dodirni desni gumb za desno-pritiskanje."
 
-#: qml/Components/VirtualTouchPad.qml:351
+#: qml/Components/VirtualTouchPad.qml:346
 msgid "Swipe with two fingers to scroll."
 msgstr "Povuci s dva prsta za klizanje."
 
-#: qml/Components/VirtualTouchPad.qml:396
+#: qml/Components/VirtualTouchPad.qml:391
 msgid "Find more settings in the system settings."
 msgstr "Pronađi daljnje postavke u postavkama sustava."
 
-#: qml/Greeter/CoverPage.qml:127
+#: qml/Greeter/CoverPage.qml:158
 msgid "Unlock"
 msgstr "Otključaj"
 
@@ -401,27 +431,27 @@ msgstr[0] "Pričekajte %1 minutu, a zatim pokušajte ponovo…"
 msgstr[1] "Pričekajte %1 minute, a zatim pokušajte ponovo…"
 msgstr[2] "Pričekajte %1 minuta, a zatim pokušajte ponovo…"
 
-#: qml/Greeter/Greeter.qml:550
+#: qml/Greeter/Greeter.qml:595
 msgid "Try again"
 msgstr "Pokušaj ponovo"
 
-#: qml/Greeter/Greeter.qml:551
+#: qml/Greeter/Greeter.qml:596
 msgid "Enter passphrase to unlock"
 msgstr "Upišite lozinku za otključavanje"
 
-#: qml/Greeter/Greeter.qml:552
+#: qml/Greeter/Greeter.qml:597
 msgid "Enter passcode to unlock"
 msgstr "Upišite kôd za otključavanje"
 
-#: qml/Greeter/NarrowView.qml:235
+#: qml/Greeter/NarrowView.qml:238
 msgid "Emergency"
 msgstr "Hitno"
 
-#: qml/Greeter/PromptList.qml:126
+#: qml/Greeter/PromptList.qml:132
 msgid "Passphrase"
 msgstr "Lozinka"
 
-#: qml/Greeter/PromptList.qml:126
+#: qml/Greeter/PromptList.qml:132
 msgid "Passcode"
 msgstr "Kôd"
 
@@ -429,7 +459,7 @@ msgstr "Kôd"
 msgid "Select desktop environment"
 msgstr "Odaberi okruženje radne površine"
 
-#: qml/Launcher/Drawer.qml:250
+#: qml/Launcher/Drawer.qml:235
 msgid "Search…"
 msgstr "Pretraživanje …"
 
@@ -449,15 +479,15 @@ msgstr "Prikaži lozinku"
 msgid "Tap to return to call..."
 msgstr "Dodirni za povratak pozivu..."
 
-#: qml/Panel/ActiveCallHint.qml:92
+#: qml/Panel/ActiveCallHint.qml:93
 msgid "Conference"
 msgstr "Konferencija"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:869
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:924
 msgid "Nothing is playing"
 msgstr "Ništa se ne reproducira"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:997
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1052
 #, qt-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
@@ -465,7 +495,7 @@ msgstr[0] "%1 sat"
 msgstr[1] "%1 sata"
 msgstr[2] "%1 sati"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1001
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1056
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
@@ -473,7 +503,7 @@ msgstr[0] "%1 minuta"
 msgstr[1] "%1 minute"
 msgstr[2] "%1 minuta"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1006
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1061
 #, qt-format
 msgid "%1 second"
 msgid_plural "%1 seconds"
@@ -481,37 +511,37 @@ msgstr[0] "%1 sekunda"
 msgstr[1] "%1 sekunde"
 msgstr[2] "%1 sekundi"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1009
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1064
 msgid "0 seconds"
 msgstr "0 sekundi"
 
 #. Translators: String like "1 hour, 2 minutes, 3 seconds remaining"
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1011
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1066
 #, qt-format
 msgid "%1 remaining"
 msgstr "%1 preostalo"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1017
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1072
 msgid "In queue…"
 msgstr "Na čekanju …"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1021
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1076
 msgid "Downloading"
 msgstr "Preuzimanje"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1023
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1078
 msgid "Paused, tap to resume"
 msgstr "Pauzirano, dodirni za nastavak"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1025
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1080
 msgid "Canceled"
 msgstr "Prekinuto"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1027
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1082
 msgid "Finished"
 msgstr "Završeno"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1029
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1084
 msgid "Failed, tap to retry"
 msgstr "Neuspjelo, dodirni za ponovni pokušaj"
 
@@ -535,11 +565,11 @@ msgstr "Uzvrati poziv"
 msgid "Back"
 msgstr "Natrag"
 
-#: qml/Stage/SideStage.qml:76
+#: qml/Stage/SideStage.qml:80
 msgid "Drag using 3 fingers any application from one window to the other"
 msgstr "Povucite pomoću 3 prsta bilo koju aplikaciju iz jednog prozora u drugi"
 
-#: qml/Stage/Stage.qml:671
+#: qml/Stage/Stage.qml:826
 msgid "No running apps"
 msgstr "Nema pokrenutih aplikacija"
 
@@ -576,7 +606,7 @@ msgstr "Jezik"
 #: qml/Wizard/Pages/10-welcome.qml:176
 #: qml/Wizard/Pages/10-welcome-update.qml:126
 #: qml/Wizard/Pages/11-changelog.qml:74 qml/Wizard/Pages/20-keyboard.qml:152
-#: qml/Wizard/Pages/30-wifi.qml:214 qml/Wizard/Pages/50-timezone.qml:272
+#: qml/Wizard/Pages/30-wifi.qml:213 qml/Wizard/Pages/50-timezone.qml:270
 #: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/70-passwd-type.qml:146
 #: qml/Wizard/Pages/passcode-desktop.qml:154
 #: qml/Wizard/Pages/password-set.qml:153
@@ -611,7 +641,7 @@ msgstr "Jezik tipkovnice"
 msgid "Keyboard layout"
 msgstr "Raspored tipkovnice"
 
-#: qml/Wizard/Pages/20-keyboard.qml:152 qml/Wizard/Pages/30-wifi.qml:214
+#: qml/Wizard/Pages/20-keyboard.qml:152 qml/Wizard/Pages/30-wifi.qml:213
 #: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/79-system-update.qml:144
 #: qml/Wizard/Pages/sim.qml:101
 msgid "Skip"
@@ -637,7 +667,7 @@ msgstr "Nema dostupnih bežičnih mreža"
 msgid "Time Zone"
 msgstr "Vremenska zona"
 
-#: qml/Wizard/Pages/50-timezone.qml:183
+#: qml/Wizard/Pages/50-timezone.qml:182
 msgid "Enter your city"
 msgstr "Upišite svoj grad"
 
@@ -681,8 +711,11 @@ msgstr ""
 "će se automatski ponovo pokrenuti."
 
 #: qml/Wizard/Pages/79-system-update.qml:76
+#, fuzzy
+#| msgctxt "string identifying name of the update"
+#| msgid "Ubuntu Touch system"
 msgctxt "string identifying name of the update"
-msgid "Ubuntu Touch system"
+msgid "Lomiri Touch system"
 msgstr "Ubuntu sustav dodira"
 
 #: qml/Wizard/Pages/79-system-update.qml:83
@@ -704,8 +737,10 @@ msgid "Welcome Back"
 msgstr "Dobro došli natrag"
 
 #: qml/Wizard/Pages/80-finished.qml:91
-msgid "Welcome to Ubuntu"
-msgstr "Dobro došli u Ubuntu"
+#, fuzzy
+#| msgid "Welcome to "
+msgid "Welcome to Lomiri"
+msgstr "Dobro došli u "
 
 #: qml/Wizard/Pages/80-finished.qml:106
 msgid "You are ready to use your device now"
@@ -830,6 +865,17 @@ msgstr "Slaba lozinka"
 #: qml/Wizard/PasswordMeter.qml:101
 msgid "Very weak password"
 msgstr "Vrlo slaba lozinka"
+
+#, qt-format
+#~ msgid "%1:%2:%3"
+#~ msgstr "%1:%2:%3"
+
+#, qt-format
+#~ msgid "%1:%2"
+#~ msgstr "%1:%2"
+
+#~ msgid "Welcome to Ubuntu"
+#~ msgstr "Dobro došli u Ubuntu"
 
 #~ msgid "Unity 8"
 #~ msgstr "Unity 8"

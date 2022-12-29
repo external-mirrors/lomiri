@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-29 11:42-0600\n"
+"POT-Creation-Date: 2022-12-17 14:18+0100\n"
 "PO-Revision-Date: 2021-03-07 20:28+0000\n"
 "Last-Translator: Zmicer <nashtlumach@gmail.com>\n"
 "Language-Team: Belarusian <https://translate.ubports.com/projects/ubports/"
@@ -53,18 +53,58 @@ msgstr "Увайсці"
 msgid "Guest Session"
 msgstr "Гасцявы сеанс"
 
-#: plugins/Unity/Launcher/launcheritem.cpp:48
-#: plugins/Unity/Launcher/launcheritem.cpp:122
+#: plugins/Lomiri/Launcher/launcheritem.cpp:48
+#: plugins/Lomiri/Launcher/launcheritem.cpp:122
 msgid "Pin shortcut"
 msgstr "Замацаваць цэтлік"
 
-#: plugins/Unity/Launcher/launcheritem.cpp:54
+#: plugins/Lomiri/Launcher/launcheritem.cpp:54
 msgid "Quit"
 msgstr "Выйсці"
 
-#: plugins/Unity/Launcher/launcheritem.cpp:122
+#: plugins/Lomiri/Launcher/launcheritem.cpp:122
 msgid "Unpin shortcut"
 msgstr "Адмацаваць цэтлік"
+
+#: plugins/WindowManager/Screen.cpp:160
+msgid "Unknown"
+msgstr ""
+
+#: plugins/WindowManager/Screen.cpp:162
+msgid "VGA"
+msgstr ""
+
+#: plugins/WindowManager/Screen.cpp:166
+msgid "DVI"
+msgstr ""
+
+#: plugins/WindowManager/Screen.cpp:168
+msgid "Composite"
+msgstr ""
+
+#: plugins/WindowManager/Screen.cpp:170
+msgid "S-Video"
+msgstr ""
+
+#: plugins/WindowManager/Screen.cpp:174
+msgid "Internal"
+msgstr ""
+
+#: plugins/WindowManager/Screen.cpp:176
+msgid "Component"
+msgstr ""
+
+#: plugins/WindowManager/Screen.cpp:178
+msgid "DisplayPort"
+msgstr ""
+
+#: plugins/WindowManager/Screen.cpp:181
+msgid "HDMI"
+msgstr ""
+
+#: plugins/WindowManager/Screen.cpp:183
+msgid "TV"
+msgstr ""
 
 #: qml/Components/Dialogs.qml:176
 msgctxt "Title: Lock/Log out dialog"
@@ -86,7 +126,7 @@ msgid "Log Out"
 msgstr "Выйсці"
 
 #: qml/Components/Dialogs.qml:199 qml/Components/Dialogs.qml:284
-#: qml/Greeter/NarrowView.qml:215 qml/Wizard/Pages/passcode-confirm.qml:32
+#: qml/Greeter/NarrowView.qml:218 qml/Wizard/Pages/passcode-confirm.qml:32
 #: qml/Wizard/Pages/passcode-set.qml:32
 msgid "Cancel"
 msgstr "Скасаваць"
@@ -229,99 +269,89 @@ msgstr "Super + A"
 msgid "Opens the Application Drawer."
 msgstr "Адкрывае спіс усталяваных праграм."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:235
+#: qml/Components/KeyboardShortcutsOverlay.qml:211
 msgid "Switching"
 msgstr "Пераключэнне"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:242
+#: qml/Components/KeyboardShortcutsOverlay.qml:218
 msgid "Alt + Tab"
 msgstr "Alt + Tab"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:247
+#: qml/Components/KeyboardShortcutsOverlay.qml:223
 msgid "Switches between applications."
 msgstr "Пераключэнне паміж праграмамі."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:255
+#: qml/Components/KeyboardShortcutsOverlay.qml:231
 msgid "Super + W"
 msgstr "Super + W"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:260
+#: qml/Components/KeyboardShortcutsOverlay.qml:236
 msgid "Opens the desktop spread."
 msgstr "Адкрывае працоўны стол."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:268
+#: qml/Components/KeyboardShortcutsOverlay.qml:244
 msgid "Cursor Left or Right"
 msgstr "Улева ці ўправа"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:273
+#: qml/Components/KeyboardShortcutsOverlay.qml:249
 msgid "Moves the focus."
 msgstr "Перамяшчае фокус."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:285
+#: qml/Components/KeyboardShortcutsOverlay.qml:261
 msgid "Windows"
 msgstr "Вокны"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:292
+#: qml/Components/KeyboardShortcutsOverlay.qml:268
 msgid "Ctrl + Super + D"
 msgstr "Ctrl + Super + D"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:297
+#: qml/Components/KeyboardShortcutsOverlay.qml:273
 msgid "Minimizes all windows."
 msgstr "Згарнуць усе вокны."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:305
+#: qml/Components/KeyboardShortcutsOverlay.qml:281
 msgid "Ctrl + Super + Up"
 msgstr "Ctrl + Super + уверх"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:310
+#: qml/Components/KeyboardShortcutsOverlay.qml:286
 msgid "Maximizes the current window."
 msgstr "Разгарнуць бягучае акно."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:318
+#: qml/Components/KeyboardShortcutsOverlay.qml:294
 msgid "Ctrl + Super + Down"
 msgstr "Ctrl + Super + уніз"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:323
+#: qml/Components/KeyboardShortcutsOverlay.qml:299
 msgid "Minimizes or restores the current window."
 msgstr "Згарнуць альбо аднавіць бягучае акно."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:331
+#: qml/Components/KeyboardShortcutsOverlay.qml:307
 msgid "Ctrl + Super + Left or Right"
 msgstr "Ctrl + Super + улева ці ўправа"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:336
+#: qml/Components/KeyboardShortcutsOverlay.qml:312
 msgid "Semi-maximizes the current window."
 msgstr "Разгортвае бягучае акно напалову."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:344
+#: qml/Components/KeyboardShortcutsOverlay.qml:320
 msgid "Alt + F4"
 msgstr "Alt + F4"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:349
+#: qml/Components/KeyboardShortcutsOverlay.qml:325
 msgid "Closes the current window."
 msgstr "Закрывае бягучае акно."
 
-#: qml/Components/Lockscreen.qml:212 qml/Greeter/NarrowView.qml:235
+#: qml/Components/Lockscreen.qml:214 qml/Greeter/NarrowView.qml:238
 msgid "Return to Call"
 msgstr "Вярнуцца да выкліку"
 
-#: qml/Components/Lockscreen.qml:212
+#: qml/Components/Lockscreen.qml:214
 msgid "Emergency Call"
 msgstr "Экстраны выклік"
 
-#: qml/Components/Lockscreen.qml:245
+#: qml/Components/Lockscreen.qml:247
 msgid "OK"
 msgstr "Добра"
-
-#: qml/Components/MediaServices/VideoPlayerControls.qml:44
-#, qt-format
-msgid "%1:%2:%3"
-msgstr "%1:%2:%3"
-
-#: qml/Components/MediaServices/VideoPlayerControls.qml:49
-#, qt-format
-msgid "%1:%2"
-msgstr "%1:%2"
 
 #: qml/Components/ModeSwitchWarningDialog.qml:33
 msgid "Apps may have unsaved data:"
@@ -355,7 +385,7 @@ msgstr "Закрыць усе"
 msgid "Preview Share Item"
 msgstr "Папярэдні прагляд"
 
-#: qml/Components/VirtualTouchPad.qml:317
+#: qml/Components/VirtualTouchPad.qml:312
 msgid ""
 "Your device is now connected to an external display. Use this screen as a "
 "touch pad to interact with the pointer."
@@ -363,23 +393,23 @@ msgstr ""
 "Ваша прылада падлучаная да вонкавага дысплея. Выкарыстоўвайце гэты экран як "
 "сэнсарную панэль для кіравання курсорам."
 
-#: qml/Components/VirtualTouchPad.qml:327
+#: qml/Components/VirtualTouchPad.qml:322
 msgid "Tap left button to click."
 msgstr "Націсніце левую кнопку, каб пстрыкнуць."
 
-#: qml/Components/VirtualTouchPad.qml:339
+#: qml/Components/VirtualTouchPad.qml:334
 msgid "Tap right button to right click."
 msgstr "Націсніце правую кнопку, каб пстрыкнуць правай клавішай мышы."
 
-#: qml/Components/VirtualTouchPad.qml:351
+#: qml/Components/VirtualTouchPad.qml:346
 msgid "Swipe with two fingers to scroll."
 msgstr "Правядзіце двума пальцамі, каб пракруціць."
 
-#: qml/Components/VirtualTouchPad.qml:396
+#: qml/Components/VirtualTouchPad.qml:391
 msgid "Find more settings in the system settings."
 msgstr "Больш налад можна знайсці ў сістэмных наладах."
 
-#: qml/Greeter/CoverPage.qml:127
+#: qml/Greeter/CoverPage.qml:158
 msgid "Unlock"
 msgstr "Разблакаваць"
 
@@ -407,27 +437,27 @@ msgstr[0] "Пачакайце %1 хвіліну і паўтарыце спроб
 msgstr[1] "Пачакайце %1 хвіліны і паўтарыце спробу…"
 msgstr[2] "Пачакайце %1 хвілін і паўтарыце спробу…"
 
-#: qml/Greeter/Greeter.qml:550
+#: qml/Greeter/Greeter.qml:595
 msgid "Try again"
 msgstr "Паспрабаваць зноў"
 
-#: qml/Greeter/Greeter.qml:551
+#: qml/Greeter/Greeter.qml:596
 msgid "Enter passphrase to unlock"
 msgstr "Увядзіце парольную фразу, каб разблакаваць"
 
-#: qml/Greeter/Greeter.qml:552
+#: qml/Greeter/Greeter.qml:597
 msgid "Enter passcode to unlock"
 msgstr "Увядзіце код доступу, каб разблакаваць"
 
-#: qml/Greeter/NarrowView.qml:235
+#: qml/Greeter/NarrowView.qml:238
 msgid "Emergency"
 msgstr "Экстраны выклік"
 
-#: qml/Greeter/PromptList.qml:126
+#: qml/Greeter/PromptList.qml:132
 msgid "Passphrase"
 msgstr "Парольная фраза"
 
-#: qml/Greeter/PromptList.qml:126
+#: qml/Greeter/PromptList.qml:132
 msgid "Passcode"
 msgstr "Код доступу"
 
@@ -435,7 +465,7 @@ msgstr "Код доступу"
 msgid "Select desktop environment"
 msgstr "Абраць працоўнае асяроддзе"
 
-#: qml/Launcher/Drawer.qml:250
+#: qml/Launcher/Drawer.qml:235
 msgid "Search…"
 msgstr "Пошук…"
 
@@ -455,15 +485,15 @@ msgstr "Паказаць пароль"
 msgid "Tap to return to call..."
 msgstr "Націсніце, каб вярнуцца да выкліку..."
 
-#: qml/Panel/ActiveCallHint.qml:92
+#: qml/Panel/ActiveCallHint.qml:93
 msgid "Conference"
 msgstr "Канферэнцыя"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:869
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:924
 msgid "Nothing is playing"
 msgstr "Нічога не прайграецца"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:997
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1052
 #, qt-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
@@ -471,7 +501,7 @@ msgstr[0] "%1 гадзіна"
 msgstr[1] "%1 гадзіны"
 msgstr[2] "%1 гадзін"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1001
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1056
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
@@ -479,7 +509,7 @@ msgstr[0] "%1 хвіліна"
 msgstr[1] "%1 хвіліны"
 msgstr[2] "%1 хвілін"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1006
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1061
 #, qt-format
 msgid "%1 second"
 msgid_plural "%1 seconds"
@@ -487,37 +517,37 @@ msgstr[0] "%1 секунда"
 msgstr[1] "%1 секунды"
 msgstr[2] "%1 секунд"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1009
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1064
 msgid "0 seconds"
 msgstr "0 секунд"
 
 #. Translators: String like "1 hour, 2 minutes, 3 seconds remaining"
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1011
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1066
 #, qt-format
 msgid "%1 remaining"
 msgstr "Засталося %1"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1017
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1072
 msgid "In queue…"
 msgstr "У чарзе…"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1021
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1076
 msgid "Downloading"
 msgstr "Запампоўванне"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1023
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1078
 msgid "Paused, tap to resume"
 msgstr "Прыпынена, націсніце для працягу"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1025
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1080
 msgid "Canceled"
 msgstr "Скасавана"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1027
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1082
 msgid "Finished"
 msgstr "Завершана"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1029
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1084
 msgid "Failed, tap to retry"
 msgstr "Не атрымалася, націсніце, каб паўтарыць спробу"
 
@@ -541,11 +571,11 @@ msgstr "Патэлефанаваць"
 msgid "Back"
 msgstr "Назад"
 
-#: qml/Stage/SideStage.qml:76
+#: qml/Stage/SideStage.qml:80
 msgid "Drag using 3 fingers any application from one window to the other"
 msgstr "Перацягвайце любую праграму пры дапамозе трох пальцаў"
 
-#: qml/Stage/Stage.qml:671
+#: qml/Stage/Stage.qml:826
 msgid "No running apps"
 msgstr "Няма запушчаных праграм"
 
@@ -585,7 +615,7 @@ msgstr "Мова"
 #: qml/Wizard/Pages/10-welcome.qml:176
 #: qml/Wizard/Pages/10-welcome-update.qml:126
 #: qml/Wizard/Pages/11-changelog.qml:74 qml/Wizard/Pages/20-keyboard.qml:152
-#: qml/Wizard/Pages/30-wifi.qml:214 qml/Wizard/Pages/50-timezone.qml:272
+#: qml/Wizard/Pages/30-wifi.qml:213 qml/Wizard/Pages/50-timezone.qml:270
 #: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/70-passwd-type.qml:146
 #: qml/Wizard/Pages/passcode-desktop.qml:154
 #: qml/Wizard/Pages/password-set.qml:153
@@ -620,7 +650,7 @@ msgstr "Мова клавіятуры"
 msgid "Keyboard layout"
 msgstr "Раскладка клавіятуры"
 
-#: qml/Wizard/Pages/20-keyboard.qml:152 qml/Wizard/Pages/30-wifi.qml:214
+#: qml/Wizard/Pages/20-keyboard.qml:152 qml/Wizard/Pages/30-wifi.qml:213
 #: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/79-system-update.qml:144
 #: qml/Wizard/Pages/sim.qml:101
 msgid "Skip"
@@ -646,7 +676,7 @@ msgstr "Няма даступных сетак Wi-Fi"
 msgid "Time Zone"
 msgstr "Часавы пояс"
 
-#: qml/Wizard/Pages/50-timezone.qml:183
+#: qml/Wizard/Pages/50-timezone.qml:182
 msgid "Enter your city"
 msgstr "Увядзіце ваш горад"
 
@@ -690,8 +720,11 @@ msgstr ""
 "сістэма аўтаматычна перазапусціцца."
 
 #: qml/Wizard/Pages/79-system-update.qml:76
+#, fuzzy
+#| msgctxt "string identifying name of the update"
+#| msgid "Ubuntu Touch system"
 msgctxt "string identifying name of the update"
-msgid "Ubuntu Touch system"
+msgid "Lomiri Touch system"
 msgstr "Сістэма Ubuntu Touch"
 
 #: qml/Wizard/Pages/79-system-update.qml:83
@@ -713,8 +746,10 @@ msgid "Welcome Back"
 msgstr "Сардэчна запрашаем назад"
 
 #: qml/Wizard/Pages/80-finished.qml:91
-msgid "Welcome to Ubuntu"
-msgstr "Вітаем ва Ubuntu"
+#, fuzzy
+#| msgid "Welcome to "
+msgid "Welcome to Lomiri"
+msgstr "Вітаем у "
 
 #: qml/Wizard/Pages/80-finished.qml:106
 msgid "You are ready to use your device now"
@@ -838,6 +873,17 @@ msgstr "Слабы пароль"
 #: qml/Wizard/PasswordMeter.qml:101
 msgid "Very weak password"
 msgstr "Вельмы слабы пароль"
+
+#, qt-format
+#~ msgid "%1:%2:%3"
+#~ msgstr "%1:%2:%3"
+
+#, qt-format
+#~ msgid "%1:%2"
+#~ msgstr "%1:%2"
+
+#~ msgid "Welcome to Ubuntu"
+#~ msgstr "Вітаем ва Ubuntu"
 
 #~ msgid "Unity 8"
 #~ msgstr "Unity 8"
