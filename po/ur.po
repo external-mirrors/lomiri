@@ -8,20 +8,20 @@ msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-17 14:18+0100\n"
-"PO-Revision-Date: 2015-05-05 03:12+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Urdu <ur@li.org>\n"
+"PO-Revision-Date: 2023-01-04 08:07+0000\n"
+"Last-Translator: Muhammad <muhammad23012009@hotmail.com>\n"
+"Language-Team: Urdu <https://hosted.weblate.org/projects/lomiri/lomiri/ur/>\n"
 "Language: ur\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.15.1-dev\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:36+0000\n"
-"X-Generator: Launchpad (build 18269)\n"
 
 #: plugins/LightDM/Greeter.cpp:199
 msgid "Password: "
-msgstr ""
+msgstr "پاس ورڈ: "
 
 #: plugins/LightDM/Greeter.cpp:214
 msgid "Username"
@@ -127,7 +127,7 @@ msgstr ""
 #: qml/Greeter/NarrowView.qml:218 qml/Wizard/Pages/passcode-confirm.qml:32
 #: qml/Wizard/Pages/passcode-set.qml:32
 msgid "Cancel"
-msgstr ""
+msgstr "منسوخ کریں"
 
 #: qml/Components/Dialogs.qml:211
 msgctxt "Title: Reboot dialog"
@@ -440,11 +440,11 @@ msgstr ""
 
 #: qml/Greeter/PromptList.qml:132
 msgid "Passphrase"
-msgstr ""
+msgstr "پاس فریذ"
 
 #: qml/Greeter/PromptList.qml:132
 msgid "Passcode"
-msgstr ""
+msgstr "پاس کوڈ"
 
 #: qml/Greeter/SessionsList.qml:124
 msgid "Select desktop environment"
@@ -737,7 +737,7 @@ msgstr ""
 #: qml/Wizard/Pages/passcode-confirm.qml:43
 #: qml/Wizard/Pages/passcode-desktop.qml:104
 msgid "Confirm passcode"
-msgstr ""
+msgstr "پاس کوڈ کی تصدیق کریں"
 
 #: qml/Wizard/Pages/passcode-confirm.qml:45
 msgid "Incorrect passcode."
@@ -759,7 +759,7 @@ msgstr ""
 #: qml/Wizard/Pages/passcode-desktop.qml:84
 #: qml/Wizard/Pages/passcode-set.qml:54
 msgid "Choose passcode"
-msgstr ""
+msgstr "پاس کوڈ منتخب کریں"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:139
 msgid "Passcode too short"
