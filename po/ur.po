@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-17 14:18+0100\n"
-"PO-Revision-Date: 2023-01-04 18:22+0000\n"
+"PO-Revision-Date: 2023-01-07 17:47+0000\n"
 "Last-Translator: Muhammad <muhammad23012009@hotmail.com>\n"
 "Language-Team: Urdu <https://hosted.weblate.org/projects/lomiri/lomiri/ur/>\n"
 "Language: ur\n"
@@ -140,11 +140,11 @@ msgstr ""
 
 #: qml/Components/Dialogs.qml:215
 msgid "No"
-msgstr ""
+msgstr "نہیں"
 
 #: qml/Components/Dialogs.qml:223
 msgid "Yes"
-msgstr "ھاں"
+msgstr "ہاں"
 
 #: qml/Components/Dialogs.qml:243
 msgctxt "Title: Power off/Restart dialog"
@@ -345,7 +345,7 @@ msgstr ""
 
 #: qml/Components/Lockscreen.qml:247
 msgid "OK"
-msgstr ""
+msgstr "ٹھیک ہے"
 
 #: qml/Components/ModeSwitchWarningDialog.qml:33
 msgid "Apps may have unsaved data:"
@@ -614,7 +614,7 @@ msgstr ""
 
 #: qml/Wizard/Pages/11-changelog.qml:74
 msgid "Loading..."
-msgstr ""
+msgstr "لوڈ ہو رہا ہے..."
 
 #: qml/Wizard/Pages/20-keyboard.qml:31
 msgid "Select Keyboard"
