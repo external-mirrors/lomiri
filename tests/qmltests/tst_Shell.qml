@@ -24,7 +24,6 @@ import LightDMController 0.1
 import LightDM.FullLightDM 0.1 as LightDM
 import SessionBroadcast 0.1
 import Lomiri.Components 1.3
-import Lomiri.Components.ListItems 1.3 as ListItem
 import Lomiri.Telephony 0.1 as Telephony
 import QtMir.Application 0.1
 import Lomiri.ApplicationMenu 0.1
@@ -246,7 +245,7 @@ Rectangle {
                     text: "LightDM mock mode"
                 }
 
-                ListItem.ItemSelector {
+                OptionSelector {
                     anchors { left: parent.left; right: parent.right }
                     activeFocusOnPress: false
                     model: ["single", "single-passphrase", "single-pin", "full"]
@@ -256,11 +255,12 @@ Rectangle {
                         testCase.init();
                     }
                 }
+
                 Label {
                     text: "Size"
                 }
 
-                ListItem.ItemSelector {
+                OptionSelector {
                     id: sizeSelector
                     anchors { left: parent.left; right: parent.right }
                     activeFocusOnPress: false
@@ -270,11 +270,12 @@ Rectangle {
                         shellRect.state = model[selectedIndex];
                     }
                 }
+
                 Label {
                     text: "Usage scenario"
                 }
 
-                ListItem.ItemSelector {
+                OptionSelector {
                     id: usageScenarioSelector
                     anchors { left: parent.left; right: parent.right }
                     activeFocusOnPress: false
@@ -289,7 +290,7 @@ Rectangle {
                     text: "Ctrl key as"
                 }
 
-                ListItem.ItemSelector {
+                OptionSelector {
                     id: ctrlModifier
                     anchors { left: parent.left; right: parent.right }
                     activeFocusOnPress: false
@@ -416,7 +417,7 @@ Rectangle {
                 Label {
                     text: "Shell Mode"
                 }
-                ListItem.ItemSelector {
+                OptionSelector {
                     id: shellModeSelector
                     anchors { left: parent.left; right: parent.right }
                     activeFocusOnPress: false
