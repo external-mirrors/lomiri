@@ -248,7 +248,7 @@ Rectangle {
                 OptionSelector {
                     anchors { left: parent.left; right: parent.right }
                     activeFocusOnPress: false
-                    model: ["single", "single-passphrase", "single-pin", "full"]
+                    model: ["single", "single-passphrase", "single-pin", "single-pin-clock", "full"]
                     onSelectedIndexChanged: {
                         testCase.tearDown();
                         LightDMController.userMode = model[selectedIndex];

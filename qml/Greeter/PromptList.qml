@@ -16,6 +16,7 @@
 
 import QtQuick 2.4
 import Lomiri.Components 1.3
+import AccountsService 0.1
 import "../Components"
 import "." 0.1
 
@@ -23,10 +24,18 @@ FocusScope {
     id: root
     height: childrenRect.height
 
+    property bool isLandscape
+    property string usageMode
     property bool alphanumeric: true
     property bool interactive: true
     property bool loginError: false
     property bool hasKeyboard: false
+    property int maxHeight: units.gu(5)
+    // don't allow custom pincode prompt for multi user in phone context as it will hide the login list
+    readonly property string pinCodeManager: LightDMService.users.count > 1  && root.usageMode === "phone" && root.isLandscape ? AccountsService.defaultPinCodePromptManager : AccountsService.pinCodePromptManager
+
+    property real defaultPromptWidth: units.gu(20)
+    property real maxPromptHeight: isLandscape ? root.width - units.gu(10) : maxHeight
 
     signal responded(string text)
     signal clicked()
@@ -67,9 +76,15 @@ FocusScope {
 
                 readonly property bool isLabel: model.type == LightDMService.prompts.Message ||
                                                 model.type == LightDMService.prompts.Error
-                readonly property var modelData: model
+                // we want to have properties set at component loading time
+                readonly property var modelText: model.text
+                readonly property var modelType: model.type
+                readonly property var modelIndex: model.index
 
                 sourceComponent: isLabel ? infoLabel : greeterPrompt
+                anchors.horizontalCenter: parent.horizontalCenter
+
+                active: root.visible
 
                 onLoaded: {
                     for (var i = 0; i < repeater.count; i++) {
@@ -81,12 +96,6 @@ FocusScope {
                     }
                     loader.item.opacity = 1;
                 }
-
-                Binding {
-                    target: loader.item
-                    property: "model"
-                    value: loader.modelData
-                }
             }
         }
     }
@@ -95,19 +104,18 @@ FocusScope {
         id: infoLabel
 
         FadingLabel {
-            objectName: "infoLabel" + model.index
-            width: root.width
+            objectName: "infoLabel" + modelIndex
+             width: root.defaultPromptWidth
 
-            property var model
             readonly property bool isPrompt: false
 
-            color: model.type === LightDMService.prompts.Message ? theme.palette.normal.raisedSecondaryText
+            color: modelType === LightDMService.prompts.Message ? theme.palette.normal.raisedSecondaryText
                                                           : theme.palette.normal.negative
             fontSize: "small"
             textFormat: Text.PlainText
-            text: model.text
+            text: modelText
 
-            visible: model.type === LightDMService.prompts.Message
+            visible: modelType === LightDMService.prompts.Message
 
             Behavior on opacity { LomiriNumberAnimation {} }
             opacity: 0
@@ -118,23 +126,26 @@ FocusScope {
         id: greeterPrompt
 
         GreeterPrompt {
-            objectName: "greeterPrompt" + model.index
-            width: root.width
+            objectName: "greeterPrompt" + modelIndex
+            width: isAlternativePinPrompt ? root.width : root.defaultPromptWidth
+            implicitHeight:  isAlternativePinPrompt ? root.maxPromptHeight : units.gu(5)
 
-            property var model
+            property bool isAlphanumeric: modelText !== "" || root.alphanumeric
+            property bool isAlternativePinPrompt:  (isPinPrompt && pinCodeManager !== AccountsService.defaultPinCodePromptManager)
 
             interactive: root.interactive
-            isAlphanumeric: model.text !== "" || root.alphanumeric
-            isPrompt: model.type !== LightDMService.prompts.Button
-            isSecret: model.type === LightDMService.prompts.Secret
+            pinCodeManager: root.pinCodeManager
+            isPrompt: modelType !== LightDMService.prompts.Button
+            isSecret: modelType === LightDMService.prompts.Secret
+            isPinPrompt: isPrompt && !isAlphanumeric && isSecret
             loginError: root.loginError
             hasKeyboard: root.hasKeyboard
-            text: model.text ? model.text : (isAlphanumeric ? i18n.tr("Passphrase") : i18n.tr("Passcode"))
+            text: modelText ? modelText : (isAlphanumeric ? i18n.tr("Passphrase") : i18n.tr("Passcode"))
 
             onClicked: root.clicked()
             onAccepted: {
                 // If there is another GreeterPrompt, focus it.
-                for (var i = model.index + 1; i < repeater.count; i++) {
+                for (var i = modelIndex + 1; i < repeater.count; i++) {
                     var item = repeater.itemAt(i).item;
                     if (item.isPrompt) {
                         item.forceActiveFocus();

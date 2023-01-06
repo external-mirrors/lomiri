@@ -25,14 +25,15 @@ FocusScope {
     focus: true
 
     property bool isPrompt
-    property bool isAlphanumeric
+    property bool isPinPrompt
     property string text
     property bool isSecret
     property bool interactive: true
     property bool loginError: false
-    readonly property string enteredText: loader.item.enteredText
+    readonly property string enteredText: loader.item ? loader.item.enteredText : ""
     property bool hasKeyboard: false
     property bool waitingToAccept: false
+    property string pinCodeManager: "PinPrompt.qml"
 
     signal clicked()
     signal canceled()
@@ -115,12 +116,12 @@ FocusScope {
         },
         State {
             name: "PinPrompt"
-            when: root.isPrompt && !root.isAlphanumeric && root.isSecret
-            PropertyChanges { target: loader; source: "PinPrompt.qml" }
+            when: root.isPinPrompt
+            PropertyChanges { target: loader; source: root.pinCodeManager  }
         },
         State {
             name: "TextPrompt"
-            when: root.isPrompt
+            when: !root.isPinPrompt
             PropertyChanges { target: loader; source: "TextPrompt.qml" }
         }
     ]
