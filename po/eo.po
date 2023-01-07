@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-17 14:18+0100\n"
-"PO-Revision-Date: 2019-07-05 17:48+0000\n"
-"Last-Translator: Colin Reeder <vpzomtrrfrt@gmail.com>\n"
-"Language-Team: Esperanto <https://translate.ubports.com/projects/unity8/"
-"unity8/eo/>\n"
+"PO-Revision-Date: 2023-01-08 22:50+0000\n"
+"Last-Translator: Alexander Richards <electrodeyt@gmail.com>\n"
+"Language-Team: Esperanto <https://hosted.weblate.org/projects/lomiri/lomiri/"
+"eo/>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.6.1\n"
+"X-Generator: Weblate 4.15.1-dev\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:35+0000\n"
 
 #: plugins/LightDM/Greeter.cpp:199
@@ -26,7 +26,7 @@ msgstr "Pasvorto: "
 
 #: plugins/LightDM/Greeter.cpp:214
 msgid "Username"
-msgstr ""
+msgstr "Uzantnomo"
 
 #: plugins/LightDM/Greeter.cpp:258
 msgid "Failed to authenticate"
@@ -34,11 +34,11 @@ msgstr ""
 
 #: plugins/LightDM/Greeter.cpp:260
 msgid "Invalid password, please try again"
-msgstr ""
+msgstr "Pasvorto nevalidas, provas denove"
 
 #: plugins/LightDM/Greeter.cpp:270
 msgid "Log In"
-msgstr ""
+msgstr "Ensaluti"
 
 #: plugins/LightDM/Greeter.cpp:270
 msgid "Retry"
@@ -46,11 +46,11 @@ msgstr "Reprovi"
 
 #: plugins/LightDM/UsersModel.cpp:157
 msgid "Login"
-msgstr ""
+msgstr "Ensaluti"
 
 #: plugins/LightDM/UsersModel.cpp:165
 msgid "Guest Session"
-msgstr ""
+msgstr "Gastsesio"
 
 #: plugins/Lomiri/Launcher/launcheritem.cpp:48
 #: plugins/Lomiri/Launcher/launcheritem.cpp:122
@@ -67,15 +67,15 @@ msgstr ""
 
 #: plugins/WindowManager/Screen.cpp:160
 msgid "Unknown"
-msgstr ""
+msgstr "Nekonato"
 
 #: plugins/WindowManager/Screen.cpp:162
 msgid "VGA"
-msgstr ""
+msgstr "VGA"
 
 #: plugins/WindowManager/Screen.cpp:166
 msgid "DVI"
-msgstr ""
+msgstr "DVI"
 
 #: plugins/WindowManager/Screen.cpp:168
 msgid "Composite"
@@ -83,11 +83,11 @@ msgstr ""
 
 #: plugins/WindowManager/Screen.cpp:170
 msgid "S-Video"
-msgstr ""
+msgstr "S-Video"
 
 #: plugins/WindowManager/Screen.cpp:174
 msgid "Internal"
-msgstr ""
+msgstr "Interno"
 
 #: plugins/WindowManager/Screen.cpp:176
 msgid "Component"
@@ -95,15 +95,15 @@ msgstr ""
 
 #: plugins/WindowManager/Screen.cpp:178
 msgid "DisplayPort"
-msgstr ""
+msgstr "DisplayPort"
 
 #: plugins/WindowManager/Screen.cpp:181
 msgid "HDMI"
-msgstr ""
+msgstr "HDMI"
 
 #: plugins/WindowManager/Screen.cpp:183
 msgid "TV"
-msgstr ""
+msgstr "TV"
 
 #: qml/Components/Dialogs.qml:176
 msgctxt "Title: Lock/Log out dialog"
@@ -133,11 +133,11 @@ msgstr "Nuligi"
 #: qml/Components/Dialogs.qml:211
 msgctxt "Title: Reboot dialog"
 msgid "Reboot"
-msgstr ""
+msgstr "Rekomenci"
 
 #: qml/Components/Dialogs.qml:212
 msgid "Are you sure you want to reboot?"
-msgstr ""
+msgstr "Ĉu vi certas, ke vi volas rekomenci?"
 
 #: qml/Components/Dialogs.qml:215
 msgid "No"
@@ -157,6 +157,8 @@ msgid ""
 "Are you sure you would like\n"
 "to power off?"
 msgstr ""
+"Ĉu vi certas, ke vi volas\n"
+"malŝalti?"
 
 #: qml/Components/Dialogs.qml:248
 msgctxt "Button: Power off the system"
@@ -166,11 +168,11 @@ msgstr "Malŝalti"
 #: qml/Components/Dialogs.qml:263
 msgctxt "Button: Restart the system"
 msgid "Restart"
-msgstr ""
+msgstr "Rekomenci"
 
 #: qml/Components/Dialogs.qml:276
 msgid "Screenshot"
-msgstr ""
+msgstr "Ekrankopio"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:41
 msgid "Keyboard Shortcuts"
@@ -178,11 +180,11 @@ msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:55
 msgid "Lomiri"
-msgstr ""
+msgstr "Lomiri"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:62
 msgid "PrtScr"
-msgstr ""
+msgstr "PrtScr"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:67
 msgid "Takes a screenshot."
@@ -454,11 +456,8 @@ msgid "Select desktop environment"
 msgstr ""
 
 #: qml/Launcher/Drawer.qml:235
-#, fuzzy
-#| msgctxt "Button: Start a search in the current dash scope"
-#| msgid "Search"
 msgid "Search…"
-msgstr "Serĉi"
+msgstr "Serĉi…"
 
 #: qml/Launcher/PullToRefreshScopeStyle.qml:56
 msgid "Pull to refresh…"
