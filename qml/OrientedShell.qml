@@ -298,7 +298,7 @@ Item {
         hasTouchscreen: touchScreensModel.count > 0
         supportsMultiColorLed: deviceConfiguration.supportsMultiColorLed
         lightIndicators: root.lightIndicators
-        oskEnabled: (!hasKeyboard && (root.screen.formFactor == Screen.Phone || root.screen.formFactor == Screen.Tablet)) ||
+        oskEnabled: (!hasKeyboard && Screens.count === 1) ||
                     lomiriSettings.alwaysShowOsk || forceOSKEnabled
 
         // Multiscreen support: in addition to judging by the device type, go by the screen type.
