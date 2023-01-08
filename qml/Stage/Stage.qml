@@ -703,6 +703,7 @@ FocusScope {
             opacity: 0
             visible: workspaceEnabled ? opacity > 0 : false
             enabled: workspaceEnabled
+            mode: root.mode
             onCloseSpread: priv.goneToSpread = false;
         }
 
