@@ -14,7 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.4
+import QtQuick 2.12
 import QtQml.StateMachine 1.0 as DSM
 import Lomiri.Components 1.3
 import Lomiri.Launcher 0.1
