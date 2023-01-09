@@ -30,6 +30,8 @@ Item {
 
     property QtObject activeWorkspace: null
 
+    property string mode : "staged"
+
     signal closeSpread();
 
     Row {
@@ -47,7 +49,7 @@ Item {
             delegate: Item {
                 height: root.height - units.gu(6)
                 width: workspaces.width
-                visible: model.screen.formFactor != Screen.Phone // Hides a phone's internal display
+                visible: root.mode != "staged" // Hides a phone's internal display
 
                 Item {
                     id: header
