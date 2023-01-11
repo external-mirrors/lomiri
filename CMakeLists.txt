@@ -97,6 +97,14 @@ pkg_check_modules(MIRAL REQUIRED miral)
 pkg_check_modules(DEVICEINFO REQUIRED deviceinfo)
 pkg_check_modules(LOMIRISCHEMA REQUIRED lomiri-schemas>=0.1.3)
 
+if (QTMIRSERVER_VERSION VERSION_GREATER_EQUAL 0.8.0)
+    message("Bulding with miroil")
+    pkg_check_modules(MIROIL REQUIRED miroil)
+    add_definitions(-DUSE_MIROIL=1)
+else()
+    message("Bulding without miroil")
+endif()
+
 ### Check LomiriGestures private headers. No pkg-config (.pc) file is provided for them
 find_path(LOMIRIGESTUREPRIV
     NAMES LomiriGestures/private/damper_p.h LomiriGestures/private/ucswipearea_p.h LomiriGestures/private/ucswipearea_p_p.h
