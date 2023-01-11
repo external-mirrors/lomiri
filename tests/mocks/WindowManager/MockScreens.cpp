@@ -26,6 +26,10 @@
 
 namespace {
 
+#ifndef USE_MIROIL
+namespace miroil = miral;
+#endif
+
 QWeakPointer<MockScreens> m_screens;
 
 class MockScreen : public qtmir::Screen
@@ -82,7 +86,7 @@ public:
         }
     }
 
-    miral::DisplayId displayId() const override { return m_id; }
+    miroil::DisplayId displayId() const override { return m_id; }
     bool used() const override { return m_used; }
     QString name() const override { return m_name; }
     float scale() const override { return m_scale; }
@@ -141,7 +145,7 @@ Q_SIGNALS:
     void outputTypeNameChanged();
 
 public:
-    miral::DisplayId m_id;
+    miroil::DisplayId m_id;
     bool m_active{false};
     bool m_used{true};
     QString m_name;
@@ -167,7 +171,7 @@ MockScreens::MockScreens()
     QPoint lastPoint(0,0);
     for (int i = 0; i < screenCount; ++i) {
         auto screen = new MockScreen();
-        screen->m_id.output_id = miral::OutputId{i};
+        screen->m_id.output_id = miroil::OutputId{i};
         screen->m_active = i == 0;
         screen->m_name = QString("Monitor %1").arg(i);
         screen->m_position = QPoint(lastPoint.x(), lastPoint.y());
