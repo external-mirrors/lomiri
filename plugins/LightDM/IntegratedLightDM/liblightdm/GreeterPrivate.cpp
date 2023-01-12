@@ -219,11 +219,6 @@ public Q_SLOTS:
             // responded to/dismissed in handlePrompt().
             while (respond(QString()));
 
-            // Now let signal/slot handling happen so the thread can finish
-            while (!pamFuture.isFinished()) {
-                QCoreApplication::processEvents();
-            }
-
             pam_end(handle, PAM_CONV_ERR);
         }
     }

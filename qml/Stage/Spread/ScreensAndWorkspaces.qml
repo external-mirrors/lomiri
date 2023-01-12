@@ -20,6 +20,7 @@ import Lomiri.Components.Popups 1.3
 import WindowManager 1.0
 import QtMir.Application 0.1
 import ".."
+import "../.."
 
 Item {
     id: root
@@ -33,6 +34,10 @@ Item {
     property string mode : "staged"
 
     signal closeSpread();
+
+    DeviceConfiguration {
+        id: deviceConfiguration
+    }
 
     Row {
         id: row
@@ -49,7 +54,7 @@ Item {
             delegate: Item {
                 height: root.height - units.gu(6)
                 width: workspaces.width
-                visible: root.mode != "staged" // Hides a phone's internal display
+                visible: (deviceConfiguration.category == "phone" && index !== 0) || deviceConfiguration.category != "phone"
 
                 Item {
                     id: header
