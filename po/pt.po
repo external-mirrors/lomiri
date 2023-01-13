@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-17 14:18+0100\n"
-"PO-Revision-Date: 2021-06-01 14:51+0000\n"
+"PO-Revision-Date: 2023-01-15 18:50+0000\n"
 "Last-Translator: Ivo Xavier <ivofernandes12@gmail.com>\n"
-"Language-Team: Portuguese <https://translate.ubports.com/projects/ubports/"
-"lomiri/pt/>\n"
+"Language-Team: Portuguese <https://hosted.weblate.org/projects/lomiri/lomiri/"
+"pt/>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.11.3\n"
+"X-Generator: Weblate 4.15.1-dev\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:35+0000\n"
 
 #: plugins/LightDM/Greeter.cpp:199
@@ -67,43 +67,43 @@ msgstr "Remover atalho"
 
 #: plugins/WindowManager/Screen.cpp:160
 msgid "Unknown"
-msgstr ""
+msgstr "Desconhecido"
 
 #: plugins/WindowManager/Screen.cpp:162
 msgid "VGA"
-msgstr ""
+msgstr "VGA"
 
 #: plugins/WindowManager/Screen.cpp:166
 msgid "DVI"
-msgstr ""
+msgstr "DVI"
 
 #: plugins/WindowManager/Screen.cpp:168
 msgid "Composite"
-msgstr ""
+msgstr "Composto"
 
 #: plugins/WindowManager/Screen.cpp:170
 msgid "S-Video"
-msgstr ""
+msgstr "S-Vídeo"
 
 #: plugins/WindowManager/Screen.cpp:174
 msgid "Internal"
-msgstr ""
+msgstr "Interno"
 
 #: plugins/WindowManager/Screen.cpp:176
 msgid "Component"
-msgstr ""
+msgstr "Componente"
 
 #: plugins/WindowManager/Screen.cpp:178
 msgid "DisplayPort"
-msgstr ""
+msgstr "DisplayPort"
 
 #: plugins/WindowManager/Screen.cpp:181
 msgid "HDMI"
-msgstr ""
+msgstr "HDMI"
 
 #: plugins/WindowManager/Screen.cpp:183
 msgid "TV"
-msgstr ""
+msgstr "TV"
 
 #: qml/Components/Dialogs.qml:176
 msgctxt "Title: Lock/Log out dialog"
@@ -710,12 +710,9 @@ msgstr ""
 "reiniciar-se-á automaticamente."
 
 #: qml/Wizard/Pages/79-system-update.qml:76
-#, fuzzy
-#| msgctxt "string identifying name of the update"
-#| msgid "Ubuntu Touch system"
 msgctxt "string identifying name of the update"
 msgid "Lomiri Touch system"
-msgstr "Sistema Ubuntu Touch"
+msgstr "Sistema Lomiri Touch"
 
 #: qml/Wizard/Pages/79-system-update.qml:83
 #, qt-format
@@ -736,10 +733,8 @@ msgid "Welcome Back"
 msgstr "Bem-vindo/a de volta"
 
 #: qml/Wizard/Pages/80-finished.qml:91
-#, fuzzy
-#| msgid "Welcome to "
 msgid "Welcome to Lomiri"
-msgstr "Bem-vindo(a) "
+msgstr "Bem-vindo ao Lomiri"
 
 #: qml/Wizard/Pages/80-finished.qml:106
 msgid "You are ready to use your device now"
