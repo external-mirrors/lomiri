@@ -20,7 +20,7 @@ install(FILES
     DESTINATION ${CMAKE_INSTALL_DATADIR}/lightdm/lightdm.conf.d
     )
 
-add_custom_target(pkgversion ALL COMMAND dpkg-parsechangelog -l${CMAKE_SOURCE_DIR}/debian/changelog --show-field version > ${CMAKE_CURRENT_BINARY_DIR}/version)
+add_custom_target(pkgversion ALL COMMAND echo ${PROJECT_VERSION} | head -n1 > ${CMAKE_CURRENT_BINARY_DIR}/version)
 
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/version DESTINATION ${CMAKE_INSTALL_LOCALSTATEDIR}/lib/lomiri)
 
