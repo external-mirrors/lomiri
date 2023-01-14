@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-17 14:18+0100\n"
-"PO-Revision-Date: 2023-01-11 15:55+0000\n"
+"PO-Revision-Date: 2023-01-15 18:50+0000\n"
 "Last-Translator: Dan <denqwerta@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/lomiri/lomiri/"
 "uk/>\n"
@@ -349,7 +349,7 @@ msgstr "Терміновий виклик"
 
 #: qml/Components/Lockscreen.qml:247
 msgid "OK"
-msgstr "Гаразд"
+msgstr "ОК"
 
 #: qml/Components/ModeSwitchWarningDialog.qml:33
 msgid "Apps may have unsaved data:"
