@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-17 14:18+0100\n"
-"PO-Revision-Date: 2023-01-15 18:50+0000\n"
+"PO-Revision-Date: 2023-01-16 23:53+0000\n"
 "Last-Translator: Sergii Horichenko <m@sgg.im>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/lomiri/lomiri/ru/"
 ">\n"
@@ -68,43 +68,43 @@ msgstr "Открепить ярлык"
 
 #: plugins/WindowManager/Screen.cpp:160
 msgid "Unknown"
-msgstr ""
+msgstr "Неизвестно"
 
 #: plugins/WindowManager/Screen.cpp:162
 msgid "VGA"
-msgstr ""
+msgstr "VGA"
 
 #: plugins/WindowManager/Screen.cpp:166
 msgid "DVI"
-msgstr ""
+msgstr "DVI"
 
 #: plugins/WindowManager/Screen.cpp:168
 msgid "Composite"
-msgstr ""
+msgstr "Композит"
 
 #: plugins/WindowManager/Screen.cpp:170
 msgid "S-Video"
-msgstr ""
+msgstr "S-Video"
 
 #: plugins/WindowManager/Screen.cpp:174
 msgid "Internal"
-msgstr ""
+msgstr "Внутренний"
 
 #: plugins/WindowManager/Screen.cpp:176
 msgid "Component"
-msgstr ""
+msgstr "Компонент"
 
 #: plugins/WindowManager/Screen.cpp:178
 msgid "DisplayPort"
-msgstr ""
+msgstr "DisplayPort"
 
 #: plugins/WindowManager/Screen.cpp:181
 msgid "HDMI"
-msgstr ""
+msgstr "HDMI"
 
 #: plugins/WindowManager/Screen.cpp:183
 msgid "TV"
-msgstr ""
+msgstr "TV"
 
 #: qml/Components/Dialogs.qml:176
 msgctxt "Title: Lock/Log out dialog"
@@ -157,7 +157,9 @@ msgstr "Питание"
 msgid ""
 "Are you sure you would like\n"
 "to power off?"
-msgstr "Отключить питание?"
+msgstr ""
+"Вы действительно хотите\n"
+"выключить питание?"
 
 #: qml/Components/Dialogs.qml:248
 msgctxt "Button: Power off the system"
@@ -718,12 +720,9 @@ msgstr ""
 "выполнит автоматическую перезагрузку."
 
 #: qml/Wizard/Pages/79-system-update.qml:76
-#, fuzzy
-#| msgctxt "string identifying name of the update"
-#| msgid "Ubuntu Touch system"
 msgctxt "string identifying name of the update"
 msgid "Lomiri Touch system"
-msgstr "Система Ubuntu Touch"
+msgstr "Система Lomiri Touch"
 
 #: qml/Wizard/Pages/79-system-update.qml:83
 #, qt-format
@@ -744,10 +743,8 @@ msgid "Welcome Back"
 msgstr "С возвращением"
 
 #: qml/Wizard/Pages/80-finished.qml:91
-#, fuzzy
-#| msgid "Welcome to "
 msgid "Welcome to Lomiri"
-msgstr "Добро пожаловать "
+msgstr "Добро пожаловать в Lomiri"
 
 #: qml/Wizard/Pages/80-finished.qml:106
 msgid "You are ready to use your device now"
