@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-17 14:18+0100\n"
-"PO-Revision-Date: 2023-01-15 18:50+0000\n"
-"Last-Translator: Dan <denqwerta@gmail.com>\n"
+"PO-Revision-Date: 2023-01-16 23:53+0000\n"
+"Last-Translator: Sergii Horichenko <m@sgg.im>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/lomiri/lomiri/"
 "uk/>\n"
 "Language: uk\n"
@@ -245,7 +245,7 @@ msgstr "Відкрити меню запуску у режимі навігац�
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:164
 msgid "Super + Tab"
-msgstr "Win + Tab"
+msgstr "Super + Tab"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:169
 msgid "Switches applications via the launcher."
@@ -301,7 +301,7 @@ msgstr "Вікна"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:268
 msgid "Ctrl + Super + D"
-msgstr "Ctrl + Win + D"
+msgstr "Ctrl + Super + D"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:273
 msgid "Minimizes all windows."
