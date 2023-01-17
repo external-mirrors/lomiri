@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-17 14:18+0100\n"
-"PO-Revision-Date: 2023-01-11 15:55+0000\n"
-"Last-Translator: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>\n"
+"PO-Revision-Date: 2023-01-18 23:52+0000\n"
+"Last-Translator: Daniel Frost <one@frostinfo.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/lomiri/lomiri/de/>"
 "\n"
 "Language: de\n"
@@ -71,11 +71,11 @@ msgstr "Unbekannt"
 
 #: plugins/WindowManager/Screen.cpp:162
 msgid "VGA"
-msgstr ""
+msgstr "VGA"
 
 #: plugins/WindowManager/Screen.cpp:166
 msgid "DVI"
-msgstr ""
+msgstr "DVI"
 
 #: plugins/WindowManager/Screen.cpp:168
 msgid "Composite"
@@ -83,27 +83,27 @@ msgstr ""
 
 #: plugins/WindowManager/Screen.cpp:170
 msgid "S-Video"
-msgstr ""
+msgstr "S-Video"
 
 #: plugins/WindowManager/Screen.cpp:174
 msgid "Internal"
-msgstr ""
+msgstr "Intern"
 
 #: plugins/WindowManager/Screen.cpp:176
 msgid "Component"
-msgstr ""
+msgstr "Komponente"
 
 #: plugins/WindowManager/Screen.cpp:178
 msgid "DisplayPort"
-msgstr ""
+msgstr "DisplayPort"
 
 #: plugins/WindowManager/Screen.cpp:181
 msgid "HDMI"
-msgstr ""
+msgstr "HDMI"
 
 #: plugins/WindowManager/Screen.cpp:183
 msgid "TV"
-msgstr ""
+msgstr "TV"
 
 #: qml/Components/Dialogs.qml:176
 msgctxt "Title: Lock/Log out dialog"
@@ -715,12 +715,9 @@ msgstr ""
 "Danach wird das Gerät automatisch neu starten."
 
 #: qml/Wizard/Pages/79-system-update.qml:76
-#, fuzzy
-#| msgctxt "string identifying name of the update"
-#| msgid "Ubuntu Touch system"
 msgctxt "string identifying name of the update"
 msgid "Lomiri Touch system"
-msgstr "Ubuntu-Touch-System"
+msgstr "Lomiri Touch Betriebssystem"
 
 #: qml/Wizard/Pages/79-system-update.qml:83
 #, qt-format
@@ -741,10 +738,8 @@ msgid "Welcome Back"
 msgstr "Willkommen zurück"
 
 #: qml/Wizard/Pages/80-finished.qml:91
-#, fuzzy
-#| msgid "Welcome to "
 msgid "Welcome to Lomiri"
-msgstr "Willkommen bei "
+msgstr "Willkommen bei Lomiri"
 
 #: qml/Wizard/Pages/80-finished.qml:106
 msgid "You are ready to use your device now"
