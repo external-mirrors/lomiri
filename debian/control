@@ -220,7 +220,7 @@ Depends:
  ${shlibs:Depends},
 Provides:
  lomiri-application-impl,
- lomiri-application-impl-27,
+ lomiri-application-impl-28,
  lomiri-fake-env,
 Replaces:
  lomiri-autopilot (<< 8.02+15.04.20150422-0lomiri1),
