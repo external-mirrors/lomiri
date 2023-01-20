@@ -118,6 +118,7 @@ public:
     QUrl icon() const override { return QUrl(); }
     ApplicationInfoInterface::State state() const override { return ApplicationInfoInterface::Running; }
     bool focused() const override { return m_focused; }
+    bool showSplash() const override { return true; }
     QString splashTitle() const override { return QString(); }
     QUrl splashImage() const override { return QUrl(); }
     bool splashShowHeader() const override { return true; }
@@ -134,6 +135,7 @@ public:
     MirSurfaceListInterface* surfaceList() const override { return m_surfaces; }
     MirSurfaceListInterface* promptSurfaceList() const override { return nullptr; }
     int surfaceCount() const override { return m_surfaces->count(); }
+    bool serverSideDecoration() const override { return true; }
     void setSurfaces(MockSurfaceList* surfaces) { m_surfaces = surfaces; Q_EMIT surfaceCountChanged(m_surfaces->count()); }
     void close() override {}
 
