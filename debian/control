@@ -167,7 +167,7 @@ Depends:
  qml-module-lomiri-thumbnailer0.1,
  qtdeclarative5-lomiri-notifications-plugin (>= 0.1.2) | lomiri-notifications-impl,
  qttranslations5-l10n,
- lomiri-application-impl-27,
+ lomiri-application-impl-28,
  lomiri-notifications-impl-3,
  lomiri-schemas,
  lomiri-tests | lomiri-application-impl,
@@ -220,7 +220,7 @@ Depends:
  ${shlibs:Depends},
 Provides:
  lomiri-application-impl,
- lomiri-application-impl-28,
+ lomiri-application-impl-27,
  lomiri-fake-env,
 Replaces:
  lomiri-autopilot (<< 8.02+15.04.20150422-0lomiri1),
