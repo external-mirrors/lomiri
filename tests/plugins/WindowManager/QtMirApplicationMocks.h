@@ -131,6 +131,7 @@ public:
     bool focused() const override { return false; }
     QString splashTitle() const override { return QString(); }
     QUrl splashImage() const override { return QUrl(); }
+    bool showSplash() const override { return false; }
     bool splashShowHeader() const override { return false; }
     QColor splashColor() const override { return QColor(); }
     QColor splashColorHeader() const override { return QColor(); }
@@ -144,6 +145,7 @@ public:
     void setInitialSurfaceSize(const QSize &) override {}
     MirSurfaceListInterface* surfaceList() const override { return &m_surfaceList; }
     MirSurfaceListInterface* promptSurfaceList() const override { return nullptr; }
+    bool serverSideDecoration() const override { return false; }
     int surfaceCount() const override { return 0; }
 
     QString m_appId;
