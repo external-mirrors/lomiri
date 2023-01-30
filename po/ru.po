@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-12-17 14:18+0100\n"
-"PO-Revision-Date: 2023-01-16 23:53+0000\n"
+"PO-Revision-Date: 2023-01-31 12:49+0000\n"
 "Last-Translator: Sergii Horichenko <m@sgg.im>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/lomiri/lomiri/ru/"
 ">\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.15.1-dev\n"
+"X-Generator: Weblate 4.16-dev\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:35+0000\n"
 
 #: plugins/LightDM/Greeter.cpp:199
@@ -129,7 +129,7 @@ msgstr "Выйти из системы"
 #: qml/Greeter/NarrowView.qml:218 qml/Wizard/Pages/passcode-confirm.qml:32
 #: qml/Wizard/Pages/passcode-set.qml:32
 msgid "Cancel"
-msgstr "Отменить"
+msgstr "Отмена"
 
 #: qml/Components/Dialogs.qml:211
 msgctxt "Title: Reboot dialog"
@@ -752,7 +752,7 @@ msgstr "Теперь устройство готово к использован
 
 #: qml/Wizard/Pages/80-finished.qml:126
 msgid "Continue"
-msgstr "Продолжить"
+msgstr "Далее"
 
 #: qml/Wizard/Pages/80-finished.qml:126
 msgid "Get Started"
