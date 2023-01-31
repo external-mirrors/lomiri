@@ -7,6 +7,14 @@ endif()
 
 project(lomiri VERSION 0.1 LANGUAGES C CXX)
 
+set(SHELL_APP lomiri)
+set(INDICATORS_CLIENT_APP indicators-client)
+set(GREETER_APP lomiri-greeter)
+
+set (DESKTOP_FILE_SHELL "${SHELL_APP}.desktop")
+set (DESKTOP_FILE_GREETER "${GREETER_APP}.desktop")
+set (DESKTOP_FILE_INDICATORSCLIENT "${INDICATORS_CLIENT_APP}.desktop")
+
 if(${PROJECT_BINARY_DIR} STREQUAL ${PROJECT_SOURCE_DIR})
    message(FATAL_ERROR "In-tree build attempt detected, aborting. Set your build dir outside your source dir, delete CMakeCache.txt from source root and try again.")
 endif()
@@ -149,9 +157,6 @@ add_definitions(-DQT_USE_QSTRINGBUILDER)
 include(autopilot)
 declare_autopilot_test(shell lomiri.shell ${CMAKE_SOURCE_DIR}/tests/autopilot/)
 
-set(SHELL_APP lomiri)
-set(INDICATORS_CLIENT_APP indicators-client)
-set(GREETER_APP lomiri-greeter)
 set(MOCK_INDICATOR_SERVICE_APP lomiri-mock-indicator-service)
 
 include_directories(

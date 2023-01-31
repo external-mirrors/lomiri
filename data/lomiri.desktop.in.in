@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Name=Lomiri 8
+Name=Lomiri
 Comment=The converged Lomiri shell
 Exec=@CMAKE_INSTALL_PREFIX@/@CMAKE_INSTALL_BINDIR@/lomiri
 Terminal=false
