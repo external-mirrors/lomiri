@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-31 19:29+0000\n"
-"PO-Revision-Date: 2023-01-07 17:47+0000\n"
+"PO-Revision-Date: 2023-02-03 04:35+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/lomiri/"
 "lomiri/nb_NO/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.15.1-dev\n"
+"X-Generator: Weblate 4.16-dev\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:35+0000\n"
 
 #: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
@@ -25,26 +25,30 @@ msgid "Lomiri"
 msgstr "Lomiri"
 
 #: data/lomiri.desktop.in:5
+#, fuzzy
 msgid "The converged Lomiri shell"
-msgstr ""
+msgstr "Det samhandlende Lomiri-skallet"
 
 #: data/lomiri-greeter.desktop.in:4
 #, fuzzy
 #| msgid "Lomiri"
 msgid "Lomiri Greeter"
-msgstr "Lomiri"
+msgstr "Lomiri-imøtekommer"
 
 #: data/lomiri-greeter.desktop.in:5
+#, fuzzy
 msgid "The converged Lomiri shell's Greeter"
-msgstr ""
+msgstr "Det samhandlende Lomiri-skallets imøtekommer"
 
 #: data/indicators-client.desktop.in:4
+#, fuzzy
 msgid "Indicators Client"
-msgstr ""
+msgstr "Indikator-klient"
 
 #: data/indicators-client.desktop.in:5
+#, fuzzy
 msgid "Application for testing the Indicators system"
-msgstr ""
+msgstr "Program for testing av indikatorsystemet"
 
 #: plugins/LightDM/Greeter.cpp:199
 msgid "Password: "
