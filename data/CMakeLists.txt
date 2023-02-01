@@ -1,7 +1,32 @@
+include(FindGettext)
+
 # generate desktop files
-configure_file(${SHELL_APP}.desktop.in ${CMAKE_CURRENT_BINARY_DIR}/${SHELL_APP}.desktop @ONLY)
-configure_file(${INDICATORS_CLIENT_APP}.desktop.in ${CMAKE_CURRENT_BINARY_DIR}/${INDICATORS_CLIENT_APP}.desktop @ONLY)
-configure_file(${GREETER_APP}.desktop.in ${CMAKE_CURRENT_BINARY_DIR}/${GREETER_APP}.desktop @ONLY)
+configure_file(${DESKTOP_FILE_SHELL}.in.in ${DESKTOP_FILE_SHELL}.in)
+add_custom_target(${DESKTOP_FILE_SHELL} ALL
+    COMMENT "Merging translations into ${DESKTOP_FILE_SHELL}..."
+    COMMAND ${GETTEXT_MSGFMT_EXECUTABLE}
+            --desktop --template=${CMAKE_CURRENT_BINARY_DIR}/${DESKTOP_FILE_SHELL}.in
+            -o ${DESKTOP_FILE_SHELL}
+            -d ${CMAKE_SOURCE_DIR}/po
+)
+
+configure_file(${DESKTOP_FILE_GREETER}.in.in ${DESKTOP_FILE_GREETER}.in)
+add_custom_target(${DESKTOP_FILE_GREETER} ALL
+    COMMENT "Merging translations into ${DESKTOP_FILE_GREETER}..."
+    COMMAND ${GETTEXT_MSGFMT_EXECUTABLE}
+            --desktop --template=${CMAKE_CURRENT_BINARY_DIR}/${DESKTOP_FILE_GREETER}.in
+            -o ${DESKTOP_FILE_GREETER}
+            -d ${CMAKE_SOURCE_DIR}/po
+)
+
+configure_file(${DESKTOP_FILE_INDICATORSCLIENT}.in.in ${DESKTOP_FILE_INDICATORSCLIENT}.in)
+add_custom_target(${DESKTOP_FILE_INDICATORSCLIENT} ALL
+    COMMENT "Merging translations into ${DESKTOP_FILE_INDICATORSCLIENT}..."
+    COMMAND ${GETTEXT_MSGFMT_EXECUTABLE}
+            --desktop --template=${CMAKE_CURRENT_BINARY_DIR}/${DESKTOP_FILE_INDICATORSCLIENT}.in
+            -o ${DESKTOP_FILE_INDICATORSCLIENT}
+            -d ${CMAKE_SOURCE_DIR}/po
+)
 
 # install desktop files
 install(FILES
