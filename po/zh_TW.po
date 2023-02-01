@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-17 14:18+0100\n"
+"POT-Creation-Date: 2023-01-31 19:29+0000\n"
 "PO-Revision-Date: 2021-04-09 13:06+0000\n"
 "Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Chinese (Traditional) <https://translate.ubports.com/projects/"
@@ -19,6 +19,32 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 3.11.3\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:36+0000\n"
+
+#: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
+msgid "Lomiri"
+msgstr "Lomiri"
+
+#: data/lomiri.desktop.in:5
+msgid "The converged Lomiri shell"
+msgstr ""
+
+#: data/lomiri-greeter.desktop.in:4
+#, fuzzy
+#| msgid "Lomiri"
+msgid "Lomiri Greeter"
+msgstr "Lomiri"
+
+#: data/lomiri-greeter.desktop.in:5
+msgid "The converged Lomiri shell's Greeter"
+msgstr ""
+
+#: data/indicators-client.desktop.in:4
+msgid "Indicators Client"
+msgstr ""
+
+#: data/indicators-client.desktop.in:5
+msgid "Application for testing the Indicators system"
+msgstr ""
 
 #: plugins/LightDM/Greeter.cpp:199
 msgid "Password: "
@@ -175,10 +201,6 @@ msgstr "螢幕節圖"
 #: qml/Components/KeyboardShortcutsOverlay.qml:41
 msgid "Keyboard Shortcuts"
 msgstr "鍵盤快捷鍵"
-
-#: qml/Components/KeyboardShortcutsOverlay.qml:55
-msgid "Lomiri"
-msgstr "Lomiri"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:62
 msgid "PrtScr"
@@ -401,7 +423,7 @@ msgstr "用兩隻手指來捲動畫面。"
 msgid "Find more settings in the system settings."
 msgstr "在系統設定中可以找到更多設定。"
 
-#: qml/Greeter/CoverPage.qml:158
+#: qml/Greeter/CoverPage.qml:158 tests/qmltests/Greeter/tst_NarrowView.qml:562
 msgid "Unlock"
 msgstr "解鎖"
 
@@ -423,15 +445,19 @@ msgid "Please wait %1 minute and then try again…"
 msgid_plural "Please wait %1 minutes and then try again…"
 msgstr[0] "請等候 %1 分鐘再試…"
 
-#: qml/Greeter/Greeter.qml:595
+#: qml/Greeter/Greeter.qml:608 tests/qmltests/Greeter/tst_Greeter.qml:578
+#: tests/qmltests/Greeter/tst_Greeter.qml:597
+#: tests/qmltests/Greeter/tst_Greeter.qml:625
+#: tests/qmltests/Greeter/tst_Greeter.qml:637
 msgid "Try again"
 msgstr "再試一次"
 
-#: qml/Greeter/Greeter.qml:596
+#: qml/Greeter/Greeter.qml:609 tests/qmltests/Greeter/tst_Greeter.qml:552
+#: tests/qmltests/Greeter/tst_Greeter.qml:603
 msgid "Enter passphrase to unlock"
 msgstr "輸入密語來解鎖"
 
-#: qml/Greeter/Greeter.qml:597
+#: qml/Greeter/Greeter.qml:610
 msgid "Enter passcode to unlock"
 msgstr "輸入通關碼來解鎖"
 
@@ -439,11 +465,11 @@ msgstr "輸入通關碼來解鎖"
 msgid "Emergency"
 msgstr "緊急事件"
 
-#: qml/Greeter/PromptList.qml:132
+#: qml/Greeter/PromptList.qml:143
 msgid "Passphrase"
 msgstr "密碼"
 
-#: qml/Greeter/PromptList.qml:132
+#: qml/Greeter/PromptList.qml:143
 msgid "Passcode"
 msgstr "PIN 密碼"
 
@@ -501,7 +527,6 @@ msgstr[0] "%1 秒鐘"
 msgid "0 seconds"
 msgstr "0 秒鐘"
 
-#. Translators: String like "1 hour, 2 minutes, 3 seconds remaining"
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1066
 #, qt-format
 msgid "%1 remaining"
@@ -555,7 +580,7 @@ msgstr "返回"
 msgid "Drag using 3 fingers any application from one window to the other"
 msgstr "使用3根手指將任何應用程式從一個視窗拖到另一個視窗"
 
-#: qml/Stage/Stage.qml:826
+#: qml/Stage/Stage.qml:827
 msgid "No running apps"
 msgstr "沒有執行中的應用程式"
 

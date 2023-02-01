@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-17 14:18+0100\n"
+"POT-Creation-Date: 2023-01-31 19:29+0000\n"
 "PO-Revision-Date: 2016-08-22 20:43+0000\n"
 "Last-Translator: Bojan Bogdanović <Unknown>\n"
 "Language-Team: српски <xfce4@xfce4.org>\n"
@@ -20,6 +20,30 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:35+0000\n"
 "X-Generator: Launchpad (build 18269)\n"
+
+#: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
+msgid "Lomiri"
+msgstr ""
+
+#: data/lomiri.desktop.in:5
+msgid "The converged Lomiri shell"
+msgstr ""
+
+#: data/lomiri-greeter.desktop.in:4
+msgid "Lomiri Greeter"
+msgstr ""
+
+#: data/lomiri-greeter.desktop.in:5
+msgid "The converged Lomiri shell's Greeter"
+msgstr ""
+
+#: data/indicators-client.desktop.in:4
+msgid "Indicators Client"
+msgstr ""
+
+#: data/indicators-client.desktop.in:5
+msgid "Application for testing the Indicators system"
+msgstr ""
 
 #: plugins/LightDM/Greeter.cpp:199
 msgid "Password: "
@@ -180,10 +204,6 @@ msgstr "Слика екран"
 #: qml/Components/KeyboardShortcutsOverlay.qml:41
 msgid "Keyboard Shortcuts"
 msgstr "Пречице тастатуре"
-
-#: qml/Components/KeyboardShortcutsOverlay.qml:55
-msgid "Lomiri"
-msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:62
 msgid "PrtScr"
@@ -421,7 +441,7 @@ msgstr ""
 msgid "Find more settings in the system settings."
 msgstr ""
 
-#: qml/Greeter/CoverPage.qml:158
+#: qml/Greeter/CoverPage.qml:158 tests/qmltests/Greeter/tst_NarrowView.qml:562
 msgid "Unlock"
 msgstr "Откључај"
 
@@ -445,17 +465,21 @@ msgstr[0] "Сачекајте %1 минут, па покушајте понов�
 msgstr[1] "Сачекајте %1 минута, па покушајте поново…"
 msgstr[2] "Сачекајте %1 минута, па покушајте поново…"
 
-#: qml/Greeter/Greeter.qml:595
+#: qml/Greeter/Greeter.qml:608 tests/qmltests/Greeter/tst_Greeter.qml:578
+#: tests/qmltests/Greeter/tst_Greeter.qml:597
+#: tests/qmltests/Greeter/tst_Greeter.qml:625
+#: tests/qmltests/Greeter/tst_Greeter.qml:637
 msgid "Try again"
 msgstr "Покушајте поново"
 
-#: qml/Greeter/Greeter.qml:596
+#: qml/Greeter/Greeter.qml:609 tests/qmltests/Greeter/tst_Greeter.qml:552
+#: tests/qmltests/Greeter/tst_Greeter.qml:603
 #, fuzzy
 #| msgid "Enter passphrase"
 msgid "Enter passphrase to unlock"
 msgstr "Унесите приступну фразу"
 
-#: qml/Greeter/Greeter.qml:597
+#: qml/Greeter/Greeter.qml:610
 #, fuzzy
 #| msgid "Enter passcode"
 msgid "Enter passcode to unlock"
@@ -465,11 +489,11 @@ msgstr "Унесите приступни код"
 msgid "Emergency"
 msgstr ""
 
-#: qml/Greeter/PromptList.qml:132
+#: qml/Greeter/PromptList.qml:143
 msgid "Passphrase"
 msgstr "Приступна фраза"
 
-#: qml/Greeter/PromptList.qml:132
+#: qml/Greeter/PromptList.qml:143
 msgid "Passcode"
 msgstr "Приступни код"
 
@@ -535,7 +559,6 @@ msgstr[2] "%1 секунди"
 msgid "0 seconds"
 msgstr "0 секунде"
 
-#. Translators: String like "1 hour, 2 minutes, 3 seconds remaining"
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1066
 #, qt-format
 msgid "%1 remaining"
@@ -592,7 +615,7 @@ msgstr "Назад"
 msgid "Drag using 3 fingers any application from one window to the other"
 msgstr "Превуците користећи 3 прста било који програм са једног у други прозор"
 
-#: qml/Stage/Stage.qml:826
+#: qml/Stage/Stage.qml:827
 msgid "No running apps"
 msgstr ""
 

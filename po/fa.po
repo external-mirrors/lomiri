@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-17 14:18+0100\n"
+"POT-Creation-Date: 2023-01-31 19:29+0000\n"
 "PO-Revision-Date: 2020-02-15 09:21+0000\n"
 "Last-Translator: HSN80 <hosseinabbasi80@outlook.com>\n"
 "Language-Team: Persian <https://translate.ubports.com/projects/unity8/unity8/"
@@ -19,6 +19,30 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 3.8\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:35+0000\n"
+
+#: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
+msgid "Lomiri"
+msgstr ""
+
+#: data/lomiri.desktop.in:5
+msgid "The converged Lomiri shell"
+msgstr ""
+
+#: data/lomiri-greeter.desktop.in:4
+msgid "Lomiri Greeter"
+msgstr ""
+
+#: data/lomiri-greeter.desktop.in:5
+msgid "The converged Lomiri shell's Greeter"
+msgstr ""
+
+#: data/indicators-client.desktop.in:4
+msgid "Indicators Client"
+msgstr ""
+
+#: data/indicators-client.desktop.in:5
+msgid "Application for testing the Indicators system"
+msgstr ""
 
 #: plugins/LightDM/Greeter.cpp:199
 msgid "Password: "
@@ -179,10 +203,6 @@ msgstr "اسکیرین شات."
 #: qml/Components/KeyboardShortcutsOverlay.qml:41
 msgid "Keyboard Shortcuts"
 msgstr "میان‌برهای صفحه‌کلید"
-
-#: qml/Components/KeyboardShortcutsOverlay.qml:55
-msgid "Lomiri"
-msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:62
 msgid "PrtScr"
@@ -421,7 +441,7 @@ msgstr ""
 msgid "Find more settings in the system settings."
 msgstr ""
 
-#: qml/Greeter/CoverPage.qml:158
+#: qml/Greeter/CoverPage.qml:158 tests/qmltests/Greeter/tst_NarrowView.qml:562
 msgid "Unlock"
 msgstr "بازکردن قفل"
 
@@ -443,17 +463,21 @@ msgid "Please wait %1 minute and then try again…"
 msgid_plural "Please wait %1 minutes and then try again…"
 msgstr[0] "لطفاُ %1 دقیقه صبر نموده و سپس مجدّداً تلاش نمایید…"
 
-#: qml/Greeter/Greeter.qml:595
+#: qml/Greeter/Greeter.qml:608 tests/qmltests/Greeter/tst_Greeter.qml:578
+#: tests/qmltests/Greeter/tst_Greeter.qml:597
+#: tests/qmltests/Greeter/tst_Greeter.qml:625
+#: tests/qmltests/Greeter/tst_Greeter.qml:637
 msgid "Try again"
 msgstr "تلاش دوباره"
 
-#: qml/Greeter/Greeter.qml:596
+#: qml/Greeter/Greeter.qml:609 tests/qmltests/Greeter/tst_Greeter.qml:552
+#: tests/qmltests/Greeter/tst_Greeter.qml:603
 #, fuzzy
 #| msgid "Enter passphrase"
 msgid "Enter passphrase to unlock"
 msgstr "عبارت‌عبور را وارد کنید"
 
-#: qml/Greeter/Greeter.qml:597
+#: qml/Greeter/Greeter.qml:610
 #, fuzzy
 #| msgid "Enter passcode"
 msgid "Enter passcode to unlock"
@@ -463,11 +487,11 @@ msgstr "رمزعبور را وارد کنید"
 msgid "Emergency"
 msgstr "اضطراری"
 
-#: qml/Greeter/PromptList.qml:132
+#: qml/Greeter/PromptList.qml:143
 msgid "Passphrase"
 msgstr "عبارت‌عبور"
 
-#: qml/Greeter/PromptList.qml:132
+#: qml/Greeter/PromptList.qml:143
 msgid "Passcode"
 msgstr "رمزعبور"
 
@@ -527,7 +551,6 @@ msgstr[0] "%1 ثانیه"
 msgid "0 seconds"
 msgstr "۰ ثانیه"
 
-#. Translators: String like "1 hour, 2 minutes, 3 seconds remaining"
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1066
 #, qt-format
 msgid "%1 remaining"
@@ -584,7 +607,7 @@ msgstr "بازگشت"
 msgid "Drag using 3 fingers any application from one window to the other"
 msgstr "هر پنجره‌ای را با کشیدن سه‌انگشت از پنجره‌ای به ینجرهٔ دیگر ببرید"
 
-#: qml/Stage/Stage.qml:826
+#: qml/Stage/Stage.qml:827
 msgid "No running apps"
 msgstr ""
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-17 14:18+0100\n"
+"POT-Creation-Date: 2023-01-31 19:29+0000\n"
 "PO-Revision-Date: 2021-02-01 21:06+0000\n"
 "Last-Translator: imrufbd <imrufbd@gmail.com>\n"
 "Language-Team: Bengali <https://translate.ubports.com/projects/ubports/"
@@ -19,6 +19,30 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 3.11.3\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:34+0000\n"
+
+#: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
+msgid "Lomiri"
+msgstr ""
+
+#: data/lomiri.desktop.in:5
+msgid "The converged Lomiri shell"
+msgstr ""
+
+#: data/lomiri-greeter.desktop.in:4
+msgid "Lomiri Greeter"
+msgstr ""
+
+#: data/lomiri-greeter.desktop.in:5
+msgid "The converged Lomiri shell's Greeter"
+msgstr ""
+
+#: data/indicators-client.desktop.in:4
+msgid "Indicators Client"
+msgstr ""
+
+#: data/indicators-client.desktop.in:5
+msgid "Application for testing the Indicators system"
+msgstr ""
 
 #: plugins/LightDM/Greeter.cpp:199
 msgid "Password: "
@@ -179,10 +203,6 @@ msgstr "স্ক্রীনশট নেওয়া।"
 #: qml/Components/KeyboardShortcutsOverlay.qml:41
 msgid "Keyboard Shortcuts"
 msgstr "কিবোর্ড শর্টকাট"
-
-#: qml/Components/KeyboardShortcutsOverlay.qml:55
-msgid "Lomiri"
-msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:62
 msgid "PrtScr"
@@ -407,7 +427,7 @@ msgstr "স্ক্রলের জন্য আঙুল চালান।"
 msgid "Find more settings in the system settings."
 msgstr "সিস্টেম সেটিংসে আরও সেটিংস খুজুন।"
 
-#: qml/Greeter/CoverPage.qml:158
+#: qml/Greeter/CoverPage.qml:158 tests/qmltests/Greeter/tst_NarrowView.qml:562
 msgid "Unlock"
 msgstr "তালা খুলুন"
 
@@ -430,15 +450,19 @@ msgid_plural "Please wait %1 minutes and then try again…"
 msgstr[0] "অনুগ্রহ করে %1 মিনিট অপেক্ষা করুন এবং পরবর্তীতে আবার চেষ্টা করুন …"
 msgstr[1] "অনুগ্রহ করে %1 মিনিটের মত অপেক্ষা করুন এবং পরবর্তীতে চেষ্টা করুন …"
 
-#: qml/Greeter/Greeter.qml:595
+#: qml/Greeter/Greeter.qml:608 tests/qmltests/Greeter/tst_Greeter.qml:578
+#: tests/qmltests/Greeter/tst_Greeter.qml:597
+#: tests/qmltests/Greeter/tst_Greeter.qml:625
+#: tests/qmltests/Greeter/tst_Greeter.qml:637
 msgid "Try again"
 msgstr "আবার চেষ্টা করুন"
 
-#: qml/Greeter/Greeter.qml:596
+#: qml/Greeter/Greeter.qml:609 tests/qmltests/Greeter/tst_Greeter.qml:552
+#: tests/qmltests/Greeter/tst_Greeter.qml:603
 msgid "Enter passphrase to unlock"
 msgstr "তালা খোলার জন্য পাসফ্রেজ লিখুন"
 
-#: qml/Greeter/Greeter.qml:597
+#: qml/Greeter/Greeter.qml:610
 msgid "Enter passcode to unlock"
 msgstr "তালা খোলার জন্য পাসকোড লিখুন"
 
@@ -446,11 +470,11 @@ msgstr "তালা খোলার জন্য পাসকোড লিখ�
 msgid "Emergency"
 msgstr "জরুরী"
 
-#: qml/Greeter/PromptList.qml:132
+#: qml/Greeter/PromptList.qml:143
 msgid "Passphrase"
 msgstr "পাসফ্রেজ"
 
-#: qml/Greeter/PromptList.qml:132
+#: qml/Greeter/PromptList.qml:143
 msgid "Passcode"
 msgstr "পাসকোড"
 
@@ -511,7 +535,6 @@ msgstr[1] "%1 সেকেন্ডে"
 msgid "0 seconds"
 msgstr "0 সেকেন্ড"
 
-#. Translators: String like "1 hour, 2 minutes, 3 seconds remaining"
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1066
 #, qt-format
 msgid "%1 remaining"
@@ -565,7 +588,7 @@ msgstr "পূর্বপাতা"
 msgid "Drag using 3 fingers any application from one window to the other"
 msgstr "তিন আঙুল দিয়ে ধরে যেকোন অ্যাপ্লিকেেশন এক উইন্ডো থেকে অন্যটিতে নিয়ে আসুন"
 
-#: qml/Stage/Stage.qml:826
+#: qml/Stage/Stage.qml:827
 msgid "No running apps"
 msgstr "কোন অ্যাপ চলমান নেই"
 
