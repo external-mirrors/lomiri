@@ -4,6 +4,5 @@ Name=Lomiri
 Comment=The converged Lomiri shell
 Exec=@CMAKE_INSTALL_PREFIX@/@CMAKE_INSTALL_BINDIR@/lomiri
 Terminal=false
-Icon=
 NoDisplay=true
 X-Lomiri-Touch=true
