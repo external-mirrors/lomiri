@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-31 19:29+0000\n"
-"PO-Revision-Date: 2023-02-03 04:35+0000\n"
+"PO-Revision-Date: 2023-02-06 03:00+0000\n"
 "Last-Translator: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/lomiri/lomiri/de/>"
 "\n"
@@ -30,19 +30,19 @@ msgstr "Die konvergente Lomiri Arbeitsumgebung"
 
 #: data/lomiri-greeter.desktop.in:4
 msgid "Lomiri Greeter"
-msgstr "Lomiri  Greeter"
+msgstr "Lomiri Greeter"
 
 #: data/lomiri-greeter.desktop.in:5
 msgid "The converged Lomiri shell's Greeter"
-msgstr ""
+msgstr "Der Anmeldebildschirm der konvergenten Lomiri Arbeitsumgebung"
 
 #: data/indicators-client.desktop.in:4
 msgid "Indicators Client"
-msgstr ""
+msgstr "Indicators Client"
 
 #: data/indicators-client.desktop.in:5
 msgid "Application for testing the Indicators system"
-msgstr ""
+msgstr "Testanwendung für das Indicators-System"
 
 #: plugins/LightDM/Greeter.cpp:199
 msgid "Password: "
@@ -368,7 +368,7 @@ msgstr "Notruf"
 
 #: qml/Components/Lockscreen.qml:247
 msgid "OK"
-msgstr "OK"
+msgstr "Ok"
 
 #: qml/Components/ModeSwitchWarningDialog.qml:33
 msgid "Apps may have unsaved data:"
