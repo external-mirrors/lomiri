@@ -1,8 +1,13 @@
-lomiri (0.1) UNRELEASED; urgency=medium
+lomiri (0.1) unstable; urgency=medium
 
+  [ Marius Gripsgard ]
   * Rename to lomiri
 
- -- Marius Gripsgard <marius@ubports.com>  Wed, 14 Apr 2021 04:24:58 +0200
+  [ UBports developers ]
+  * Upstream-provided Debian package for lomiri. See upstream ChangeLog
+    for recent changes.
+
+ -- UBports developers <developers@ubports.com>  Mon, 06 Feb 2023 21:26:23 +0100
 
 unity8 (8.20+ubports) xenial; urgency=medium
 
