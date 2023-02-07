@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-31 19:29+0000\n"
-"PO-Revision-Date: 2023-02-07 09:55+0000\n"
+"PO-Revision-Date: 2023-02-07 21:41+0000\n"
 "Last-Translator: Ivo Xavier <ivofernandes12@gmail.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/lomiri/lomiri/"
 "pt/>\n"
@@ -34,15 +34,15 @@ msgstr "Ecrã de boas-vindas Lomiri"
 
 #: data/lomiri-greeter.desktop.in:5
 msgid "The converged Lomiri shell's Greeter"
-msgstr ""
+msgstr "O ecrã de boas-vindas da shell convergente Lomiri"
 
 #: data/indicators-client.desktop.in:4
 msgid "Indicators Client"
-msgstr ""
+msgstr "Indicadores Cliente"
 
 #: data/indicators-client.desktop.in:5
 msgid "Application for testing the Indicators system"
-msgstr ""
+msgstr "Aplicação para testar o sistema de Indicadores"
 
 #: plugins/LightDM/Greeter.cpp:199
 msgid "Password: "
