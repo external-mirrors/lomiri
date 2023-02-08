@@ -160,6 +160,17 @@ void System::setSessionVariable(const QString &variable, const QString &value)
     QDBusConnection::sessionBus().asyncCall(dbusMsg);
 }
 
+void System::restartUnit(const QString &unitName)
+{
+    QDBusMessage systemdMsg = QDBusMessage::createMethodCall(QStringLiteral("org.freedesktop.systemd1"),
+                                                             QStringLiteral("/org/freedesktop/systemd1"),
+                                                             QStringLiteral("org.freedesktop.systemd1.Manager"),
+                                                             QStringLiteral("TryRestartUnit"));
+    systemdMsg << QVariant::fromValue(unitName);
+    systemdMsg << QVariant::fromValue(QStringLiteral("replace"));
+    QDBusConnection::sessionBus().asyncCall(systemdMsg);
+}
+
 void System::updateSessionLocale(const QString &locale)
 {
     const QString language = locale.split(QStringLiteral("."))[0];
@@ -173,7 +184,18 @@ void System::updateSessionLocale(const QString &locale)
     QLocale::setDefault(QLocale(locale));
 
     // Restart bits of the session to pick up new language.
-    // FIXME not implemented
+    const QStringList units {
+        "ayatana-indicators.target",
+        "lomiri-location-service-trust-stored.service",
+        "pulseaudio-trust-stored.service",
+        "sync-monitor.service",
+        "maliit-server.service",
+        "ciborium.service",
+    };
+    for (const QString& unit : units) {
+        qWarning() << "XXX Restarting" << unit;
+        restartUnit(unit);
+    }
 }
 
 void System::skipUntilFinishedPage()

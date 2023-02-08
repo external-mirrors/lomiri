@@ -65,6 +65,7 @@ private:
     static QString wizardEnabledPath();
     static QString currentFrameworkPath();
     static void setSessionVariable(const QString &variable, const QString &value);
+    static void restartUnit(const QString &variable);
     static QString readCurrentFramework();
     static QString readWizardEnabled();
     static bool wizardPathExists();
