@@ -57,7 +57,7 @@ Item {
         menu: timeModel.model
         onUpdated: {
             if (timeLabel.text != rightLabel) {
-                if (rightLabel != "") timeLabel.text = rightLabel;
+                if (rightLabel != "") timeLabel.text = rightLabel.trim();
                 clock.currentDate = new Date();
             }
         }
