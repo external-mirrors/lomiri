@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-31 19:29+0000\n"
-"PO-Revision-Date: 2023-02-04 13:40+0000\n"
+"PO-Revision-Date: 2023-02-10 18:38+0000\n"
 "Last-Translator: Sergii Horichenko <m@sgg.im>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/lomiri/lomiri/"
 "uk/>\n"
@@ -779,7 +779,7 @@ msgstr "Тепер пристрій готовий до використання
 
 #: qml/Wizard/Pages/80-finished.qml:126
 msgid "Continue"
-msgstr "Далі"
+msgstr "Продовжити"
 
 #: qml/Wizard/Pages/80-finished.qml:126
 msgid "Get Started"
