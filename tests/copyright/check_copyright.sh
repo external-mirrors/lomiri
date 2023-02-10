@@ -36,13 +36,13 @@ ignore_pat="\\.sci$|\\.svg$|\\.png$|\\.jpg$"
 # git/bzr files
 ignore_pat="$ignore_pat|/\\.bzr/|/\\.git/|\\.bzrignore$|\\.gitignore$|/\\.bazaar/Makefile$|/\\.bzr-builddeb/default\\.conf$"
 # info files
-ignore_pat="$ignore_pat|/README(.md)?$|/CODING$|/LGPL_EXCEPTION\\.txt$"
+ignore_pat="$ignore_pat|/AUTHORS$|/README(.md)?$|/CODING$|/ChangeLog$|/LGPL_EXCEPTION\\.txt$"
 # cmake files
 ignore_pat="$ignore_pat|/CMakeLists\\.txt$|\\.cmake$"
 # card creator test files
 ignore_pat="$ignore_pat|/cardcreator/.*\\.res$|/cardcreator/.*\\.res\\.cardcreator$|/cardcreator/.*\\.tst$"
 # project files
-ignore_pat="$ignore_pat|/\\.project$|/\\.pydevproject$|/\\.settings/|/\\.crossbuilder/"
+ignore_pat="$ignore_pat|/\\.project$|/\\.pydevproject$|/\\.settings/|/\\.crossbuilder/|/clickable\\.yaml$"
 # test desktop files
 ignore_pat="$ignore_pat|/tests/.*/.*\\.desktop$"
 # xml files
@@ -69,6 +69,8 @@ ignore_pat="$ignore_pat|/doc/devices\\.conf$"
 ignore_pat="$ignore_pat|/Jenkinsfile"
 # Ignore common build directories
 ignore_pat="$ignore_pat|/build/|/build-*/"
+# i18n files
+ignore_pat="$ignore_pat|/po/.*$"
 
 #
 # We don't use the -i option of licensecheck to add ignore_dir to the pattern because Jenkins creates directories
