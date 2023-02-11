@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-31 19:29+0000\n"
-"PO-Revision-Date: 2023-02-10 18:38+0000\n"
+"PO-Revision-Date: 2023-02-12 18:37+0000\n"
 "Last-Translator: Sergii Horichenko <m@sgg.im>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/lomiri/lomiri/"
 "uk/>\n"
@@ -783,38 +783,38 @@ msgstr "Продовжити"
 
 #: qml/Wizard/Pages/80-finished.qml:126
 msgid "Get Started"
-msgstr "Починаючи роботу"
+msgstr "Починаймо"
 
 #: qml/Wizard/Pages/passcode-confirm.qml:43
 #: qml/Wizard/Pages/passcode-desktop.qml:104
 msgid "Confirm passcode"
-msgstr "Підтвердіть код-пароль"
+msgstr "Підтвердіть код"
 
 #: qml/Wizard/Pages/passcode-confirm.qml:45
 msgid "Incorrect passcode."
-msgstr "Невірний код."
+msgstr "Хибний код."
 
 #: qml/Wizard/Pages/passcode-confirm.qml:45
 msgctxt "Enter the passcode again"
 msgid "Please re-enter."
-msgstr "Уведіть поновій."
+msgstr "Будь ласка, введіть знову."
 
 #: qml/Wizard/Pages/passcode-desktop.qml:31
 msgid "Lock Screen Passcode"
-msgstr "Код блокування екрану"
+msgstr "Код блокування екрана"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:68
 msgid "Enter 4 numbers to setup your passcode"
-msgstr "Уведіть код блокування із 4 цифр"
+msgstr "Введіть код блокування з 4 цифр"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:84
 #: qml/Wizard/Pages/passcode-set.qml:54
 msgid "Choose passcode"
-msgstr "Виберіть код-пароль"
+msgstr "Виберіть код"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:139
 msgid "Passcode too short"
-msgstr "Код закороткий"
+msgstr "Код занадто короткий"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:141
 msgid "Passcodes match"
@@ -830,11 +830,11 @@ msgstr "Код повинен містити 4 символи"
 
 #: qml/Wizard/Pages/password-set.qml:31
 msgid "Lock Screen Password"
-msgstr "Пароль блокування екрану"
+msgstr "Пароль блокування екрана"
 
 #: qml/Wizard/Pages/password-set.qml:68
 msgid "Enter at least 8 characters"
-msgstr "Уведіть не менше 8 символів"
+msgstr "Введіть не менше 8 символів"
 
 #: qml/Wizard/Pages/password-set.qml:80
 msgid "Choose password"
@@ -842,7 +842,7 @@ msgstr "Виберіть пароль"
 
 #: qml/Wizard/Pages/password-set.qml:110
 msgid "Confirm password"
-msgstr "Схваліть пароль"
+msgstr "Підтвердіть пароль"
 
 #: qml/Wizard/Pages/sim.qml:27
 msgid "No SIM card installed"
