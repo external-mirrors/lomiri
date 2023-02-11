@@ -29,6 +29,7 @@ FocusScope {
     readonly property string title: surface && surface.name !== "" ? surface.name : d.name
     readonly property QtObject focusedSurface: d.focusedSurface.surface
     readonly property alias surfaceInitialized: d.surfaceInitialized
+    property bool serverSideDecoration: d.serverSideDecoration
 
     // to be set from outside
     property QtObject surface
@@ -85,6 +86,7 @@ FocusScope {
         readonly property string name: root.application ? root.application.name : ""
         readonly property url icon: root.application ? root.application.icon : ""
         readonly property int applicationState: root.application ? root.application.state : -1
+        readonly property string showSplash: root.application ? root.application.showSplash : false
         readonly property string splashTitle: root.application ? root.application.splashTitle : ""
         readonly property url splashImage: root.application ? root.application.splashImage : ""
         readonly property bool splashShowHeader: root.application ? root.application.splashShowHeader : true
@@ -224,7 +226,7 @@ FocusScope {
             },
             State {
                 name: "splash"
-                when: (!root.surface || !d.surfaceInitialized) || !root.surface.live || d.hadSurface
+                when: d.showSplash && ((!root.surface || !d.surfaceInitialized) || !root.surface.live || d.hadSurface)
                 PropertyChanges { target: splashLoader; active: true }
             }
         ]

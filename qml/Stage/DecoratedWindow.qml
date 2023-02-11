@@ -42,7 +42,7 @@ FocusScope {
     property PanelState panelState
 
     // Changing this will actually add/remove a decoration, meaning, requestedHeight will take the decoration into account.
-    property bool hasDecoration: true
+    property bool hasDecoration: applicationWindow ? applicationWindow.serverSideDecoration : true
     // This will temporarily show/hide the decoration without actually changing the surface's dimensions
     property real showDecoration: 1
     property alias decorationHeight: decoration.height

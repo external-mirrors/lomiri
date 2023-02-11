@@ -46,6 +46,7 @@ FocusScope {
                                                        || surface.type === Mir.DialogType
                                                        || surface.type === Mir.NormalType
                                                        || surface.type === Mir.SatelliteType
+                                                       || surface.type === Mir.FreestyleType
                                                    : false
 
         readonly property bool moveable: decorated
