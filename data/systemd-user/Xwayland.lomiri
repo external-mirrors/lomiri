@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# The intention behind this wrapper is to set the EGL_PLATFORM to "wayland"
+# which might be a necessity depending on the driver stack in use (mostly hybris).
+
+export EGL_PLATFORM=wayland
+
+exec /usr/bin/Xwayland "$@"
