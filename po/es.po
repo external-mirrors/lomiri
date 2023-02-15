@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-31 19:29+0000\n"
-"PO-Revision-Date: 2023-02-14 22:38+0000\n"
+"PO-Revision-Date: 2023-02-16 05:35+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/lomiri/lomiri/es/"
 ">\n"
@@ -60,7 +60,7 @@ msgstr "Fallo al autenticar"
 
 #: plugins/LightDM/Greeter.cpp:260
 msgid "Invalid password, please try again"
-msgstr "Contraseña incorrecta, por favor, inténtelo de nuevo"
+msgstr "Contraseña incorrecta. Inténtelo de nuevo"
 
 #: plugins/LightDM/Greeter.cpp:270
 msgid "Log In"
