@@ -16,6 +16,7 @@
  */
 
 import QtQuick 2.12
+import AccountsService 0.1
 import Lomiri.Components 1.3
 import "../Components"
 
@@ -28,6 +29,7 @@ FocusScope {
     property bool loginError: false
     property bool hasKeyboard: false
     property alias enteredText: passwordInput.text
+    property int pincodeLength: AccountsService.pincodeLength
 
     signal clicked()
     signal canceled()
@@ -50,6 +52,7 @@ FocusScope {
         id: passwordInput
         objectName: "promptField"
         anchors.left: extraIcons.left
+        width: extraIcons.hintWidth
         focus: root.focus
 
         opacity: fakeLabel.visible ? 0 : 1
@@ -59,7 +62,7 @@ FocusScope {
         onCursorPositionChanged: cursorPosition = length
 
         validator: RegExpValidator {
-            regExp: /^\d{4}$/
+            regExp: /^\d{4,}$/
         }
 
         inputMethodHints: Qt.ImhSensitiveData | Qt.ImhNoPredictiveText |
@@ -103,8 +106,7 @@ FocusScope {
             // displayText changes after text and if we did this before it
             // updated, we would use the wrong displayText for fakeLabel.
             root.loginError = false;
-            if (text.length >= 4) {
-                // hard limit of 4 for passcodes right now
+            if (text.length === root.pincodeLength) {
                 respond();
             }
         }
@@ -125,6 +127,7 @@ FocusScope {
 
     Row {
         id: extraIcons
+        property int hintWidth: pinHint.Width
         spacing: passwordInput.frameSpacing
         anchors {
             horizontalCenter: parent ? parent.horizontalCenter : undefined
@@ -136,7 +139,7 @@ FocusScope {
             id: pinHint
             objectName: "promptPinHint"
 
-            text: "○○○○"
+            text: Array(root.pincodeLength).fill('○').join("")
             enabled: visible
             color: d.drawColor
             font {
