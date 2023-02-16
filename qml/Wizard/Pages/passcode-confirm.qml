@@ -50,7 +50,7 @@ LocalComponents.Page {
         showCancelButton: false
         alphaNumeric: false
         minPinLength: 4
-        maxPinLength: 4
+        maxPinLength: 12
 
         onEntered: {
             if (passphrase === root.password) {

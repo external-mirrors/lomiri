@@ -16,6 +16,7 @@
 
 import QtQuick 2.12
 import Lomiri.Components 1.3
+import AccountsService 0.1
 
 Item {
     id: root
@@ -31,9 +32,8 @@ Item {
     property int previousNumber: -1
     property var currentCode: []
     property int maxnum: 10
-    readonly property int pincodeSize: 4 // hard coded pin code length for now
-    readonly property int minPinCodeDigits: 4
-    readonly property bool validCode: enteredText.length >= minPinCodeDigits
+    readonly property int pincodeLength: AccountsService.pincodeLength
+    readonly property bool validCode: enteredText.length >= pincodeLength
     property bool isLandscape: width > height
 
     signal clicked()
@@ -43,7 +43,7 @@ Item {
     onCurrentCodeChanged: {
         let tmpText = ""
         let tmpCode = ""
-        const maxDigits = Math.max(root.minPinCodeDigits, currentCode.length)
+        const maxDigits = Math.max(root.pincodeLength, currentCode.length)
         for( let i = 0; i < maxDigits; i++) {
             if (i < currentCode.length) {
                 tmpText += '●'
@@ -56,12 +56,13 @@ Item {
         pinHint.text = tmpText
         root.enteredText = tmpCode
 
-        if (root.enteredText.length >= pincodeSize) {
+        if (root.enteredText.length >= pincodeLength) {
             root.accepted(root.enteredText);
         }
     }
 
     function addNumber (number, fromKeyboard) {
+        if (currentCode.length >= root.pincodeLength) return;
         let tmpCodes = currentCode
         tmpCodes.push(number)
         currentCode = tmpCodes
@@ -97,7 +98,7 @@ Item {
         id: pinHint
 
         anchors.horizontalCenter: parent.horizontalCenter
-        width: Math.max(units.gu(16), contentWidth + units.gu(3))
+        width: contentWidth + eraseIcon.width + units.gu(3)
 
         readOnly: true
         color: d.selected
@@ -106,6 +107,7 @@ Item {
             letterSpacing: units.gu(1.75)
         }
         secondaryItem: Icon {
+            id: eraseIcon
             name: "erase"
             objectName: "EraseBtn"
             height: units.gu(3)

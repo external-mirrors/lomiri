@@ -50,6 +50,7 @@
 #define PROP_MOUSE_SCROLL_SPEED                QStringLiteral("MouseScrollSpeed")
 #define PROP_PASSWORD_DISPLAY_HINT             QStringLiteral("PasswordDisplayHint")
 #define PROP_PINCODE_PROMPT_MANAGER            QStringLiteral("PinCodePromptManager")
+#define PROP_PINCODE_LENGTH                    QStringLiteral("PinCodeLength")
 #define PROP_REAL_NAME                         QStringLiteral("RealName")
 #define PROP_STATS_WELCOME_SCREEN              QStringLiteral("StatsWelcomeScreen")
 #define PROP_TOUCHPAD_CURSOR_SPEED             QStringLiteral("TouchpadCursorSpeed")
@@ -100,6 +101,7 @@ AccountsService::AccountsService(QObject* parent, const QString &user)
     registerProperty(IFACE_UBUNTU_SECURITY, PROP_ENABLE_LAUNCHER_WHILE_LOCKED, QStringLiteral("enableLauncherWhileLockedChanged"));
     registerProperty(IFACE_UBUNTU_SECURITY, PROP_ENABLE_INDICATORS_WHILE_LOCKED, QStringLiteral("enableIndicatorsWhileLockedChanged"));
     registerProperty(IFACE_UBUNTU_SECURITY, PROP_PASSWORD_DISPLAY_HINT, QStringLiteral("passwordDisplayHintChanged"));
+    registerProperty(IFACE_UBUNTU_SECURITY, PROP_PINCODE_LENGTH, QStringLiteral("pincodeLengthChanged"));
     registerProperty(IFACE_UBUNTU_SECURITY_OLD, PROP_STATS_WELCOME_SCREEN, QStringLiteral("statsWelcomeScreenChanged"));
     registerProperty(IFACE_LOMIRI, PROP_DEMO_EDGES, QStringLiteral("demoEdgesChanged"));
     registerProperty(IFACE_LOMIRI, PROP_DEMO_EDGES_COMPLETED, QStringLiteral("demoEdgesCompletedChanged"));
@@ -239,6 +241,11 @@ QString AccountsService::pinCodePromptManager() const
 QString AccountsService::defaultPinCodePromptManager() const
 {
     return m_defaultPinPromptManager;
+}
+
+uint AccountsService::pincodeLength() const
+{
+    return getProperty(IFACE_UBUNTU_SECURITY, PROP_PINCODE_LENGTH).toUInt();
 }
 
 QString AccountsService::realName() const

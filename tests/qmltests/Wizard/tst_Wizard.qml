@@ -302,6 +302,8 @@ Item {
                 var button = findChild(wizard, "pinPadButton" + character);
                 tap(button);
             }
+            var submit = findChild(wizard, "confirmButton")
+            tap(submit)
         }
 
         function test_passwdSkipIfSet() {
