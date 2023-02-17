@@ -94,6 +94,7 @@ pkg_check_modules(UAL REQUIRED lomiri-app-launch-0)
 pkg_check_modules(LOMIRIGESTURES REQUIRED LomiriGestures)
 pkg_check_modules(MIRAL REQUIRED miral)
 pkg_check_modules(DEVICEINFO REQUIRED deviceinfo)
+pkg_check_modules(LOMIRISCHEMA REQUIRED lomiri-schemas>=0.1.3)
 
 ### Check LomiriGestures private headers. No pkg-config (.pc) file is provided for them
 find_path(LOMIRIGESTUREPRIV
