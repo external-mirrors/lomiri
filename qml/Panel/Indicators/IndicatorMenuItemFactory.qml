@@ -472,7 +472,10 @@ Item {
 
             function loadAttributes() {
                 if (!menuModel || menuIndex == -1) return;
-                menuModel.loadExtendedAttributes(menuIndex, {'x-ayatana-subtitle-action': 'string'});
+                menuModel.loadExtendedAttributes(menuIndex, {
+                    'x-ayatana-subtitle-action': 'string',
+                    'target': 'bool',
+                });
             }
 
             ServerPropertySynchroniser {
@@ -485,14 +488,23 @@ Item {
                 userProperty: "checked"
 
                 onSyncTriggered: {
-                    /* Works with:
+                    /* Figures out if the action's activate() requires a
+                     * parameter or not. Works with:
                      * - com.canonical.indicator.switch
                      * - org.ayatana.indicator.switch (with fix)
                      * - com.canonical.indicator.switch mis-labled as
                      *   org.ayatana.indicator.switch
                      *   https://gitlab.com/ubports/development/core/lomiri-indicator-network/-/issues/87#note_1206883970
+                     *
+                     * If activate() requires a parameter but menu doesn't
+                     * specify a target, the menu will be broken in a different
+                     * way anyway.
                      */
-                    menuModel.changeState(switchItem.menuIndex, switchItem.checked);
+                    if (extendedData.hasOwnProperty('target')) {
+                        menuModel.activate(switchItem.menuIndex, switchItem.checked);
+                    } else {
+                        menuModel.activate(switchItem.menuIndex);
+                    }
                 }
             }
         }
