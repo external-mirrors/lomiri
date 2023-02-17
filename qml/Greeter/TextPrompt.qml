@@ -21,6 +21,7 @@ import "../Components"
 
 FocusScope {
     id: root
+    objectName: "promptPassword"
 
     property string text
     property bool isSecret

@@ -92,7 +92,12 @@ void GreeterPrivate::handleRespond(QString const &response)
         authenticated = (response == "password");
         q->sendAuthenticationComplete();
     } else if (mockMode == "single-pin" || mockMode == "single-pin-clock") {
-        authenticated = (response == "1234");
+
+        QString expectedPincode = "";
+        for (int i = 1; i < response.size()+1; ++i) {
+            expectedPincode = expectedPincode + QString::number(i);
+        }
+        authenticated = (response == expectedPincode);
         q->sendAuthenticationComplete();
     } else if (mockMode == "full") {
         handleRespond_full(response);

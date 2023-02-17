@@ -156,6 +156,14 @@ FocusScope {
                 // Nope we're the last one; just send our response.
                 d.sendResponse();
             }
+
+            onLoginErrorChanged: {
+                // provide a fallback to password prompt in case of 5 failed attempts
+                if (loginError && isPinPrompt && AccountsService.failedLogins === 5) {
+                    isPrompt = true
+                    root.alphanumeric = true
+                }
+            }
             onCanceled: root.canceled()
 
             Behavior on opacity { LomiriNumberAnimation {} }

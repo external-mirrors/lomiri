@@ -60,6 +60,9 @@ class AccountsService: public QObject
                 NOTIFY passwordDisplayHintChanged)
     Q_PROPERTY(QString pinCodePromptManager READ pinCodePromptManager NOTIFY pinCodePromptManagerChanged)
     Q_PROPERTY(QString defaultPinCodePromptManager READ defaultPinCodePromptManager CONSTANT)
+    Q_PROPERTY (uint pincodeLength
+                READ pincodeLength
+                NOTIFY pincodeLengthChanged)
     Q_PROPERTY (uint failedLogins
                 READ failedLogins
                 WRITE setFailedLogins
@@ -96,6 +99,7 @@ public:
     PasswordDisplayHint passwordDisplayHint() const;
     QString pinCodePromptManager() const;
     QString defaultPinCodePromptManager() const;
+    uint pincodeLength() const;
     uint failedLogins() const;
     void setFailedLogins(uint failedLogins);
     uint failedFingerprintLogins() const;
@@ -117,6 +121,7 @@ Q_SIGNALS:
     void backgroundFileChanged();
     void statsWelcomeScreenChanged();
     void passwordDisplayHintChanged();
+    void pincodeLengthChanged();
     void failedLoginsChanged();
     void failedFingerprintLoginsChanged();
     void realNameChanged();

@@ -32,7 +32,8 @@ AccountsService::AccountsService(QObject* parent)
     m_demoEdges(false),
     m_demoEdgesCompleted(),
     m_usersModel(new UsersModel(this)),
-    m_pinCodePromptManager("PinPrompt.qml")
+    m_pinCodePromptManager("PinPrompt.qml"),
+    m_pincodeLength(4)
 {
 }
 
@@ -172,6 +173,17 @@ void AccountsService::setPinCodePromptManager(const QString pinCodePromptManager
 {
     m_pinCodePromptManager = pinCodePromptManager;
     Q_EMIT pinCodePromptManagerChanged();
+}
+
+uint AccountsService::pincodeLength() const
+{
+    return m_pincodeLength;
+}
+
+void AccountsService::setPincodeLength(uint pincodeLength)
+{
+    m_pincodeLength = pincodeLength;
+    Q_EMIT pincodeLengthChanged();
 }
 
 uint AccountsService::failedLogins() const

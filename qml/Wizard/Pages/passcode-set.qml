@@ -59,13 +59,13 @@ LocalComponents.Page {
         // only do this matching instead of PAM because we want
         // to set the password via PAM in a different place
         // than this page.  See comments at top of passwd-type file.
-        errorText: i18n.tr("Passcode must be 4 characters long")
+        errorText: i18n.tr("Passcode must be at least 4 characters long")
 
         showEmergencyCallButton: false
         showCancelButton: false
         alphaNumeric: false
         minPinLength: 4
-        maxPinLength: 4
+        maxPinLength: 12
 
         onEntered: {
             if (passphrase.length >= 4) {

@@ -65,7 +65,7 @@ LocalComponents.Page {
             wrapMode: Text.Wrap
             font.weight: Font.Light
             color: textColor
-            text: i18n.tr("Enter 4 numbers to setup your passcode")
+            text: i18n.tr("Enter at least 4 numbers to setup your passcode")
         }
 
         GridLayout {
@@ -90,8 +90,8 @@ LocalComponents.Page {
                 objectName: "passwordField"
                 echoMode: TextInput.Password
                 inputMethodHints: Qt.ImhDigitsOnly
-                validator: RegExpValidator { regExp: /^\d{4}$/ }
-                maximumLength: 4
+                validator: RegExpValidator { regExp: /^\d{4,}$/ }
+                maximumLength: 12
                 onAccepted: password2Field.forceActiveFocus()
                 onActiveFocusChanged: {
                     if (activeFocus) {
@@ -110,8 +110,8 @@ LocalComponents.Page {
                 objectName: "password2Field"
                 echoMode: TextInput.Password
                 inputMethodHints: Qt.ImhDigitsOnly
-                validator: RegExpValidator { regExp: /^\d{4}$/ }
-                maximumLength: 4
+                validator: RegExpValidator { regExp: /^\d{4,}$/ }
+                maximumLength: 12
                 onAccepted: {
                     if (passwordsMatching) {
                         savePasswordAndGoNext();

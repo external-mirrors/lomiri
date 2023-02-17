@@ -66,6 +66,10 @@ class AccountsService: public QObject
                WRITE setPinCodePromptManager
                NOTIFY pinCodePromptManagerChanged)
     Q_PROPERTY(QString defaultPinCodePromptManager READ defaultPinCodePromptManager CONSTANT)
+    Q_PROPERTY (uint pincodeLength
+                READ pincodeLength
+                WRITE setPincodeLength
+                NOTIFY pincodeLengthChanged)
     Q_PROPERTY (uint failedLogins
                 READ failedLogins
                 WRITE setFailedLogins
@@ -115,6 +119,8 @@ public:
     void setFailedLogins(uint failedLogins);
     uint failedFingerprintLogins() const;
     void setFailedFingerprintLogins(uint failedFingerprintLogins);
+    uint pincodeLength() const;
+    void setPincodeLength(uint pincodeLength);
     QString realName() const;
     void setRealName(const QString &realName);
     QString email() const;
@@ -132,6 +138,7 @@ Q_SIGNALS:
     void backgroundFileChanged();
     void statsWelcomeScreenChanged();
     void passwordDisplayHintChanged();
+    void pincodeLengthChanged();
     void failedLoginsChanged();
     void failedFingerprintLoginsChanged();
     void realNameChanged();
@@ -155,4 +162,5 @@ private:
     QString m_email;
     UsersModel *m_usersModel;
     QString m_pinCodePromptManager;
+    uint m_pincodeLength;
 };

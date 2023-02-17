@@ -289,7 +289,11 @@ void Greeter::respond(const QString &response)
     }
 
     if (d->authenticationUser == "has-pin" || d->authenticationUser == "has-pin-clock") {
-        d->authenticated = (response == "1234");
+        QString expectedPincode = "";
+        for (int i = 1; i < response.size()+1; ++i) {
+            expectedPincode = expectedPincode + QString::number(i);
+        }
+        d->authenticated = (response == expectedPincode);
     } else if (d->authenticationUser == "question-prompt") {
         d->authenticated = (response == "blue");
     } else {

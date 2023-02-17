@@ -233,6 +233,15 @@ Item {
             tryCompare(sessionSpy, "count", 1)
         }
 
+        function test_login_more_digits() {
+            AccountsService.pincodeSize = 8
+            var shell = createShell();
+            sessionSpy.clear()
+            tryCompare(sessionSpy, "count", 0)
+            enterPin("12345678")
+            tryCompare(sessionSpy, "count", 1)
+        }
+
         function test_disabledEdges() {
             var shell = createShell();
             var launcher = findChild(shell, "launcher")
@@ -350,6 +359,32 @@ Item {
             tryCompare(delayedLockscreen, "delayMinutes", 0);
             enterPin("1111")
             tryCompare(delayedLockscreen, "delayMinutes", greeter.failedLoginsDelayMinutes);
+        }
+
+        function test_fallbackToPasswordPrompt() {
+            var shell = createShell();
+            sessionSpy.clear()
+            var greeter = findChild(shell, "greeter");
+
+            enterPin("1111")
+            tryCompare(AccountsService, "failedLogins", 1)
+            enterPin("1111")
+            tryCompare(AccountsService, "failedLogins", 2)
+            enterPin("1111")
+            tryCompare(AccountsService, "failedLogins", 3)
+            enterPin("1111")
+            tryCompare(AccountsService, "failedLogins", 4)
+            enterPin("1111")
+            tryCompare(AccountsService, "failedLogins", 5)
+
+            var promptField = findChild(greeter, "promptPassword");
+            verify(promptField);
+            tryCompare(promptField, "visible", true);
+
+            tryCompare(sessionSpy, "count", 0)
+            enterPin("1234")
+            keyClick(Qt.Key_Enter);
+            tryCompare(sessionSpy, "count", 1)
         }
 
         function test_emergencyDialerLockOut() {
