@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-31 19:29+0000\n"
-"PO-Revision-Date: 2023-02-12 18:37+0000\n"
+"PO-Revision-Date: 2023-02-18 17:33+0000\n"
 "Last-Translator: Sergii Horichenko <m@sgg.im>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/lomiri/lomiri/"
 "uk/>\n"
@@ -31,11 +31,11 @@ msgstr "Конвергентна оболонка Lomiri"
 
 #: data/lomiri-greeter.desktop.in:4
 msgid "Lomiri Greeter"
-msgstr "Закликач Lomiri"
+msgstr "Вітальне вікно Lomiri"
 
 #: data/lomiri-greeter.desktop.in:5
 msgid "The converged Lomiri shell's Greeter"
-msgstr "Закликач конвергентної оболонки Lomiri"
+msgstr "Вітальний екран конвергентної оболонки Lomiri"
 
 #: data/indicators-client.desktop.in:4
 msgid "Indicators Client"
@@ -43,7 +43,7 @@ msgstr "Клієнт Індикаторів"
 
 #: data/indicators-client.desktop.in:5
 msgid "Application for testing the Indicators system"
-msgstr "Заявка на тестування системи Індикаторів"
+msgstr "Програма для тестування системи Індикаторів"
 
 #: plugins/LightDM/Greeter.cpp:199
 msgid "Password: "
@@ -779,7 +779,7 @@ msgstr "Тепер пристрій готовий до використання
 
 #: qml/Wizard/Pages/80-finished.qml:126
 msgid "Continue"
-msgstr "Продовжити"
+msgstr "Далі"
 
 #: qml/Wizard/Pages/80-finished.qml:126
 msgid "Get Started"
