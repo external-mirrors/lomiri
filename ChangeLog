@@ -1,6 +1,87 @@
+2023-02-18 Mike Gabriel
+
+        * Release 0.1.1 (HEAD -> main, tag: 0.1.1)
+
+2023-02-17 Mike Gabriel
+
+        * Merge branch 'personal/lduboeuf/focal_-_pincode_increase_length'
+          into 'main' (5f338f3c7)
+
+2023-02-17 Lionel Duboeuf
+
+        * Readme: update clickable arguments (e231072df)
+        * update lomiri-schemas dependency to 0.1.3 (74805901d)
+
+2023-02-16 Lionel Duboeuf
+
+        * allow to set more than 4 digits pincode (7acd3d73c)
+        * Provide a fallback to PassPhrase prompt in case of 5 failed attempt
+          with pincode. (636ef6b92)
+
+2023-02-16 phlostically
+
+        * Translated using Weblate (Esperanto) (cfb1c9a0c)
+
+2023-02-15 Adolfo Jayme Barrientos
+
+        * Translated using Weblate (Spanish) (c8f8c1a02)
+
+2023-02-13 Adolfo Jayme Barrientos
+
+        * Translated using Weblate (Spanish) (a8863af5c)
+
+2023-02-14 Mike Gabriel
+
+        * Merge branch 'personal/gberh/update-session-locale' into 'main'
+          (1c4fd261f)
+
+2023-02-10 Guido Berhoerster
+
+        * Fix copyright/license notices and test (8003dc485)
+
+2023-02-08 Guido Berhoerster
+
+        * Restore restarts of session services after wizard locale change
+          (44f24a917)
+
+2023-02-12 Mike Gabriel
+
+        * Merge branch 'personal/fredldotme/xwayland-fixup' into 'main'
+          (05657938b)
+
+2022-12-12 Alfred Neumayer
+
+        * data & debian: Ship & enable Xwayland wrapper (8af966e5b)
+        * plugins: TopLevelWindowModel: Explicitly cause XWayland surfaces to
+          die gracefully (19931da7d)
+
+2023-02-11 Sergii Horichenko
+
+        * Translated using Weblate (Ukrainian) (1c5a03f04)
+
+2023-02-09 Sergii Horichenko
+
+        * Translated using Weblate (Ukrainian) (49e895bea)
+
+2023-02-09 Mike Gabriel
+
+        * Merge branch 'main_-_clockcenter' into 'main' (1da4a56bd)
+
+2023-02-09 Kugi Eusebio
+
+        * Trim time string to remove leading space (2b0c6c1c3)
+
+2023-02-07 Ivo Xavier
+
+        * Translated using Weblate (Portuguese) (9e0c80b70)
+
+2023-02-06 Ivo Xavier
+
+        * Translated using Weblate (Portuguese) (db9ff7180)
+
 2023-02-06 Mike Gabriel
 
-        * Release 0.1 (HEAD -> main, tag: 0.1)
+        * Release 0.1 (73b5f3d85) (tag: 0.1)
 
 2023-02-05 gnu-ewm
 
