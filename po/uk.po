@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-31 19:29+0000\n"
-"PO-Revision-Date: 2023-02-18 17:33+0000\n"
+"PO-Revision-Date: 2023-02-23 00:29+0000\n"
 "Last-Translator: Sergii Horichenko <m@sgg.im>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/lomiri/lomiri/"
 "uk/>\n"
@@ -269,7 +269,7 @@ msgstr "Super + Tab"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:169
 msgid "Switches applications via the launcher."
-msgstr "Перемикає застосунки через лаунчер."
+msgstr "Перемикає програми через лаунчер."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:177
 msgid "Super + 1 to 0"
@@ -285,7 +285,7 @@ msgstr "Super + A"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:195
 msgid "Opens the Application Drawer."
-msgstr "Відкриває панель застосунків."
+msgstr "Відкриває панель програм."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:211
 msgid "Switching"
@@ -297,7 +297,7 @@ msgstr "Alt + Tab"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:223
 msgid "Switches between applications."
-msgstr "Виконує перемикання між застосунками."
+msgstr "Перемикання між програмами."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:231
 msgid "Super + W"
@@ -373,15 +373,15 @@ msgstr "ОК"
 
 #: qml/Components/ModeSwitchWarningDialog.qml:33
 msgid "Apps may have unsaved data:"
-msgstr "Застосунки можуть містити незбережені дані:"
+msgstr "Програми можуть містити незбережені дані:"
 
 #: qml/Components/ModeSwitchWarningDialog.qml:60
 msgctxt ""
 "Re-dock means connect the device again to an external screen/mouse/keyboard"
 msgid "Re-dock, save your work and close these apps to continue."
 msgstr ""
-"Виконайте повторне з’єднання, збережіть результати роботи і закрийте вікна "
-"цих застосунків, щоб продовжити."
+"Для продовження виконайте повторне підключення, збережіть свою роботу та "
+"закрийте ці програми."
 
 #: qml/Components/ModeSwitchWarningDialog.qml:67
 msgid "Or force close now (unsaved data will be lost)."
@@ -600,11 +600,11 @@ msgstr ""
 
 #: qml/Stage/Stage.qml:827
 msgid "No running apps"
-msgstr "Немає запущених застосунків"
+msgstr "Немає запущених програм"
 
 #: qml/Tutorial/TutorialLeftLong.qml:49
 msgid "Long swipe from the left edge to open the Application Drawer"
-msgstr "Довго проведіть від лівого краю, щоб відкрити панель застосунків"
+msgstr "Довгий змах від лівого краю для відкриття панелі програм"
 
 #: qml/Tutorial/TutorialLeft.qml:47
 msgid "Short swipe from the left edge to open the launcher"
@@ -616,13 +616,11 @@ msgstr ""
 msgid "Push your mouse against the right edge to view your open apps"
 msgstr ""
 "Наведіть вказівник миші на правий край екрана, щоб переглянути список "
-"відкритих застосунків"
+"відкритих програм"
 
 #: qml/Tutorial/TutorialRight.qml:55
 msgid "Swipe from the right edge to view your open apps"
-msgstr ""
-"Виконайте рух пальцем від правого краю, щоб переглянути список відкритих "
-"застосунків"
+msgstr "Змахніть від правого краю, щоб переглянути список відкритих програм"
 
 #: qml/Tutorial/TutorialTop.qml:53
 msgid "Swipe from the top edge to access notifications and quick settings"
