@@ -52,7 +52,7 @@ FocusScope {
         id: passwordInput
         objectName: "promptField"
         anchors.left: extraIcons.left
-        width: extraIcons.hintWidth
+        anchors.right: extraIcons.right
         focus: root.focus
 
         opacity: fakeLabel.visible ? 0 : 1
@@ -127,7 +127,6 @@ FocusScope {
 
     Row {
         id: extraIcons
-        property int hintWidth: pinHint.Width
         spacing: passwordInput.frameSpacing
         anchors {
             horizontalCenter: parent ? parent.horizontalCenter : undefined
