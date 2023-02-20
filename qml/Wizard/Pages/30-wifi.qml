@@ -72,9 +72,9 @@ LocalComponents.Page {
 
     QMenuModel.AyatanaMenuModel {
         id: menuModel
-        busName: "com.canonical.indicator.network"
-        actions: { "indicator": "/com/canonical/indicator/network" }
-        menuObjectPath: "/com/canonical/indicator/network/phone_wifi_settings"
+        busName: "com.lomiri.indicator.network"
+        actions: { "indicator": "/com/lomiri/indicator/network" }
+        menuObjectPath: "/com/lomiri/indicator/network/phone_wifi_settings"
     }
 
     Component {
