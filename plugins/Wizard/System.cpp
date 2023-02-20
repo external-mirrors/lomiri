@@ -193,7 +193,6 @@ void System::updateSessionLocale(const QString &locale)
         "ciborium.service",
     };
     for (const QString& unit : units) {
-        qWarning() << "XXX Restarting" << unit;
         restartUnit(unit);
     }
 }

@@ -207,6 +207,11 @@ FocusScope {
             sortBy: AppDrawerProxyModel.SortByAToZ
         }
 
+        Connections {
+            target: i18n
+            onLanguageChanged: appDrawerModel.refresh()
+        }
+
         Item {
             id: contentContainer
             anchors {
