@@ -71,9 +71,6 @@ FocusScope {
         fillMode: MirSurfaceItem.PadOrCrop
         consumesInput: true
 
-        // Until PadOrCrop doesn't leave its parents geometry we need to clip it
-        clip: true
-
         surfaceWidth: root.requestedWidth
         surfaceHeight: root.requestedHeight
 
