@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-01-31 19:29+0000\n"
-"PO-Revision-Date: 2021-09-21 19:30+0000\n"
+"PO-Revision-Date: 2023-02-23 00:29+0000\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
-"Language-Team: Dutch <https://translate.ubports.com/projects/ubports/lomiri/"
-"nl/>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/lomiri/lomiri/nl/>"
+"\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.11.3\n"
+"X-Generator: Weblate 4.16-dev\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:35+0000\n"
 
 #: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
@@ -26,25 +26,23 @@ msgstr "Lomiri"
 
 #: data/lomiri.desktop.in:5
 msgid "The converged Lomiri shell"
-msgstr ""
+msgstr "De Lomiri-shell met eenheid"
 
 #: data/lomiri-greeter.desktop.in:4
-#, fuzzy
-#| msgid "Lomiri"
 msgid "Lomiri Greeter"
-msgstr "Lomiri"
+msgstr "Lomiri-inlogscherm"
 
 #: data/lomiri-greeter.desktop.in:5
 msgid "The converged Lomiri shell's Greeter"
-msgstr ""
+msgstr "Het Lomiri-inlogscherm met eenheid"
 
 #: data/indicators-client.desktop.in:4
 msgid "Indicators Client"
-msgstr ""
+msgstr "Indicatorclient"
 
 #: data/indicators-client.desktop.in:5
 msgid "Application for testing the Indicators system"
-msgstr ""
+msgstr "App voor het testen van het indicatorsysteem"
 
 #: plugins/LightDM/Greeter.cpp:199
 msgid "Password: "
@@ -76,7 +74,7 @@ msgstr "Inloggen"
 
 #: plugins/LightDM/UsersModel.cpp:165
 msgid "Guest Session"
-msgstr "Gastsessie"
+msgstr "Gasttoegang"
 
 #: plugins/Lomiri/Launcher/launcheritem.cpp:48
 #: plugins/Lomiri/Launcher/launcheritem.cpp:122
@@ -93,43 +91,43 @@ msgstr "Snelkoppeling losmaken"
 
 #: plugins/WindowManager/Screen.cpp:160
 msgid "Unknown"
-msgstr ""
+msgstr "Onbekend"
 
 #: plugins/WindowManager/Screen.cpp:162
 msgid "VGA"
-msgstr ""
+msgstr "Vga"
 
 #: plugins/WindowManager/Screen.cpp:166
 msgid "DVI"
-msgstr ""
+msgstr "Dvi"
 
 #: plugins/WindowManager/Screen.cpp:168
 msgid "Composite"
-msgstr ""
+msgstr "Composiet"
 
 #: plugins/WindowManager/Screen.cpp:170
 msgid "S-Video"
-msgstr ""
+msgstr "S-Video"
 
 #: plugins/WindowManager/Screen.cpp:174
 msgid "Internal"
-msgstr ""
+msgstr "Intern"
 
 #: plugins/WindowManager/Screen.cpp:176
 msgid "Component"
-msgstr ""
+msgstr "Onderdeel"
 
 #: plugins/WindowManager/Screen.cpp:178
 msgid "DisplayPort"
-msgstr ""
+msgstr "DisplayPort"
 
 #: plugins/WindowManager/Screen.cpp:181
 msgid "HDMI"
-msgstr ""
+msgstr "Hdmi"
 
 #: plugins/WindowManager/Screen.cpp:183
 msgid "TV"
-msgstr ""
+msgstr "Tv"
 
 #: qml/Components/Dialogs.qml:176
 msgctxt "Title: Lock/Log out dialog"
@@ -254,7 +252,7 @@ msgstr "Super (ingedrukt houden)"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:143
 msgid "Opens the launcher, displays shortcuts."
-msgstr "Opent de Starter en toont de sneltoetsen."
+msgstr "Opent de starter en toont de sneltoetsen."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:151
 msgid "Alt + F1"
@@ -262,7 +260,7 @@ msgstr "Alt + F1"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:156
 msgid "Opens launcher keyboard navigation mode."
-msgstr "Opent de toetsenbordnavigatiemodus van de Starter."
+msgstr "Opent de toetsenbordnavigatiemodus van de starter."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:164
 msgid "Super + Tab"
@@ -270,7 +268,7 @@ msgstr "Super + Tab"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:169
 msgid "Switches applications via the launcher."
-msgstr "Wisselt tussen apps op de Starter."
+msgstr "Wisselt tussen apps op de starter."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:177
 msgid "Super + 1 to 0"
@@ -278,7 +276,7 @@ msgstr "Super + 1 tot 0"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:182
 msgid "Same as clicking on a launcher icon."
-msgstr "Hetzelfde als klikken op een pictogram in de Starter."
+msgstr "Gelijk aan het klikken op een pictogram op de starter."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:190
 msgid "Super + A"
@@ -306,7 +304,7 @@ msgstr "Super + W"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:236
 msgid "Opens the desktop spread."
-msgstr "Opent werkbladspreiding."
+msgstr "Opent het werkbladoverzicht."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:244
 msgid "Cursor Left or Right"
@@ -413,7 +411,7 @@ msgstr ""
 
 #: qml/Components/VirtualTouchPad.qml:322
 msgid "Tap left button to click."
-msgstr "Druk op de linkerknop om te klikken."
+msgstr "Druk op de linkerknop om links te klikken."
 
 #: qml/Components/VirtualTouchPad.qml:334
 msgid "Tap right button to right click."
@@ -554,11 +552,11 @@ msgstr "Aan het downloaden"
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1078
 msgid "Paused, tap to resume"
-msgstr "Gepauzeerd; druk om te hervatten"
+msgstr "Onderbroken - druk om te hervatten"
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1080
 msgid "Canceled"
-msgstr "Geannuleerd"
+msgstr "Afgebroken"
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1082
 msgid "Finished"
@@ -566,7 +564,7 @@ msgstr "Klaar"
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1084
 msgid "Failed, tap to retry"
-msgstr "Mislukt; druk om opnieuw te proberen"
+msgstr "Mislukt - druk om opnieuw te proberen"
 
 #: qml/Panel/Indicators/MessageMenuItemFactory.qml:151
 #: qml/Panel/Indicators/MessageMenuItemFactory.qml:210
@@ -586,7 +584,7 @@ msgstr "Terugbellen"
 
 #: qml/Panel/PanelMenuPage.qml:92
 msgid "Back"
-msgstr "Vorige"
+msgstr "Terug"
 
 #: qml/Stage/SideStage.qml:80
 msgid "Drag using 3 fingers any application from one window to the other"
@@ -594,15 +592,15 @@ msgstr "Versleep een app met 3 vingers van het ene venster naar het andere"
 
 #: qml/Stage/Stage.qml:827
 msgid "No running apps"
-msgstr "Je hebt geen geopende apps"
+msgstr "Er zijn geen geopende apps"
 
 #: qml/Tutorial/TutorialLeftLong.qml:49
 msgid "Long swipe from the left edge to open the Application Drawer"
-msgstr "Veeg langzaam vanaf de linkerkant om het appoverzicht te openen"
+msgstr "Veeg langzaam vanaf de linkerkant om het appoverzicht te tonen"
 
 #: qml/Tutorial/TutorialLeft.qml:47
 msgid "Short swipe from the left edge to open the launcher"
-msgstr "Veeg kort vanaf de linkerrand om de Starter te openen"
+msgstr "Veeg kort vanaf de linkerrand om de starter te tonen"
 
 #: qml/Tutorial/TutorialRight.qml:54
 msgid "Push your mouse against the right edge to view your open apps"
@@ -679,11 +677,11 @@ msgstr "Verbonden"
 
 #: qml/Wizard/Pages/30-wifi.qml:172
 msgid "Available Wi-Fi networks"
-msgstr "Beschikbare wifi-netwerken"
+msgstr "Beschikbare wifinetwerken"
 
 #: qml/Wizard/Pages/30-wifi.qml:173
 msgid "No available Wi-Fi networks"
-msgstr "Geen wifi-netwerken beschikbaar"
+msgstr "Er zijn geen wifi-netwerken beschikbaar"
 
 #: qml/Wizard/Pages/50-timezone.qml:30
 msgid "Time Zone"
@@ -708,12 +706,12 @@ msgstr "Schermvergrendeling"
 #: qml/Wizard/Pages/70-passwd-type.qml:103
 msgctxt "Label: Type of security method"
 msgid "Create new password"
-msgstr "Wachtwoord aanmaken"
+msgstr "Wachtwoord instellen"
 
 #: qml/Wizard/Pages/70-passwd-type.qml:105
 msgctxt "Label: Type of security method"
 msgid "Create passcode (numbers only)"
-msgstr "Toegangscode aanmaken (alleen cijfers)"
+msgstr "Toegangscode instellen (alleen getallen)"
 
 #: qml/Wizard/Pages/70-passwd-type.qml:107
 msgctxt "Label: Type of security method"
@@ -729,16 +727,13 @@ msgid ""
 "There is a system update available and ready to install. Afterwards, the "
 "device will automatically restart."
 msgstr ""
-"Er is een systeemupdate beschikbaar en klaar om te worden geïnstalleerd. Het "
-"apparaat start daarna opnieuw op."
+"Er is een systeemupdate beschikbaar. Het apparaat start opnieuw op om de "
+"installatie af te ronden."
 
 #: qml/Wizard/Pages/79-system-update.qml:76
-#, fuzzy
-#| msgctxt "string identifying name of the update"
-#| msgid "Ubuntu Touch system"
 msgctxt "string identifying name of the update"
 msgid "Lomiri Touch system"
-msgstr "Ubuntu Touch-systeem"
+msgstr "Lomiri Touch-systeem"
 
 #: qml/Wizard/Pages/79-system-update.qml:83
 #, qt-format
@@ -759,10 +754,8 @@ msgid "Welcome Back"
 msgstr "Welkom terug"
 
 #: qml/Wizard/Pages/80-finished.qml:91
-#, fuzzy
-#| msgid "Welcome to "
 msgid "Welcome to Lomiri"
-msgstr "Welkom bij "
+msgstr "Welkom bij Lomiri"
 
 #: qml/Wizard/Pages/80-finished.qml:106
 msgid "You are ready to use your device now"
@@ -783,7 +776,7 @@ msgstr "Toegangscode bevestigen"
 
 #: qml/Wizard/Pages/passcode-confirm.qml:45
 msgid "Incorrect passcode."
-msgstr "Onjuiste toegangscode."
+msgstr "De toegangscode is onjuist."
 
 #: qml/Wizard/Pages/passcode-confirm.qml:45
 msgctxt "Enter the passcode again"
@@ -792,11 +785,11 @@ msgstr "Voer je code opnieuw in."
 
 #: qml/Wizard/Pages/passcode-desktop.qml:31
 msgid "Lock Screen Passcode"
-msgstr "Toegangscode schermvergrendeling"
+msgstr "Schermvergrendelingscode"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:68
 msgid "Enter 4 numbers to setup your passcode"
-msgstr "Voer 4 cijfers in om je toegangscode in te stellen"
+msgstr "Stel een toegangscode van 4 getallen in"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:84
 #: qml/Wizard/Pages/passcode-set.qml:54
@@ -821,7 +814,7 @@ msgstr "De toegangscode moet 4 tekens lang zijn"
 
 #: qml/Wizard/Pages/password-set.qml:31
 msgid "Lock Screen Password"
-msgstr "Wachtwoord schermvergrendeling"
+msgstr "Schermvergrendelingswachtwoord"
 
 #: qml/Wizard/Pages/password-set.qml:68
 msgid "Enter at least 8 characters"
@@ -833,15 +826,15 @@ msgstr "Kies een wachtwoord"
 
 #: qml/Wizard/Pages/password-set.qml:110
 msgid "Confirm password"
-msgstr "Wachtwoord bevestigen"
+msgstr "Wachtwoord herhalen"
 
 #: qml/Wizard/Pages/sim.qml:27
 msgid "No SIM card installed"
-msgstr "Geen simkaart ingevoerd"
+msgstr "Er is geen simkaart ingevoerd"
 
 #: qml/Wizard/Pages/sim.qml:54
 msgid "SIM card added"
-msgstr "Simkaart ingevoerd"
+msgstr "Er is een simkaart ingevoerd"
 
 #: qml/Wizard/Pages/sim.qml:55
 msgid "You must restart the device to access the mobile network."
