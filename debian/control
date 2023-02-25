@@ -37,7 +37,7 @@ Build-Depends:
  libqtdbustest1-dev <!nocheck>,
  libsystemd-dev [linux-any],
  liblomirisystemsettings-dev,
- liblomiri-app-launch-dev,
+ liblomiri-app-launch-dev (>= 0.1.5),
  liblomiri-download-manager-common-dev,
  liblomirigestures5-dev (>= 1.3.2030),
  liblomirigestures5-private-dev (>= 1.3.2030),
@@ -144,6 +144,7 @@ Depends:
 Recommends:
  ayatana-indicator-keyboard,
  ayatana-indicator-session,
+ lomiri-app-launch (>= 0.1.5),
  lomiri-greeter-session-broadcast,
 Breaks:
  indicator-network (<< 0.5.1+14.10.20141014),
