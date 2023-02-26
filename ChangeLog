@@ -1,6 +1,89 @@
+2023-02-26 Mike Gabriel
+
+        * Release 0.1.2 (HEAD -> main, tag: 0.1.2)
+        * Merge branch
+          'personal/peat-psuwit/lal14-lal-application-end.target'
+          into 'main' (5232be093)
+
+2023-02-25 Ratchanan Srirattanamet
+
+        * debian/control: document LAL version requirement (eb3d36274)
+
+2023-02-24 Ratchanan Srirattanamet
+
+        * systemd-user: start lal-application-end.target on stop/restart
+          (cdecb8e0b)
+
+2023-02-20 Sergii Horichenko
+
+        * Translated using Weblate (Ukrainian) (72b64fe5c)
+        * Translated using Weblate (Russian) (eea9565fb)
+
+2023-02-22 Heimen Stoffels
+
+        * Translated using Weblate (Dutch) (ccffbecf5)
+
+2023-02-21 Mike Gabriel
+
+        * Merge branch 'personal/peat-psuwit/revert-crop-center' into 'main'
+          (1746ecf38)
+
+2023-02-22 Ratchanan Srirattanamet
+
+        * Revert "qml: Clip SurfaceContainer contents" (ecf53b903)
+
+2023-02-20 Ratchanan Srirattanamet
+
+        * Merge branch 'wizard-fix-wifi' into 'main' (1c056af85)
+
+2023-02-20 Jami Kettunen
+
+        * Wizard: Fix AyatanaMenuModel attributes for Wi-Fi networks
+          (30d490782)
+
+2023-02-20 Mike Gabriel
+
+        * Merge branch 'personal/lduboeuf/fix_pincode_nodots' into 'main'
+          (a63a30f03)
+
+2023-02-20 Lionel Duboeuf
+
+        * Fix full dots not displayed while typing (27907f94b)
+
+2023-02-20 Mike Gabriel
+
+        * Merge branch 'personal/gberh/launcher-locale-update' into 'main'
+          (0fa0e2b8c)
+
+2023-02-20 Guido Berhoerster
+
+        * Refresh Drawer desktop files when the locale changes (00864fbdd)
+        * Remove leftover debug logging (775787334)
+
+2023-02-18 Nathan Giovannini
+
+        * Translated using Weblate (Italian) (7fd0ea7e0)
+
+2023-02-18 Sergii Horichenko
+
+        * Translated using Weblate (Ukrainian) (d70354975)
+        * Translated using Weblate (Russian) (2b8260712)
+
 2023-02-18 Mike Gabriel
 
-        * Release 0.1.1 (HEAD -> main, tag: 0.1.1)
+        * Merge branch 'personal/peat-psuwit/revert-changestate' into 'main'
+          (4a402c101)
+
+2023-02-17 Ratchanan Srirattanamet
+
+        * IndicatorMenuItemFactory: back to activate() for switch, but more
+          clever (47064cc60)
+          Fixes:
+          https://gitlab.com/ubports/development/core/indicator-location/-/issues/2
+
+2023-02-18 Mike Gabriel
+
+        * Release 0.1.1 (cfd2ca38f)
 
 2023-02-17 Mike Gabriel
 
