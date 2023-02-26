@@ -15,3 +15,9 @@ ExecStart=@CMAKE_INSTALL_FULL_LIBEXECDIR@/lomiri-systemd-wrapper --mode=@MODE@
 ExecStopPost=/usr/bin/dbus-update-activation-environment --systemd WAYLAND_DISPLAY= MIR_SOCKET=
 Restart=on-failure
 TimeoutStartSec=120
+
+# Start this target on stop to ends all applications launched through LAL,
+# including those that are SIGSTOP'ed by us. Don't care about the failure
+# as it's not that important. Also no need to block as we only want the apps
+# to stop sometime before we come back up fully again.
+ExecStopPost=-systemctl --user start --no-block lal-application-end.target
