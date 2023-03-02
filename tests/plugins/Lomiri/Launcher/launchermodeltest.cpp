@@ -119,7 +119,7 @@ public:
     QUrl icon() const override { return QUrl(); }
     ApplicationInfoInterface::State state() const override { return ApplicationInfoInterface::Running; }
     bool focused() const override { return m_focused; }
-    bool showSplash() const override { return false; }
+    bool showSplash() const override { return true; }
     QString splashTitle() const override { return QString(); }
     QUrl splashImage() const override { return QUrl(); }
     bool splashShowHeader() const override { return true; }

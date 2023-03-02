@@ -71,7 +71,7 @@ public:
     State state() const override { return m_state; }
 
     bool focused() const override;
-    bool showSplash() const override { return false; }
+    bool showSplash() const override { return true; }
     QString splashTitle() const override { return QString(); }
     QUrl splashImage() const override { return QUrl(); }
     bool splashShowHeader() const override { return false; }
