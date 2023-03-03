@@ -109,7 +109,7 @@ Recommends:
 Provides:
  lightdm-greeter,
 Description: The Lomiri Greeter
- The Lomiri 8 greeter is the primary login greeter for Lomiri devices.
+ The Lomiri greeter is the primary login greeter for Lomiri devices.
 
 Package: lomiri
 Architecture: any
@@ -156,8 +156,8 @@ Replaces:
  lomiri-scope-tool,
 Conflicts:
  lomiri-system-settings-wizard,
-Description: Lomiri 8 shell
- The Lomiri 8 shell is the primary user interface for Lomiri devices.
+Description: Lomiri shell
+ The Lomiri shell is the primary user interface for Lomiri devices.
 
 Package: lomiri-common
 Architecture: all
@@ -173,8 +173,8 @@ Depends:
  lomiri-schemas,
  lomiri-tests | lomiri-application-impl,
  ${misc:Depends},
-Description: Lomiri 8 shell (common files)
- The Lomiri 8 shell is the primary user interface for Lomiri devices.
+Description: Lomiri shell (common files)
+ The Lomiri shell is the primary user interface for Lomiri devices.
  .
  This package contains the QML, graphics and locale files for lomiri.
 
@@ -200,7 +200,7 @@ Depends:
  xvfb,
  ${misc:Depends},
  ${python3:Depends},
-Description: Test package for Lomiri 8 shell
+Description: Test package for Lomiri shell
  Autopilot tests for the lomiri package
 
 Package: lomiri-tests
@@ -228,8 +228,8 @@ Replaces:
  lomiri-fake-env,
 Conflicts:
  lomiri-fake-env,
-Description: Scripts and mocks for running Lomiri 8 shell tests
- Provides fake implementations of some QML modules used by Lomiri 8 shell
+Description: Scripts and mocks for running Lomiri shell tests
+ Provides fake implementations of some QML modules used by Lomiri shell
  (e.g Lomiri.Application) so that you can run it in a sandboxed environment
  and scripts to run its test suite.
 
@@ -249,8 +249,8 @@ Depends:
 Provides:
  lomiri-launcher-impl,
  lomiri-launcher-impl-13,
-Description: Lomiri 8 private libs
- The Lomiri 8 shell is the primary user interface for Lomiri devices.
+Description: Lomiri private libs
+ The Lomiri shell is the primary user interface for Lomiri devices.
  .
  This package contains the private libraries for QML and other components
  only used by the shell.
@@ -263,4 +263,4 @@ Build-Profiles: <!cross>
 Depends:
  ${misc:Depends},
 Description: Documentation for Lomiri
- The Lomiri 8 shell is the primary user interface for Lomiri devices. (documentation)
+ The Lomiri shell is the primary user interface for Lomiri devices. (documentation)

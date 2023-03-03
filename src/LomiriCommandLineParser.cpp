@@ -27,7 +27,7 @@ LomiriCommandLineParser::LomiriCommandLineParser(const QCoreApplication &app)
     m_gridUnit = getenvFloat(ENV_GRID_UNIT_PX, DEFAULT_GRID_UNIT_PX);
 
     QCommandLineParser parser;
-    parser.setApplicationDescription(QStringLiteral("Description: Lomiri 8 Shell"));
+    parser.setApplicationDescription(QStringLiteral("Description: Lomiri Shell"));
     parser.addHelpOption();
 
     QCommandLineOption fullscreenOption(QStringLiteral("fullscreen"),

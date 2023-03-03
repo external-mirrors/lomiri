@@ -1,4 +1,4 @@
-Building Lomiri 8
+Building Lomiri
 ================
 
 Only Ubuntu 14.04 (trusty) is supported as a developement environment.
@@ -10,12 +10,12 @@ download source
 
   $ mkdir ~/lomiri
 
-- fetch Lomiri 8 source
+- fetch Lomiri source
   $ sudo apt-get install bzr
   $ bzr branch lp:lomiri ~/lomiri/trunk
   $ cd ~/lomiri/trunk
 
-install dependencies and build Lomiri 8
+install dependencies and build Lomiri
 --------------------
 
 $ cd ~/lomiri/trunk
@@ -31,10 +31,10 @@ You may also rebuild with the -c for clean, which just deletes the build
 directory.
 
 
-Running Lomiri 8 on your desktop
+Running Lomiri on your desktop
 ===============================
 
-run the Lomiri 8 shell
+run the Lomiri shell
 ---------------------
 $ cd ~/lomiri/trunk
 $ cd builddir
@@ -64,7 +64,7 @@ Notes
     - Populate the address book with sample data
 
 
-Running Lomiri 8 on devices
+Running Lomiri on devices
 ==========================
 
 Running lomiri on a device should be done using crossbuilder.
@@ -85,7 +85,7 @@ https://launchpad.net/canonical-client-development-guidelines
 Development Environment
 =======================
 QtCreator (available via the Software Center) is the best IDE to hack on
-Lomiri 8.
+Lomiri.
 
 If using VIM, make sure you install some syntax highlighting for QML, like
 https://github.com/peterhoeg/vim-qml
