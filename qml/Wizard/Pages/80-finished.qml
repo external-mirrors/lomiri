@@ -88,7 +88,15 @@ LocalComponents.Page {
             fontSize: "x-large"
             font.weight: Font.Light
             lineHeight: 1.2
-            text: (System.isUpdate) ? i18n.tr("Welcome Back") : i18n.tr("Welcome to Lomiri")
+            text: (
+                System.isUpdate
+                    ? i18n.tr("Welcome Back")
+                    /* TODO: in the next release, change this string (and the
+                     * one in 10-welcome-update) to "Welcome to %s" to allow
+                     * repositioning the distro name / version.
+                     */
+                    : i18n.tr("Welcome to ") + System.distroName
+            )
             color: whiteColor
         }
 

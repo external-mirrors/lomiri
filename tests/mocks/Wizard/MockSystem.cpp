@@ -62,3 +62,8 @@ void MockSystem::skipUntilFinishedPage()
 {
     Q_EMIT wouldHaveSetSkipUntilFinish();
 }
+
+QString MockSystem::distroName() const
+{
+    return QStringLiteral("Lomiri");
+}

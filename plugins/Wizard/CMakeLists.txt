@@ -17,6 +17,12 @@ target_link_libraries(Wizard-qml
     Qt5::DBus Qt5::Qml
     ${GD3_LDFLAGS} ${GLIB_LDFLAGS} ${GEONAMES_LDFLAGS}
 )
+
+if (NOT "${DISPLAYED_DISTRO_NAME}" STREQUAL "")
+    target_compile_definitions(Wizard-qml PRIVATE
+        -DLOMIRI_DISPLAYED_DISTRO_NAME="${DISPLAYED_DISTRO_NAME}")
+endif ()
+
 add_lomiri_plugin(Wizard 0.1 Wizard TARGETS Wizard-qml)
 
 set(POLKIT_LIB_DIR "${CMAKE_INSTALL_LOCALSTATEDIR}/lib/polkit-1")
