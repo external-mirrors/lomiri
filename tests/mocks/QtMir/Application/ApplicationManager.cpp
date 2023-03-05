@@ -315,7 +315,7 @@ void ApplicationManager::buildListOfAvailableApplications()
 
     application = new ApplicationInfo(this);
     application->setAppId("lomiri-dash");
-    application->setName("Lomiri 8 Mock Dash");
+    application->setName("Lomiri Mock Dash");
     application->setScreenshotId("lomiri-dash");
     application->setIconId("dash");
     m_availableApplications.append(application);

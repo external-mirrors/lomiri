@@ -26,6 +26,7 @@ class MockSystem : public QObject
     Q_PROPERTY(bool wizardEnabled READ wizardEnabled WRITE setWizardEnabled NOTIFY wizardEnabledChanged)
     Q_PROPERTY(QString version READ version NOTIFY versionChanged)
     Q_PROPERTY(bool isUpdate READ isUpdate WRITE setIsUpdate NOTIFY isUpdateChanged)
+    Q_PROPERTY(QString distroName READ distroName CONSTANT)
 
 public:
     MockSystem();
@@ -35,6 +36,7 @@ public:
     bool isUpdate() const;
     void setIsUpdate(bool enabled); // only in mock
     QString version() const;
+    QString distroName() const;
 
 public Q_SLOTS:
     void updateSessionLocale(const QString &locale);

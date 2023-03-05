@@ -29,6 +29,7 @@ class System : public QObject
     Q_PROPERTY(bool wizardEnabled READ wizardEnabled WRITE setWizardEnabled NOTIFY wizardEnabledChanged)
     Q_PROPERTY(QString version READ version NOTIFY versionChanged)
     Q_PROPERTY(bool isUpdate READ isUpdate NOTIFY isUpdateChanged)
+    Q_PROPERTY(QString distroName READ distroName CONSTANT)
 
 public:
     System();
@@ -41,6 +42,7 @@ public:
 
     QString version() const;
     bool isUpdate() const;
+    QString distroName() const;
 
     void setWizardEnabled(bool enabled);
 

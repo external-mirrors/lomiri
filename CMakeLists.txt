@@ -203,6 +203,8 @@ else()
     message(STATUS "Tests disabled")
 endif()
 
+set(DISPLAYED_DISTRO_NAME "" CACHE STRING
+    "The distro name displayed in first-run wizard and other places. If not set, will read /etc/os-release")
 add_subdirectory(plugins)
 
 #
