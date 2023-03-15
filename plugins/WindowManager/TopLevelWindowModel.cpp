@@ -168,7 +168,7 @@ void TopLevelWindowModel::removeApplication(lomiriapi::ApplicationInfoInterface 
 
 void TopLevelWindowModel::prependPlaceholder(lomiriapi::ApplicationInfoInterface *application)
 {
-    INFO_MSG << "(" << application->appId() << ")";
+    DEBUG_MSG << "(" << application->appId() << ")";
 
     prependSurfaceHelper(nullptr, application);
 }
@@ -185,14 +185,14 @@ void TopLevelWindowModel::prependSurface(lomiriapi::MirSurfaceInterface *surface
         ModelEntry &entry = m_windowModel[i];
         if (entry.application == application && (entry.window->surface() == nullptr || !entry.window->surface()->live())) {
             entry.window->setSurface(surface);
-            INFO_MSG << " appId=" << application->appId() << " surface=" << surface
+            DEBUG_MSG << " appId=" << application->appId() << " surface=" << surface
                       << ", filling out placeholder. after: " << toString();
             filledPlaceholder = true;
         }
     }
 
     if (!filledPlaceholder) {
-        INFO_MSG << " appId=" << application->appId() << " surface=" << surface << ", adding new row";
+        DEBUG_MSG << " appId=" << application->appId() << " surface=" << surface << ", adding new row";
         prependSurfaceHelper(surface, application);
     }
 }
@@ -221,7 +221,7 @@ void TopLevelWindowModel::prependSurfaceHelper(lomiriapi::MirSurfaceInterface *s
     // Activate the newly-prepended window.
     window->activate();
 
-    INFO_MSG << " after " << toString();
+    DEBUG_MSG << " after " << toString();
 }
 
 void TopLevelWindowModel::prependWindow(Window *window, lomiriapi::ApplicationInfoInterface *application)
@@ -370,7 +370,7 @@ void TopLevelWindowModel::onSurfaceDestroyed(lomiriapi::MirSurfaceInterface *sur
         auto window = m_windowModel[i].window;
         window->setFocused(false);
         m_allSurfaces.remove(surface);
-        INFO_MSG << " Removed surface from entry. After: " << toString();
+        DEBUG_MSG << " Removed surface from entry. After: " << toString();
     }
 }
 
@@ -557,7 +557,7 @@ void TopLevelWindowModel::removeAt(int index)
         }
     }
 
-    INFO_MSG << " after " << toString() << " apps left " << m_windowModel.count();
+    DEBUG_MSG << " after " << toString() << " apps left " << m_windowModel.count();
 }
 
 void TopLevelWindowModel::setInputMethodWindow(Window *window)
@@ -733,7 +733,7 @@ void TopLevelWindowModel::doRaiseId(int id)
 void TopLevelWindowModel::setFocusedWindow(Window *window)
 {
     if (window != m_focusedWindow) {
-        INFO_MSG << "(" << window << ")";
+        DEBUG_MSG << "(" << window << ")";
 
         m_previousWindow = m_focusedWindow;
 
@@ -786,7 +786,7 @@ void TopLevelWindowModel::move(int from, int to)
         Q_EMIT listChanged();
         m_modelState = IdleState;
 
-        INFO_MSG << " after " << toString();
+        DEBUG_MSG << " after " << toString();
     }
 }
 void TopLevelWindowModel::onModificationsStarted()
@@ -890,7 +890,7 @@ bool TopLevelWindowModel::rootFocus()
 
 void TopLevelWindowModel::setRootFocus(bool focus)
 {
-    INFO_MSG << "(" << focus << "), surfaceManagerBusy is " << m_surfaceManagerBusy;
+    DEBUG_MSG << "(" << focus << "), surfaceManagerBusy is " << m_surfaceManagerBusy;
 
     if (m_surfaceManagerBusy) {
         // Something else is probably being focused already, let's not add to
