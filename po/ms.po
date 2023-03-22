@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-31 19:29+0000\n"
+"POT-Creation-Date: 2023-03-22 11:43+0000\n"
 "PO-Revision-Date: 2016-05-24 01:36+0000\n"
 "Last-Translator: abuyop <Unknown>\n"
 "Language-Team: Malay <ms@li.org>\n"
@@ -41,6 +41,10 @@ msgstr ""
 
 #: data/indicators-client.desktop.in:5
 msgid "Application for testing the Indicators system"
+msgstr ""
+
+#: data/indicators-client.desktop.in:9
+msgid "NoDisplay=false"
 msgstr ""
 
 #: plugins/LightDM/Greeter.cpp:199
@@ -486,7 +490,7 @@ msgstr ""
 msgid "Select desktop environment"
 msgstr ""
 
-#: qml/Launcher/Drawer.qml:235
+#: qml/Launcher/Drawer.qml:240
 #, fuzzy
 #| msgid "Search"
 msgid "Search…"
@@ -512,61 +516,61 @@ msgstr "Ketuk untuk kembali memanggil..."
 msgid "Conference"
 msgstr "Sidang"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:924
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:936
 msgid "Nothing is playing"
 msgstr "Tiada apa hendak dimainkan"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1052
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1064
 #, qt-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
 msgstr[0] "%1 jam"
 msgstr[1] "%1 jam"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1056
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1068
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
 msgstr[0] "%1 minit"
 msgstr[1] "%1 minit"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1061
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1073
 #, qt-format
 msgid "%1 second"
 msgid_plural "%1 seconds"
 msgstr[0] "%1 saat"
 msgstr[1] "%1 saat"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1064
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1076
 msgid "0 seconds"
 msgstr "0 saat"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1066
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1078
 #, qt-format
 msgid "%1 remaining"
 msgstr "%1 berbaki"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1072
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1084
 msgid "In queue…"
 msgstr "Dalam baris gilir..."
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1076
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1088
 msgid "Downloading"
 msgstr "Memuat turun"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1078
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1090
 msgid "Paused, tap to resume"
 msgstr "Dijeda, ketik untuk sambung semula"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1080
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1092
 msgid "Canceled"
 msgstr "Dibatalkan"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1082
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1094
 msgid "Finished"
 msgstr "Selesai"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1084
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1096
 msgid "Failed, tap to retry"
 msgstr "Gagal, ketik untuk cuba lagi"
 
@@ -637,7 +641,7 @@ msgid "Language"
 msgstr "Bahasa"
 
 #: qml/Wizard/Pages/10-welcome.qml:176
-#: qml/Wizard/Pages/10-welcome-update.qml:126
+#: qml/Wizard/Pages/10-welcome-update.qml:128
 #: qml/Wizard/Pages/11-changelog.qml:74 qml/Wizard/Pages/20-keyboard.qml:152
 #: qml/Wizard/Pages/30-wifi.qml:213 qml/Wizard/Pages/50-timezone.qml:270
 #: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/70-passwd-type.qml:146
@@ -646,13 +650,16 @@ msgstr "Bahasa"
 msgid "Next"
 msgstr "Berikutnya"
 
-#: qml/Wizard/Pages/10-welcome-update.qml:91
-#, fuzzy
-msgid "Welcome to "
+#. TRANSLATORS: %1 contains the distro name, %2 the version
+#: qml/Wizard/Pages/10-welcome-update.qml:92
+#, fuzzy, qt-format
+msgid "Welcome to %1 %2"
 msgstr "Selamat datang ke Ubuntu"
 
-#: qml/Wizard/Pages/10-welcome-update.qml:106
-msgid "We will make sure your device is ready to use "
+#. TRANSLATORS: %1 contains the distro name, %2 the version
+#: qml/Wizard/Pages/10-welcome-update.qml:108
+#, qt-format
+msgid "We will make sure your device is ready to use %1 %2"
 msgstr ""
 
 #: qml/Wizard/Pages/11-changelog.qml:28
@@ -762,24 +769,25 @@ msgstr ""
 msgid "Install and restart now"
 msgstr ""
 
-#: qml/Wizard/Pages/80-finished.qml:91
+#: qml/Wizard/Pages/80-finished.qml:93
 msgid "Welcome Back"
 msgstr ""
 
-#: qml/Wizard/Pages/80-finished.qml:91
-#, fuzzy
-msgid "Welcome to Lomiri"
+#. TRANSLATORS: %1 contains the distro name
+#: qml/Wizard/Pages/80-finished.qml:95
+#, fuzzy, qt-format
+msgid "Welcome to %1"
 msgstr "Selamat datang ke Ubuntu"
 
-#: qml/Wizard/Pages/80-finished.qml:106
+#: qml/Wizard/Pages/80-finished.qml:111
 msgid "You are ready to use your device now"
 msgstr "Anda boleh gunakan peranti sekarang"
 
-#: qml/Wizard/Pages/80-finished.qml:126
+#: qml/Wizard/Pages/80-finished.qml:131
 msgid "Continue"
 msgstr "Teruskan"
 
-#: qml/Wizard/Pages/80-finished.qml:126
+#: qml/Wizard/Pages/80-finished.qml:131
 msgid "Get Started"
 msgstr "Membiasakan Diri"
 
@@ -802,7 +810,9 @@ msgid "Lock Screen Passcode"
 msgstr "Kod Laluan Skrin Kunci"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:68
-msgid "Enter 4 numbers to setup your passcode"
+#, fuzzy
+#| msgid "Enter 4 numbers to setup your passcode"
+msgid "Enter at least 4 numbers to setup your passcode"
 msgstr "Masukkan 4 nombor untuk persediaan kod laluan anda"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:84
@@ -823,7 +833,9 @@ msgid "Passcodes do not match"
 msgstr "Kod laluan tidak sepadan"
 
 #: qml/Wizard/Pages/passcode-set.qml:62
-msgid "Passcode must be 4 characters long"
+#, fuzzy
+#| msgid "Passcode must be 4 characters long"
+msgid "Passcode must be at least 4 characters long"
 msgstr "Kod laluan mestilah 4 aksara panjang"
 
 #: qml/Wizard/Pages/password-set.qml:31
@@ -894,6 +906,10 @@ msgstr "Kata laluan lemah"
 #: qml/Wizard/PasswordMeter.qml:101
 msgid "Very weak password"
 msgstr "Kata laluan sangat lemah"
+
+#, fuzzy
+#~ msgid "Welcome to Lomiri"
+#~ msgstr "Selamat datang ke Ubuntu"
 
 #~ msgid "Welcome to Ubuntu"
 #~ msgstr "Selamat datang ke Ubuntu"

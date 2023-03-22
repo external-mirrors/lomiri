@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-31 19:29+0000\n"
+"POT-Creation-Date: 2023-03-22 11:43+0000\n"
 "PO-Revision-Date: 2021-04-09 13:06+0000\n"
 "Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Chinese (Traditional) <https://translate.ubports.com/projects/"
@@ -44,6 +44,10 @@ msgstr ""
 
 #: data/indicators-client.desktop.in:5
 msgid "Application for testing the Indicators system"
+msgstr ""
+
+#: data/indicators-client.desktop.in:9
+msgid "NoDisplay=false"
 msgstr ""
 
 #: plugins/LightDM/Greeter.cpp:199
@@ -477,7 +481,7 @@ msgstr "PIN 密碼"
 msgid "Select desktop environment"
 msgstr "選擇桌面環境"
 
-#: qml/Launcher/Drawer.qml:235
+#: qml/Launcher/Drawer.qml:240
 msgid "Search…"
 msgstr "搜尋…"
 
@@ -501,58 +505,58 @@ msgstr "點擊可返回通話..."
 msgid "Conference"
 msgstr "會議"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:924
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:936
 msgid "Nothing is playing"
 msgstr "沒有影片音訊正在播放中"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1052
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1064
 #, qt-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
 msgstr[0] "%1 小時"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1056
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1068
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
 msgstr[0] "%1 分鐘"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1061
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1073
 #, qt-format
 msgid "%1 second"
 msgid_plural "%1 seconds"
 msgstr[0] "%1 秒鐘"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1064
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1076
 msgid "0 seconds"
 msgstr "0 秒鐘"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1066
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1078
 #, qt-format
 msgid "%1 remaining"
 msgstr "還剩下 %1"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1072
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1084
 msgid "In queue…"
 msgstr "在佇列中…"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1076
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1088
 msgid "Downloading"
 msgstr "下載中"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1078
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1090
 msgid "Paused, tap to resume"
 msgstr "已暫停，點擊可繼續"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1080
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1092
 msgid "Canceled"
 msgstr "已取消"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1082
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1094
 msgid "Finished"
 msgstr "已完成"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1084
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1096
 msgid "Failed, tap to retry"
 msgstr "已失敗，點擊可重試"
 
@@ -614,7 +618,7 @@ msgid "Language"
 msgstr "語言"
 
 #: qml/Wizard/Pages/10-welcome.qml:176
-#: qml/Wizard/Pages/10-welcome-update.qml:126
+#: qml/Wizard/Pages/10-welcome-update.qml:128
 #: qml/Wizard/Pages/11-changelog.qml:74 qml/Wizard/Pages/20-keyboard.qml:152
 #: qml/Wizard/Pages/30-wifi.qml:213 qml/Wizard/Pages/50-timezone.qml:270
 #: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/70-passwd-type.qml:146
@@ -623,12 +627,18 @@ msgstr "語言"
 msgid "Next"
 msgstr "下一步"
 
-#: qml/Wizard/Pages/10-welcome-update.qml:91
-msgid "Welcome to "
+#. TRANSLATORS: %1 contains the distro name, %2 the version
+#: qml/Wizard/Pages/10-welcome-update.qml:92
+#, fuzzy, qt-format
+#| msgid "Welcome to "
+msgid "Welcome to %1 %2"
 msgstr "歡迎使用 "
 
-#: qml/Wizard/Pages/10-welcome-update.qml:106
-msgid "We will make sure your device is ready to use "
+#. TRANSLATORS: %1 contains the distro name, %2 the version
+#: qml/Wizard/Pages/10-welcome-update.qml:108
+#, fuzzy, qt-format
+#| msgid "We will make sure your device is ready to use "
+msgid "We will make sure your device is ready to use %1 %2"
 msgstr "我們將確保您的裝置已準備就緒 "
 
 #: qml/Wizard/Pages/11-changelog.qml:28
@@ -740,25 +750,26 @@ msgstr "這可能需要幾分鐘..."
 msgid "Install and restart now"
 msgstr "立即安裝並重新啟動"
 
-#: qml/Wizard/Pages/80-finished.qml:91
+#: qml/Wizard/Pages/80-finished.qml:93
 msgid "Welcome Back"
 msgstr "歡迎回來"
 
-#: qml/Wizard/Pages/80-finished.qml:91
-#, fuzzy
+#. TRANSLATORS: %1 contains the distro name
+#: qml/Wizard/Pages/80-finished.qml:95
+#, fuzzy, qt-format
 #| msgid "Welcome to "
-msgid "Welcome to Lomiri"
+msgid "Welcome to %1"
 msgstr "歡迎使用 "
 
-#: qml/Wizard/Pages/80-finished.qml:106
+#: qml/Wizard/Pages/80-finished.qml:111
 msgid "You are ready to use your device now"
 msgstr "您現在就可以使用您的裝置了"
 
-#: qml/Wizard/Pages/80-finished.qml:126
+#: qml/Wizard/Pages/80-finished.qml:131
 msgid "Continue"
 msgstr "繼續"
 
-#: qml/Wizard/Pages/80-finished.qml:126
+#: qml/Wizard/Pages/80-finished.qml:131
 msgid "Get Started"
 msgstr "新手上路"
 
@@ -781,7 +792,9 @@ msgid "Lock Screen Passcode"
 msgstr "螢幕鎖定 PIN 密碼"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:68
-msgid "Enter 4 numbers to setup your passcode"
+#, fuzzy
+#| msgid "Enter 4 numbers to setup your passcode"
+msgid "Enter at least 4 numbers to setup your passcode"
 msgstr "輸入 4 個號碼來設置您的 PIN 密碼"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:84
@@ -802,7 +815,9 @@ msgid "Passcodes do not match"
 msgstr "PIN 密碼不同"
 
 #: qml/Wizard/Pages/passcode-set.qml:62
-msgid "Passcode must be 4 characters long"
+#, fuzzy
+#| msgid "Passcode must be 4 characters long"
+msgid "Passcode must be at least 4 characters long"
 msgstr "PIN 密碼長度必須為 4 個字元"
 
 #: qml/Wizard/Pages/password-set.qml:31
@@ -872,6 +887,11 @@ msgstr "密碼強度不足"
 #: qml/Wizard/PasswordMeter.qml:101
 msgid "Very weak password"
 msgstr "密碼強度極弱"
+
+#, fuzzy
+#~| msgid "Welcome to "
+#~ msgid "Welcome to Lomiri"
+#~ msgstr "歡迎使用 "
 
 #, qt-format
 #~ msgid "%1:%2:%3"

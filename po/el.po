@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-31 19:29+0000\n"
+"POT-Creation-Date: 2023-03-22 11:43+0000\n"
 "PO-Revision-Date: 2021-09-20 23:03+0000\n"
 "Last-Translator: Efstathios Iosifidis <iefstathios@gmail.com>\n"
 "Language-Team: Greek <https://translate.ubports.com/projects/ubports/lomiri/"
@@ -44,6 +44,10 @@ msgstr ""
 
 #: data/indicators-client.desktop.in:5
 msgid "Application for testing the Indicators system"
+msgstr ""
+
+#: data/indicators-client.desktop.in:9
+msgid "NoDisplay=false"
 msgstr ""
 
 #: plugins/LightDM/Greeter.cpp:199
@@ -489,7 +493,7 @@ msgstr "Κωδικός πρόσβασης"
 msgid "Select desktop environment"
 msgstr "Επιλογή περιβάλλοντος εργασίας"
 
-#: qml/Launcher/Drawer.qml:235
+#: qml/Launcher/Drawer.qml:240
 msgid "Search…"
 msgstr "Αναζήτηση…"
 
@@ -513,61 +517,61 @@ msgstr "Πατήστε για να γυρίσετε στην κλήση..."
 msgid "Conference"
 msgstr "Συνδιάσκεψη"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:924
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:936
 msgid "Nothing is playing"
 msgstr "Δεν αναπαράγεται τίποτα"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1052
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1064
 #, qt-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
 msgstr[0] "%1 ώρα"
 msgstr[1] "%1 ώρες"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1056
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1068
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
 msgstr[0] "%1 λεπτό"
 msgstr[1] "%1 λεπτά"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1061
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1073
 #, qt-format
 msgid "%1 second"
 msgid_plural "%1 seconds"
 msgstr[0] "%1 δευτερόλεπτο"
 msgstr[1] "%1 δευτερόλεπτα"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1064
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1076
 msgid "0 seconds"
 msgstr "0 δευτερόλεπτα"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1066
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1078
 #, qt-format
 msgid "%1 remaining"
 msgstr "%1 απομένουν"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1072
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1084
 msgid "In queue…"
 msgstr "Στην ουρά…"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1076
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1088
 msgid "Downloading"
 msgstr "Λήψη σε εξέλιξη"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1078
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1090
 msgid "Paused, tap to resume"
 msgstr "Σταματημένο, αγγίξτε για συνέχιση"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1080
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1092
 msgid "Canceled"
 msgstr "Ακυρώθηκε"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1082
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1094
 msgid "Finished"
 msgstr "Ολοκληρώθηκε"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1084
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1096
 msgid "Failed, tap to retry"
 msgstr "Αποτυχία, πατήστε για να ξαναπροσπαθήσετε"
 
@@ -636,7 +640,7 @@ msgid "Language"
 msgstr "Γλώσσα"
 
 #: qml/Wizard/Pages/10-welcome.qml:176
-#: qml/Wizard/Pages/10-welcome-update.qml:126
+#: qml/Wizard/Pages/10-welcome-update.qml:128
 #: qml/Wizard/Pages/11-changelog.qml:74 qml/Wizard/Pages/20-keyboard.qml:152
 #: qml/Wizard/Pages/30-wifi.qml:213 qml/Wizard/Pages/50-timezone.qml:270
 #: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/70-passwd-type.qml:146
@@ -645,12 +649,18 @@ msgstr "Γλώσσα"
 msgid "Next"
 msgstr "Επόμενο"
 
-#: qml/Wizard/Pages/10-welcome-update.qml:91
-msgid "Welcome to "
+#. TRANSLATORS: %1 contains the distro name, %2 the version
+#: qml/Wizard/Pages/10-welcome-update.qml:92
+#, fuzzy, qt-format
+#| msgid "Welcome to "
+msgid "Welcome to %1 %2"
 msgstr "Καλώς ήρθατε στο "
 
-#: qml/Wizard/Pages/10-welcome-update.qml:106
-msgid "We will make sure your device is ready to use "
+#. TRANSLATORS: %1 contains the distro name, %2 the version
+#: qml/Wizard/Pages/10-welcome-update.qml:108
+#, fuzzy, qt-format
+#| msgid "We will make sure your device is ready to use "
+msgid "We will make sure your device is ready to use %1 %2"
 msgstr "Θα διασφαλίσουμε ότι η συσκευή σας είναι έτοιμη για χρήση "
 
 #: qml/Wizard/Pages/11-changelog.qml:28
@@ -764,25 +774,26 @@ msgstr "Αυτό μπορεί να διαρκέσει λίγα λεπτά..."
 msgid "Install and restart now"
 msgstr "Εγκατάσταση και επανεκκίνηση τώρα"
 
-#: qml/Wizard/Pages/80-finished.qml:91
+#: qml/Wizard/Pages/80-finished.qml:93
 msgid "Welcome Back"
 msgstr "Καλώς ήλθατε πίσω"
 
-#: qml/Wizard/Pages/80-finished.qml:91
-#, fuzzy
+#. TRANSLATORS: %1 contains the distro name
+#: qml/Wizard/Pages/80-finished.qml:95
+#, fuzzy, qt-format
 #| msgid "Welcome to "
-msgid "Welcome to Lomiri"
+msgid "Welcome to %1"
 msgstr "Καλώς ήρθατε στο "
 
-#: qml/Wizard/Pages/80-finished.qml:106
+#: qml/Wizard/Pages/80-finished.qml:111
 msgid "You are ready to use your device now"
 msgstr "Είστε έτοιμος να χρησιμοποιείσετε της συσκεύη σας τώρα"
 
-#: qml/Wizard/Pages/80-finished.qml:126
+#: qml/Wizard/Pages/80-finished.qml:131
 msgid "Continue"
 msgstr "Συνέχιση"
 
-#: qml/Wizard/Pages/80-finished.qml:126
+#: qml/Wizard/Pages/80-finished.qml:131
 msgid "Get Started"
 msgstr "Ξεκινάμε"
 
@@ -805,7 +816,9 @@ msgid "Lock Screen Passcode"
 msgstr "Κωδικός πρόσβασης κλειδώματος οθόνης"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:68
-msgid "Enter 4 numbers to setup your passcode"
+#, fuzzy
+#| msgid "Enter 4 numbers to setup your passcode"
+msgid "Enter at least 4 numbers to setup your passcode"
 msgstr "Εισάγετε 4 αριθμούς για ρύθμιση κωδικού πρόσβασης"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:84
@@ -826,7 +839,9 @@ msgid "Passcodes do not match"
 msgstr "Οι κωδικοί πρόσβασης δεν ταιριάζουν"
 
 #: qml/Wizard/Pages/passcode-set.qml:62
-msgid "Passcode must be 4 characters long"
+#, fuzzy
+#| msgid "Passcode must be 4 characters long"
+msgid "Passcode must be at least 4 characters long"
 msgstr "Ο κωδικός πρόσβασης πρέπει να είναι 4 χαρακτήρες"
 
 #: qml/Wizard/Pages/password-set.qml:31
@@ -899,6 +914,11 @@ msgstr "Αδύναμο συνθηματικό"
 #: qml/Wizard/PasswordMeter.qml:101
 msgid "Very weak password"
 msgstr "Πολύ αδύναμο συνθηματικό"
+
+#, fuzzy
+#~| msgid "Welcome to "
+#~ msgid "Welcome to Lomiri"
+#~ msgstr "Καλώς ήρθατε στο "
 
 #, qt-format
 #~ msgid "%1:%2:%3"

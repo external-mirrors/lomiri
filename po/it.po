@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-31 19:29+0000\n"
+"POT-Creation-Date: 2023-03-22 11:43+0000\n"
 "PO-Revision-Date: 2023-02-19 20:37+0000\n"
 "Last-Translator: Nathan Giovannini <nathan95@live.it>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/lomiri/lomiri/it/"
@@ -44,6 +44,10 @@ msgstr ""
 
 #: data/indicators-client.desktop.in:5
 msgid "Application for testing the Indicators system"
+msgstr ""
+
+#: data/indicators-client.desktop.in:9
+msgid "NoDisplay=false"
 msgstr ""
 
 #: plugins/LightDM/Greeter.cpp:199
@@ -487,7 +491,7 @@ msgstr "Codice"
 msgid "Select desktop environment"
 msgstr "Seleziona l'ambiente desktop"
 
-#: qml/Launcher/Drawer.qml:235
+#: qml/Launcher/Drawer.qml:240
 msgid "Search…"
 msgstr "Cerca…"
 
@@ -511,61 +515,61 @@ msgstr "Tocca per tornare alla chiamata..."
 msgid "Conference"
 msgstr "Conferenza"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:924
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:936
 msgid "Nothing is playing"
 msgstr "Niente in riproduzione"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1052
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1064
 #, qt-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
 msgstr[0] "%1 ora"
 msgstr[1] "%1 ore"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1056
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1068
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
 msgstr[0] "%1 minuto"
 msgstr[1] "%1 minuti"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1061
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1073
 #, qt-format
 msgid "%1 second"
 msgid_plural "%1 seconds"
 msgstr[0] "%1 secondo"
 msgstr[1] "%1 secondi"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1064
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1076
 msgid "0 seconds"
 msgstr "0 secondi"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1066
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1078
 #, qt-format
 msgid "%1 remaining"
 msgstr "Tempo residuo: %1"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1072
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1084
 msgid "In queue…"
 msgstr "In coda…"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1076
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1088
 msgid "Downloading"
 msgstr "Scaricamento in corso"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1078
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1090
 msgid "Paused, tap to resume"
 msgstr "In pausa. Tocca per riprendere"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1080
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1092
 msgid "Canceled"
 msgstr "Annullato"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1082
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1094
 msgid "Finished"
 msgstr "Completato"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1084
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1096
 msgid "Failed, tap to retry"
 msgstr "Non riuscito. Tocca per riprovare"
 
@@ -631,7 +635,7 @@ msgid "Language"
 msgstr "Lingua"
 
 #: qml/Wizard/Pages/10-welcome.qml:176
-#: qml/Wizard/Pages/10-welcome-update.qml:126
+#: qml/Wizard/Pages/10-welcome-update.qml:128
 #: qml/Wizard/Pages/11-changelog.qml:74 qml/Wizard/Pages/20-keyboard.qml:152
 #: qml/Wizard/Pages/30-wifi.qml:213 qml/Wizard/Pages/50-timezone.qml:270
 #: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/70-passwd-type.qml:146
@@ -640,12 +644,18 @@ msgstr "Lingua"
 msgid "Next"
 msgstr "Avanti"
 
-#: qml/Wizard/Pages/10-welcome-update.qml:91
-msgid "Welcome to "
+#. TRANSLATORS: %1 contains the distro name, %2 the version
+#: qml/Wizard/Pages/10-welcome-update.qml:92
+#, fuzzy, qt-format
+#| msgid "Welcome to "
+msgid "Welcome to %1 %2"
 msgstr "Benvenuti in "
 
-#: qml/Wizard/Pages/10-welcome-update.qml:106
-msgid "We will make sure your device is ready to use "
+#. TRANSLATORS: %1 contains the distro name, %2 the version
+#: qml/Wizard/Pages/10-welcome-update.qml:108
+#, fuzzy, qt-format
+#| msgid "We will make sure your device is ready to use "
+msgid "We will make sure your device is ready to use %1 %2"
 msgstr "Ci accerteremo che il tuo dispositivo sia pronto all'utilizzo "
 
 #: qml/Wizard/Pages/11-changelog.qml:28
@@ -759,25 +769,26 @@ msgstr "Potrebbe impiegare alcuni minuti..."
 msgid "Install and restart now"
 msgstr "Installa e riavvia adesso"
 
-#: qml/Wizard/Pages/80-finished.qml:91
+#: qml/Wizard/Pages/80-finished.qml:93
 msgid "Welcome Back"
 msgstr "Bentornato"
 
-#: qml/Wizard/Pages/80-finished.qml:91
-#, fuzzy
+#. TRANSLATORS: %1 contains the distro name
+#: qml/Wizard/Pages/80-finished.qml:95
+#, fuzzy, qt-format
 #| msgid "Welcome to "
-msgid "Welcome to Lomiri"
+msgid "Welcome to %1"
 msgstr "Benvenuti in "
 
-#: qml/Wizard/Pages/80-finished.qml:106
+#: qml/Wizard/Pages/80-finished.qml:111
 msgid "You are ready to use your device now"
 msgstr "Il dispositivo è pronto per essere utilizzato"
 
-#: qml/Wizard/Pages/80-finished.qml:126
+#: qml/Wizard/Pages/80-finished.qml:131
 msgid "Continue"
 msgstr "Continua"
 
-#: qml/Wizard/Pages/80-finished.qml:126
+#: qml/Wizard/Pages/80-finished.qml:131
 msgid "Get Started"
 msgstr "Inizia"
 
@@ -800,7 +811,9 @@ msgid "Lock Screen Passcode"
 msgstr "Codice blocco schermo"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:68
-msgid "Enter 4 numbers to setup your passcode"
+#, fuzzy
+#| msgid "Enter 4 numbers to setup your passcode"
+msgid "Enter at least 4 numbers to setup your passcode"
 msgstr "Inserire 4 numeri per impostare il codice"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:84
@@ -821,7 +834,9 @@ msgid "Passcodes do not match"
 msgstr "I codici non corrispondono"
 
 #: qml/Wizard/Pages/passcode-set.qml:62
-msgid "Passcode must be 4 characters long"
+#, fuzzy
+#| msgid "Passcode must be 4 characters long"
+msgid "Passcode must be at least 4 characters long"
 msgstr "Il codice deve essere di 4 caratteri"
 
 #: qml/Wizard/Pages/password-set.qml:31
@@ -891,6 +906,11 @@ msgstr "Password fragile"
 #: qml/Wizard/PasswordMeter.qml:101
 msgid "Very weak password"
 msgstr "Password molto fragile"
+
+#, fuzzy
+#~| msgid "Welcome to "
+#~ msgid "Welcome to Lomiri"
+#~ msgstr "Benvenuti in "
 
 #, qt-format
 #~ msgid "%1:%2:%3"

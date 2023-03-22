@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-31 19:29+0000\n"
+"POT-Creation-Date: 2023-03-22 11:43+0000\n"
 "PO-Revision-Date: 2021-04-22 10:44+0000\n"
 "Last-Translator: Adria <adriamartinmor@gmail.com>\n"
 "Language-Team: Sardinian <https://translate.ubports.com/projects/ubports/"
@@ -43,6 +43,10 @@ msgstr ""
 
 #: data/indicators-client.desktop.in:5
 msgid "Application for testing the Indicators system"
+msgstr ""
+
+#: data/indicators-client.desktop.in:9
+msgid "NoDisplay=false"
 msgstr ""
 
 #: plugins/LightDM/Greeter.cpp:199
@@ -486,7 +490,7 @@ msgstr "Còdighe de atzessu"
 msgid "Select desktop environment"
 msgstr "Sèbera s'ambiente de iscrivania"
 
-#: qml/Launcher/Drawer.qml:235
+#: qml/Launcher/Drawer.qml:240
 msgid "Search…"
 msgstr "Chirca…"
 
@@ -510,61 +514,61 @@ msgstr "Toca pro torrare a sa mutida..."
 msgid "Conference"
 msgstr "Cunferèntzia"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:924
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:936
 msgid "Nothing is playing"
 msgstr "Nudda in riprodutzione"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1052
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1064
 #, qt-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
 msgstr[0] "%1 ora"
 msgstr[1] "%1 oras"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1056
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1068
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
 msgstr[0] "%1 minutu"
 msgstr[1] "%1 minutos"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1061
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1073
 #, qt-format
 msgid "%1 second"
 msgid_plural "%1 seconds"
 msgstr[0] "%1 segundu"
 msgstr[1] "%1 segundos"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1064
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1076
 msgid "0 seconds"
 msgstr "0 segundos"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1066
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1078
 #, qt-format
 msgid "%1 remaining"
 msgstr "Abarrat %1"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1072
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1084
 msgid "In queue…"
 msgstr "A sa coa…"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1076
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1088
 msgid "Downloading"
 msgstr "Iscarrighende"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1078
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1090
 msgid "Paused, tap to resume"
 msgstr "In pàusa, toca pro sighire"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1080
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1092
 msgid "Canceled"
 msgstr "Annulladu"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1082
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1094
 msgid "Finished"
 msgstr "Fatu"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1084
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1096
 msgid "Failed, tap to retry"
 msgstr "Faddina. Toca pro bi torrare a proare"
 
@@ -632,7 +636,7 @@ msgid "Language"
 msgstr "Limba"
 
 #: qml/Wizard/Pages/10-welcome.qml:176
-#: qml/Wizard/Pages/10-welcome-update.qml:126
+#: qml/Wizard/Pages/10-welcome-update.qml:128
 #: qml/Wizard/Pages/11-changelog.qml:74 qml/Wizard/Pages/20-keyboard.qml:152
 #: qml/Wizard/Pages/30-wifi.qml:213 qml/Wizard/Pages/50-timezone.qml:270
 #: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/70-passwd-type.qml:146
@@ -641,12 +645,18 @@ msgstr "Limba"
 msgid "Next"
 msgstr "Sighi"
 
-#: qml/Wizard/Pages/10-welcome-update.qml:91
-msgid "Welcome to "
+#. TRANSLATORS: %1 contains the distro name, %2 the version
+#: qml/Wizard/Pages/10-welcome-update.qml:92
+#, fuzzy, qt-format
+#| msgid "Welcome to "
+msgid "Welcome to %1 %2"
 msgstr "Ti donamus su benebènnidu a "
 
-#: qml/Wizard/Pages/10-welcome-update.qml:106
-msgid "We will make sure your device is ready to use "
+#. TRANSLATORS: %1 contains the distro name, %2 the version
+#: qml/Wizard/Pages/10-welcome-update.qml:108
+#, fuzzy, qt-format
+#| msgid "We will make sure your device is ready to use "
+msgid "We will make sure your device is ready to use %1 %2"
 msgstr "Amus a verificare chi su dispositivu tuo est prontu pro s'impreu "
 
 #: qml/Wizard/Pages/11-changelog.qml:28
@@ -760,25 +770,26 @@ msgstr "B'at a pònnere carchi minutu..."
 msgid "Install and restart now"
 msgstr "Installa e torra a aviare immoe"
 
-#: qml/Wizard/Pages/80-finished.qml:91
+#: qml/Wizard/Pages/80-finished.qml:93
 msgid "Welcome Back"
 msgstr "Ti torramus a donare su benebènnidu"
 
-#: qml/Wizard/Pages/80-finished.qml:91
-#, fuzzy
+#. TRANSLATORS: %1 contains the distro name
+#: qml/Wizard/Pages/80-finished.qml:95
+#, fuzzy, qt-format
 #| msgid "Welcome to "
-msgid "Welcome to Lomiri"
+msgid "Welcome to %1"
 msgstr "Ti donamus su benebènnidu a "
 
-#: qml/Wizard/Pages/80-finished.qml:106
+#: qml/Wizard/Pages/80-finished.qml:111
 msgid "You are ready to use your device now"
 msgstr "Totu prontu pro chi imprees su dispositivu tuo"
 
-#: qml/Wizard/Pages/80-finished.qml:126
+#: qml/Wizard/Pages/80-finished.qml:131
 msgid "Continue"
 msgstr "Sighi"
 
-#: qml/Wizard/Pages/80-finished.qml:126
+#: qml/Wizard/Pages/80-finished.qml:131
 msgid "Get Started"
 msgstr "Introdutzione"
 
@@ -801,7 +812,9 @@ msgid "Lock Screen Passcode"
 msgstr "Còdighe de atzessu a su blocu de ischermu"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:68
-msgid "Enter 4 numbers to setup your passcode"
+#, fuzzy
+#| msgid "Enter 4 numbers to setup your passcode"
+msgid "Enter at least 4 numbers to setup your passcode"
 msgstr "Inserta 4 nùmeros pro cunfigurare su còdighe"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:84
@@ -822,7 +835,9 @@ msgid "Passcodes do not match"
 msgstr "Is còdighes non cointzident"
 
 #: qml/Wizard/Pages/passcode-set.qml:62
-msgid "Passcode must be 4 characters long"
+#, fuzzy
+#| msgid "Passcode must be 4 characters long"
+msgid "Passcode must be at least 4 characters long"
 msgstr "Sa longària mìnima de su còdighe est de 4 caràteres"
 
 #: qml/Wizard/Pages/password-set.qml:31
@@ -893,6 +908,11 @@ msgstr "Sa crae est fràgile"
 #: qml/Wizard/PasswordMeter.qml:101
 msgid "Very weak password"
 msgstr "Sa crae est fràgile meda"
+
+#, fuzzy
+#~| msgid "Welcome to "
+#~ msgid "Welcome to Lomiri"
+#~ msgstr "Ti donamus su benebènnidu a "
 
 #, qt-format
 #~ msgid "%1:%2:%3"

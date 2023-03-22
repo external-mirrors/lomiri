@@ -646,15 +646,16 @@ msgstr "Weiter"
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
 #: qml/Wizard/Pages/10-welcome-update.qml:92
+#, qt-format
 msgid "Welcome to %1 %2"
 msgstr "Willkommen bei %1 %2"
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
 #: qml/Wizard/Pages/10-welcome-update.qml:108
+#, qt-format
 msgid "We will make sure your device is ready to use %1 %2"
 msgstr ""
-"Wir werden sicherstellen, dass Dein Gerät zur Nutzung von %1 %2 bereit "
-"ist"
+"Wir werden sicherstellen, dass Dein Gerät zur Nutzung von %1 %2 bereit ist"
 
 #: qml/Wizard/Pages/11-changelog.qml:28
 msgid "What's new"
