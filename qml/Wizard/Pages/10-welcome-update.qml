@@ -88,8 +88,8 @@ LocalComponents.Page {
             fontSize: "x-large"
             font.weight: Font.Light
             lineHeight: 1.2
-            // TRANSLATORS: %1 contains the distro version
-            text: i18n.tr("Welcome to %1").arg(System.version.split("Base-Version: ")[1])
+            // TRANSLATORS: %1 contains the distro name, %2 the version
+            text: i18n.tr("Welcome to %1 %2").arg(System.distroName).arg(System.version.split("Base-Version: ")[1])
             color: whiteColor
         }
 
@@ -104,8 +104,8 @@ LocalComponents.Page {
             fontSize: "large"
             font.weight: Font.Light
             lineHeight: 1.2
-            // TRANSLATORS: %1 contains the distro version
-            text: i18n.tr("We will make sure your device is ready to use %1").arg(System.version.split("Base-Version: ")[1])
+            // TRANSLATORS: %1 contains the distro name, %2 the version
+            text: i18n.tr("We will make sure your device is ready to use %1 %2").arg(System.distroName).arg(System.version.split("Base-Version: ")[1])
             color: whiteColor
         }
 
