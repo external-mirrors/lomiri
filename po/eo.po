@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-22 11:43+0000\n"
-"PO-Revision-Date: 2023-02-16 22:38+0000\n"
+"PO-Revision-Date: 2023-03-23 22:40+0000\n"
 "Last-Translator: phlostically <phlostically@mailinator.com>\n"
 "Language-Team: Esperanto <https://hosted.weblate.org/projects/lomiri/lomiri/"
 "eo/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.16-dev\n"
+"X-Generator: Weblate 4.16.2-dev\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:35+0000\n"
 
 #: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
@@ -56,7 +56,7 @@ msgstr "Pasvorto: "
 
 #: plugins/LightDM/Greeter.cpp:214
 msgid "Username"
-msgstr "Uzantnomo"
+msgstr "Salutnomo"
 
 #: plugins/LightDM/Greeter.cpp:258
 msgid "Failed to authenticate"
@@ -80,7 +80,7 @@ msgstr "Ensaluti"
 
 #: plugins/LightDM/UsersModel.cpp:165
 msgid "Guest Session"
-msgstr "Gastsesio"
+msgstr "Gasta seanco"
 
 #: plugins/Lomiri/Launcher/launcheritem.cpp:48
 #: plugins/Lomiri/Launcher/launcheritem.cpp:122
@@ -622,7 +622,7 @@ msgstr "Reen"
 
 #: qml/Wizard/Pages/10-welcome.qml:29
 msgid "Language"
-msgstr ""
+msgstr "Lingvo"
 
 #: qml/Wizard/Pages/10-welcome.qml:176
 #: qml/Wizard/Pages/10-welcome-update.qml:128
@@ -638,7 +638,7 @@ msgstr ""
 #: qml/Wizard/Pages/10-welcome-update.qml:92
 #, qt-format
 msgid "Welcome to %1 %2"
-msgstr ""
+msgstr "Bonvenon al %1 %2"
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
 #: qml/Wizard/Pages/10-welcome-update.qml:108
@@ -648,29 +648,29 @@ msgstr ""
 
 #: qml/Wizard/Pages/11-changelog.qml:28
 msgid "What's new"
-msgstr ""
+msgstr "Kio novas"
 
 #: qml/Wizard/Pages/11-changelog.qml:74
 msgid "Loading..."
-msgstr ""
+msgstr "Ŝargante…"
 
 #: qml/Wizard/Pages/20-keyboard.qml:31
 msgid "Select Keyboard"
-msgstr ""
+msgstr "Elektu klavaron"
 
 #: qml/Wizard/Pages/20-keyboard.qml:71
 msgid "Keyboard language"
-msgstr ""
+msgstr "Klavara lingvo"
 
 #: qml/Wizard/Pages/20-keyboard.qml:93
 msgid "Keyboard layout"
-msgstr ""
+msgstr "Klavaranĝo"
 
 #: qml/Wizard/Pages/20-keyboard.qml:152 qml/Wizard/Pages/30-wifi.qml:213
 #: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/79-system-update.qml:144
 #: qml/Wizard/Pages/sim.qml:101
 msgid "Skip"
-msgstr ""
+msgstr "Preterpasi"
 
 #: qml/Wizard/Pages/30-wifi.qml:31
 msgid "Connect to Wi‑Fi"
@@ -682,15 +682,15 @@ msgstr ""
 
 #: qml/Wizard/Pages/30-wifi.qml:172
 msgid "Available Wi-Fi networks"
-msgstr ""
+msgstr "Disponeblaj sendrataj retoj"
 
 #: qml/Wizard/Pages/30-wifi.qml:173
 msgid "No available Wi-Fi networks"
-msgstr ""
+msgstr "Ne disponeblas sendrataj retoj"
 
 #: qml/Wizard/Pages/50-timezone.qml:30
 msgid "Time Zone"
-msgstr ""
+msgstr "Horzono"
 
 #: qml/Wizard/Pages/50-timezone.qml:182
 msgid "Enter your city"
@@ -711,7 +711,7 @@ msgstr ""
 #: qml/Wizard/Pages/70-passwd-type.qml:103
 msgctxt "Label: Type of security method"
 msgid "Create new password"
-msgstr ""
+msgstr "Krei novan pasvorton"
 
 #: qml/Wizard/Pages/70-passwd-type.qml:105
 msgctxt "Label: Type of security method"
