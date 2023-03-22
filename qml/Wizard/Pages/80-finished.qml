@@ -91,11 +91,8 @@ LocalComponents.Page {
             text: (
                 System.isUpdate
                     ? i18n.tr("Welcome Back")
-                    /* TODO: in the next release, change this string (and the
-                     * one in 10-welcome-update) to "Welcome to %s" to allow
-                     * repositioning the distro name / version.
-                     */
-                    : i18n.tr("Welcome to ") + System.distroName
+                    // TRANSLATORS: %1 contains the distro name
+                    : i18n.tr("Welcome to %1").arg(System.distroName)
             )
             color: whiteColor
         }
