@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-31 19:29+0000\n"
+"POT-Creation-Date: 2023-03-22 11:43+0000\n"
 "PO-Revision-Date: 2023-02-06 03:00+0000\n"
 "Last-Translator: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/lomiri/lomiri/de/>"
-"\n"
+"Language-Team: German <https://hosted.weblate.org/projects/lomiri/lomiri/de/"
+">\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -43,6 +43,10 @@ msgstr "Indicators Client"
 #: data/indicators-client.desktop.in:5
 msgid "Application for testing the Indicators system"
 msgstr "Testanwendung für das Indicators-System"
+
+#: data/indicators-client.desktop.in:9
+msgid "NoDisplay=false"
+msgstr ""
 
 #: plugins/LightDM/Greeter.cpp:199
 msgid "Password: "
@@ -486,7 +490,7 @@ msgstr "PIN"
 msgid "Select desktop environment"
 msgstr "Arbeitsumgebung auswählen"
 
-#: qml/Launcher/Drawer.qml:235
+#: qml/Launcher/Drawer.qml:240
 msgid "Search…"
 msgstr "Suchen…"
 
@@ -510,61 +514,61 @@ msgstr "Tippen, um zum Anruf zurückzugehen…"
 msgid "Conference"
 msgstr "Konferenz"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:924
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:936
 msgid "Nothing is playing"
 msgstr "Nichts wird abgespielt"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1052
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1064
 #, qt-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
 msgstr[0] "%1 Stunde"
 msgstr[1] "%1 Stunden"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1056
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1068
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
 msgstr[0] "%1 Minute"
 msgstr[1] "%1 Minuten"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1061
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1073
 #, qt-format
 msgid "%1 second"
 msgid_plural "%1 seconds"
 msgstr[0] "%1 Sekunde"
 msgstr[1] "%1 Sekunden"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1064
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1076
 msgid "0 seconds"
 msgstr "0 Sekunden"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1066
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1078
 #, qt-format
 msgid "%1 remaining"
 msgstr "%1 verbleibend"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1072
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1084
 msgid "In queue…"
 msgstr "In Warteschlange…"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1076
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1088
 msgid "Downloading"
 msgstr "Wird heruntergeladen"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1078
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1090
 msgid "Paused, tap to resume"
 msgstr "Pausiert, tippen zum Fortsetzen"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1080
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1092
 msgid "Canceled"
 msgstr "Abgebrochen"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1082
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1094
 msgid "Finished"
 msgstr "Erledigt"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1084
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1096
 msgid "Failed, tap to retry"
 msgstr "Fehlgeschlagen, tippen zum Wiederholen"
 
@@ -631,7 +635,7 @@ msgid "Language"
 msgstr "Sprache"
 
 #: qml/Wizard/Pages/10-welcome.qml:176
-#: qml/Wizard/Pages/10-welcome-update.qml:126
+#: qml/Wizard/Pages/10-welcome-update.qml:128
 #: qml/Wizard/Pages/11-changelog.qml:74 qml/Wizard/Pages/20-keyboard.qml:152
 #: qml/Wizard/Pages/30-wifi.qml:213 qml/Wizard/Pages/50-timezone.qml:270
 #: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/70-passwd-type.qml:146
@@ -640,13 +644,17 @@ msgstr "Sprache"
 msgid "Next"
 msgstr "Weiter"
 
-#: qml/Wizard/Pages/10-welcome-update.qml:91
-msgid "Welcome to "
-msgstr "Willkommen bei "
+#. TRANSLATORS: %1 contains the distro name, %2 the version
+#: qml/Wizard/Pages/10-welcome-update.qml:92
+msgid "Welcome to %1 %2"
+msgstr "Willkommen bei %1 %2"
 
-#: qml/Wizard/Pages/10-welcome-update.qml:106
-msgid "We will make sure your device is ready to use "
-msgstr "Wir werden sicherstellen, dass Dein Gerät einsatzbereit ist "
+#. TRANSLATORS: %1 contains the distro name, %2 the version
+#: qml/Wizard/Pages/10-welcome-update.qml:108
+msgid "We will make sure your device is ready to use %1 %2"
+msgstr ""
+"Wir werden sicherstellen, dass Dein Gerät zur Nutzung von %1 %2 bereit "
+"ist"
 
 #: qml/Wizard/Pages/11-changelog.qml:28
 msgid "What's new"
@@ -756,23 +764,25 @@ msgstr "Das kann ein paar Minuten dauern…"
 msgid "Install and restart now"
 msgstr "Jetzt installieren und neu starten"
 
-#: qml/Wizard/Pages/80-finished.qml:91
+#: qml/Wizard/Pages/80-finished.qml:93
 msgid "Welcome Back"
 msgstr "Willkommen zurück"
 
-#: qml/Wizard/Pages/80-finished.qml:91
-msgid "Welcome to Lomiri"
-msgstr "Willkommen bei Lomiri"
+#. TRANSLATORS: %1 contains the distro name
+#: qml/Wizard/Pages/80-finished.qml:95
+#, qt-format
+msgid "Welcome to %1"
+msgstr "Willkommen bei %1"
 
-#: qml/Wizard/Pages/80-finished.qml:106
+#: qml/Wizard/Pages/80-finished.qml:111
 msgid "You are ready to use your device now"
 msgstr "Sie können Ihr Gerät nun verwenden"
 
-#: qml/Wizard/Pages/80-finished.qml:126
+#: qml/Wizard/Pages/80-finished.qml:131
 msgid "Continue"
 msgstr "Weiter"
 
-#: qml/Wizard/Pages/80-finished.qml:126
+#: qml/Wizard/Pages/80-finished.qml:131
 msgid "Get Started"
 msgstr "Erste Schritte"
 
@@ -795,8 +805,8 @@ msgid "Lock Screen Passcode"
 msgstr "Sperrbildschirm-PIN"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:68
-msgid "Enter 4 numbers to setup your passcode"
-msgstr "Geben Sie 4 Ziffern ein, um Ihre PIN einzurichten"
+msgid "Enter at least 4 numbers to setup your passcode"
+msgstr "Geben Sie mindestens 4 Ziffern ein, um Ihre PIN einzurichten"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:84
 #: qml/Wizard/Pages/passcode-set.qml:54
@@ -816,8 +826,8 @@ msgid "Passcodes do not match"
 msgstr "PIN-Codes stimmen nicht überein"
 
 #: qml/Wizard/Pages/passcode-set.qml:62
-msgid "Passcode must be 4 characters long"
-msgstr "PIN muss 4 Ziffern lang sein"
+msgid "Passcode must be at least 4 characters long"
+msgstr "PIN muss mindestens 4 Ziffern lang sein"
 
 #: qml/Wizard/Pages/password-set.qml:31
 msgid "Lock Screen Password"
@@ -887,6 +897,12 @@ msgstr "Schwaches Passwort"
 #: qml/Wizard/PasswordMeter.qml:101
 msgid "Very weak password"
 msgstr "Sehr schwaches Passwort"
+
+#~ msgid "Welcome to version %1"
+#~ msgstr "Willkommen zu Version %1"
+
+#~ msgid "Welcome to Lomiri"
+#~ msgstr "Willkommen bei Lomiri"
 
 #, qt-format
 #~ msgid "%1:%2:%3"
