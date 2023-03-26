@@ -448,7 +448,7 @@ FocusScope {
             target: panel.dismissTimer
             onTriggered: {
                 if (root.autohideEnabled && !root.lockedVisible) {
-                    if (!edgeBarrier.containsMouse && !panel.preventHiding) {
+                    if (!edgeBarrier.containsMouse && !panel.preventHiding && root.state != "drawer") {
                         root.state = ""
                     } else {
                         panel.dismissTimer.restart()
