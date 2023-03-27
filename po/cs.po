@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-22 11:43+0000\n"
-"PO-Revision-Date: 2021-08-21 07:57+0000\n"
-"Last-Translator: Milan Korecký <milan.korecky@gmail.com>\n"
-"Language-Team: Czech <https://translate.ubports.com/projects/ubports/lomiri/"
-"cs/>\n"
+"PO-Revision-Date: 2023-03-28 15:38+0000\n"
+"Last-Translator: Jozef Mlich <jmlich83@gmail.com>\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/lomiri/lomiri/cs/>"
+"\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 3.11.3\n"
+"X-Generator: Weblate 4.17-dev\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:35+0000\n"
 
 #: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
@@ -494,7 +494,7 @@ msgstr "Vybrat desktopové prostředí"
 
 #: qml/Launcher/Drawer.qml:240
 msgid "Search…"
-msgstr "Vyhledat…"
+msgstr "Hledat…"
 
 #: qml/Launcher/PullToRefreshScopeStyle.qml:56
 msgid "Pull to refresh…"
