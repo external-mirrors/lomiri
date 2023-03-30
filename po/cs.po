@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-22 11:43+0000\n"
-"PO-Revision-Date: 2023-03-28 15:38+0000\n"
+"PO-Revision-Date: 2023-03-30 13:46+0000\n"
 "Last-Translator: Jozef Mlich <jmlich83@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/lomiri/lomiri/cs/>"
 "\n"
@@ -97,7 +97,7 @@ msgstr "Zrušit připnutý odkaz"
 
 #: plugins/WindowManager/Screen.cpp:160
 msgid "Unknown"
-msgstr ""
+msgstr "Neznámo"
 
 #: plugins/WindowManager/Screen.cpp:162
 msgid "VGA"
