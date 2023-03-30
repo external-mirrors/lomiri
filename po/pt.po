@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-22 11:43+0000\n"
-"PO-Revision-Date: 2023-02-07 21:41+0000\n"
+"PO-Revision-Date: 2023-04-02 03:45+0000\n"
 "Last-Translator: Ivo Xavier <ivofernandes12@gmail.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/lomiri/lomiri/"
 "pt/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.16-dev\n"
+"X-Generator: Weblate 4.17-dev\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:35+0000\n"
 
 #: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
@@ -46,7 +46,7 @@ msgstr "Aplicação para testar o sistema de Indicadores"
 
 #: data/indicators-client.desktop.in:9
 msgid "NoDisplay=false"
-msgstr ""
+msgstr "NoDisplay=false"
 
 #: plugins/LightDM/Greeter.cpp:199
 msgid "Password: "
@@ -641,17 +641,15 @@ msgstr "Próximo"
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
 #: qml/Wizard/Pages/10-welcome-update.qml:92
-#, fuzzy, qt-format
-#| msgid "Welcome to "
+#, qt-format
 msgid "Welcome to %1 %2"
-msgstr "Bem-vindo(a) "
+msgstr "Bem-vindo ao %1 %2"
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
 #: qml/Wizard/Pages/10-welcome-update.qml:108
-#, fuzzy, qt-format
-#| msgid "We will make sure your device is ready to use "
+#, qt-format
 msgid "We will make sure your device is ready to use %1 %2"
-msgstr "Vamos assegurar-nos que o seu dispositivo está pronto para usar "
+msgstr "Vamos assegurar-nos que o seu dispositivo está pronto para usar o %1 %2"
 
 #: qml/Wizard/Pages/11-changelog.qml:28
 msgid "What's new"
@@ -767,10 +765,9 @@ msgstr "Bem-vindo/a de volta"
 
 #. TRANSLATORS: %1 contains the distro name
 #: qml/Wizard/Pages/80-finished.qml:95
-#, fuzzy, qt-format
-#| msgid "Welcome to "
+#, qt-format
 msgid "Welcome to %1"
-msgstr "Bem-vindo(a) "
+msgstr "Bem-vindo ao %1"
 
 #: qml/Wizard/Pages/80-finished.qml:111
 msgid "You are ready to use your device now"
@@ -803,10 +800,8 @@ msgid "Lock Screen Passcode"
 msgstr "Código de ecrã de bloqueio"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:68
-#, fuzzy
-#| msgid "Enter 4 numbers to setup your passcode"
 msgid "Enter at least 4 numbers to setup your passcode"
-msgstr "Introduza 4 números para definir o seu código"
+msgstr "Introduza, pelo menos, 4 números para definir o seu código"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:84
 #: qml/Wizard/Pages/passcode-set.qml:54
@@ -826,10 +821,8 @@ msgid "Passcodes do not match"
 msgstr "Códigos não coincidem"
 
 #: qml/Wizard/Pages/passcode-set.qml:62
-#, fuzzy
-#| msgid "Passcode must be 4 characters long"
 msgid "Passcode must be at least 4 characters long"
-msgstr "Os códigos devem ter 4 dígitos"
+msgstr "Os códigos devem ter, pelo menos, 4 dígitos"
 
 #: qml/Wizard/Pages/password-set.qml:31
 msgid "Lock Screen Password"
