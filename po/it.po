@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-22 11:43+0000\n"
-"PO-Revision-Date: 2023-03-30 13:46+0000\n"
+"PO-Revision-Date: 2023-04-02 03:45+0000\n"
 "Last-Translator: Sylke Vicious <silkevicious@tuta.io>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/lomiri/lomiri/it/"
 ">\n"
@@ -26,29 +26,27 @@ msgstr "Lomiri"
 
 #: data/lomiri.desktop.in:5
 msgid "The converged Lomiri shell"
-msgstr ""
+msgstr "La shell convergente di Lomiri"
 
 #: data/lomiri-greeter.desktop.in:4
-#, fuzzy
-#| msgid "Lomiri"
 msgid "Lomiri Greeter"
-msgstr "Lomiri"
+msgstr "Saluto di Lomiri"
 
 #: data/lomiri-greeter.desktop.in:5
 msgid "The converged Lomiri shell's Greeter"
-msgstr ""
+msgstr "Il Saluto della shell Lomiri convergente"
 
 #: data/indicators-client.desktop.in:4
 msgid "Indicators Client"
-msgstr ""
+msgstr "Indicatori Client"
 
 #: data/indicators-client.desktop.in:5
 msgid "Application for testing the Indicators system"
-msgstr ""
+msgstr "Applicazione per testare gli Indicatori di sistema"
 
 #: data/indicators-client.desktop.in:9
 msgid "NoDisplay=false"
-msgstr ""
+msgstr "NoDisplay=false"
 
 #: plugins/LightDM/Greeter.cpp:199
 msgid "Password: "
@@ -101,39 +99,39 @@ msgstr "Sconosciuto"
 
 #: plugins/WindowManager/Screen.cpp:162
 msgid "VGA"
-msgstr ""
+msgstr "VGA"
 
 #: plugins/WindowManager/Screen.cpp:166
 msgid "DVI"
-msgstr ""
+msgstr "DVI"
 
 #: plugins/WindowManager/Screen.cpp:168
 msgid "Composite"
-msgstr ""
+msgstr "Composito"
 
 #: plugins/WindowManager/Screen.cpp:170
 msgid "S-Video"
-msgstr ""
+msgstr "S-Video"
 
 #: plugins/WindowManager/Screen.cpp:174
 msgid "Internal"
-msgstr ""
+msgstr "Interno"
 
 #: plugins/WindowManager/Screen.cpp:176
 msgid "Component"
-msgstr ""
+msgstr "Component"
 
 #: plugins/WindowManager/Screen.cpp:178
 msgid "DisplayPort"
-msgstr ""
+msgstr "DisplayPort"
 
 #: plugins/WindowManager/Screen.cpp:181
 msgid "HDMI"
-msgstr ""
+msgstr "HDMI"
 
 #: plugins/WindowManager/Screen.cpp:183
 msgid "TV"
-msgstr ""
+msgstr "TV"
 
 #: qml/Components/Dialogs.qml:176
 msgctxt "Title: Lock/Log out dialog"
@@ -175,7 +173,7 @@ msgstr "No"
 
 #: qml/Components/Dialogs.qml:223
 msgid "Yes"
-msgstr "Sì"
+msgstr "Si"
 
 #: qml/Components/Dialogs.qml:243
 msgctxt "Title: Power off/Restart dialog"
@@ -290,7 +288,7 @@ msgstr "Super + A"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:195
 msgid "Opens the Application Drawer."
-msgstr "Apre il il Drawer delle Applicazioni."
+msgstr "Apre il Drawer delle Applicazioni."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:211
 msgid "Switching"
@@ -418,11 +416,11 @@ msgstr ""
 
 #: qml/Components/VirtualTouchPad.qml:322
 msgid "Tap left button to click."
-msgstr "Tocca il  pulsante sinistro per cliccare."
+msgstr "Tocca il pulsante sinistro per cliccare."
 
 #: qml/Components/VirtualTouchPad.qml:334
 msgid "Tap right button to right click."
-msgstr "Tocca il  pulsante destro per fare un clic destro."
+msgstr "Tocca il pulsante destro per fare un clic destro."
 
 #: qml/Components/VirtualTouchPad.qml:346
 msgid "Swipe with two fingers to scroll."
@@ -646,17 +644,15 @@ msgstr "Avanti"
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
 #: qml/Wizard/Pages/10-welcome-update.qml:92
-#, fuzzy, qt-format
-#| msgid "Welcome to "
+#, qt-format
 msgid "Welcome to %1 %2"
-msgstr "Benvenuti in "
+msgstr "Benvenuti in %1 %2"
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
 #: qml/Wizard/Pages/10-welcome-update.qml:108
-#, fuzzy, qt-format
-#| msgid "We will make sure your device is ready to use "
+#, qt-format
 msgid "We will make sure your device is ready to use %1 %2"
-msgstr "Ci accerteremo che il tuo dispositivo sia pronto all'utilizzo "
+msgstr "Ci accerteremo che il tuo dispositivo sia pronto all'utilizzo %1 %2"
 
 #: qml/Wizard/Pages/11-changelog.qml:28
 msgid "What's new"
@@ -748,12 +744,9 @@ msgstr ""
 "Il sistema si riavvierà automaticamente al termine dell'operazione."
 
 #: qml/Wizard/Pages/79-system-update.qml:76
-#, fuzzy
-#| msgctxt "string identifying name of the update"
-#| msgid "Ubuntu Touch system"
 msgctxt "string identifying name of the update"
 msgid "Lomiri Touch system"
-msgstr "Sistema Ubuntu Touch"
+msgstr "Sistema Lomiri Touch"
 
 #: qml/Wizard/Pages/79-system-update.qml:83
 #, qt-format
@@ -775,10 +768,9 @@ msgstr "Bentornato"
 
 #. TRANSLATORS: %1 contains the distro name
 #: qml/Wizard/Pages/80-finished.qml:95
-#, fuzzy, qt-format
-#| msgid "Welcome to "
+#, qt-format
 msgid "Welcome to %1"
-msgstr "Benvenuti in "
+msgstr "Benvenuti in %1"
 
 #: qml/Wizard/Pages/80-finished.qml:111
 msgid "You are ready to use your device now"
@@ -811,10 +803,8 @@ msgid "Lock Screen Passcode"
 msgstr "Codice blocco schermo"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:68
-#, fuzzy
-#| msgid "Enter 4 numbers to setup your passcode"
 msgid "Enter at least 4 numbers to setup your passcode"
-msgstr "Inserire 4 numeri per impostare il codice"
+msgstr "Inserire almeno 4 numeri per impostare il tuo codice"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:84
 #: qml/Wizard/Pages/passcode-set.qml:54
@@ -834,10 +824,8 @@ msgid "Passcodes do not match"
 msgstr "I codici non corrispondono"
 
 #: qml/Wizard/Pages/passcode-set.qml:62
-#, fuzzy
-#| msgid "Passcode must be 4 characters long"
 msgid "Passcode must be at least 4 characters long"
-msgstr "Il codice deve essere di 4 caratteri"
+msgstr "Il codice deve essere lungo almeno 4 caratteri"
 
 #: qml/Wizard/Pages/password-set.qml:31
 msgid "Lock Screen Password"
