@@ -166,10 +166,15 @@ FocusScope {
     SurfaceContainer {
         id: surfaceContainer
         anchors.fill: parent
+        opacity: splashLoader.active ? 0.7 : 1.0
         z: splashLoader.z + 1
         requestedWidth: root.requestedWidth
         requestedHeight: root.requestedHeight
         surfaceOrientationAngle: application && application.rotatesWindowContents ? root.surfaceOrientationAngle : 0
+
+        Behavior on opacity {
+            NumberAnimation { }
+        }
     }
 
     Repeater {
