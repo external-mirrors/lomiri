@@ -54,10 +54,9 @@ FocusScope {
         }
     }
 
-    // Best effort scenario: after a desktop mode switch we don't know the ready status
-    // FIXME: Expose ready property as part of the lomiri-api MirSurfaceInterface
     Component.onCompleted: {
-        if (surface && surface.live) {
+
+        if (surface && surface.isReady) {
             d.surfaceInitialized = true;
             d.hadSurface = true;
             d.surfaceOldEnoughToBeResized = true;
@@ -131,7 +130,7 @@ FocusScope {
         repeat: true
         running: root.surface && !d.surfaceInitialized
         onTriggered: {
-            if (root.surface) {
+            if (root.surface && root.surface.isReady) {
                 d.surfaceInitialized = true;
                 d.hadSurface = true;
                 d.surfaceOldEnoughToBeResized = true;

@@ -338,6 +338,7 @@ void MirSurfaceItem::setSurface(MirSurfaceInterface* surface)
         switch (m_qmlContentComponent->status()) {
             case QQmlComponent::Ready:
                 createQmlContentItem();
+                m_qmlSurface->setReady();
                 qDebug() << "content created" << m_surfaceWidth << implicitWidth() << width();
                 break;
             case QQmlComponent::Loading:

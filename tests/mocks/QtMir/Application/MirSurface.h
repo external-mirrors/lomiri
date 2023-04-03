@@ -40,6 +40,7 @@ class MirSurface : public lomiri::shell::application::MirSurfaceInterface
     Q_PROPERTY(bool activeFocus READ activeFocus NOTIFY activeFocusChanged)
     Q_PROPERTY(bool slowToResize READ isSlowToResize WRITE setSlowToResize NOTIFY slowToResizeChanged)
     Q_PROPERTY(bool exposed READ exposed NOTIFY exposedChanged)
+    Q_PROPERTY(bool isReady READ isReady NOTIFY ready)
 
 public:
     MirSurface(const QString& name,
@@ -70,6 +71,7 @@ public:
     Mir::State state() const override;
 
     bool live() const override;
+    bool isReady() const override;
 
     bool visible() const override;
 
@@ -115,6 +117,7 @@ public:
 
     int width() const;
     int height() const;
+    void setReady();
 
     bool isSlowToResize() const;
     void setSlowToResize(bool value);
@@ -196,6 +199,7 @@ private:
     QUrl m_screenshotUrl;
     QUrl m_qmlFilePath;
     bool m_live;
+    bool m_ready;
     bool m_focused;
     bool m_activeFocus;
     int m_width;
