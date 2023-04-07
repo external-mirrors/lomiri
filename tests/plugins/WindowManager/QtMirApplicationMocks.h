@@ -44,6 +44,7 @@ public:
     Mir::State state() const override { return m_state; }
     bool live() const override { return m_live; }
     bool visible() const override { return true; }
+    bool isReady() const override { return true; }
     Mir::OrientationAngle orientationAngle() const override { return Mir::Angle0; }
     void setOrientationAngle(Mir::OrientationAngle) override {}
 

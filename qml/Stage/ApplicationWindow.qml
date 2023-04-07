@@ -54,10 +54,9 @@ FocusScope {
         }
     }
 
-    // Best effort scenario: after a desktop mode switch we don't know the ready status
-    // FIXME: Expose ready property as part of the lomiri-api MirSurfaceInterface
     Component.onCompleted: {
-        if (surface && surface.live) {
+
+        if (surface && surface.live && surface.isReady) {
             d.surfaceInitialized = true;
             d.hadSurface = true;
             d.surfaceOldEnoughToBeResized = true;
@@ -131,7 +130,7 @@ FocusScope {
         repeat: true
         running: root.surface && !d.surfaceInitialized
         onTriggered: {
-            if (root.surface) {
+            if (root.surface && root.surface.isReady) {
                 d.surfaceInitialized = true;
                 d.hadSurface = true;
                 d.surfaceOldEnoughToBeResized = true;
@@ -167,10 +166,15 @@ FocusScope {
     SurfaceContainer {
         id: surfaceContainer
         anchors.fill: parent
+        opacity: splashLoader.active ? 0.7 : 1.0
         z: splashLoader.z + 1
         requestedWidth: root.requestedWidth
         requestedHeight: root.requestedHeight
         surfaceOrientationAngle: application && application.rotatesWindowContents ? root.surfaceOrientationAngle : 0
+
+        Behavior on opacity {
+            NumberAnimation { }
+        }
     }
 
     Repeater {

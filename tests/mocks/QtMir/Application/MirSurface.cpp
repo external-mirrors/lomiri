@@ -85,6 +85,7 @@ MirSurface::MirSurface(const QString& name,
     , m_screenshotUrl(screenshot)
     , m_qmlFilePath(qmlFilePath)
     , m_live(true)
+    , m_ready(false)
     , m_focused(false)
     , m_activeFocus(false)
     , m_width(-1)
@@ -108,7 +109,7 @@ MirSurface::MirSurface(const QString& name,
 
     m_readyTimer.setInterval(200);
     m_readyTimer.setSingleShot(true);
-    connect(&m_readyTimer, &QTimer::timeout, this, [this](){ Q_EMIT ready(); });
+    connect(&m_readyTimer, &QTimer::timeout, this, [this](){ this->setReady(); });
 
     updateInputBoundsAfterResize();
 }
@@ -177,6 +178,11 @@ bool MirSurface::live() const
     return m_live;
 }
 
+bool MirSurface::isReady() const
+{
+    return m_ready;
+}
+
 bool MirSurface::visible() const
 {
     return m_state != Mir::MinimizedState && m_state != Mir::HiddenState;
@@ -199,6 +205,12 @@ void MirSurface::setLive(bool live)
     if (!m_live && m_views.count() == 0) {
         deleteLater();
     }
+}
+
+void MirSurface::setReady()
+{
+    m_ready = true;
+    Q_EMIT ready();
 }
 
 QUrl MirSurface::qmlFilePath() const
