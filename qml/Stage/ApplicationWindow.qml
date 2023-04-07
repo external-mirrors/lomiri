@@ -56,7 +56,7 @@ FocusScope {
 
     Component.onCompleted: {
 
-        if (surface && surface.isReady) {
+        if (surface && surface.live && surface.isReady) {
             d.surfaceInitialized = true;
             d.hadSurface = true;
             d.surfaceOldEnoughToBeResized = true;
