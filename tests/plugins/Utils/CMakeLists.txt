@@ -20,7 +20,7 @@ foreach(util_test
         DESTINATION "${SHELL_PRIVATE_FULL_LIBEXECDIR}/tests/plugins/Utils"
     )
     add_lomiri_unittest(${util_test} ${util_test}TestExec ADD_TEST
-        ENVIRONMENT LD_LIBRARY_PATH=${CMAKE_BINARY_DIR}/plugins/Utils HOME=${TMPDIR}
+        ENVIRONMENT LD_LIBRARY_PATH=${CMAKE_BINARY_DIR}/plugins/Utils HOME=/nonexistent
     )
 
 endforeach()
