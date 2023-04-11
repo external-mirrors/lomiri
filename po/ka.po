@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-22 11:43+0000\n"
-"PO-Revision-Date: 2023-04-11 19:51+0000\n"
+"PO-Revision-Date: 2023-04-11 20:27+0000\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://hosted.weblate.org/projects/lomiri/lomiri/"
 "ka/>\n"
@@ -369,7 +369,7 @@ msgstr ""
 
 #: qml/Components/Lockscreen.qml:247
 msgid "OK"
-msgstr ""
+msgstr "დიახ"
 
 #: qml/Components/ModeSwitchWarningDialog.qml:33
 msgid "Apps may have unsaved data:"
@@ -500,7 +500,7 @@ msgstr ""
 
 #: qml/Panel/ActiveCallHint.qml:93
 msgid "Conference"
-msgstr ""
+msgstr "კონფერენცია"
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:936
 msgid "Nothing is playing"
@@ -510,15 +510,15 @@ msgstr ""
 #, qt-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 საათი"
+msgstr[1] "%1 საათი"
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1068
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 წუთი"
+msgstr[1] "%1 წუთი"
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1073
 #, qt-format
