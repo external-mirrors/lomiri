@@ -8,14 +8,16 @@ msgstr ""
 "Project-Id-Version: lomiri\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-22 11:43+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2023-04-11 19:51+0000\n"
+"Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
+"Language-Team: Georgian <https://hosted.weblate.org/projects/lomiri/lomiri/"
+"ka/>\n"
 "Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.17-dev\n"
 
 #: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
 msgid "Lomiri"
@@ -84,7 +86,7 @@ msgstr ""
 
 #: plugins/Lomiri/Launcher/launcheritem.cpp:54
 msgid "Quit"
-msgstr ""
+msgstr "გამორთვა"
 
 #: plugins/Lomiri/Launcher/launcheritem.cpp:122
 msgid "Unpin shortcut"
@@ -153,7 +155,7 @@ msgstr ""
 #: qml/Greeter/NarrowView.qml:218 qml/Wizard/Pages/passcode-confirm.qml:32
 #: qml/Wizard/Pages/passcode-set.qml:32
 msgid "Cancel"
-msgstr ""
+msgstr "გაუქმება"
 
 #: qml/Components/Dialogs.qml:211
 msgctxt "Title: Reboot dialog"
@@ -166,11 +168,11 @@ msgstr ""
 
 #: qml/Components/Dialogs.qml:215
 msgid "No"
-msgstr ""
+msgstr "არა"
 
 #: qml/Components/Dialogs.qml:223
 msgid "Yes"
-msgstr ""
+msgstr "დიახ"
 
 #: qml/Components/Dialogs.qml:243
 msgctxt "Title: Power off/Restart dialog"
@@ -423,7 +425,7 @@ msgstr ""
 
 #: qml/Greeter/CoverPage.qml:158 tests/qmltests/Greeter/tst_NarrowView.qml:562
 msgid "Unlock"
-msgstr ""
+msgstr "განბლოკვა"
 
 #: qml/Greeter/DelayedLockscreen.qml:43
 msgid "Device Locked"
@@ -478,7 +480,7 @@ msgstr ""
 
 #: qml/Launcher/Drawer.qml:240
 msgid "Search…"
-msgstr ""
+msgstr "ძებნა…"
 
 #: qml/Launcher/PullToRefreshScopeStyle.qml:56
 msgid "Pull to refresh…"
@@ -576,7 +578,7 @@ msgstr ""
 
 #: qml/Panel/PanelMenuPage.qml:92
 msgid "Back"
-msgstr ""
+msgstr "უკან"
 
 #: qml/Stage/SideStage.qml:80
 msgid "Drag using 3 fingers any application from one window to the other"
@@ -623,7 +625,7 @@ msgstr ""
 #: qml/Wizard/Pages/passcode-desktop.qml:154
 #: qml/Wizard/Pages/password-set.qml:153
 msgid "Next"
-msgstr ""
+msgstr "შემდეგი"
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
 #: qml/Wizard/Pages/10-welcome-update.qml:92
@@ -643,7 +645,7 @@ msgstr ""
 
 #: qml/Wizard/Pages/11-changelog.qml:74
 msgid "Loading..."
-msgstr ""
+msgstr "იტვირთება..."
 
 #: qml/Wizard/Pages/20-keyboard.qml:31
 msgid "Select Keyboard"
@@ -759,7 +761,7 @@ msgstr ""
 
 #: qml/Wizard/Pages/80-finished.qml:131
 msgid "Continue"
-msgstr ""
+msgstr "გაგრძელება"
 
 #: qml/Wizard/Pages/80-finished.qml:131
 msgid "Get Started"
