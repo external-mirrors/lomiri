@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-22 11:43+0000\n"
-"PO-Revision-Date: 2023-04-11 20:27+0000\n"
+"PO-Revision-Date: 2023-04-12 06:44+0000\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://hosted.weblate.org/projects/lomiri/lomiri/"
 "ka/>\n"
@@ -94,7 +94,7 @@ msgstr ""
 
 #: plugins/WindowManager/Screen.cpp:160
 msgid "Unknown"
-msgstr ""
+msgstr "უცნობი"
 
 #: plugins/WindowManager/Screen.cpp:162
 msgid "VGA"
@@ -554,7 +554,7 @@ msgstr ""
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1094
 msgid "Finished"
-msgstr ""
+msgstr "დასრულდა"
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1096
 msgid "Failed, tap to retry"
