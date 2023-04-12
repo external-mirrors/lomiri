@@ -170,6 +170,9 @@ void TopLevelWindowModel::prependPlaceholder(lomiriapi::ApplicationInfoInterface
 {
     DEBUG_MSG << "(" << application->appId() << ")";
 
+    if (!application->showSplash())
+        return;
+
     prependSurfaceHelper(nullptr, application);
 }
 

@@ -132,7 +132,7 @@ public:
     bool focused() const override { return false; }
     QString splashTitle() const override { return QString(); }
     QUrl splashImage() const override { return QUrl(); }
-    bool showSplash() const override { return false; }
+    bool showSplash() const override { return true; }
     bool splashShowHeader() const override { return false; }
     QColor splashColor() const override { return QColor(); }
     QColor splashColorHeader() const override { return QColor(); }
