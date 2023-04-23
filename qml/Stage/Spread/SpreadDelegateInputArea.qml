@@ -106,7 +106,13 @@ Item {
         }
 
         onTouchUpdated: {
-            if (!d.moving || !tp.pressed) {
+            if (!tp.pressed) {
+                dragDelegate.Drag.active = false;
+                dragDelegate.surface = null;
+                d.moving = false
+                animation.animate("center");
+                return;
+            } else if (!d.moving) {
                 if (Math.abs(startY - tp.y) > d.threshold) {
                     d.moving = true;
                     d.dragEvents = []
@@ -115,7 +121,6 @@ Item {
                     return;
                 }
             }
-
 
             var value = tp.y - tp.startY - offset;
             if (value < 0 && stage.workspaceEnabled) {
@@ -150,8 +155,6 @@ Item {
                 animation.animate("center")
                 return;
             }
-
-            var touchPoint = touchPoints[0];
 
             if ((d.dragVelocity < -root.minSpeedToClose && d.distance < -units.gu(8)) || d.distance < -root.height / 2) {
                 animation.animate("up")
