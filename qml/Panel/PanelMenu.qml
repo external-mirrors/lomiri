@@ -113,7 +113,7 @@ Showable {
         clip: root.partiallyOpened
 
         Rectangle {
-            color: "#DA000000"
+            color: "#CAFEFEFE"
             anchors.fill: parent
         }
 

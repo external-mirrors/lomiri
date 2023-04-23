@@ -24,7 +24,8 @@ import "../Components"
 
 Rectangle {
     id: root
-    color: "#F2111111"
+
+    color: "#F2FEFEFE"
 
     rotation: inverted ? 180 : 0
 

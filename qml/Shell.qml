@@ -49,7 +49,7 @@ import WindowManager 1.0
 StyledItem {
     id: shell
 
-    theme.name: "Lomiri.Components.Themes.SuruDark"
+    theme.name: "Lomiri.Components.Themes.Ambiance"
 
     // to be set from outside
     property int orientationAngle: 0

@@ -220,7 +220,7 @@ Item {
                     objectName: "runningHighlight" + index
                     width: units.gu(0.25)
                     height: units.gu(.5)
-                    color: root.alerting ? theme.palette.normal.activity : "white"
+                    color: root.alerting ? theme.palette.normal.activity : theme.palette.normal.backgroundText
                     visible: root.itemRunning
                 }
             }
@@ -234,7 +234,7 @@ Item {
             }
             width: units.gu(0.25)
             height: units.gu(.5)
-            color: "white"
+            color: theme.palette.normal.backgroundText
             visible: root.itemFocused
         }
 
