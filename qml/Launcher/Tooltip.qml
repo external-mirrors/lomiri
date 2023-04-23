@@ -15,6 +15,7 @@
  */
 
 import QtQuick 2.12
+import QtGraphicalEffects 1.12
 import Lomiri.Components 1.3
 
 LomiriShape {
@@ -27,6 +28,8 @@ LomiriShape {
     // This property holds the text shown on the tool tip.
     property alias text: label.text
 
+    readonly property bool lightMode: true
+
     aspect: LomiriShape.Flat
     color: theme.palette.normal.background
     width: label.implicitWidth + units.gu(4)
@@ -34,6 +37,7 @@ LomiriShape {
     opacity: 0
 
     Image {
+        id: arrow
         anchors {
             right: parent.left
             rightMargin: -units.dp(4)
@@ -41,6 +45,15 @@ LomiriShape {
         }
         source: "graphics/quicklist_tooltip.png"
         rotation: 90
+        visible: !root.lightMode
+    }
+
+    ColorOverlay {
+        anchors.fill: arrow
+        source: arrow
+        color: root.color
+        rotation: arrow.rotation
+        visible: root.lightMode
     }
 
     Label {

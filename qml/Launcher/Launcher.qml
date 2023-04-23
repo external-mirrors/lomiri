@@ -393,6 +393,15 @@ FocusScope {
         }
     }
 
+    Image {
+        anchors.left: drawer.right
+        anchors.top: drawer.top
+        anchors.bottom: drawer.bottom
+        width: units.gu(1)
+        visible: !drawer.fullyClosed
+        source: "../graphics/dropshadow_right@20.png"
+    }
+
     Drawer {
         id: drawer
         objectName: "drawer"

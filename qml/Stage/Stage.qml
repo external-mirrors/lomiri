@@ -832,6 +832,7 @@ FocusScope {
             wrapMode: Label.WordWrap
             fontSize: "large"
             text: i18n.tr("No running apps")
+            color: "#FEFEFE"
         }
 
         Connections {

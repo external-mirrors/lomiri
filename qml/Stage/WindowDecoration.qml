@@ -121,7 +121,7 @@ MouseArea {
             Label {
                 id: titleLabel
                 objectName: "windowDecorationTitle"
-                color: root.active ? "white" : LomiriColors.slate
+                color: root.active ? "black" : LomiriColors.slate
                 height: parent.height
                 width: parent.width
                 verticalAlignment: Text.AlignVCenter

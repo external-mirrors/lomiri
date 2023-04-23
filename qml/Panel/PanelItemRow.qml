@@ -34,7 +34,7 @@ Item {
     property real unitProgress: 0.0
     property real selectionChangeBuffer: units.gu(2)
     property bool enableLateralChanges: false
-    property color hightlightColor: "#ffffff"
+    property color hightlightColor: "#000000" // "#ffffff"
 
     property alias delegate: row.delegate
     property alias contentX: row.contentX
