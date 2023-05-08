@@ -73,7 +73,7 @@ LocalComponents.Page {
                 color: textColor
                 font.weight: Font.Normal
                 fontSize: "small"
-                text: i18n.ctr("string identifying name of the update", "Lomiri Touch system")
+                text: i18n.ctr("string identifying name of the update", "Ubuntu Touch system")
             }
 
             Label {
