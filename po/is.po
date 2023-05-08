@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: po_unity8-is\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-22 11:43+0000\n"
+"POT-Creation-Date: 2023-05-08 19:08+0000\n"
 "PO-Revision-Date: 2014-11-13 09:32+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic <translation-team-is@lists.sourceforge.net>\n"
@@ -43,10 +43,6 @@ msgstr ""
 
 #: data/indicators-client.desktop.in:5
 msgid "Application for testing the Indicators system"
-msgstr ""
-
-#: data/indicators-client.desktop.in:9
-msgid "NoDisplay=false"
 msgstr ""
 
 #: plugins/LightDM/Greeter.cpp:199

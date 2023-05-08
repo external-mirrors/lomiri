@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-22 11:43+0000\n"
+"POT-Creation-Date: 2023-05-08 19:08+0000\n"
 "PO-Revision-Date: 2023-02-23 00:29+0000\n"
 "Last-Translator: Sergii Horichenko <m@sgg.im>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/lomiri/lomiri/ru/"
@@ -44,10 +44,6 @@ msgstr "Клиент индикаторов"
 #: data/indicators-client.desktop.in:5
 msgid "Application for testing the Indicators system"
 msgstr "Приложение для тестирования системы индикаторов"
-
-#: data/indicators-client.desktop.in:9
-msgid "NoDisplay=false"
-msgstr ""
 
 #: plugins/LightDM/Greeter.cpp:199
 msgid "Password: "

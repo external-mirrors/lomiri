@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-22 11:43+0000\n"
+"POT-Creation-Date: 2023-05-08 19:08+0000\n"
 "PO-Revision-Date: 2023-02-03 04:35+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/lomiri/"
@@ -49,10 +49,6 @@ msgstr "Indikator-klient"
 #, fuzzy
 msgid "Application for testing the Indicators system"
 msgstr "Program for testing av indikatorsystemet"
-
-#: data/indicators-client.desktop.in:9
-msgid "NoDisplay=false"
-msgstr ""
 
 #: plugins/LightDM/Greeter.cpp:199
 msgid "Password: "

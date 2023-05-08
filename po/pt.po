@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-22 11:43+0000\n"
+"POT-Creation-Date: 2023-05-08 19:08+0000\n"
 "PO-Revision-Date: 2023-04-02 03:45+0000\n"
 "Last-Translator: Ivo Xavier <ivofernandes12@gmail.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/lomiri/lomiri/"
@@ -43,10 +43,6 @@ msgstr "Indicadores Cliente"
 #: data/indicators-client.desktop.in:5
 msgid "Application for testing the Indicators system"
 msgstr "Aplicação para testar o sistema de Indicadores"
-
-#: data/indicators-client.desktop.in:9
-msgid "NoDisplay=false"
-msgstr "NoDisplay=false"
 
 #: plugins/LightDM/Greeter.cpp:199
 msgid "Password: "
@@ -895,6 +891,9 @@ msgstr "Palavra-passe fraca"
 #: qml/Wizard/PasswordMeter.qml:101
 msgid "Very weak password"
 msgstr "Palavra-passe muito fraca"
+
+#~ msgid "NoDisplay=false"
+#~ msgstr "NoDisplay=false"
 
 #~ msgid "Welcome to Lomiri"
 #~ msgstr "Bem-vindo ao Lomiri"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lomiri\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-22 11:43+0000\n"
+"POT-Creation-Date: 2023-05-08 19:08+0000\n"
 "PO-Revision-Date: 2023-04-13 05:14+0000\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://hosted.weblate.org/projects/lomiri/lomiri/"
@@ -42,10 +42,6 @@ msgstr ""
 #: data/indicators-client.desktop.in:5
 msgid "Application for testing the Indicators system"
 msgstr ""
-
-#: data/indicators-client.desktop.in:9
-msgid "NoDisplay=false"
-msgstr "NoDisplay=false"
 
 #: plugins/LightDM/Greeter.cpp:199
 msgid "Password: "
@@ -877,3 +873,6 @@ msgstr "სუსტი პაროლი"
 #: qml/Wizard/PasswordMeter.qml:101
 msgid "Very weak password"
 msgstr "ძალიან სუსტი პაროლი"
+
+#~ msgid "NoDisplay=false"
+#~ msgstr "NoDisplay=false"

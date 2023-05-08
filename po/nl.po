@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-22 11:43+0000\n"
+"POT-Creation-Date: 2023-05-08 19:08+0000\n"
 "PO-Revision-Date: 2023-03-23 22:40+0000\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/lomiri/lomiri/nl/"
@@ -43,10 +43,6 @@ msgstr "Indicatorclient"
 #: data/indicators-client.desktop.in:5
 msgid "Application for testing the Indicators system"
 msgstr "App voor het testen van het indicatorsysteem"
-
-#: data/indicators-client.desktop.in:9
-msgid "NoDisplay=false"
-msgstr "NoDisplay=false"
 
 #: plugins/LightDM/Greeter.cpp:199
 msgid "Password: "
@@ -892,6 +888,9 @@ msgstr "Zwak wachtwoord"
 #: qml/Wizard/PasswordMeter.qml:101
 msgid "Very weak password"
 msgstr "Zeer zwak wachtwoord"
+
+#~ msgid "NoDisplay=false"
+#~ msgstr "NoDisplay=false"
 
 #~ msgid "Welcome to Lomiri"
 #~ msgstr "Welkom bij Lomiri"
