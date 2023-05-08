@@ -758,7 +758,7 @@ msgstr "يتوفر تحديث للنظام وهو جاهز للتثبيت، سي
 #| msgctxt "string identifying name of the update"
 #| msgid "Ubuntu Touch system"
 msgctxt "string identifying name of the update"
-msgid "Lomiri Touch system"
+msgid "Ubuntu Touch system"
 msgstr "نظام أبونتو تاتش"
 
 #: qml/Wizard/Pages/79-system-update.qml:83

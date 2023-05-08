@@ -10,8 +10,8 @@ msgstr ""
 "POT-Creation-Date: 2023-03-22 11:43+0000\n"
 "PO-Revision-Date: 2023-03-23 22:40+0000\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
-"Language-Team: Dutch <https://hosted.weblate.org/projects/lomiri/lomiri/nl/>"
-"\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/lomiri/lomiri/nl/"
+">\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -739,8 +739,11 @@ msgstr ""
 "installatie af te ronden."
 
 #: qml/Wizard/Pages/79-system-update.qml:76
+#, fuzzy
+#| msgctxt "string identifying name of the update"
+#| msgid "Lomiri Touch system"
 msgctxt "string identifying name of the update"
-msgid "Lomiri Touch system"
+msgid "Ubuntu Touch system"
 msgstr "Lomiri Touch-systeem"
 
 #: qml/Wizard/Pages/79-system-update.qml:83

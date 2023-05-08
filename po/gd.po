@@ -792,7 +792,7 @@ msgstr ""
 #| msgctxt "string identifying name of the update"
 #| msgid "Ubuntu system"
 msgctxt "string identifying name of the update"
-msgid "Lomiri Touch system"
+msgid "Ubuntu Touch system"
 msgstr "Siostam Ubuntu"
 
 #: qml/Wizard/Pages/79-system-update.qml:83

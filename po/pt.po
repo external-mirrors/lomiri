@@ -649,7 +649,8 @@ msgstr "Bem-vindo ao %1 %2"
 #: qml/Wizard/Pages/10-welcome-update.qml:108
 #, qt-format
 msgid "We will make sure your device is ready to use %1 %2"
-msgstr "Vamos assegurar-nos que o seu dispositivo está pronto para usar o %1 %2"
+msgstr ""
+"Vamos assegurar-nos que o seu dispositivo está pronto para usar o %1 %2"
 
 #: qml/Wizard/Pages/11-changelog.qml:28
 msgid "What's new"
@@ -741,8 +742,11 @@ msgstr ""
 "reiniciar-se-á automaticamente."
 
 #: qml/Wizard/Pages/79-system-update.qml:76
+#, fuzzy
+#| msgctxt "string identifying name of the update"
+#| msgid "Lomiri Touch system"
 msgctxt "string identifying name of the update"
-msgid "Lomiri Touch system"
+msgid "Ubuntu Touch system"
 msgstr "Sistema Lomiri Touch"
 
 #: qml/Wizard/Pages/79-system-update.qml:83

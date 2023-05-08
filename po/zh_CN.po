@@ -736,7 +736,7 @@ msgstr "有可用的系统更新可以安装。稍后设备将自动重启。"
 #| msgctxt "string identifying name of the update"
 #| msgid "Ubuntu Touch system"
 msgctxt "string identifying name of the update"
-msgid "Lomiri Touch system"
+msgid "Ubuntu Touch system"
 msgstr "Ubuntu Touch系统"
 
 #: qml/Wizard/Pages/79-system-update.qml:83

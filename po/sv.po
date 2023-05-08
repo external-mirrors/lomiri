@@ -740,8 +740,11 @@ msgstr ""
 "kommer enheten att startas om automatiskt."
 
 #: qml/Wizard/Pages/79-system-update.qml:76
+#, fuzzy
+#| msgctxt "string identifying name of the update"
+#| msgid "Lomiri Touch system"
 msgctxt "string identifying name of the update"
-msgid "Lomiri Touch system"
+msgid "Ubuntu Touch system"
 msgstr "Lomiri Touch system"
 
 #: qml/Wizard/Pages/79-system-update.qml:83

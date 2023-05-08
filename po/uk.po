@@ -755,8 +755,11 @@ msgstr ""
 "оновлено, пристрій автоматично її перезавантажить."
 
 #: qml/Wizard/Pages/79-system-update.qml:76
+#, fuzzy
+#| msgctxt "string identifying name of the update"
+#| msgid "Lomiri Touch system"
 msgctxt "string identifying name of the update"
-msgid "Lomiri Touch system"
+msgid "Ubuntu Touch system"
 msgstr "Система Lomiri Touch"
 
 #: qml/Wizard/Pages/79-system-update.qml:83
