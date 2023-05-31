@@ -72,7 +72,8 @@ bool InputDispatcherFilter::eventFilter(QObject *o, QEvent *e)
             QPointF movement = me->localPos();
 
             // Adjust the position
-            QPointF oldPos = pointer->window()->geometry().topLeft() + pointer->position();
+            // Get the pos from mir
+            QPointF oldPos = me->screenPos();
             QPointF newPos = adjustedPositionForMovement(oldPos, movement);
 
             QScreen* currentScreen = screenAt(newPos);
