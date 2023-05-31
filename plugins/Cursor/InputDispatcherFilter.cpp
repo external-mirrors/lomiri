@@ -91,11 +91,21 @@ bool InputDispatcherFilter::eventFilter(QObject *o, QEvent *e)
                 // Because the movement is relative to the visual display, run both old and new
                 // pointer position through mapToGlobal() to take Shell's rotation into account,
                 // then recalculate the movement as a difference between them.
-                oldPos = pointer->parentItem()->mapToGlobal(pointer->position());
+                if (qEnvironmentVariableIsSet("LOMIRI_RUNNING_IN_VM")) {
+                    // Get the position directly from Mir
+                    oldPos = me->screenPos();
+                } else {
+                    oldPos = pointer->parentItem()->mapToGlobal(pointer->position());
+                }
                 newPos = pointer->parentItem()->mapToGlobal(pointer->position() + movement);
                 movement = newPos - oldPos;
             } else {
-                oldPos = pointer->window()->geometry().topLeft() + pointer->position();
+                if (qEnvironmentVariableIsSet("LOMIRI_RUNNING_IN_VM")) {
+                    // Get the position directly from Mir
+                    oldPos = me->screenPos();
+                } else {
+                    oldPos = pointer->window()->geometry().topLeft() + pointer->position();
+                }
             }
 
             // Adjust the position
