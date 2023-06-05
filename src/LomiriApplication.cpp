@@ -48,7 +48,7 @@ LomiriApplication::LomiriApplication(int & argc, char ** argv)
     , m_qmlArgs(this)
 {
     setApplicationName(QStringLiteral("lomiri"));
-    setOrganizationName(QStringLiteral("Canonical"));
+    setOrganizationName(QStringLiteral("UBports"));
 
     setupQmlEngine();
 

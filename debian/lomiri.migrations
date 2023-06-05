@@ -1,3 +1,4 @@
 debian/session-migrations/lomiri-accountsservice-schema-name-change.py
+debian/session-migrations/lomiri-cache-migration.sh
 debian/session-migrations/lomiri-gsettings-schema-name-change.sh
 debian/session-migrations/lomiri-wizard-has-run-migration.sh
