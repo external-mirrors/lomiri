@@ -110,8 +110,8 @@ Item {
             id: eraseIcon
             name: "erase"
             objectName: "EraseBtn"
-            height: units.gu(3)
-            width: units.gu(3)
+            height: units.gu(4)
+            width: units.gu(4)
             color: enabled ? d.selected : d.disabled
             enabled: root.currentCode.length > 0
             anchors.verticalCenter: parent.verticalCenter
