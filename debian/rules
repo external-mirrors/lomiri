@@ -63,6 +63,11 @@ else
 endif
 	dh_install -X'*.pyc' --fail-missing
 
+override_dh_installdocs:
+	dh_installdocs
+	# Remove results.txt for reproducible builds
+	rm -vf debian/lomiri-doc/usr/share/doc/lomiri/html/results.txt
+
 # use private lib directories
 override_dh_makeshlibs:
 	dh_makeshlibs -Nlomiri-private -Nlomiri-tests
