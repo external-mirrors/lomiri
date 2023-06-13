@@ -1189,6 +1189,9 @@ FocusScope {
                 function claimFocus() {
                     if (root.state == "spread") {
                         spreadItem.highlightedIndex = index
+                        // force pendingActivation so that when switching to staged mode, topLevelSurfaceList focus won't got to previous app ( case when apps are launched from outside )
+                        topLevelSurfaceList.pendingActivation();
+                        priv.goneToSpread = false;
                     }
                     if (root.mode == "stagedWithSideStage") {
                         if (appDelegate.stage == ApplicationInfoInterface.SideStage && !sideStage.shown) {

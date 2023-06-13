@@ -225,7 +225,6 @@ StyledItem {
             ApplicationManager.startApplication(appId);
         }
         ApplicationManager.requestFocusApplication(appId);
-        stage.closeSpread();
     }
 
     function startLockedApp(app) {
