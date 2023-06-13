@@ -158,7 +158,7 @@ FocusScope {
         dialog: normal
     }
 
-    property Item itemConfiningMouseCursor: !spreadShown && priv.focusedAppDelegate && priv.focusedAppDelegate.window.confinesMousePointer ?
+    property Item itemConfiningMouseCursor: !spreadShown && priv.focusedAppDelegate && priv.focusedAppDelegate.window && priv.focusedAppDelegate.window.confinesMousePointer ?
                               priv.focusedAppDelegate.clientAreaItem : null;
 
     signal itemSnapshotRequested(Item item)
@@ -644,10 +644,12 @@ FocusScope {
                 ScriptAction {
                     script: {
                         var item = appRepeater.itemAt(Math.max(0, spreadItem.highlightedIndex));
-                        if (item.stage == ApplicationInfoInterface.SideStage && !sideStage.shown) {
-                            sideStage.show();
+                        if (item) {
+                            if (item.stage == ApplicationInfoInterface.SideStage && !sideStage.shown) {
+                                sideStage.show();
+                            }
+                            item.playFocusAnimation();
                         }
-                        item.playFocusAnimation();
                     }
                 }
                 PropertyAction { target: spreadItem; property: "highlightedIndex"; value: -1 }
