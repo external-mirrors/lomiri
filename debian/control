@@ -125,7 +125,7 @@ Depends:
  qml-module-lomiri-components,
  qml-module-lomiri-layouts,
  qml-module-lomiri-settings-menus,
- qml-module-qmenumodel1,
+ qml-module-qmenumodel1 (>= 0.9.1-1ubports2~),
  qml-module-qt-labs-folderlistmodel,
  qml-module-qt-labs-settings,
  qml-module-qtmir (>= 0.4.8),

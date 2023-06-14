@@ -287,13 +287,18 @@ Item {
             return [
                 {label: "testLabel1", value: 10 },
                 {label: "testLabel2", value: 55 },
+                // org.ayatana.indicator.progress
+                {label: "testLabel3", value: 8, useAttr: true },
             ];
         }
 
         function test_create_progressMenu(data) {
             menuData.type = "com.canonical.indicator.progress"
             menuData.label = data.label;
-            menuData.actionState = data.value;
+            if (data.useAttr)
+                menuData.ext = { xAyatanaProgress: data.value }
+            else
+                menuData.actionState = data.value;
 
             loadData(menuData);
             compare(loader.item.objectName, "progressMenu", "Should have created a progress menu");

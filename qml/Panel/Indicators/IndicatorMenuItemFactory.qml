@@ -316,11 +316,35 @@ Item {
         Menus.ProgressValueMenu {
             objectName: "progressMenu"
             property QtObject menuData: null
+            property var menuModel: menuFactory.menuModel
             property int menuIndex: -1
+
+            function loadAttributes() {
+                if (!menuModel || menuIndex == -1) return;
+                    menuModel.loadExtendedAttributes(
+                        menuIndex, {'x-ayatana-progress': 'uint16'});
+            }
+
+            onMenuModelChanged: {
+                loadAttributes();
+            }
+            onMenuIndexChanged: {
+                loadAttributes();
+            }
 
             text: menuData && menuData.label || ""
             iconSource: menuData && menuData.icon || ""
-            value : menuData && menuData.actionState || 0.0
+            value: {
+                if (!menuData)
+                    return 0;
+
+                if (menuData.ext && menuData.ext.hasOwnProperty('xAyatanaProgress'))
+                    return menuData.ext.xAyatanaProgress;
+                else if (menuData.hasOwnProperty('actionState'))
+                    return menuData.actionState;
+                else
+                    return 0;
+            }
             enabled: menuData && menuData.sensitive || false
         }
     }
