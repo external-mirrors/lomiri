@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-08 19:08+0000\n"
-"PO-Revision-Date: 2023-04-02 03:45+0000\n"
+"PO-Revision-Date: 2023-06-30 10:51+0000\n"
 "Last-Translator: Sylke Vicious <silkevicious@tuta.io>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/lomiri/lomiri/it/"
 ">\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.17-dev\n"
+"X-Generator: Weblate 5.0-dev\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:35+0000\n"
 
 #: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
@@ -740,12 +740,9 @@ msgstr ""
 "Il sistema si riavvierà automaticamente al termine dell'operazione."
 
 #: qml/Wizard/Pages/79-system-update.qml:76
-#, fuzzy
-#| msgctxt "string identifying name of the update"
-#| msgid "Lomiri Touch system"
 msgctxt "string identifying name of the update"
 msgid "Ubuntu Touch system"
-msgstr "Sistema Lomiri Touch"
+msgstr "Sistema Ubuntu Touch"
 
 #: qml/Wizard/Pages/79-system-update.qml:83
 #, qt-format
