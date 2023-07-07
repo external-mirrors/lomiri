@@ -8,9 +8,8 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-08 19:08+0000\n"
-"PO-Revision-Date: 2023-03-04 10:40+0000\n"
-"Last-Translator: Taisei Washington <therealasahi95@users.noreply.hosted."
-"weblate.org>\n"
+"PO-Revision-Date: 2023-07-16 08:05+0000\n"
+"Last-Translator: NPL <alterlinuxer@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/lomiri/lomiri/"
 "ja/>\n"
 "Language: ja\n"
@@ -18,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.16.2-dev\n"
+"X-Generator: Weblate 5.0-dev\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:35+0000\n"
 
 #: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
@@ -33,7 +32,7 @@ msgstr ""
 #, fuzzy
 #| msgid "Lomiri"
 msgid "Lomiri Greeter"
-msgstr "Lomiri"
+msgstr "Lomiri Greeter"
 
 #: data/lomiri-greeter.desktop.in:5
 msgid "The converged Lomiri shell's Greeter"
@@ -94,15 +93,15 @@ msgstr "ショートカットを削除する"
 
 #: plugins/WindowManager/Screen.cpp:160
 msgid "Unknown"
-msgstr ""
+msgstr "不明"
 
 #: plugins/WindowManager/Screen.cpp:162
 msgid "VGA"
-msgstr ""
+msgstr "VGA"
 
 #: plugins/WindowManager/Screen.cpp:166
 msgid "DVI"
-msgstr ""
+msgstr "DVI"
 
 #: plugins/WindowManager/Screen.cpp:168
 msgid "Composite"
@@ -110,7 +109,7 @@ msgstr ""
 
 #: plugins/WindowManager/Screen.cpp:170
 msgid "S-Video"
-msgstr ""
+msgstr "Sビデオ"
 
 #: plugins/WindowManager/Screen.cpp:174
 msgid "Internal"
@@ -122,15 +121,15 @@ msgstr ""
 
 #: plugins/WindowManager/Screen.cpp:178
 msgid "DisplayPort"
-msgstr ""
+msgstr "DisplayPort"
 
 #: plugins/WindowManager/Screen.cpp:181
 msgid "HDMI"
-msgstr ""
+msgstr "HDMI"
 
 #: plugins/WindowManager/Screen.cpp:183
 msgid "TV"
-msgstr ""
+msgstr "テレビ"
 
 #: qml/Components/Dialogs.qml:176
 msgctxt "Title: Lock/Log out dialog"
@@ -353,11 +352,11 @@ msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:320
 msgid "Alt + F4"
-msgstr ""
+msgstr "Alt + F4"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:325
 msgid "Closes the current window."
-msgstr ""
+msgstr "現在のウィンドウを閉じる。"
 
 #: qml/Components/Lockscreen.qml:214 qml/Greeter/NarrowView.qml:238
 msgid "Return to Call"
@@ -399,31 +398,30 @@ msgstr "すべて閉じる"
 
 #: qml/Components/SharingPicker.qml:54
 msgid "Preview Share Item"
-msgstr ""
+msgstr "共有アイテムのプレビュー"
 
 #: qml/Components/VirtualTouchPad.qml:312
 msgid ""
 "Your device is now connected to an external display. Use this screen as a "
 "touch pad to interact with the pointer."
-msgstr ""
+msgstr "デバイスが外部ディスプレイに接続されました。この画面をタッチ "
+"パッドとして使用して、ポインターを操作します。"
 
 #: qml/Components/VirtualTouchPad.qml:322
-#, fuzzy
-#| msgid "Tap to return to call..."
 msgid "Tap left button to click."
-msgstr "タップすると通話に戻ります..."
+msgstr "左ボタンをタップしてクリックします。"
 
 #: qml/Components/VirtualTouchPad.qml:334
 msgid "Tap right button to right click."
-msgstr ""
+msgstr "右ボタンをタップして右クリックします。"
 
 #: qml/Components/VirtualTouchPad.qml:346
 msgid "Swipe with two fingers to scroll."
-msgstr ""
+msgstr "2本の指でスワイプしてスクロールします。"
 
 #: qml/Components/VirtualTouchPad.qml:391
 msgid "Find more settings in the system settings."
-msgstr ""
+msgstr "その他の設定はシステム設定でご確認ください。"
 
 #: qml/Greeter/CoverPage.qml:158 tests/qmltests/Greeter/tst_NarrowView.qml:562
 msgid "Unlock"
@@ -451,21 +449,18 @@ msgstr[0] "%1 分待ってからやり直してください…"
 #: tests/qmltests/Greeter/tst_Greeter.qml:597
 #: tests/qmltests/Greeter/tst_Greeter.qml:625
 #: tests/qmltests/Greeter/tst_Greeter.qml:637
+#, fuzzy
 msgid "Try again"
-msgstr ""
+msgstr "再試行"
 
 #: qml/Greeter/Greeter.qml:609 tests/qmltests/Greeter/tst_Greeter.qml:552
 #: tests/qmltests/Greeter/tst_Greeter.qml:603
-#, fuzzy
-#| msgid "Enter passphrase"
 msgid "Enter passphrase to unlock"
-msgstr "パスフレーズを入力"
+msgstr "パスフレーズを入力してロックを解除する"
 
 #: qml/Greeter/Greeter.qml:610
-#, fuzzy
-#| msgid "Enter passcode"
 msgid "Enter passcode to unlock"
-msgstr "パスコードを入力"
+msgstr "パスコードを入力してロックを解除する"
 
 #: qml/Greeter/NarrowView.qml:238
 msgid "Emergency"
@@ -473,7 +468,7 @@ msgstr "緊急"
 
 #: qml/Greeter/PromptList.qml:143
 msgid "Passphrase"
-msgstr ""
+msgstr "パスフレーズ"
 
 #: qml/Greeter/PromptList.qml:143
 msgid "Passcode"
@@ -484,10 +479,8 @@ msgid "Select desktop environment"
 msgstr "デスクトップ環境を選択"
 
 #: qml/Launcher/Drawer.qml:240
-#, fuzzy
-#| msgid "Search"
 msgid "Search…"
-msgstr "検索"
+msgstr "検索…"
 
 #: qml/Launcher/PullToRefreshScopeStyle.qml:56
 msgid "Pull to refresh…"
@@ -542,7 +535,7 @@ msgstr "残り %1"
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1084
 msgid "In queue…"
-msgstr "開始待ち..."
+msgstr "開始待ち…"
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1088
 msgid "Downloading"
@@ -586,7 +579,8 @@ msgstr "戻る"
 
 #: qml/Stage/SideStage.qml:80
 msgid "Drag using 3 fingers any application from one window to the other"
-msgstr ""
+msgstr "3本指でアプリケーションを一方のウィンドウからもう一方のウィンドウにドラッグす"
+"る"
 
 #: qml/Stage/Stage.qml:827
 msgid "No running apps"
@@ -621,7 +615,7 @@ msgstr ""
 
 #: qml/Wizard/Pages/10-welcome.qml:29
 msgid "Language"
-msgstr ""
+msgstr "言語"
 
 #: qml/Wizard/Pages/10-welcome.qml:176
 #: qml/Wizard/Pages/10-welcome-update.qml:128
@@ -637,13 +631,13 @@ msgstr "次へ"
 #: qml/Wizard/Pages/10-welcome-update.qml:92
 #, qt-format
 msgid "Welcome to %1 %2"
-msgstr ""
+msgstr "%1 %2へようこそ"
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
 #: qml/Wizard/Pages/10-welcome-update.qml:108
 #, qt-format
 msgid "We will make sure your device is ready to use %1 %2"
-msgstr ""
+msgstr "お使いのデバイスが %1 %2 を使用できる状態であることを確認します"
 
 #: qml/Wizard/Pages/11-changelog.qml:28
 msgid "What's new"
@@ -656,15 +650,15 @@ msgstr "入力中..."
 
 #: qml/Wizard/Pages/20-keyboard.qml:31
 msgid "Select Keyboard"
-msgstr ""
+msgstr "キーボードを選択"
 
 #: qml/Wizard/Pages/20-keyboard.qml:71
 msgid "Keyboard language"
-msgstr ""
+msgstr "キーボードの言語"
 
 #: qml/Wizard/Pages/20-keyboard.qml:93
 msgid "Keyboard layout"
-msgstr ""
+msgstr "キーボードレイアウト"
 
 #: qml/Wizard/Pages/20-keyboard.qml:152 qml/Wizard/Pages/30-wifi.qml:213
 #: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/79-system-update.qml:144
@@ -682,19 +676,19 @@ msgstr "接続済み"
 
 #: qml/Wizard/Pages/30-wifi.qml:172
 msgid "Available Wi-Fi networks"
-msgstr ""
+msgstr "利用可能なWi-Fiネットワーク"
 
 #: qml/Wizard/Pages/30-wifi.qml:173
 msgid "No available Wi-Fi networks"
-msgstr ""
+msgstr "利用可能なWi-Fiネットワークがありません"
 
 #: qml/Wizard/Pages/50-timezone.qml:30
 msgid "Time Zone"
-msgstr ""
+msgstr "タイムゾーン"
 
 #: qml/Wizard/Pages/50-timezone.qml:182
 msgid "Enter your city"
-msgstr ""
+msgstr "都市名を入力"
 
 #: qml/Wizard/Pages/60-account.qml:24
 msgid "Personalize Your Device"
@@ -706,51 +700,54 @@ msgstr ""
 
 #: qml/Wizard/Pages/70-passwd-type.qml:40
 msgid "Lock Screen"
-msgstr ""
+msgstr "ロック画面"
 
 #: qml/Wizard/Pages/70-passwd-type.qml:103
 msgctxt "Label: Type of security method"
 msgid "Create new password"
-msgstr ""
+msgstr "新しいパスワードを作成"
 
 #: qml/Wizard/Pages/70-passwd-type.qml:105
 msgctxt "Label: Type of security method"
 msgid "Create passcode (numbers only)"
-msgstr ""
+msgstr "パスコードを作成（数字のみ）"
 
 #: qml/Wizard/Pages/70-passwd-type.qml:107
 msgctxt "Label: Type of security method"
 msgid "No lock code"
-msgstr ""
+msgstr "ロックコードなし"
 
 #: qml/Wizard/Pages/79-system-update.qml:28
+#, fuzzy
 msgid "Update Device"
-msgstr ""
+msgstr "デバイスの更新"
 
 #: qml/Wizard/Pages/79-system-update.qml:55
 msgid ""
 "There is a system update available and ready to install. Afterwards, the "
 "device will automatically restart."
-msgstr ""
+msgstr "システムアップデートがあり、インストールする準備ができています。インストール"
+"後、デバイスは自動的に再起動します。"
 
 #: qml/Wizard/Pages/79-system-update.qml:76
 msgctxt "string identifying name of the update"
 msgid "Ubuntu Touch system"
-msgstr ""
+msgstr "Ubuntu Touchシステム"
 
 #: qml/Wizard/Pages/79-system-update.qml:83
 #, qt-format
 msgctxt "version of the system update"
 msgid "Version %1"
-msgstr ""
+msgstr "バージョン %1"
 
 #: qml/Wizard/Pages/79-system-update.qml:95
+#, fuzzy
 msgid "This could take a few minutes..."
-msgstr ""
+msgstr "これには数分かかる場合があります..."
 
 #: qml/Wizard/Pages/79-system-update.qml:109
 msgid "Install and restart now"
-msgstr ""
+msgstr "今すぐインストールして再起動する"
 
 #: qml/Wizard/Pages/80-finished.qml:93
 msgid "Welcome Back"
@@ -760,11 +757,12 @@ msgstr ""
 #: qml/Wizard/Pages/80-finished.qml:95
 #, qt-format
 msgid "Welcome to %1"
-msgstr ""
+msgstr "%1へようこそ"
 
 #: qml/Wizard/Pages/80-finished.qml:111
+#, fuzzy
 msgid "You are ready to use your device now"
-msgstr ""
+msgstr "これでデバイスを使用する準備が整いました"
 
 #: qml/Wizard/Pages/80-finished.qml:131
 msgid "Continue"
@@ -777,73 +775,76 @@ msgstr ""
 #: qml/Wizard/Pages/passcode-confirm.qml:43
 #: qml/Wizard/Pages/passcode-desktop.qml:104
 msgid "Confirm passcode"
-msgstr ""
+msgstr "パスコードの確認"
 
 #: qml/Wizard/Pages/passcode-confirm.qml:45
 msgid "Incorrect passcode."
-msgstr ""
+msgstr "パスコードが正しくありません。"
 
 #: qml/Wizard/Pages/passcode-confirm.qml:45
 msgctxt "Enter the passcode again"
 msgid "Please re-enter."
-msgstr ""
+msgstr "再度入力してください。"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:31
 msgid "Lock Screen Passcode"
-msgstr ""
+msgstr "ロック画面のパスコード"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:68
 msgid "Enter at least 4 numbers to setup your passcode"
-msgstr ""
+msgstr "パスコードを設定するには、少なくとも4つの数字を入力してください"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:84
 #: qml/Wizard/Pages/passcode-set.qml:54
 msgid "Choose passcode"
-msgstr ""
+msgstr "パスコードを選択"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:139
 msgid "Passcode too short"
-msgstr ""
+msgstr "パスコードが短すぎます"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:141
+#, fuzzy
 msgid "Passcodes match"
-msgstr ""
+msgstr "パスコードの一致"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:143
 msgid "Passcodes do not match"
-msgstr ""
+msgstr "パスコードが一致しません"
 
 #: qml/Wizard/Pages/passcode-set.qml:62
 msgid "Passcode must be at least 4 characters long"
-msgstr ""
+msgstr "パスコードは4文字以上である必要があります"
 
 #: qml/Wizard/Pages/password-set.qml:31
+#, fuzzy
 msgid "Lock Screen Password"
-msgstr ""
+msgstr "ロック画面のパスワード"
 
 #: qml/Wizard/Pages/password-set.qml:68
 msgid "Enter at least 8 characters"
-msgstr ""
+msgstr "８文字以上入力してください"
 
 #: qml/Wizard/Pages/password-set.qml:80
+#, fuzzy
 msgid "Choose password"
-msgstr ""
+msgstr "パスワードを選択"
 
 #: qml/Wizard/Pages/password-set.qml:110
 msgid "Confirm password"
-msgstr ""
+msgstr "パスワードの確認"
 
 #: qml/Wizard/Pages/sim.qml:27
 msgid "No SIM card installed"
-msgstr ""
+msgstr "SIMカードが装着されていません"
 
 #: qml/Wizard/Pages/sim.qml:54
 msgid "SIM card added"
-msgstr ""
+msgstr "SIMカードが追加されました"
 
 #: qml/Wizard/Pages/sim.qml:55
 msgid "You must restart the device to access the mobile network."
-msgstr ""
+msgstr "モバイルネットワークにアクセスするには、デバイスを再起動する必要があります。"
 
 #: qml/Wizard/Pages/sim.qml:59
 msgid "Restart"
@@ -855,23 +856,24 @@ msgstr ""
 
 #: qml/Wizard/Pages/sim.qml:90
 msgid "To proceed with no SIM tap Skip."
-msgstr ""
+msgstr "SIMなしで進むには「スキップ」をタップします。"
 
 #: qml/Wizard/PasswordMeter.qml:87
 msgid "Password too short"
-msgstr ""
+msgstr "パスワードが短すぎます"
 
 #: qml/Wizard/PasswordMeter.qml:89
+#, fuzzy
 msgid "Passwords match"
-msgstr ""
+msgstr "パスワードの一致"
 
 #: qml/Wizard/PasswordMeter.qml:91
 msgid "Passwords do not match"
-msgstr ""
+msgstr "パスワードが一致しません"
 
 #: qml/Wizard/PasswordMeter.qml:95
 msgid "Strong password"
-msgstr ""
+msgstr "強力なパスワード"
 
 #: qml/Wizard/PasswordMeter.qml:97
 msgid "Fair password"
@@ -879,7 +881,7 @@ msgstr ""
 
 #: qml/Wizard/PasswordMeter.qml:99
 msgid "Weak password"
-msgstr ""
+msgstr "脆弱なパスワード"
 
 #: qml/Wizard/PasswordMeter.qml:101
 msgid "Very weak password"
