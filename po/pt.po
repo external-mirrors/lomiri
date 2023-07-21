@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-08 19:08+0000\n"
-"PO-Revision-Date: 2023-06-28 04:33+0000\n"
+"PO-Revision-Date: 2023-07-28 15:08+0000\n"
 "Last-Translator: Ivo Xavier <ivofernandes12@gmail.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/lomiri/lomiri/"
 "pt/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.18.1\n"
+"X-Generator: Weblate 5.0-dev\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:35+0000\n"
 
 #: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
@@ -592,7 +592,7 @@ msgstr "Arraste qualquer app usando três dedos de uma janela para outra"
 
 #: qml/Stage/Stage.qml:827
 msgid "No running apps"
-msgstr "Sem apps em execução"
+msgstr "Sem aplicações em execução"
 
 #: qml/Tutorial/TutorialLeftLong.qml:49
 msgid "Long swipe from the left edge to open the Application Drawer"
