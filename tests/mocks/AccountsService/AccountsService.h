@@ -50,6 +50,10 @@ class AccountsService: public QObject
                 READ enableIndicatorsWhileLocked
                 WRITE setEnableIndicatorsWhileLocked // only available in mock
                 NOTIFY enableIndicatorsWhileLockedChanged)
+    Q_PROPERTY (bool hideNotificationContentWhileLocked
+                READ hideNotificationContentWhileLocked
+                WRITE setHideNotificationContentWhileLocked // only available in mock
+                NOTIFY hideNotificationContentWhileLockedChanged)
     Q_PROPERTY (QString backgroundFile
                 READ backgroundFile
                 WRITE setBackgroundFile // only available in mock
@@ -107,6 +111,8 @@ public:
     void setEnableLauncherWhileLocked(bool enableLauncherWhileLocked);
     bool enableIndicatorsWhileLocked() const;
     void setEnableIndicatorsWhileLocked(bool enableIndicatorsWhileLocked);
+    bool hideNotificationContentWhileLocked() const;
+    void setHideNotificationContentWhileLocked(bool hideNotificationContentWhileLocked);
     QString backgroundFile() const;
     void setBackgroundFile(const QString &backgroundFile);
     bool statsWelcomeScreen() const;
@@ -135,6 +141,7 @@ Q_SIGNALS:
     void enableFingerprintIdentificationChanged();
     void enableLauncherWhileLockedChanged();
     void enableIndicatorsWhileLockedChanged();
+    void hideNotificationContentWhileLockedChanged();
     void backgroundFileChanged();
     void statsWelcomeScreenChanged();
     void passwordDisplayHintChanged();
@@ -150,6 +157,7 @@ private:
     bool m_enableFingerprintIdentification;
     bool m_enableLauncherWhileLocked;
     bool m_enableIndicatorsWhileLocked;
+    bool m_hideNotificationContentWhileLocked;
     QString m_backgroundFile;
     QString m_user;
     bool m_statsWelcomeScreen;

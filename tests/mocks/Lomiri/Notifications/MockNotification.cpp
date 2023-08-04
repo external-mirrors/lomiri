@@ -27,6 +27,7 @@ struct MockNotificationPrivate {
     QString body;
     int value;
     MockNotification::Type type;
+    MockNotification::Urgency urgency = MockNotification::Urgency::Low;
     QString icon;
     QString secondaryIcon;
     QStringList actions;
@@ -195,4 +196,17 @@ void MockNotification::setFullscreen(bool fullscreen)
 
     p->fullscreen = fullscreen;
     Q_EMIT fullscreenChanged(fullscreen);
+}
+
+MockNotification::Urgency MockNotification::getUrgency() const
+{
+    return p->urgency;
+}
+
+void MockNotification::setUrgency(Urgency newUrgency)
+{
+    if(p->urgency != newUrgency) {
+        p->urgency = newUrgency;
+    }
+    Q_EMIT urgencyChanged(newUrgency);
 }

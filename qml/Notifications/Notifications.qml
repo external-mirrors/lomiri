@@ -30,6 +30,7 @@ ListView {
     property real margin
     property bool hasMouse
     property url background: ""
+    property bool privacyMode: false
 
     readonly property bool useModal: snapDecisionProxyModel.count > 0
 
@@ -53,6 +54,7 @@ ListView {
         type: model.type
         hints: model.hints
         iconSource: model.icon
+        privacyMode: notificationList.privacyMode
         secondaryIconSource: model.secondaryIcon ? model.secondaryIcon : ""
         summary: model.summary
         body: model.body

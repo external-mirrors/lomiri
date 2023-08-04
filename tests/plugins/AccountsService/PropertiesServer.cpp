@@ -132,6 +132,7 @@ void PropertiesServer::Reset()
     m_properties["com.lomiri.AccountsService.Input"]["MousePrimaryButton"] = "right";
     m_properties["com.lomiri.AccountsService.SecurityPrivacy"]["EnableLauncherWhileLocked"] = true;
     m_properties["com.lomiri.AccountsService.SecurityPrivacy"]["EnableIndicatorsWhileLocked"] = true;
+    m_properties["com.lomiri.AccountsService.SecurityPrivacy"]["HideNotificationContentWhileLocked"] = false;
     m_properties["com.lomiri.AccountsService.SecurityPrivacy"]["PasswordDisplayHint"] = AccountsService::Keyboard;
     m_properties["com.lomiri.AccountsService.SecurityPrivacy"]["PinCodePromptManager"] = "PinPrompt";
     m_properties["com.ubuntu.location.providers.here.AccountsService"]["LicenseAccepted"] = false;

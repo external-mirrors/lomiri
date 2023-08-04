@@ -25,6 +25,7 @@ AccountsService::AccountsService(QObject* parent)
     m_enableFingerprintIdentification(true),
     m_enableLauncherWhileLocked(true),
     m_enableIndicatorsWhileLocked(true),
+    m_hideNotificationContentWhileLocked(false),
     m_backgroundFile(),
     m_statsWelcomeScreen(true),
     m_failedLogins(0),
@@ -112,6 +113,17 @@ void AccountsService::setEnableIndicatorsWhileLocked(bool enableIndicatorsWhileL
 {
     m_enableIndicatorsWhileLocked = enableIndicatorsWhileLocked;
     Q_EMIT enableIndicatorsWhileLockedChanged();
+}
+
+bool AccountsService::hideNotificationContentWhileLocked() const
+{
+    return m_hideNotificationContentWhileLocked;
+}
+
+void AccountsService::setHideNotificationContentWhileLocked(bool hideNotificationContentWhileLocked)
+{
+    m_hideNotificationContentWhileLocked = hideNotificationContentWhileLocked;
+    Q_EMIT hideNotificationContentWhileLockedChanged();
 }
 
 QString AccountsService::backgroundFile() const

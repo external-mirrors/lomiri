@@ -25,11 +25,12 @@ import Lomiri.Notifications 1.0
 import QtMultimedia 5.0
 
 Item {
-    id: foobar
+    id: notificationTest
 
     width: notificationsRect.width + interactiveControls.width
     height: notificationsRect.height
     property int index: 0
+    property color notificationAreaColor: "white"
 
     Row {
         id: rootRow
@@ -90,6 +91,21 @@ Item {
                                                             "summary": "Photo upload completed",
                                                             "body": "",
                                                             "icon": Qt.resolvedUrl("../../graphics/applicationIcons/facebook.png"),
+                                                            "secondaryIcon": "",
+                                                            "rawActions": ["reply_id", "Dummy"]})
+            n.completed.connect(mockModel.onCompleted)
+            mockModel.append(n)
+        }
+
+        function addEphemeralIconAlertNotification() {
+            var component = Qt.createComponent("Notification.qml")
+            var n = component.createObject("notification", {"nid": index++,
+                                                            "type": Notification.Ephemeral,
+                                                            "urgency": Notification.Critical,
+                                                            "hints": {"x-lomiri-non-shaped-icon": "false"},
+                                                            "summary": "ALERT!",
+                                                            "body": "",
+                                                            "icon": "image://theme/security-alert",
                                                             "secondaryIcon": "",
                                                             "rawActions": ["reply_id", "Dummy"]})
             n.completed.connect(mockModel.onCompleted)
@@ -168,6 +184,7 @@ Item {
 
             width: units.gu(40)
             height: units.gu(115)
+            color: notificationTest.notificationAreaColor
 
             MouseArea{
                 id: clickThroughCatcher
@@ -183,6 +200,7 @@ Item {
                 anchors.fill: parent
                 model: mockModel
                 hasMouse: fakeMouseCB.checked
+                privacyMode: fakeNotificationOff.checked
             }
         }
 
@@ -208,6 +226,12 @@ Item {
                     width: parent.width
                     text: "add an ephemeral"
                     onClicked: rootRow.addEphemeralNotification()
+                }
+
+                Button {
+                    width: parent.width
+                    text: "add a critical alert"
+                    onClicked: rootRow.addEphemeralIconAlertNotification()
                 }
 
                 Button {
@@ -261,6 +285,21 @@ Item {
                 RowLayout {
                     Layout.fillWidth: true
                     CheckBox {
+                        id: fakeNotificationOff
+                        checked: false
+                    }
+                    Column {
+                        Label {
+                            Layout.fillWidth: true
+                            Layout.fillHeight: true
+                            text: "Privacy mode"
+                        }
+                    }
+                }
+
+                RowLayout {
+                    Layout.fillWidth: true
+                    CheckBox {
                         id: fakeMouseCB
                     }
                     Label {
@@ -275,7 +314,29 @@ Item {
                     checked: false
                 }
             }
-        }
+
+           ListView {
+               anchors.bottom: parent.bottom
+               width: parent.width
+               height: units.gu(4)
+               clip:true
+               orientation: ListView.Horizontal
+               boundsBehavior: ListView.StopAtBounds
+               flickableDirection: Flickable.HorizontalFlick
+               model: [LomiriColors.ash, LomiriColors.blue, LomiriColors.graphite, LomiriColors.green, LomiriColors.inkstone, LomiriColors.jet, LomiriColors.orange, LomiriColors.porcelain, LomiriColors.purple, LomiriColors.red, LomiriColors.silk]
+               delegate: Rectangle {
+                   width: units.gu(8)
+                   height: units.gu(4)
+                   color: modelData
+                   border.color: "grey"
+
+                   MouseArea {
+                       anchors.fill: parent
+                       onClicked: notificationTest.notificationAreaColor = modelData
+                   }
+               }
+           }
+       }
 
         LomiriTestCase {
             id: root
@@ -398,6 +459,19 @@ Item {
                     summary: "SIM PIN screen"
                     body: "Enter your PIN to unlock the SIM"
                     fullscreen: true
+                },
+                Notification {
+                    nid: 11
+                    type: Notification.Interactive
+                    hints: {"x-lomiri-private-affirmative-tint": "false",
+                            "sound-file": "dummy.ogg"}
+                    summary: "Interactive notification critical"
+                    body: "This is a notification that can be clicked"
+                    icon: "image://theme/security-alert"
+                    secondaryIcon: ""
+                    value: 0
+                    rawActions: ["reply_id", "Dummy"]
+                    urgency: Notification.Critical
                 }
             ]
 
@@ -544,6 +618,22 @@ Item {
                     buttonRowVisible: false,
                     buttonTinted: true,
                     hasSound: false,
+                    valueVisible: false,
+                    valueLabelVisible: false,
+                    valueTinted: false
+                },
+                {
+                    tag: "Interactive critical notification",
+                    n: nlist[10],
+                    summaryVisible: true,
+                    bodyVisible: true,
+                    iconVisible: true,
+                    centeredIconVisible: false,
+                    shaped: true,
+                    secondaryIconVisible: false,
+                    buttonRowVisible: false,
+                    buttonTinted: false,
+                    hasSound: true,
                     valueVisible: false,
                     valueLabelVisible: false,
                     valueTinted: false
@@ -868,6 +958,37 @@ Item {
                 notification0.closeNotification();
                 waitForRendering(notifications);
                 verify(!notifications.topmostIsFullscreen)
+            }
+
+            function test_privacyMode() {
+
+                var data = test_NotificationRenderer_data();
+                // fill the model
+                data.forEach(function(notification) {
+                    mockModel.append(notification.n);
+                    notification.n.completed.connect(mockModel.onCompleted);
+                })
+
+                notifications.privacyMode = true;
+
+                // make sure the view is properly updated before going on
+                notifications.forceLayout();
+                waitForRendering(notifications);
+
+                for (var i = 0; i < mockModel.count; ++i) {
+                    var n = findChild(notifications, "notification" + i)
+                    if (n.type === Notification.PlaceHolder)
+                        continue;
+
+                    var privacyModeCondition = n.notification.urgency !== Notification.Critical && ( n.type === Notification.Ephemeral || n.type === Notification.Interactive)
+
+                    waitForRendering(n);
+                    var blurEffect = findChild(n, "blurEffect");
+                    compare(blurEffect.visible, n.notification.icon !== "" && privacyModeCondition)
+
+                    var privacySummaryLabel = findChild(n, "privacySummaryLabel");
+                    compare(privacySummaryLabel.visible, privacyModeCondition)
+                }
             }
 
             function cleanupTestCase() {
