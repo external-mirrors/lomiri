@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-08 19:08+0000\n"
-"PO-Revision-Date: 2023-02-03 04:35+0000\n"
+"PO-Revision-Date: 2023-08-08 18:04+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/lomiri/"
 "lomiri/nb_NO/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.16-dev\n"
+"X-Generator: Weblate 5.0-dev\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:35+0000\n"
 
 #: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
@@ -640,10 +640,9 @@ msgstr "Neste"
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
 #: qml/Wizard/Pages/10-welcome-update.qml:92
-#, fuzzy, qt-format
-#| msgid "Welcome to "
+#, qt-format
 msgid "Welcome to %1 %2"
-msgstr "Velkommen til "
+msgstr "Velkommen til %1 %2"
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
 #: qml/Wizard/Pages/10-welcome-update.qml:108
