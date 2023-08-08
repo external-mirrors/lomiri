@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-08 19:08+0000\n"
-"PO-Revision-Date: 2023-07-28 15:08+0000\n"
+"PO-Revision-Date: 2023-08-08 18:04+0000\n"
 "Last-Translator: Ivo Xavier <ivofernandes12@gmail.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/lomiri/lomiri/"
 "pt/>\n"
@@ -584,7 +584,7 @@ msgstr "Ligar de volta"
 
 #: qml/Panel/PanelMenuPage.qml:92
 msgid "Back"
-msgstr "Retroceder"
+msgstr "Voltar"
 
 #: qml/Stage/SideStage.qml:80
 msgid "Drag using 3 fingers any application from one window to the other"
