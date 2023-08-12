@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-08 19:08+0000\n"
-"PO-Revision-Date: 2023-07-16 08:05+0000\n"
+"PO-Revision-Date: 2023-08-20 08:04+0000\n"
 "Last-Translator: NPL <alterlinuxer@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/lomiri/lomiri/"
 "ja/>\n"
@@ -167,11 +167,11 @@ msgstr "本当に再起動しますか？"
 
 #: qml/Components/Dialogs.qml:215
 msgid "No"
-msgstr "いいえ"
+msgstr "No"
 
 #: qml/Components/Dialogs.qml:223
 msgid "Yes"
-msgstr "はい"
+msgstr "Yes"
 
 #: qml/Components/Dialogs.qml:243
 msgctxt "Title: Power off/Restart dialog"
