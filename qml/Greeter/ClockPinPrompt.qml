@@ -175,8 +175,8 @@ Item {
             }
 
             onPressed: {
-                 if (state !== "ENTRY_MODE") {
-                     root.state = "ENTRY_MODE"
+                if (state !== "ENTRY_MODE") {
+                    root.state = "ENTRY_MODE"
                 }
             }
 
@@ -241,41 +241,47 @@ Item {
             }
         }
 
-        // dots
         Repeater {
             id: repeater
 
             objectName: "dotRepeater"
             model: root.maxnum
 
-            Rectangle {
-                id: selectionRect
-                height: bigR / 2.2
-                width: height
-                radius: height / 2
-                color: "transparent"
+            Item {
+                id: numberComp
+                property int bigR: root.state === "ENTRY_MODE" || root.state === "TEST_MODE" || root.state === "EDIT_MODE" ? main.height / 3 : 0
+                property int radius: height / 2
+                property int offsetRadius: radius
                 property int number: index
                 property alias dot: point
                 property alias animation: anim
 
-                property int bigR: root.state === "ENTRY_MODE" ? main.height / 3 : 0
-                property int offsetRadius: radius
+                height: bigR / 2.2
+                width: height
                 x: (main.width / 2) + bigR * Math.sin(2 * Math.PI * index / root.maxnum) - offsetRadius
                 y: (main.height / 2) - bigR * Math.cos(2 * Math.PI * index / root.maxnum) - offsetRadius
 
-                    Text {
-                        id: point
-                        font.pixelSize: main.height / 10
-                        anchors.centerIn: parent
-                        color: d.disabled
-                        text: index
-                        opacity: root.state === "ENTRY_MODE" ? 1 : 0
-                        property bool selected: false
+                Rectangle {
+                    id: selectionRect
+                    anchors.fill: parent
+                    radius: numberComp.radius
+                    color: d.selected
+                    opacity: 0.1
+                }
 
-                        Behavior on opacity {
-                            LomiriNumberAnimation{ duration: 500 }
-                        }
+                Text {
+                    id: point
+                    font.pixelSize: main.height / 10
+                    anchors.centerIn: parent
+                    color: d.selected
+                    text: index
+                    opacity: root.state === "ENTRY_MODE" ? 1 : 0
+                    property bool selected: false
+
+                    Behavior on opacity {
+                        LomiriNumberAnimation{ duration: 500 }
                     }
+                }
 
                 MouseArea {
                     anchors.fill: parent
@@ -295,13 +301,13 @@ Item {
                         PropertyAnimation {
                             target: point
                             property: "color"
-                            to: d.selected
+                            to: d.disabled
                             duration: 100
                         }
                         PropertyAnimation {
                             target: selectionRect
                             property: "color"
-                            to: Qt.rgba(d.selected.r, d.selected.g, d.selected.b, 0.3)
+                            to: d.selectedCircle
                             duration: 100
                         }
                     }
@@ -309,13 +315,13 @@ Item {
                         PropertyAnimation {
                             target: point
                             property: "color"
-                            to: d.disabled
+                            to: d.selected
                             duration: 400
                         }
                         PropertyAnimation {
                             target: selectionRect
                             property: "color"
-                            to: "transparent"
+                            to: d.selected
                             duration: 400
                         }
                     }
