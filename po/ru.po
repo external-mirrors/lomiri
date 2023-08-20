@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-08 19:08+0000\n"
-"PO-Revision-Date: 2023-08-20 08:04+0000\n"
+"PO-Revision-Date: 2023-08-27 22:54+0000\n"
 "Last-Translator: AlTeveD2v <nuromskij_em_0819@1511.ru>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/lomiri/lomiri/ru/"
 ">\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.0-dev\n"
+"X-Generator: Weblate 5.0.1-dev\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:35+0000\n"
 
 #: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
@@ -806,10 +806,8 @@ msgid "Lock Screen Passcode"
 msgstr "Код блокировки экрана"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:68
-#, fuzzy
-#| msgid "Enter 4 numbers to setup your passcode"
 msgid "Enter at least 4 numbers to setup your passcode"
-msgstr "Введите код блокировки из 4 цифр"
+msgstr "Введите не менее 4 цифр, чтобы установить пароль"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:84
 #: qml/Wizard/Pages/passcode-set.qml:54
@@ -829,10 +827,8 @@ msgid "Passcodes do not match"
 msgstr "Коды не совпадают"
 
 #: qml/Wizard/Pages/passcode-set.qml:62
-#, fuzzy
-#| msgid "Passcode must be 4 characters long"
 msgid "Passcode must be at least 4 characters long"
-msgstr "Код должен содержать 4 символа"
+msgstr "Код должен содержать не менее 4 символов"
 
 #: qml/Wizard/Pages/password-set.qml:31
 msgid "Lock Screen Password"
