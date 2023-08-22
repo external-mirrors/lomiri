@@ -295,7 +295,7 @@ StyledItem {
         id: availableDesktopAreaItem
         anchors.fill: parent
         anchors.topMargin: panel.fullscreenMode ? 0 : panel.minimizedPanelHeight
-        anchors.leftMargin: launcher.lockedVisible ? launcher.panelWidth : 0
+        anchors.leftMargin: (launcher.lockedByUser && launcher.lockAllowed) ? launcher.panelWidth : 0
     }
 
     GSettings {
