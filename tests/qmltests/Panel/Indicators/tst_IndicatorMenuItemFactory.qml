@@ -302,6 +302,27 @@ Item {
             compare(loader.item.value, data.value, "Value does not match data");
         }
 
+        function test_create_levelMenu_data() {
+            return [
+                {label: "testLabel1", value: 10 },
+                {label: "testLabel2", value: 55 },
+            ];
+        }
+
+        function test_create_levelMenu(data) {
+            menuData.type = "org.ayatana.indicator.level"
+            menuData.label = data.label;
+            menuData.ext = {
+                xAyatanaLevel: data.value
+            };
+
+            loadData(menuData);
+            compare(loader.item.objectName, "levelMenu", "Should have created a level menu");
+
+            compare(loader.item.text, data.label, "Label does not match data");
+            compare(loader.item.value, data.value, "Value does not match data");
+        }
+
         function test_create_standardMenu_data() {
             return [
                 {label: "testLabel1", enabled: true, icon: "file:///testIcon1" },
