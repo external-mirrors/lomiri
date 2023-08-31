@@ -80,7 +80,7 @@ IndicatorDelegate {
             horizontalAlignment: Text.AlignHCenter
 
             opacity: 1.0
-            font.family: "Lomiri"
+            font.family: "Ubuntu"
             fontSize: "medium"
             font.weight: Font.Light
             color: root.color
