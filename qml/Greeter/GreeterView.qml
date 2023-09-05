@@ -15,11 +15,11 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.4
+import QtQuick 2.12
 import QtQuick.Window 2.2
 import QtGraphicalEffects 1.12
-import Ubuntu.Components 1.3
-import Ubuntu.Telephony 0.1 as Telephony
+import Lomiri.Components 1.3
+import Lomiri.Telephony 0.1 as Telephony
 import "../Components"
 
 FocusScope {
@@ -171,7 +171,7 @@ FocusScope {
 
             boxVerticalOffset: (height - highlightedHeight -
                                inputMethodRect.height) / 2
-            Behavior on boxVerticalOffset { UbuntuNumberAnimation {} }
+            Behavior on boxVerticalOffset { LomiriNumberAnimation {} }
 
             enabled: !coverPage.shown && visible
             visible: !delayedLockscreen.visible
@@ -325,7 +325,7 @@ FocusScope {
             Transition {
                 from: "*"
                 to: "*"
-                UbuntuNumberAnimation {
+                LomiriNumberAnimation {
                     property: "opacity";
                 }
             }

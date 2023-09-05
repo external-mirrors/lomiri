@@ -151,7 +151,7 @@ msgid "Log Out"
 msgstr "Logga ut"
 
 #: qml/Components/Dialogs.qml:199 qml/Components/Dialogs.qml:284
-#: qml/Greeter/NarrowView.qml:218 qml/Wizard/Pages/passcode-confirm.qml:32
+#: qml/Greeter/GreeterView.qml:451 qml/Wizard/Pages/passcode-confirm.qml:32
 #: qml/Wizard/Pages/passcode-set.qml:32
 msgid "Cancel"
 msgstr "Avbryt"
@@ -360,11 +360,11 @@ msgstr "Alt + F4"
 msgid "Closes the current window."
 msgstr "Stänger det aktuella fönstret."
 
-#: qml/Components/Lockscreen.qml:214 qml/Greeter/NarrowView.qml:238
+#: qml/Components/Lockscreen.qml:212 qml/Greeter/GreeterView.qml:471
 msgid "Return to Call"
 msgstr "Tillbaka till samtal"
 
-#: qml/Components/Lockscreen.qml:214
+#: qml/Components/Lockscreen.qml:212
 msgid "Emergency Call"
 msgstr "Nödsamtal"
 
@@ -427,7 +427,7 @@ msgstr "Svep med två fingrar för att scrolla."
 msgid "Find more settings in the system settings."
 msgstr "Hitta fler inställningar i systeminställningarna."
 
-#: qml/Greeter/CoverPage.qml:158 tests/qmltests/Greeter/tst_NarrowView.qml:562
+#: qml/Greeter/CoverPage.qml:127
 msgid "Unlock"
 msgstr "Lås upp"
 
@@ -466,7 +466,7 @@ msgstr "Ange lösenfras för att låsa upp"
 msgid "Enter passcode to unlock"
 msgstr "Ange lösenkod för att låsa upp"
 
-#: qml/Greeter/NarrowView.qml:238
+#: qml/Greeter/GreeterView.qml:471
 msgid "Emergency"
 msgstr "Nödläge"
 

@@ -149,7 +149,7 @@ msgid "Log Out"
 msgstr "로그아웃"
 
 #: qml/Components/Dialogs.qml:199 qml/Components/Dialogs.qml:284
-#: qml/Greeter/NarrowView.qml:218 qml/Wizard/Pages/passcode-confirm.qml:32
+#: qml/Greeter/GreeterView.qml:451 qml/Wizard/Pages/passcode-confirm.qml:32
 #: qml/Wizard/Pages/passcode-set.qml:32
 msgid "Cancel"
 msgstr "취소"
@@ -358,11 +358,11 @@ msgstr "Alt + F4"
 msgid "Closes the current window."
 msgstr "현재 창을 닫습니다."
 
-#: qml/Components/Lockscreen.qml:214 qml/Greeter/NarrowView.qml:238
+#: qml/Components/Lockscreen.qml:212 qml/Greeter/GreeterView.qml:471
 msgid "Return to Call"
 msgstr "다시 전화하기"
 
-#: qml/Components/Lockscreen.qml:214
+#: qml/Components/Lockscreen.qml:212
 msgid "Emergency Call"
 msgstr "긴급 통화"
 
@@ -424,7 +424,7 @@ msgstr "두 손가락으로 쓸어 스크롤하세요."
 msgid "Find more settings in the system settings."
 msgstr "시스템 설정에서 더 많은 설정을 찾아보세요."
 
-#: qml/Greeter/CoverPage.qml:158 tests/qmltests/Greeter/tst_NarrowView.qml:562
+#: qml/Greeter/CoverPage.qml:127
 msgid "Unlock"
 msgstr "잠금 해제"
 
@@ -462,7 +462,7 @@ msgstr "잠금을 해제하려면 암호를 입력해 주세요"
 msgid "Enter passcode to unlock"
 msgstr "비밀번호를 입력해 주세요"
 
-#: qml/Greeter/NarrowView.qml:238
+#: qml/Greeter/GreeterView.qml:471
 msgid "Emergency"
 msgstr "응급 상황"
 

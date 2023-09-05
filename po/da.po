@@ -150,7 +150,7 @@ msgid "Log Out"
 msgstr "Log af"
 
 #: qml/Components/Dialogs.qml:199 qml/Components/Dialogs.qml:284
-#: qml/Greeter/NarrowView.qml:218 qml/Wizard/Pages/passcode-confirm.qml:32
+#: qml/Greeter/GreeterView.qml:451 qml/Wizard/Pages/passcode-confirm.qml:32
 #: qml/Wizard/Pages/passcode-set.qml:32
 msgid "Cancel"
 msgstr "Annullér"
@@ -365,11 +365,11 @@ msgstr "Alt + F4"
 msgid "Closes the current window."
 msgstr "Lukker nuværende vindue."
 
-#: qml/Components/Lockscreen.qml:214 qml/Greeter/NarrowView.qml:238
+#: qml/Components/Lockscreen.qml:212 qml/Greeter/GreeterView.qml:471
 msgid "Return to Call"
 msgstr "Vend tilbage til opkald"
 
-#: qml/Components/Lockscreen.qml:214
+#: qml/Components/Lockscreen.qml:212
 msgid "Emergency Call"
 msgstr "Nødopkald"
 
@@ -431,7 +431,7 @@ msgstr "Swipe med to fingre for at scrolle."
 msgid "Find more settings in the system settings."
 msgstr "Find flere indstillinger i system instillinger."
 
-#: qml/Greeter/CoverPage.qml:158 tests/qmltests/Greeter/tst_NarrowView.qml:562
+#: qml/Greeter/CoverPage.qml:127
 msgid "Unlock"
 msgstr "Lås op"
 
@@ -474,7 +474,7 @@ msgstr "Angiv adgangskode for at låse op"
 msgid "Enter passcode to unlock"
 msgstr "Indtast adgangskode for at låse op"
 
-#: qml/Greeter/NarrowView.qml:238
+#: qml/Greeter/GreeterView.qml:471
 msgid "Emergency"
 msgstr "Nødsituation"
 

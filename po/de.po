@@ -149,7 +149,7 @@ msgid "Log Out"
 msgstr "Abmelden"
 
 #: qml/Components/Dialogs.qml:199 qml/Components/Dialogs.qml:284
-#: qml/Greeter/NarrowView.qml:218 qml/Wizard/Pages/passcode-confirm.qml:32
+#: qml/Greeter/GreeterView.qml:451 qml/Wizard/Pages/passcode-confirm.qml:32
 #: qml/Wizard/Pages/passcode-set.qml:32
 msgid "Cancel"
 msgstr "Abbrechen"
@@ -358,11 +358,11 @@ msgstr "Alt + F4"
 msgid "Closes the current window."
 msgstr "Schließt das aktive Fenster."
 
-#: qml/Components/Lockscreen.qml:214 qml/Greeter/NarrowView.qml:238
+#: qml/Components/Lockscreen.qml:212 qml/Greeter/GreeterView.qml:471
 msgid "Return to Call"
 msgstr "Zu Anruf zurückkehren"
 
-#: qml/Components/Lockscreen.qml:214
+#: qml/Components/Lockscreen.qml:212
 msgid "Emergency Call"
 msgstr "Notruf"
 
@@ -427,7 +427,7 @@ msgstr "Mit zwei Fingern wischen um zu scrollen."
 msgid "Find more settings in the system settings."
 msgstr "Finde mehr Einstellungen in den System-Settings."
 
-#: qml/Greeter/CoverPage.qml:158 tests/qmltests/Greeter/tst_NarrowView.qml:562
+#: qml/Greeter/CoverPage.qml:127
 msgid "Unlock"
 msgstr "Entsperren"
 
@@ -470,7 +470,7 @@ msgstr "Passwort zum Entsperren eingeben"
 msgid "Enter passcode to unlock"
 msgstr "PIN eingeben zum Entsperren"
 
-#: qml/Greeter/NarrowView.qml:238
+#: qml/Greeter/GreeterView.qml:471
 msgid "Emergency"
 msgstr "Notruf"
 

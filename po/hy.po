@@ -149,7 +149,7 @@ msgid "Log Out"
 msgstr "Դուրս գալ համակարգից"
 
 #: qml/Components/Dialogs.qml:199 qml/Components/Dialogs.qml:284
-#: qml/Greeter/NarrowView.qml:218 qml/Wizard/Pages/passcode-confirm.qml:32
+#: qml/Greeter/GreeterView.qml:451 qml/Wizard/Pages/passcode-confirm.qml:32
 #: qml/Wizard/Pages/passcode-set.qml:32
 msgid "Cancel"
 msgstr "Չեղարկել"
@@ -360,11 +360,11 @@ msgstr "Alt + F4"
 msgid "Closes the current window."
 msgstr "Փակում է տվյալ պատուհանը։"
 
-#: qml/Components/Lockscreen.qml:214 qml/Greeter/NarrowView.qml:238
+#: qml/Components/Lockscreen.qml:212 qml/Greeter/GreeterView.qml:471
 msgid "Return to Call"
 msgstr "Վերադառնալ զանգին"
 
-#: qml/Components/Lockscreen.qml:214
+#: qml/Components/Lockscreen.qml:212
 msgid "Emergency Call"
 msgstr "Շտապօգնություն"
 
@@ -428,7 +428,7 @@ msgstr "Իջացրեք/բարցրաձրեք երկու մատներով ոլոր
 msgid "Find more settings in the system settings."
 msgstr "Գտեք ուրիշ կարգավորումներ «Համակարգային կարգավորումներ» էջում։"
 
-#: qml/Greeter/CoverPage.qml:158 tests/qmltests/Greeter/tst_NarrowView.qml:562
+#: qml/Greeter/CoverPage.qml:127
 msgid "Unlock"
 msgstr "Ապաբլոկավորել"
 
@@ -467,7 +467,7 @@ msgstr "Մուտքագրե՛ք անցաբառը"
 msgid "Enter passcode to unlock"
 msgstr "Մոտքագրե՛ք կոդը"
 
-#: qml/Greeter/NarrowView.qml:238
+#: qml/Greeter/GreeterView.qml:471
 msgid "Emergency"
 msgstr "Շտապօգնություն"
 

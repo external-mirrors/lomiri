@@ -149,7 +149,7 @@ msgid "Log Out"
 msgstr "লগআউট করুন"
 
 #: qml/Components/Dialogs.qml:199 qml/Components/Dialogs.qml:284
-#: qml/Greeter/NarrowView.qml:218 qml/Wizard/Pages/passcode-confirm.qml:32
+#: qml/Greeter/GreeterView.qml:451 qml/Wizard/Pages/passcode-confirm.qml:32
 #: qml/Wizard/Pages/passcode-set.qml:32
 msgid "Cancel"
 msgstr "বাতিল"
@@ -360,11 +360,11 @@ msgstr "অল্টার কী + F4 কী"
 msgid "Closes the current window."
 msgstr "বর্তমান উইন্ডোটি বন্ধ করে।"
 
-#: qml/Components/Lockscreen.qml:214 qml/Greeter/NarrowView.qml:238
+#: qml/Components/Lockscreen.qml:212 qml/Greeter/GreeterView.qml:471
 msgid "Return to Call"
 msgstr "কল এ ফিরে যান"
 
-#: qml/Components/Lockscreen.qml:214
+#: qml/Components/Lockscreen.qml:212
 msgid "Emergency Call"
 msgstr "জরুরী কল"
 
@@ -427,7 +427,7 @@ msgstr "স্ক্রলের জন্য আঙুল চালান।"
 msgid "Find more settings in the system settings."
 msgstr "সিস্টেম সেটিংসে আরও সেটিংস খুজুন।"
 
-#: qml/Greeter/CoverPage.qml:158 tests/qmltests/Greeter/tst_NarrowView.qml:562
+#: qml/Greeter/CoverPage.qml:127
 msgid "Unlock"
 msgstr "তালা খুলুন"
 
@@ -466,7 +466,7 @@ msgstr "তালা খোলার জন্য পাসফ্রেজ ল�
 msgid "Enter passcode to unlock"
 msgstr "তালা খোলার জন্য পাসকোড লিখুন"
 
-#: qml/Greeter/NarrowView.qml:238
+#: qml/Greeter/GreeterView.qml:471
 msgid "Emergency"
 msgstr "জরুরী"
 

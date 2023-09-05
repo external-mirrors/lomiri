@@ -152,7 +152,7 @@ msgid "Log Out"
 msgstr "اخرج"
 
 #: qml/Components/Dialogs.qml:199 qml/Components/Dialogs.qml:284
-#: qml/Greeter/NarrowView.qml:218 qml/Wizard/Pages/passcode-confirm.qml:32
+#: qml/Greeter/GreeterView.qml:451 qml/Wizard/Pages/passcode-confirm.qml:32
 #: qml/Wizard/Pages/passcode-set.qml:32
 msgid "Cancel"
 msgstr "ألغ"
@@ -361,11 +361,11 @@ msgstr "Alt + F4"
 msgid "Closes the current window."
 msgstr "يغلق النافذة الحالية."
 
-#: qml/Components/Lockscreen.qml:214 qml/Greeter/NarrowView.qml:238
+#: qml/Components/Lockscreen.qml:212 qml/Greeter/GreeterView.qml:471
 msgid "Return to Call"
 msgstr "عُد للمكالمة"
 
-#: qml/Components/Lockscreen.qml:214
+#: qml/Components/Lockscreen.qml:212
 msgid "Emergency Call"
 msgstr "مكالمة طوارئ"
 
@@ -425,7 +425,7 @@ msgstr "اسحب بإصبعين للتمرير."
 msgid "Find more settings in the system settings."
 msgstr "جد إعدادات إضافية في إعدادات النظام."
 
-#: qml/Greeter/CoverPage.qml:158 tests/qmltests/Greeter/tst_NarrowView.qml:562
+#: qml/Greeter/CoverPage.qml:127
 msgid "Unlock"
 msgstr "فك الإيصاد"
 
@@ -470,7 +470,7 @@ msgstr "أدخِل العبارة السرية لفك الإيصاد"
 msgid "Enter passcode to unlock"
 msgstr "أدخِل الرمز السرّي لفك الإيصاد"
 
-#: qml/Greeter/NarrowView.qml:238
+#: qml/Greeter/GreeterView.qml:471
 msgid "Emergency"
 msgstr "طوارئ"
 

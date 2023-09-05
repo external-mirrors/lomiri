@@ -149,7 +149,7 @@ msgid "Log Out"
 msgstr "Termina sessione"
 
 #: qml/Components/Dialogs.qml:199 qml/Components/Dialogs.qml:284
-#: qml/Greeter/NarrowView.qml:218 qml/Wizard/Pages/passcode-confirm.qml:32
+#: qml/Greeter/GreeterView.qml:451 qml/Wizard/Pages/passcode-confirm.qml:32
 #: qml/Wizard/Pages/passcode-set.qml:32
 msgid "Cancel"
 msgstr "Annulla"
@@ -358,11 +358,11 @@ msgstr "Alt + F4"
 msgid "Closes the current window."
 msgstr "Chiude la finestra attuale."
 
-#: qml/Components/Lockscreen.qml:214 qml/Greeter/NarrowView.qml:238
+#: qml/Components/Lockscreen.qml:212 qml/Greeter/GreeterView.qml:471
 msgid "Return to Call"
 msgstr "Torna alla chiamata"
 
-#: qml/Components/Lockscreen.qml:214
+#: qml/Components/Lockscreen.qml:212
 msgid "Emergency Call"
 msgstr "Chiamata di emergenza"
 
@@ -426,7 +426,7 @@ msgstr "Trascina con due dita per scorrere."
 msgid "Find more settings in the system settings."
 msgstr "Trova più impostazioni nelle impostazioni di sistema."
 
-#: qml/Greeter/CoverPage.qml:158 tests/qmltests/Greeter/tst_NarrowView.qml:562
+#: qml/Greeter/CoverPage.qml:127
 msgid "Unlock"
 msgstr "Sblocca"
 
@@ -469,7 +469,7 @@ msgstr "Inserire passphrase per sbloccare"
 msgid "Enter passcode to unlock"
 msgstr "Inserire codice per sbloccare"
 
-#: qml/Greeter/NarrowView.qml:238
+#: qml/Greeter/GreeterView.qml:471
 msgid "Emergency"
 msgstr "Emergenza"
 

@@ -151,7 +151,7 @@ msgid "Log Out"
 msgstr "ログアウト"
 
 #: qml/Components/Dialogs.qml:199 qml/Components/Dialogs.qml:284
-#: qml/Greeter/NarrowView.qml:218 qml/Wizard/Pages/passcode-confirm.qml:32
+#: qml/Greeter/GreeterView.qml:451 qml/Wizard/Pages/passcode-confirm.qml:32
 #: qml/Wizard/Pages/passcode-set.qml:32
 msgid "Cancel"
 msgstr "キャンセル"
@@ -358,11 +358,11 @@ msgstr "Alt + F4"
 msgid "Closes the current window."
 msgstr "現在のウィンドウを閉じる。"
 
-#: qml/Components/Lockscreen.qml:214 qml/Greeter/NarrowView.qml:238
+#: qml/Components/Lockscreen.qml:212 qml/Greeter/GreeterView.qml:471
 msgid "Return to Call"
 msgstr ""
 
-#: qml/Components/Lockscreen.qml:214
+#: qml/Components/Lockscreen.qml:212
 msgid "Emergency Call"
 msgstr "緊急通報"
 
@@ -423,7 +423,7 @@ msgstr "2本の指でスワイプしてスクロールします。"
 msgid "Find more settings in the system settings."
 msgstr "その他の設定はシステム設定でご確認ください。"
 
-#: qml/Greeter/CoverPage.qml:158 tests/qmltests/Greeter/tst_NarrowView.qml:562
+#: qml/Greeter/CoverPage.qml:127
 msgid "Unlock"
 msgstr "ロックの解除"
 
@@ -462,7 +462,7 @@ msgstr "パスフレーズを入力してロックを解除する"
 msgid "Enter passcode to unlock"
 msgstr "パスコードを入力してロックを解除する"
 
-#: qml/Greeter/NarrowView.qml:238
+#: qml/Greeter/GreeterView.qml:471
 msgid "Emergency"
 msgstr "緊急"
 
