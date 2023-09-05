@@ -23,6 +23,7 @@ import "../../../qml/Greeter"
 import LightDMController 0.1
 import LightDM.FullLightDM 0.1 as LightDM
 import Lomiri.Components 1.3
+import Lomiri.Components.ListItems 1.3 as ListItem
 import Lomiri.Telephony 0.1 as Telephony
 import Lomiri.SelfTest 0.1 as UT
 
