@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-08 19:08+0000\n"
-"PO-Revision-Date: 2023-02-27 18:36+0000\n"
-"Last-Translator: Luna Jernberg <droidbittin@gmail.com>\n"
+"PO-Revision-Date: 2023-09-07 04:54+0000\n"
+"Last-Translator: bittin1ddc447d824349b2 <bittin@reimu.nl>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/lomiri/lomiri/sv/"
 ">\n"
 "Language: sv\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.16-dev\n"
+"X-Generator: Weblate 5.0.1-dev\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:36+0000\n"
 
 #: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
@@ -582,7 +582,7 @@ msgstr "Ring upp"
 
 #: qml/Panel/PanelMenuPage.qml:92
 msgid "Back"
-msgstr "Tillbaka"
+msgstr "Bakåt"
 
 #: qml/Stage/SideStage.qml:80
 msgid "Drag using 3 fingers any application from one window to the other"
@@ -634,17 +634,15 @@ msgstr "Nästa"
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
 #: qml/Wizard/Pages/10-welcome-update.qml:92
-#, fuzzy, qt-format
-#| msgid "Welcome to "
+#, qt-format
 msgid "Welcome to %1 %2"
-msgstr "Välkommen till "
+msgstr "Välkommen till %1%2"
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
 #: qml/Wizard/Pages/10-welcome-update.qml:108
-#, fuzzy, qt-format
-#| msgid "We will make sure your device is ready to use "
+#, qt-format
 msgid "We will make sure your device is ready to use %1 %2"
-msgstr "Vi kommer att försäkra oss om att din enhet är redo att användas "
+msgstr "Vi kommer att försäkra oss om att din enhet är redo att användas %1%2"
 
 #: qml/Wizard/Pages/11-changelog.qml:28
 msgid "What's new"
@@ -736,12 +734,9 @@ msgstr ""
 "kommer enheten att startas om automatiskt."
 
 #: qml/Wizard/Pages/79-system-update.qml:76
-#, fuzzy
-#| msgctxt "string identifying name of the update"
-#| msgid "Lomiri Touch system"
 msgctxt "string identifying name of the update"
 msgid "Ubuntu Touch system"
-msgstr "Lomiri Touch system"
+msgstr "Ubuntu Touch system"
 
 #: qml/Wizard/Pages/79-system-update.qml:83
 #, qt-format
@@ -763,10 +758,9 @@ msgstr "Välkommen tillbaka"
 
 #. TRANSLATORS: %1 contains the distro name
 #: qml/Wizard/Pages/80-finished.qml:95
-#, fuzzy, qt-format
-#| msgid "Welcome to "
+#, qt-format
 msgid "Welcome to %1"
-msgstr "Välkommen till "
+msgstr "Välkommen till %1"
 
 #: qml/Wizard/Pages/80-finished.qml:111
 msgid "You are ready to use your device now"
@@ -799,10 +793,8 @@ msgid "Lock Screen Passcode"
 msgstr "Lösenkod för låsskärm"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:68
-#, fuzzy
-#| msgid "Enter 4 numbers to setup your passcode"
 msgid "Enter at least 4 numbers to setup your passcode"
-msgstr "Ange fyra nummer för att ställa in din lösenkod"
+msgstr "Ange minst fyra nummer för att ställa in ditt lösenord"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:84
 #: qml/Wizard/Pages/passcode-set.qml:54
@@ -822,10 +814,8 @@ msgid "Passcodes do not match"
 msgstr "Lösenkoder matchar ej"
 
 #: qml/Wizard/Pages/passcode-set.qml:62
-#, fuzzy
-#| msgid "Passcode must be 4 characters long"
 msgid "Passcode must be at least 4 characters long"
-msgstr "Lösenkoden måste vara fyra tecken lång"
+msgstr "Lösenordet måste vara minst 4 tecken långt"
 
 #: qml/Wizard/Pages/password-set.qml:31
 msgid "Lock Screen Password"
