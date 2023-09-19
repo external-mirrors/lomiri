@@ -149,7 +149,7 @@ msgid "Log Out"
 msgstr "Uitloggen"
 
 #: qml/Components/Dialogs.qml:199 qml/Components/Dialogs.qml:284
-#: qml/Greeter/NarrowView.qml:218 qml/Wizard/Pages/passcode-confirm.qml:32
+#: qml/Greeter/GreeterView.qml:451 qml/Wizard/Pages/passcode-confirm.qml:32
 #: qml/Wizard/Pages/passcode-set.qml:32
 msgid "Cancel"
 msgstr "Annuleren"
@@ -358,11 +358,11 @@ msgstr "Alt + F4"
 msgid "Closes the current window."
 msgstr "Sluit het huidige venster."
 
-#: qml/Components/Lockscreen.qml:214 qml/Greeter/NarrowView.qml:238
+#: qml/Components/Lockscreen.qml:212 qml/Greeter/GreeterView.qml:471
 msgid "Return to Call"
 msgstr "Terug naar gesprek"
 
-#: qml/Components/Lockscreen.qml:214
+#: qml/Components/Lockscreen.qml:212
 msgid "Emergency Call"
 msgstr "Noodoproep"
 
@@ -425,7 +425,7 @@ msgstr "Veeg met twee vingers om te scrollen."
 msgid "Find more settings in the system settings."
 msgstr "Bekijk meer instellingen in de systeeminstellingen."
 
-#: qml/Greeter/CoverPage.qml:158 tests/qmltests/Greeter/tst_NarrowView.qml:562
+#: qml/Greeter/CoverPage.qml:127
 msgid "Unlock"
 msgstr "Ontgrendelen"
 
@@ -468,7 +468,7 @@ msgstr "Voer je wachtwoordzin in"
 msgid "Enter passcode to unlock"
 msgstr "Voer je toegangscode in"
 
-#: qml/Greeter/NarrowView.qml:238
+#: qml/Greeter/GreeterView.qml:471
 msgid "Emergency"
 msgstr "Noodgeval"
 

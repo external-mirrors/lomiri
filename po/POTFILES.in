@@ -348,12 +348,12 @@ qml/Greeter/FullLightDMImpl.qml
 qml/Greeter/Gradient.js
 qml/Greeter/GreeterPrompt.qml
 qml/Greeter/Greeter.qml
+qml/Greeter/GreeterView.qml
 qml/Greeter/Infographics.qml
 qml/Greeter/IntegratedLightDMImpl.qml
 qml/Greeter/LightDMService.qml
 qml/Greeter/LoginAreaContainer.qml
 qml/Greeter/LoginList.qml
-qml/Greeter/NarrowView.qml
 qml/Greeter/ObjectPositioner.qml
 qml/Greeter/PinPrompt.qml
 qml/Greeter/PromptList.qml
@@ -362,7 +362,6 @@ qml/Greeter/SessionIcon.qml
 qml/Greeter/SessionsList.qml
 qml/Greeter/ShimGreeter.qml
 qml/Greeter/TextPrompt.qml
-qml/Greeter/WideView.qml
 qml/Launcher/DrawerGridView.qml
 qml/Launcher/Drawer.qml
 qml/Launcher/FoldingLauncherDelegate.qml
@@ -822,10 +821,9 @@ tests/qmltests/EdgeBarrierControls.qml
 tests/qmltests/Greeter/TestView.qml
 tests/qmltests/Greeter/tst_Clock.qml
 tests/qmltests/Greeter/tst_Greeter.qml
+tests/qmltests/Greeter/tst_GreeterView.qml
 tests/qmltests/Greeter/tst_Infographics.qml
-tests/qmltests/Greeter/tst_NarrowView.qml
 tests/qmltests/Greeter/tst_PinCodeClock.qml
-tests/qmltests/Greeter/tst_WideView.qml
 tests/qmltests/Launcher/tst_Drawer.qml
 tests/qmltests/Launcher/tst_Launcher.qml
 tests/qmltests/Notifications/Notification.qml

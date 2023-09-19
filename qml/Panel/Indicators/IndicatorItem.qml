@@ -117,6 +117,12 @@ IndicatorDelegate {
                         source: modelData
                         color: root.color
                         Behavior on color { ColorAnimation { duration: LomiriAnimation.FastDuration; easing: LomiriAnimation.StandardEasing } }
+
+                        // Workaround indicators getting stretched/squished when (un)plugging external/virtual monitor
+                        onHeightChanged: {
+                            source = ""
+                            source = modelData
+                        }
                     }
                 }
             }

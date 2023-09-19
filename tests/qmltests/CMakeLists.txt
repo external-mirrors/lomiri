@@ -1,4 +1,3 @@
-
 add_subdirectory(Components)
 
 add_lomiri_qmltest(. OrientedShell)
@@ -30,8 +29,7 @@ add_lomiri_qmltest(Greeter Clock)
 add_lomiri_qmltest(Greeter Greeter)
 add_lomiri_qmltest(Greeter Infographics)
 add_lomiri_qmltest(Greeter PinCodeClock)
-add_lomiri_qmltest(Greeter NarrowView)
-add_lomiri_qmltest(Greeter WideView)
+add_lomiri_qmltest(Greeter GreeterView)
 add_lomiri_qmltest_data(Greeter TestView)
 add_lomiri_qmltest(Launcher Launcher)
 add_lomiri_qmltest(Launcher Drawer)

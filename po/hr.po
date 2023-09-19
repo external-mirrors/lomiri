@@ -152,7 +152,7 @@ msgid "Log Out"
 msgstr "Odjava"
 
 #: qml/Components/Dialogs.qml:199 qml/Components/Dialogs.qml:284
-#: qml/Greeter/NarrowView.qml:218 qml/Wizard/Pages/passcode-confirm.qml:32
+#: qml/Greeter/GreeterView.qml:451 qml/Wizard/Pages/passcode-confirm.qml:32
 #: qml/Wizard/Pages/passcode-set.qml:32
 msgid "Cancel"
 msgstr "Odustani"
@@ -361,11 +361,11 @@ msgstr "Alt + F4"
 msgid "Closes the current window."
 msgstr "Zatvara trenutni prozor."
 
-#: qml/Components/Lockscreen.qml:214 qml/Greeter/NarrowView.qml:238
+#: qml/Components/Lockscreen.qml:212 qml/Greeter/GreeterView.qml:471
 msgid "Return to Call"
 msgstr "Vrati na poziv"
 
-#: qml/Components/Lockscreen.qml:214
+#: qml/Components/Lockscreen.qml:212
 msgid "Emergency Call"
 msgstr "Hitni poziv"
 
@@ -429,7 +429,7 @@ msgstr "Povuci s dva prsta za klizanje."
 msgid "Find more settings in the system settings."
 msgstr "Pronađi daljnje postavke u postavkama sustava."
 
-#: qml/Greeter/CoverPage.qml:158 tests/qmltests/Greeter/tst_NarrowView.qml:562
+#: qml/Greeter/CoverPage.qml:127
 msgid "Unlock"
 msgstr "Otključaj"
 
@@ -469,7 +469,7 @@ msgstr "Upišite lozinku za otključavanje"
 msgid "Enter passcode to unlock"
 msgstr "Upišite kôd za otključavanje"
 
-#: qml/Greeter/NarrowView.qml:238
+#: qml/Greeter/GreeterView.qml:471
 msgid "Emergency"
 msgstr "Hitno"
 

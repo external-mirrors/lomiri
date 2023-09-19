@@ -151,7 +151,7 @@ msgid "Log Out"
 msgstr "登出"
 
 #: qml/Components/Dialogs.qml:199 qml/Components/Dialogs.qml:284
-#: qml/Greeter/NarrowView.qml:218 qml/Wizard/Pages/passcode-confirm.qml:32
+#: qml/Greeter/GreeterView.qml:451 qml/Wizard/Pages/passcode-confirm.qml:32
 #: qml/Wizard/Pages/passcode-set.qml:32
 msgid "Cancel"
 msgstr "取消"
@@ -358,11 +358,11 @@ msgstr "Alt + F4"
 msgid "Closes the current window."
 msgstr "關閉目前的視窗。"
 
-#: qml/Components/Lockscreen.qml:214 qml/Greeter/NarrowView.qml:238
+#: qml/Components/Lockscreen.qml:212 qml/Greeter/GreeterView.qml:471
 msgid "Return to Call"
 msgstr "返回通話"
 
-#: qml/Components/Lockscreen.qml:214
+#: qml/Components/Lockscreen.qml:212
 msgid "Emergency Call"
 msgstr "緊急通話"
 
@@ -423,7 +423,7 @@ msgstr "用兩隻手指來捲動畫面。"
 msgid "Find more settings in the system settings."
 msgstr "在系統設定中可以找到更多設定。"
 
-#: qml/Greeter/CoverPage.qml:158 tests/qmltests/Greeter/tst_NarrowView.qml:562
+#: qml/Greeter/CoverPage.qml:127
 msgid "Unlock"
 msgstr "解鎖"
 
@@ -461,7 +461,7 @@ msgstr "輸入密語來解鎖"
 msgid "Enter passcode to unlock"
 msgstr "輸入通關碼來解鎖"
 
-#: qml/Greeter/NarrowView.qml:238
+#: qml/Greeter/GreeterView.qml:471
 msgid "Emergency"
 msgstr "緊急事件"
 
