@@ -404,8 +404,9 @@ msgstr "共有アイテムのプレビュー"
 msgid ""
 "Your device is now connected to an external display. Use this screen as a "
 "touch pad to interact with the pointer."
-msgstr "デバイスが外部ディスプレイに接続されました。この画面をタッチ "
-"パッドとして使用して、ポインターを操作します。"
+msgstr ""
+"デバイスが外部ディスプレイに接続されました。この画面をタッチ パッドとして使用"
+"して、ポインターを操作します。"
 
 #: qml/Components/VirtualTouchPad.qml:322
 msgid "Tap left button to click."
@@ -579,7 +580,8 @@ msgstr "戻る"
 
 #: qml/Stage/SideStage.qml:80
 msgid "Drag using 3 fingers any application from one window to the other"
-msgstr "3本指でアプリケーションを一方のウィンドウからもう一方のウィンドウにドラッグす"
+msgstr ""
+"3本指でアプリケーションを一方のウィンドウからもう一方のウィンドウにドラッグす"
 "る"
 
 #: qml/Stage/Stage.qml:827
@@ -726,7 +728,8 @@ msgstr "デバイスの更新"
 msgid ""
 "There is a system update available and ready to install. Afterwards, the "
 "device will automatically restart."
-msgstr "システムアップデートがあり、インストールする準備ができています。インストール"
+msgstr ""
+"システムアップデートがあり、インストールする準備ができています。インストール"
 "後、デバイスは自動的に再起動します。"
 
 #: qml/Wizard/Pages/79-system-update.qml:76
@@ -844,7 +847,8 @@ msgstr "SIMカードが追加されました"
 
 #: qml/Wizard/Pages/sim.qml:55
 msgid "You must restart the device to access the mobile network."
-msgstr "モバイルネットワークにアクセスするには、デバイスを再起動する必要があります。"
+msgstr ""
+"モバイルネットワークにアクセスするには、デバイスを再起動する必要があります。"
 
 #: qml/Wizard/Pages/sim.qml:59
 msgid "Restart"
