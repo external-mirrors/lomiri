@@ -14,6 +14,7 @@ set(GREETER_APP lomiri-greeter)
 set (DESKTOP_FILE_SHELL "${SHELL_APP}.desktop")
 set (DESKTOP_FILE_GREETER "${GREETER_APP}.desktop")
 set (DESKTOP_FILE_INDICATORSCLIENT "${INDICATORS_CLIENT_APP}.desktop")
+set(QML_DEBUG OFF CACHE BOOL "Enable Qml Debugging")
 
 if(${PROJECT_BINARY_DIR} STREQUAL ${PROJECT_SOURCE_DIR})
    message(FATAL_ERROR "In-tree build attempt detected, aborting. Set your build dir outside your source dir, delete CMakeCache.txt from source root and try again.")
@@ -26,8 +27,7 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
 # enable QML debugging
-string(TOLOWER "${CMAKE_BUILD_TYPE}" cmake_build_type_lower) # Build types should always be lowercase but sometimes they are not.
-if(cmake_build_type_lower MATCHES "debug")
+if(QML_DEBUG)
     add_definitions(-DQT_QML_DEBUG)
 endif()
 

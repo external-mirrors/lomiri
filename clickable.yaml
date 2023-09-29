@@ -3,7 +3,7 @@ builder: custom
 build: echo Run \'clickable build-libs --debug\' to build && false
 restrict_arch: amd64
 libraries:
-  unity8:
+  lomiri:
     builder: cmake
     src_dir: "${ROOT}"
     test: make xvfballtests -j${NUM_PROCS}
