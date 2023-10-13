@@ -8,29 +8,29 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-08 19:08+0000\n"
-"PO-Revision-Date: 2020-10-29 14:24+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
-"Language-Team: Portuguese (Brazil) <https://translate.ubports.com/projects/"
-"unity8/unity8/pt_BR/>\n"
+"PO-Revision-Date: 2023-10-18 06:00+0000\n"
+"Last-Translator: Império Linux <kevendoria86@gmail.com>\n"
+"Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
+"lomiri/lomiri/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.11.3\n"
+"X-Generator: Weblate 5.1\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:36+0000\n"
 
 #: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
 msgid "Lomiri"
-msgstr ""
+msgstr "Lomiri"
 
 #: data/lomiri.desktop.in:5
 msgid "The converged Lomiri shell"
-msgstr ""
+msgstr "O Lomiri shell é convergente"
 
 #: data/lomiri-greeter.desktop.in:4
 msgid "Lomiri Greeter"
-msgstr ""
+msgstr "Recepcionista do Lomiri"
 
 #: data/lomiri-greeter.desktop.in:5
 msgid "The converged Lomiri shell's Greeter"
@@ -38,11 +38,11 @@ msgstr ""
 
 #: data/indicators-client.desktop.in:4
 msgid "Indicators Client"
-msgstr ""
+msgstr "Cliente de Indicadores"
 
 #: data/indicators-client.desktop.in:5
 msgid "Application for testing the Indicators system"
-msgstr ""
+msgstr "Aplicação para testar o sistema de Indicadores"
 
 #: plugins/LightDM/Greeter.cpp:199
 msgid "Password: "
@@ -91,43 +91,43 @@ msgstr "Desafixar atalho"
 
 #: plugins/WindowManager/Screen.cpp:160
 msgid "Unknown"
-msgstr ""
+msgstr "Desconhecido"
 
 #: plugins/WindowManager/Screen.cpp:162
 msgid "VGA"
-msgstr ""
+msgstr "VGA"
 
 #: plugins/WindowManager/Screen.cpp:166
 msgid "DVI"
-msgstr ""
+msgstr "DVI"
 
 #: plugins/WindowManager/Screen.cpp:168
 msgid "Composite"
-msgstr ""
+msgstr "Composto"
 
 #: plugins/WindowManager/Screen.cpp:170
 msgid "S-Video"
-msgstr ""
+msgstr "S-Video"
 
 #: plugins/WindowManager/Screen.cpp:174
 msgid "Internal"
-msgstr ""
+msgstr "Intervenções"
 
 #: plugins/WindowManager/Screen.cpp:176
 msgid "Component"
-msgstr ""
+msgstr "Componente"
 
 #: plugins/WindowManager/Screen.cpp:178
 msgid "DisplayPort"
-msgstr ""
+msgstr "Porta de exibição"
 
 #: plugins/WindowManager/Screen.cpp:181
 msgid "HDMI"
-msgstr ""
+msgstr "HDMI"
 
 #: plugins/WindowManager/Screen.cpp:183
 msgid "TV"
-msgstr ""
+msgstr "TV"
 
 #: qml/Components/Dialogs.qml:176
 msgctxt "Title: Lock/Log out dialog"
@@ -195,10 +195,8 @@ msgid "Restart"
 msgstr "Reiniciar"
 
 #: qml/Components/Dialogs.qml:276
-#, fuzzy
-#| msgid "Takes a screenshot."
 msgid "Screenshot"
-msgstr "Tira uma captura de tela."
+msgstr "Print de tela"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:41
 msgid "Keyboard Shortcuts"
@@ -214,7 +212,7 @@ msgstr "Tira uma captura de tela."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:75
 msgid "Alt + PrtScr"
-msgstr ""
+msgstr "Alt + PrtScr"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:80
 msgid "Takes a screenshot of the current window."
@@ -250,7 +248,7 @@ msgstr "Iniciador"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:138
 msgid "Super (Hold)"
-msgstr ""
+msgstr "Super (Segurar)"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:143
 msgid "Opens the launcher, displays shortcuts."
@@ -583,9 +581,6 @@ msgid "Call back"
 msgstr "Retornar chamada"
 
 #: qml/Panel/PanelMenuPage.qml:92
-#, fuzzy
-#| msgctxt "Button: Go back one page in the Wizard"
-#| msgid "Back"
 msgid "Back"
 msgstr "Voltar"
 
@@ -640,15 +635,13 @@ msgstr "Próximo"
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
 #: qml/Wizard/Pages/10-welcome-update.qml:92
-#, fuzzy, qt-format
-#| msgid "Welcome to "
+#, qt-format
 msgid "Welcome to %1 %2"
 msgstr "Bem-vindo ao"
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
 #: qml/Wizard/Pages/10-welcome-update.qml:108
-#, fuzzy, qt-format
-#| msgid "We will make sure your device is ready to use "
+#, qt-format
 msgid "We will make sure your device is ready to use %1 %2"
 msgstr "Vamos garantir que seu dispositivo esteja pronto para o uso"
 
@@ -742,9 +735,6 @@ msgstr ""
 "dispositivo será reiniciado automaticamente."
 
 #: qml/Wizard/Pages/79-system-update.qml:76
-#, fuzzy
-#| msgctxt "string identifying name of the update"
-#| msgid "Ubuntu Touch system"
 msgctxt "string identifying name of the update"
 msgid "Ubuntu Touch system"
 msgstr "Sistema Ubuntu Touch"
@@ -753,7 +743,7 @@ msgstr "Sistema Ubuntu Touch"
 #, qt-format
 msgctxt "version of the system update"
 msgid "Version %1"
-msgstr ""
+msgstr "Versão"
 
 #: qml/Wizard/Pages/79-system-update.qml:95
 msgid "This could take a few minutes..."
@@ -769,8 +759,7 @@ msgstr "Bem vindo de volta"
 
 #. TRANSLATORS: %1 contains the distro name
 #: qml/Wizard/Pages/80-finished.qml:95
-#, fuzzy, qt-format
-#| msgid "Welcome to "
+#, qt-format
 msgid "Welcome to %1"
 msgstr "Bem-vindo ao"
 
@@ -805,8 +794,6 @@ msgid "Lock Screen Passcode"
 msgstr "Senha da tela de bloqueio"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:68
-#, fuzzy
-#| msgid "Enter 4 numbers to setup your passcode"
 msgid "Enter at least 4 numbers to setup your passcode"
 msgstr "Digite 4 números para configurar sua senha"
 
@@ -828,8 +815,6 @@ msgid "Passcodes do not match"
 msgstr "As senhas não correspondem"
 
 #: qml/Wizard/Pages/passcode-set.qml:62
-#, fuzzy
-#| msgid "Passcode must be 4 characters long"
 msgid "Passcode must be at least 4 characters long"
 msgstr "A senha deve conter 4 caracteres"
 
