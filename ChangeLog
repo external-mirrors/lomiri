@@ -1,6 +1,175 @@
+2023-10-15 Mike Gabriel
+
+        * Release 0.1.4 (HEAD -> main, tag: 0.1.4)
+
+2023-09-29 Mike Gabriel
+
+        * Merge branch 'personal/lduboeuf/fix_qtcreatorbuild' into 'main'
+          (ed5564cbb)
+
+2023-09-15 Lionel Duboeuf
+
+        * don't enable qml debug by default on Debug build (390e99145)
+        * clickable: rename unity8 -> lomiri update README.md (f39886a87)
+
+2023-09-19 Hosted Weblate
+
+        * Update translation files (7337620b1)
+
+2023-09-19 Ratchanan Srirattanamet
+
+        * Merge branch 'focal' into 'main' (71a6f7142)
+
+2023-09-05 Fuseteam
+
+        * fix regression (200d66386)
+
+2023-09-05 ook37
+
+        * fix regressions from forward port (7783a0a9f)
+
+2022-12-13 Lionel Duboeuf
+
+        * tweak CI build (01b5714e7)
+
+2022-03-22 Kugi Eusebio
+
+        * Fixed #431 (5fcf3aa60)
+
+2022-05-27 Alfred Neumayer
+
+        * IndicatorItem: Workaround for stretched/squished icons (6f2c15285)
+
+2022-01-31 Capsia
+
+        * Fix #420 (42c1ff2f4)
+
+2022-01-29 Capsia
+
+        * Fix infographics (615fda0fc)
+
+2022-01-23 Capsia
+
+        * Replace blur on greeter with darkening (b87036b0b)
+
+2022-01-15 Capsia
+
+        * Greeter orientation (#402) (feb65b00f)
+
+2023-09-06 bittin1ddc447d824349b2
+
+        * Translated using Weblate (Swedish) (cb614060a)
+
+2023-09-01 Mike Gabriel
+
+        * Merge branch 'fontfix' into 'main' (0cf45bf15)
+
+2023-08-31 mateosalta
+
+        * Update IndicatorItem.qml (0ad4affc4)
+        * Update file IndicatorItem.qml (fcb847eb6)
+
+2023-08-29 Mike Gabriel
+
+        * Merge branch 'personal/gberh/locationbg' into 'main' (babf01dc9)
+
+2020-12-23 Alberto Mardegan
+
+        * plugins: create ProcessControl plugin (9707ba4e3)
+
+2021-04-19 Alberto Mardegan
+
+        * Stage: minor refactoring of application requestedState (fb5a22c46)
+
+2023-08-20 AlTeveD2v
+
+        * Translated using Weblate (Russian) (584dbd9e6)
+
+2023-08-21 NPL
+
+        * Translated using Weblate (Japanese) (4b0bc4cd6)
+
+2023-08-23 Mike Gabriel
+
+        * Merge branch 'personal/peat-psuwit/x-ayatana-level' into 'main'
+          (6ac1c657a)
+
+2023-06-30 Ratchanan Srirattanamet
+
+        * IndicatorMenuItemFactory: support org.ayatana.indicator.level
+          (4f3704c35)
+
+2023-08-23 Mike Gabriel
+
+        * Merge branch 'personal/lduboeuf/fix_bgapp' into 'main' (cfb6be68a)
+
+2023-06-13 Lionel Duboeuf
+
+        * Prevent some Type Error in logs on application close (f5e970ce5)
+        * Make app go foreground when in spread view fixes
+          https://gitlab.com/ubports/development/core/lomiri/-/issues/67
+          fixes
+          https://gitlab.com/ubports/development/core/lomiri/-/issues/68
+          (70ab86a90)
+
+2023-08-22 Mike Gabriel
+
+        * Merge branch 'personal/peat-psuwit/available-desktop-area-waydroid'
+          into 'main' (3d6763219)
+
+2023-06-16 Ratchanan Srirattanamet
+
+        * shell: ignore shell.atDesktop when calculating AvailableDesktopArea
+          (e1f0a302d)
+
+2023-08-20 AlTeveD2v
+
+        * Translated using Weblate (Russian) (304c1dfd7)
+
+2023-08-12 NPL
+
+        * Translated using Weblate (Japanese) (764791ccc)
+
+2023-08-18 Mike Gabriel
+
+        * Translated using Weblate (German) (a51048dc0)
+        * Merge branch 'lduboeuf-main-patch-53276' into 'main' (d8fb28624)
+
+2023-08-04 Lionel Duboeuf
+
+        * Update README.md, re-enable build and test with clickable
+          (9c3f9cf20)
+
+2023-08-18 Mike Gabriel
+
+        * Merge branch 'personal/lduboeuf/circleprompt_contrast' into 'main'
+          (64407ce9d)
+
+2023-08-11 Lionel Duboeuf
+
+        * Circle Prompt: give better contrast for dots (521e29286)
+
+2023-08-08 Ivo Xavier
+
+        * Translated using Weblate (Portuguese) (e17ef1822)
+
+2023-08-05 Allan Nordhøy
+
+        * Translated using Weblate (Norwegian Bokmål) (c20654b4f)
+        * Translated using Weblate (Spanish) (c300a2962)
+        * Translated using Weblate (Danish) (784dbbd6f)
+
+2023-07-21 Serhii Horichenko
+
+        * Translated using Weblate (Ukrainian) (38d35e8fe)
+
+2023-07-21 Ivo Xavier
+
+        * Translated using Weblate (Portuguese) (4b2898487)
+
 2023-07-28 Marius Gripsgard
 
-        * Release 0.1.3 (HEAD -> main, tag: 0.1.3)
+        * Release 0.1.3 (0151c4fc7) (tag: 0.1.3)
 
 2023-06-30 Rudra Harsh V.Singh
 
@@ -325,7 +494,7 @@
 
 2023-02-18 Mike Gabriel
 
-        * Release 0.1.1 (cfd2ca38f)
+        * Release 0.1.1 (cfd2ca38f) (tag: 0.1.1)
 
 2023-02-17 Mike Gabriel
 
