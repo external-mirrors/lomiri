@@ -127,6 +127,7 @@ Item {
             var appWindowStates = findInvisibleChild(appWindow, "applicationWindowStateGroup");
             verify(appWindowStates);
             tryCompare(appWindowStates, "state", "surface");
+            waitUntilTransitionsEnd(appWindowStates);
         }
 
         function addApps(count) {

@@ -913,11 +913,7 @@ Rectangle {
             var spreadDelegate = findChild(shell, "appDelegate_" + topLevelSurfaceList.idAt(0));
             var appState = findInvisibleChild(spreadDelegate, "applicationWindowStateGroup");
             tryCompare(appState, "state", "surface");
-            var transitions = appState.transitions;
-            for (var i = 0; i < transitions.length; ++i) {
-                var transition = transitions[i];
-                tryCompare(transition, "running", false, 2000);
-            }
+            waitUntilTransitionsEnd(appState)
         }
 
         function swipeFromRightEdgeToShowAppSpread()

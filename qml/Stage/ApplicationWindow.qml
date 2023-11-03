@@ -47,19 +47,13 @@ FocusScope {
 
     Connections {
         target: surface
-        onReady: {
-            d.surfaceInitialized = true;
-            d.hadSurface = true;
-            d.surfaceOldEnoughToBeResized = true;
-        }
+        onReady:  d.surfaceUp()
     }
 
     Component.onCompleted: {
 
         if (surface && surface.live && surface.isReady) {
-            d.surfaceInitialized = true;
-            d.hadSurface = true;
-            d.surfaceOldEnoughToBeResized = true;
+            d.surfaceUp()
         }
     }
 
@@ -111,6 +105,12 @@ FocusScope {
 
         property Item focusedSurface: promptSurfacesRepeater.count === 0 ? surfaceContainer
                                                                          : promptSurfacesRepeater.first
+        function surfaceUp() {
+            d.surfaceInitialized = true;
+            d.hadSurface = true;
+            d.surfaceOldEnoughToBeResized = true;
+        }
+
         onFocusedSurfaceChanged: {
             if (focusedSurface) {
                 focusedSurface.focus = true;
@@ -131,19 +131,23 @@ FocusScope {
         running: root.surface && !d.surfaceInitialized
         onTriggered: {
             if (root.surface && root.surface.isReady) {
-                d.surfaceInitialized = true;
-                d.hadSurface = true;
-                d.surfaceOldEnoughToBeResized = true;
+                 d.surfaceUp()
             }
         }
     }
 
+    SurfaceContainer {
+        id: surfaceContainer
+        anchors.fill: parent
+        requestedWidth: root.requestedWidth
+        requestedHeight: root.requestedHeight
+        surfaceOrientationAngle: application && application.rotatesWindowContents ? root.surfaceOrientationAngle : 0
+    }
+
     Loader {
         id: splashLoader
-        visible: active
-        active: false
+        objectName: "splashLoader"
         anchors.fill: parent
-        z: 1
         sourceComponent: Component {
             Splash {
                 id: splash
@@ -160,20 +164,6 @@ FocusScope {
                 width: rotation == 0 || rotation == 180 ? root.width : root.height
                 height: rotation == 0 || rotation == 180 ? root.height : root.width
             }
-        }
-    }
-
-    SurfaceContainer {
-        id: surfaceContainer
-        anchors.fill: parent
-        opacity: splashLoader.active ? 0.7 : 1.0
-        z: splashLoader.z + 1
-        requestedWidth: root.requestedWidth
-        requestedHeight: root.requestedHeight
-        surfaceOrientationAngle: application && application.rotatesWindowContents ? root.surfaceOrientationAngle : 0
-
-        Behavior on opacity {
-            NumberAnimation { }
         }
     }
 
@@ -224,12 +214,20 @@ FocusScope {
             State {
                 name: "surface"
                 when: (root.surface && d.surfaceInitialized)
-                PropertyChanges { target: splashLoader; active: false }
             },
             State {
                 name: "splash"
                 when: (!root.surface || !d.surfaceInitialized) || !root.surface.live || d.hadSurface
-                PropertyChanges { target: splashLoader; active: true }
+            }
+        ]
+
+        transitions: [
+            Transition {
+                to: "surface"
+                SequentialAnimation {
+                    PropertyAnimation { target: splashLoader; property: "opacity"; from: 1; to: 0; easing.type: Easing.OutQuad }
+                    PropertyAction { target: splashLoader; property: "active"; value: false }
+                }
             }
         ]
     }
