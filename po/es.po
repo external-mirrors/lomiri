@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-08 19:08+0000\n"
-"PO-Revision-Date: 2023-08-08 18:04+0000\n"
-"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"PO-Revision-Date: 2023-11-26 08:50+0000\n"
+"Last-Translator: gallegonovato <fran-carro@hotmail.es>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/lomiri/lomiri/es/"
 ">\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.0-dev\n"
+"X-Generator: Weblate 5.2.1-rc\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:35+0000\n"
 
 #: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
@@ -649,10 +649,9 @@ msgstr "Le damos la bienvenida a %1 %2"
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
 #: qml/Wizard/Pages/10-welcome-update.qml:108
-#, fuzzy, qt-format
-#| msgid "We will make sure your device is ready to use "
+#, qt-format
 msgid "We will make sure your device is ready to use %1 %2"
-msgstr "Nos aseguraremos de que su dispositivo está listo para usar "
+msgstr "Nos aseguraremos de que tu dispositivo esté listo para usar %1 %2"
 
 #: qml/Wizard/Pages/11-changelog.qml:28
 msgid "What's new"
@@ -771,10 +770,9 @@ msgstr "Bienvenida/o de nuevo"
 
 #. TRANSLATORS: %1 contains the distro name
 #: qml/Wizard/Pages/80-finished.qml:95
-#, fuzzy, qt-format
-#| msgid "Welcome to "
+#, qt-format
 msgid "Welcome to %1"
-msgstr "Le damos la bienvenida a "
+msgstr "Bienvenid@ a %1"
 
 #: qml/Wizard/Pages/80-finished.qml:111
 msgid "You are ready to use your device now"
