@@ -1,0 +1,2 @@
+module BatteryMonitor
+plugin BatteryMonitor

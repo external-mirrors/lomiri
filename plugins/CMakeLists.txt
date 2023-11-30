@@ -25,3 +25,5 @@ add_subdirectory(UInput)
 add_subdirectory(Utils)
 add_subdirectory(WindowManager)
 add_subdirectory(Wizard)
+
+add_subdirectory(BatteryMonitor)
