@@ -168,7 +168,7 @@ Showable {
     Label {
         id: chargingHint
         anchors.horizontalCenter: parent.horizontalCenter
-        anchors.bottom: parent.bottom    
+        anchors.bottom: parent.bottom
         anchors.bottomMargin: units.gu(5)
         text: displayMessage()
         color: "white"
