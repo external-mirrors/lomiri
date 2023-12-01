@@ -8,8 +8,9 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-08 19:08+0000\n"
-"PO-Revision-Date: 2023-11-26 08:50+0000\n"
-"Last-Translator: gallegonovato <fran-carro@hotmail.es>\n"
+"PO-Revision-Date: 2023-12-06 00:23+0000\n"
+"Last-Translator: Daniel Delgado Jiménez <danieldelgadojimenez@protonmail.com>"
+"\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/lomiri/lomiri/es/"
 ">\n"
 "Language: es\n"
@@ -17,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.2.1-rc\n"
+"X-Generator: Weblate 5.3-dev\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:35+0000\n"
 
 #: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
@@ -26,17 +27,15 @@ msgstr "Lomiri"
 
 #: data/lomiri.desktop.in:5
 msgid "The converged Lomiri shell"
-msgstr ""
+msgstr "La interfaz convergente Lomiri"
 
 #: data/lomiri-greeter.desktop.in:4
-#, fuzzy
-#| msgid "Lomiri"
 msgid "Lomiri Greeter"
-msgstr "Lomiri"
+msgstr "Iniciador de sesión Lomiri"
 
 #: data/lomiri-greeter.desktop.in:5
 msgid "The converged Lomiri shell's Greeter"
-msgstr ""
+msgstr "El Iniciador de sesión de la interfaz convergente Lomiri"
 
 #: data/indicators-client.desktop.in:4
 msgid "Indicators Client"
@@ -60,7 +59,7 @@ msgstr "Fallo al autenticar"
 
 #: plugins/LightDM/Greeter.cpp:260
 msgid "Invalid password, please try again"
-msgstr "Contraseña incorrecta. Inténtelo de nuevo"
+msgstr "Contraseña incorrecta, porfavor inténtalo de nuevo"
 
 #: plugins/LightDM/Greeter.cpp:270
 msgid "Log In"
@@ -105,11 +104,11 @@ msgstr "DVI"
 
 #: plugins/WindowManager/Screen.cpp:168
 msgid "Composite"
-msgstr ""
+msgstr "Compuesto"
 
 #: plugins/WindowManager/Screen.cpp:170
 msgid "S-Video"
-msgstr ""
+msgstr "S-Video"
 
 #: plugins/WindowManager/Screen.cpp:174
 msgid "Internal"
@@ -121,7 +120,7 @@ msgstr "Componente"
 
 #: plugins/WindowManager/Screen.cpp:178
 msgid "DisplayPort"
-msgstr ""
+msgstr "DisplayPort"
 
 #: plugins/WindowManager/Screen.cpp:181
 msgid "HDMI"
@@ -129,7 +128,7 @@ msgstr "HDMI"
 
 #: plugins/WindowManager/Screen.cpp:183
 msgid "TV"
-msgstr ""
+msgstr "TV"
 
 #: qml/Components/Dialogs.qml:176
 msgctxt "Title: Lock/Log out dialog"
@@ -642,10 +641,9 @@ msgstr "Siguiente"
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
 #: qml/Wizard/Pages/10-welcome-update.qml:92
-#, fuzzy, qt-format
-#| msgid "Welcome to "
+#, qt-format
 msgid "Welcome to %1 %2"
-msgstr "Le damos la bienvenida a %1 %2"
+msgstr "Bienvenid@ a %1 %2"
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
 #: qml/Wizard/Pages/10-welcome-update.qml:108
@@ -743,12 +741,9 @@ msgstr ""
 "el dispositivo se reiniciará automáticamente."
 
 #: qml/Wizard/Pages/79-system-update.qml:76
-#, fuzzy
-#| msgctxt "string identifying name of the update"
-#| msgid "Lomiri Touch system"
 msgctxt "string identifying name of the update"
 msgid "Ubuntu Touch system"
-msgstr "Sistema Lomiri Touch"
+msgstr "Sistema Ubuntu Touch"
 
 #: qml/Wizard/Pages/79-system-update.qml:83
 #, qt-format
@@ -805,10 +800,8 @@ msgid "Lock Screen Passcode"
 msgstr "Código de bloqueo de pantalla"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:68
-#, fuzzy
-#| msgid "Enter 4 numbers to setup your passcode"
 msgid "Enter at least 4 numbers to setup your passcode"
-msgstr "Introduzca 4 dígitos para configurar el código"
+msgstr "Introduzca al menos 4 números para configurar su código de acceso"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:84
 #: qml/Wizard/Pages/passcode-set.qml:54
@@ -828,10 +821,8 @@ msgid "Passcodes do not match"
 msgstr "Los códigos no coinciden"
 
 #: qml/Wizard/Pages/passcode-set.qml:62
-#, fuzzy
-#| msgid "Passcode must be 4 characters long"
 msgid "Passcode must be at least 4 characters long"
-msgstr "El código debe tener 4 dígitos"
+msgstr "El código debe tener al menos 4 caracteres de longitud"
 
 #: qml/Wizard/Pages/password-set.qml:31
 msgid "Lock Screen Password"
