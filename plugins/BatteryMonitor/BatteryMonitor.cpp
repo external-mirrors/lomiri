@@ -27,14 +27,18 @@ bool BatteryMonitor::hasBattery()
         return false;
 }
 
-bool BatteryMonitor::charging()
+uint BatteryMonitor::state()
 {
     if (!hasBattery())
-        return false;
+        return UNKNOWN;
 
     QDBusReply<QDBusVariant> reply = m_iface->call(GET, UPOWER_PROPERTIES, "State");
-    uint state = reply.value().variant().toUInt();
-    if (state == CHARGING)
+    return reply.value().variant().toUInt();
+}
+
+bool BatteryMonitor::charging()
+{
+    if (state() == CHARGING)
         return true;
     else
         return false;
@@ -49,8 +53,14 @@ QString BatteryMonitor::getTimeToFull()
     if (reply.isValid() && charging()) {
         uint value = reply.value().variant().toUInt();
 
-        if (value == 0)
-            return QString();
+        if (value == 0) {
+            // This is a bit complex. Either UPower will be trying to calculate time to full, or we're actually full.
+            QDBusReply<QDBusVariant> percentage = m_iface->call(GET, UPOWER_PROPERTIES, "Percentage");
+            if (percentage.value().variant().toFloat() == 100.0)
+                return QString("Fully charged");
+            else
+                return QString();
+        }
 
         uint hours = value / 60 / 60;
         uint minutes = value / 60 % 60;
@@ -61,6 +71,9 @@ QString BatteryMonitor::getTimeToFull()
             return QString("%1 hours until full").arg(QString::number(hours));
         else
             return QString("%1 hours and %2 minutes until full").arg(QString::number(hours)).arg(QString::number(minutes));
+
+    } else if (reply.isValid() && state() == FULLY_CHARGED) {
+        return QString("Fully charged");
 
     } else {
         return QString();

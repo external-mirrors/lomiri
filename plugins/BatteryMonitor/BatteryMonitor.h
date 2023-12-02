@@ -31,6 +31,7 @@ public:
   BatteryMonitor();
 
   bool hasBattery();
+  uint state();
   Q_INVOKABLE bool charging();
   Q_INVOKABLE QString getTimeToFull();
 
