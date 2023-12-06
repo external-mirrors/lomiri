@@ -17,7 +17,6 @@
 
 import QtQuick 2.12
 import QtGraphicalEffects 1.12
-import QMenuModel 1.0 as QMenuModel
 import Lomiri.Components 1.3
 import Lomiri.Gestures 0.1
 import "../Components"
@@ -47,31 +46,6 @@ Showable {
 
     signal tease()
     signal clicked()
-
-    property var _ipag: QMenuModel.QDBusActionGroup {
-        busType: 1
-        busName: "org.ayatana.indicator.power"
-        objectPath: "/org/ayatana/indicator/power"
-        property variant batteryLevel: action("battery-level").state
-        property variant deviceState: action("device-state").state
-        Component.onCompleted: start()
-        onDeviceStateChanged: {
-            swipeHint.visible = !BatteryMonitor.charging();
-            chargingHint.visible = BatteryMonitor.charging();
-            chargingHint.text = displayMessage();
-        }
-        onBatteryLevelChanged: {
-            if (chargingHint.visible) {
-                chargingHint.text = displayMessage();
-            }
-        }
-    }
-
-    function displayMessage() {
-        if (BatteryMonitor.charging() && BatteryMonitor.getTimeToFull() !== "") {
-            return BatteryMonitor.getTimeToFull();
-        }
-    }
 
     function hideRight() {
         d.forceRightOnNextHideAnimation = true;
@@ -170,10 +144,29 @@ Showable {
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: parent.bottom
         anchors.bottomMargin: units.gu(5)
-        text: displayMessage()
+        text: {
+            var text = "";
+            var seconds = BatteryMonitor.timeToFull;
+            var minutes = Math.floor(seconds / 60 % 60);
+            var hours = Math.floor(seconds / 60 / 60);
+
+            if (hours > 0) {
+                text += i18n.tr("%1 hour", "%1 hours", hours).arg(hours)
+            }
+            if (minutes > 0) {
+                if (text != "") text += i18n.tr(" and ")
+                text += i18n.tr("%1 minute", "%1 minutes", minutes).arg(minutes)
+            }
+            if (hours == 0 && minutes == 0) {
+                var state = BatteryMonitor.state();
+                if (state == 4) return i18n.tr("Fully charged")
+            }                
+            if (text != "") text += i18n.tr(" until full")
+            return text;
+        }
         color: "white"
         font.weight: Font.Light
-        visible: BatteryMonitor.charging()
+        visible: BatteryMonitor.charging
     }
 
     Label {
@@ -187,7 +180,7 @@ Showable {
         text: "《    " + (d.errorMessage ? d.errorMessage : i18n.tr("Unlock")) + "    》"
         color: "white"
         font.weight: Font.Light
-        visible: !BatteryMonitor.charging()
+        visible: !BatteryMonitor.charging
 
         readonly property var opacityAnimation: showLabelAnimation // for testing
 

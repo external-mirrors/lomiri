@@ -26,14 +26,24 @@ enum {
 
 class BatteryMonitor: public QObject {
   Q_OBJECT
+  Q_PROPERTY(qint64 timeToFull READ timeToFull NOTIFY timeToFullChanged)
+  Q_PROPERTY(bool charging READ charging NOTIFY chargingChanged)
 
 public:
   BatteryMonitor();
 
   bool hasBattery();
-  uint state();
-  Q_INVOKABLE bool charging();
-  Q_INVOKABLE QString getTimeToFull();
+  bool charging();
+  qint64 timeToFull();
+
+  Q_INVOKABLE uint state();
+
+public Q_SLOTS:
+  void propertiesChanged(QString string, QVariantMap map, QStringList list);
+
+Q_SIGNALS:
+  void chargingChanged();
+  void timeToFullChanged();
 
 private:
   QDBusInterface *m_iface;

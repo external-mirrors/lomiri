@@ -2,11 +2,8 @@
 
 BatteryMonitor::BatteryMonitor()
 {
-    QDBusInterface temp_iface("org.freedesktop.UPower", "/org/freedesktop/UPower", "org.freedesktop.UPower", QDBusConnection::systemBus());
-    QDBusReply<QDBusObjectPath> path = temp_iface.call("GetDisplayDevice");
-
-    m_displayPath = path.value();
-    m_iface = new QDBusInterface("org.freedesktop.UPower", m_displayPath.path(), "org.freedesktop.DBus.Properties", QDBusConnection::systemBus());
+    QDBusConnection::systemBus().connect("org.freedesktop.UPower", "/org/freedesktop/UPower/devices/DisplayDevice", "org.freedesktop.DBus.Properties", "PropertiesChanged", this, SLOT(propertiesChanged(QString, QVariantMap, QStringList)));
+    m_iface = new QDBusInterface("org.freedesktop.UPower", "/org/freedesktop/UPower/devices/DisplayDevice", "org.freedesktop.DBus.Properties", QDBusConnection::systemBus());
 }
 
 bool BatteryMonitor::hasBattery()
@@ -44,38 +41,25 @@ bool BatteryMonitor::charging()
         return false;
 }
 
-QString BatteryMonitor::getTimeToFull()
+qint64 BatteryMonitor::timeToFull()
 {
     if (!hasBattery())
-        return QString();
+        return -1;
 
     QDBusReply<QDBusVariant> reply = m_iface->call(GET, UPOWER_PROPERTIES, "TimeToFull");
     if (reply.isValid() && charging()) {
         uint value = reply.value().variant().toUInt();
+        if (value == 0)
+            return -2;
 
-        if (value == 0) {
-            // This is a bit complex. Either UPower will be trying to calculate time to full, or we're actually full.
-            QDBusReply<QDBusVariant> percentage = m_iface->call(GET, UPOWER_PROPERTIES, "Percentage");
-            if (percentage.value().variant().toFloat() == 100.0)
-                return QString("Fully charged");
-            else
-                return QString();
-        }
-
-        uint hours = value / 60 / 60;
-        uint minutes = value / 60 % 60;
-
-        if (hours == 0)
-            return QString("%1 minutes until full").arg(QString::number(minutes));
-        else if (minutes == 0)
-            return QString("%1 hours until full").arg(QString::number(hours));
-        else
-            return QString("%1 hours and %2 minutes until full").arg(QString::number(hours)).arg(QString::number(minutes));
-
-    } else if (reply.isValid() && state() == FULLY_CHARGED) {
-        return QString("Fully charged");
-
-    } else {
-        return QString();
+        return value;
     }
+}
+
+void BatteryMonitor::propertiesChanged(QString string, QVariantMap map, QStringList list)
+{
+    if (map.contains("State"))
+        Q_EMIT chargingChanged();
+    else if (map.contains("TimeToFull"))
+        Q_EMIT timeToFullChanged();
 }
