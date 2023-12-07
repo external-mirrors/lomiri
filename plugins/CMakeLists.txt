@@ -12,6 +12,7 @@ macro(add_lomiri_plugin PLUGIN VERSION PATH)
 endmacro()
 
 add_subdirectory(AccountsService)
+add_subdirectory(BatteryMonitor)
 add_subdirectory(Cursor)
 add_subdirectory(GlobalShortcut)
 add_subdirectory(Greeter)
@@ -25,5 +26,3 @@ add_subdirectory(UInput)
 add_subdirectory(Utils)
 add_subdirectory(WindowManager)
 add_subdirectory(Wizard)
-
-add_subdirectory(BatteryMonitor)
