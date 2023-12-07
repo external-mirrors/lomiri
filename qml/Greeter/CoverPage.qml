@@ -161,7 +161,10 @@ Showable {
                 var state = BatteryMonitor.state();
                 if (state == 4) return i18n.tr("Fully charged")
             }                
-            if (text != "") text += i18n.tr(" until full")
+            if (text != "") {
+                // Translators: String like "1 hour, 2 minutes until full"
+                text = i18n.tr("%1 until full").arg(text);
+            }
             return text;
         }
         color: "white"
