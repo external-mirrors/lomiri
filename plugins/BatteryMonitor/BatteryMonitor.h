@@ -11,19 +11,6 @@
 #define GET "Get"
 #define UPOWER_PROPERTIES "org.freedesktop.UPower.Device"
 
-enum {
-    /* Status */
-    UNKNOWN = 0,
-    CHARGING,
-    DISCHARGING,
-    EMPTY,
-    FULLY_CHARGED = 4,
-
-    /* Type */
-    ON_LINEPOWER = 1,
-    ON_BATTERY = 2
-};
-
 class BatteryMonitor: public QObject {
   Q_OBJECT
   Q_PROPERTY(qint64 timeToFull READ timeToFull NOTIFY timeToFullChanged)
@@ -37,6 +24,20 @@ public:
   qint64 timeToFull();
 
   Q_INVOKABLE uint state();
+
+  enum State {
+      /* Status */
+      UNKNOWN = 0,
+      CHARGING,
+      DISCHARGING,
+      EMPTY,
+      FULLY_CHARGED = 4,
+
+      /* Type */
+      ON_LINEPOWER = 1,
+      ON_BATTERY = 2
+  };
+  Q_ENUM(State)
 
 public Q_SLOTS:
   void propertiesChanged(QString string, QVariantMap map, QStringList list);

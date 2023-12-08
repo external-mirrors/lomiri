@@ -159,7 +159,7 @@ Showable {
             }
             if (hours == 0 && minutes == 0) {
                 var state = BatteryMonitor.state();
-                if (state == 4) return i18n.tr("Fully charged")
+                if (state == BatteryMonitor.FULLY_CHARGED) return i18n.tr("Fully charged")
             }                
             if (text != "") {
                 // Translators: String like "1 hour, 2 minutes until full"
