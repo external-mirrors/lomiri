@@ -37,6 +37,12 @@ void dimTimeoutChanged(GSettings *settings, const gchar *key, QDBusInterface *lo
     lomiriScreen->asyncCall(QStringLiteral("setInactivityTimeouts"), QVariant(-1), QVariant(value));
 }
 
+void doubleTapToWakeChanged(GSettings *settings, const gchar *key, QDBusInterface *lomiriScreen)
+{
+    bool value = g_settings_get_boolean(settings, key);
+    lomiriScreen->asyncCall(QStringLiteral("setDoubleTapToWakeEnabled"), QVariant(value));
+}
+
 Powerd::Powerd(QObject* parent)
   : QObject(parent),
     lomiriScreen(nullptr),
@@ -58,9 +64,11 @@ Powerd::Powerd(QObject* parent)
     g_signal_connect(systemSettings, "changed::auto-brightness", G_CALLBACK(autoBrightnessChanged), lomiriScreen);
     g_signal_connect(systemSettings, "changed::activity-timeout", G_CALLBACK(activityTimeoutChanged), lomiriScreen);
     g_signal_connect(systemSettings, "changed::dim-timeout", G_CALLBACK(dimTimeoutChanged), lomiriScreen);
+    g_signal_connect(systemSettings, "changed::double-tap-to-wake", G_CALLBACK(doubleTapToWakeChanged), lomiriScreen);
     autoBrightnessChanged(systemSettings, "auto-brightness", lomiriScreen);
     activityTimeoutChanged(systemSettings, "activity-timeout", lomiriScreen);
     dimTimeoutChanged(systemSettings, "dim-timeout", lomiriScreen);
+    doubleTapToWakeChanged(systemSettings, "double-tap-to-wake", lomiriScreen);
 }
 
 Powerd::~Powerd()
