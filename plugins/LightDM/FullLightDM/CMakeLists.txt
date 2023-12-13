@@ -26,6 +26,7 @@ target_link_libraries(FullLightDM-qml
     lomiri-private
     ${LIBLIGHTDM_LDFLAGS}
     ${LIBUSERMETRICSOUTPUT_LDFLAGS}
+    ${Intl_LIBRARIES}
     Qt5::DBus Qt5::Gui Qt5::Qml
     )
 

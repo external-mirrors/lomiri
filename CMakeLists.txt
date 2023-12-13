@@ -81,6 +81,7 @@ find_package(Qt5Test 5.6 REQUIRED)
 find_package(Qt5Svg 5.6 REQUIRED)
 find_package(Qt5Network 5.6 REQUIRED)
 find_package(Qt5Xml 5.6 REQUIRED)
+find_package(Intl REQUIRED)
 
 pkg_check_modules(APPLICATION_API REQUIRED lomiri-shell-application=28)
 pkg_check_modules(QTMIRSERVER REQUIRED qtmirserver>=0.6.0)
@@ -133,7 +134,7 @@ endif()
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-permissive -pedantic -Wall -Wextra")
 
-set (CMAKE_CXX_STANDARD 14)
+set (CMAKE_CXX_STANDARD 17)
 
 if ("${CMAKE_BUILD_TYPE}" STREQUAL "release" OR "${CMAKE_BUILD_TYPE}" STREQUAL "relwithdebinfo")
     option(Werror "Treat warnings as errors" ON)

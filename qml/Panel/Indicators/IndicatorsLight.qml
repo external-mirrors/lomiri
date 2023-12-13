@@ -211,7 +211,7 @@ console.log("no support for Multicolor LED. " + indicatorState)
         }
     }
 
-    Component.onCompleted: Leds.state = Lights.Off
+    Component.onCompleted: Leds.state = Leds.Off
     Component.onDestruction: Leds.state = Leds.Off
 
     property var _colorBinding: Binding {

@@ -56,6 +56,7 @@ target_link_libraries(${SHELL_APP}
     ${GSETTINGS_QT_LDFLAGS}
     ${QTMIRSERVER_LDFLAGS}
     ${SYSTEMD_LDFLAGS}
+    ${Intl_LIBRARIES}
     LomiriGestures
     lomiri-connectivity-qt1
     lomiri-private
