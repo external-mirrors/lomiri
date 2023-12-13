@@ -60,6 +60,6 @@ void BatteryMonitor::propertiesChanged(QString string, QVariantMap map, QStringL
 {
     if (map.contains("State"))
         Q_EMIT chargingChanged();
-    else if (map.contains("TimeToFull") && map.contains("Percentage"))
+    else if (map.contains("TimeToFull") && map.contains("Percentage") && charging())
         Q_EMIT timeToFullChanged();
 }
