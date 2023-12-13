@@ -162,7 +162,7 @@ Showable {
                 if (state == BatteryMonitor.FULLY_CHARGED) return i18n.tr("Fully charged")
             }
             if (text != "") {
-                // Translators: String like "1 hour, 2 minutes until full"
+                // Translators: String like "1 hour and 2 minutes until full"
                 text = i18n.tr("%1 until full").arg(text);
             }
             return text;
