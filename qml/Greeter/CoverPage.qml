@@ -21,6 +21,8 @@ import Lomiri.Components 1.3
 import Lomiri.Gestures 0.1
 import "../Components"
 
+import BatteryMonitor 1.0
+
 Showable {
     id: root
 
@@ -138,6 +140,41 @@ Showable {
     }
 
     Label {
+        id: chargingHint
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: units.gu(5)
+        text: {
+            var hourText = "";
+            var minuteText = "";
+            var seconds = BatteryMonitor.timeToFull;
+            var minutes = Math.floor(seconds / 60 % 60);
+            var hours = Math.floor(seconds / 60 / 60);
+
+            if (hours > 0) {
+                hourText = i18n.tr("%1 hour", "%1 hours", hours).arg(hours)
+            }
+            if (minutes > 0) {
+                minuteText = i18n.tr("%1 minute", "%1 minutes", minutes).arg(minutes)
+            }
+            if (hours == 0 && minutes == 0) {
+                var state = BatteryMonitor.state();
+                if (state == BatteryMonitor.FULLY_CHARGED) return i18n.tr("Fully charged")
+            }
+            if (hourText != "" && minuteText != "") {
+                // Translators: String like "1 hour, 2 minutes until full"
+                return i18n.tr("%1, %2 until full").arg(hourText).arg(minuteText);
+            } else if (hourText == "" || minuteText == "") {
+                // Translators: String like "32 minutes until full" or "3 hours until full"
+                return i18n.tr("%1 until full").arg((hourText != "" ? hourText : minuteText))
+            }
+        }
+        color: "white"
+        font.weight: Font.Light
+        visible: BatteryMonitor.charging
+    }
+
+    Label {
         id: swipeHint
         objectName: "swipeHint"
         property real baseOpacity: 0.5
@@ -148,6 +185,7 @@ Showable {
         text: "《    " + (d.errorMessage ? d.errorMessage : i18n.tr("Unlock")) + "    》"
         color: "white"
         font.weight: Font.Light
+        visible: !BatteryMonitor.charging
 
         readonly property var opacityAnimation: showLabelAnimation // for testing
 
