@@ -172,6 +172,7 @@ Rectangle {
             var appWindowStates = findInvisibleChild(appWindow, "applicationWindowStateGroup");
             verify(appWindowStates);
             tryCompare(appWindowStates, "state", "surface");
+            waitUntilTransitionsEnd(appWindowStates);
         }
 
         function findAppWindowForSurfaceId(surfaceId) {
