@@ -148,6 +148,13 @@ Showable {
             var hourText = "";
             var minuteText = "";
             var seconds = BatteryMonitor.timeToFull;
+            if (seconds == BatteryMonitor.NO_BATTERY) return ""
+            else if (seconds == BatteryMonitor.NO_TIMETOFULL) {
+                var isFullyCharged = BatteryMonitor.isFullyCharged();
+                if (isFullyCharged) return i18n.tr("Fully charged")
+                else return ""
+            }
+
             var minutes = Math.floor(seconds / 60 % 60);
             var hours = Math.floor(seconds / 60 / 60);
 
@@ -158,8 +165,7 @@ Showable {
                 minuteText = i18n.tr("%1 minute", "%1 minutes", minutes).arg(minutes)
             }
             if (hours == 0 && minutes == 0) {
-                var state = BatteryMonitor.state();
-                if (state == BatteryMonitor.FULLY_CHARGED) return i18n.tr("Fully charged")
+                return ""
             }
             if (hourText != "" && minuteText != "") {
                 // Translators: String like "1 hour, 2 minutes until full"

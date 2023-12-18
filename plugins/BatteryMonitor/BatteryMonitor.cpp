@@ -41,27 +41,42 @@ bool BatteryMonitor::charging()
         return false;
 }
 
+bool BatteryMonitor::isFullyCharged()
+{
+    if (state() == FULLY_CHARGED)
+        return true;
+
+    QDBusReply<QDBusVariant> reply = m_iface->call(GET, UPOWER_PROPERTIES, "Percentage");
+    float percentage = reply.value().variant().toFloat();
+
+    if (percentage == 100.0 && charging())
+        return true;
+    else
+        return false;
+}
+
 qint64 BatteryMonitor::timeToFull()
 {
     if (!hasBattery())
-        return -1;
+        return NO_BATTERY;
 
     QDBusReply<QDBusVariant> reply = m_iface->call(GET, UPOWER_PROPERTIES, "TimeToFull");
     if (reply.isValid() && charging()) {
         uint value = reply.value().variant().toUInt();
         if (value == 0)
-            return -2;
+            return NO_TIMETOFULL;
 
         return value;
     }
 
-    return -1;
+    return NO_BATTERY;
 }
 
 void BatteryMonitor::propertiesChanged(QString string, QVariantMap map, QStringList list)
 {
     Q_UNUSED(string)
     Q_UNUSED(list)
+
     if (map.contains("State"))
         Q_EMIT chargingChanged();
     else if (map.contains("TimeToFull") && map.contains("Percentage") && charging())
