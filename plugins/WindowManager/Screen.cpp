@@ -171,6 +171,8 @@ QString Screen::outputTypeName() const
     case qtmir::LVDS:
     case qtmir::NinePinDIN:
     case qtmir::EDP:
+    case qtmir::DSI:
+    case qtmir::DPI:
         return tr("Internal");
     case qtmir::Component:
         return tr("Component");
@@ -181,6 +183,8 @@ QString Screen::outputTypeName() const
         return tr("HDMI");
     case qtmir::TV:
         return tr("TV");
+    case qtmir::Virtual:
+        return tr("Virtual");
     }
     return QString();
 }
