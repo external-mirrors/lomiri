@@ -54,10 +54,14 @@ qint64 BatteryMonitor::timeToFull()
 
         return value;
     }
+
+    return -1;
 }
 
 void BatteryMonitor::propertiesChanged(QString string, QVariantMap map, QStringList list)
 {
+    Q_UNUSED(string)
+    Q_UNUSED(list)
     if (map.contains("State"))
         Q_EMIT chargingChanged();
     else if (map.contains("TimeToFull") && map.contains("Percentage") && charging())
