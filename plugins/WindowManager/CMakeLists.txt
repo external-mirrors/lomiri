@@ -2,6 +2,7 @@ include_directories(
     SYSTEM
     ${QTMIRSERVER_INCLUDE_DIRS}
     ${Qt5Gui_PRIVATE_INCLUDE_DIRS}
+    ${MIROIL_INCLUDE_DIRS}
 )
 
 include_directories(

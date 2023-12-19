@@ -9,6 +9,7 @@ include_directories(
     ${CMAKE_CURRENT_BINARY_DIR}
     ${CMAKE_SOURCE_DIR}/plugins/WindowManager
     ${liblomiri-private_SOURCE_DIR}
+    ${MIROIL_INCLUDE_DIRS}
 )
 
 add_library(mockwindowmanagmentpolicy SHARED
