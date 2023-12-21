@@ -35,7 +35,7 @@ uint BatteryMonitor::state()
 
 bool BatteryMonitor::charging()
 {
-    if (state() == CHARGING)
+    if (state() == CHARGING || state() == FULLY_CHARGED)
         return true;
     else
         return false;
