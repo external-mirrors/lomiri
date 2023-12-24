@@ -6,6 +6,10 @@ add_executable(uqmlscene
 
 pkg_check_modules(XCB REQUIRED xcb)
 
+if (NOT "${XCB_INCLUDE_DIRS}" STREQUAL "")
+    set_target_properties(uqmlscene PROPERTIES INCLUDE_DIRECTORIES ${XCB_INCLUDE_DIRS})
+endif()
+
 include_directories(
     SYSTEM
     ${Qt5Quick_PRIVATE_INCLUDE_DIRS}
@@ -18,10 +22,6 @@ include_directories(
     ${CMAKE_SOURCE_DIR}/libs/LomiriGestures
     ${liblomiri-private_SOURCE_DIR}
 )
-
-if (NOT "${XCB_INCLUDE_DIRS}" STREQUAL "")
-    set_target_properties(uqmlscene PROPERTIES INCLUDE_DIRECTORIES ${XCB_INCLUDE_DIRS})
-endif()
 
 target_link_libraries(uqmlscene
     Qt5::Qml Qt5::Quick Qt5::Test Qt5::DBus
