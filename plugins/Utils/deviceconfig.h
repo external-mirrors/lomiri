@@ -34,6 +34,7 @@ class DeviceConfig: public QObject
     Q_PROPERTY(Qt::ScreenOrientation invertedPortraitOrientation READ invertedPortraitOrientation NOTIFY changed)
     Q_PROPERTY(QString category READ category NOTIFY changed)
     Q_PROPERTY(bool supportsMultiColorLed READ supportsMultiColorLed NOTIFY changed)
+    Q_PROPERTY(int numBuiltInDisplays READ numBuiltInDisplays NOTIFY changed)
 
 public:
     DeviceConfig(QObject *parent = nullptr);
@@ -49,6 +50,7 @@ public:
     Qt::ScreenOrientation invertedPortraitOrientation() const;
     QString category() const;
     bool supportsMultiColorLed() const;
+    int numBuiltInDisplays() const;
 
 // for tests
     Q_INVOKABLE void refresh() { Q_EMIT changed(); }

@@ -32,7 +32,7 @@ ScreenWindow {
         if (Screens.count === 1)
             return true;
 
-        if (deviceConfiguration.category == "phone" && Screens.count > 1 && screenIndex === 1)
+        if (deviceConfiguration.category == "phone" && Screens.count > deviceConfiguration.numBuiltInDisplays && screenIndex === 1)
             return true;
 
         return (Screens.count > 1 && screenIndex === 0)
@@ -48,7 +48,7 @@ ScreenWindow {
         height: screenWindow.height
 
         sourceComponent: {
-            if (deviceConfiguration.category == "phone" && Screens.count > 1 && screenIndex === 0) {
+            if (deviceConfiguration.category == "phone" && Screens.count > deviceConfiguration.numBuiltInDisplays && screenIndex === 0) {
                 return disabledScreenComponent;
             }
             return shellComponent;
@@ -64,7 +64,7 @@ ScreenWindow {
             visible: true
 
             deviceConfiguration {
-                overrideName: Screens.count > 1 ? "desktop" : false
+                overrideName: Screens.count > deviceConfiguration.numBuiltInDisplays ? "desktop" : false
             }
         }
     }
@@ -73,7 +73,7 @@ ScreenWindow {
         id: disabledScreenComponent
         DisabledScreenNotice {
             screen: screenWindow.screen
-            oskEnabled: Screens.count > 1
+            oskEnabled: Screens.count > deviceConfiguration.numBuiltInDisplays
         }
     }
 }

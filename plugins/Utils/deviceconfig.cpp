@@ -113,3 +113,16 @@ bool DeviceConfig::supportsMultiColorLed() const
 {
     return m_info->contains("supportsMultiColorLed");
 }
+
+int DeviceConfig::numBuiltInDisplays() const
+{
+    bool ok;
+    int numDisplays;
+
+    numDisplays = QString::fromStdString(m_info->get("NumBuiltInDisplays", "1")).toInt(&ok);
+    if (!ok) {
+        // Assume one built-in display if set to bogus value
+        numDisplays = 1;
+    }
+    return numDisplays;
+}

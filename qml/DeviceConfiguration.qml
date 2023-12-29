@@ -36,6 +36,7 @@ QtObject {
     readonly property alias invertedPortraitOrientation: priv.invertedPortraitOrientation
 
     readonly property alias category: priv.category
+    readonly property alias numBuiltInDisplays: priv.numBuiltInDisplays
 
     readonly property var deviceConfig: DeviceConfig {}
 
@@ -60,6 +61,7 @@ QtObject {
         property string category: deviceConfig.category
         property string name: deviceConfig.name
         property bool supportsMultiColorLed: deviceConfig.supportsMultiColorLed
+        property int numBuiltInDisplays: deviceConfig.numBuiltInDisplays
 
         states: [
             State {

@@ -43,7 +43,7 @@ Item {
     }
 
     onWidthChanged: calculateUsageMode();
-    property var overrideDeviceName: Screens.count > 1 ? "desktop" : false
+    property var overrideDeviceName: Screens.count > deviceConfiguration.numBuiltInDisplays ? "desktop" : false
 
     DeviceConfiguration {
         id: _deviceConfiguration
