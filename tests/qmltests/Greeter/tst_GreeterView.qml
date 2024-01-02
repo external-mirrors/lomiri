@@ -827,6 +827,7 @@ StyledItem {
 
         function test_unicode() {
             setUsageMode("desktop");
+            swipeAwayCover();
             var index = selectUser("unicode");
             var label = findChild(view, "username" + index);
             tryCompare(label, "text", "가나다라마");
