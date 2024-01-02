@@ -177,7 +177,7 @@ FocusScope {
             enabled: !coverPage.shown && visible
             visible: !delayedLockscreen.visible
 
-            model: root.userModel
+            model: coverPage.visible ? null : root.userModel
             onResponded: root.responded(response)
             onSelected: root.selected(index)
             onSessionChooserButtonClicked: parent.state = "SessionsList"
