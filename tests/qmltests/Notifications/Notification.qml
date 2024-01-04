@@ -29,4 +29,5 @@ Notification {
     value: 0
     rawActions: []
     fullscreen: false
+    urgency: Notification.Low
 }

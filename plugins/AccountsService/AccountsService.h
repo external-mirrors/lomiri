@@ -46,6 +46,9 @@ class AccountsService: public QObject
     Q_PROPERTY (bool enableLauncherWhileLocked
                 READ enableLauncherWhileLocked
                 NOTIFY enableLauncherWhileLockedChanged)
+    Q_PROPERTY (bool hideNotificationContentWhileLocked
+                READ hideNotificationContentWhileLocked
+                NOTIFY hideNotificationContentWhileLockedChanged)
     Q_PROPERTY (bool enableIndicatorsWhileLocked
                 READ enableIndicatorsWhileLocked
                 NOTIFY enableIndicatorsWhileLockedChanged)
@@ -94,6 +97,7 @@ public:
     bool enableFingerprintIdentification() const;
     bool enableLauncherWhileLocked() const;
     bool enableIndicatorsWhileLocked() const;
+    bool hideNotificationContentWhileLocked() const;
     QString backgroundFile() const;
     bool statsWelcomeScreen() const;
     PasswordDisplayHint passwordDisplayHint() const;
@@ -118,6 +122,7 @@ Q_SIGNALS:
     void enableFingerprintIdentificationChanged();
     void enableLauncherWhileLockedChanged();
     void enableIndicatorsWhileLockedChanged();
+    void hideNotificationContentWhileLockedChanged();
     void backgroundFileChanged();
     void statsWelcomeScreenChanged();
     void passwordDisplayHintChanged();

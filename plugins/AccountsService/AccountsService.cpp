@@ -38,6 +38,7 @@
 #define PROP_EMAIL                             QStringLiteral("Email")
 #define PROP_ENABLE_FINGERPRINT_IDENTIFICATION QStringLiteral("EnableFingerprintIdentification")
 #define PROP_ENABLE_INDICATORS_WHILE_LOCKED    QStringLiteral("EnableIndicatorsWhileLocked")
+#define PROP_HIDE_NOTIFICATION_CONTENT_WHILE_LOCKED QStringLiteral("HideNotificationContentWhileLocked")
 #define PROP_ENABLE_LAUNCHER_WHILE_LOCKED      QStringLiteral("EnableLauncherWhileLocked")
 #define PROP_FAILED_FINGERPRINT_LOGINS         QStringLiteral("FailedFingerprintLogins")
 #define PROP_FAILED_LOGINS                     QStringLiteral("FailedLogins")
@@ -100,6 +101,7 @@ AccountsService::AccountsService(QObject* parent, const QString &user)
     registerProperty(IFACE_UBUNTU_SECURITY, PROP_ENABLE_FINGERPRINT_IDENTIFICATION, QStringLiteral("enableFingerprintIdentificationChanged"));
     registerProperty(IFACE_UBUNTU_SECURITY, PROP_ENABLE_LAUNCHER_WHILE_LOCKED, QStringLiteral("enableLauncherWhileLockedChanged"));
     registerProperty(IFACE_UBUNTU_SECURITY, PROP_ENABLE_INDICATORS_WHILE_LOCKED, QStringLiteral("enableIndicatorsWhileLockedChanged"));
+    registerProperty(IFACE_UBUNTU_SECURITY, PROP_HIDE_NOTIFICATION_CONTENT_WHILE_LOCKED, QStringLiteral("hideNotificationContentWhileLocked"));
     registerProperty(IFACE_UBUNTU_SECURITY, PROP_PASSWORD_DISPLAY_HINT, QStringLiteral("passwordDisplayHintChanged"));
     registerProperty(IFACE_UBUNTU_SECURITY, PROP_PINCODE_LENGTH, QStringLiteral("pincodeLengthChanged"));
     registerProperty(IFACE_UBUNTU_SECURITY_OLD, PROP_STATS_WELCOME_SCREEN, QStringLiteral("statsWelcomeScreenChanged"));
@@ -198,6 +200,12 @@ bool AccountsService::enableLauncherWhileLocked() const
 bool AccountsService::enableIndicatorsWhileLocked() const
 {
     auto value = getProperty(IFACE_UBUNTU_SECURITY, PROP_ENABLE_INDICATORS_WHILE_LOCKED);
+    return value.toBool();
+}
+
+bool AccountsService::hideNotificationContentWhileLocked() const
+{
+    auto value = getProperty(IFACE_UBUNTU_SECURITY, PROP_HIDE_NOTIFICATION_CONTENT_WHILE_LOCKED);
     return value.toBool();
 }
 

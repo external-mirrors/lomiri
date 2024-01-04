@@ -215,6 +215,18 @@ private Q_SLOTS:
         QTRY_COMPARE(session.enableIndicatorsWhileLocked(), false);
     }
 
+    void testAsynchronousChangeForHideNotificationContentWhileLocked()
+    {
+        AccountsService session(this, QTest::currentTestFunction());
+
+        QCOMPARE(session.hideNotificationContentWhileLocked(), false);
+        ASSERT_DBUS_CALL(m_userInterface->asyncCall("Set",
+                                                    "com.lomiri.AccountsService.SecurityPrivacy",
+                                                    "HideNotificationContentWhileLocked",
+                                                    dbusVariant(true)));
+        QTRY_COMPARE(session.hideNotificationContentWhileLocked(), true);
+    }
+
     void testAsynchronousChangeForPasswordDisplayHint()
     {
         AccountsService session(this, QTest::currentTestFunction());
