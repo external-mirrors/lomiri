@@ -234,6 +234,11 @@ ConcreteScreen::ConcreteScreen(qtmir::Screen* wrapped)
             m_currentWorspace->activate();
         }
     });
+    connect(this, &ConcreteScreen::usedChanged, this, [this]() {
+        if (!used()) {
+            ConcreteScreens::self()->onScreenUnused(this);
+        }
+    });
 }
 
 void ConcreteScreen::resetCurrentWorkspace()

@@ -188,8 +188,28 @@ void ConcreteScreens::onScreenRemoved(qtmir::Screen *removed)
         }
         index++;
     }
+    reselectActiveScreen();
 }
 
+void ConcreteScreens::onScreenUnused(ConcreteScreen *screen)
+{
+    screen->setActive(false);
+    reselectActiveScreen();
+}
+
+void ConcreteScreens::reselectActiveScreen()
+{
+    // if currently active screen is removed or disabled, pick another one
+    if (!activeScreen().isNull())
+        return;
+
+    Q_FOREACH(auto screen, m_screens) {
+        if (screen->used()) {
+            screen->setActive(true);
+            break;
+        }
+    }
+}
 
 ProxyScreens::ProxyScreens(Screens * const screens)
     : Screens(screens->m_wrapped)

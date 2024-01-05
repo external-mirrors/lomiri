@@ -27,6 +27,7 @@ class Screen;
 class Screens;
 }
 
+class ConcreteScreen;
 class Screen;
 class ProxyScreens;
 class ScreensConfiguration;
@@ -87,12 +88,15 @@ public:
     Q_INVOKABLE void sync(ProxyScreens *proxy);
 
     static ConcreteScreens *self();
+    void onScreenUnused(ConcreteScreen *screen);
 
 protected Q_SLOTS:
     void onScreenAdded(qtmir::Screen *screen);
     void onScreenRemoved(qtmir::Screen *screen);
 
 private:
+    void reselectActiveScreen();
+
     ScreensConfiguration* m_config;
 
     static ConcreteScreens* m_self;
