@@ -183,7 +183,7 @@ Showable {
         }
         color: "white"
         font.weight: Font.Light
-        visible: gsettings.showChargingInformation && BatteryMonitor.charging
+        visible: gsettings.showChargingInformationWhileLocked && BatteryMonitor.charging
     }
 
     Label {
