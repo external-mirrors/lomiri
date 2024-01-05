@@ -22,6 +22,7 @@ import Lomiri.Gestures 0.1
 import "../Components"
 
 import BatteryMonitor 1.0
+import GSettings 1.0
 
 Showable {
     id: root
@@ -62,6 +63,11 @@ Showable {
         id: d
         property bool forceRightOnNextHideAnimation: false
         property string errorMessage
+    }
+
+    GSettings {
+        id: gsettings
+        schema.id: "com.lomiri.touch.system"
     }
 
     prepareToHide: function () {
@@ -177,7 +183,7 @@ Showable {
         }
         color: "white"
         font.weight: Font.Light
-        visible: BatteryMonitor.charging
+        visible: gsettings.showChargingInformationWhileLocked && BatteryMonitor.charging
     }
 
     Label {
@@ -191,7 +197,7 @@ Showable {
         text: "《    " + (d.errorMessage ? d.errorMessage : i18n.tr("Unlock")) + "    》"
         color: "white"
         font.weight: Font.Light
-        visible: !BatteryMonitor.charging
+        visible: !chargingHint.visible
 
         readonly property var opacityAnimation: showLabelAnimation // for testing
 
