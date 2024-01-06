@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-08 19:08+0000\n"
+"POT-Creation-Date: 2024-01-06 08:14+0000\n"
 "PO-Revision-Date: 2023-10-25 16:02+0000\n"
 "Last-Translator: Lundrin <berenyi.vilmos@tutanota.com>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/lomiri/lomiri/"
@@ -43,6 +43,10 @@ msgstr "Indikátor kliens"
 #: data/indicators-client.desktop.in:5
 msgid "Application for testing the Indicators system"
 msgstr "Alkalmazás az indikátor rendszer teszteléséhez"
+
+#: data/indicators-client.desktop.in:9
+msgid "NoDisplay=false"
+msgstr ""
 
 #: plugins/LightDM/Greeter.cpp:199
 msgid "Password: "
@@ -109,25 +113,29 @@ msgstr "Kompozit"
 msgid "S-Video"
 msgstr "S-Video"
 
-#: plugins/WindowManager/Screen.cpp:174
+#: plugins/WindowManager/Screen.cpp:176
 msgid "Internal"
 msgstr "Belső"
 
-#: plugins/WindowManager/Screen.cpp:176
+#: plugins/WindowManager/Screen.cpp:178
 msgid "Component"
 msgstr "Komponens"
 
-#: plugins/WindowManager/Screen.cpp:178
+#: plugins/WindowManager/Screen.cpp:180
 msgid "DisplayPort"
 msgstr "DisplayPort"
 
-#: plugins/WindowManager/Screen.cpp:181
+#: plugins/WindowManager/Screen.cpp:183
 msgid "HDMI"
 msgstr "HDMI"
 
-#: plugins/WindowManager/Screen.cpp:183
+#: plugins/WindowManager/Screen.cpp:185
 msgid "TV"
 msgstr "TV"
+
+#: plugins/WindowManager/Screen.cpp:187
+msgid "Virtual"
+msgstr ""
 
 #: qml/Components/Dialogs.qml:176
 msgctxt "Title: Lock/Log out dialog"
@@ -149,7 +157,7 @@ msgid "Log Out"
 msgstr "Kijelentkezés"
 
 #: qml/Components/Dialogs.qml:199 qml/Components/Dialogs.qml:284
-#: qml/Greeter/GreeterView.qml:451 qml/Wizard/Pages/passcode-confirm.qml:32
+#: qml/Greeter/GreeterView.qml:452 qml/Wizard/Pages/passcode-confirm.qml:32
 #: qml/Wizard/Pages/passcode-set.qml:32
 msgid "Cancel"
 msgstr "Mégsem"
@@ -358,11 +366,11 @@ msgstr "Alt + F4"
 msgid "Closes the current window."
 msgstr "Az aktuális ablak bezárása."
 
-#: qml/Components/Lockscreen.qml:212 qml/Greeter/GreeterView.qml:471
+#: qml/Components/Lockscreen.qml:214 qml/Greeter/GreeterView.qml:472
 msgid "Return to Call"
 msgstr "Vissza a híváshoz"
 
-#: qml/Components/Lockscreen.qml:212
+#: qml/Components/Lockscreen.qml:214
 msgid "Emergency Call"
 msgstr "Segélyhívás"
 
@@ -426,7 +434,38 @@ msgstr "Kétujjas húzás a görgetéshez."
 msgid "Find more settings in the system settings."
 msgstr "További beállítások a rendszerbeállítások alatt."
 
-#: qml/Greeter/CoverPage.qml:127
+#: qml/Greeter/CoverPage.qml:160
+msgid "Fully charged"
+msgstr ""
+
+#: qml/Greeter/CoverPage.qml:168
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1095
+#, qt-format
+msgid "%1 hour"
+msgid_plural "%1 hours"
+msgstr[0] "%1 óra"
+msgstr[1] "%1 óra"
+
+#: qml/Greeter/CoverPage.qml:171
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1099
+#, qt-format
+msgid "%1 minute"
+msgid_plural "%1 minutes"
+msgstr[0] "%1 perc"
+msgstr[1] "%1 perc"
+
+#: qml/Greeter/CoverPage.qml:178
+#, qt-format
+msgid "%1, %2 until full"
+msgstr ""
+
+#: qml/Greeter/CoverPage.qml:181
+#, qt-format
+msgid "%1 until full"
+msgstr ""
+
+#: qml/Greeter/CoverPage.qml:197
+#: tests/qmltests/Greeter/tst_GreeterView.qml:1239
 msgid "Unlock"
 msgstr "Feloldás"
 
@@ -449,23 +488,23 @@ msgid_plural "Please wait %1 minutes and then try again…"
 msgstr[0] "Várjon %1 percet és próbálja újra…"
 msgstr[1] "Várjon %1 percet majd próbálja újra…"
 
-#: qml/Greeter/Greeter.qml:608 tests/qmltests/Greeter/tst_Greeter.qml:578
+#: qml/Greeter/Greeter.qml:627 tests/qmltests/Greeter/tst_Greeter.qml:578
 #: tests/qmltests/Greeter/tst_Greeter.qml:597
 #: tests/qmltests/Greeter/tst_Greeter.qml:625
 #: tests/qmltests/Greeter/tst_Greeter.qml:637
 msgid "Try again"
 msgstr "Próbálja újra"
 
-#: qml/Greeter/Greeter.qml:609 tests/qmltests/Greeter/tst_Greeter.qml:552
+#: qml/Greeter/Greeter.qml:628 tests/qmltests/Greeter/tst_Greeter.qml:552
 #: tests/qmltests/Greeter/tst_Greeter.qml:603
 msgid "Enter passphrase to unlock"
 msgstr "Jelmondat megadása"
 
-#: qml/Greeter/Greeter.qml:610
+#: qml/Greeter/Greeter.qml:629
 msgid "Enter passcode to unlock"
 msgstr "Jelkód megadása"
 
-#: qml/Greeter/GreeterView.qml:471
+#: qml/Greeter/GreeterView.qml:472
 msgid "Emergency"
 msgstr "Segélyhívás"
 
@@ -497,6 +536,10 @@ msgstr "Engedje el a frissítéshez…"
 msgid "Show password"
 msgstr "Jelszó megjelenítése"
 
+#: qml/Notifications/Notification.qml:322
+msgid "New message"
+msgstr ""
+
 #: qml/Panel/ActiveCallHint.qml:79
 msgid "Tap to return to call..."
 msgstr "Ide koppintva visszatérhet a híváshoz..."
@@ -505,61 +548,47 @@ msgstr "Ide koppintva visszatérhet a híváshoz..."
 msgid "Conference"
 msgstr "Konferencia"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:936
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:967
 msgid "Nothing is playing"
 msgstr "Nincs lejátszás"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1064
-#, qt-format
-msgid "%1 hour"
-msgid_plural "%1 hours"
-msgstr[0] "%1 óra"
-msgstr[1] "%1 óra"
-
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1068
-#, qt-format
-msgid "%1 minute"
-msgid_plural "%1 minutes"
-msgstr[0] "%1 perc"
-msgstr[1] "%1 perc"
-
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1073
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1104
 #, qt-format
 msgid "%1 second"
 msgid_plural "%1 seconds"
 msgstr[0] "%1 másodperc"
 msgstr[1] "%1 másodperc"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1076
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1107
 msgid "0 seconds"
 msgstr "0 másodperc"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1078
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1109
 #, qt-format
 msgid "%1 remaining"
 msgstr "%1 van hátra"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1084
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1115
 msgid "In queue…"
 msgstr "Várakozik…"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1088
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1119
 msgid "Downloading"
 msgstr "Letöltés"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1090
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1121
 msgid "Paused, tap to resume"
 msgstr "Szüneteltetve, koppintson a folytatáshoz"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1092
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1123
 msgid "Canceled"
 msgstr "Megszakítva"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1094
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1125
 msgid "Finished"
 msgstr "Befejeződött"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1096
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1127
 msgid "Failed, tap to retry"
 msgstr "Sikertelen, koppintson az újrapróbáláshoz"
 
@@ -587,7 +616,7 @@ msgstr "Vissza"
 msgid "Drag using 3 fingers any application from one window to the other"
 msgstr "Az alkalmazások 3 ujjal megragadva húzhatóak egyik ablakból a másikba"
 
-#: qml/Stage/Stage.qml:827
+#: qml/Stage/Stage.qml:834
 msgid "No running apps"
 msgstr "Nincs futó alkalmazás"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-08 19:08+0000\n"
+"POT-Creation-Date: 2024-01-06 08:14+0000\n"
 "PO-Revision-Date: 2023-07-28 15:08+0000\n"
 "Last-Translator: Serhii Horichenko <m@sgg.im>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/lomiri/lomiri/"
@@ -44,6 +44,10 @@ msgstr "Клієнт Індикаторів"
 #: data/indicators-client.desktop.in:5
 msgid "Application for testing the Indicators system"
 msgstr "Програма для тестування системи Індикаторів"
+
+#: data/indicators-client.desktop.in:9
+msgid "NoDisplay=false"
+msgstr ""
 
 #: plugins/LightDM/Greeter.cpp:199
 msgid "Password: "
@@ -110,25 +114,29 @@ msgstr "Композит"
 msgid "S-Video"
 msgstr "S-Відео"
 
-#: plugins/WindowManager/Screen.cpp:174
+#: plugins/WindowManager/Screen.cpp:176
 msgid "Internal"
 msgstr "Внутрішній"
 
-#: plugins/WindowManager/Screen.cpp:176
+#: plugins/WindowManager/Screen.cpp:178
 msgid "Component"
 msgstr "Компонент"
 
-#: plugins/WindowManager/Screen.cpp:178
+#: plugins/WindowManager/Screen.cpp:180
 msgid "DisplayPort"
 msgstr "DisplayPort"
 
-#: plugins/WindowManager/Screen.cpp:181
+#: plugins/WindowManager/Screen.cpp:183
 msgid "HDMI"
 msgstr "HDMI"
 
-#: plugins/WindowManager/Screen.cpp:183
+#: plugins/WindowManager/Screen.cpp:185
 msgid "TV"
 msgstr "TV"
+
+#: plugins/WindowManager/Screen.cpp:187
+msgid "Virtual"
+msgstr ""
 
 #: qml/Components/Dialogs.qml:176
 msgctxt "Title: Lock/Log out dialog"
@@ -150,7 +158,7 @@ msgid "Log Out"
 msgstr "Вийти"
 
 #: qml/Components/Dialogs.qml:199 qml/Components/Dialogs.qml:284
-#: qml/Greeter/GreeterView.qml:451 qml/Wizard/Pages/passcode-confirm.qml:32
+#: qml/Greeter/GreeterView.qml:452 qml/Wizard/Pages/passcode-confirm.qml:32
 #: qml/Wizard/Pages/passcode-set.qml:32
 msgid "Cancel"
 msgstr "Скасувати"
@@ -359,11 +367,11 @@ msgstr "Alt + F4"
 msgid "Closes the current window."
 msgstr "Закрити поточне вікно."
 
-#: qml/Components/Lockscreen.qml:212 qml/Greeter/GreeterView.qml:471
+#: qml/Components/Lockscreen.qml:214 qml/Greeter/GreeterView.qml:472
 msgid "Return to Call"
 msgstr "Повернутися до дзвінка"
 
-#: qml/Components/Lockscreen.qml:212
+#: qml/Components/Lockscreen.qml:214
 msgid "Emergency Call"
 msgstr "Терміновий виклик"
 
@@ -427,7 +435,40 @@ msgstr "Проведіть двома пальцями для прокрутки
 msgid "Find more settings in the system settings."
 msgstr "Більше налаштувань можна знайти в налаштуваннях системи."
 
-#: qml/Greeter/CoverPage.qml:127
+#: qml/Greeter/CoverPage.qml:160
+msgid "Fully charged"
+msgstr ""
+
+#: qml/Greeter/CoverPage.qml:168
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1095
+#, qt-format
+msgid "%1 hour"
+msgid_plural "%1 hours"
+msgstr[0] "%1 година"
+msgstr[1] "%1 години"
+msgstr[2] "%1 годин"
+
+#: qml/Greeter/CoverPage.qml:171
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1099
+#, qt-format
+msgid "%1 minute"
+msgid_plural "%1 minutes"
+msgstr[0] "%1 хвилина"
+msgstr[1] "%1 хвилини"
+msgstr[2] "%1 хвилин"
+
+#: qml/Greeter/CoverPage.qml:178
+#, qt-format
+msgid "%1, %2 until full"
+msgstr ""
+
+#: qml/Greeter/CoverPage.qml:181
+#, qt-format
+msgid "%1 until full"
+msgstr ""
+
+#: qml/Greeter/CoverPage.qml:197
+#: tests/qmltests/Greeter/tst_GreeterView.qml:1239
 msgid "Unlock"
 msgstr "Розблокувати"
 
@@ -455,23 +496,23 @@ msgstr[0] "Зачекайте %1 хвилину і повторіть спроб
 msgstr[1] "Зачекайте %1 хвилини і повторіть спробу…"
 msgstr[2] "Зачекайте %1 хвилин і повторіть спробу…"
 
-#: qml/Greeter/Greeter.qml:608 tests/qmltests/Greeter/tst_Greeter.qml:578
+#: qml/Greeter/Greeter.qml:627 tests/qmltests/Greeter/tst_Greeter.qml:578
 #: tests/qmltests/Greeter/tst_Greeter.qml:597
 #: tests/qmltests/Greeter/tst_Greeter.qml:625
 #: tests/qmltests/Greeter/tst_Greeter.qml:637
 msgid "Try again"
 msgstr "Повторити спробу"
 
-#: qml/Greeter/Greeter.qml:609 tests/qmltests/Greeter/tst_Greeter.qml:552
+#: qml/Greeter/Greeter.qml:628 tests/qmltests/Greeter/tst_Greeter.qml:552
 #: tests/qmltests/Greeter/tst_Greeter.qml:603
 msgid "Enter passphrase to unlock"
 msgstr "Введіть пароль для розблокування"
 
-#: qml/Greeter/Greeter.qml:610
+#: qml/Greeter/Greeter.qml:629
 msgid "Enter passcode to unlock"
 msgstr "Введіть пароль для розблокування"
 
-#: qml/Greeter/GreeterView.qml:471
+#: qml/Greeter/GreeterView.qml:472
 msgid "Emergency"
 msgstr "Критичний стан"
 
@@ -503,6 +544,10 @@ msgstr "Відпустіть для оновлення…"
 msgid "Show password"
 msgstr "Показати пароль"
 
+#: qml/Notifications/Notification.qml:322
+msgid "New message"
+msgstr ""
+
 #: qml/Panel/ActiveCallHint.qml:79
 msgid "Tap to return to call..."
 msgstr "Торкніться, щоб повернутися до дзвінка…"
@@ -511,27 +556,11 @@ msgstr "Торкніться, щоб повернутися до дзвінка�
 msgid "Conference"
 msgstr "Конференція"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:936
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:967
 msgid "Nothing is playing"
 msgstr "Нічого не відтворюється"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1064
-#, qt-format
-msgid "%1 hour"
-msgid_plural "%1 hours"
-msgstr[0] "%1 година"
-msgstr[1] "%1 години"
-msgstr[2] "%1 годин"
-
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1068
-#, qt-format
-msgid "%1 minute"
-msgid_plural "%1 minutes"
-msgstr[0] "%1 хвилина"
-msgstr[1] "%1 хвилини"
-msgstr[2] "%1 хвилин"
-
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1073
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1104
 #, qt-format
 msgid "%1 second"
 msgid_plural "%1 seconds"
@@ -539,36 +568,36 @@ msgstr[0] "%1 секунда"
 msgstr[1] "%1 секунди"
 msgstr[2] "%1 секунд"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1076
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1107
 msgid "0 seconds"
 msgstr "0 секунд"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1078
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1109
 #, qt-format
 msgid "%1 remaining"
 msgstr "Залишилося %1"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1084
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1115
 msgid "In queue…"
 msgstr "У черзі…"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1088
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1119
 msgid "Downloading"
 msgstr "Отримуємо"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1090
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1121
 msgid "Paused, tap to resume"
 msgstr "Призупинено, торкніться, щоб поновити"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1092
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1123
 msgid "Canceled"
 msgstr "Скасовано"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1094
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1125
 msgid "Finished"
 msgstr "Завершено"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1096
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1127
 msgid "Failed, tap to retry"
 msgstr "Помилка, торкніться, щоб повторити спробу"
 
@@ -598,7 +627,7 @@ msgstr ""
 "Перетягніть будь-яку програму за допомогою трьох пальців з одного вікна в "
 "інше"
 
-#: qml/Stage/Stage.qml:827
+#: qml/Stage/Stage.qml:834
 msgid "No running apps"
 msgstr "Немає запущених програм"
 

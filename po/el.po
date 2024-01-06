@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-08 19:08+0000\n"
+"POT-Creation-Date: 2024-01-06 08:14+0000\n"
 "PO-Revision-Date: 2021-09-20 23:03+0000\n"
 "Last-Translator: Efstathios Iosifidis <iefstathios@gmail.com>\n"
 "Language-Team: Greek <https://translate.ubports.com/projects/ubports/lomiri/"
@@ -44,6 +44,10 @@ msgstr ""
 
 #: data/indicators-client.desktop.in:5
 msgid "Application for testing the Indicators system"
+msgstr ""
+
+#: data/indicators-client.desktop.in:9
+msgid "NoDisplay=false"
 msgstr ""
 
 #: plugins/LightDM/Greeter.cpp:199
@@ -111,24 +115,28 @@ msgstr ""
 msgid "S-Video"
 msgstr ""
 
-#: plugins/WindowManager/Screen.cpp:174
+#: plugins/WindowManager/Screen.cpp:176
 msgid "Internal"
 msgstr ""
 
-#: plugins/WindowManager/Screen.cpp:176
+#: plugins/WindowManager/Screen.cpp:178
 msgid "Component"
 msgstr ""
 
-#: plugins/WindowManager/Screen.cpp:178
+#: plugins/WindowManager/Screen.cpp:180
 msgid "DisplayPort"
 msgstr ""
 
-#: plugins/WindowManager/Screen.cpp:181
+#: plugins/WindowManager/Screen.cpp:183
 msgid "HDMI"
 msgstr ""
 
-#: plugins/WindowManager/Screen.cpp:183
+#: plugins/WindowManager/Screen.cpp:185
 msgid "TV"
+msgstr ""
+
+#: plugins/WindowManager/Screen.cpp:187
+msgid "Virtual"
 msgstr ""
 
 #: qml/Components/Dialogs.qml:176
@@ -151,7 +159,7 @@ msgid "Log Out"
 msgstr "Αποσύνδεση"
 
 #: qml/Components/Dialogs.qml:199 qml/Components/Dialogs.qml:284
-#: qml/Greeter/GreeterView.qml:451 qml/Wizard/Pages/passcode-confirm.qml:32
+#: qml/Greeter/GreeterView.qml:452 qml/Wizard/Pages/passcode-confirm.qml:32
 #: qml/Wizard/Pages/passcode-set.qml:32
 msgid "Cancel"
 msgstr "Ακύρωση"
@@ -360,11 +368,11 @@ msgstr "Alt + F4"
 msgid "Closes the current window."
 msgstr "Κλείνει το τρέχων παράθυρο."
 
-#: qml/Components/Lockscreen.qml:212 qml/Greeter/GreeterView.qml:471
+#: qml/Components/Lockscreen.qml:214 qml/Greeter/GreeterView.qml:472
 msgid "Return to Call"
 msgstr "Επιστροφή στην κλήση"
 
-#: qml/Components/Lockscreen.qml:212
+#: qml/Components/Lockscreen.qml:214
 msgid "Emergency Call"
 msgstr "Κλήση έκτακτης ανάγκης"
 
@@ -430,7 +438,38 @@ msgstr "Σύρετε με δύο δάχτυλα για κύλιση."
 msgid "Find more settings in the system settings."
 msgstr "Βρείτε περισσότερες ρυθμίσεις στις ρυθμίσεις συστήματος."
 
-#: qml/Greeter/CoverPage.qml:127
+#: qml/Greeter/CoverPage.qml:160
+msgid "Fully charged"
+msgstr ""
+
+#: qml/Greeter/CoverPage.qml:168
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1095
+#, qt-format
+msgid "%1 hour"
+msgid_plural "%1 hours"
+msgstr[0] "%1 ώρα"
+msgstr[1] "%1 ώρες"
+
+#: qml/Greeter/CoverPage.qml:171
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1099
+#, qt-format
+msgid "%1 minute"
+msgid_plural "%1 minutes"
+msgstr[0] "%1 λεπτό"
+msgstr[1] "%1 λεπτά"
+
+#: qml/Greeter/CoverPage.qml:178
+#, qt-format
+msgid "%1, %2 until full"
+msgstr ""
+
+#: qml/Greeter/CoverPage.qml:181
+#, qt-format
+msgid "%1 until full"
+msgstr ""
+
+#: qml/Greeter/CoverPage.qml:197
+#: tests/qmltests/Greeter/tst_GreeterView.qml:1239
 msgid "Unlock"
 msgstr "Ξεκλείδωμα"
 
@@ -457,23 +496,23 @@ msgid_plural "Please wait %1 minutes and then try again…"
 msgstr[0] "Παρακαλούμε περιμένετε %1 λεπτό και δοκιμάστε ξανά…"
 msgstr[1] "Παρακαλούμε περιμένετε %1 λεπτά και δοκιμάστε ξανά…"
 
-#: qml/Greeter/Greeter.qml:608 tests/qmltests/Greeter/tst_Greeter.qml:578
+#: qml/Greeter/Greeter.qml:627 tests/qmltests/Greeter/tst_Greeter.qml:578
 #: tests/qmltests/Greeter/tst_Greeter.qml:597
 #: tests/qmltests/Greeter/tst_Greeter.qml:625
 #: tests/qmltests/Greeter/tst_Greeter.qml:637
 msgid "Try again"
 msgstr "Δοκιμάστε ξανά"
 
-#: qml/Greeter/Greeter.qml:609 tests/qmltests/Greeter/tst_Greeter.qml:552
+#: qml/Greeter/Greeter.qml:628 tests/qmltests/Greeter/tst_Greeter.qml:552
 #: tests/qmltests/Greeter/tst_Greeter.qml:603
 msgid "Enter passphrase to unlock"
 msgstr "Εισαγωγή συνθηματικού για ξεκλείδωμα"
 
-#: qml/Greeter/Greeter.qml:610
+#: qml/Greeter/Greeter.qml:629
 msgid "Enter passcode to unlock"
 msgstr "Εισαγωγή κωδικού πρόσβασης για ξεκλείδωμα"
 
-#: qml/Greeter/GreeterView.qml:471
+#: qml/Greeter/GreeterView.qml:472
 msgid "Emergency"
 msgstr "Επείγον"
 
@@ -505,6 +544,10 @@ msgstr "Αφήστε για ανανέωση…"
 msgid "Show password"
 msgstr "Εμφάνιση συνθηματικού"
 
+#: qml/Notifications/Notification.qml:322
+msgid "New message"
+msgstr ""
+
 #: qml/Panel/ActiveCallHint.qml:79
 msgid "Tap to return to call..."
 msgstr "Πατήστε για να γυρίσετε στην κλήση..."
@@ -513,61 +556,47 @@ msgstr "Πατήστε για να γυρίσετε στην κλήση..."
 msgid "Conference"
 msgstr "Συνδιάσκεψη"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:936
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:967
 msgid "Nothing is playing"
 msgstr "Δεν αναπαράγεται τίποτα"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1064
-#, qt-format
-msgid "%1 hour"
-msgid_plural "%1 hours"
-msgstr[0] "%1 ώρα"
-msgstr[1] "%1 ώρες"
-
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1068
-#, qt-format
-msgid "%1 minute"
-msgid_plural "%1 minutes"
-msgstr[0] "%1 λεπτό"
-msgstr[1] "%1 λεπτά"
-
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1073
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1104
 #, qt-format
 msgid "%1 second"
 msgid_plural "%1 seconds"
 msgstr[0] "%1 δευτερόλεπτο"
 msgstr[1] "%1 δευτερόλεπτα"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1076
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1107
 msgid "0 seconds"
 msgstr "0 δευτερόλεπτα"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1078
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1109
 #, qt-format
 msgid "%1 remaining"
 msgstr "%1 απομένουν"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1084
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1115
 msgid "In queue…"
 msgstr "Στην ουρά…"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1088
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1119
 msgid "Downloading"
 msgstr "Λήψη σε εξέλιξη"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1090
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1121
 msgid "Paused, tap to resume"
 msgstr "Σταματημένο, αγγίξτε για συνέχιση"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1092
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1123
 msgid "Canceled"
 msgstr "Ακυρώθηκε"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1094
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1125
 msgid "Finished"
 msgstr "Ολοκληρώθηκε"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1096
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1127
 msgid "Failed, tap to retry"
 msgstr "Αποτυχία, πατήστε για να ξαναπροσπαθήσετε"
 
@@ -597,7 +626,7 @@ msgstr ""
 "Σύρετε με την χρήση των 3 δακτύλων οποιαδήποτε εφαρμογή από ένα παράθυρο σε "
 "άλλο"
 
-#: qml/Stage/Stage.qml:827
+#: qml/Stage/Stage.qml:834
 msgid "No running apps"
 msgstr "Καμία εφαρμογή δεν εκτελείται"
 

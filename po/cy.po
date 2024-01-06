@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-08 19:08+0000\n"
+"POT-Creation-Date: 2024-01-06 08:14+0000\n"
 "PO-Revision-Date: 2015-07-31 13:21+0000\n"
 "Last-Translator: Owen Llywelyn <owen.llywelyn@gmail.com>\n"
 "Language-Team: Welsh <cy@li.org>\n"
@@ -42,6 +42,10 @@ msgstr ""
 
 #: data/indicators-client.desktop.in:5
 msgid "Application for testing the Indicators system"
+msgstr ""
+
+#: data/indicators-client.desktop.in:9
+msgid "NoDisplay=false"
 msgstr ""
 
 #: plugins/LightDM/Greeter.cpp:199
@@ -109,24 +113,28 @@ msgstr ""
 msgid "S-Video"
 msgstr ""
 
-#: plugins/WindowManager/Screen.cpp:174
+#: plugins/WindowManager/Screen.cpp:176
 msgid "Internal"
 msgstr ""
 
-#: plugins/WindowManager/Screen.cpp:176
+#: plugins/WindowManager/Screen.cpp:178
 msgid "Component"
 msgstr ""
 
-#: plugins/WindowManager/Screen.cpp:178
+#: plugins/WindowManager/Screen.cpp:180
 msgid "DisplayPort"
 msgstr ""
 
-#: plugins/WindowManager/Screen.cpp:181
+#: plugins/WindowManager/Screen.cpp:183
 msgid "HDMI"
 msgstr ""
 
-#: plugins/WindowManager/Screen.cpp:183
+#: plugins/WindowManager/Screen.cpp:185
 msgid "TV"
+msgstr ""
+
+#: plugins/WindowManager/Screen.cpp:187
+msgid "Virtual"
 msgstr ""
 
 #: qml/Components/Dialogs.qml:176
@@ -149,7 +157,7 @@ msgid "Log Out"
 msgstr "Allgofnodi"
 
 #: qml/Components/Dialogs.qml:199 qml/Components/Dialogs.qml:284
-#: qml/Greeter/GreeterView.qml:451 qml/Wizard/Pages/passcode-confirm.qml:32
+#: qml/Greeter/GreeterView.qml:452 qml/Wizard/Pages/passcode-confirm.qml:32
 #: qml/Wizard/Pages/passcode-set.qml:32
 msgid "Cancel"
 msgstr "Diddymu"
@@ -360,11 +368,11 @@ msgstr ""
 msgid "Closes the current window."
 msgstr ""
 
-#: qml/Components/Lockscreen.qml:212 qml/Greeter/GreeterView.qml:471
+#: qml/Components/Lockscreen.qml:214 qml/Greeter/GreeterView.qml:472
 msgid "Return to Call"
 msgstr "Nôl i'r alwad"
 
-#: qml/Components/Lockscreen.qml:212
+#: qml/Components/Lockscreen.qml:214
 msgid "Emergency Call"
 msgstr "Galwad Frys"
 
@@ -426,7 +434,42 @@ msgstr ""
 msgid "Find more settings in the system settings."
 msgstr ""
 
-#: qml/Greeter/CoverPage.qml:127
+#: qml/Greeter/CoverPage.qml:160
+msgid "Fully charged"
+msgstr ""
+
+#: qml/Greeter/CoverPage.qml:168
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1095
+#, qt-format
+msgid "%1 hour"
+msgid_plural "%1 hours"
+msgstr[0] "%1 awr"
+msgstr[1] "%1 awr"
+msgstr[2] "%1 awr"
+msgstr[3] "%1 awr"
+
+#: qml/Greeter/CoverPage.qml:171
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1099
+#, qt-format
+msgid "%1 minute"
+msgid_plural "%1 minutes"
+msgstr[0] "%1 munud"
+msgstr[1] "%1 munud"
+msgstr[2] "%1 munud"
+msgstr[3] "%1 munud"
+
+#: qml/Greeter/CoverPage.qml:178
+#, qt-format
+msgid "%1, %2 until full"
+msgstr ""
+
+#: qml/Greeter/CoverPage.qml:181
+#, qt-format
+msgid "%1 until full"
+msgstr ""
+
+#: qml/Greeter/CoverPage.qml:197
+#: tests/qmltests/Greeter/tst_GreeterView.qml:1239
 msgid "Unlock"
 msgstr "Datgloi"
 
@@ -453,27 +496,27 @@ msgstr[1] "Arhoswch am %1 munud cyn cynnig eto..."
 msgstr[2] "Arhoswch am %1 munud cyn cynnig eto..."
 msgstr[3] "Arhoswch am %1 munud cyn cynnig eto..."
 
-#: qml/Greeter/Greeter.qml:608 tests/qmltests/Greeter/tst_Greeter.qml:578
+#: qml/Greeter/Greeter.qml:627 tests/qmltests/Greeter/tst_Greeter.qml:578
 #: tests/qmltests/Greeter/tst_Greeter.qml:597
 #: tests/qmltests/Greeter/tst_Greeter.qml:625
 #: tests/qmltests/Greeter/tst_Greeter.qml:637
 msgid "Try again"
 msgstr ""
 
-#: qml/Greeter/Greeter.qml:609 tests/qmltests/Greeter/tst_Greeter.qml:552
+#: qml/Greeter/Greeter.qml:628 tests/qmltests/Greeter/tst_Greeter.qml:552
 #: tests/qmltests/Greeter/tst_Greeter.qml:603
 #, fuzzy
 #| msgid "Enter passphrase"
 msgid "Enter passphrase to unlock"
 msgstr "Rhowch gyfrinair"
 
-#: qml/Greeter/Greeter.qml:610
+#: qml/Greeter/Greeter.qml:629
 #, fuzzy
 #| msgid "Enter passcode"
 msgid "Enter passcode to unlock"
 msgstr "Rhowch god cyfrinachol"
 
-#: qml/Greeter/GreeterView.qml:471
+#: qml/Greeter/GreeterView.qml:472
 msgid "Emergency"
 msgstr ""
 
@@ -508,6 +551,10 @@ msgstr "Rhyddhewch i adnewyddu..."
 msgid "Show password"
 msgstr "Dangos cyfrinair"
 
+#: qml/Notifications/Notification.qml:322
+msgid "New message"
+msgstr ""
+
 #: qml/Panel/ActiveCallHint.qml:79
 msgid "Tap to return to call..."
 msgstr "Tapiwch i ffonio nôl"
@@ -516,29 +563,11 @@ msgstr "Tapiwch i ffonio nôl"
 msgid "Conference"
 msgstr "Cydalwad"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:936
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:967
 msgid "Nothing is playing"
 msgstr "Dim byd yn chwarae"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1064
-#, qt-format
-msgid "%1 hour"
-msgid_plural "%1 hours"
-msgstr[0] "%1 awr"
-msgstr[1] "%1 awr"
-msgstr[2] "%1 awr"
-msgstr[3] "%1 awr"
-
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1068
-#, qt-format
-msgid "%1 minute"
-msgid_plural "%1 minutes"
-msgstr[0] "%1 munud"
-msgstr[1] "%1 munud"
-msgstr[2] "%1 munud"
-msgstr[3] "%1 munud"
-
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1073
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1104
 #, qt-format
 msgid "%1 second"
 msgid_plural "%1 seconds"
@@ -547,36 +576,36 @@ msgstr[1] "%1 eiliad"
 msgstr[2] "%1 eiliad"
 msgstr[3] "%1 eiliad"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1076
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1107
 msgid "0 seconds"
 msgstr "0 eiliad"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1078
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1109
 #, qt-format
 msgid "%1 remaining"
 msgstr "%1 yn weddill"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1084
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1115
 msgid "In queue…"
 msgstr "Mewn ciw..."
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1088
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1119
 msgid "Downloading"
 msgstr "Yn llwytho i lawr"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1090
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1121
 msgid "Paused, tap to resume"
 msgstr "Seibiwyd, tapiwch i ailafael ynddi"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1092
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1123
 msgid "Canceled"
 msgstr "Diddymwyd"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1094
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1125
 msgid "Finished"
 msgstr "Wedi gorffen"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1096
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1127
 msgid "Failed, tap to retry"
 msgstr "Methwyd, tapiwch i geisio eto"
 
@@ -607,7 +636,7 @@ msgstr "Nôl"
 msgid "Drag using 3 fingers any application from one window to the other"
 msgstr ""
 
-#: qml/Stage/Stage.qml:827
+#: qml/Stage/Stage.qml:834
 msgid "No running apps"
 msgstr ""
 

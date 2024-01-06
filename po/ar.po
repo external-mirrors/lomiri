@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-08 19:08+0000\n"
+"POT-Creation-Date: 2024-01-06 08:14+0000\n"
 "PO-Revision-Date: 2021-10-03 05:18+0000\n"
 "Last-Translator: HEROBRINE7GAMER <tapermeerkat77@gmail.com>\n"
 "Language-Team: Arabic <https://translate.ubports.com/projects/ubports/lomiri/"
@@ -45,6 +45,10 @@ msgstr ""
 
 #: data/indicators-client.desktop.in:5
 msgid "Application for testing the Indicators system"
+msgstr ""
+
+#: data/indicators-client.desktop.in:9
+msgid "NoDisplay=false"
 msgstr ""
 
 #: plugins/LightDM/Greeter.cpp:199
@@ -112,24 +116,28 @@ msgstr ""
 msgid "S-Video"
 msgstr ""
 
-#: plugins/WindowManager/Screen.cpp:174
+#: plugins/WindowManager/Screen.cpp:176
 msgid "Internal"
 msgstr ""
 
-#: plugins/WindowManager/Screen.cpp:176
+#: plugins/WindowManager/Screen.cpp:178
 msgid "Component"
 msgstr ""
 
-#: plugins/WindowManager/Screen.cpp:178
+#: plugins/WindowManager/Screen.cpp:180
 msgid "DisplayPort"
 msgstr ""
 
-#: plugins/WindowManager/Screen.cpp:181
+#: plugins/WindowManager/Screen.cpp:183
 msgid "HDMI"
 msgstr ""
 
-#: plugins/WindowManager/Screen.cpp:183
+#: plugins/WindowManager/Screen.cpp:185
 msgid "TV"
+msgstr ""
+
+#: plugins/WindowManager/Screen.cpp:187
+msgid "Virtual"
 msgstr ""
 
 #: qml/Components/Dialogs.qml:176
@@ -152,7 +160,7 @@ msgid "Log Out"
 msgstr "اخرج"
 
 #: qml/Components/Dialogs.qml:199 qml/Components/Dialogs.qml:284
-#: qml/Greeter/GreeterView.qml:451 qml/Wizard/Pages/passcode-confirm.qml:32
+#: qml/Greeter/GreeterView.qml:452 qml/Wizard/Pages/passcode-confirm.qml:32
 #: qml/Wizard/Pages/passcode-set.qml:32
 msgid "Cancel"
 msgstr "ألغ"
@@ -361,11 +369,11 @@ msgstr "Alt + F4"
 msgid "Closes the current window."
 msgstr "يغلق النافذة الحالية."
 
-#: qml/Components/Lockscreen.qml:212 qml/Greeter/GreeterView.qml:471
+#: qml/Components/Lockscreen.qml:214 qml/Greeter/GreeterView.qml:472
 msgid "Return to Call"
 msgstr "عُد للمكالمة"
 
-#: qml/Components/Lockscreen.qml:212
+#: qml/Components/Lockscreen.qml:214
 msgid "Emergency Call"
 msgstr "مكالمة طوارئ"
 
@@ -425,7 +433,46 @@ msgstr "اسحب بإصبعين للتمرير."
 msgid "Find more settings in the system settings."
 msgstr "جد إعدادات إضافية في إعدادات النظام."
 
-#: qml/Greeter/CoverPage.qml:127
+#: qml/Greeter/CoverPage.qml:160
+msgid "Fully charged"
+msgstr ""
+
+#: qml/Greeter/CoverPage.qml:168
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1095
+#, qt-format
+msgid "%1 hour"
+msgid_plural "%1 hours"
+msgstr[0] "أقل من ساعة (%1)"
+msgstr[1] "ساعة واحدة (%1)"
+msgstr[2] "ساعتان (%1)"
+msgstr[3] "%1 ساعات"
+msgstr[4] "%1 ساعة"
+msgstr[5] "%1 ساعة"
+
+#: qml/Greeter/CoverPage.qml:171
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1099
+#, qt-format
+msgid "%1 minute"
+msgid_plural "%1 minutes"
+msgstr[0] "%1 دقيقة"
+msgstr[1] "دقيقة واحدة"
+msgstr[2] "دقيقتان"
+msgstr[3] "%1 دقائق"
+msgstr[4] "%1 دقيقة"
+msgstr[5] "%1 دقيقة"
+
+#: qml/Greeter/CoverPage.qml:178
+#, qt-format
+msgid "%1, %2 until full"
+msgstr ""
+
+#: qml/Greeter/CoverPage.qml:181
+#, qt-format
+msgid "%1 until full"
+msgstr ""
+
+#: qml/Greeter/CoverPage.qml:197
+#: tests/qmltests/Greeter/tst_GreeterView.qml:1239
 msgid "Unlock"
 msgstr "فك الإيصاد"
 
@@ -454,23 +501,23 @@ msgstr[3] "برجاء الانتظار %1 دقائق ثم المحاولة مج�
 msgstr[4] "برجاء الانتظار %1 دقيقة ثم المحاولة مجددًا…"
 msgstr[5] "برجاء الانتظار %1 دقيقة ثم المحاولة مجددًا…"
 
-#: qml/Greeter/Greeter.qml:608 tests/qmltests/Greeter/tst_Greeter.qml:578
+#: qml/Greeter/Greeter.qml:627 tests/qmltests/Greeter/tst_Greeter.qml:578
 #: tests/qmltests/Greeter/tst_Greeter.qml:597
 #: tests/qmltests/Greeter/tst_Greeter.qml:625
 #: tests/qmltests/Greeter/tst_Greeter.qml:637
 msgid "Try again"
 msgstr "حاول مجددا"
 
-#: qml/Greeter/Greeter.qml:609 tests/qmltests/Greeter/tst_Greeter.qml:552
+#: qml/Greeter/Greeter.qml:628 tests/qmltests/Greeter/tst_Greeter.qml:552
 #: tests/qmltests/Greeter/tst_Greeter.qml:603
 msgid "Enter passphrase to unlock"
 msgstr "أدخِل العبارة السرية لفك الإيصاد"
 
-#: qml/Greeter/Greeter.qml:610
+#: qml/Greeter/Greeter.qml:629
 msgid "Enter passcode to unlock"
 msgstr "أدخِل الرمز السرّي لفك الإيصاد"
 
-#: qml/Greeter/GreeterView.qml:471
+#: qml/Greeter/GreeterView.qml:472
 msgid "Emergency"
 msgstr "طوارئ"
 
@@ -502,6 +549,10 @@ msgstr "حرّر للتحديث…"
 msgid "Show password"
 msgstr "اعرض كلمة السر"
 
+#: qml/Notifications/Notification.qml:322
+msgid "New message"
+msgstr ""
+
 #: qml/Panel/ActiveCallHint.qml:79
 msgid "Tap to return to call..."
 msgstr "انقر للعودة إلى المكالمة..."
@@ -510,33 +561,11 @@ msgstr "انقر للعودة إلى المكالمة..."
 msgid "Conference"
 msgstr "مؤتمر"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:936
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:967
 msgid "Nothing is playing"
 msgstr "لا شيء مُشغّل"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1064
-#, qt-format
-msgid "%1 hour"
-msgid_plural "%1 hours"
-msgstr[0] "أقل من ساعة (%1)"
-msgstr[1] "ساعة واحدة (%1)"
-msgstr[2] "ساعتان (%1)"
-msgstr[3] "%1 ساعات"
-msgstr[4] "%1 ساعة"
-msgstr[5] "%1 ساعة"
-
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1068
-#, qt-format
-msgid "%1 minute"
-msgid_plural "%1 minutes"
-msgstr[0] "%1 دقيقة"
-msgstr[1] "دقيقة واحدة"
-msgstr[2] "دقيقتان"
-msgstr[3] "%1 دقائق"
-msgstr[4] "%1 دقيقة"
-msgstr[5] "%1 دقيقة"
-
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1073
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1104
 #, qt-format
 msgid "%1 second"
 msgid_plural "%1 seconds"
@@ -547,36 +576,36 @@ msgstr[3] "%1 ثوان"
 msgstr[4] "%1 ثانية"
 msgstr[5] "%1 ثانية"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1076
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1107
 msgid "0 seconds"
 msgstr "أقل من ثانية"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1078
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1109
 #, qt-format
 msgid "%1 remaining"
 msgstr "باق %1"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1084
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1115
 msgid "In queue…"
 msgstr "في الانتظار…"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1088
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1119
 msgid "Downloading"
 msgstr "ينزل"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1090
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1121
 msgid "Paused, tap to resume"
 msgstr "مُلبث، انقر للاستئناف"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1092
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1123
 msgid "Canceled"
 msgstr "أُلغي"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1094
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1125
 msgid "Finished"
 msgstr "انتهى"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1096
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1127
 msgid "Failed, tap to retry"
 msgstr "فشل، انقر لإعادة المحاولة"
 
@@ -604,7 +633,7 @@ msgstr "للخلف"
 msgid "Drag using 3 fingers any application from one window to the other"
 msgstr "اسحب أي تطبيق بثلاث أصابع من نافذة لأخرى"
 
-#: qml/Stage/Stage.qml:827
+#: qml/Stage/Stage.qml:834
 msgid "No running apps"
 msgstr "لا توجد تطبيقات مشغلة"
 
