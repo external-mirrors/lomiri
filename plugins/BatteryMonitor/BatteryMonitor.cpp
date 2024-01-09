@@ -35,10 +35,7 @@ uint BatteryMonitor::state()
 
 bool BatteryMonitor::charging()
 {
-    if (state() == CHARGING || state() == FULLY_CHARGED)
-        return true;
-    else
-        return false;
+    return state() == CHARGING ? true : false;
 }
 
 bool BatteryMonitor::isFullyCharged()
@@ -69,7 +66,7 @@ qint64 BatteryMonitor::timeToFull()
         return value;
     }
 
-    return NO_BATTERY;
+    return NO_TIMETOFULL;
 }
 
 void BatteryMonitor::propertiesChanged(QString string, QVariantMap map, QStringList list)
@@ -79,6 +76,10 @@ void BatteryMonitor::propertiesChanged(QString string, QVariantMap map, QStringL
 
     if (map.contains("State"))
         Q_EMIT chargingChanged();
+
     else if (map.contains("TimeToFull") && map.contains("Percentage") && charging())
         Q_EMIT timeToFullChanged();
+
+    else if (isFullyCharged())
+        Q_EMIT fullyChargedChanged();
 }
