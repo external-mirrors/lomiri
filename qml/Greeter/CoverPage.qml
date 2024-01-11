@@ -156,7 +156,7 @@ Showable {
             var seconds = BatteryMonitor.timeToFull;
             if (seconds == BatteryMonitor.NO_BATTERY) return ""
             else if (seconds == BatteryMonitor.NO_TIMETOFULL) {
-                var isFullyCharged = BatteryMonitor.isFullyCharged();
+                var isFullyCharged = BatteryMonitor.fullyCharged;
                 if (isFullyCharged) return i18n.tr("Fully charged")
                 else return ""
             }
@@ -183,7 +183,7 @@ Showable {
         }
         color: "white"
         font.weight: Font.Light
-        visible: gsettings.showChargingInformationWhileLocked && BatteryMonitor.charging
+        visible: gsettings.showChargingInformationWhileLocked && (BatteryMonitor.charging || BatteryMonitor.fullyCharged)
     }
 
     Label {
