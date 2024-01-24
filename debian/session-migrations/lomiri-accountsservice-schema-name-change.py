@@ -39,6 +39,22 @@ if marker_path.exists():
     print(f'{marker_path} exists, which mean the migration has run. Exit now.')
     sys.exit(0)
 
+# Due to the mistake in the mtime workaround [1], it means this script could be
+# run after the first boot on Focal. In that case, we must NOT migrate the
+# settings, as otherwise we'll overwrite existing settings.
+#
+# Here, we rely on the fact that `luitk-config-migration.sh` runs after us
+# (session-migration sorts the scripts before running). So, if LUITK's theme.ini
+# exists by this time, it must mean that renamed Lomiri has run at least once.
+#
+# [1] https://gitlab.com/ubports/ubuntu-touch/-/issues/2177
+
+luitk_theme_path = Path('~/.config/lomiri-ui-toolkit/theme.ini').expanduser()
+if luitk_theme_path.exists():
+    print("LUITK theme settings exist, which mean Lomiri has run. Don't overwrite settings!")
+    marker_path.touch(mode=0o644)
+    sys.exit(0)
+
 system_bus = dbus.SystemBus()
 manager_proxy = system_bus.get_object('org.freedesktop.Accounts',
                                       '/org/freedesktop/Accounts')
