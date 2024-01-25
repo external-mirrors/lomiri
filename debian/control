@@ -198,7 +198,7 @@ Depends:
  lomiri-ui-toolkit-autopilot (>= 1.3.2030),
  lomiri (= ${source:Version}),
  lomiri-tests (= ${source:Version}),
- url-dispatcher-tools,
+ lomiri-url-dispatcher-tools,
  xvfb,
  ${misc:Depends},
  ${python3:Depends},
