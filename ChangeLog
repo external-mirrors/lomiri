@@ -1,6 +1,9 @@
 2024-01-27 Mike Gabriel
 
-        * Release 0.2.0 (HEAD -> main, tag: 0.2.0)
+        * Release 0.2.1 (HEAD -> main, tag: 0.2.1)
+        * CMakeLists.txt: Regression fix of 0.2.0 release. Fix dependency on
+          lomiri-schemas (0.2.0 -> 0.1.4). (4bfefff17)
+        * Release 0.2.0 (b0baf2c83) (tag: 0.2.0)
         * CMakeLists.txt: Bump versioned requirement of lomiri-schemas to
           >=0.1.4. (10cc5671b)
 

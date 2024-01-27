@@ -1,3 +1,10 @@
+lomiri (0.2.1) unstable; urgency=medium
+
+  * Upstream-provided Debian package for lomiri. See upstream ChangeLog
+    for recent changes.
+
+ -- UBports developers <developers@ubports.com>  Sat, 27 Jan 2024 07:54:26 +0100
+
 lomiri (0.2.0) unstable; urgency=medium
 
   * Upstream-provided Debian package for lomiri. See upstream ChangeLog

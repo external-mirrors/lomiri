@@ -5,7 +5,7 @@ if (NOT DEFINED CMAKE_INSTALL_PREFIX)
     set(CMAKE_INSTALL_PREFIX ${CMAKE_BINARY_DIR}/install CACHE PATH "" FORCE)
 endif()
 
-project(lomiri VERSION 0.2.0 LANGUAGES C CXX)
+project(lomiri VERSION 0.2.1 LANGUAGES C CXX)
 
 set(SHELL_APP lomiri)
 set(INDICATORS_CLIENT_APP indicators-client)
