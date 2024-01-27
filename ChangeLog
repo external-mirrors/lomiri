@@ -1,6 +1,277 @@
+2024-01-27 Mike Gabriel
+
+        * Release 0.2.0 (HEAD -> main, tag: 0.2.0)
+        * CMakeLists.txt: Bump versioned requirement of lomiri-schemas to
+          >=0.1.4. (10cc5671b)
+
+2024-01-21 Сергій
+
+        * Translated using Weblate (Ukrainian) (6408b7c35)
+
+2024-01-17 bittin1ddc447d824349b2
+
+        * Translated using Weblate (Swedish) (13251731c)
+
+2024-01-13 Heimen Stoffels
+
+        * Translated using Weblate (Dutch) (9c8d1dd31)
+
+2024-01-08 gallegonovato
+
+        * Translated using Weblate (Spanish) (3e0d257b3)
+
+2024-01-08 Jozef Mlich
+
+        * Translated using Weblate (Czech) (00a890ca6)
+
+2024-01-11 Ratchanan Srirattanamet
+
+        * Merge branch 'personal/muhammad/fix-charging-information' into
+          'main' (ec65759f5)
+
+2024-01-10 Muhammad
+
+        * BatteryMonitor: let all signals be emitted together (ca355decb)
+
+2024-01-09 Muhammad
+
+        * BatteryMonitor & Greeter: finally fix charging information;  Fully
+          charged message is displayed properly;  Time gets reliably
+          updated (f5350326f)
+
+2024-01-06 Mike Gabriel
+
+        * Translated using Weblate (German) (9a986647b)
+
+2024-01-06 Hosted Weblate
+
+        * Update translation files (81f7f70b9)
+
+2024-01-06 Ratchanan Srirattanamet
+
+        * po: update the .pot file (2de49d06d)
+
+2024-01-05 Ratchanan Srirattanamet
+
+        * Merge branch 'charging-information-toggle' into 'main' (590d90fb8)
+
+2024-01-05 Muhammad
+
+        * Greeter: rename gsetting;  showChargingInformation ->
+          showChargingInformationWhileLocked (a58ad48ec)
+
+2023-12-31 Muhammad
+
+        * Greeter: add configurable charging information (80b36e7d0)
+
+2024-01-04 Mike Gabriel
+
+        * Merge branch 'ubports/focal_-_notif_privacymode' into 'main'
+          (2f2484499)
+
+2023-08-04 Lionel Duboeuf
+
+        * Notification: Add privacy mode (a3845ce47)
+
+2024-01-04 Ratchanan Srirattanamet
+
+        * Merge branch 'main' into 'main' (16c1b0900)
+
+2023-12-21 Muhammad
+
+        * BatteryMonitor: consider fully charged as charging too;  allows us
+          to check state in qml (79ca7c46a)
+
+2023-12-18 Muhammad
+
+        * Greeter & BatteryMonitor: fix "Fully charged" message (d4a5da9d0)
+
+2023-12-27 Weblate
+
+        * Added translation using Weblate (Chinese (Simplified)
+          (zh_LATN@pinyin)) (ecd34e058)
+        * Added translation using Weblate (Tamil (Sri Lanka)) (26e5e1b85)
+        * Added translation using Weblate (German (Walser)) (3cc46b731)
+        * Added translation using Weblate (Meadow Mari) (3753186d2)
+        * Added translation using Weblate (Crimean Tatar) (8368dfb54)
+        * Added translation using Weblate (Chuvash) (76544d9a2)
+        * Added translation using Weblate (Silesian) (e7c08c3ff)
+        * Added translation using Weblate (Latin) (e88a6fd6d)
+        * Added translation using Weblate (Venetian) (a01023012)
+        * Added translation using Weblate (Ossetian) (ce8416a08)
+        * Added translation using Weblate (Sami (Northern)) (66c913be4)
+        * Added translation using Weblate (Greenlandic) (a8cf0705a)
+        * Added translation using Weblate (Assamese) (6fc3d5f83)
+        * Added translation using Weblate (Haitian) (35f6ed8ff)
+        * Added translation using Weblate (Cornish) (ba4e19305)
+        * Added translation using Weblate (Frisian) (460751386)
+        * Added translation using Weblate (Kashubian) (987a3ba64)
+        * Added translation using Weblate (Aragonese) (e7a303993)
+        * Added translation using Weblate (Tibetan) (17450ece1)
+        * Added translation using Weblate (Filipino) (85603cb87)
+        * Added translation using Weblate (Tigrinya) (84fa2a7ce)
+        * Added translation using Weblate (Tatar) (ff5774f09)
+
+2023-12-26 Weblate
+
+        * Added translation using Weblate (Italian (it_CARES)) (e34c67a0c)
+
+2023-12-19 Mike Gabriel
+
+        * Merge branch 'miroil' into 'main' (9c416d06e)
+
+2023-01-11 Marius Gripsgard
+
+        * Add support for both older qtmir and newer qtmir with miroil
+          (3db2a3781)
+
+2023-12-18 Mike Gabriel
+
+        * Merge branch 'fix_warnings' into 'main' (02eb22d59)
+
+2023-12-18 Luigi311
+
+        * Plugins: WindowManager: Fix missing enumerations (e5bab61c6)
+        * Plugins: BatteryMonitor: Fix warnings Fixes warnings about unused
+          variables and missing default returns (70fc191d6)
+
+2023-12-17 Mike Gabriel
+
+        * Merge branch 'personal/lduboeuf/anim_applaunch' into 'main'
+          (8c3f6ad10)
+
+2023-11-03 Lionel Duboeuf
+
+        * Don't play lockscreen animation when using fingerprint (e8b4b19c1)
+        * Make the splash transition fading Instead of animate opacity on the
+          surface Item itself which render from black to the app
+          color. (1c74ab9f9)
+
+2023-12-17 Mike Gabriel
+
+        * Merge branch 'main' into 'main' (0c9d02ce1)
+
+2023-12-15 Adam Friedrich Schrey
+
+        * Merge branch lomiri:main into main (b9e70a4d7)
+
+2023-12-14 Marius Gripsgard
+
+        * Merge branch 'main' into 'main' (162f530aa)
+
+2023-12-13 Muhammad
+
+        * Greeter: use "," in final string, and allow final string to be
+          restructured for translation (4421b9f05)
+        * BatteryMonitor: check if we're charging before updating TimeToFull
+          (24c8613dc)
+        * Greeter: fix translation hint (368ddb5fa)
+
+2023-12-09 Muhammad
+
+        * qml: fix whitespaces (4f1d4ee9b)
+
+2023-12-08 Muhammad
+
+        * BatteryMonitor: update time only if percentage updates as well
+          (12ef7b97f)
+        * Greeter: use enum exported from BatteryMonitor (90ef77e39)
+
+2023-12-07 Ratchanan Srirattanamet
+
+        * CoverPage: add info for translating final string (fde813f31)
+
+2023-12-07 Muhammad
+
+        * plugins: sort entries (5b1152088)
+
+2023-12-06 Muhammad
+
+        * BatteryMonitor & Greeter: clean-ups and bindings (60a01385a)
+
+2023-12-02 Muhammad
+
+        * BatteryMonitor: add "Fully charged" message (f35e20093)
+
+2023-11-30 Muhammad
+
+        * BatteryMonitor: clean up whitespaces (64952623b)
+        * Greeter: add time to full hint;  displays time remaining until
+          battery is full;  handles cases when there is no battery
+          (0c1f51e40)
+
+2023-12-13 Adam Friedrich Schrey
+
+        * make wallpaper not invisible for staged mode, so apps with
+          transparent backgrounds work on phones (6bf6224e1)
+
+2023-12-13 Ratchanan Srirattanamet
+
+        * Merge branch 'patches' into 'main' (d28cd6139)
+
+2021-08-15 Luca Weiss
+
+        * Use correct value for Leds.state (564b55add)
+
+2023-11-14 Luca Weiss
+
+        * Compile with C++17 (aafbc138d)
+
+2019-01-29 Luca Weiss
+
+        * Link against libintl (37bb4ad76)
+        * Add missing includes (7bacbecc5)
+
+2023-12-11 Ratchanan Srirattanamet
+
+        * Merge branch 'ubports/focal_-_dt2w_persist' into 'main' (5cb8d2e36)
+
+2023-12-05 Ratchanan Srirattanamet
+
+        * debian/control: versioned-depends on lomiri-schemas with new key
+          (84d02791d)
+
+2023-12-01 Lionel Duboeuf
+
+        * Manage DT2W setting change (291b8849b)
+
+2023-11-29 bittin1ddc447d824349b2
+
+        * Translated using Weblate (Swedish) (538ab60ed)
+
+2023-12-04 Reza Almanda
+
+        * Translated using Weblate (Indonesian) (42ab76416)
+
+2023-12-01 Daniel Delgado Jiménez
+
+        * Translated using Weblate (Spanish) (5a2c4f306)
+
+2023-11-19 gallegonovato
+
+        * Translated using Weblate (Spanish) (de472d04a)
+
+2023-10-18 Lundrin
+
+        * Translated using Weblate (Hungarian) (4ea3c0ce0)
+
+2023-10-18 Weblate
+
+        * Added translation using Weblate (Kurdish) (402d8d3e8)
+        * Added translation using Weblate (Sotho (Southern)) (817280257)
+        * Added translation using Weblate (Afrikaans) (ca7fae515)
+
+2023-10-11 Serhii Horichenko
+
+        * Translated using Weblate (Russian) (5d5813105)
+
+2023-10-13 Império Linux
+
+        * Translated using Weblate (Portuguese (Brazil)) (369d960ed)
+
 2023-10-15 Mike Gabriel
 
-        * Release 0.1.4 (HEAD -> main, tag: 0.1.4)
+        * Release 0.1.4 (4ad034204) (tag: 0.1.4)
 
 2023-09-29 Mike Gabriel
 

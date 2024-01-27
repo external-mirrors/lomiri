@@ -5,7 +5,7 @@ if (NOT DEFINED CMAKE_INSTALL_PREFIX)
     set(CMAKE_INSTALL_PREFIX ${CMAKE_BINARY_DIR}/install CACHE PATH "" FORCE)
 endif()
 
-project(lomiri VERSION 0.1.4 LANGUAGES C CXX)
+project(lomiri VERSION 0.2.0 LANGUAGES C CXX)
 
 set(SHELL_APP lomiri)
 set(INDICATORS_CLIENT_APP indicators-client)
@@ -96,7 +96,7 @@ pkg_check_modules(UAL REQUIRED lomiri-app-launch-0>=0.1.5)
 pkg_check_modules(LOMIRIGESTURES REQUIRED LomiriGestures)
 pkg_check_modules(MIRAL REQUIRED miral)
 pkg_check_modules(DEVICEINFO REQUIRED deviceinfo)
-pkg_check_modules(LOMIRISCHEMA REQUIRED lomiri-schemas>=0.1.4)
+pkg_check_modules(LOMIRISCHEMA REQUIRED lomiri-schemas>=0.2.0)
 
 if (QTMIRSERVER_VERSION VERSION_GREATER_EQUAL 0.8.0)
     message("Bulding with miroil")
