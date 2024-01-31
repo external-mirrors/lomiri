@@ -727,7 +727,7 @@ FocusScope {
             leftMargin: root.availableDesktopArea.x
             model: root.topLevelSurfaceList
             spreadFlickable: floatingFlickable
-            z: 10
+            z: root.topLevelSurfaceList.count
 
             onLeaveSpread: {
                 priv.goneToSpread = false;
