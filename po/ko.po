@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-06 08:14+0000\n"
-"PO-Revision-Date: 2024-02-13 19:29+0000\n"
+"PO-Revision-Date: 2024-02-14 11:31+0000\n"
 "Last-Translator: ancalina <yuntk2008@gmail.com>\n"
 "Language-Team: Korean <https://hosted.weblate.org/projects/lomiri/lomiri/ko/>"
 "\n"
@@ -107,35 +107,35 @@ msgstr "DVI"
 
 #: plugins/WindowManager/Screen.cpp:168
 msgid "Composite"
-msgstr ""
+msgstr "합성"
 
 #: plugins/WindowManager/Screen.cpp:170
 msgid "S-Video"
-msgstr ""
+msgstr "S 비디오"
 
 #: plugins/WindowManager/Screen.cpp:176
 msgid "Internal"
-msgstr ""
+msgstr "내부"
 
 #: plugins/WindowManager/Screen.cpp:178
 msgid "Component"
-msgstr ""
+msgstr "컴포넌트"
 
 #: plugins/WindowManager/Screen.cpp:180
 msgid "DisplayPort"
-msgstr ""
+msgstr "DP"
 
 #: plugins/WindowManager/Screen.cpp:183
 msgid "HDMI"
-msgstr ""
+msgstr "HDMI"
 
 #: plugins/WindowManager/Screen.cpp:185
 msgid "TV"
-msgstr ""
+msgstr "TV"
 
 #: plugins/WindowManager/Screen.cpp:187
 msgid "Virtual"
-msgstr ""
+msgstr "가상"
 
 #: qml/Components/Dialogs.qml:176
 msgctxt "Title: Lock/Log out dialog"
@@ -169,7 +169,7 @@ msgstr "다시 시작"
 
 #: qml/Components/Dialogs.qml:212
 msgid "Are you sure you want to reboot?"
-msgstr "정말 컴퓨터를 다시 시작하시겠습니까?"
+msgstr "정말 기기를 다시 시작하시겠습니까?"
 
 #: qml/Components/Dialogs.qml:215
 msgid "No"
@@ -188,12 +188,12 @@ msgstr "전원"
 msgid ""
 "Are you sure you would like\n"
 "to power off?"
-msgstr "정말 컴퓨터를 끄시겠습니까?"
+msgstr "정말 기기를 끄시겠습니까?"
 
 #: qml/Components/Dialogs.qml:248
 msgctxt "Button: Power off the system"
 msgid "Power off"
-msgstr "컴퓨터 끄기"
+msgstr "전원 끄기"
 
 #: qml/Components/Dialogs.qml:263
 msgctxt "Button: Restart the system"
@@ -201,10 +201,8 @@ msgid "Restart"
 msgstr "다시 시작"
 
 #: qml/Components/Dialogs.qml:276
-#, fuzzy
-#| msgid "Takes a screenshot."
 msgid "Screenshot"
-msgstr "화면을 갈무리합니다."
+msgstr "스크린샷"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:41
 msgid "Keyboard Shortcuts"
@@ -434,7 +432,7 @@ msgstr "시스템 설정에서 더 많은 설정을 찾아보세요."
 
 #: qml/Greeter/CoverPage.qml:160
 msgid "Fully charged"
-msgstr ""
+msgstr "충전 완료"
 
 #: qml/Greeter/CoverPage.qml:168
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1095
@@ -453,12 +451,12 @@ msgstr[0] "%1분"
 #: qml/Greeter/CoverPage.qml:178
 #, qt-format
 msgid "%1, %2 until full"
-msgstr ""
+msgstr "%1, %2가 가득 찰 때까지"
 
 #: qml/Greeter/CoverPage.qml:181
 #, qt-format
 msgid "%1 until full"
-msgstr ""
+msgstr "%1가 가득 찰 때까지"
 
 #: qml/Greeter/CoverPage.qml:197
 #: tests/qmltests/Greeter/tst_GreeterView.qml:1239
@@ -521,11 +519,11 @@ msgstr "검색…"
 
 #: qml/Launcher/PullToRefreshScopeStyle.qml:56
 msgid "Pull to refresh…"
-msgstr "당기면 새로 고침..."
+msgstr "당겨서 새로 고침"
 
 #: qml/Launcher/PullToRefreshScopeStyle.qml:61
 msgid "Release to refresh…"
-msgstr "놓으면 새로 고침..."
+msgstr "놓으면 새로 고침"
 
 #: qml/Notifications/NotificationMenuItemFactory.qml:124
 msgid "Show password"
@@ -533,7 +531,7 @@ msgstr "암호 표시"
 
 #: qml/Notifications/Notification.qml:322
 msgid "New message"
-msgstr ""
+msgstr "새 메시지"
 
 #: qml/Panel/ActiveCallHint.qml:79
 msgid "Tap to return to call..."
@@ -603,9 +601,6 @@ msgid "Call back"
 msgstr "부재중 번호로 전화"
 
 #: qml/Panel/PanelMenuPage.qml:92
-#, fuzzy
-#| msgctxt "Button: Go back one page in the Wizard"
-#| msgid "Back"
 msgid "Back"
 msgstr "뒤로"
 
@@ -659,16 +654,15 @@ msgstr "다음"
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
 #: qml/Wizard/Pages/10-welcome-update.qml:92
-#, fuzzy, qt-format
+#, qt-format
 msgid "Welcome to %1 %2"
-msgstr "환영합니다 "
+msgstr "%1 %2에 오신것을 환영합니다!"
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
 #: qml/Wizard/Pages/10-welcome-update.qml:108
-#, fuzzy, qt-format
-#| msgid "We will make sure your device is ready to use "
+#, qt-format
 msgid "We will make sure your device is ready to use %1 %2"
-msgstr "장치를 사용할 준비가 되도록 하겠습니다 "
+msgstr "%1 %2를 사용할 준비를 합니다."
 
 #: qml/Wizard/Pages/11-changelog.qml:28
 msgid "What's new"
@@ -760,9 +754,6 @@ msgstr ""
 "니다."
 
 #: qml/Wizard/Pages/79-system-update.qml:76
-#, fuzzy
-#| msgctxt "string identifying name of the update"
-#| msgid "Ubuntu Touch system"
 msgctxt "string identifying name of the update"
 msgid "Ubuntu Touch system"
 msgstr "Ubuntu Touch 시스템"
@@ -771,7 +762,7 @@ msgstr "Ubuntu Touch 시스템"
 #, qt-format
 msgctxt "version of the system update"
 msgid "Version %1"
-msgstr "버전 %1"
+msgstr "%1"
 
 #: qml/Wizard/Pages/79-system-update.qml:95
 msgid "This could take a few minutes..."
@@ -787,13 +778,13 @@ msgstr "돌아오신 것을 환영합니다"
 
 #. TRANSLATORS: %1 contains the distro name
 #: qml/Wizard/Pages/80-finished.qml:95
-#, fuzzy, qt-format
+#, qt-format
 msgid "Welcome to %1"
-msgstr "환영합니다 "
+msgstr "%1에 오신것을 환영합니다!"
 
 #: qml/Wizard/Pages/80-finished.qml:111
 msgid "You are ready to use your device now"
-msgstr "이제 장치를 사용할 준비가 되셨습니다"
+msgstr "이제 장치를 사용할 준비가 되셨습니다."
 
 #: qml/Wizard/Pages/80-finished.qml:131
 msgid "Continue"
@@ -822,10 +813,8 @@ msgid "Lock Screen Passcode"
 msgstr "잠금 화면 비밀번호"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:68
-#, fuzzy
-#| msgid "Enter 4 numbers to setup your passcode"
 msgid "Enter at least 4 numbers to setup your passcode"
-msgstr "비밀번호를 설정하려면 숫자 4개를 입력해 주세요"
+msgstr "비밀번호를 설정하려면 숫자 4자 이상 입력해 주세요."
 
 #: qml/Wizard/Pages/passcode-desktop.qml:84
 #: qml/Wizard/Pages/passcode-set.qml:54
@@ -845,10 +834,8 @@ msgid "Passcodes do not match"
 msgstr "비밀번호가 일치하지 않습니다"
 
 #: qml/Wizard/Pages/passcode-set.qml:62
-#, fuzzy
-#| msgid "Passcode must be 4 characters long"
 msgid "Passcode must be at least 4 characters long"
-msgstr "비밀번호는 4자여야 합니다"
+msgstr "비밀번호는 4자 이상 이어야 합니다."
 
 #: qml/Wizard/Pages/password-set.qml:31
 msgid "Lock Screen Password"
