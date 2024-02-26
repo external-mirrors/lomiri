@@ -210,17 +210,6 @@ PageStack {
                         property: "objectName"
                         value: model.action
                     }
-
-                    // TODO: Fixes lp#1243146
-                    // This is a workaround for a Qt bug. https://bugreports.qt-project.org/browse/QTBUG-34351
-                    Connections {
-                        target: listView
-                        function onSelectedIndexChanged() {
-                            if (loader.item && loader.item.hasOwnProperty("selected")) {
-                                loader.item.selected = listView.selectedIndex == index;
-                            }
-                        }
-                    }
                 }
             }
         }
