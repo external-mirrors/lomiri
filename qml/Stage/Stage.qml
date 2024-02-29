@@ -284,7 +284,7 @@ FocusScope {
     GlobalShortcut {
         id: showWorkspaceSwitcherShortcutLeft
         shortcut: Qt.AltModifier|Qt.ControlModifier|Qt.Key_Left
-        active: !workspaceSwitcher.active
+        active: !workspaceSwitcher.active && root.workspaceEnabled
         onTriggered: {
             root.focus = true;
             workspaceSwitcher.showLeft()
@@ -293,7 +293,7 @@ FocusScope {
     GlobalShortcut {
         id: showWorkspaceSwitcherShortcutRight
         shortcut: Qt.AltModifier|Qt.ControlModifier|Qt.Key_Right
-        active: !workspaceSwitcher.active
+        active: !workspaceSwitcher.active && root.workspaceEnabled
         onTriggered: {
             root.focus = true;
             workspaceSwitcher.showRight()
@@ -302,7 +302,7 @@ FocusScope {
     GlobalShortcut {
         id: showWorkspaceSwitcherShortcutUp
         shortcut: Qt.AltModifier|Qt.ControlModifier|Qt.Key_Up
-        active: !workspaceSwitcher.active
+        active: !workspaceSwitcher.active && root.workspaceEnabled
         onTriggered: {
             root.focus = true;
             workspaceSwitcher.showUp()
@@ -311,7 +311,7 @@ FocusScope {
     GlobalShortcut {
         id: showWorkspaceSwitcherShortcutDown
         shortcut: Qt.AltModifier|Qt.ControlModifier|Qt.Key_Down
-        active: !workspaceSwitcher.active
+        active: !workspaceSwitcher.active && root.workspaceEnabled
         onTriggered: {
             root.focus = true;
             workspaceSwitcher.showDown()
@@ -764,6 +764,8 @@ FocusScope {
             launcherLockedVisible: root.launcherLockedVisible
             topPanelHeight: root.topPanelHeight
             onCloseSpread: priv.goneToSpread = false;
+            // Clicking a workspace should put it front and center
+            onActiveWorkspaceChanged: activeWorkspace.activate()
         }
 
         Spread {
@@ -992,6 +994,7 @@ FocusScope {
             Behavior on opacity { LomiriNumberAnimation {} }
             visible: opacity > 0
             enabled: workspaceSwitcher
+            smooth: true
 
             Drag.active: surface != null
             Drag.keys: ["application"]
@@ -1224,6 +1227,7 @@ FocusScope {
                     }
                 }
 */
+
 
                 function activate() {
                     if (model.window.focused) {
