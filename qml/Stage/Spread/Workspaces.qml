@@ -16,6 +16,7 @@
 
 import QtQuick 2.15
 import Lomiri.Components 1.3
+import GSettings 1.0
 import WindowManager 1.0
 import "MathUtils.js" as MathUtils
 import "../../Components"
@@ -277,7 +278,7 @@ Item {
                 WorkspacePreview {
                     id: workspacePreview
                     height: listView.height
-                    width: listView.itemWidth
+                    width: listView.itemWidth - settings.launcherWidth
                     screen: root.screen
                     background: root.background
                     screenHeight: listView.screenSpaceHeight
