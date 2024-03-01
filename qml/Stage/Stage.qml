@@ -628,7 +628,7 @@ FocusScope {
             PropertyChanges { target: noAppsRunningHint; visible: (root.topLevelSurfaceList.count < 1) }
             PropertyChanges { target: blurLayer; visible: true; blurRadius: 32; brightness: .65; opacity: 1 }
             PropertyChanges { target: wallpaper; visible: false }
-            PropertyChanges { target: screensAndWorkspaces; opacity: 1 }
+            PropertyChanges { target: screensAndWorkspaces.showTimer; running: true }
         },
         State {
             name: "stagedRightEdge"; when: root.spreadEnabled && (rightEdgeDragArea.dragging || rightEdgePushProgress > 0) && root.mode == "staged"
@@ -684,14 +684,12 @@ FocusScope {
             PropertyAction { target: spreadItem; property: "highlightedIndex"; value: -1 }
             PropertyAction { target: screensAndWorkspaces; property: "activeWorkspace"; value: WMScreen.currentWorkspace }
             PropertyAnimation { target: blurLayer; properties: "brightness,blurRadius"; duration: priv.animationDuration }
-            LomiriNumberAnimation { target: screensAndWorkspaces; property: "opacity"; duration: priv.animationDuration }
         },
         Transition {
             to: "spread"
             PropertyAction { target: screensAndWorkspaces; property: "activeWorkspace"; value: WMScreen.currentWorkspace }
             PropertyAction { target: spreadItem; property: "highlightedIndex"; value: appRepeater.count > 1 ? 1 : 0 }
             PropertyAction { target: floatingFlickable; property: "contentX"; value: 0 }
-            LomiriNumberAnimation { target: screensAndWorkspaces; property: "opacity"; duration: priv.animationDuration }
         },
         Transition {
             from: "spread"
@@ -757,8 +755,7 @@ FocusScope {
             anchors { left: parent.left; top: parent.top; right: parent.right; leftMargin: root.launcherLeftMargin }
             height: Math.max(units.gu(30), parent.height * .3)
             background: root.background
-            opacity: 0
-            visible: workspaceEnabled ? opacity > 0 : false
+            visible: showAllowed
             enabled: workspaceEnabled
             mode: root.mode
             launcherLockedVisible: root.launcherLockedVisible
@@ -766,6 +763,26 @@ FocusScope {
             onCloseSpread: priv.goneToSpread = false;
             // Clicking a workspace should put it front and center
             onActiveWorkspaceChanged: activeWorkspace.activate()
+            opacity: visible ? 1.0 : 0.0
+            Behavior on opacity {
+                NumberAnimation { duration: priv.animationDuration }
+            }
+
+            property bool showAllowed : false
+            property var showTimer: Timer {
+                running: false
+                repeat: false
+                interval: priv.animationDuration
+                onTriggered: {
+                    if (!priv.goneToSpread)
+                        return;
+                    screensAndWorkspaces.showAllowed = root.workspaceEnabled;
+                }
+            }
+            Connections {
+                target: priv
+                onGoneToSpreadChanged: if (!priv.goneToSpread) screensAndWorkspaces.showAllowed = false
+            }
         }
 
         Spread {
