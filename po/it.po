@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-06 08:14+0000\n"
-"PO-Revision-Date: 2023-06-30 10:51+0000\n"
-"Last-Translator: Sylke Vicious <silkevicious@tuta.io>\n"
+"PO-Revision-Date: 2024-03-03 21:21+0000\n"
+"Last-Translator: Ermete D'Oro <liberta-combattente@paranoici.org>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/lomiri/lomiri/it/"
 ">\n"
 "Language: it\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.0-dev\n"
+"X-Generator: Weblate 5.5-dev\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:35+0000\n"
 
 #: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
@@ -46,7 +46,7 @@ msgstr "Applicazione per testare gli Indicatori di sistema"
 
 #: data/indicators-client.desktop.in:9
 msgid "NoDisplay=false"
-msgstr "NoDisplay=false"
+msgstr "NoDisplay=falso"
 
 #: plugins/LightDM/Greeter.cpp:199
 msgid "Password: "
@@ -135,7 +135,7 @@ msgstr "TV"
 
 #: plugins/WindowManager/Screen.cpp:187
 msgid "Virtual"
-msgstr ""
+msgstr "Virtuale"
 
 #: qml/Components/Dialogs.qml:176
 msgctxt "Title: Lock/Log out dialog"
@@ -436,7 +436,7 @@ msgstr "Trova più impostazioni nelle impostazioni di sistema."
 
 #: qml/Greeter/CoverPage.qml:160
 msgid "Fully charged"
-msgstr ""
+msgstr "Completamente carico"
 
 #: qml/Greeter/CoverPage.qml:168
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1095
@@ -457,12 +457,12 @@ msgstr[1] "%1 minuti"
 #: qml/Greeter/CoverPage.qml:178
 #, qt-format
 msgid "%1, %2 until full"
-msgstr ""
+msgstr "%1, %2 fino al completo"
 
 #: qml/Greeter/CoverPage.qml:181
 #, qt-format
 msgid "%1 until full"
-msgstr ""
+msgstr "%1 fino al completo"
 
 #: qml/Greeter/CoverPage.qml:197
 #: tests/qmltests/Greeter/tst_GreeterView.qml:1239
@@ -518,7 +518,7 @@ msgstr "Frase segreta"
 
 #: qml/Greeter/PromptList.qml:143
 msgid "Passcode"
-msgstr "Codice"
+msgstr "Codice di accesso"
 
 #: qml/Greeter/SessionsList.qml:124
 msgid "Select desktop environment"
@@ -542,7 +542,7 @@ msgstr "Mostra password"
 
 #: qml/Notifications/Notification.qml:322
 msgid "New message"
-msgstr ""
+msgstr "Nuovo messaggio"
 
 #: qml/Panel/ActiveCallHint.qml:79
 msgid "Tap to return to call..."
