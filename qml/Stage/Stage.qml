@@ -2059,7 +2059,6 @@ FocusScope {
                     objectName: "decoratedWindow"
                     anchors.left: appDelegate.left
                     anchors.top: appDelegate.top
-                    stage: root
                     application: model.application
                     surface: model.window.surface
                     active: model.window.focused
@@ -2076,6 +2075,7 @@ FocusScope {
                     panelState: root.panelState
                     altDragEnabled: root.mode == "windowed"
                     lightMode: root.lightMode
+                    clipSurface: root.mode === "windowed"
 
                     requestedWidth: appDelegate.requestedWidth
                     requestedHeight: appDelegate.requestedHeight
