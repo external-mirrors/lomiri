@@ -325,7 +325,13 @@ void TopLevelWindowModel::connectSurface(lomiriapi::MirSurfaceInterface *surface
             onSurfaceDied(surface);
         }
     });
-    connect(surface, &QObject::destroyed, this, [this, surface](QObject*){ this->onSurfaceDestroyed(surface); });
+    connect(surface, &QObject::destroyed, this, [this, surface](QObject*){
+        int i = indexOf(surface);
+        if (i >= 0) {
+            m_windowModel[i].removeOnceSurfaceDestroyed = true;
+        }
+        this->onSurfaceDestroyed(surface);
+    });
 }
 
 void TopLevelWindowModel::onSurfaceDied(lomiriapi::MirSurfaceInterface *surface)
@@ -345,11 +351,11 @@ void TopLevelWindowModel::onSurfaceDied(lomiriapi::MirSurfaceInterface *surface)
     DEBUG_MSG << " application->name()=" << application->name()
               << " application->state()=" << application->state();
 
-    // assume it got killed by the out-of-memory daemon.
+    // assume a touch app got killed by the out-of-memory daemon.
     //
     // Leave at most 1 entry in the model and only remove its surface, so shell can display a screenshot
     // in its place.
-    if (application->surfaceList()->count() == 1)
+    if (application->isTouchApp() && application->surfaceList()->count() == 1)
         m_windowModel[i].removeOnceSurfaceDestroyed = false;
     else
         m_windowModel[i].removeOnceSurfaceDestroyed = true;
@@ -363,6 +369,9 @@ void TopLevelWindowModel::onSurfaceDestroyed(lomiriapi::MirSurfaceInterface *sur
     }
 
     auto application = m_windowModel[i].application;
+
+    // Clean up windows immediately, we cannot reliably restart them from an OOM situation
+    // and we cannot allow stuck windows to stick around after actually having closed them.
     if (application->appId() == QStringLiteral("xwayland.qtmir")) {
         m_windowModel[i].removeOnceSurfaceDestroyed = true;
     }
