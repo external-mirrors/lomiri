@@ -2059,6 +2059,7 @@ FocusScope {
                     objectName: "decoratedWindow"
                     anchors.left: appDelegate.left
                     anchors.top: appDelegate.top
+                    stage: root
                     application: model.application
                     surface: model.window.surface
                     active: model.window.focused

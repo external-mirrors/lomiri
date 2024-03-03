@@ -40,6 +40,7 @@ FocusScope {
     property int requestedHeight: -1
     property real splashRotation: 0
     property bool clip: false
+    property var stage : null
 
     readonly property int minimumWidth: surface ? surface.minimumWidth : 0
     readonly property int minimumHeight: surface ? surface.minimumHeight : 0
@@ -161,6 +162,7 @@ FocusScope {
         surfaceOrientationAngle: application && application.rotatesWindowContents ? root.surfaceOrientationAngle : 0
         clip: root.clip
         onSizeChanged: root.sizeChanged(size)
+        stage: root.stage
     }
 
     Loader {
