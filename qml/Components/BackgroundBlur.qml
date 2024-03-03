@@ -34,7 +34,8 @@ Item {
         sourceItem: root.sourceItem
         hideSource: root.occluding
         sourceRect: root.blurRect
-        live: false
+        // Phones and tablets are better off saving power
+        live: stage.mode === "windowed"
         enabled: sourceItem != null
     }
 
@@ -50,7 +51,7 @@ Item {
 
     Timer {
         interval: 48
-        repeat: root.visible && (sourceItem != null)
+        repeat: root.visible && (sourceItem != null) && (stage.mode !== "windowed")
         running: repeat
         onTriggered: shaderEffectSource.scheduleUpdate()
     }

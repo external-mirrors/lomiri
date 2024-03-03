@@ -38,6 +38,7 @@ FocusScope {
     property int requestedWidth: -1
     property int requestedHeight: -1
     property real splashRotation: 0
+    property var stage : null
 
     readonly property int minimumWidth: surface ? surface.minimumWidth : 0
     readonly property int minimumHeight: surface ? surface.minimumHeight : 0
@@ -144,6 +145,7 @@ FocusScope {
         requestedWidth: root.requestedWidth
         requestedHeight: root.requestedHeight
         surfaceOrientationAngle: application && application.rotatesWindowContents ? root.surfaceOrientationAngle : 0
+        stage: root.stage
     }
 
     Loader {
