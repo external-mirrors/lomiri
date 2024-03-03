@@ -42,6 +42,8 @@ FocusScope {
 
     property bool hadSurface: false
 
+    signal sizeChanged(size size)
+
     onSurfaceChanged: {
         // Not a binding because animations might remove the surface from the surfaceItem
         // programatically (in order to signal that a zombie surface is free for deletion),
@@ -78,6 +80,13 @@ FocusScope {
         enabled: root.interactive
         antialiasing: !root.interactive
         orientationAngle: root.surfaceOrientationAngle
+
+        Connections {
+            target: surfaceItem.surface
+            onSizeChanged: {
+                root.sizeChanged(value)
+            }
+        }
     }
 
     TouchGate {

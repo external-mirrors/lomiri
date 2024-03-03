@@ -46,6 +46,8 @@ FocusScope {
     readonly property int widthIncrement: surface ? surface.widthIncrement : 0
     readonly property int heightIncrement: surface ? surface.heightIncrement : 0
 
+    signal sizeChanged(size size)
+
     Connections {
         target: surface
         function onReady() {  d.surfaceUp() }
@@ -144,6 +146,7 @@ FocusScope {
         requestedWidth: root.requestedWidth
         requestedHeight: root.requestedHeight
         surfaceOrientationAngle: application && application.rotatesWindowContents ? root.surfaceOrientationAngle : 0
+        onSizeChanged: root.sizeChanged(size)
     }
 
     Loader {
