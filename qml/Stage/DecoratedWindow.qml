@@ -181,6 +181,10 @@ FocusScope {
 //        onRequestedWidthChanged: oldRequestedWidth = requestedWidth
 //        onRequestedHeightChanged: oldRequestedHeight = requestedHeight
         focus: true
+        onSizeChanged: {
+            implicitWidth = size.width
+            implicitHeight = size.height
+        }
 
         property real itemScale: 1
         property real minSize: Math.min(root.scaleToPreviewSize, Math.min(requestedHeight, Math.min(requestedWidth, Math.min(implicitHeight, implicitWidth))))

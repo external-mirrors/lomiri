@@ -43,6 +43,8 @@ FocusScope {
 
     property bool hadSurface: false
 
+    signal sizeChanged(size size)
+
     onSurfaceChanged: {
         // Not a binding because animations might remove the surface from the surfaceItem
         // programatically (in order to signal that a zombie surface is free for deletion),
@@ -81,6 +83,13 @@ FocusScope {
         orientationAngle: root.surfaceOrientationAngle
 
         clip: stage && stage.mode === "windowed"
+
+        Connections {
+            target: surfaceItem.surface
+            onSizeChanged: {
+                root.sizeChanged(value)
+            }
+        }
     }
 
     TouchGate {
