@@ -30,6 +30,7 @@ Item {
     readonly property alias currentItemIndex: row.currentItemIndex
     property real lateralPosition: -1
     property int alignment: Qt.AlignRight
+    property bool lightMode: false
     readonly property int rowContentX: row.contentX
 
     property alias hideRow: row.hideRow
@@ -204,6 +205,7 @@ Item {
             PanelItemRow {
                 id: row
                 objectName: "panelItemRow"
+                lightMode: root.lightMode
                 anchors {
                     top: parent.top
                     bottom: parent.bottom

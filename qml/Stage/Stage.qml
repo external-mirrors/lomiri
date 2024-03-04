@@ -2003,6 +2003,7 @@ FocusScope {
                     boundsItem: root.availableDesktopArea
                     panelState: root.panelState
                     altDragEnabled: root.mode == "windowed"
+                    lightMode: root.lightMode
 
                     requestedWidth: appDelegate.requestedWidth
                     requestedHeight: appDelegate.requestedHeight

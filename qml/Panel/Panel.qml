@@ -50,6 +50,7 @@ Item {
     property bool hasKeyboard: false
     property bool supportsMultiColorLed: true
     property var blurSource : null
+    property bool lightMode : false
 
     // Whether our expanded menus should take up the full width of the panel
     property bool partialWidth: width >= units.gu(60)
@@ -152,7 +153,8 @@ Item {
 
         Rectangle {
             id: panelAreaBackground
-            color: callHint.visible ? theme.palette.normal.activity : theme.palette.normal.background
+            color: callHint.visible ? theme.palette.normal.activity :
+                       (root.lightMode ? "#FFFFFF" : "#000000")
             anchors {
                 top: parent.top
                 left: parent.left
@@ -282,6 +284,7 @@ Item {
                               0,
                               root.width,
                               root.height)
+            lightMode: root.lightMode
 
             onShowTapped: {
                 if (callHint.active) {

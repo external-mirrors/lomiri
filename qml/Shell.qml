@@ -49,7 +49,9 @@ import WindowManager 1.0
 StyledItem {
     id: shell
 
-    readonly property bool lightMode : theme.name === "Lomiri.Components.Themes.Ambiance"
+    readonly property bool lightMode: settings.lightMode
+    theme.name: lightMode ? "Lomiri.Components.Themes.Ambiance" :
+                            "Lomiri.Components.Themes.SuruDark"
 
     // to be set from outside
     property int orientationAngle: 0
@@ -554,6 +556,7 @@ StyledItem {
             objectName: "panel"
             anchors.fill: parent //because this draws indicator menus
             blurSource: settings.enableBlur ? (greeter.shown ? greeter : stages) : null
+            lightMode: shell.lightMode
 
             mode: shell.usageScenario == "desktop" ? "windowed" : "staged"
             minimizedPanelHeight: units.gu(3)
