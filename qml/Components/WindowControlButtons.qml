@@ -32,8 +32,7 @@ Row {
     property bool minimizeButtonVisible: true
     property bool overlayShown
 
-    readonly property bool lightMode: true
-    readonly property color color: theme.palette.normal.backgroundText
+    readonly property color color: theme.palette.normal.baseText
 
     signal closeClicked()
     signal minimizeClicked()

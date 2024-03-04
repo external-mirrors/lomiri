@@ -49,7 +49,7 @@ import WindowManager 1.0
 StyledItem {
     id: shell
 
-    theme.name: "Lomiri.Components.Themes.Ambiance"
+    readonly property bool lightMode : theme.name === "Lomiri.Components.Themes.Ambiance"
 
     // to be set from outside
     property int orientationAngle: 0
@@ -318,6 +318,7 @@ StyledItem {
             objectName: "stage"
             anchors.fill: parent
             focus: true
+            lightMode: shell.lightMode
 
             dragAreaWidth: shell.edgeSize
             background: wallpaperResolver.background
@@ -620,6 +621,7 @@ StyledItem {
             lockedVisible: (lockedByUser || shell.atDesktop) && lockAllowed
             blurSource: settings.enableBlur ? (greeter.shown ? greeter : stages) : null
             topPanelHeight: panel.panelHeight
+            lightMode: shell.lightMode
             drawerEnabled: !greeter.active && tutorial.launcherLongSwipeEnabled
             privateMode: greeter.active
             background: wallpaperResolver.background

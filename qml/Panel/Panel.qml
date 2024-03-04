@@ -49,7 +49,6 @@ Item {
     property bool greeterShown: false
     property bool hasKeyboard: false
     property bool supportsMultiColorLed: true
-
     property var blurSource : null
 
     // Whether our expanded menus should take up the full width of the panel

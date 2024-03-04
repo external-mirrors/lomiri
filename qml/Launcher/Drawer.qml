@@ -36,7 +36,7 @@ FocusScope {
     visible: x > -width
     property var fullyOpen: x === 0
     property var fullyClosed: x === -width
-    readonly property bool lightMode : true
+    property bool lightMode : false
     signal applicationSelected(string appId)
 
     // Request that the Drawer is opened fully, if it was partially closed then
@@ -154,7 +154,7 @@ FocusScope {
 
     Rectangle {
         anchors.fill: parent
-        color: "#CAFEFEFE"
+        color: root.lightMode ? "#CAFEFEFE" : "#BF000000"
 
         MouseArea {
             id: drawerHandle

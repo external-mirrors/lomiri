@@ -113,7 +113,7 @@ Item {
         text: root.highlightedIndex >= 0 && highlightedSurface && highlightedSurface.name != "" ? highlightedSurface.name :
                                                                                                   highlightedApp ? highlightedApp.name : ""
         fontSize: root.height < units.gu(85) ? 'medium' : 'large'
-        color: theme.palette.normal.foreground
+        color: "#FFFFFF"
         opacity: root.highlightedIndex >= 0 ? 1 : 0
         Behavior on opacity { LomiriNumberAnimation { } }
     }

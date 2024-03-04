@@ -113,7 +113,11 @@ Showable {
         clip: root.partiallyOpened
 
         Rectangle {
-            color: "#CAFEFEFE"
+            color: Qt.rgba(root.panelColor.r,
+                           root.panelColor.g,
+                           root.panelColor.b,
+                           1.0)
+            opacity: 0.85
             anchors.fill: parent
         }
 

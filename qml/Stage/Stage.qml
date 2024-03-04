@@ -48,6 +48,7 @@ FocusScope {
     property bool spreadEnabled: true // If false, animations and right edge will be disabled
     property bool suspended
     property bool oskEnabled: false
+    property bool lightMode: false
     property rect inputMethodRect
     property real rightEdgePushProgress: 0
     property Item availableDesktopArea
@@ -832,7 +833,7 @@ FocusScope {
             wrapMode: Label.WordWrap
             fontSize: "large"
             text: i18n.tr("No running apps")
-            color: "#FEFEFE"
+            color: "#FFFFFF"
         }
 
         Connections {
