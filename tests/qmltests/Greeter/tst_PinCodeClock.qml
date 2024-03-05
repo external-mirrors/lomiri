@@ -26,7 +26,7 @@ Item {
     width: units.gu(60)
     height: units.gu(70)
 
-    property url defaultBackground: "/usr/share/backgrounds/warty-final-ubuntu.png"
+    property url defaultBackground: "/usr/share/backgrounds/lomiri-default-background.png"
 
     Image {
         anchors.fill: parent

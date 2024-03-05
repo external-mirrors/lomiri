@@ -37,7 +37,7 @@ Rectangle {
         alphaNumeric: pinPadCheckBox.checked
         minPinLength: minPinLengthTextField.text
         maxPinLength: maxPinLengthTextField.text
-        background: "/usr/share/backgrounds/warty-final-ubuntu.png"
+        background: "/usr/share/backgrounds/lomiri-default-background.png"
     }
 
     Connections {
