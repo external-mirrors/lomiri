@@ -41,10 +41,6 @@ Dialog {
 
     focus: true
 
-    theme: ThemeSettings {
-        name: "Lomiri.Components.Themes.Ambiance"
-    }
-
     Component.onCompleted: {
         show();
     }
