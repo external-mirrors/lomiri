@@ -30,6 +30,7 @@ FocusScope {
     readonly property string title: surface && surface.name !== "" ? surface.name : d.name
     readonly property QtObject focusedSurface: d.focusedSurface.surface
     readonly property alias surfaceInitialized: d.surfaceInitialized
+    readonly property bool supportsResize: d.surfaceOldEnoughToBeResized && d.supportsSurfaceResize
 
     // to be set from outside
     property QtObject surface
@@ -48,6 +49,15 @@ FocusScope {
     readonly property int heightIncrement: surface ? surface.heightIncrement : 0
 
     signal sizeChanged(size size)
+
+    onSizeChanged: {
+        let width = Math.max(size.width, root.minimumWidth)
+        width = Math.min(width, root.maximumWidth)
+        let height = Math.max(size.height, root.minimumHeight)
+        height = Math.min(height, root.maximumHeight)
+        implicitWidth = width
+        implicitHeight = height
+    }
 
     Connections {
         target: surface
@@ -104,6 +114,8 @@ FocusScope {
                 &&
                 ((application.supportedOrientations & Qt.LandscapeOrientation)
                  || (application.supportedOrientations & Qt.InvertedLandscapeOrientation))
+                &&
+                !((root.minimumWidth === root.maximumWidth) && (root.minimumHeight === root.maximumHeight))
 
         property bool surfaceOldEnoughToBeResized: false
 

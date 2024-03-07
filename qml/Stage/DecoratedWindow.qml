@@ -33,6 +33,7 @@ FocusScope {
     property alias application: applicationWindow.application
     property alias surface: applicationWindow.surface
     readonly property alias focusedSurface: applicationWindow.focusedSurface
+    readonly property alias supportsResize: applicationWindow.supportsResize
     property alias active: decoration.active
     readonly property alias title: applicationWindow.title
     property alias maximizeButtonShown: decoration.maximizeButtonShown
@@ -182,10 +183,6 @@ FocusScope {
 //        onRequestedWidthChanged: oldRequestedWidth = requestedWidth
 //        onRequestedHeightChanged: oldRequestedHeight = requestedHeight
         focus: true
-        onSizeChanged: {
-            implicitWidth = size.width
-            implicitHeight = size.height
-        }
 
         property real itemScale: 1
         property real minSize: Math.min(root.scaleToPreviewSize, Math.min(requestedHeight, Math.min(requestedWidth, Math.min(implicitHeight, implicitWidth))))
