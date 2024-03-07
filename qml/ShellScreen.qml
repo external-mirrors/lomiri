@@ -16,6 +16,7 @@
 
 import QtQuick 2.12
 import Lomiri.Components 1.3
+import Lomiri.InputInfo 0.1
 import WindowManager 1.0
 import Cursor 1.1
 import "Components"
@@ -27,6 +28,8 @@ ScreenWindow {
     title: "Lomiri Shell"
 
     property int screenIndex: -1
+    property bool hasKeyboard: keyboardsModel.count > 0
+    property bool hasMouse: miceModel.count > 0
     readonly property bool primary: {
         // If this is the only screen then it's the primary one
         if (Screens.count === 1)
@@ -40,6 +43,23 @@ ScreenWindow {
 
     DeviceConfiguration {
         id: deviceConfiguration
+    }
+
+    InputDeviceModel {
+        id: miceModel
+        deviceFilter: InputInfo.Mouse
+        property int oldCount: 0
+    }
+
+    InputDeviceModel {
+        id: touchPadModel
+        deviceFilter: InputInfo.TouchPad
+        property int oldCount: 0
+    }
+
+    InputDeviceModel {
+        id: keyboardsModel
+        deviceFilter: InputInfo.Keyboard
     }
 
     Loader {
@@ -74,6 +94,7 @@ ScreenWindow {
         DisabledScreenNotice {
             screen: screenWindow.screen
             oskEnabled: Screens.count > 1
+            visible: !hasKeyboard && !hasMouse
         }
     }
 }
