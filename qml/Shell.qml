@@ -193,12 +193,12 @@ StyledItem {
 
         GSettings {
             id: backgroundSettings
-            schema.id: "org.gnome.desktop.background"
+            schema.id: ((shell.showingGreeter == true) || (shell.mode === "full-greeter") || (shell.mode === "greeter")) ? "com.lomiri.Shell.Greeter" : "com.lomiri.Shell"
         }
 
         candidates: [
             AccountsService.backgroundFile,
-            backgroundSettings.pictureUri,
+            backgroundSettings.backgroundPictureUri,
             defaultBackground
         ]
     }
