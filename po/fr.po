@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-06 08:14+0000\n"
-"PO-Revision-Date: 2023-06-28 04:33+0000\n"
-"Last-Translator: \"J. Lavoie\" <j.lavoie@net-c.ca>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/lomiri/lomiri/fr/"
-">\n"
+"PO-Revision-Date: 2024-03-11 08:26+0000\n"
+"Last-Translator: saveurlinux <cosse@codelutin.com>\n"
+"Language-Team: French <https://hosted.weblate.org/projects/lomiri/lomiri/fr/>"
+"\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.18.1\n"
+"X-Generator: Weblate 5.5-dev\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:35+0000\n"
 
 #: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
@@ -25,8 +25,9 @@ msgid "Lomiri"
 msgstr "Lomiri"
 
 #: data/lomiri.desktop.in:5
+#, fuzzy
 msgid "The converged Lomiri shell"
-msgstr ""
+msgstr "La convergence du shell Lorimi"
 
 #: data/lomiri-greeter.desktop.in:4
 #, fuzzy
@@ -35,8 +36,9 @@ msgid "Lomiri Greeter"
 msgstr "Lomiri"
 
 #: data/lomiri-greeter.desktop.in:5
+#, fuzzy
 msgid "The converged Lomiri shell's Greeter"
-msgstr ""
+msgstr "La convergence du shell de bienvenue de Lorimi"
 
 #: data/indicators-client.desktop.in:4
 msgid "Indicators Client"
@@ -48,7 +50,7 @@ msgstr ""
 
 #: data/indicators-client.desktop.in:9
 msgid "NoDisplay=false"
-msgstr ""
+msgstr "NoDisplay=false"
 
 #: plugins/LightDM/Greeter.cpp:199
 msgid "Password: "
@@ -440,7 +442,7 @@ msgstr "Trouver plus de paramètres dans les paramètres du système."
 
 #: qml/Greeter/CoverPage.qml:160
 msgid "Fully charged"
-msgstr ""
+msgstr "Complètement chargée"
 
 #: qml/Greeter/CoverPage.qml:168
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1095
