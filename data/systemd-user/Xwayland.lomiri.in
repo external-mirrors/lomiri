@@ -34,4 +34,4 @@ if [ "$HAS_XWAYLAND_SHM" = "0" ]; then
     fi
 fi
 
-exec /usr/bin/Xwayland $@ $ARGS
+exec @XWAYLAND_BIN@ $@ $ARGS

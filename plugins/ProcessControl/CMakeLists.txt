@@ -14,7 +14,7 @@ target_include_directories(ProcessControl-qml PRIVATE ${CMAKE_CURRENT_BINARY_DIR
 
 add_lomiri_plugin(ProcessControl 0.1 ProcessControl TARGETS ProcessControl-qml)
 
-set(DBUS_IFACE_DIR "${CMAKE_INSTALL_PREFIX}/share/dbus-1/interfaces")
+set(DBUS_IFACE_DIR "${CMAKE_INSTALL_DATADIR}/dbus-1/interfaces")
 
 install(FILES com.lomiri.ProcessControl.xml
     DESTINATION "${DBUS_IFACE_DIR}"

@@ -22,10 +22,10 @@ target_include_directories(GreeterDBusTestExec PUBLIC
     )
 set_target_properties(GreeterDBusTestExec PROPERTIES INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/${SHELL_INSTALL_QML}/mocks/IntegratedLightDM/liblightdm")
 install(TARGETS GreeterDBusTestExec
-    DESTINATION "${SHELL_PRIVATE_LIBEXECDIR}/tests/plugins/LightDM/IntegratedLightDM"
+    DESTINATION "${SHELL_PRIVATE_FULL_LIBEXECDIR}/tests/plugins/LightDM/IntegratedLightDM"
     )
 install(FILES greeter.qml
-    DESTINATION "${SHELL_APP_DIR}/tests/plugins/LightDM/IntegratedLightDM"
+    DESTINATION "${SHELL_APP_FULL_DIR}/tests/plugins/LightDM/IntegratedLightDM"
     )
 add_lomiri_uitest(GreeterDBus dbus-test-runner
     ARG_PREFIX "--parameter"
@@ -47,7 +47,7 @@ target_include_directories(GreeterPamTestExec PUBLIC
     ${CMAKE_SOURCE_DIR}/plugins/LightDM/IntegratedLightDM/liblightdm
     )
 install(TARGETS GreeterPamTestExec
-    DESTINATION "${SHELL_PRIVATE_LIBEXECDIR}/tests/plugins/LightDM/IntegratedLightDM"
+    DESTINATION "${SHELL_PRIVATE_FULL_LIBEXECDIR}/tests/plugins/LightDM/IntegratedLightDM"
     )
 add_qmltest_target(testGreeterPam GreeterPamTestExec COMMAND $<TARGET_FILE:GreeterPamTestExec>)
 
@@ -68,7 +68,7 @@ target_include_directories(GreeterSessionsModelTestExec PUBLIC
     ${CMAKE_SOURCE_DIR}/tests/mocks/liblightdm/
     )
 install(TARGETS GreeterSessionsModelTestExec
-    DESTINATION "${SHELL_PRIVATE_LIBEXECDIR}/tests/plugins/LightDM/IntegratedLightDM"
+    DESTINATION "${SHELL_PRIVATE_FULL_LIBEXECDIR}/tests/plugins/LightDM/IntegratedLightDM"
     )
 add_lomiri_uitest(GreeterSessions GreeterSessionsModelTestExec
     DEPENDS MockLightDM
@@ -97,7 +97,7 @@ target_include_directories(GreeterUsersModelTestExec PUBLIC
     )
 set_target_properties(GreeterUsersModelTestExec PROPERTIES INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/${SHELL_INSTALL_QML}/mocks/IntegratedLightDM/liblightdm")
 install(TARGETS GreeterUsersModelTestExec
-    DESTINATION "${SHELL_PRIVATE_LIBEXECDIR}/tests/plugins/LightDM/IntegratedLightDM"
+    DESTINATION "${SHELL_PRIVATE_FULL_LIBEXECDIR}/tests/plugins/LightDM/IntegratedLightDM"
     )
 add_lomiri_uitest(GreeterUsers GreeterUsersModelTestExec
     DEPENDS MockLightDM
@@ -124,7 +124,7 @@ target_include_directories(GreeterPromptsModelTestExec PUBLIC
     ${CMAKE_SOURCE_DIR}/tests/mocks/liblightdm
     )
 install(TARGETS GreeterPromptsModelTestExec
-    DESTINATION "${SHELL_PRIVATE_LIBEXECDIR}/tests/plugins/LightDM/IntegratedLightDM"
+    DESTINATION "${SHELL_PRIVATE_FULL_LIBEXECDIR}/tests/plugins/LightDM/IntegratedLightDM"
     )
 add_lomiri_uitest(GreeterPrompts GreeterPromptsModelTestExec
     DEPENDS MockLightDM
@@ -144,7 +144,7 @@ target_include_directories(GreeterIntegratedTestExec PUBLIC
     ${CMAKE_SOURCE_DIR}/plugins/LightDM/IntegratedLightDM/liblightdm
     )
 install(TARGETS GreeterIntegratedTestExec
-    DESTINATION "${SHELL_PRIVATE_LIBEXECDIR}/tests/plugins/LightDM/IntegratedLightDM"
+    DESTINATION "${SHELL_PRIVATE_FULL_LIBEXECDIR}/tests/plugins/LightDM/IntegratedLightDM"
     )
 add_lomiri_unittest(GreeterIntegrated dbus-test-runner
     ENVIRONMENT LD_LIBRARY_PATH=${CMAKE_BINARY_DIR}/plugins/IntegratedLightDM/liblightdm/

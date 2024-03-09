@@ -33,5 +33,5 @@ target_link_libraries(uqmlscene
     )
 
 install(TARGETS uqmlscene
-    RUNTIME DESTINATION ${SHELL_PRIVATE_LIBEXECDIR}
+    RUNTIME DESTINATION ${SHELL_PRIVATE_FULL_LIBEXECDIR}
     )

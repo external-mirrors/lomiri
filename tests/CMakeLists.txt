@@ -143,7 +143,7 @@ if(NOT QDBUSXML2CPP_EXECUTABLE)
 endif()
 
 install(DIRECTORY data graphics
-    DESTINATION "${SHELL_APP_DIR}/tests"
+    DESTINATION "${SHELL_APP_FULL_DIR}/tests"
 )
 
 

@@ -97,7 +97,7 @@ function(add_qml_test_data PATH COMPONENT_NAME)
         set(DESTINATION "${TEST_DESTINATION}")
     else()
         file(RELATIVE_PATH relcurpath "${CMAKE_SOURCE_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}")
-        set(DESTINATION "${SHELL_APP_DIR}/${relcurpath}/${PATH}")
+        set(DESTINATION "${SHELL_APP_FULL_DIR}/${relcurpath}/${PATH}")
     endif()
 
     install(FILES "${filename}" DESTINATION "${DESTINATION}")
@@ -282,7 +282,7 @@ function(add_meta_test TARGET_NAME)
         PERMISSIONS OWNER_EXECUTE OWNER_READ OWNER_WRITE
                     GROUP_EXECUTE GROUP_READ
                     WORLD_EXECUTE WORLD_READ
-        DESTINATION "${SHELL_PRIVATE_LIBEXECDIR}/tests/scripts"
+        DESTINATION "${SHELL_PRIVATE_FULL_LIBEXECDIR}/tests/scripts"
     )
 endfunction()
 
@@ -298,8 +298,8 @@ function(install_test_script TARGET_NAME)
     foreach(ONE_ENV ${TEST_ENVIRONMENT})
         set(script "${script}export ${ONE_ENV}\n")
     endforeach()
-    set(script "${script}export LOMIRI_TESTING_DATADIR=\"${CMAKE_INSTALL_PREFIX}/${SHELL_APP_DIR}\"\n")
-    set(script "${script}export LOMIRI_TESTING_LIBEXECDIR=\"${CMAKE_INSTALL_PREFIX}/${SHELL_PRIVATE_LIBEXECDIR}\"\n")
+    set(script "${script}export LOMIRI_TESTING_DATADIR=\"${SHELL_APP_FULL_DIR}\"\n")
+    set(script "${script}export LOMIRI_TESTING_LIBEXECDIR=\"${SHELL_PRIVATE_FULL_LIBEXECDIR}\"\n")
     set(script "${script}\n")
     set(script "${script}XML_ARGS=\n")
     set(script "${script}if [ -n \"\$ARTIFACTS_DIR\" ]; then\n")
@@ -343,16 +343,16 @@ function(install_test_script TARGET_NAME)
     string(REGEX REPLACE \"@XML_DIR@\" \"\${xmldir}\" replacestr \"\${replacestr}\")
     string(REGEX REPLACE \"@XML_FILE@\" \"\${xmlfile}\" replacestr \"\${replacestr}\")
     # replace build/source roots with their install paths
-    string(REPLACE \"${CMAKE_BINARY_DIR}/libs\" \"${CMAKE_INSTALL_PREFIX}/${SHELL_PRIVATE_LIBDIR}\" replacestr \"\${replacestr}\")
+    string(REPLACE \"${CMAKE_BINARY_DIR}/libs\" \"${SHELL_PRIVATE_FULL_LIBDIR}\" replacestr \"\${replacestr}\")
     string(REPLACE \"${CMAKE_BINARY_DIR}/plugins\" \"${CMAKE_INSTALL_PREFIX}/${SHELL_INSTALL_QML}\" replacestr \"\${replacestr}\")
-    string(REPLACE \"${CMAKE_BINARY_DIR}/tests/libs\" \"${CMAKE_INSTALL_PREFIX}/${SHELL_PRIVATE_LIBEXECDIR}/tests/libs\" replacestr \"\${replacestr}\")
+    string(REPLACE \"${CMAKE_BINARY_DIR}/tests/libs\" \"${SHELL_PRIVATE_FULL_LIBEXECDIR}/tests/libs\" replacestr \"\${replacestr}\")
     string(REPLACE \"${CMAKE_BINARY_DIR}/tests/mocks\" \"${CMAKE_INSTALL_PREFIX}/${SHELL_INSTALL_QML}/mocks\" replacestr \"\${replacestr}\")
-    string(REPLACE \"${CMAKE_BINARY_DIR}/tests/plugins\" \"${CMAKE_INSTALL_PREFIX}/${SHELL_PRIVATE_LIBEXECDIR}/tests/plugins\" replacestr \"\${replacestr}\")
-    string(REPLACE \"${CMAKE_BINARY_DIR}/tests/qmltests\" \"${CMAKE_INSTALL_PREFIX}/${SHELL_PRIVATE_LIBEXECDIR}/tests/qmltests\" replacestr \"\${replacestr}\")
-    string(REPLACE \"${CMAKE_BINARY_DIR}/tests/uqmlscene\" \"${CMAKE_INSTALL_PREFIX}/${SHELL_PRIVATE_LIBEXECDIR}\" replacestr \"\${replacestr}\")
+    string(REPLACE \"${CMAKE_BINARY_DIR}/tests/plugins\" \"${SHELL_PRIVATE_FULL_LIBEXECDIR}/tests/plugins\" replacestr \"\${replacestr}\")
+    string(REPLACE \"${CMAKE_BINARY_DIR}/tests/qmltests\" \"${SHELL_PRIVATE_FULL_LIBEXECDIR}/tests/qmltests\" replacestr \"\${replacestr}\")
+    string(REPLACE \"${CMAKE_BINARY_DIR}/tests/uqmlscene\" \"${SHELL_PRIVATE_FULL_LIBEXECDIR}\" replacestr \"\${replacestr}\")
     string(REPLACE \"${CMAKE_BINARY_DIR}/tests/utils/modules\" \"${CMAKE_INSTALL_PREFIX}/${SHELL_INSTALL_QML}/utils\" replacestr \"\${replacestr}\")
-    string(REPLACE \"${CMAKE_SOURCE_DIR}/tests/plugins\" \"${CMAKE_INSTALL_PREFIX}/${SHELL_APP_DIR}/tests/plugins\" replacestr \"\${replacestr}\")
-    string(REPLACE \"${CMAKE_SOURCE_DIR}/tests/qmltests\" \"${CMAKE_INSTALL_PREFIX}/${SHELL_APP_DIR}/tests/qmltests\" replacestr \"\${replacestr}\")
+    string(REPLACE \"${CMAKE_SOURCE_DIR}/tests/plugins\" \"${SHELL_APP_FULL_DIR}/tests/plugins\" replacestr \"\${replacestr}\")
+    string(REPLACE \"${CMAKE_SOURCE_DIR}/tests/qmltests\" \"${SHELL_APP_FULL_DIR}/tests/qmltests\" replacestr \"\${replacestr}\")
 
     file(WRITE \"${filename}\" \"\${replacestr}\")
     ")
@@ -362,7 +362,7 @@ function(install_test_script TARGET_NAME)
         PERMISSIONS OWNER_EXECUTE OWNER_READ OWNER_WRITE
                     GROUP_EXECUTE GROUP_READ
                     WORLD_EXECUTE WORLD_READ
-        DESTINATION "${SHELL_PRIVATE_LIBEXECDIR}/tests/scripts"
+        DESTINATION "${SHELL_PRIVATE_FULL_LIBEXECDIR}/tests/scripts"
     )
 endfunction()
 
@@ -375,7 +375,7 @@ function(add_meta_dependencies UPSTREAM_TARGET)
         # add depend to the meta test script that we will install on system
         set(filename "${CMAKE_BINARY_DIR}/tests/scripts/${UPSTREAM_TARGET}.sh")
         if (EXISTS "${filename}")
-            file(APPEND "${filename}" "${CMAKE_INSTALL_PREFIX}/${SHELL_PRIVATE_LIBEXECDIR}/tests/scripts/${depend}.sh \"\$@\" 2>&1\n")
+            file(APPEND "${filename}" "${SHELL_PRIVATE_FULL_LIBEXECDIR}/tests/scripts/${depend}.sh \"\$@\" 2>&1\n")
         endif()
     endforeach()
 endfunction()

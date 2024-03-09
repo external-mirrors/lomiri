@@ -23,10 +23,10 @@ macro(build_gesture_test CLASSNAME)
         LomiriGesturesQml ${LOMIRIGESTURES_LIBRARIES}
     )
     install(TARGETS ${CLASSNAME}TestExec
-        DESTINATION "${SHELL_PRIVATE_LIBEXECDIR}/tests/plugins/Lomiri/Gestures"
+        DESTINATION "${SHELL_PRIVATE_FULL_LIBEXECDIR}/tests/plugins/Lomiri/Gestures"
     )
     # To find libLomiriGestures.so
-    set_target_properties(${CLASSNAME}TestExec PROPERTIES INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/${SHELL_PRIVATE_LIBDIR}")
+    set_target_properties(${CLASSNAME}TestExec PROPERTIES INSTALL_RPATH "${SHELL_PRIVATE_FULL_LIBDIR}")
 endmacro()
 
 set(LOMIRI_IMPORT_PATHS
