@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-06 08:14+0000\n"
-"PO-Revision-Date: 2024-03-11 08:26+0000\n"
-"Last-Translator: saveurlinux <cosse@codelutin.com>\n"
+"PO-Revision-Date: 2024-03-24 06:22+0000\n"
+"Last-Translator: Steve <steve.kueffer.ch@gmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/lomiri/lomiri/fr/>"
 "\n"
 "Language: fr\n"
@@ -25,28 +25,24 @@ msgid "Lomiri"
 msgstr "Lomiri"
 
 #: data/lomiri.desktop.in:5
-#, fuzzy
 msgid "The converged Lomiri shell"
 msgstr "La convergence du shell Lorimi"
 
 #: data/lomiri-greeter.desktop.in:4
-#, fuzzy
-#| msgid "Lomiri"
 msgid "Lomiri Greeter"
-msgstr "Lomiri"
+msgstr "Accueil de Lomiri"
 
 #: data/lomiri-greeter.desktop.in:5
-#, fuzzy
 msgid "The converged Lomiri shell's Greeter"
 msgstr "La convergence du shell de bienvenue de Lorimi"
 
 #: data/indicators-client.desktop.in:4
 msgid "Indicators Client"
-msgstr ""
+msgstr "Indicateurs client"
 
 #: data/indicators-client.desktop.in:5
 msgid "Application for testing the Indicators system"
-msgstr ""
+msgstr "Demande de test du système d'indicateurs"
 
 #: data/indicators-client.desktop.in:9
 msgid "NoDisplay=false"
@@ -119,7 +115,7 @@ msgstr "S-Vidéo"
 
 #: plugins/WindowManager/Screen.cpp:176
 msgid "Internal"
-msgstr ""
+msgstr "Interne"
 
 #: plugins/WindowManager/Screen.cpp:178
 msgid "Component"
@@ -139,7 +135,7 @@ msgstr "TV"
 
 #: plugins/WindowManager/Screen.cpp:187
 msgid "Virtual"
-msgstr ""
+msgstr "Virtuel"
 
 #: qml/Components/Dialogs.qml:176
 msgctxt "Title: Lock/Log out dialog"
@@ -463,12 +459,12 @@ msgstr[1] "%1 minutes"
 #: qml/Greeter/CoverPage.qml:178
 #, qt-format
 msgid "%1, %2 until full"
-msgstr ""
+msgstr "%1, %2 jusqu'à ce qu'il soit plein"
 
 #: qml/Greeter/CoverPage.qml:181
 #, qt-format
 msgid "%1 until full"
-msgstr ""
+msgstr "%1 Jusqu’à ce qu'il soit plein"
 
 #: qml/Greeter/CoverPage.qml:197
 #: tests/qmltests/Greeter/tst_GreeterView.qml:1239
@@ -548,7 +544,7 @@ msgstr "Afficher le mot de passe"
 
 #: qml/Notifications/Notification.qml:322
 msgid "New message"
-msgstr ""
+msgstr "Nouveau message"
 
 #: qml/Panel/ActiveCallHint.qml:79
 msgid "Tap to return to call..."
@@ -680,17 +676,15 @@ msgstr "Suivant"
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
 #: qml/Wizard/Pages/10-welcome-update.qml:92
-#, fuzzy, qt-format
-#| msgid "Welcome to "
+#, qt-format
 msgid "Welcome to %1 %2"
-msgstr "Bienvenue sur "
+msgstr "Bienvenue sur %1 %2"
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
 #: qml/Wizard/Pages/10-welcome-update.qml:108
-#, fuzzy, qt-format
-#| msgid "We will make sure your device is ready to use "
+#, qt-format
 msgid "We will make sure your device is ready to use %1 %2"
-msgstr "Nous allons nous assurer que votre appareil est prêt à l'emploi "
+msgstr "Nous allons nous assurer que votre appareil est prêt à l'emploi %1 %2"
 
 #: qml/Wizard/Pages/11-changelog.qml:28
 msgid "What's new"
@@ -782,12 +776,9 @@ msgstr ""
 "appareil redémarrera automatiquement après cela."
 
 #: qml/Wizard/Pages/79-system-update.qml:76
-#, fuzzy
-#| msgctxt "string identifying name of the update"
-#| msgid "Lomiri Touch system"
 msgctxt "string identifying name of the update"
 msgid "Ubuntu Touch system"
-msgstr "Système Lomiri Touch"
+msgstr "Système Ubuntu Touch"
 
 #: qml/Wizard/Pages/79-system-update.qml:83
 #, qt-format
@@ -809,10 +800,9 @@ msgstr "Bon retour parmi nous"
 
 #. TRANSLATORS: %1 contains the distro name
 #: qml/Wizard/Pages/80-finished.qml:95
-#, fuzzy, qt-format
-#| msgid "Welcome to "
+#, qt-format
 msgid "Welcome to %1"
-msgstr "Bienvenue sur "
+msgstr "Bienvenue sur %1"
 
 #: qml/Wizard/Pages/80-finished.qml:111
 msgid "You are ready to use your device now"
@@ -845,10 +835,8 @@ msgid "Lock Screen Passcode"
 msgstr "Code de verrouillage de l'écran"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:68
-#, fuzzy
-#| msgid "Enter 4 numbers to setup your passcode"
 msgid "Enter at least 4 numbers to setup your passcode"
-msgstr "Saisir 4 chiffres pour définir votre code"
+msgstr "Saisir min. 4 chiffres pour définir votre code"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:84
 #: qml/Wizard/Pages/passcode-set.qml:54
@@ -868,8 +856,6 @@ msgid "Passcodes do not match"
 msgstr "Les codes ne correspondent pas"
 
 #: qml/Wizard/Pages/passcode-set.qml:62
-#, fuzzy
-#| msgid "Passcode must be 4 characters long"
 msgid "Passcode must be at least 4 characters long"
 msgstr "Le code doit contenir au moins 4 caractères"
 
