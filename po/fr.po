@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-06 08:14+0000\n"
-"PO-Revision-Date: 2024-03-24 06:22+0000\n"
+"PO-Revision-Date: 2024-03-24 21:15+0000\n"
 "Last-Translator: Steve <steve.kueffer.ch@gmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/lomiri/lomiri/fr/>"
 "\n"
@@ -95,7 +95,7 @@ msgstr "Détacher le raccourci"
 
 #: plugins/WindowManager/Screen.cpp:160
 msgid "Unknown"
-msgstr "Inconnu"
+msgstr "Inconnu(e)"
 
 #: plugins/WindowManager/Screen.cpp:162
 msgid "VGA"
