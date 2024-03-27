@@ -27,29 +27,29 @@ Image {
     width: 70
     height: 70
 
-    source: wallpaperResolver.background
+    source: imageResolver.resolvedImage
 
     readonly property url blue: Qt.resolvedUrl("../../data/lomiri/backgrounds/blue.png")
     readonly property url red: Qt.resolvedUrl("../../data/lomiri/backgrounds/red.png")
     readonly property url big: Qt.resolvedUrl("../../graphics/applicationIcons/dash.png")
 
-    WallpaperResolver {
-        id: wallpaperResolver
+    ImageResolver {
+        id: imageResolver
 
-        property var pastBackgrounds: []
+        property var pastImages: []
 
-        onBackgroundChanged: pastBackgrounds.push(background)
+        onResolvedImageChanged: pastImages.push(resolvedImage)
     }
 
     SignalSpy {
         id: spy
-        signalName: "backgroundChanged"
-        target: wallpaperResolver
+        signalName: "resolvedImageChanged"
+        target: imageResolver
     }
 
     LomiriTestCase {
         id: testCase
-        name: "WallpaperResolver"
+        name: "ImageResolver"
         when: windowShown
 
         function test_background_data() {
@@ -74,7 +74,7 @@ Image {
                  list: ["", "", root.red],
                  output: root.red},
 
-                // Ensure that the WallpaperResolver doesn't get stuck if it
+                // Ensure that the ImageResolver doesn't get stuck if it
                 // sees the same invalid wallpaper multiple times in a row
                 {tag: "valid-after-the-same-invalid",
                  list: ["/first", "/first", "/first", root.red],
@@ -114,46 +114,46 @@ Image {
         function init() {
             // Make sure we don't have our next test compare() to the results
             // of the last test by exercising the resolver
-            wallpaperResolver.cache = true;
-            wallpaperResolver.candidates = [];
-            tryCompare(wallpaperResolver, "background", "");
-            wallpaperResolver.pastBackgrounds = [];
-            wallpaperResolver.candidates = [root.blue, root.blue];
-            tryCompare(wallpaperResolver, "background", root.blue);
-            wallpaperResolver.candidates = [];
-            tryCompare(wallpaperResolver, "background", "");
-            tryCompare(wallpaperResolver, "pastBackgrounds", [root.blue, Qt.resolvedUrl("")])
-            wallpaperResolver.pastBackgrounds = [];
+            imageResolver.cache = true;
+            imageResolver.candidates = [];
+            tryCompare(imageResolver, "resolvedImage", "");
+            imageResolver.pastImages = [];
+            imageResolver.candidates = [root.blue, root.blue];
+            tryCompare(imageResolver, "resolvedImage", root.blue);
+            imageResolver.candidates = [];
+            tryCompare(imageResolver, "resolvedImage", "");
+            tryCompare(imageResolver, "pastImages", [root.blue, Qt.resolvedUrl("")])
+            imageResolver.pastImages = [];
         }
 
         function test_background(data) {
-            wallpaperResolver.candidates = data.list;
-            tryCompare(wallpaperResolver, "background", data.output);
+            imageResolver.candidates = data.list;
+            tryCompare(imageResolver, "resolvedImage", data.output);
         }
 
         function test_reload_with_blanks() {
-            wallpaperResolver.candidates = ["", "", root.red];
-            tryCompare(wallpaperResolver, "background", root.red);
-            wallpaperResolver.candidates = ["", "", root.blue];
-            tryCompare(wallpaperResolver, "background", root.blue);
+            imageResolver.candidates = ["", "", root.red];
+            tryCompare(imageResolver, "resolvedImage", root.red);
+            imageResolver.candidates = ["", "", root.blue];
+            tryCompare(imageResolver, "resolvedImage", root.blue);
         }
 
-        // WallpaperResolver loads images asynchronously. It's important to make
+        // ImageResolver loads images asynchronously. It's important to make
         // sure that it never returns the wrong image just because they loaded
         // in the wrong order. So we set its images 100 times.
         function test_images_changing() {
-            wallpaperResolver.cache = false;
+            imageResolver.cache = false;
             for (var i = 0; i < 50; i++) {
                 // We don't spy on the first one because the wallpaper doesn't
                 // transition from a set url to "" the first time.
-                wallpaperResolver.candidates = [root.red, root.big, root.blue];
-                tryCompare(wallpaperResolver, "background", root.red);
+                imageResolver.candidates = [root.red, root.big, root.blue];
+                tryCompare(imageResolver, "resolvedImage", root.red);
 
                 spy.clear();
-                wallpaperResolver.pastBackgrounds = [];
-                wallpaperResolver.candidates = [root.big, root.blue, root.red];
-                tryCompare(wallpaperResolver, "background", root.big);
-                compare(wallpaperResolver.pastBackgrounds, ["", root.big])
+                imageResolver.pastImages = [];
+                imageResolver.candidates = [root.big, root.blue, root.red];
+                tryCompare(imageResolver, "resolvedImage", root.big);
+                compare(imageResolver.pastImages, ["", root.big])
                 compare(spy.count, 4);
             }
         }

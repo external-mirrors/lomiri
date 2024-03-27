@@ -19,7 +19,9 @@ import QtQuick.Layouts 1.1
 import Lomiri.Components 1.3
 import Lomiri.SystemSettings.Update 1.0
 import Wizard 0.1
+import GSettings 1.0
 import ".." as LocalComponents
+import "../../Components"
 
 LocalComponents.Page {
     id: systemUpdatePage
@@ -66,7 +68,25 @@ LocalComponents.Page {
                 Layout.alignment: Qt.AlignVCenter | Qt.AlignHCenter
                 sourceSize: Qt.size(units.gu(3), units.gu(3))
                 fillMode: Image.PreserveAspectFit
-                source: "image://theme/distributor-logo"
+                source: logoResolver.resolvedImage
+            }
+
+            ImageResolver {
+                id: logoResolver
+                objectName: "logoResolver"
+
+                readonly property url defaultLogo: "file://" + Constants.defaultLogo
+
+                GSettings {
+                    id: logoSettings
+                    schema.id: "com.lomiri.Shell.Launcher"
+                }
+
+                candidates: [
+                    logoSettings.logoPictureUri,
+                    "image://theme/start-here-symbolic,start-here",
+                    defaultLogo
+                ]
             }
 
             Label {

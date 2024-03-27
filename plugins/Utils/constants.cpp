@@ -29,4 +29,5 @@ Constants::Constants(QObject *parent)
 
     QString snapRoot = QFile::decodeName(qgetenv("SNAP"));
     m_defaultWallpaper = snapRoot + "/usr/share/backgrounds/lomiri-default-background.png";
+    m_defaultLogo = snapRoot + "/usr/share/lomiri/Launcher/graphics/home.svg";
 }

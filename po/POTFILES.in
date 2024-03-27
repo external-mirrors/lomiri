@@ -302,6 +302,7 @@ qml/Components/flickableUtils.js
 qml/Components/FloatingFlickable.qml
 qml/Components/GridView.qml
 qml/Components/Handle.qml
+qml/Components/ImageResolver.qml
 qml/Components/InputMethod.qml
 qml/Components/ItemGrabber.qml
 qml/Components/ItemSnapshot.qml
@@ -330,7 +331,6 @@ qml/Components/StandardAnimation.qml
 qml/Components/VirtualTouchPad.qml
 qml/Components/VolumeControl.qml
 qml/Components/Wallpaper.qml
-qml/Components/WallpaperResolver.qml
 qml/Components/WindowControlButtons.qml
 qml/Components/WrongPasswordAnimation.qml
 qml/Components/ZoomableImage.qml
@@ -803,6 +803,7 @@ tests/qmltests/Components/tst_DragHandle/SimpleButton.qml
 tests/qmltests/Components/tst_DragHandle/TopEdgeShowable.qml
 tests/qmltests/Components/tst_EdgeDragEvaluator.cpp
 tests/qmltests/Components/tst_EdgeDragEvaluator.qml
+tests/qmltests/Components/tst_ImageResolver.qml
 tests/qmltests/Components/tst_LazyImage/ImageControls.qml
 tests/qmltests/Components/tst_LazyImage.qml
 tests/qmltests/Components/tst_Lockscreen.qml
@@ -813,7 +814,6 @@ tests/qmltests/Components/tst_SharingPicker.qml
 tests/qmltests/Components/tst_Showable.qml
 tests/qmltests/Components/tst_VirtualTouchPad.qml
 tests/qmltests/Components/tst_Wallpaper.qml
-tests/qmltests/Components/tst_WallpaperResolver.qml
 tests/qmltests/Components/tst_ZoomableImage.qml
 tests/qmltests/EdgeBarrierControls.qml
 tests/qmltests/Greeter/TestView.qml

@@ -184,12 +184,12 @@ StyledItem {
 
     property real edgeSize: units.gu(settings.edgeDragWidth)
 
-    WallpaperResolver {
+    ImageResolver {
         id: wallpaperResolver
         objectName: "wallpaperResolver"
 
         readonly property url defaultBackground: "file://" + Constants.defaultWallpaper
-        readonly property bool hasCustomBackground: background != defaultBackground
+        readonly property bool hasCustomBackground: resolvedImage != defaultBackground
 
         GSettings {
             id: backgroundSettings
@@ -326,7 +326,7 @@ StyledItem {
             lightMode: shell.lightMode
 
             dragAreaWidth: shell.edgeSize
-            background: wallpaperResolver.background
+            background: wallpaperResolver.resolvedImage
             backgroundSourceSize: shell.largestScreenDimension
 
             applicationManager: ApplicationManager
@@ -450,7 +450,7 @@ StyledItem {
             usageMode: shell.usageScenario
             orientation: shell.orientation
             forcedUnlock: wizard.active || shell.mode === "full-shell"
-            background: wallpaperResolver.background
+            background: wallpaperResolver.resolvedImage
             backgroundSourceSize: shell.largestScreenDimension
             hasCustomBackground: wallpaperResolver.hasCustomBackground
             inputMethodRect: inputMethod.visibleRect
@@ -650,7 +650,7 @@ StyledItem {
             lightMode: shell.lightMode
             drawerEnabled: !greeter.active && tutorial.launcherLongSwipeEnabled
             privateMode: greeter.active
-            background: wallpaperResolver.background
+            background: wallpaperResolver.resolvedImage
 
             // It can be assumed that the Launcher and Panel would overlap if
             // the Panel is open and taking up the full width of the shell
@@ -780,7 +780,7 @@ StyledItem {
             model: NotificationBackend.Model
             margin: units.gu(1)
             hasMouse: shell.hasMouse
-            background: wallpaperResolver.background
+            background: wallpaperResolver.resolvedImage
             privacyMode: greeter.locked && AccountsService.hideNotificationContentWhileLocked
 
             y: topmostIsFullscreen ? 0 : panel.panelHeight

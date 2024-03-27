@@ -1332,11 +1332,11 @@ Rectangle {
             var wallpaperResolver = findInvisibleChild(shell, "wallpaperResolver");
             var greeter = findChild(shell, "greeter");
             verify(!greeter.hasCustomBackground);
-            compare(wallpaperResolver.background, wallpaperResolver.defaultBackground);
+            compare(wallpaperResolver.resolvedImage, wallpaperResolver.defaultBackground);
 
             AccountsService.backgroundFile = Qt.resolvedUrl("../graphics/applicationIcons/dash.png");
             tryCompare(greeter, "hasCustomBackground", true);
-            tryCompare(wallpaperResolver, "background", AccountsService.backgroundFile);
+            tryCompare(wallpaperResolver, "resolvedImage", AccountsService.backgroundFile);
         }
 
         function test_tapOnRightEdgeReachesApplicationSurface() {
@@ -2456,10 +2456,10 @@ Rectangle {
 
             var wallpaperResolver = findChild(shell, "wallpaperResolver");
             if (data.output === "defaultBackground") {
-                tryCompare(wallpaperResolver, "background", wallpaperResolver.defaultBackground);
+                tryCompare(wallpaperResolver, "resolvedImage", wallpaperResolver.defaultBackground);
                 verify(!wallpaperResolver.hasCustomBackground);
             } else {
-                tryCompare(wallpaperResolver, "background", data.output);
+                tryCompare(wallpaperResolver, "resolvedImage", data.output);
                 verify(wallpaperResolver.hasCustomBackground);
             }
         }
