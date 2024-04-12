@@ -40,23 +40,31 @@ UsersModel::UsersModel(QObject *parent) :
     QAbstractListModel(parent),
     d_ptr(new UsersModelPrivate(this))
 {
+    Q_D(UsersModel);
+
     // Extend roleNames (we want to keep the "display" role)
-    QHash<int, QByteArray> roles = roleNames();
-    roles[NameRole] = "name";
-    roles[RealNameRole] = "realName";
-    roles[LoggedInRole] = "loggedIn";
-    roles[BackgroundRole] = "background";
-    roles[BackgroundPathRole] = "backgroundPath";
-    roles[SessionRole] = "session";
-    roles[HasMessagesRole] = "hasMessages";
-    roles[ImagePathRole] = "imagePath";
-    roles[UidRole] = "uid";
-    setRoleNames(roles);
+    d->m_roles = QAbstractListModel::roleNames();
+    d->m_roles[NameRole] = "name";
+    d->m_roles[RealNameRole] = "realName";
+    d->m_roles[LoggedInRole] = "loggedIn";
+    d->m_roles[BackgroundRole] = "background";
+    d->m_roles[BackgroundPathRole] = "backgroundPath";
+    d->m_roles[SessionRole] = "session";
+    d->m_roles[HasMessagesRole] = "hasMessages";
+    d->m_roles[ImagePathRole] = "imagePath";
+    d->m_roles[UidRole] = "uid";
 
     connect(d_ptr, &UsersModelPrivate::dataChanged, this, [this](int i) {
         QModelIndex index = createIndex(i, 0);
         Q_EMIT dataChanged(index, index);
     });
+}
+
+QHash<int, QByteArray> UsersModel::roleNames() const
+{
+    Q_D(const UsersModel);
+
+    return d->m_roles;
 }
 
 int UsersModel::rowCount(const QModelIndex &parent) const
