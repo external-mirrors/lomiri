@@ -49,6 +49,7 @@ Build-Depends:
  libx11-dev[!arm64 !armhf],
  libxcb1-dev[!arm64 !armhf],
  libxi-dev[!arm64 !armhf],
+ licensecheck,
  lomiri-wallpapers <!nocheck>,
  mir1test-dev,
  pkg-config,
