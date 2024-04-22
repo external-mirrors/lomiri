@@ -1078,6 +1078,7 @@ Item {
             }
 
             property var runningState : transferState !== undefined ? transferState["state"] : undefined
+            property var runningStateLabel : transferState !== undefined ? transferState["state-label"] : undefined
             property var secondsLeft : transferState !== undefined ? transferState["seconds-left"] : undefined
 
             active: runningState !== undefined && runningState !== Menus.TransferState.Finished
@@ -1110,6 +1111,11 @@ Item {
             }
 
             stateText: {
+            
+                if (runningStateLabel !== undefined && runningStateLabel !== "") {
+                    return runningStateLabel;
+                }
+            
                 switch (runningState) {
                     case Menus.TransferState.Queued:
                         return i18n.tr("In queue…");
