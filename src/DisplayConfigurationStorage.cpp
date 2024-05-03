@@ -23,7 +23,7 @@
 
 namespace {
 
-#ifndef USE_MIROIL
+#ifndef WITH_MIR2
 namespace miroil = miral;
 #endif
 
