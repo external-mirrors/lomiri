@@ -96,15 +96,18 @@ pkg_check_modules(LOMIRIGESTURES REQUIRED LomiriGestures)
 pkg_check_modules(DEVICEINFO REQUIRED deviceinfo)
 pkg_check_modules(LOMIRISCHEMA REQUIRED lomiri-schemas>=0.1.4)
 
-if (QTMIRSERVER_VERSION VERSION_GREATER_EQUAL 0.8.0)
-    message("Bulding with miroil")
+option(WITH_MIR2 "Build against Mir 2" OFF)
+
+if (WITH_MIR2)
+    pkg_check_modules(QTMIRSERVER REQUIRED qt5mir2server>=0.6.0)
+    pkg_check_modules(MIRAL REQUIRED miral>=3.0)
     pkg_check_modules(MIROIL REQUIRED miroil)
-    add_definitions(-DUSE_MIROIL=1)
+
+    add_definitions(-DWITH_MIR2=1)
 else()
-    message("Bulding without miroil")
+    pkg_check_modules(QTMIRSERVER REQUIRED qt5mir1server>=0.6.0)
+    pkg_search_module(MIRAL REQUIRED mir1al miral<3.0)
 endif()
-pkg_check_modules(QTMIRSERVER REQUIRED qt5mir1server>=0.6.0)
-pkg_search_module(MIRAL REQUIRED mir1al miral)
 
 ### Check LomiriGestures private headers. No pkg-config (.pc) file is provided for them
 find_path(LOMIRIGESTUREPRIV
