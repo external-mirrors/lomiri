@@ -280,6 +280,8 @@ Item {
 
             var actionItem = findChild(menuBar, "menuBar-item0-menu-item0-actionItem");
             mouseClick(actionItem);
+            // For some reason this requires a trip to the event loop to work.
+            wait(0);
 
             actionItem = findChild(menuBar, "menuBar-item0-menu-item0-menu-item0-actionItem");
             mouseClick(actionItem);
