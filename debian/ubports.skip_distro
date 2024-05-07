@@ -1,0 +1,3 @@
+# Skip building against devel-debian until renamed QtMir packages reach Debian
+# testing.
+devel-debian
