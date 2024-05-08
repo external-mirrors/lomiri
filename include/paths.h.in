@@ -91,7 +91,7 @@ inline QString qmlDirectory() {
     if (isRunningInstalled()) {
         return installRoot() + QStringLiteral("@CMAKE_INSTALL_PREFIX@/@SHELL_APP_DIR@/");
     } else {
-        return sourceDirectory() + QStringLiteral("/qml");
+        return buildDirectory() + QStringLiteral("/qml");
     }
 }
 

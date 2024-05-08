@@ -104,9 +104,13 @@ if (WITH_MIR2)
     pkg_check_modules(MIROIL REQUIRED miroil)
 
     add_definitions(-DWITH_MIR2=1)
+
+    set(QML_QTMIR_VERSION 0.2)
 else()
     pkg_check_modules(QTMIRSERVER REQUIRED qt5mir1server>=0.6.0)
     pkg_search_module(MIRAL REQUIRED mir1al miral<3.0)
+
+    set(QML_QTMIR_VERSION 0.1)
 endif()
 
 ### Check LomiriGestures private headers. No pkg-config (.pc) file is provided for them

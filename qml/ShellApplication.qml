@@ -17,7 +17,7 @@
 import QtQuick 2.12
 import QtQuick.Window 2.2
 import WindowManager 1.0
-import QtMir.Application 0.1
+import QtMir.Application @QML_QTMIR_VERSION@
 
 Instantiator {
     id: root

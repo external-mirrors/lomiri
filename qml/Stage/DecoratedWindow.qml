@@ -16,7 +16,7 @@
 
 import QtQuick 2.12
 import Lomiri.Components 1.3
-import QtMir.Application 0.1
+import QtMir.Application @QML_QTMIR_VERSION@
 import "Spread/MathUtils.js" as MathUtils
 import Lomiri.ApplicationMenu 0.1
 import Lomiri.Indicators 0.1 as Indicators

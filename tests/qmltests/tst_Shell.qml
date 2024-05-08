@@ -25,7 +25,7 @@ import LightDM.FullLightDM 0.1 as LightDM
 import SessionBroadcast 0.1
 import Lomiri.Components 1.3
 import Lomiri.Telephony 0.1 as Telephony
-import QtMir.Application 0.1
+import QtMir.Application @QML_QTMIR_VERSION@
 import Lomiri.ApplicationMenu 0.1
 import Lomiri.ModemConnectivity 0.1
 import Lomiri.Indicators 0.1

@@ -16,7 +16,7 @@
 
 import QtQuick 2.12
 import QtQuick.Window 2.2
-import QtMir.Application 0.1
+import QtMir.Application @QML_QTMIR_VERSION@
 import Lomiri.Session 0.1
 import GlobalShortcut 1.0
 import Lomiri.Components 1.3

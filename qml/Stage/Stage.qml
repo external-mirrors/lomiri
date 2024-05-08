@@ -18,7 +18,7 @@
 import QtQuick 2.12
 import QtQuick.Window 2.2
 import Lomiri.Components 1.3
-import QtMir.Application 0.1
+import QtMir.Application @QML_QTMIR_VERSION@
 import "../Components/PanelState"
 import "../Components"
 import Utils 0.1

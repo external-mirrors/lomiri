@@ -20,7 +20,7 @@ import Lomiri.SelfTest 0.1 as UT
 import ".."
 import "../../../qml/Stage"
 import Lomiri.Components 1.3
-import QtMir.Application 0.1
+import QtMir.Application @QML_QTMIR_VERSION@
 
 Rectangle {
     color: "black"

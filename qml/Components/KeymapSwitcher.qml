@@ -18,7 +18,7 @@ import QtQuick 2.12
 import AccountsService 0.1
 import GlobalShortcut 1.0
 import QMenuModel 1.0
-import QtMir.Application 0.1
+import QtMir.Application @QML_QTMIR_VERSION@
 
 QtObject {
     id: root

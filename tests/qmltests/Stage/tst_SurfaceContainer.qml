@@ -19,7 +19,7 @@ import QtQuick.Layouts 1.1
 import QtTest 1.0
 import Lomiri.SelfTest 0.1 as UT
 import Lomiri.Components 1.3
-import QtMir.Application 0.1
+import QtMir.Application @QML_QTMIR_VERSION@
 import "../../../qml/Stage"
 
 Rectangle {

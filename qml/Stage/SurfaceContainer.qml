@@ -18,7 +18,7 @@ import QtQuick 2.12
 import Lomiri.Components 1.3
 import Lomiri.Gestures 0.1 // For TouchGate
 import Utils 0.1 // for InputWatcher
-import QtMir.Application 0.1 // for MirSurfaceItem
+import QtMir.Application @QML_QTMIR_VERSION@ // for MirSurfaceItem
 
 FocusScope {
     id: root

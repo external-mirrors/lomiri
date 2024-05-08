@@ -142,6 +142,8 @@ if(NOT QDBUSXML2CPP_EXECUTABLE)
     message(FATAL_ERROR "qdbusxml2cpp not found")
 endif()
 
+# TODO: install data, graphics to BINARY_DIR too? tst_Shell refers to data
+
 install(DIRECTORY data graphics
     DESTINATION "${SHELL_APP_DIR}/tests"
 )

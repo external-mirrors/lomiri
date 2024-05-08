@@ -18,7 +18,7 @@ import QtQuick 2.12
 import Lomiri.Components 1.3
 import "Spread"
 import WindowManager 1.0
-import QtMir.Application 0.1
+import QtMir.Application @QML_QTMIR_VERSION@
 
 Item {
     id: root

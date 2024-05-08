@@ -15,7 +15,7 @@
  */
 
 import QtQml 2.2
-import QtMir.Application 0.1
+import QtMir.Application @QML_QTMIR_VERSION@
 
 // This component will change the state of the surface when the stage is loaded.
 //

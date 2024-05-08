@@ -15,7 +15,7 @@
  */
 
 import QtQuick 2.12
-import QtMir.Application 0.1
+import QtMir.Application @QML_QTMIR_VERSION@
 import Lomiri.Components 1.3
 
 QtObject {

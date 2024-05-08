@@ -36,4 +36,22 @@ endif()
 # To find libLomiriGestures.so
 set_target_properties(LomiriTestQml PROPERTIES INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/${SHELL_PRIVATE_LIBDIR}")
 
-add_lomiri_mock(Lomiri.SelfTest 0.1 Lomiri/SelfTest PREFIX utils TARGETS LomiriTestQml)
+# Substitute QtMir.Application version. However, since export_qmlfiles() can't
+# find QML files in multiple places, all QML files have to be copied over.
+file(GLOB QMLFILES
+    RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}/*.qml
+    ${CMAKE_CURRENT_SOURCE_DIR}/qmldir
+)
+foreach(FILE ${QMLFILES})
+    configure_file(
+        ${CMAKE_CURRENT_SOURCE_DIR}/${FILE}
+        ${CMAKE_CURRENT_BINARY_DIR}/processed/${FILE}
+        @ONLY
+    )
+endforeach()
+
+
+add_lomiri_mock(Lomiri.SelfTest 0.1 Lomiri/SelfTest
+    SEARCH_PATH ${CMAKE_CURRENT_BINARY_DIR}/processed
+    PREFIX utils TARGETS LomiriTestQml)

@@ -22,7 +22,7 @@ import ".."
 import "../../../qml/Components"
 import "../../../qml/Stage"
 import Lomiri.Components 1.3
-import QtMir.Application 0.1
+import QtMir.Application @QML_QTMIR_VERSION@
 import WindowManager 1.0
 
 Item {

@@ -87,7 +87,7 @@ void tst_DragHandle::cleanupTestCase()
 void tst_DragHandle::init()
 {
     m_view = createView();
-    m_view->setSource(QUrl::fromLocalFile(testDataDir() + "/" TEST_DIR "/tst_DragHandle.qml"));
+    m_view->setSource(QUrl::fromLocalFile(buildDirectory() + "/tests/" TEST_DIR "/tst_DragHandle.qml"));
     m_view->show();
     QVERIFY(QTest::qWaitForWindowExposed(m_view));
     QVERIFY(m_view->rootObject() != 0);
@@ -116,7 +116,7 @@ QQuickView *tst_DragHandle::createView()
 {
     QQuickView *window = new QQuickView(0);
     window->setResizeMode(QQuickView::SizeRootObjectToView);
-    window->engine()->addImportPath(testDataDir() + "/" TEST_DIR);
+    window->engine()->addImportPath(buildDirectory() + "/tests/" TEST_DIR);
 
     return window;
 }

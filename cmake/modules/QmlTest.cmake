@@ -85,12 +85,12 @@ function(add_qml_test_data PATH COMPONENT_NAME)
 
     if ("${filename}" MATCHES "\\.qml$")
         file(READ "${filename}" contents)
-        string(REGEX REPLACE "(\"[./]*)/qml(/|\")" "\\1\\2" contents "${contents}")
         # this is for (at least) cardcreatortest which pulls in an architecture-specific
         # import into the plugins directory (which is a 'qml' once installed).
         string(REGEX REPLACE "(import \"[./]*)/plugins(/|\")" "\\1/qml\\2" contents "${contents}")
         set(filename "${CMAKE_CURRENT_BINARY_DIR}/${PATH}/${COMPONENT_NAME}")
-        file(WRITE "${filename}" "${contents}")
+
+        file(CONFIGURE OUTPUT "${filename}" CONTENT "${contents}" @ONLY)
     endif()
 
     if (TEST_DESTINATION)
@@ -118,7 +118,7 @@ function(add_qml_unittest PATH COMPONENT_NAME)
 
     add_executable_test(${COMPONENT_NAME} qmltestrunner
         ${ARGN}
-        ARGS -input ${CMAKE_CURRENT_SOURCE_DIR}/${PATH}/tst_${COMPONENT_NAME}.qml ${QMLTEST_ARGS}
+        ARGS -input ${CMAKE_CURRENT_BINARY_DIR}/${PATH}/tst_${COMPONENT_NAME}.qml ${QMLTEST_ARGS}
     )
 
     if (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/${PATH}/tst_${COMPONENT_NAME}.qml")

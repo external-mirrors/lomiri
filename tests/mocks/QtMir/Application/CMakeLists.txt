@@ -4,6 +4,27 @@ else ()
     pkg_search_module(MIRTEST REQUIRED mir1test mirtest<2.0)
 endif ()
 
+# Substitute QtMir.Application version
+file(GLOB_RECURSE RESOURCE_FILES
+    RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}/resources/*
+)
+foreach(FILE ${RESOURCE_FILES})
+    if(FILE MATCHES "\.qml$")
+        configure_file(
+            ${CMAKE_CURRENT_SOURCE_DIR}/${FILE}
+            ${CMAKE_CURRENT_BINARY_DIR}/${FILE}
+            @ONLY
+        )
+    else()
+        configure_file(
+            ${CMAKE_CURRENT_SOURCE_DIR}/${FILE}
+            ${CMAKE_CURRENT_BINARY_DIR}/${FILE}
+            COPYONLY
+        )
+    endif()
+endforeach()
+
 include_directories(
     SYSTEM
     ${MIRTEST_INCLUDE_DIRS}
@@ -29,7 +50,7 @@ set(FakeQtMirApplicationQml_SOURCES
     ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/MirSurfaceItemInterface.h
     ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/MirSurfaceListInterface.h
     ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/SurfaceManagerInterface.h
-    resources/surfaces.qrc
+    ${CMAKE_CURRENT_BINARY_DIR}/resources/surfaces.qrc
 )
 
 add_library(FakeQtMirApplicationQml MODULE
@@ -56,8 +77,8 @@ target_link_libraries(NonMirQtMirApplicationQml
 
 target_link_libraries(FakeQtMirApplicationQml Qt5::Core Qt5::Quick Qt5::DBus)
 
-add_lomiri_mock(QtMir.Application 0.1 QtMir/Application TARGETS FakeQtMirApplicationQml)
-add_lomiri_mock(QtMir.Application 0.1 QtMir/Application
+add_lomiri_mock(QtMir.Application ${QML_QTMIR_VERSION} QtMir/Application TARGETS FakeQtMirApplicationQml)
+add_lomiri_mock(QtMir.Application ${QML_QTMIR_VERSION} QtMir/Application
                 PREFIX nonmirplugins
                 TARGETS NonMirQtMirApplicationQml
                 BINARY_DIR ${CMAKE_BINARY_DIR}/nonmirplugins

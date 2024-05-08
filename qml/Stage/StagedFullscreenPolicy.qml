@@ -15,7 +15,7 @@
  */
 
 import QtQuick 2.12
-import QtMir.Application 0.1
+import QtMir.Application @QML_QTMIR_VERSION@
 
 // This component will change the state of the surface based on the surface
 // state and shell chrome.
