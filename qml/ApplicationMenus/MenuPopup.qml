@@ -366,6 +366,7 @@ LomiriShape {
 
                 ColumnLayout {
                     id: menuColumn
+                    objectName: "menuColumn"
                     spacing: 0
 
                     width: MathUtils.clamp(implicitWidth, d.__minimumWidth, d.__maximumWidth)

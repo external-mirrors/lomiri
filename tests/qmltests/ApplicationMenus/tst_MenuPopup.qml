@@ -106,6 +106,7 @@ Item {
                 var submenu = rows[i]["submenu"];
                 if (submenu) {
                     waitForRendering(menuItem);
+                    waitForItemPolished(findChild(menu, "menuColumn"));
                     mouseClick(menuItem, menuItem.width/2, menuItem.height/2);
                     tryCompare(menuPriv, "currentItem", menuItem);
 
@@ -115,6 +116,7 @@ Item {
 
                     recurseMenuConstruction(submenu, submenuPage);
                 } else {
+                    waitForItemPolished(findChild(menu, "menuColumn"));
                     mouseMove(menuItem, menuItem.width/2, menuItem.height/2);
                     tryCompare(menuPriv, "currentItem", menuItem);
                 }
@@ -142,6 +144,7 @@ Item {
             compare(menuItem.action.checkable, true, "Menu item should be checkable");
             compare(menuItem.action.checked, false, "Menu item should not be checked");
 
+            waitForItemPolished(findChild(menu, "menuColumn"));
             mouseClick(menuItem, menuItem.width/2, menuItem.height/2);
 
             tryCompare(menuItem.action, "checked", true, 5000, "Checkable menu item should have toggled");
@@ -193,6 +196,7 @@ Item {
 
         function test_aboutToShow() {
             menu.lomiriMenuModel.modelData = appMenuData.generateTestData(3,3,1,0,"menu",false);
+            waitForItemPolished(findChild(menu, "menuColumn"));
 
             var item0 = findChild(menu, "menu-item0");
             var item1 = findChild(menu, "menu-item1");
@@ -244,6 +248,7 @@ Item {
             menu.lomiriMenuModel.modelData = appMenuData.generateTestData(3,3,1,0,"menu",false);
 
             var menuItem = findChild(menu, "menu-item0"); verify(menuItem);
+            waitForItemPolished(findChild(menu, "menuColumn"));
             mouseClick(menuItem, menuItem.width/2, menuItem.height/2);
             tryCompareFunction(function() { return menuItem.popup !== null && findInvisibleChild(menuItem.popup, "d").currentItem !== null }, true);
 
@@ -259,6 +264,7 @@ Item {
             var priv = findInvisibleChild(menu, "d");
             priv.currentItem = menuItem;
 
+            waitForItemPolished(findChild(menu, "menuColumn"));
             mouseMove(menuItem, menuItem.width/2, menuItem.height/2);
             verify(!menuItem.popup);
 
@@ -272,6 +278,7 @@ Item {
             }];
 
             menu.lomiriMenuModel.modelData = differentSizesMenu;
+            waitForItemPolished(findChild(menu, "menuColumn"));
 
             // Wait for the two items to be there
             tryCompareFunction(function() { return findChild(menu, "menu-item1") !== null; }, true);
@@ -280,6 +287,7 @@ Item {
             // Now pop one item and make sure it's smaller
             differentSizesMenu.pop();
             menu.lomiriMenuModel.modelData = differentSizesMenu;
+            waitForItemPolished(findChild(menu, "menuColumn"));
 
             tryCompareFunction(function() { return findChild(menu, "menu-item0") !== null; }, true);
             tryCompareFunction(function() { return menu.width < longWidth; }, true);
