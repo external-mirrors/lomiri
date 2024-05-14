@@ -29,6 +29,13 @@
       <annotation name="org.freedesktop.Accounts.DefaultValue" value="[{'defaults': <true>}]"/>
     </property>
 
+    <!-- String format locale chosen by the user - used instead of Ubuntu's
+    patched org.freedesktop.Accounts.User when building with
+    ENABLE_UBUNTU_ACCOUNTSSERVICE disabled -->
+    <property name="FormatsLocale" type="s" access="readwrite">
+      <annotation name="org.freedesktop.Accounts.DefaultValue" value=""/>
+    </property>
+
   </interface>
 
   <!-- This interface is for bits of data that the greeter wants to track
