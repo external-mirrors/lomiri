@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-06 08:14+0000\n"
-"PO-Revision-Date: 2024-02-14 11:31+0000\n"
-"Last-Translator: ancalina <yuntk2008@gmail.com>\n"
+"PO-Revision-Date: 2024-05-16 17:56+0000\n"
+"Last-Translator: Daniel Soohan Park <soobak0313@outlook.com>\n"
 "Language-Team: Korean <https://hosted.weblate.org/projects/lomiri/lomiri/ko/>"
 "\n"
 "Language: ko\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.4-dev\n"
+"X-Generator: Weblate 5.6-dev\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:35+0000\n"
 
 #: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
@@ -173,7 +173,7 @@ msgstr "정말 기기를 다시 시작하시겠습니까?"
 
 #: qml/Components/Dialogs.qml:215
 msgid "No"
-msgstr "아니요"
+msgstr "아니오"
 
 #: qml/Components/Dialogs.qml:223
 msgid "Yes"
@@ -384,7 +384,7 @@ msgstr "프로그램에 저장하지 않은 데이터가 있을 때:"
 msgctxt ""
 "Re-dock means connect the device again to an external screen/mouse/keyboard"
 msgid "Re-dock, save your work and close these apps to continue."
-msgstr "다시 연결합니다. 계속 진행하려면 작업을 저장한 후 앱을 닫아주십시오."
+msgstr "계속 진행하려면 다시 연결하고, 작업을 저장한 후 표시된 앱들을 닫아주세요."
 
 #: qml/Components/ModeSwitchWarningDialog.qml:67
 msgid "Or force close now (unsaved data will be lost)."
@@ -410,9 +410,8 @@ msgstr "공유 항목 미리 보기"
 msgid ""
 "Your device is now connected to an external display. Use this screen as a "
 "touch pad to interact with the pointer."
-msgstr ""
-"장치를 외부 디스플레이에 연결했습니다. 포인터를 사용하려면 화면을 터치 패드"
-"로 사용해주십시오."
+msgstr "장치를 외부 디스플레이에 연결했습니다. 포인터를 사용하려면 화면을 터치패드로 "
+"사용해 주세요."
 
 #: qml/Components/VirtualTouchPad.qml:322
 msgid "Tap left button to click."
@@ -479,7 +478,7 @@ msgstr "올바르지 않은 패스코드를 너무 많이 입력해 장치가 �
 #, qt-format
 msgid "Please wait %1 minute and then try again…"
 msgid_plural "Please wait %1 minutes and then try again…"
-msgstr[0] "%1분 정도 기다린 후 다시 시독해주십시오…"
+msgstr[0] "%1분 정도 기다린 후 다시 시도해 주세요…"
 
 #: qml/Greeter/Greeter.qml:627 tests/qmltests/Greeter/tst_Greeter.qml:578
 #: tests/qmltests/Greeter/tst_Greeter.qml:597
@@ -535,7 +534,7 @@ msgstr "새 메시지"
 
 #: qml/Panel/ActiveCallHint.qml:79
 msgid "Tap to return to call..."
-msgstr "다시 통화하려면 두드려주십시오."
+msgstr "다시 통화하려면 두드려 주세요..."
 
 #: qml/Panel/ActiveCallHint.qml:93
 msgid "Conference"
