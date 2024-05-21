@@ -2,8 +2,6 @@
 Description=Lomiri Shell - @MODE@
 Requires=dbus.socket
 After=dbus.socket
-Wants=indicators-pre.target
-Before=indicators-pre.target
 Wants=ayatana-indicators.target
 Before=ayatana-indicators.target
 Conflicts=@CONFLICT_UNITS@
