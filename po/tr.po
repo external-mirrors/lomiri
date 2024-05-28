@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-06 08:14+0000\n"
-"PO-Revision-Date: 2021-03-09 04:22+0000\n"
-"Last-Translator: idea.logue <nathan.fielding1990@gmail.com>\n"
-"Language-Team: Turkish <https://translate.ubports.com/projects/ubports/"
-"lomiri/tr/>\n"
+"PO-Revision-Date: 2024-05-29 17:23+0000\n"
+"Last-Translator: Ali Beyaz <alipolatbeyaz@gmail.com>\n"
+"Language-Team: Turkish <https://hosted.weblate.org/projects/lomiri/lomiri/tr/"
+">\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.11.3\n"
+"X-Generator: Weblate 5.6-dev\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:36+0000\n"
 
 #: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
@@ -481,7 +481,7 @@ msgstr ""
 #: qml/Greeter/CoverPage.qml:197
 #: tests/qmltests/Greeter/tst_GreeterView.qml:1239
 msgid "Unlock"
-msgstr "Kilidi Aç"
+msgstr "Kilidini aç"
 
 #: qml/Greeter/DelayedLockscreen.qml:43
 msgid "Device Locked"
@@ -539,10 +539,8 @@ msgid "Select desktop environment"
 msgstr "Masaüstü ortamını seçin"
 
 #: qml/Launcher/Drawer.qml:240
-#, fuzzy
-#| msgid "Search"
 msgid "Search…"
-msgstr "Ara"
+msgstr "Ara…"
 
 #: qml/Launcher/PullToRefreshScopeStyle.qml:56
 msgid "Pull to refresh…"
@@ -823,7 +821,7 @@ msgstr "Cihazınızı kullanmaya hazırsınız"
 
 #: qml/Wizard/Pages/80-finished.qml:131
 msgid "Continue"
-msgstr "Devam Et"
+msgstr "Devam"
 
 #: qml/Wizard/Pages/80-finished.qml:131
 msgid "Get Started"
