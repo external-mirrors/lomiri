@@ -1111,11 +1111,11 @@ Item {
             }
 
             stateText: {
-            
+
                 if (runningStateLabel !== undefined && runningStateLabel !== "") {
                     return runningStateLabel;
                 }
-            
+
                 switch (runningState) {
                     case Menus.TransferState.Queued:
                         return i18n.tr("In queue…");
