@@ -1,4 +1,8 @@
-pkg_check_modules(MIRTEST mirtest>=0.26 REQUIRED)
+if (WITH_MIR2)
+    pkg_check_modules(MIRTEST REQUIRED mirtest>=2.0)
+else ()
+    pkg_search_module(MIRTEST REQUIRED mir1test mirtest<2.0)
+endif ()
 
 include_directories(
     SYSTEM

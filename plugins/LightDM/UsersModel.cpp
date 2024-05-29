@@ -49,6 +49,7 @@ private:
     void updateGuestRow();
     void updateManualRow();
     void updateCustomRows();
+    void resetCustomRows();
 
     void addCustomRow(const CustomRow &newRow);
     void removeCustomRow(const QString &rowName);
@@ -71,7 +72,7 @@ MangleModel::MangleModel(QObject* parent)
     // testing, we use a modelReset signal as a way to indicate that a custom
     // row has been toggled off or on.
     connect(this, &QIdentityProxyModel::modelReset,
-            this, &MangleModel::updateCustomRows);
+            this, &MangleModel::resetCustomRows);
     connect(this, &QIdentityProxyModel::rowsInserted,
             this, &MangleModel::updateCustomRows);
     connect(this, &QIdentityProxyModel::rowsRemoved,
@@ -178,6 +179,15 @@ void MangleModel::updateCustomRows()
     updateGuestRow();
     updateManualRow();
     m_updatingCustomRows = false;
+}
+
+void MangleModel::resetCustomRows()
+{
+    // If our parent model is reset, then this model itself is also reset. That
+    // means any of our custom rows "no longer exists". Reset it, then proceed
+    // to re-populate it if needed.
+    m_customRows.clear();
+    updateCustomRows();
 }
 
 int MangleModel::rowCount(const QModelIndex &parent) const

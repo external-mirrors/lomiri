@@ -21,7 +21,7 @@
 #include "../../WindowManager/WindowManagementPolicy.h"
 
 #include <paths.h>
-#include <mirtest/mir/test/doubles/stub_surface.h>
+#include <mir/test/doubles/stub_surface.h>
 
 #define SURFACEMANAGER_DEBUG 1
 

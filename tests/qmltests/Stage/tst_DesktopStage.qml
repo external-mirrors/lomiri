@@ -925,15 +925,15 @@ Item {
             // that calculates the coordinates and any bug it may have, what we want is really
             // to check that on collision with the border the menu is shifted substantially
             if (data.minimumXDifference) {
-                verify(menu.x < normalPositioningX - data.minimumXDifference);
+                tryVerify(() => menu.x < normalPositioningX - data.minimumXDifference);
             } else {
-                compare(menu.x, normalPositioningX);
+                tryCompare(menu, "x", normalPositioningX);
             }
 
             if (data.minimumYDifference) {
-                verify(menu.y < normalPositioningY - data.minimumYDifference);
+                tryVerify(() => menu.y < normalPositioningY - data.minimumYDifference);
             } else {
-                compare(menu.y, normalPositioningY);
+                tryCompare(menu, "y", normalPositioningY);
             }
         }
 
@@ -976,15 +976,15 @@ Item {
             // that calculates the coordinates and any bug it may have, what we want is really
             // to check that on collision with the border the menu is shifted substantially
             if (data.minimumXDifference) {
-                verify(menu.x < normalPositioningX - data.minimumXDifference);
+                tryVerify(() => menu.x < normalPositioningX - data.minimumXDifference);
             } else {
-                compare(menu.x, normalPositioningX);
+                tryCompare(menu, "x", normalPositioningX);
             }
 
             if (data.minimumYDifference) {
-                verify(menu.y < normalPositioningY - data.minimumYDifference);
+                tryVerify(() => menu.y < normalPositioningY - data.minimumYDifference);
             } else {
-                compare(menu.y, normalPositioningY);
+                tryCompare(menu, "y", normalPositioningY);
             }
         }
 
