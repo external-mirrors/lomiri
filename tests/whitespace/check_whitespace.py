@@ -104,13 +104,14 @@ pat = re.compile(file_pat)
 
 directory = os.path.abspath(args.dir[0])
 ignore = args.ignore_prefix and os.path.abspath(args.ignore_prefix) or None
+ignore_debian = os.path.abspath(os.path.join(directory, 'debian'))
 
 found_whitespace = False
 try:
     for root, dirs, files in os.walk(directory, onerror=raise_error):
         for file in files:
             path = os.path.join(root, file)
-            if not (ignore and path.startswith(ignore)) and pat.match(file):
+            if not (ignore and (path.startswith(ignore) or path.startswith(ignore_debian))) and pat.match(file):
                 if scan_for_bad_whitespace(path):
                     found_whitespace = True
 
