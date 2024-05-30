@@ -17,7 +17,7 @@
     </method>
     <method name="Reset" />
     <signal name="PropertiesChanged">
-      <annotation name="org.qtproject.QtDBus.QtTypeName.In1" value="QVariantMap"/>
+      <annotation name="org.qtproject.QtDBus.QtTypeName.Out1" value="QVariantMap"/>
       <arg name="interface" type="s" direction="out" />
       <arg name="changed" type="a{sv}" direction="out" />
       <arg name="invalid" type="as" direction="out" />
