@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-06 08:14+0000\n"
-"PO-Revision-Date: 2024-05-29 17:23+0000\n"
+"PO-Revision-Date: 2024-06-01 13:22+0000\n"
 "Last-Translator: Ali Beyaz <alipolatbeyaz@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/lomiri/lomiri/tr/"
 ">\n"
@@ -54,7 +54,7 @@ msgstr "Parola: "
 
 #: plugins/LightDM/Greeter.cpp:214
 msgid "Username"
-msgstr ""
+msgstr "Kullanıcı adı"
 
 #: plugins/LightDM/Greeter.cpp:258
 msgid "Failed to authenticate"
@@ -481,7 +481,7 @@ msgstr ""
 #: qml/Greeter/CoverPage.qml:197
 #: tests/qmltests/Greeter/tst_GreeterView.qml:1239
 msgid "Unlock"
-msgstr "Kilidini aç"
+msgstr "Kilidi aç"
 
 #: qml/Greeter/DelayedLockscreen.qml:43
 msgid "Device Locked"
@@ -532,7 +532,7 @@ msgstr "Parola Metni"
 
 #: qml/Greeter/PromptList.qml:143
 msgid "Passcode"
-msgstr "Parola"
+msgstr "Şifre"
 
 #: qml/Greeter/SessionsList.qml:124
 msgid "Select desktop environment"
@@ -830,7 +830,7 @@ msgstr "Başlarken"
 #: qml/Wizard/Pages/passcode-confirm.qml:43
 #: qml/Wizard/Pages/passcode-desktop.qml:104
 msgid "Confirm passcode"
-msgstr "Parolayı yinele"
+msgstr "Şifreyi onayla"
 
 #: qml/Wizard/Pages/passcode-confirm.qml:45
 msgid "Incorrect passcode."
@@ -854,7 +854,7 @@ msgstr "Kurulum için 4 numaralı şifrenizi girin"
 #: qml/Wizard/Pages/passcode-desktop.qml:84
 #: qml/Wizard/Pages/passcode-set.qml:54
 msgid "Choose passcode"
-msgstr "Parola seç"
+msgstr "Şifre seç"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:139
 msgid "Passcode too short"
