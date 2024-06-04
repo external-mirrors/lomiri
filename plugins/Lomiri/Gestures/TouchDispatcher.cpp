@@ -278,7 +278,8 @@ void TouchDispatcher::transformTouchPoints(QList<QTouchEvent::TouchPoint> &touch
     QMatrix4x4 transformMatrix(transform);
     for (int i=0; i<touchPoints.count(); i++) {
         QTouchEvent::TouchPoint &touchPoint = touchPoints[i];
-        touchPoint.setRect(transform.mapRect(touchPoint.sceneRect()));
+        QPointF pos = touchPoint.scenePos ();
+        touchPoint.setPos(transform.map(pos));
         touchPoint.setStartPos(transform.map(touchPoint.startScenePos()));
         touchPoint.setLastPos(transform.map(touchPoint.lastScenePos()));
         touchPoint.setVelocity(transformMatrix.mapVector(touchPoint.velocity()).toVector2D());

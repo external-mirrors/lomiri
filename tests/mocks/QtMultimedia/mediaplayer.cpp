@@ -17,7 +17,7 @@
  */
 
 #include "mediaplayer.h"
-
+#include <QRandomGenerator>
 #include <QDebug>
 #include <QSize>
 
@@ -56,7 +56,6 @@ MediaPlayer::MediaPlayer(QObject* parent)
     , m_metaData(new MetaDataObject(this))
     , m_playlist(nullptr)
 {
-    qsrand(time(nullptr));
     m_timer.setInterval(100);
     connect(&m_timer, &QTimer::timeout, this, &MediaPlayer::processTimer);
 
@@ -231,7 +230,7 @@ QObject *MediaPlayer::metaData() const
 MediaDataSource::MediaDataSource(QObject *parent)
     : QObject(parent)
     , m_seekable(true)
-    , m_duration((qrand() % 20000) + 10000)
+    , m_duration((QRandomGenerator::global()->generate() % 20000) + 10000)
     , m_availability(MediaPlayer::Available)
 {
 }

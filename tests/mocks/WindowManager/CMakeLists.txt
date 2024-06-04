@@ -19,7 +19,8 @@ target_link_libraries(mockwindowmanagmentpolicy
     ${MIRAL_LDFLAGS}
     lomiri-private
 )
-qt5_use_modules(mockwindowmanagmentpolicy Core)
+
+target_link_libraries (mockwindowmanagmentpolicy Qt5::Core)
 
 install(TARGETS mockwindowmanagmentpolicy
     DESTINATION ${SHELL_INSTALL_QML}/mocks/WindowManager
@@ -58,6 +59,5 @@ target_link_libraries(MockWindowManager-qml
     mockwindowmanagmentpolicy
 )
 
-qt5_use_modules(MockWindowManager-qml Qml Quick Gui)
-
+target_link_libraries (MockWindowManager-qml Qt5::Qml Qt5::Quick Qt5::Gui)
 add_lomiri_mock(WindowManager 1.0 WindowManager TARGETS MockWindowManager-qml)
