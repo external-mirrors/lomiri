@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 UBports Foundation
+ * Copyright (C) 2023 Muhammad <muhammad23012009@hotmail.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
