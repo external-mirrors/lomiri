@@ -29,10 +29,10 @@ inline QString installRoot() {
     if (!installRootSet) {
         QString snapRoot = QFile::decodeName(qgetenv("SNAP"));
         if (!snapRoot.isEmpty() && QCoreApplication::applicationDirPath() ==
-                   QDir(snapRoot + QStringLiteral("@CMAKE_INSTALL_PREFIX@/@CMAKE_INSTALL_BINDIR@")).canonicalPath()) {
+                   QDir(snapRoot + QStringLiteral("@CMAKE_INSTALL_FULL_BINDIR@")).canonicalPath()) {
             installRoot = snapRoot;
         } else if (QCoreApplication::applicationDirPath() ==
-                   QDir(QStringLiteral("@CMAKE_INSTALL_PREFIX@/@CMAKE_INSTALL_BINDIR@")).canonicalPath()) {
+                   QDir(QStringLiteral("@CMAKE_INSTALL_FULL_BINDIR@")).canonicalPath()) {
             installRoot = QStringLiteral("");
         }
         installRootSet = true;
@@ -59,7 +59,7 @@ inline QString sourceDirectory() {
 
 inline QString translationDirectory() {
     if (isRunningInstalled()) {
-        return installRoot() + QStringLiteral("@CMAKE_INSTALL_PREFIX@/share/locale");
+        return installRoot() + QStringLiteral("@CMAKE_INSTALL_FULL_LOCALEDIR@");
     } else {
         return buildDirectory() + QStringLiteral("/po/locale");
     }
@@ -89,7 +89,7 @@ inline QString testLibDir() {
 
 inline QString qmlDirectory() {
     if (isRunningInstalled()) {
-        return installRoot() + QStringLiteral("@CMAKE_INSTALL_PREFIX@/@SHELL_APP_DIR@/");
+        return installRoot() + QStringLiteral("@SHELL_APP_FULL_DIR@/");
     } else {
         return sourceDirectory() + QStringLiteral("/qml");
     }

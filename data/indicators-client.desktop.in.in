@@ -2,7 +2,7 @@
 Type=Application
 Name=Indicators Client
 Comment=Application for testing the Indicators system
-Exec=@CMAKE_INSTALL_PREFIX@/@CMAKE_INSTALL_BINDIR@/indicators-client
+Exec=@CMAKE_INSTALL_FULL_BINDIR@/indicators-client
 Terminal=false
 Icon=
 NoDisplay=false

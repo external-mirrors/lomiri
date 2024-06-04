@@ -1,6 +1,8 @@
 pkg_check_modules(SYSTEMD systemd)
 
 if (${SYSTEMD_FOUND})
+    find_program(DUAE_BIN dbus-update-activation-environment REQUIRED)
+    find_program(XWAYLAND_BIN Xwayland REQUIRED)
 
     if (${SYSTEMD_VERSION} VERSION_LESS 247)
         pkg_get_variable(SYSTEMD_USER_UNIT_DIR systemd systemduserunitdir)
@@ -41,14 +43,16 @@ endif()
 
 # lomiri-systemd-wrapper
 
+configure_file(lomiri-systemd-wrapper.in ${CMAKE_CURRENT_BINARY_DIR}/lomiri-systemd-wrapper @ONLY)
 install(PROGRAMS
-    lomiri-systemd-wrapper
+    ${CMAKE_CURRENT_BINARY_DIR}/lomiri-systemd-wrapper
     DESTINATION ${CMAKE_INSTALL_FULL_LIBEXECDIR}
 )
 
 # Xwayland startup script
 
+configure_file(Xwayland.lomiri.in ${CMAKE_CURRENT_BINARY_DIR}/Xwayland.lomiri @ONLY)
 install(PROGRAMS
-    Xwayland.lomiri
+    ${CMAKE_CURRENT_BINARY_DIR}/Xwayland.lomiri
     DESTINATION ${CMAKE_INSTALL_FULL_LIBEXECDIR}
 )

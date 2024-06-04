@@ -38,6 +38,6 @@ export QT_QPA_PLATFORM=mirserver
 export LOMIRI_AS_SYSTEMD_UNIT=1
 
 export MIR_SERVER_ENABLE_X11=1
-export MIR_SERVER_XWAYLAND_PATH=/usr/libexec/Xwayland.lomiri
+export MIR_SERVER_XWAYLAND_PATH=@CMAKE_INSTALL_FULL_LIBEXECDIR@/Xwayland.lomiri
 
 exec ${LOMIRI_BINARY:-lomiri} "$@"

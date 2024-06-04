@@ -50,5 +50,5 @@ add_subdirectory(UInput)
 
 install(
   DIRECTORY data
-  DESTINATION ${SHELL_APP_DIR}/mocks
+  DESTINATION ${SHELL_APP_FULL_DIR}/mocks
 )

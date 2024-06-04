@@ -14,8 +14,8 @@ target_link_libraries(AccountsService-qml
 
 add_lomiri_plugin(AccountsService 0.1 AccountsService TARGETS AccountsService-qml)
 
-set(DBUS_IFACE_DIR "${CMAKE_INSTALL_PREFIX}/share/dbus-1/interfaces")
-set(ACCOUNTS_IFACE_DIR "${CMAKE_INSTALL_PREFIX}/share/accountsservice/interfaces")
+set(DBUS_IFACE_DIR "${CMAKE_INSTALL_FULL_DATADIR}/dbus-1/interfaces")
+set(ACCOUNTS_IFACE_DIR "${CMAKE_INSTALL_FULL_DATADIR}/accountsservice/interfaces")
 
 install(FILES com.lomiri.shell.AccountsService.xml
         DESTINATION "${DBUS_IFACE_DIR}"

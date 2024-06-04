@@ -2,7 +2,7 @@
 Type=Application
 Name=Lomiri
 Comment=The converged Lomiri shell
-Exec=@CMAKE_INSTALL_PREFIX@/@CMAKE_INSTALL_BINDIR@/lomiri
+Exec=@CMAKE_INSTALL_FULL_BINDIR@/lomiri
 Terminal=false
 NoDisplay=true
 X-Lomiri-Touch=true

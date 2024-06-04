@@ -1,7 +1,7 @@
 file(GLOB QML_JS_FILES *.qml *.js qmldir)
 
 install(FILES ${QML_JS_FILES}
-    DESTINATION ${SHELL_APP_DIR}
+    DESTINATION ${SHELL_APP_FULL_DIR}
     )
 
 set(QML_DIRS
@@ -19,5 +19,5 @@ set(QML_DIRS
     )
 
 install(DIRECTORY ${QML_DIRS}
-    DESTINATION ${SHELL_APP_DIR}
+    DESTINATION ${SHELL_APP_FULL_DIR}
     )

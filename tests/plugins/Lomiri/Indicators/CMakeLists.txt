@@ -25,7 +25,7 @@ macro(indicator_test TEST)
         ${QMENUMODEL_LDFLAGS}
         )
     install(TARGETS ${TEST}Exec
-        DESTINATION "${SHELL_PRIVATE_LIBEXECDIR}/tests/plugins/Lomiri/Indicators"
+        DESTINATION "${SHELL_PRIVATE_FULL_LIBEXECDIR}/tests/plugins/Lomiri/Indicators"
         )
 
     set(ldpath "")

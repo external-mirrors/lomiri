@@ -26,12 +26,12 @@ target_link_libraries(TopLevelWindowModelTestExec
 )
 
 install(TARGETS TopLevelWindowModelTestExec
-    DESTINATION "${SHELL_PRIVATE_LIBEXECDIR}/tests/plugins/WindowManager"
+    DESTINATION "${SHELL_PRIVATE_FULL_LIBEXECDIR}/tests/plugins/WindowManager"
 )
 
 # To find libwindowmanager-qml.so
 set_target_properties(TopLevelWindowModelTestExec PROPERTIES
-        INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/${SHELL_PRIVATE_LIBDIR}")
+        INSTALL_RPATH "${SHELL_PRIVATE_FULL_LIBDIR}")
 
 add_lomiri_unittest(TopLevelWindowModel TopLevelWindowModelTestExec
     ENVIRONMENT LD_LIBRARY_PATH=${LOMIRI_PLUGINPATH}/WindowManager
