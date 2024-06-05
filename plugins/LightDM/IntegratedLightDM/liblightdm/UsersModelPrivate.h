@@ -19,6 +19,8 @@
 #ifndef LOMIRI_MOCK_USERSMODEL_PRIVATE_H
 #define LOMIRI_MOCK_USERSMODEL_PRIVATE_H
 
+#include <QByteArray>
+#include <QHash>
 #include <QList>
 #include <QObject>
 #include <QString>
@@ -67,6 +69,7 @@ private:
     void updateName(bool async);
 
     AccountsServiceDBusAdaptor *m_service;
+    QHash<int, QByteArray> m_roles;
 };
 
 }

@@ -23,7 +23,10 @@
 
 #include "MockController.h"
 #include "MockUsersModel.h"
+
+#include <QByteArray>
 #include <QDir>
+#include <QHash>
 #include <QIcon>
 
 #include <sys/types.h>
@@ -47,6 +50,7 @@ public:
 class UsersModelPrivate
 {
 public:
+    QHash<int, QByteArray> roles;
     QList<Entry> entries;
 };
 
@@ -54,18 +58,19 @@ UsersModel::UsersModel(QObject *parent)
     : QAbstractListModel(parent)
     , d_ptr(new UsersModelPrivate)
 {
+    Q_D(UsersModel);
+
     // Extend roleNames (we want to keep the "display" role)
-    QHash<int, QByteArray> roles = roleNames();
-    roles[NameRole] = "name";
-    roles[RealNameRole] = "realName";
-    roles[LoggedInRole] = "loggedIn";
-    roles[BackgroundRole] = "background";
-    roles[BackgroundPathRole] = "backgroundPath";
-    roles[SessionRole] = "session";
-    roles[HasMessagesRole] = "hasMessages";
-    roles[ImagePathRole] = "imagePath";
-    roles[UidRole] = "uid";
-    setRoleNames(roles);
+    d->roles = QAbstractListModel::roleNames();
+    d->roles[NameRole] = "name";
+    d->roles[RealNameRole] = "realName";
+    d->roles[LoggedInRole] = "loggedIn";
+    d->roles[BackgroundRole] = "background";
+    d->roles[BackgroundPathRole] = "backgroundPath";
+    d->roles[SessionRole] = "session";
+    d->roles[HasMessagesRole] = "hasMessages";
+    d->roles[ImagePathRole] = "imagePath";
+    d->roles[UidRole] = "uid";
 
     connect(MockController::instance(), &MockController::hasGuestAccountHintChanged,
             this, &UsersModel::resetEntries);
@@ -81,6 +86,13 @@ UsersModel::UsersModel(QObject *parent)
 UsersModel::~UsersModel()
 {
     delete d_ptr;
+}
+
+QHash<int, QByteArray> UsersModel::roleNames() const
+{
+    Q_D(const UsersModel);
+
+    return d->roles;
 }
 
 void UsersModel::setCurrentSessionName(const QString &sessionName, const QString &username)

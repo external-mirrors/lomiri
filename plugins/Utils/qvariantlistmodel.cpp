@@ -87,9 +87,8 @@
 QVariantListModel::QVariantListModel(QObject *parent) :
         QAbstractListModel(parent)
 {
-    QHash<int, QByteArray> roles(roleNames());
-    roles[Qt::DisplayRole] = "modelData";
-    setRoleNames(roles);
+    this->roles = QAbstractListModel::roleNames();
+    this->roles[Qt::DisplayRole] = "modelData";
 }
 
 /*!
@@ -100,9 +99,8 @@ QVariantListModel::QVariantListModel(QObject *parent) :
 QVariantListModel::QVariantListModel(const QVariantList &list, QObject *parent) :
         QAbstractListModel(parent), lst(list)
 {
-    QHash<int, QByteArray> roles(roleNames());
-    roles[Qt::DisplayRole] = "modelData";
-    setRoleNames(roles);
+    this->roles = QAbstractListModel::roleNames();
+    this->roles[Qt::DisplayRole] = "modelData";
 }
 
 QVariantListModel::~QVariantListModel() {
@@ -118,6 +116,11 @@ QVariantListModel::~QVariantListModel() {
 
  \sa insertRows(), removeRows(), QAbstractItemModel::rowCount()
  */
+
+QHash<int, QByteArray> QVariantListModel::roleNames() const
+{
+    return this->roles;
+}
 
 int QVariantListModel::rowCount(const QModelIndex &parent) const
 {

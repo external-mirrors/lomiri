@@ -62,12 +62,13 @@ public:
 
     bool insertRows(int row, int count, const QModelIndex &parent = QModelIndex()) override;
     bool removeRows(int row, int count, const QModelIndex &parent = QModelIndex()) override;
-
+    QHash<int, QByteArray> roleNames() const override;
     QVariantList variantList() const;
     void setVariantList(const QVariantList &list);
 
 private:
     QVariantList lst;
+    QHash<int, QByteArray> roles;
 };
 
 
