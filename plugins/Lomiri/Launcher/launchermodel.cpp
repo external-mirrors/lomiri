@@ -561,10 +561,12 @@ void LauncherModel::updateSurfaceListForSurface()
 
 void LauncherModel::updateSurfaceListForApp(ApplicationInfoInterface* app)
 {
+    LauncherItem *item = nullptr;
     int idx = findApplication(app->appId());
+
     if (idx < 0) {
         qWarning() << "Received a surface count changed event from an app that's not in the Launcher model, creating icon...";
-        LauncherItem *item = new LauncherItem(app->appId(), app->name(), app->icon().toString(), this);
+        item = new LauncherItem(app->appId(), app->name(), app->icon().toString(), this);
         item->setRecent(true);
         item->setRunning(true);
         item->setFocused(app->focused());
@@ -576,10 +578,12 @@ void LauncherModel::updateSurfaceListForApp(ApplicationInfoInterface* app)
 
     if (idx < 0) {
         qWarning() << "Couldn't create launcher icon.";
+        if (item)
+            delete item;
         return;
     }
 
-    LauncherItem *item = m_list.at(idx);
+    item = m_list.at(idx);
     if (!item->pinned() && item->running() && app->surfaceCount() <= 0) {
         beginRemoveRows(QModelIndex(), idx, idx);
         m_list.takeAt(idx)->deleteLater();
