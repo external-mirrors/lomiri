@@ -16,7 +16,7 @@
  */
 
 import QtQuick 2.12
-import MeeGo.QOfono 0.2
+import QOfono 0.2
 import Lomiri.Components 1.3
 import Lomiri.SystemSettings.SecurityPrivacy 1.0
 import Lomiri.SystemSettings.Update 1.0

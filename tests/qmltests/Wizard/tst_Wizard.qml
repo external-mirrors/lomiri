@@ -17,7 +17,7 @@
 import QtQuick 2.12
 import QtTest 1.0
 import AccountsService 0.1
-import MeeGo.QOfono 0.2
+import QOfono 0.2
 import QMenuModel 1.0
 import Lomiri.Components 1.3
 import Lomiri.Connectivity 1.0

@@ -625,13 +625,6 @@ tests/mocks/Lomiri/Telephony/MockTelepathyHelper.h
 tests/mocks/Lomiri/Telephony/plugin.cpp
 tests/mocks/Lomiri/Telephony/plugin.h
 tests/mocks/Lomiri/Web/WebView.qml
-tests/mocks/MeeGo/QOfono/MockOfonoSimManager.qml
-tests/mocks/MeeGo/QOfono/MockQOfono.cpp
-tests/mocks/MeeGo/QOfono/MockQOfono.h
-tests/mocks/MeeGo/QOfono/MockQOfonoManager.cpp
-tests/mocks/MeeGo/QOfono/MockQOfonoManager.h
-tests/mocks/MeeGo/QOfono/plugin.cpp
-tests/mocks/MeeGo/QOfono/plugin.h
 tests/mocks/Powerd/plugin.cpp
 tests/mocks/Powerd/plugin.h
 tests/mocks/Powerd/Powerd.cpp
@@ -646,6 +639,13 @@ tests/mocks/QMenuModel.1/dbus-enums.h
 tests/mocks/QMenuModel.1/plugin.cpp
 tests/mocks/QMenuModel.1/plugin.h
 tests/mocks/QMenuModel.1/QDBusActionGroup.qml
+tests/mocks/QOfono/MockOfonoSimManager.qml
+tests/mocks/QOfono/MockQOfono.cpp
+tests/mocks/QOfono/MockQOfono.h
+tests/mocks/QOfono/MockQOfonoManager.cpp
+tests/mocks/QOfono/MockQOfonoManager.h
+tests/mocks/QOfono/plugin.cpp
+tests/mocks/QOfono/plugin.h
 tests/mocks/QtMir/Application/ApplicationInfo.cpp
 tests/mocks/QtMir/Application/ApplicationInfo.h
 tests/mocks/QtMir/Application/ApplicationListModel.cpp

@@ -15,7 +15,7 @@
  */
 
 import QtQuick 2.12
-import MeeGo.QOfono 0.2
+import QOfono 0.2
 
 Item {
     id: simManager
