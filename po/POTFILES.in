@@ -530,8 +530,6 @@ tests/mocks/Hfd/Leds.h
 tests/mocks/Hfd/plugin.cpp
 tests/mocks/Hfd/plugin.h
 tests/mocks/indicator-service/mock-indicator-service.c
-tests/mocks/liblightdm/demo/GreeterPrivate.cpp
-tests/mocks/liblightdm/demo/UsersModelPrivate.cpp
 tests/mocks/liblightdm/GreeterPrivate.cpp
 tests/mocks/liblightdm/GreeterPrivate.h
 tests/mocks/liblightdm/MockController.cpp
