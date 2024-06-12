@@ -1,7 +1,6 @@
 include_directories(
     ${GLIB_INCLUDE_DIRS}
     ${CMAKE_CURRENT_BINARY_DIR}
-    ${CMAKE_SOURCE_DIR}/plugins/LightDM/IntegratedLightDM
     )
 
 add_executable(GreeterDBusTestExec
@@ -65,7 +64,6 @@ target_link_libraries(GreeterSessionsModelTestExec
 target_include_directories(GreeterSessionsModelTestExec PUBLIC
     ${CMAKE_SOURCE_DIR}/plugins/LightDM
     ${CMAKE_SOURCE_DIR}/plugins/Utils
-    ${CMAKE_SOURCE_DIR}/tests/mocks/liblightdm/
     )
 install(TARGETS GreeterSessionsModelTestExec
     DESTINATION "${SHELL_PRIVATE_FULL_LIBEXECDIR}/tests/plugins/LightDM/IntegratedLightDM"

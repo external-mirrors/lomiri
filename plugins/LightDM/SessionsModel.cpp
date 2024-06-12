@@ -113,9 +113,9 @@ QVariant SessionsModel::data(const QModelIndex& index, int role) const
 
 SessionsModel::SessionsModel(QObject* parent)
   : LomiriSortFilterProxyModelQML(parent)
-  , m_model(new QLightDM::SessionsModel(this))
 {
     // Add a custom IconRole that isn't in either of the lightdm implementations
+    m_model = new QLightDM::SessionsModel(this);
     m_roleNames = m_model->roleNames();
     m_roleNames[IconRole] = "icon_url";
 

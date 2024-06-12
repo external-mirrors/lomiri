@@ -40,9 +40,16 @@ SessionsModel::SessionsModel(QObject* parent)
 {
     Q_D(SessionsModel);
 
-    d->roleNames = QAbstractListModel::roleNames();
-    d->roleNames[KeyRole] = "key";
-    d->roleNames[TypeRole] = "type";
+    auto roleNames = QAbstractListModel::roleNames();
+    roleNames[KeyRole] = "key";
+    roleNames[TypeRole] = "type";
+
+    // We can't reimplement roleNames() because actual liblightdm doesn't
+    // implement them either.
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+    setRoleNames(roleNames);
+#pragma GCC diagnostic pop
 
     connect(MockController::instance(), &MockController::sessionModeChanged,
             this, &SessionsModel::resetEntries);
@@ -74,13 +81,6 @@ QVariant SessionsModel::data(const QModelIndex& index, int role) const
         default:
             return QVariant();
     }
-}
-
-QHash<int, QByteArray> SessionsModel::roleNames() const
-{
-    Q_D(const SessionsModel);
-
-    return d->roleNames;
 }
 
 int SessionsModel::rowCount(const QModelIndex& parent) const

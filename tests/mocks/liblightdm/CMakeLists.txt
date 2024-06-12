@@ -7,6 +7,10 @@ set(MockLightDM_SOURCES
 
 add_library(MockLightDM SHARED ${MockLightDM_SOURCES})
 
+target_include_directories(MockLightDM PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}
+    )
+
 target_link_libraries(MockLightDM Qt5::DBus Qt5::Gui)
 
 set_target_properties(MockLightDM PROPERTIES
