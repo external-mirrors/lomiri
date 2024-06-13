@@ -171,9 +171,10 @@ endfunction()
 #   - test${component_name} - Runs the test
 #   - xvfbtest${component_name} - Runs the test under xvfb
 #   - gdbtest${component_name} - Runs the test under gdb
+#   - valgrindtest${component_name} - Runs the test under valgrind
 
 function(add_executable_test COMPONENT_NAME TARGET)
-    import_executables(gdb xvfb-run OPTIONAL)
+    import_executables(gdb xvfb-run valgrind OPTIONAL)
 
     cmake_parse_arguments(QMLTEST "${QMLTEST_OPTIONS}" "${QMLTEST_SINGLE}" "${QMLTEST_MULTI}" ${ARGN})
     mangle_arguments()
@@ -209,6 +210,18 @@ function(add_executable_test COMPONENT_NAME TARGET)
     if(TARGET gdb)
         add_qmltest_target(gdbtest${COMPONENT_NAME} ${TARGET}
             COMMAND $<TARGET_FILE:gdb> -ex run -args ${qmltest_command}
+            ${depends}
+            ENVIRONMENT QML2_IMPORT_PATH=${imports} ${QMLTEST_ENVIRONMENT}
+        )
+    endif()
+
+    if(TARGET valgrind)
+        # --trace-children is needed to follow transition from QtChooser's
+        # qmltestrunner to a real one. Despite the flag name, it actually
+        # affects exec() calls and not fork() (Valgrind always track fork()-ed
+        # process because Valgrind would fork with the process).
+        add_qmltest_target(valgrindtest${COMPONENT_NAME} ${TARGET}
+            COMMAND $<TARGET_FILE:valgrind> --trace-children=yes ${qmltest_command}
             ${depends}
             ENVIRONMENT QML2_IMPORT_PATH=${imports} ${QMLTEST_ENVIRONMENT}
         )
