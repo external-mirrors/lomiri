@@ -57,6 +57,7 @@ public:
 
         qDBusRegisterMetaType<StringMap>();
         qDBusRegisterMetaType<StringMapList>();
+        qDBusRegisterMetaType<QList<QVariantMap>>();
     }
 
 private Q_SLOTS:
@@ -367,11 +368,13 @@ private Q_SLOTS:
         map2.insert("xkb", "fr");
         inputSources.append(map2);
 
-        QDBusInterface accountsIface(m_userInterface->service(),
-                                     m_userInterface->path(),
-                                     "org.freedesktop.Accounts.User");
-        ASSERT_DBUS_CALL(accountsIface.asyncCall("SetInputSources",
-                                                 QVariant::fromValue(inputSources)));
+        #ifdef ENABLE_UBUNTU_ACCOUNTSSERVICE
+            QDBusInterface accountsIface(m_userInterface->service(), m_userInterface->path(), "org.freedesktop.Accounts.User");
+            ASSERT_DBUS_CALL(accountsIface.asyncCall("SetInputSources", QVariant::fromValue(inputSources)));
+        #else
+            ASSERT_DBUS_CALL (m_userInterface->asyncCall ("Set", "com.lomiri.shell.AccountsService", "InputSources", QVariant::fromValue (inputSources)));
+        #endif
+
         QStringList result = {"cz+qwerty", "fr"};
         QTRY_COMPARE(session.keymaps(), result);
     }

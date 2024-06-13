@@ -85,7 +85,11 @@ void PropertiesServer::SetEmail(const QString &email)
 
 void PropertiesServer::SetInputSources(const StringMapList &inputSources)
 {
-    internalSet(IFACE_ACCOUNTS_USER, QStringLiteral("InputSources"), QVariant::fromValue(inputSources));
+    #ifdef ENABLE_UBUNTU_ACCOUNTSSERVICE
+        internalSet(IFACE_ACCOUNTS_USER, QStringLiteral("InputSources"), QVariant::fromValue(inputSources));
+    #else
+        internalSet(IFACE_LOMIRI, QStringLiteral("InputSources"), QVariant::fromValue(inputSources));
+    #endif
 }
 
 void PropertiesServer::SetRealName(const QString &realName)
@@ -104,6 +108,10 @@ void PropertiesServer::internalSet(const QString &interface, const QString &prop
             if (interface == QStringLiteral("com.lomiri.shell.AccountsService") &&
                     property == QStringLiteral("LauncherItems")) {
                 newValue = QVariant::fromValue(qdbus_cast<QList<QVariantMap>>(newValue.value<QDBusArgument>()));
+            }
+            else if (interface == QStringLiteral("com.lomiri.shell.AccountsService") &&
+                    property == QStringLiteral("InputSources")) {
+                newValue = QVariant::fromValue(qdbus_cast<StringMapList>(newValue.value<QDBusArgument>()));
             }
 
             oldValue = newValue;
@@ -145,6 +153,11 @@ void PropertiesServer::Reset()
     m_properties["com.ubuntu.location.providers.here.AccountsService"]["LicenseBasePath"] = "";
     m_properties["org.freedesktop.Accounts.User"]["BackgroundFile"] = "";
     m_properties["org.freedesktop.Accounts.User"]["Email"] = "";
-    m_properties["org.freedesktop.Accounts.User"]["InputSources"] = QVariant::fromValue(StringMapList());
     m_properties["org.freedesktop.Accounts.User"]["RealName"] = "";
+
+    #ifdef ENABLE_UBUNTU_ACCOUNTSSERVICE
+        m_properties["org.freedesktop.Accounts.User"]["InputSources"] = QVariant::fromValue(StringMapList());
+    #else
+        m_properties["com.lomiri.shell.AccountsService"]["InputSources"] = QVariant::fromValue(StringMapList());
+    #endif
 }
