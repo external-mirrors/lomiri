@@ -82,7 +82,7 @@ Item {
         sourceComponent: Component {
             Stage {
                 anchors.fill: parent
-                background: "/usr/share/backgrounds/warty-final-ubuntu.png"
+                background: "/usr/share/backgrounds/lomiri-default-background.png"
                 focus: true
 
                 Component.onCompleted: {

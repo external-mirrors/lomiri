@@ -65,7 +65,7 @@ StyledItem {
                         GreeterView {
                             id: view
 
-                            background: "/usr/share/backgrounds/warty-final-ubuntu.png"
+                            background: "/usr/share/backgrounds/lomiri-default-background.png"
                             backgroundSourceSize: width
                             userModel: LightDM.Users
                             infographicModel: LightDM.Infographic
