@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-06 08:14+0000\n"
-"PO-Revision-Date: 2023-08-08 18:04+0000\n"
-"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"PO-Revision-Date: 2024-06-15 19:10+0000\n"
+"Last-Translator: Lars Bahner <lars.bahner@gmail.com>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/lomiri/"
 "lomiri/nb_NO/>\n"
 "Language: nb\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.0-dev\n"
+"X-Generator: Weblate 5.6-dev\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:35+0000\n"
 
 #: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
@@ -25,34 +25,28 @@ msgid "Lomiri"
 msgstr "Lomiri"
 
 #: data/lomiri.desktop.in:5
-#, fuzzy
 msgid "The converged Lomiri shell"
-msgstr "Det samhandlende Lomiri-skallet"
+msgstr "Det samordnede Lomiri-skallet"
 
 #: data/lomiri-greeter.desktop.in:4
-#, fuzzy
-#| msgid "Lomiri"
 msgid "Lomiri Greeter"
-msgstr "Lomiri-imøtekommer"
+msgstr "Lomiri Velkomst"
 
 #: data/lomiri-greeter.desktop.in:5
-#, fuzzy
 msgid "The converged Lomiri shell's Greeter"
-msgstr "Det samhandlende Lomiri-skallets imøtekommer"
+msgstr "Det samordnede Lomiri-skallets velkomst"
 
 #: data/indicators-client.desktop.in:4
-#, fuzzy
 msgid "Indicators Client"
 msgstr "Indikator-klient"
 
 #: data/indicators-client.desktop.in:5
-#, fuzzy
 msgid "Application for testing the Indicators system"
 msgstr "Program for testing av indikatorsystemet"
 
 #: data/indicators-client.desktop.in:9
 msgid "NoDisplay=false"
-msgstr ""
+msgstr "NoDisplay=false"
 
 #: plugins/LightDM/Greeter.cpp:199
 msgid "Password: "
@@ -141,7 +135,7 @@ msgstr "TV"
 
 #: plugins/WindowManager/Screen.cpp:187
 msgid "Virtual"
-msgstr ""
+msgstr "Virtuell"
 
 #: qml/Components/Dialogs.qml:176
 msgctxt "Title: Lock/Log out dialog"
@@ -442,7 +436,7 @@ msgstr "Finn flere innstillinger i systeminnstillingene."
 
 #: qml/Greeter/CoverPage.qml:160
 msgid "Fully charged"
-msgstr ""
+msgstr "Fulladet"
 
 #: qml/Greeter/CoverPage.qml:168
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1095
@@ -463,12 +457,12 @@ msgstr[1] "%1 minutter"
 #: qml/Greeter/CoverPage.qml:178
 #, qt-format
 msgid "%1, %2 until full"
-msgstr ""
+msgstr "%1,%2 til ferdig"
 
 #: qml/Greeter/CoverPage.qml:181
 #, qt-format
 msgid "%1 until full"
-msgstr ""
+msgstr "%1 til ferdig"
 
 #: qml/Greeter/CoverPage.qml:197
 #: tests/qmltests/Greeter/tst_GreeterView.qml:1239
@@ -546,7 +540,7 @@ msgstr "Vis passord"
 
 #: qml/Notifications/Notification.qml:322
 msgid "New message"
-msgstr ""
+msgstr "Ny melding"
 
 #: qml/Panel/ActiveCallHint.qml:79
 msgid "Tap to return to call..."
@@ -675,10 +669,9 @@ msgstr "Velkommen til %1 %2"
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
 #: qml/Wizard/Pages/10-welcome-update.qml:108
-#, fuzzy, qt-format
-#| msgid "We will make sure your device is ready to use "
+#, qt-format
 msgid "We will make sure your device is ready to use %1 %2"
-msgstr "Det vil bli sørget for at enheten din er klar til bruk "
+msgstr "Vi sørger for at %1 %2 er klar til bruk"
 
 #: qml/Wizard/Pages/11-changelog.qml:28
 msgid "What's new"
@@ -770,12 +763,9 @@ msgstr ""
 "nytt for å fullføre installasjonen."
 
 #: qml/Wizard/Pages/79-system-update.qml:76
-#, fuzzy
-#| msgctxt "string identifying name of the update"
-#| msgid "Lomiri Touch system"
 msgctxt "string identifying name of the update"
 msgid "Ubuntu Touch system"
-msgstr "Lomiri Touch-system"
+msgstr "Ubuntu Touch-system"
 
 #: qml/Wizard/Pages/79-system-update.qml:83
 #, qt-format
@@ -797,10 +787,9 @@ msgstr "Velkommen tilbake"
 
 #. TRANSLATORS: %1 contains the distro name
 #: qml/Wizard/Pages/80-finished.qml:95
-#, fuzzy, qt-format
-#| msgid "Welcome to "
+#, qt-format
 msgid "Welcome to %1"
-msgstr "Velkommen til "
+msgstr "Velkommen til %1"
 
 #: qml/Wizard/Pages/80-finished.qml:111
 msgid "You are ready to use your device now"
@@ -833,10 +822,8 @@ msgid "Lock Screen Passcode"
 msgstr "Låseskjerm-kode"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:68
-#, fuzzy
-#| msgid "Enter 4 numbers to setup your passcode"
 msgid "Enter at least 4 numbers to setup your passcode"
-msgstr "Skriv inn 4 sifre som skal brukes som kode"
+msgstr "Skriv inn minst 4 tall for din passkode"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:84
 #: qml/Wizard/Pages/passcode-set.qml:54
@@ -856,10 +843,8 @@ msgid "Passcodes do not match"
 msgstr "Kodene er ulike"
 
 #: qml/Wizard/Pages/passcode-set.qml:62
-#, fuzzy
-#| msgid "Passcode must be 4 characters long"
 msgid "Passcode must be at least 4 characters long"
-msgstr "Koden må bestå av 4 sifre"
+msgstr "Koden må bestå av minst 4 tall"
 
 #: qml/Wizard/Pages/password-set.qml:31
 msgid "Lock Screen Password"
