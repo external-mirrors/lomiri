@@ -264,10 +264,22 @@ private Q_SLOTS:
         QVERIFY(addReply.isValid());
         QCOMPARE(addReply.value(), true);
 
-        appManager->addApplication(new MockApp("abs-icon"));
+        auto mockApp1 = new MockApp("abs-icon");
+        appManager->addApplication(mockApp1);
+        QCOMPARE(launcherModel->rowCount(QModelIndex()), 0);
+
+        MockSurfaceList* surfaces1 = new MockSurfaceList(appManager);
+        surfaces1->append(new MockSurface("foobar", "foobar", surfaces1));
+        mockApp1->setSurfaces(surfaces1);
         QCOMPARE(launcherModel->rowCount(QModelIndex()), 1);
 
-        appManager->addApplication(new MockApp("rel-icon"));
+        auto mockApp2 = new MockApp("rel-icon");
+        appManager->addApplication(mockApp2);
+        QCOMPARE(launcherModel->rowCount(QModelIndex()), 1);
+
+        MockSurfaceList* surfaces2 = new MockSurfaceList(appManager);
+        surfaces2->append(new MockSurface("foobar", "foobar", surfaces2));
+        mockApp2->setSurfaces(surfaces2);
         QCOMPARE(launcherModel->rowCount(QModelIndex()), 2);
 
         launcherModel->m_settings->setStoredApplications(QStringList());
@@ -521,7 +533,15 @@ private Q_SLOTS:
         QStringList nodes = extractNodes(reply.value());
         QCOMPARE(nodes.count(), launcherModel->rowCount());
 
-        appManager->addApplication(new MockApp("foobar"));
+        auto mockApp = new MockApp("foobar");
+        appManager->addApplication(mockApp);
+        reply = interface.call("Introspect");
+        nodes = extractNodes(reply.value());
+        QCOMPARE(nodes.contains("foobar"), false);
+
+        MockSurfaceList* surfaces = new MockSurfaceList(appManager);
+        surfaces->append(new MockSurface("foobar", "foobar", surfaces));
+        mockApp->setSurfaces(surfaces);
         reply = interface.call("Introspect");
         nodes = extractNodes(reply.value());
         QCOMPARE(nodes.contains("foobar"), true);
