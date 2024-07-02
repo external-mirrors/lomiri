@@ -14,6 +14,10 @@ DEB_HOST_ARCH ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
 # Skip tests on the archs they are known to be flaky  with current configuration
 testskip_architectures := arm64 armhf powerpc ppc64el s390x
 
+ifeq ($(shell dpkg-vendor --derives-from Ubuntu && echo yes),yes)
+	CONFIGURE_OPTS += -DENABLE_UBUNTU_ACCOUNTSSERVICE=ON
+endif
+
 ifneq (,$(findstring nocheck,$(DEB_BUILD_OPTIONS)))
 	CONFIGURE_OPTS += "-DNO_TESTS=ON"
 endif
