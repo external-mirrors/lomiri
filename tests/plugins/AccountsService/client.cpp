@@ -103,6 +103,11 @@ private Q_SLOTS:
         QCOMPARE(session.getUserPropertyAsync(QTest::currentTestFunction(), "com.lomiri.shell.AccountsService", "DemoEdges2").value(), QVariant(true));
         session.setUserPropertyAsync(QTest::currentTestFunction(), "com.lomiri.shell.AccountsService", "DemoEdges2", QVariant(false)).waitForFinished();
         QCOMPARE(session.getUserPropertyAsync(QTest::currentTestFunction(), "com.lomiri.shell.AccountsService", "DemoEdges2").value(), QVariant(false));
+        session.setUserPropertyAsync(QTest::currentTestFunction(), "com.lomiri.shell.AccountsService", "BackgroundFile", QString("file:///backgroundpicture.uri")).waitForFinished();
+
+        #ifndef ENABLE_UBUNTU_ACCOUNTSSERVICE
+            QCOMPARE(session.getUserPropertyAsync(QTest::currentTestFunction(), "com.lomiri.shell.AccountsService", "BackgroundFile").value(), QString("file:///backgroundpicture.uri"));
+        #endif
     }
 
     void testGetSetService()
@@ -263,11 +268,13 @@ private Q_SLOTS:
 
         QCOMPARE(session.backgroundFile(), QString());
 
-        QDBusInterface accountsIface(m_userInterface->service(),
-                                     m_userInterface->path(),
-                                     "org.freedesktop.Accounts.User");
-        ASSERT_DBUS_CALL(accountsIface.asyncCall("SetBackgroundFile",
-                                                 "/test/BackgroundFile"));
+        #ifdef ENABLE_UBUNTU_ACCOUNTSSERVICE
+            QDBusInterface accountsIface (m_userInterface->service (), m_userInterface->path (), "org.freedesktop.Accounts.User");
+            ASSERT_DBUS_CALL (accountsIface.asyncCall("SetBackgroundFile", "/test/BackgroundFile"));
+
+        #else
+            ASSERT_DBUS_CALL (m_userInterface->asyncCall ("Set", "com.lomiri.shell.AccountsService", "BackgroundFile", dbusVariant ("/test/BackgroundFile")));
+        #endif
 
         QTRY_COMPARE(session.backgroundFile(), QString("/test/BackgroundFile"));
     }

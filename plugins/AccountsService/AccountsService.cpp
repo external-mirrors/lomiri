@@ -93,7 +93,12 @@ AccountsService::AccountsService(QObject* parent, const QString &user)
     connect(m_service, &AccountsServiceDBusAdaptor::propertiesChanged, this, &AccountsService::onPropertiesChanged);
     connect(m_service, &AccountsServiceDBusAdaptor::maybeChanged, this, &AccountsService::onMaybeChanged);
 
-    registerProperty(IFACE_ACCOUNTS_USER, PROP_BACKGROUND_FILE, QStringLiteral("backgroundFileChanged"));
+    #ifdef ENABLE_UBUNTU_ACCOUNTSSERVICE
+        registerProperty(IFACE_ACCOUNTS_USER, PROP_BACKGROUND_FILE, QStringLiteral("backgroundFileChanged"));
+    #else
+        registerProperty(IFACE_LOMIRI, PROP_BACKGROUND_FILE, QStringLiteral("backgroundFileChanged"));
+    #endif
+
     registerProperty(IFACE_ACCOUNTS_USER, PROP_EMAIL, QStringLiteral("emailChanged"));
     registerProperty(IFACE_ACCOUNTS_USER, PROP_REAL_NAME, QStringLiteral("realNameChanged"));
     registerProperty(IFACE_ACCOUNTS_USER, PROP_INPUT_SOURCES, QStringLiteral("keymapsChanged"));
@@ -211,7 +216,12 @@ bool AccountsService::hideNotificationContentWhileLocked() const
 
 QString AccountsService::backgroundFile() const
 {
-    auto value = getProperty(IFACE_ACCOUNTS_USER, PROP_BACKGROUND_FILE);
+    #ifdef ENABLE_UBUNTU_ACCOUNTSSERVICE
+        auto value = getProperty(IFACE_ACCOUNTS_USER, PROP_BACKGROUND_FILE);
+    #else
+        auto value = getProperty(IFACE_LOMIRI, PROP_BACKGROUND_FILE);
+    #endif
+
     return value.toString();
 }
 

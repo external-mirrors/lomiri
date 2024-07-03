@@ -26,6 +26,7 @@
 #include <QDBusMetaType>
 
 #define IFACE_ACCOUNTS_USER QStringLiteral("org.freedesktop.Accounts.User")
+#define IFACE_LOMIRI QStringLiteral ("com.lomiri.shell.AccountsService")
 
 PropertiesServer::PropertiesServer(QObject *parent)
     : QObject(parent)
@@ -70,7 +71,11 @@ void PropertiesServer::Set(const QString &interface, const QString &property, co
 
 void PropertiesServer::SetBackgroundFile(const QString &backgroundFile)
 {
-    internalSet(IFACE_ACCOUNTS_USER, QStringLiteral("BackgroundFile"), backgroundFile);
+    #ifdef ENABLE_UBUNTU_ACCOUNTSSERVICE
+        internalSet (IFACE_ACCOUNTS_USER, QStringLiteral ("BackgroundFile"), backgroundFile);
+    #else
+        internalSet (IFACE_LOMIRI, QStringLiteral ("BackgroundFile"), backgroundFile);
+    #endif
 }
 
 void PropertiesServer::SetEmail(const QString &email)
@@ -127,6 +132,7 @@ void PropertiesServer::Reset()
     m_properties["com.lomiri.shell.AccountsService"]["DemoEdges2"] = false;
     m_properties["com.lomiri.shell.AccountsService"]["DemoEdgesCompleted"] = QStringList();
     m_properties["com.lomiri.shell.AccountsService"]["LauncherItems"] = QVariant::fromValue(QList<QVariantMap>());
+    m_properties["com.lomiri.shell.AccountsService"]["BackgroundFile"] = "";
     m_properties["com.lomiri.shell.AccountsService.Private"]["FailedLogins"] = 0;
     m_properties["com.lomiri.touch.AccountsService.SecurityPrivacy"]["StatsWelcomeScreen"] = true;
     m_properties["com.lomiri.AccountsService.Input"]["MousePrimaryButton"] = "right";

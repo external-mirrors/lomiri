@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.4.0)
+cmake_minimum_required (VERSION 3.5.0)
 
 # Default install location. Must be set here, before setting the project.
 if (NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -6,6 +6,12 @@ if (NOT DEFINED CMAKE_INSTALL_PREFIX)
 endif()
 
 project(lomiri VERSION 0.2.1 LANGUAGES C CXX)
+
+option (ENABLE_UBUNTU_ACCOUNTSSERVICE "Build with Ubuntu's fork of accountsservice" OFF)
+
+if (ENABLE_UBUNTU_ACCOUNTSSERVICE)
+    add_compile_definitions (ENABLE_UBUNTU_ACCOUNTSSERVICE)
+endif ()
 
 set(SHELL_APP lomiri)
 set(INDICATORS_CLIENT_APP indicators-client)

@@ -40,6 +40,7 @@
   <interface name="com.lomiri.AccountsService.Input" />
   <interface name="com.lomiri.touch.AccountsService.SecurityPrivacy" />
   <interface name="com.ubuntu.location.providers.here.AccountsService" />
+  <interface name="com.lomiri.shell.AccountsService" />
   <interface name="org.freedesktop.Accounts.User">
     <signal name="Changed" />
     <method name="SetBackgroundFile">
