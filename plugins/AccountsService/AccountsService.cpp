@@ -95,13 +95,14 @@ AccountsService::AccountsService(QObject* parent, const QString &user)
 
     #ifdef ENABLE_UBUNTU_ACCOUNTSSERVICE
         registerProperty(IFACE_ACCOUNTS_USER, PROP_BACKGROUND_FILE, QStringLiteral("backgroundFileChanged"));
+        registerProperty(IFACE_ACCOUNTS_USER, PROP_INPUT_SOURCES, QStringLiteral("keymapsChanged"));
     #else
         registerProperty(IFACE_LOMIRI, PROP_BACKGROUND_FILE, QStringLiteral("backgroundFileChanged"));
+        registerProperty(IFACE_LOMIRI, PROP_INPUT_SOURCES, QStringLiteral("keymapsChanged"));
     #endif
 
     registerProperty(IFACE_ACCOUNTS_USER, PROP_EMAIL, QStringLiteral("emailChanged"));
     registerProperty(IFACE_ACCOUNTS_USER, PROP_REAL_NAME, QStringLiteral("realNameChanged"));
-    registerProperty(IFACE_ACCOUNTS_USER, PROP_INPUT_SOURCES, QStringLiteral("keymapsChanged"));
     registerProperty(IFACE_UBUNTU_SECURITY, PROP_PINCODE_PROMPT_MANAGER, QStringLiteral("pinCodePromptManagerChanged"));
     registerProperty(IFACE_UBUNTU_SECURITY, PROP_ENABLE_FINGERPRINT_IDENTIFICATION, QStringLiteral("enableFingerprintIdentificationChanged"));
     registerProperty(IFACE_UBUNTU_SECURITY, PROP_ENABLE_LAUNCHER_WHILE_LOCKED, QStringLiteral("enableLauncherWhileLockedChanged"));
@@ -290,7 +291,12 @@ void AccountsService::setEmail(const QString &email)
 
 QStringList AccountsService::keymaps() const
 {
-    auto value = getProperty(IFACE_ACCOUNTS_USER, PROP_INPUT_SOURCES);
+    #ifdef ENABLE_UBUNTU_ACCOUNTSSERVICE
+        auto value = getProperty(IFACE_ACCOUNTS_USER, PROP_INPUT_SOURCES);
+    #else
+        auto value = getProperty(IFACE_LOMIRI, PROP_INPUT_SOURCES);
+    #endif
+
     QDBusArgument arg = value.value<QDBusArgument>();
     StringMapList maps = qdbus_cast<StringMapList>(arg);
     QStringList simplifiedMaps;
@@ -322,7 +328,12 @@ void AccountsService::setKeymaps(const QStringList &keymaps)
         result.append(map);
     }
 
-    setProperty(IFACE_ACCOUNTS_USER, PROP_INPUT_SOURCES, QVariant::fromValue(result));
+    #ifdef ENABLE_UBUNTU_ACCOUNTSSERVICE
+        setProperty(IFACE_ACCOUNTS_USER, PROP_INPUT_SOURCES, QVariant::fromValue(result));
+    #else
+        setProperty(IFACE_LOMIRI, PROP_INPUT_SOURCES, QVariant::fromValue(result));
+    #endif
+
     Q_EMIT keymapsChanged();
 }
 
