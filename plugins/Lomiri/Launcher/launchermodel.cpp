@@ -570,12 +570,17 @@ void LauncherModel::updateSurfaceListForApp(ApplicationInfoInterface* app)
         item->setRecent(true);
         item->setRunning(true);
         item->setFocused(app->focused());
+
         beginInsertRows(QModelIndex(), m_list.count(), m_list.count());
         m_list.append(item);
         endInsertRows();
+        m_asAdapter->syncItems(m_list);
+
+        // Now it should be in the model, this one should have a high success rate in finding the app.
         idx = findApplication(app->appId());
     }
 
+    // Only delete if we're sure it's not in the list.
     if (idx < 0) {
         qWarning() << "Couldn't create launcher icon.";
         if (item)
