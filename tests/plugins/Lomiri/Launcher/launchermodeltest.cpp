@@ -780,8 +780,16 @@ private Q_SLOTS:
         // Make sure launcher and AS are in sync when we start the test
         QCOMPARE(launcherModel->rowCount(), getASConfig().count());
 
+        // This one shouldn't show a new icon without a surface
         int oldCount = launcherModel->rowCount();
-        appManager->addApplication(new MockApp("click-icon"));
+        auto app = new MockApp("click-icon");
+        appManager->addApplication(app);
+        QCOMPARE(launcherModel->rowCount(), oldCount + 0);
+
+        // Now it should
+        MockSurfaceList* surfaces = new MockSurfaceList(appManager);
+        surfaces->append(new MockSurface("foobar", "foobar", surfaces));
+        app->setSurfaces(surfaces);
         QCOMPARE(launcherModel->rowCount(), oldCount + 1);
         QCOMPARE(launcherModel->rowCount(), getASConfig().count());
     }
