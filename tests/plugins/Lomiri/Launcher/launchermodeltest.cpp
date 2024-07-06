@@ -836,8 +836,12 @@ private Q_SLOTS:
     void testSurfaceCountUpdates() {
         QString appId = launcherModel->get(0)->appId();
 
-        QCOMPARE(launcherModel->get(0)->surfaceCount(), 0);
+        // Some tests leave the surface count in an inconsitent state
         MockApp *app = qobject_cast<MockApp*>(appManager->findApplication(appId));
+        MockSurfaceList* surfacesEmpty = new MockSurfaceList(appManager);
+        app->setSurfaces(surfacesEmpty);
+        QCOMPARE(launcherModel->get(0)->surfaceCount(), 0);
+
         MockSurfaceList* surfaces = new MockSurfaceList(appManager);
         surfaces->append(new MockSurface("foobar", "foobar", surfaces));
         app->setSurfaces(surfaces);
