@@ -58,7 +58,7 @@ Item {
     // When blur is disabled
     Rectangle {
         anchors.fill: parent
-        color: theme.palette.highlighted.background
+        color: theme.palette.normal.background
         visible: sourceItem == null
     }
 }

@@ -36,6 +36,7 @@ MouseArea {
     property bool windowMoving: false
     property alias windowControlButtonsVisible: buttons.visible
     property PanelState panelState
+    property bool lightMode : false
 
     readonly property real buttonsWidth: buttons.width + row.spacing
 
@@ -73,7 +74,7 @@ MouseArea {
         id: background
         anchors.fill: parent
         radius: units.gu(.5)
-        color: theme.palette.normal.background
+        color: root.lightMode ? "#FFFFFF" : "#000000"
     }
 
     Rectangle {
@@ -121,7 +122,7 @@ MouseArea {
             Label {
                 id: titleLabel
                 objectName: "windowDecorationTitle"
-                color: root.active ? "white" : LomiriColors.slate
+                color: root.active ? theme.palette.highlighted.baseText : LomiriColors.slate
                 height: parent.height
                 width: parent.width
                 verticalAlignment: Text.AlignVCenter

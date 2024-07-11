@@ -35,7 +35,7 @@ Item {
                 id: dot
                 width: units.dp(3)
                 height: width
-                color: handle.active ? theme.palette.highlighted.foreground : theme.palette.normal.raised
+                color: handle.active ? theme.palette.focused.foreground : theme.palette.normal.backgroundText
                 radius: units.dp(1)
             }
         }

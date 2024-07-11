@@ -36,7 +36,7 @@ FocusScope {
     visible: x > -width
     property var fullyOpen: x === 0
     property var fullyClosed: x === -width
-
+    property bool lightMode : false
     signal applicationSelected(string appId)
 
     // Request that the Drawer is opened fully, if it was partially closed then
@@ -154,7 +154,7 @@ FocusScope {
 
     Rectangle {
         anchors.fill: parent
-        color: "#BF000000"
+        color: root.lightMode ? "#CAFEFEFE" : "#BF000000"
 
         MouseArea {
             id: drawerHandle
@@ -364,7 +364,7 @@ FocusScope {
                             y: -units.gu(0.5)
                             active: label.truncated && (drawerDelegate.hovered || drawerDelegate.focused)
                             sourceComponent: Rectangle {
-                                color: LomiriColors.jet
+                                color: root.lightMode ? LomiriColors.porcelain : LomiriColors.jet
                                 width: fullLabel.contentWidth + units.gu(1)
                                 height: fullLabel.height + units.gu(1)
                                 radius: units.dp(4)

@@ -58,10 +58,6 @@ StyledItem {
     // FIXME: non-zero initially because of LP: #1354406 workaround, we want this to start at 0 upon creation eventually
     opacity: defaultOpacity - Math.abs(x / notification.width)
 
-    theme: ThemeSettings {
-        name: "Lomiri.Components.Themes.Ambiance"
-    }
-
     readonly property bool expanded: type === Notification.SnapDecision &&                   // expand only snap decisions, if...
                                      (fullscreen ||                                          // - it's a fullscreen one
                                       ListView.view.currentIndex === index ||                // - it's the one the user clicked on

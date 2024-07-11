@@ -36,6 +36,7 @@ FocusScope {
     property bool drawerEnabled: true
     property alias privateMode: panel.privateMode
     property url background
+    property bool lightMode : false
 
     property int panelWidth: units.gu(10)
     property int dragAreaWidth: units.gu(1)
@@ -393,6 +394,15 @@ FocusScope {
         }
     }
 
+    Image {
+        anchors.left: drawer.right
+        anchors.top: drawer.top
+        anchors.bottom: drawer.bottom
+        width: units.gu(1)
+        visible: !drawer.fullyClosed
+        source: "../graphics/dropshadow_right@20.png"
+    }
+
     Drawer {
         id: drawer
         objectName: "drawer"
@@ -406,6 +416,7 @@ FocusScope {
         width: Math.min(root.width, units.gu(81))
         panelWidth: panel.width
         allowSlidingAnimation: !dragArea.dragging && !launcherDragArea.drag.active && panel.animate
+        lightMode: root.lightMode
 
         onApplicationSelected: {
             root.launcherApplicationSelected(appId)
@@ -441,6 +452,7 @@ FocusScope {
         }
         x: -width
         visible: root.x > 0 || x > -width || dragArea.pressed
+        lightMode: root.lightMode
         model: LauncherModel
 
         property var dismissTimer: Timer { interval: 500 }

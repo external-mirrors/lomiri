@@ -49,7 +49,9 @@ import WindowManager 1.0
 StyledItem {
     id: shell
 
-    theme.name: "Lomiri.Components.Themes.SuruDark"
+    readonly property bool lightMode: settings.lightMode
+    theme.name: lightMode ? "Lomiri.Components.Themes.Ambiance" :
+                            "Lomiri.Components.Themes.SuruDark"
 
     // to be set from outside
     property int orientationAngle: 0
@@ -318,6 +320,7 @@ StyledItem {
             objectName: "stage"
             anchors.fill: parent
             focus: true
+            lightMode: shell.lightMode
 
             dragAreaWidth: shell.edgeSize
             background: wallpaperResolver.background
@@ -553,6 +556,7 @@ StyledItem {
             objectName: "panel"
             anchors.fill: parent //because this draws indicator menus
             blurSource: settings.enableBlur ? (greeter.shown ? greeter : stages) : null
+            lightMode: shell.lightMode
 
             mode: shell.usageScenario == "desktop" ? "windowed" : "staged"
             minimizedPanelHeight: units.gu(3)
@@ -620,6 +624,7 @@ StyledItem {
             lockedVisible: (lockedByUser || shell.atDesktop) && lockAllowed
             blurSource: settings.enableBlur ? (greeter.shown ? greeter : stages) : null
             topPanelHeight: panel.panelHeight
+            lightMode: shell.lightMode
             drawerEnabled: !greeter.active && tutorial.launcherLongSwipeEnabled
             privateMode: greeter.active
             background: wallpaperResolver.background

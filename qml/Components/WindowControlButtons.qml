@@ -32,6 +32,8 @@ Row {
     property bool minimizeButtonVisible: true
     property bool overlayShown
 
+    readonly property color color: theme.palette.normal.baseText
+
     signal closeClicked()
     signal minimizeClicked()
     signal maximizeClicked()
@@ -58,7 +60,7 @@ Row {
             anchors.fill: parent
             anchors.margins: windowIsMaximized ? units.dp(6) : units.dp(3)
             source: "graphics/window-close.svg"
-            color: root.active ? "white" : LomiriColors.slate
+            color: root.active ? root.color : LomiriColors.jet
         }
     }
 
@@ -82,7 +84,7 @@ Row {
             anchors.fill: parent
             anchors.margins: windowIsMaximized ? units.dp(6) : units.dp(3)
             source: "graphics/window-minimize.svg"
-            color: root.active ? "white" : LomiriColors.slate
+            color: root.active ? root.color : LomiriColors.slate
         }
     }
 
@@ -115,7 +117,7 @@ Row {
             anchors.fill: parent
             anchors.margins: windowIsMaximized ? units.dp(6) : units.dp(3)
             source: root.windowIsMaximized ? "graphics/window-window.svg" : "graphics/window-maximize.svg"
-            color: root.active ? "white" : LomiriColors.slate
+            color: root.active ? root.color : LomiriColors.slate
         }
     }
 }

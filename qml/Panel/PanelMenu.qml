@@ -33,7 +33,7 @@ Showable {
     property real openedHeight: units.gu(71)
     property bool enableHint: true
     property bool showOnClick: true
-    property color panelColor: theme.palette.normal.background
+    property color panelColor: lightMode ? "#FFFFFF" : "#000000"
     property real menuContentX: 0
 
     property alias alignment: bar.alignment
@@ -43,6 +43,7 @@ Showable {
 
     property var blurSource : null
     property rect blurRect : Qt.rect(0, 0, 0, 0)
+    property bool lightMode : false
 
     readonly property real unitProgress: Math.max(0, (height - minimizedPanelHeight) / (openedHeight - minimizedPanelHeight))
     readonly property bool fullyOpened: unitProgress >= 1
@@ -113,7 +114,11 @@ Showable {
         clip: root.partiallyOpened
 
         Rectangle {
-            color: "#DA000000"
+            color: Qt.rgba(root.panelColor.r,
+                           root.panelColor.g,
+                           root.panelColor.b,
+                           1.0)
+            opacity: 0.85
             anchors.fill: parent
         }
 
@@ -186,6 +191,7 @@ Showable {
         expanded: false
         enableLateralChanges: false
         lateralPosition: -1
+        lightMode: root.lightMode
         unitProgress: root.unitProgress
 
         height: expanded ? expandedPanelHeight : minimizedPanelHeight
