@@ -8,21 +8,21 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-06 08:14+0000\n"
-"PO-Revision-Date: 2020-11-23 19:37+0000\n"
+"PO-Revision-Date: 2024-07-29 10:09+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
-"Language-Team: Finnish <https://translate.ubports.com/projects/unity8/unity8/"
-"fi/>\n"
+"Language-Team: Finnish <https://hosted.weblate.org/projects/lomiri/lomiri/fi/"
+">\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.11.3\n"
+"X-Generator: Weblate 5.7-dev\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:35+0000\n"
 
 #: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
 msgid "Lomiri"
-msgstr ""
+msgstr "Lomiri"
 
 #: data/lomiri.desktop.in:5
 msgid "The converged Lomiri shell"
@@ -95,27 +95,27 @@ msgstr "Poista pikakuvakkeen kiinnitys"
 
 #: plugins/WindowManager/Screen.cpp:160
 msgid "Unknown"
-msgstr ""
+msgstr "Tuntematon"
 
 #: plugins/WindowManager/Screen.cpp:162
 msgid "VGA"
-msgstr ""
+msgstr "VGA"
 
 #: plugins/WindowManager/Screen.cpp:166
 msgid "DVI"
-msgstr ""
+msgstr "DVI"
 
 #: plugins/WindowManager/Screen.cpp:168
 msgid "Composite"
-msgstr ""
+msgstr "Komposiitti"
 
 #: plugins/WindowManager/Screen.cpp:170
 msgid "S-Video"
-msgstr ""
+msgstr "S-Video"
 
 #: plugins/WindowManager/Screen.cpp:176
 msgid "Internal"
-msgstr ""
+msgstr "Sisäinen"
 
 #: plugins/WindowManager/Screen.cpp:178
 msgid "Component"
@@ -123,19 +123,19 @@ msgstr ""
 
 #: plugins/WindowManager/Screen.cpp:180
 msgid "DisplayPort"
-msgstr ""
+msgstr "DisplayPort"
 
 #: plugins/WindowManager/Screen.cpp:183
 msgid "HDMI"
-msgstr ""
+msgstr "HDMI"
 
 #: plugins/WindowManager/Screen.cpp:185
 msgid "TV"
-msgstr ""
+msgstr "TV"
 
 #: plugins/WindowManager/Screen.cpp:187
 msgid "Virtual"
-msgstr ""
+msgstr "Virtuaalinen"
 
 #: qml/Components/Dialogs.qml:176
 msgctxt "Title: Lock/Log out dialog"
@@ -203,10 +203,8 @@ msgid "Restart"
 msgstr "Käynnistä uudelleen"
 
 #: qml/Components/Dialogs.qml:276
-#, fuzzy
-#| msgid "Takes a screenshot."
 msgid "Screenshot"
-msgstr "Ottaa kuvakaappauksen."
+msgstr "Kuvakaappaus"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:41
 msgid "Keyboard Shortcuts"
@@ -438,7 +436,7 @@ msgstr "Löydät lisää asetuksia järjestelmän asetuksista."
 
 #: qml/Greeter/CoverPage.qml:160
 msgid "Fully charged"
-msgstr ""
+msgstr "Ladattu kokonaan"
 
 #: qml/Greeter/CoverPage.qml:168
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1095
@@ -459,12 +457,12 @@ msgstr[1] "%1 minuuttia"
 #: qml/Greeter/CoverPage.qml:178
 #, qt-format
 msgid "%1, %2 until full"
-msgstr ""
+msgstr "%1, %2 kunnes täynnä"
 
 #: qml/Greeter/CoverPage.qml:181
 #, qt-format
 msgid "%1 until full"
-msgstr ""
+msgstr "%1 kunnes täynnä"
 
 #: qml/Greeter/CoverPage.qml:197
 #: tests/qmltests/Greeter/tst_GreeterView.qml:1239
@@ -525,7 +523,7 @@ msgstr "Valitse työpöytäympäristö"
 
 #: qml/Launcher/Drawer.qml:240
 msgid "Search…"
-msgstr "Hae…"
+msgstr "Etsi…"
 
 #: qml/Launcher/PullToRefreshScopeStyle.qml:56
 msgid "Pull to refresh…"
@@ -541,7 +539,7 @@ msgstr "Näytä salasana"
 
 #: qml/Notifications/Notification.qml:322
 msgid "New message"
-msgstr ""
+msgstr "Uusi viesti"
 
 #: qml/Panel/ActiveCallHint.qml:79
 msgid "Tap to return to call..."
@@ -666,17 +664,15 @@ msgstr "Seuraava"
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
 #: qml/Wizard/Pages/10-welcome-update.qml:92
-#, fuzzy, qt-format
-#| msgid "Welcome to "
+#, qt-format
 msgid "Welcome to %1 %2"
-msgstr "Tervetuloa "
+msgstr "Tervetuloa, tämä on %1 %2"
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
 #: qml/Wizard/Pages/10-welcome-update.qml:108
-#, fuzzy, qt-format
-#| msgid "We will make sure your device is ready to use "
+#, qt-format
 msgid "We will make sure your device is ready to use %1 %2"
-msgstr "Varmistamme että laitteesi on valmis käytettäväksi "
+msgstr "Varmistamme, että laitteesi on valmis käyttämään jakelua %1 %2"
 
 #: qml/Wizard/Pages/11-changelog.qml:28
 msgid "What's new"
@@ -768,9 +764,6 @@ msgstr ""
 "uudelleen automaattisesti."
 
 #: qml/Wizard/Pages/79-system-update.qml:76
-#, fuzzy
-#| msgctxt "string identifying name of the update"
-#| msgid "Ubuntu Touch system"
 msgctxt "string identifying name of the update"
 msgid "Ubuntu Touch system"
 msgstr "Ubuntu Touch -järjestelmä"
@@ -795,10 +788,9 @@ msgstr "Tervetuloa takaisin"
 
 #. TRANSLATORS: %1 contains the distro name
 #: qml/Wizard/Pages/80-finished.qml:95
-#, fuzzy, qt-format
-#| msgid "Welcome to "
+#, qt-format
 msgid "Welcome to %1"
-msgstr "Tervetuloa "
+msgstr "Tervetuloa, tämä on %1"
 
 #: qml/Wizard/Pages/80-finished.qml:111
 msgid "You are ready to use your device now"
@@ -831,10 +823,8 @@ msgid "Lock Screen Passcode"
 msgstr "Lukitusnäytön suojakoodi"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:68
-#, fuzzy
-#| msgid "Enter 4 numbers to setup your passcode"
 msgid "Enter at least 4 numbers to setup your passcode"
-msgstr "Anna 4 numeroa määrittääksesi suojakoodisi"
+msgstr "Anna vähintään 4 numeroa määrittääksesi suojakoodisi"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:84
 #: qml/Wizard/Pages/passcode-set.qml:54
@@ -854,10 +844,8 @@ msgid "Passcodes do not match"
 msgstr "Suojakoodit eivät vastaa toisiaan"
 
 #: qml/Wizard/Pages/passcode-set.qml:62
-#, fuzzy
-#| msgid "Passcode must be 4 characters long"
 msgid "Passcode must be at least 4 characters long"
-msgstr "Suojakoodin tulee olla 4 merkkiä pitkä"
+msgstr "Suojakoodin tulee olla vähintään 4 merkkiä pitkä"
 
 #: qml/Wizard/Pages/password-set.qml:31
 msgid "Lock Screen Password"
