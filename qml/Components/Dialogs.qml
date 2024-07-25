@@ -273,6 +273,19 @@ MouseArea {
             }
             Button {
                 width: parent.width
+                text: i18n.ctr("Button: Restart the system to Recovery", "Restart to Recovery")
+                onClicked: {
+                    doOnClosedAllWindows = function(lomiriSessionService, powerDialog) {
+                        return function() {
+                            lomiriSessionService.rebootToRecovery();
+                            powerDialog.hide();
+                        }
+                    }(lomiriSessionService, powerDialog);
+                    topLevelSurfaceList.closeAllWindows();
+                }
+            }
+            Button {
+                width: parent.width
                 text: i18n.tr("Screenshot")
                 onClicked: {
                     powerDialog.hide();
