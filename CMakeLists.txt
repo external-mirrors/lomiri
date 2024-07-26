@@ -106,7 +106,7 @@ pkg_check_modules(LIBLIGHTDM REQUIRED liblightdm-qt5-3)
 option(WITH_MIR2 "Build against Mir 2" OFF)
 
 if (WITH_MIR2)
-    pkg_check_modules(QTMIRSERVER REQUIRED qt5mir2server>=0.6.0)
+    pkg_check_modules(QTMIRSERVER REQUIRED qtmirserver>=0.6.0)
     pkg_check_modules(MIRAL REQUIRED miral>=3.0)
     pkg_check_modules(MIROIL REQUIRED miroil)
 
