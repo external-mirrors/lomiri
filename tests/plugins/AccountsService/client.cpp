@@ -372,7 +372,7 @@ private Q_SLOTS:
             QDBusInterface accountsIface(m_userInterface->service(), m_userInterface->path(), "org.freedesktop.Accounts.User");
             ASSERT_DBUS_CALL(accountsIface.asyncCall("SetInputSources", QVariant::fromValue(inputSources)));
         #else
-            ASSERT_DBUS_CALL (m_userInterface->asyncCall ("Set", "com.lomiri.shell.AccountsService", "InputSources", QVariant::fromValue (inputSources)));
+            ASSERT_DBUS_CALL (m_userInterface->asyncCall ("Set", "com.lomiri.shell.AccountsService", "InputSources", dbusVariant (QVariant::fromValue (inputSources))));
         #endif
 
         QStringList result = {"cz+qwerty", "fr"};
