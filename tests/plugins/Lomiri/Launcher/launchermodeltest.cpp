@@ -844,16 +844,15 @@ private Q_SLOTS:
     void testSurfaceCountUpdates() {
         QString appId = launcherModel->get(0)->appId();
 
-        // Some tests leave the surface count in an inconsitent state
-        MockApp *app = qobject_cast<MockApp*>(appManager->findApplication(appId));
-        MockSurfaceList* surfacesEmpty = new MockSurfaceList(appManager);
-        app->setSurfaces(surfacesEmpty);
-        QCOMPARE(launcherModel->get(0)->surfaceCount(), 0);
+        // init() always adds mock apps with "foobar" surfaces
+        QCOMPARE(launcherModel->get(0)->surfaceCount(), 1);
 
+        MockApp *app = qobject_cast<MockApp*>(appManager->findApplication(appId));
         MockSurfaceList* surfaces = new MockSurfaceList(appManager);
         surfaces->append(new MockSurface("foobar", "foobar", surfaces));
+        surfaces->append(new MockSurface("baz", "baz", surfaces));
         app->setSurfaces(surfaces);
-        QCOMPARE(launcherModel->get(0)->surfaceCount(), 1);
+        QCOMPARE(launcherModel->get(0)->surfaceCount(), 2);
 
         // Make sure the new surface appears in the quicklist
         QuickListModel *quickList = qobject_cast<QuickListModel*>(launcherModel->get(0)->quickList());
