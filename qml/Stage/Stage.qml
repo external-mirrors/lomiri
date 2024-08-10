@@ -1463,8 +1463,6 @@ FocusScope {
                             rightEdgeFocusAnimation.targetX = appDelegate.stage == ApplicationInfoInterface.SideStage ? sideStage.x : 0
                             rightEdgeFocusAnimation.start()
                         }
-                    } else if (state == "windowedRightEdge" || state == "windowed") {
-                        activate();
                     } else {
                         focusAnimation.start()
                     }
