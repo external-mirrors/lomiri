@@ -41,43 +41,6 @@ Item {
     signal stopFakeAnimation()
     signal dragReleased()
 
-    TouchGestureArea {
-        id: gestureArea
-        anchors.fill: parent
-
-        // NB: for testing set to 2, not to clash with lomiri7 touch overlay controls
-        minimumTouchPoints: 3
-        maximumTouchPoints: minimumTouchPoints
-
-        readonly property bool recognizedPress: status == TouchGestureArea.Recognized &&
-                                                touchPoints.length >= minimumTouchPoints &&
-                                                touchPoints.length <= maximumTouchPoints
-        onRecognizedPressChanged: {
-            if (recognizedPress) {
-                target.activate();
-                overlayTimer.start();
-            }
-        }
-
-        readonly property bool recognizedDrag: recognizedPress && dragging
-        onRecognizedDragChanged: {
-            if (recognizedDrag) {
-                moveHandler.handlePressedChanged(true, Qt.LeftButton, tp.x, tp.y);
-            } else if (!mouseArea.containsPress) { // prevent interfering with the central piece drag/move
-                moveHandler.handlePressedChanged(false, Qt.LeftButton);
-                root.dragReleased();
-                moveHandler.handleReleased(true);
-            }
-        }
-
-        readonly property point tp: recognizedPress ? Qt.point(touchPoints[0].x, touchPoints[0].y) : Qt.point(-1, -1)
-        onUpdated: {
-            if (recognizedDrag) {
-                moveHandler.handlePositionChanged(tp, priv.getSensingPoints());
-            }
-        }
-    }
-
     // dismiss timer
     Timer {
         id: overlayTimer
@@ -249,6 +212,43 @@ Item {
             visible: root.enabled || target.maximizedVertically || target.maximizedRight ||
                      target.maximizedTopRight || target.maximizedBottomRight
             resizeTarget: root.resizeArea
+        }
+    }
+
+    TouchGestureArea {
+        id: gestureArea
+        anchors.fill: parent
+
+        // NB: for testing set to 2, not to clash with lomiri7 touch overlay controls
+        minimumTouchPoints: 3
+        maximumTouchPoints: minimumTouchPoints
+
+        readonly property bool recognizedPress: status == TouchGestureArea.Recognized &&
+                                                touchPoints.length >= minimumTouchPoints &&
+                                                touchPoints.length <= maximumTouchPoints
+        onRecognizedPressChanged: {
+            if (recognizedPress) {
+                target.activate();
+                overlayTimer.start();
+            }
+        }
+
+        readonly property bool recognizedDrag: recognizedPress && dragging
+        onRecognizedDragChanged: {
+            if (recognizedDrag) {
+                moveHandler.handlePressedChanged(true, Qt.LeftButton, tp.x, tp.y);
+            } else if (!mouseArea.containsPress) { // prevent interfering with the central piece drag/move
+                moveHandler.handlePressedChanged(false, Qt.LeftButton);
+                root.dragReleased();
+                moveHandler.handleReleased(true);
+            }
+        }
+
+        readonly property point tp: recognizedPress ? Qt.point(touchPoints[0].x, touchPoints[0].y) : Qt.point(-1, -1)
+        onUpdated: {
+            if (recognizedDrag) {
+                moveHandler.handlePositionChanged(tp, priv.getSensingPoints());
+            }
         }
     }
 }
