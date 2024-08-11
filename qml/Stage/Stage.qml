@@ -500,7 +500,7 @@ FocusScope {
     Binding {
         target: panelState
         property: "decorationsVisible"
-        value: mode == "windowed" && priv.focusedAppDelegate && priv.focusedAppDelegate.maximized && !root.spreadShown
+        value: mode == "windowed" && priv.focusedAppDelegate !== null && priv.focusedAppDelegate.maximized && !root.spreadShown
     }
 
     Binding {
