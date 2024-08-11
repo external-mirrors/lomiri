@@ -198,14 +198,9 @@ Rectangle {
                     wrapMode: Text.Wrap
                     Layout.maximumWidth: maxTextSize
                 }
-            }
-
-            GridLayout {
-                columns: 2
-                columnSpacing: padding
-                Layout.alignment: Qt.AlignTop
 
                 // Switching section
+                Item { Layout.columnSpan: 2; height: units.gu(2) }
                 Label {
                     Layout.columnSpan: 2
                     text: i18n.tr("Switching")
@@ -252,10 +247,14 @@ Rectangle {
                     wrapMode: Text.Wrap
                     Layout.maximumWidth: maxTextSize
                 }
+            }
 
+            GridLayout {
+                columns: 2
+                columnSpacing: padding
+                Layout.alignment: Qt.AlignTop
 
                 // Windows section
-                Item { Layout.columnSpan: 2; height: units.gu(2) }
                 Label {
                     Layout.columnSpan: 2
                     text: i18n.tr("Windows")
@@ -323,6 +322,68 @@ Rectangle {
                 }
                 Label {
                     text: i18n.tr("Closes the current window.")
+                    fontSize: "small"
+                    font.weight: Font.Light
+                    wrapMode: Text.Wrap
+                    Layout.maximumWidth: maxTextSize
+                }
+
+                // Workspace section
+                Item { Layout.columnSpan: 2; height: units.gu(2) }
+                Label {
+                    Layout.columnSpan: 2
+                    text: i18n.tr("Screens and Workspaces")
+                    font.weight: Font.Light
+                    color: theme.palette.normal.baseText
+                    lineHeight: 1.3
+                }
+
+                Label {
+                    text: i18n.tr("Ctrl + Alt + Left or Right")
+                    fontSize: "small"
+                    font.weight: Font.Medium
+                }
+                Label {
+                    text: i18n.tr("Switches between workspaces.")
+                    fontSize: "small"
+                    font.weight: Font.Light
+                    wrapMode: Text.Wrap
+                    Layout.maximumWidth: maxTextSize
+                }
+
+                Label {
+                    text: i18n.tr("Ctrl + Alt + Up or Down")
+                    fontSize: "small"
+                    font.weight: Font.Medium
+                }
+                Label {
+                    text: i18n.tr("Switches between screens.")
+                    fontSize: "small"
+                    font.weight: Font.Light
+                    wrapMode: Text.Wrap
+                    Layout.maximumWidth: maxTextSize
+                }
+
+                Label {
+                    text: i18n.tr("Ctrl + Alt + Shift + Left or Right")
+                    fontSize: "small"
+                    font.weight: Font.Medium
+                }
+                Label {
+                    text: i18n.tr("Moves current app between workspaces.")
+                    fontSize: "small"
+                    font.weight: Font.Light
+                    wrapMode: Text.Wrap
+                    Layout.maximumWidth: maxTextSize
+                }
+
+                Label {
+                    text: i18n.tr("Ctrl + Alt + Shift + Up or Down")
+                    fontSize: "small"
+                    font.weight: Font.Medium
+                }
+                Label {
+                    text: i18n.tr("Moves current app between screens.")
                     fontSize: "small"
                     font.weight: Font.Light
                     wrapMode: Text.Wrap
