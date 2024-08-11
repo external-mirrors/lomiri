@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-06 08:14+0000\n"
-"PO-Revision-Date: 2024-08-10 11:00+0000\n"
+"PO-Revision-Date: 2024-08-14 12:07+0000\n"
 "Last-Translator: umesaburo sagawa <atowa-notonare-yamatonare427@pm.me>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/lomiri/lomiri/"
 "ja/>\n"
@@ -26,29 +26,27 @@ msgstr "Lomiri"
 
 #: data/lomiri.desktop.in:5
 msgid "The converged Lomiri shell"
-msgstr ""
+msgstr "収束されたLomiri shell"
 
 #: data/lomiri-greeter.desktop.in:4
-#, fuzzy
-#| msgid "Lomiri"
 msgid "Lomiri Greeter"
 msgstr "Lomiri Greeter"
 
 #: data/lomiri-greeter.desktop.in:5
 msgid "The converged Lomiri shell's Greeter"
-msgstr ""
+msgstr "収束したLomiri shell's Greeter"
 
 #: data/indicators-client.desktop.in:4
 msgid "Indicators Client"
-msgstr ""
+msgstr "指標 クライアント"
 
 #: data/indicators-client.desktop.in:5
 msgid "Application for testing the Indicators system"
-msgstr ""
+msgstr "インジケーターシステムのテスト申請"
 
 #: data/indicators-client.desktop.in:9
 msgid "NoDisplay=false"
-msgstr ""
+msgstr "表示しない"
 
 #: plugins/LightDM/Greeter.cpp:199
 msgid "Password: "
@@ -109,7 +107,7 @@ msgstr "DVI"
 
 #: plugins/WindowManager/Screen.cpp:168
 msgid "Composite"
-msgstr ""
+msgstr "複合材料"
 
 #: plugins/WindowManager/Screen.cpp:170
 msgid "S-Video"
@@ -117,11 +115,11 @@ msgstr "Sビデオ"
 
 #: plugins/WindowManager/Screen.cpp:176
 msgid "Internal"
-msgstr ""
+msgstr "内部"
 
 #: plugins/WindowManager/Screen.cpp:178
 msgid "Component"
-msgstr ""
+msgstr "コンポーネント"
 
 #: plugins/WindowManager/Screen.cpp:180
 msgid "DisplayPort"
@@ -137,7 +135,7 @@ msgstr "テレビ"
 
 #: plugins/WindowManager/Screen.cpp:187
 msgid "Virtual"
-msgstr ""
+msgstr "バーチャル"
 
 #: qml/Components/Dialogs.qml:176
 msgctxt "Title: Lock/Log out dialog"
@@ -356,7 +354,7 @@ msgstr "Ctrl + Super + Left or Right"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:312
 msgid "Semi-maximizes the current window."
-msgstr ""
+msgstr "現在のウィンドウを最大化する。"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:320
 msgid "Alt + F4"
@@ -368,7 +366,7 @@ msgstr "現在のウィンドウを閉じる。"
 
 #: qml/Components/Lockscreen.qml:214 qml/Greeter/GreeterView.qml:472
 msgid "Return to Call"
-msgstr ""
+msgstr "コールへ戻る"
 
 #: qml/Components/Lockscreen.qml:214
 msgid "Emergency Call"
@@ -380,25 +378,25 @@ msgstr "OK"
 
 #: qml/Components/ModeSwitchWarningDialog.qml:33
 msgid "Apps may have unsaved data:"
-msgstr ""
+msgstr "アプリに保存されていないデータがある可能性があります："
 
 #: qml/Components/ModeSwitchWarningDialog.qml:60
 msgctxt ""
 "Re-dock means connect the device again to an external screen/mouse/keyboard"
 msgid "Re-dock, save your work and close these apps to continue."
-msgstr ""
+msgstr "再ドックして作業を保存し、これらのアプリを終了して続行します。"
 
 #: qml/Components/ModeSwitchWarningDialog.qml:67
 msgid "Or force close now (unsaved data will be lost)."
-msgstr ""
+msgstr "または今すぐ強制終了する（未保存のデータは失われます）。"
 
 #: qml/Components/ModeSwitchWarningDialog.qml:80
 msgid "OK, I will reconnect"
-msgstr ""
+msgstr "OK、再接続する"
 
 #: qml/Components/ModeSwitchWarningDialog.qml:81
 msgid "Reconnect now!"
-msgstr ""
+msgstr "今すぐ再接続を！"
 
 #: qml/Components/ModeSwitchWarningDialog.qml:94
 msgid "Close all"
@@ -434,7 +432,7 @@ msgstr "その他の設定はシステム設定でご確認ください。"
 
 #: qml/Greeter/CoverPage.qml:160
 msgid "Fully charged"
-msgstr ""
+msgstr "充電完了"
 
 #: qml/Greeter/CoverPage.qml:168
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1095
@@ -453,12 +451,12 @@ msgstr[0] "%1 分"
 #: qml/Greeter/CoverPage.qml:178
 #, qt-format
 msgid "%1, %2 until full"
-msgstr ""
+msgstr "いっぱいまで"
 
 #: qml/Greeter/CoverPage.qml:181
 #, qt-format
 msgid "%1 until full"
-msgstr ""
+msgstr "いっぱいまで"
 
 #: qml/Greeter/CoverPage.qml:197
 #: tests/qmltests/Greeter/tst_GreeterView.qml:1239
@@ -487,7 +485,6 @@ msgstr[0] "%1 分待ってからやり直してください…"
 #: tests/qmltests/Greeter/tst_Greeter.qml:597
 #: tests/qmltests/Greeter/tst_Greeter.qml:625
 #: tests/qmltests/Greeter/tst_Greeter.qml:637
-#, fuzzy
 msgid "Try again"
 msgstr "再試行"
 
@@ -534,7 +531,7 @@ msgstr "パスワードを表示"
 
 #: qml/Notifications/Notification.qml:322
 msgid "New message"
-msgstr ""
+msgstr "新しいメッセージ"
 
 #: qml/Panel/ActiveCallHint.qml:79
 msgid "Tap to return to call..."
@@ -601,7 +598,7 @@ msgstr "返信"
 #: qml/Panel/Indicators/MessageMenuItemFactory.qml:209
 msgctxt "Button: Call back on phone"
 msgid "Call back"
-msgstr ""
+msgstr "折り返し連絡"
 
 #: qml/Panel/PanelMenuPage.qml:92
 msgid "Back"
@@ -615,34 +612,32 @@ msgstr ""
 
 #: qml/Stage/Stage.qml:834
 msgid "No running apps"
-msgstr ""
+msgstr "実行中のアプリはありません"
 
 #: qml/Tutorial/TutorialLeftLong.qml:49
-#, fuzzy
-#| msgid "Try swiping from the top edge to access the indicators"
 msgid "Long swipe from the left edge to open the Application Drawer"
-msgstr "インジケーターにアクセスするには上端からスワイプしてみてください"
+msgstr "インジケーターにアクセスするには左端から長くスワイプしてみてください"
 
 #: qml/Tutorial/TutorialLeft.qml:47
 msgid "Short swipe from the left edge to open the launcher"
-msgstr ""
+msgstr "ランチャーを開くには左端から短くスワイプします"
 
 #: qml/Tutorial/TutorialRight.qml:54
 msgid "Push your mouse against the right edge to view your open apps"
-msgstr ""
+msgstr "マウスを右端に押し当てると、開いているアプリが表示されます"
 
 #: qml/Tutorial/TutorialRight.qml:55
 msgid "Swipe from the right edge to view your open apps"
-msgstr ""
+msgstr "右端からスワイプすると、開いているアプリが表示されます"
 
 #: qml/Tutorial/TutorialTop.qml:53
 msgid "Swipe from the top edge to access notifications and quick settings"
-msgstr ""
+msgstr "上端からスワイプすると、通知とクイック設定にアクセスできます"
 
 #: qml/Wizard/Page.qml:59
 msgctxt "Button: Go back one page in the Wizard"
 msgid "Back"
-msgstr ""
+msgstr "バック"
 
 #: qml/Wizard/Pages/10-welcome.qml:29
 msgid "Language"
@@ -672,10 +667,9 @@ msgstr "お使いのデバイスが %1 %2 を使用できる状態であるこ�
 
 #: qml/Wizard/Pages/11-changelog.qml:28
 msgid "What's new"
-msgstr ""
+msgstr "新着情報"
 
 #: qml/Wizard/Pages/11-changelog.qml:74
-#, fuzzy
 msgid "Loading..."
 msgstr "入力中..."
 
@@ -723,11 +717,11 @@ msgstr "都市名を入力"
 
 #: qml/Wizard/Pages/60-account.qml:24
 msgid "Personalize Your Device"
-msgstr ""
+msgstr "デバイスをパーソナライズする"
 
 #: qml/Wizard/Pages/60-account.qml:54
 msgid "Preferred Name"
-msgstr ""
+msgstr "ご希望の名前"
 
 #: qml/Wizard/Pages/70-passwd-type.qml:40
 msgid "Lock Screen"
@@ -749,7 +743,6 @@ msgid "No lock code"
 msgstr "ロックコードなし"
 
 #: qml/Wizard/Pages/79-system-update.qml:28
-#, fuzzy
 msgid "Update Device"
 msgstr "デバイスの更新"
 
@@ -773,7 +766,6 @@ msgid "Version %1"
 msgstr "バージョン %1"
 
 #: qml/Wizard/Pages/79-system-update.qml:95
-#, fuzzy
 msgid "This could take a few minutes..."
 msgstr "これには数分かかる場合があります..."
 
@@ -783,7 +775,7 @@ msgstr "今すぐインストールして再起動する"
 
 #: qml/Wizard/Pages/80-finished.qml:93
 msgid "Welcome Back"
-msgstr ""
+msgstr "おかえりなさい"
 
 #. TRANSLATORS: %1 contains the distro name
 #: qml/Wizard/Pages/80-finished.qml:95
@@ -792,7 +784,6 @@ msgid "Welcome to %1"
 msgstr "%1へようこそ"
 
 #: qml/Wizard/Pages/80-finished.qml:111
-#, fuzzy
 msgid "You are ready to use your device now"
 msgstr "これでデバイスを使用する準備が整いました"
 
@@ -802,7 +793,7 @@ msgstr "続ける"
 
 #: qml/Wizard/Pages/80-finished.qml:131
 msgid "Get Started"
-msgstr ""
+msgstr "スタート"
 
 #: qml/Wizard/Pages/passcode-confirm.qml:43
 #: qml/Wizard/Pages/passcode-desktop.qml:104
@@ -829,14 +820,13 @@ msgstr "パスコードを設定するには、少なくとも4つの数字を�
 #: qml/Wizard/Pages/passcode-desktop.qml:84
 #: qml/Wizard/Pages/passcode-set.qml:54
 msgid "Choose passcode"
-msgstr "パスコードを選択"
+msgstr "パスコードの選択"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:139
 msgid "Passcode too short"
 msgstr "パスコードが短すぎます"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:141
-#, fuzzy
 msgid "Passcodes match"
 msgstr "パスコードの一致"
 
@@ -849,7 +839,6 @@ msgid "Passcode must be at least 4 characters long"
 msgstr "パスコードは4文字以上である必要があります"
 
 #: qml/Wizard/Pages/password-set.qml:31
-#, fuzzy
 msgid "Lock Screen Password"
 msgstr "ロック画面のパスワード"
 
@@ -858,7 +847,6 @@ msgid "Enter at least 8 characters"
 msgstr "８文字以上入力してください"
 
 #: qml/Wizard/Pages/password-set.qml:80
-#, fuzzy
 msgid "Choose password"
 msgstr "パスワードを選択"
 
@@ -885,7 +873,7 @@ msgstr "再起動"
 
 #: qml/Wizard/Pages/sim.qml:78
 msgid "You won’t be able to make calls or use text messaging without a SIM."
-msgstr ""
+msgstr "SIMがないと通話もテキストメッセージも使えない。"
 
 #: qml/Wizard/Pages/sim.qml:90
 msgid "To proceed with no SIM tap Skip."
@@ -896,7 +884,6 @@ msgid "Password too short"
 msgstr "パスワードが短すぎます"
 
 #: qml/Wizard/PasswordMeter.qml:89
-#, fuzzy
 msgid "Passwords match"
 msgstr "パスワードの一致"
 
@@ -910,7 +897,7 @@ msgstr "強力なパスワード"
 
 #: qml/Wizard/PasswordMeter.qml:97
 msgid "Fair password"
-msgstr ""
+msgstr "公正なパスワード"
 
 #: qml/Wizard/PasswordMeter.qml:99
 msgid "Weak password"
