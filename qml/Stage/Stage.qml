@@ -316,6 +316,43 @@ FocusScope {
         }
     }
 
+    GlobalShortcut {
+        id: moveAppShowWorkspaceSwitcherShortcutLeft
+        shortcut: Qt.AltModifier|Qt.ControlModifier|Qt.ShiftModifier|Qt.Key_Left
+        active: !workspaceSwitcher.active && root.workspaceEnabled && root.focusedAppDelegate
+        onTriggered: {
+            root.focus = true;
+            workspaceSwitcher.showLeftMoveApp(root.focusedAppDelegate.surface)
+        }
+    }
+    GlobalShortcut {
+        id: moveAppShowWorkspaceSwitcherShortcutRight
+        shortcut: Qt.AltModifier|Qt.ControlModifier|Qt.ShiftModifier|Qt.Key_Right
+        active: !workspaceSwitcher.active && root.workspaceEnabled && root.focusedAppDelegate
+        onTriggered: {
+            root.focus = true;
+            workspaceSwitcher.showRightMoveApp(root.focusedAppDelegate.surface)
+        }
+    }
+    GlobalShortcut {
+        id: moveAppShowWorkspaceSwitcherShortcutUp
+        shortcut: Qt.AltModifier|Qt.ControlModifier|Qt.ShiftModifier|Qt.Key_Up
+        active: !workspaceSwitcher.active && root.workspaceEnabled && root.focusedAppDelegate
+        onTriggered: {
+            root.focus = true;
+            workspaceSwitcher.showUpMoveApp(root.focusedAppDelegate.surface)
+        }
+    }
+    GlobalShortcut {
+        id: moveAppShowWorkspaceSwitcherShortcutDown
+        shortcut: Qt.AltModifier|Qt.ControlModifier|Qt.ShiftModifier|Qt.Key_Down
+        active: !workspaceSwitcher.active && root.workspaceEnabled && root.focusedAppDelegate
+        onTriggered: {
+            root.focus = true;
+            workspaceSwitcher.showDownMoveApp(root.focusedAppDelegate.surface)
+        }
+    }
+
     QtObject {
         id: priv
         objectName: "DesktopStagePrivate"
