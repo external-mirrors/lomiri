@@ -1,5 +1,3 @@
-pkg_check_modules(LIBLIGHTDM REQUIRED liblightdm-qt5-3)
-
 set(PLUGIN_CLASSNAME "FullLightDM")
 
 add_definitions(-DFULL_LIGHTDM)

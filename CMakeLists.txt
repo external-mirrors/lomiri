@@ -1,4 +1,4 @@
-cmake_minimum_required (VERSION 3.5.0)
+cmake_minimum_required (VERSION 3.7.0)
 
 # Default install location. Must be set here, before setting the project.
 if (NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -101,6 +101,7 @@ pkg_check_modules(UAL REQUIRED lomiri-app-launch-0>=0.1.5)
 pkg_check_modules(LOMIRIGESTURES REQUIRED LomiriGestures)
 pkg_check_modules(DEVICEINFO REQUIRED deviceinfo)
 pkg_check_modules(LOMIRISCHEMA REQUIRED lomiri-schemas>=0.1.4)
+pkg_check_modules(LIBLIGHTDM REQUIRED liblightdm-qt5-3)
 
 option(WITH_MIR2 "Build against Mir 2" OFF)
 

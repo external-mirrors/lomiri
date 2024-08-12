@@ -50,6 +50,9 @@ class Q_DECL_EXPORT SessionsModel : public QAbstractListModel
         explicit SessionsModel(SessionsModel::SessionType, QObject* parent=nullptr);
         virtual ~SessionsModel();
 
+#ifndef LIGHTDM_COMPAT_QT4
+        QHash<int, QByteArray> roleNames() const;
+#endif // !LIGHTDM_COMPAT_QT4
         int rowCount(const QModelIndex& parent) const override;
         QVariant data(const QModelIndex& index, int role) const override;
 
