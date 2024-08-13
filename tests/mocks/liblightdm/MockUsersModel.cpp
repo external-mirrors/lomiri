@@ -16,10 +16,12 @@
  * Author: Michael Terry <michael.terry@canonical.com>
  */
 
+#ifdef LIGHTDM_COMPAT_QT4
 // LightDM currently is Qt4 compatible, and so doesn't define setRoleNames.
 // To use the same method of setting role name that it does, we
 // set our compatibility to Qt4 here too.
 #define QT_DISABLE_DEPRECATED_BEFORE QT_VERSION_CHECK(4, 0, 0)
+#endif // LIGHTDM_COMPAT_QT4
 
 #include "MockController.h"
 #include "MockUsersModel.h"
@@ -54,6 +56,7 @@ UsersModel::UsersModel(QObject *parent)
     : QAbstractListModel(parent)
     , d_ptr(new UsersModelPrivate)
 {
+#ifdef LIGHTDM_COMPAT_QT4
     // Extend roleNames (we want to keep the "display" role)
     QHash<int, QByteArray> roles = roleNames();
     roles[NameRole] = "name";
@@ -72,6 +75,7 @@ UsersModel::UsersModel(QObject *parent)
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
     setRoleNames(roles);
 #pragma GCC diagnostic pop
+#endif // LIGHTDM_COMPAT_QT4
 
     connect(MockController::instance(), &MockController::hasGuestAccountHintChanged,
             this, &UsersModel::resetEntries);
@@ -88,6 +92,26 @@ UsersModel::~UsersModel()
 {
     delete d_ptr;
 }
+
+#ifndef LIGHTDM_COMPAT_QT4
+QHash<int, QByteArray> UsersModel::roleNames() const
+{
+    QHash<int, QByteArray> roles;
+    roles[Qt::DisplayRole] = "display";
+    roles[Qt::DecorationRole] = "decoration";
+    roles[NameRole] = "name";
+    roles[RealNameRole] = "realName";
+    roles[LoggedInRole] = "loggedIn";
+    roles[BackgroundRole] = "background";
+    roles[BackgroundPathRole] = "backgroundPath";
+    roles[SessionRole] = "session";
+    roles[HasMessagesRole] = "hasMessages";
+    roles[ImagePathRole] = "imagePath";
+    roles[UidRole] = "uid";
+
+    return roles;
+}
+#endif // !LIGHTDM_COMPAT_QT4
 
 void UsersModel::setCurrentSessionName(const QString &sessionName, const QString &username)
 {

@@ -16,10 +16,12 @@
  */
 
 
+#ifdef LIGHTDM_COMPAT_QT4
 // LightDM currently is Qt4 compatible, and so doesn't define setRoleNames.
 // To use the same method of setting role name that it does, we
 // set our compatibility to Qt4 here too.
 #define QT_DISABLE_DEPRECATED_BEFORE QT_VERSION_CHECK(4, 0, 0)
+#endif // LIGHTDM_COMPAT_QT4
 
 #include "MockController.h"
 #include "MockSessionsModel.h"
@@ -30,7 +32,9 @@ namespace QLightDM
 class SessionsModelPrivate
 {
 public:
+#ifdef LIGHTDM_COMPAT_QT4
     QHash<int, QByteArray> roleNames;
+#endif // LIGHTDM_COMPAT_QT4
     QList<MockController::SessionItem> sessionItems;
 };
 
@@ -40,6 +44,7 @@ SessionsModel::SessionsModel(QObject* parent)
 {
     Q_D(SessionsModel);
 
+#ifdef LIGHTDM_COMPAT_QT4
     auto roleNames = QAbstractListModel::roleNames();
     roleNames[KeyRole] = "key";
     roleNames[TypeRole] = "type";
@@ -50,6 +55,7 @@ SessionsModel::SessionsModel(QObject* parent)
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
     setRoleNames(roleNames);
 #pragma GCC diagnostic pop
+#endif // LIGHTDM_COMPAT_QT4
 
     connect(MockController::instance(), &MockController::sessionModeChanged,
             this, &SessionsModel::resetEntries);
@@ -62,6 +68,19 @@ SessionsModel::~SessionsModel()
 {
     delete d_ptr;
 }
+
+#ifndef LIGHTDM_COMPAT_QT4
+QHash<int, QByteArray> SessionsModel::roleNames() const
+{
+    QHash<int, QByteArray> roles;
+    roles[Qt::DisplayRole] = "display";
+    roles[Qt::ToolTipRole] = "toolTip";
+    roles[KeyRole] = "key";
+    roles[TypeRole] = "type";
+
+    return roles;
+}
+#endif // !LIGHTDM_COMPAT_QT4
 
 QVariant SessionsModel::data(const QModelIndex& index, int role) const
 {
