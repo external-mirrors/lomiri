@@ -866,6 +866,7 @@ FocusScope {
             height: appContainer.height
             x: appContainer.width - width
             visible: false
+            showHint: !priv.sideStageDelegate
             Behavior on opacity { LomiriNumberAnimation {} }
             z: {
                 if (!priv.mainStageItemId) return 0;
