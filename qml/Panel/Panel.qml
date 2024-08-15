@@ -58,6 +58,22 @@ Item {
     property string mode: "staged"
     property PanelState panelState
 
+    property bool temporarilyShown: false
+
+    function temporarilyShow() {
+        temporarilyShown = true
+        temporaryShowTimeout.restart()
+    }
+
+    Timer {
+        id: temporaryShowTimeout
+        running: false
+        interval: 2000
+        onTriggered: {
+            temporarilyShown = false
+        }
+    }
+
     MouseArea {
         id: backMouseEater
         anchors.fill: parent
@@ -498,7 +514,7 @@ Item {
     states: [
         State {
             name: "onscreen" //fully opaque and visible at top edge of screen
-            when: !fullscreenMode
+            when: !fullscreenMode || temporarilyShown
             PropertyChanges {
                 target: panelArea;
                 anchors.topMargin: 0

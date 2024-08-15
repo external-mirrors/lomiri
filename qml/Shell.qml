@@ -551,6 +551,24 @@ StyledItem {
 
         anchors.fill: parent
 
+        SwipeArea {
+            objectName: "fullscreenSwipeDown"
+            enabled: panel.state === "offscreen"
+            direction: SwipeArea.Downwards
+            immediateRecognition: false
+            height: units.gu(2)
+            anchors {
+                top: parent.top
+                left: parent.left
+                right: parent.right
+            }
+            onDraggingChanged: {
+                if (dragging) {
+                    panel.temporarilyShow()
+                }
+            }
+        }
+
         Panel {
             id: panel
             objectName: "panel"
