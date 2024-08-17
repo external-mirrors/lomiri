@@ -895,7 +895,7 @@ FocusScope {
 
             onDropped: {
                 drop.source.appDelegate.saveStage(ApplicationInfoInterface.MainStage);
-                drop.source.appDelegate.focus = true;
+                drop.source.appDelegate.activate();
             }
             keys: "SideStage"
         }
@@ -957,7 +957,7 @@ FocusScope {
                 onDropped: {
                     if (drop.keys == "MainStage") {
                         drop.source.appDelegate.saveStage(ApplicationInfoInterface.SideStage);
-                        drop.source.appDelegate.focus = true;
+                        drop.source.appDelegate.activate();
                     }
                 }
                 drag {
