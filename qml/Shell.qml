@@ -175,7 +175,7 @@ StyledItem {
     readonly property bool atDesktop: topLevelSurfaceList && greeter && topLevelSurfaceList.count === 0 && !greeter.active
 
     onAtDesktopChanged: {
-        if (atDesktop && stage) {
+        if (atDesktop && stage && !stage.workspaceEnabled) {
             stage.closeSpread();
         }
     }
