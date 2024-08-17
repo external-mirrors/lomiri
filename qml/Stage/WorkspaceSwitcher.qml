@@ -29,6 +29,8 @@ Item {
 
     property var screensProxy: Screens.createProxy();
     property string background
+    property bool launcherLockedVisible: false
+    property real topPanelHeight
 
     readonly property alias active: d.active
 
@@ -188,6 +190,8 @@ Item {
                         selectedIndex: d.highlightedScreenIndex == index ? d.highlightedWorkspaceIndex : -1
 
                         workspaceModel: model.screen.workspaces
+                        launcherLockedVisible: root.launcherLockedVisible
+                        topPanelHeight: root.topPanelHeight
                     }
                 }
             }

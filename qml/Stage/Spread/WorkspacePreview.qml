@@ -18,6 +18,7 @@ import QtQuick 2.12
 import Lomiri.Components 1.3
 import QtMir.Application 0.1
 import WindowManager 1.0
+import Utils 0.1
 import ".."
 import "../../Components"
 
@@ -29,7 +30,8 @@ Item {
 
     property QtObject screen
     property string background
-    property int screenHeight
+    property real screenHeight
+    property real launcherWidth
 
     property real previewScale: previewSpace.height / previewSpace.screenHeight
 
@@ -43,19 +45,80 @@ Item {
         anchors.fill: parent
         sourceSize.width: width
         sourceSize.height: height
+        fillMode: Image.PreserveAspectCrop
+        autoTransform: true
 
         Repeater {
             id: topLevelSurfaceRepeater
             model: visible ? workspace.windowModel : null
             delegate: Item {
-                width: surfaceItem.width
-                height: surfaceItem.height + decorationHeight * previewScale
-                x: (model.window.position.x - screen.position.x) * previewScale
-                y: (model.window.position.y - screen.position.y - decorationHeight) * previewScale
+                id: delegateItem
+
+                readonly property bool isMaximized : model.window.state === Mir.MaximizedState
+                readonly property bool isFullscreen : model.window.state === Mir.FullscreenState
+                readonly property bool isAnyMaximized : isMaximized || isMaximizedVertically || isMaximizedHorizontally
+                                                        || isMaximizedLeft || isMaximizedRight || isMaximizedTopLeft
+                                                        || isMaximizedTopRight || isMaximizedBottomLeft || isMaximizedBottomRight
+                readonly property bool isMaximizedVertically : model.window.state === Mir.VertMaximizedState
+                readonly property bool isMaximizedHorizontally : model.window.state === Mir.HorizMaximizedState
+                readonly property bool isMaximizedLeft : model.window.state === Mir.MaximizedLeftState
+                readonly property bool isMaximizedRight : model.window.state === Mir.MaximizedRightState
+                readonly property bool isMaximizedTopLeft : model.window.state === Mir.MaximizedTopLeftState
+                readonly property bool isMaximizedTopRight : model.window.state === Mir.MaximizedTopRightState
+                readonly property bool isMaximizedBottomLeft : model.window.state === Mir.MaximizedBottomLeftState
+                readonly property bool isMaximizedBottomRight : model.window.state === Mir.MaximizedBottomRightState
+
+                width: {
+                    if (isFullscreen || isMaximized || isMaximizedHorizontally) {
+                        return previewSpace.width
+                    }
+
+                    if (isMaximizedLeft || isMaximizedRight || isMaximizedTopLeft || isMaximizedTopRight
+                            || isMaximizedBottomLeft || isMaximizedBottomRight) {
+                        return previewSpace.width / 2
+                    }
+
+                    return surfaceItem.width * previewScale
+                }
+                height: {
+                    if (isFullscreen || isMaximized || isMaximizedVertically || isMaximizedLeft || isMaximizedRight) {
+                        return previewSpace.height
+                    }
+
+                    if (isMaximizedTopLeft || isMaximizedTopRight || isMaximizedBottomLeft || isMaximizedBottomRight) {
+                        return previewSpace.height / 2
+                    }
+
+                    return (surfaceItem.height * previewScale) + decorationHeight
+                }
+                x: {
+                    if (isFullscreen || isMaximized || isMaximizedLeft || isMaximizedTopLeft
+                            || isMaximizedBottomLeft || isMaximizedHorizontally) {
+                        return 0
+                    }
+
+                    if (isMaximizedRight || isMaximizedTopRight || isMaximizedBottomRight) {
+                        return previewSpace.width / 2
+                    }
+
+                    return (model.window.position.x - screen.position.x - previewSpace.launcherWidth) * previewScale
+                }
+                y: {
+                    if (isFullscreen || isMaximized || isMaximizedLeft || isMaximizedRight || isMaximizedTopLeft
+                            || isMaximizedTopRight || isMaximizedVertically) {
+                        return 0
+                    }
+
+                    if (isMaximizedBottomLeft || isMaximizedBottomRight) {
+                        return previewSpace.height / 2
+                    }
+
+                    return (model.window.position.y - screen.position.y - decorationHeight) * previewScale
+                }
                 z: topLevelSurfaceRepeater.count - index
                 visible: model.window.state !== Mir.MinimizedState && model.window.state !== Mir.HiddenState
 
-                property int decorationHeight: units.gu(3)
+                property int decorationHeight: isFullscreen || isMaximized ? 0 : units.gu(3)
 
                 WindowDecoration {
                     width: surfaceItem.implicitWidth
@@ -73,11 +136,15 @@ Item {
                 MirSurfaceItem {
                     id: surfaceItem
                     y: parent.decorationHeight * previewScale
-                    width: implicitWidth * previewScale
-                    height: implicitHeight * previewScale
-                    surfaceWidth: -1
-                    surfaceHeight: -1
+                    width: implicitWidth
+                    height: implicitHeight
                     surface: model.window.surface
+                    transform: Scale {
+                        origin.x: 0
+                        origin.y: 0
+                        xScale: previewScale
+                        yScale: previewScale
+                    }
                 }
             }
         }

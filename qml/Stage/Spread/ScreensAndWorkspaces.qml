@@ -19,6 +19,7 @@ import Lomiri.Components 1.3
 import Lomiri.Components.Popups 1.3
 import WindowManager 1.0
 import QtMir.Application 0.1
+import QtQuick.Layouts 1.12
 import ".."
 import "../.."
 
@@ -32,6 +33,8 @@ Item {
     property QtObject activeWorkspace: null
 
     property string mode : "staged"
+    property bool launcherLockedVisible: false
+    property real topPanelHeight
 
     signal closeSpread();
 
@@ -108,22 +111,26 @@ Item {
                         }
                     }
 
-                    Column {
+                    ColumnLayout {
+                        spacing: 0
                         anchors.fill: parent
                         anchors.margins: units.gu(1)
 
                         Label {
+                            Layout.fillHeight: true
                             text: model.screen.name
                             color: header.isCurrent || header.isSelected ? "black" : "white"
                         }
 
                         Label {
+                            Layout.fillHeight: true
                             text: model.screen.outputTypeName
                             color: header.isCurrent || header.isSelected ? "black" : "white"
                             fontSize: "x-small"
                         }
 
                         Label {
+                            Layout.fillHeight: true
                             text: screen.availableModes[screen.currentModeIndex].size.width + "x" + screen.availableModes[screen.currentModeIndex].size.height
                             color: header.isCurrent || header.isSelected ? "black" : "white"
                             fontSize: "x-small"
@@ -215,6 +222,8 @@ Item {
                     anchors.horizontalCenter: parent.horizontalCenter
                     screen: model.screen
                     background: root.background
+                    launcherLockedVisible: root.launcherLockedVisible
+                    topPanelHeight: root.topPanelHeight
 
                     workspaceModel: model.screen.workspaces
                     activeWorkspace: root.activeWorkspace

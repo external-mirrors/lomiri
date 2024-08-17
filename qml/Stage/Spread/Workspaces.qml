@@ -17,6 +17,7 @@
 import QtQuick 2.12
 import Lomiri.Components 1.3
 import WindowManager 1.0
+import GSettings 1.0
 import "MathUtils.js" as MathUtils
 import "../../Components"
 
@@ -34,10 +35,17 @@ Item {
     property int selectedIndex: -1
     property bool readOnly: true
     property var activeWorkspace: null
+    property bool launcherLockedVisible: false
+    property real topPanelHeight
 
     signal commitScreenSetup();
     signal closeSpread();
     signal clicked(var workspace);
+
+    GSettings {
+        id: settings
+        schema.id: "com.lomiri.Shell"
+    }
 
     DropArea {
         anchors.fill: root
@@ -132,9 +140,26 @@ Item {
             leftMargin: itemWidth
             rightMargin: itemWidth
 
-            property int screenWidth: screen.availableModes[screen.currentModeIndex].size.width
-            property int screenHeight: screen.availableModes[screen.currentModeIndex].size.height
-            property int itemWidth: height * screenWidth / screenHeight
+            // FIXME: Screen orientation changed event does not trigger properly
+            // so we rely on height getting changed when rotating hence updating the value as needed
+            readonly property bool screenIsLandscape: screen.orientation == Qt.LandscapeOrientation
+                                                            || screen.orientation == Qt.InvertedLandscapeOrientation ? height > 0
+                                                                                                                     : height < 0
+
+            // Get the screen size based on screen's current orientation
+            readonly property var screenSize: screen.availableModes[screen.currentModeIndex].size
+            readonly property real screenWidth: screenIsLandscape ? screenSize.width >= screenSize.height ? screenSize.width : screenSize.height
+                                                                           : screenSize.width >= screenSize.height ? screenSize.height : screenSize.width
+            readonly property real screenHeight: screenIsLandscape ? screenSize.width >= screenSize.height ? screenSize.height : screenSize.width
+                                                                            : screenSize.width >= screenSize.height ? screenSize.width : screenSize.height
+
+            // Deduct top panel's height to screen's height
+            // and deduct launcher's width to screen's width, if locked,
+            // to accurately get available desktop area
+            readonly property real screenSpaceHeight: screenHeight - root.topPanelHeight
+            readonly property real launcherWidth: root.launcherLockedVisible ? units.gu(settings.launcherWidth) : 0
+            readonly property real screenSpaceWidth: screenWidth - launcherWidth
+            property real itemWidth: height * screenSpaceWidth / screenSpaceHeight
             property int foldingAreaWidth: itemWidth / 2
             property int maxAngle: 40
 
@@ -265,7 +290,8 @@ Item {
                     width: listView.itemWidth
                     screen: root.screen
                     background: root.background
-                    screenHeight: listView.screenHeight
+                    screenHeight: listView.screenSpaceHeight
+                    launcherWidth: listView.launcherWidth
                     containsDragLeft: listView.hoveredWorkspaceIndex == index && listView.hoveredHalf == "left"
                     containsDragRight: listView.hoveredWorkspaceIndex == index && listView.hoveredHalf == "right"
                     isActive: workspace.isSameAs(root.activeWorkspace)
@@ -387,7 +413,8 @@ Item {
                     width: listView.itemWidth
                     screen: root.screen
                     background: root.background
-                    screenHeight: screen.availableModes[screen.currentModeIndex].size.height
+                    screenHeight: listView.screenSpaceHeight
+                    launcherWidth: listView.launcherWidth
                     visible: Drag.active
 
                     Drag.active: hoverMouseArea.drag.active

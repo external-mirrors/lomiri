@@ -108,6 +108,8 @@ FocusScope {
     }
 
     property int launcherLeftMargin : 0
+    property bool launcherLockedVisible: false
+    property real topPanelHeight
 
     Binding {
         target: topLevelSurfaceList
@@ -712,6 +714,8 @@ FocusScope {
             visible: workspaceEnabled ? opacity > 0 : false
             enabled: workspaceEnabled
             mode: root.mode
+            launcherLockedVisible: root.launcherLockedVisible
+            topPanelHeight: root.topPanelHeight
             onCloseSpread: priv.goneToSpread = false;
         }
 
@@ -2222,6 +2226,8 @@ FocusScope {
         height: units.gu(20)
         width: root.width - units.gu(8)
         background: root.background
+        launcherLockedVisible: root.launcherLockedVisible
+        topPanelHeight: root.topPanelHeight
         onActiveChanged: {
             if (!active) {
                 appContainer.focus = true;
