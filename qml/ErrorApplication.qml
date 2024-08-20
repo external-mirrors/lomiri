@@ -47,18 +47,34 @@ Instantiator {
             width: window.width
             height: window.height
 
-            Rectangle {
+            sourceComponent: Rectangle {
                 color: "white"
                 Column {
                     spacing: units.gu(1)
+                    anchors {
+                        left: parent.left
+                        right: parent.right
+                    }
 
                     Label {
                         text: "Lomiri encountered an unrecoverable error while loading:"
                         fontSize: "large"
+                        color: "black"
+                        wrapMode: Text.WordWrap
+                        anchors {
+                            left: parent.left
+                            right: parent.right
+                        }
                     }
 
                     Label {
                         text: errorString
+                        color: "black"
+                        wrapMode: Text.WordWrap
+                        anchors {
+                            left: parent.left
+                            right: parent.right
+                        }
                     }
                 }
             }
