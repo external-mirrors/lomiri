@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-06 08:14+0000\n"
-"PO-Revision-Date: 2023-10-25 16:02+0000\n"
-"Last-Translator: Lundrin <berenyi.vilmos@tutanota.com>\n"
+"PO-Revision-Date: 2024-08-23 11:07+0000\n"
+"Last-Translator: \"Benedek Vigh (冯白诺)\" <benedek.vigh@gmail.com>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/lomiri/lomiri/"
 "hu/>\n"
 "Language: hu\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.1.1\n"
+"X-Generator: Weblate 5.7.1-dev\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:35+0000\n"
 
 #: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
@@ -46,7 +46,7 @@ msgstr "Alkalmazás az indikátor rendszer teszteléséhez"
 
 #: data/indicators-client.desktop.in:9
 msgid "NoDisplay=false"
-msgstr ""
+msgstr "NoDisplay=false"
 
 #: plugins/LightDM/Greeter.cpp:199
 msgid "Password: "
@@ -135,7 +135,7 @@ msgstr "TV"
 
 #: plugins/WindowManager/Screen.cpp:187
 msgid "Virtual"
-msgstr ""
+msgstr "Virtuális"
 
 #: qml/Components/Dialogs.qml:176
 msgctxt "Title: Lock/Log out dialog"
@@ -436,7 +436,7 @@ msgstr "További beállítások a rendszerbeállítások alatt."
 
 #: qml/Greeter/CoverPage.qml:160
 msgid "Fully charged"
-msgstr ""
+msgstr "Teljesen feltöltve"
 
 #: qml/Greeter/CoverPage.qml:168
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1095
@@ -457,12 +457,12 @@ msgstr[1] "%1 perc"
 #: qml/Greeter/CoverPage.qml:178
 #, qt-format
 msgid "%1, %2 until full"
-msgstr ""
+msgstr "%1, %2 a teljes töltésig"
 
 #: qml/Greeter/CoverPage.qml:181
 #, qt-format
 msgid "%1 until full"
-msgstr ""
+msgstr "%1 a teljes töltésig"
 
 #: qml/Greeter/CoverPage.qml:197
 #: tests/qmltests/Greeter/tst_GreeterView.qml:1239
@@ -538,7 +538,7 @@ msgstr "Jelszó megjelenítése"
 
 #: qml/Notifications/Notification.qml:322
 msgid "New message"
-msgstr ""
+msgstr "Új üzenet"
 
 #: qml/Panel/ActiveCallHint.qml:79
 msgid "Tap to return to call..."
