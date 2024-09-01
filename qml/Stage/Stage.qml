@@ -2403,6 +2403,13 @@ FocusScope {
             }
         }
 
+        onDropped: {
+            // Hide side stage if the app drag was cancelled
+            if (!priv.sideStageDelegate) {
+                sideStage.hide();
+            }
+        }
+
         Component {
             id: dragComponent
             SurfaceContainer {
