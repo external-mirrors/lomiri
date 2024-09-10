@@ -33,14 +33,14 @@
     patched org.freedesktop.Accounts.User when building with
     ENABLE_UBUNTU_ACCOUNTSSERVICE disabled -->
     <property name="FormatsLocale" type="s" access="readwrite">
-      <annotation name="org.freedesktop.Accounts.DefaultValue" value=""/>
+      <annotation name="org.freedesktop.Accounts.DefaultValue.String" value=""/>
     </property>
 
     <!-- Background image chosen by the user - used instead of Ubuntu's
     patched org.freedesktop.Accounts.User when building with
     ENABLE_UBUNTU_ACCOUNTSSERVICE disabled -->
     <property name="BackgroundFile" type="s" access="readwrite">
-      <annotation name="org.freedesktop.Accounts.DefaultValue" value=""/>
+      <annotation name="org.freedesktop.Accounts.DefaultValue.String" value=""/>
     </property>
 
     <!-- Keyboard input sources chosen by the user - used instead of Ubuntu's
