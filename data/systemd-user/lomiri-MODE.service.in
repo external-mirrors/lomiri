@@ -4,7 +4,6 @@ Requires=dbus.socket
 After=dbus.socket
 Wants=lomiri-indicators.target
 Before=lomiri-indicators.target
-Conflicts=@CONFLICT_UNITS@
 
 [Service]
 Type=notify
