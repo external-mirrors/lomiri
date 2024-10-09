@@ -71,7 +71,7 @@ FocusScope {
                 if (response == root.enteredText)
                     root.accepted();
                 else
-                    waitingToAccept = true;
+                    root.waitingToAccept = true;
             }
         }
 

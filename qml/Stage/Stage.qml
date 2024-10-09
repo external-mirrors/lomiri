@@ -1125,7 +1125,7 @@ FocusScope {
                     target: root
                     function onShellOrientationAngleChanged() {
                         // at this point decoratedWindow.surfaceOrientationAngle is the old shellOrientationAngle
-                        if (application && application.rotatesWindowContents) {
+                        if (appDelegate.application && appDelegate.application.rotatesWindowContents) {
                             if (root.state == "windowed") {
                                 var angleDiff = decoratedWindow.surfaceOrientationAngle - shellOrientationAngle;
                                 angleDiff = (360 + angleDiff) % 360;

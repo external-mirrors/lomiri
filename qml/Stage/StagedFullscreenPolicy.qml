@@ -40,7 +40,7 @@ QtObject {
     property var _connections: Connections {
         target: surface
         function onShellChromeChanged() {
-            if (!active || !surface) return;
+            if (!root.active || !surface) return;
             if (surface.shellChrome === Mir.LowChrome) {
                 surface.requestState(Mir.FullscreenState);
             } else {
