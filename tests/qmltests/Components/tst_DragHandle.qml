@@ -15,6 +15,7 @@
  */
 
 import QtQuick 2.15
+import QtQml 2.15
 import "../../../qml/Components"
 import "tst_DragHandle"
 import Lomiri.Components 1.3

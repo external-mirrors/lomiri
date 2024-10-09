@@ -15,6 +15,7 @@
  */
 
 import QtQuick 2.15
+import QtQml 2.15
 import QtQuick.Layouts 1.1
 import QtTest 1.0
 import Lomiri.SelfTest 0.1

@@ -15,6 +15,7 @@
  */
 
 import QtQuick 2.15
+import QtQml 2.15
 import QtTest 1.0
 import Lomiri.Components 1.3
 import Lomiri.Components.ListItems 1.3

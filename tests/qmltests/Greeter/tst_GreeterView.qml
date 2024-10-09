@@ -16,6 +16,7 @@
  */
 
 import QtQuick 2.15
+import QtQml 2.15
 import QtQuick.Window 2.2
 import QtTest 1.0
 import ".."
