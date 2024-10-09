@@ -14,7 +14,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.12
+import QtQuick 2.15
+import QtQml 2.15
 import "../Components"
 
 Item {
@@ -26,6 +27,7 @@ Item {
         target: list
         property: "bottomMargin"
         value: d.bottomMargin
+        restoreMode: Binding.RestoreBinding
     }
 
     function setMakeSureVisibleItem(item) {

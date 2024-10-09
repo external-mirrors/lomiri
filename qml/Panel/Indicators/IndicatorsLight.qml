@@ -18,7 +18,8 @@
  *      Renato Araujo Oliveira Filho <renato@canonical.com>
  */
 
-import QtQuick 2.12
+import QtQuick 2.15
+import QtQml 2.15
 import Powerd 0.1
 import Hfd 0.1
 import QMenuModel 1.0 as QMenuModel
@@ -216,18 +217,21 @@ console.log("no support for Multicolor LED. " + indicatorState)
 
     property var _colorBinding: Binding {
         target: Leds
+        restoreMode: Binding.RestoreBinding
         property: "color"
         value: root.color
     }
 
     property var _onMillisecBinding: Binding {
         target: Leds
+        restoreMode: Binding.RestoreBinding
         property: "onMillisec"
         value: root.onMillisec
     }
 
     property var _offMillisecBinding: Binding {
         target: Leds
+        restoreMode: Binding.RestoreBinding
         property: "offMillisec"
         value: root.offMillisec
     }

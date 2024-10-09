@@ -397,6 +397,7 @@ StyledItem {
                         visible: LightDMController.sessionMode === "full"
                         Binding {
                             target: LightDMController
+                            restoreMode: Binding.RestoreBinding
                             property: "numSessions"
                             value: numSessionsSlider.value
                         }
@@ -431,6 +432,7 @@ StyledItem {
  */
     Binding {
         target: LightDM.Infographic
+        restoreMode: Binding.RestoreBinding
         property: "username"
         value: "has-password"
     }

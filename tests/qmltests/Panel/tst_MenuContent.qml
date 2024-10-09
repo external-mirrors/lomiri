@@ -41,6 +41,7 @@ PanelTest {
 
             Binding {
                 target: parent
+                restoreMode: Binding.RestoreBinding
                 property: "objectName"
                 value: modelData ? modelData.identifier : ""
             }

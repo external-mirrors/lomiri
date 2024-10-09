@@ -40,6 +40,7 @@ Item {
 
     Binding {
         target: MouseTouchAdaptor
+        restoreMode: Binding.RestoreBinding
         property: "enabled"
         value: false
     }
@@ -151,7 +152,7 @@ Item {
                             value = 0;
                         }
                     }
-                    Binding { target: stageLoader.item; property: "rightEdgePushProgress"; value: rightEdgePushSlider.value }
+                    Binding { target: stageLoader.item; restoreMode: Binding.RestoreBinding; property: "rightEdgePushProgress"; value: rightEdgePushSlider.value }
                 }
 
                 Divider {}

@@ -14,7 +14,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.12
+import QtQuick 2.15
+import QtQml 2.15
 import QtQuick.Layouts 1.1
 import QtTest 1.0
 import GSettings 1.0
@@ -45,6 +46,7 @@ Rectangle {
 
     Binding {
         target: LightDMController
+        restoreMode: Binding.RestoreBinding
         property: "userMode"
         value: ldmUserMode
     }

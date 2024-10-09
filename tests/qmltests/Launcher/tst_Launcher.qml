@@ -92,16 +92,19 @@ Rectangle {
 
     Binding {
         target: launcherLoader.item
+        restoreMode: Binding.RestoreBinding
         property: "lockedVisible"
         value: lockedVisibleCheckBox.checked
     }
     Binding {
         target: launcherLoader.item
+        restoreMode: Binding.RestoreBinding
         property: "privateMode"
         value: privateModeCheckBox.checked
     }
     Binding {
         target: launcherLoader.item
+        restoreMode: Binding.RestoreBinding
         property: "panelWidth"
         value: units.gu(Math.round(widthSlider.value))
     }

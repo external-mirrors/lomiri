@@ -31,6 +31,7 @@ Showable {
     Binding {
         when: stretch
         target: root
+        restoreMode: Binding.RestoreBinding
         property: "y"
         value: root.parent.height - root.height
     }

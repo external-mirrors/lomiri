@@ -90,6 +90,7 @@ Column {
             }
             Binding {
                 target: checkbox
+                restoreMode: Binding.RestoreBinding
                 property: "checked"
                 value: d.application != null
             }

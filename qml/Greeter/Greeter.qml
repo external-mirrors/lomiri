@@ -15,7 +15,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.12
+import QtQuick 2.15
+import QtQml 2.15
 import AccountsService 0.1
 import Biometryd 0.0
 import GSettings 1.0
@@ -394,54 +395,63 @@ Showable {
             target: loader.item
             property: "panelHeight"
             value: root.panelHeight
+            restoreMode: Binding.RestoreBinding
         }
 
         Binding {
             target: loader.item
             property: "launcherOffset"
             value: d.launcherOffsetProxy
+            restoreMode: Binding.RestoreBinding
         }
 
         Binding {
             target: loader.item
             property: "dragHandleLeftMargin"
             value: root.dragHandleLeftMargin
+            restoreMode: Binding.RestoreBinding
         }
 
         Binding {
             target: loader.item
             property: "delayMinutes"
             value: forcedDelayTimer.delayMinutes
+            restoreMode: Binding.RestoreBinding
         }
 
         Binding {
             target: loader.item
             property: "background"
             value: root.background
+            restoreMode: Binding.RestoreBinding
         }
 
         Binding {
             target: loader.item
             property: "backgroundSourceSize"
             value: root.backgroundSourceSize
+            restoreMode: Binding.RestoreBinding
         }
 
         Binding {
             target: loader.item
             property: "hasCustomBackground"
             value: root.hasCustomBackground
+            restoreMode: Binding.RestoreBinding
         }
 
         Binding {
             target: loader.item
             property: "locked"
             value: root.locked
+            restoreMode: Binding.RestoreBinding
         }
 
         Binding {
             target: loader.item
             property: "waiting"
             value: d.waiting
+            restoreMode: Binding.RestoreBinding
         }
 
         Binding {

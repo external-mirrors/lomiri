@@ -15,7 +15,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.12
+import QtQuick 2.15
+import QtQml 2.15
 import QtQuick.Window 2.2
 import AccountsService 0.1
 import QtMir.Application 0.1
@@ -83,6 +84,7 @@ StyledItem {
     property real largestScreenDimension
     Binding {
         target: shell
+        restoreMode: Binding.RestoreBinding
         delayed: true
         property: "largestScreenDimension"
         value: Math.max(nativeWidth, nativeHeight)
@@ -240,6 +242,7 @@ StyledItem {
 
     Binding {
         target: LauncherModel
+        restoreMode: Binding.RestoreBinding
         property: "applicationManager"
         value: ApplicationManager
     }
@@ -892,10 +895,12 @@ StyledItem {
         property bool mouseNeverMoved: true
         Binding {
             target: cursor; property: "x"; value: shell.width / 2
+            restoreMode: Binding.RestoreBinding
             when: cursor.mouseNeverMoved && cursor.visible
         }
         Binding {
             target: cursor; property: "y"; value: shell.height / 2
+            restoreMode: Binding.RestoreBinding
             when: cursor.mouseNeverMoved && cursor.visible
         }
 

@@ -34,6 +34,7 @@ Item {
 
     Binding {
         target: MouseTouchAdaptor
+        restoreMode: Binding.RestoreBinding
         property: "enabled"
         value: false
     }

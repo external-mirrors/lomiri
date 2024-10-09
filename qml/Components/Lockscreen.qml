@@ -15,7 +15,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.12
+import QtQuick 2.15
+import QtQml 2.15
 import Lomiri.Components 1.3
 import Lomiri.Components.Popups 1.3
 import Lomiri.Telephony 0.1 as Telephony
@@ -156,41 +157,49 @@ Showable {
             target: pinPadLoader.item
             property: "minPinLength"
             value: root.minPinLength
+            restoreMode: Binding.RestoreBinding
         }
         Binding {
             target: pinPadLoader.item
             property: "maxPinLength"
             value: root.maxPinLength
+            restoreMode: Binding.RestoreBinding
         }
         Binding {
             target: pinPadLoader.item
             property: "infoText"
             value: root.infoText
+            restoreMode: Binding.RestoreBinding
         }
         Binding {
             target: pinPadLoader.item
             property: "retryText"
             value: root.retryText
+            restoreMode: Binding.RestoreBinding
         }
         Binding {
             target: pinPadLoader.item
             property: "errorText"
             value: pinPadLoader.showWrongText ? root.errorText : ""
+            restoreMode: Binding.RestoreBinding
         }
         Binding {
             target: pinPadLoader.item
             property: "entryEnabled"
             value: !pinPadLoader.waiting
+            restoreMode: Binding.RestoreBinding
         }
         Binding {
             target: pinPadLoader.item
             property: "showCancelButton"
             value: root.showCancelButton
+            restoreMode: Binding.RestoreBinding
         }
         Binding {
             target: pinPadLoader.item
             property: "foregroundColor"
             value: root.foregroundColor
+            restoreMode: Binding.RestoreBinding
         }
     }
 

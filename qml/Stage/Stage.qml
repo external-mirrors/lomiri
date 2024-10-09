@@ -15,7 +15,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.12
+import QtQuick 2.15
+import QtQml 2.15
 import QtQuick.Window 2.2
 import Lomiri.Components 1.3
 import QtMir.Application 0.1
@@ -113,6 +114,7 @@ FocusScope {
 
     Binding {
         target: topLevelSurfaceList
+        restoreMode: Binding.RestoreBinding
         property: "rootFocus"
         value: interactive
     }
@@ -499,12 +501,14 @@ FocusScope {
 
     Binding {
         target: panelState
+        restoreMode: Binding.RestoreBinding
         property: "decorationsVisible"
         value: mode == "windowed" && priv.focusedAppDelegate !== null && priv.focusedAppDelegate.maximized && !root.spreadShown
     }
 
     Binding {
         target: panelState
+        restoreMode: Binding.RestoreBinding
         property: "title"
         value: {
             if (priv.focusedAppDelegate !== null) {
@@ -520,6 +524,7 @@ FocusScope {
 
     Binding {
         target: panelState
+        restoreMode: Binding.RestoreBinding
         property: "focusedPersistentSurfaceId"
         value: {
             if (priv.focusedAppDelegate !== null) {
@@ -534,12 +539,14 @@ FocusScope {
 
     Binding {
         target: panelState
+        restoreMode: Binding.RestoreBinding
         property: "dropShadow"
         value: priv.focusedAppDelegate && !priv.focusedAppDelegate.maximized && priv.foregroundMaximizedAppDelegate !== null && mode == "windowed"
     }
 
     Binding {
         target: panelState
+        restoreMode: Binding.RestoreBinding
         property: "closeButtonShown"
         value: priv.focusedAppDelegate && priv.focusedAppDelegate.maximized
     }
@@ -572,16 +579,19 @@ FocusScope {
                 target: model.application
                 property: "requestedState"
                 value: applicationDelegate.requestedState
+                restoreMode: Binding.RestoreBinding
             }
 
             property var lifecycleBinding: Binding {
                 target: model.application
                 property: "exemptFromLifecycle"
+                restoreMode: Binding.RestoreBinding
                 value: model.application
                             ? (!model.application.isTouchApp ||
                                isExemptFromLifecycle(model.application.appId) ||
                                applicationDelegate.temporaryAwaken)
                             : false
+
             }
 
             property var focusRequestedConnection: Connections {
@@ -1052,11 +1062,13 @@ FocusScope {
                     value: Qt.point(appDelegate.requestedX + appDelegate.clientAreaItem.x + screenOffsetX,
                                     appDelegate.requestedY + appDelegate.clientAreaItem.y + screenOffsetY)
                     when: root.mode == "windowed"
+                    restoreMode: Binding.RestoreBinding
                 }
                 Binding {
                     target: model.window; property: "requestedPosition"
                     value: Qt.point(screenOffsetX, screenOffsetY)
                     when: root.mode != "windowed"
+                    restoreMode: Binding.RestoreBinding
                 }
 
                 // In those are for windowed mode. Those values basically store the window's properties
@@ -1117,6 +1129,7 @@ FocusScope {
                                     Math.max(0, priv.virtualKeyboardHeight - (appContainer.height - (appDelegate.requestedY + appDelegate.height))))
                     when: root.oskEnabled && appDelegate.focus && (appDelegate.state == "normal" || appDelegate.state == "restored")
                           && root.inputMethodRect.height > 0
+                    restoreMode: Binding.RestoreBinding
                 }
 
                 Behavior on x { id: xBehavior; enabled: priv.closingIndex >= 0; LomiriNumberAnimation { onRunningChanged: if (!running) priv.closingIndex = -1} }
@@ -1998,6 +2011,7 @@ FocusScope {
                     target: panelState
                     property: "decorationsAlwaysVisible"
                     value: appDelegate && appDelegate.maximized && touchControls.overlayShown
+                    restoreMode: Binding.RestoreBinding
                 }
 
                 WindowResizeArea {

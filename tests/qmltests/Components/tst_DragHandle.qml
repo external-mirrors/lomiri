@@ -36,6 +36,7 @@ Rectangle {
 
     Binding {
         target: MouseTouchAdaptor
+        restoreMode: Binding.RestoreBinding
         property: "enabled"
         value: true
     }

@@ -42,6 +42,7 @@ Rectangle {
 
     Binding {
         target: UT.MouseTouchAdaptor
+        restoreMode: Binding.RestoreBinding
         property: "enabled"
         value: false
     }
@@ -102,6 +103,7 @@ Rectangle {
 
                 Binding {
                     target: panelState
+                    restoreMode: Binding.RestoreBinding
                     property: "focusedPersistentSurfaceId"
                     value: decoratedWindow.surface ? decoratedWindow.surface.persistentId : "x"
                 }
