@@ -24,13 +24,13 @@ Item {
 
     Connections {
         target: SurfaceManager
-        onSurfaceCreated: {
+        function onSurfaceCreated(surface) {
             var fakeMenuPath = "/" + surface.persistentId.replace(/\W+/g, "");
 
             ApplicationMenuRegistry.RegisterSurfaceMenu(surface.persistentId, fakeMenuPath, fakeMenuPath, ":1");
             Indicators.LomiriMenuModelCache.setCachedModelData(fakeMenuPath, generateTestData(4, 3, 2, 3, "menu"));
         }
-        onSurfaceRemoved: {
+        function onSurfaceRemoved(surface) {
             ApplicationMenuRegistry.UnregisterSurfaceMenu(surface.persistentId, "/app");
         }
     }

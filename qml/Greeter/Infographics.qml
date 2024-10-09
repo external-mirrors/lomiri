@@ -48,14 +48,14 @@ Item {
         target: model
         ignoreUnknownSignals: model === undefined
 
-        onDataAboutToAppear: startHideAnimation() // hide "no data" label
-        onDataAppeared: startShowAnimation()
+        function onDataAboutToAppear() { startHideAnimation() } // hide "no data" label
+        function onDataAppeared() {  startShowAnimation() }
 
-        onDataAboutToChange: startHideAnimation()
-        onDataChanged: startShowAnimation()
+        function onDataAboutToChange() {  startHideAnimation() }
+        function onDataChanged() {  startShowAnimation() }
 
-        onDataAboutToDisappear: startHideAnimation()
-        onDataDisappeared: startShowAnimation() // show "no data" label
+        function onDataAboutToDisappear() {  startHideAnimation() }
+        function onDataDisappeared() { startShowAnimation() } // show "no data" label
     }
 
     LiveTimer {

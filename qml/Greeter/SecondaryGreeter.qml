@@ -57,14 +57,14 @@ Showable {
 
     Connections {
         target: ShellNotifier.greeter
-        onHide: {
+        function onHide(now) {
             if (now) {
                 root.hideNow(); // skip hide animation
             } else {
                 root.hide();
             }
         }
-        onShownChanged: {
+        function onShownChanged() {
             if (ShellNotifier.greeter.shown) {
                 root.show();
             } else {

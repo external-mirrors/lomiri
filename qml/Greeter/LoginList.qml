@@ -285,7 +285,7 @@ StyledItem {
 
         Connections {
             target: LightDMService.prompts
-            onModelReset: promptList.interactive = true
+            function onModelReset() { promptList.interactive = true }
         }
     }
 

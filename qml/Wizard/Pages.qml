@@ -142,11 +142,11 @@ StyledItem {
 
     Connections {
         target: SystemImage
-        onUpdateDownloaded: {
+        function onUpdateDownloaded() {
             console.info("Wizard: A system-image update has been downloaded!")
             root.updateDownloaded = true;
         }
-        onCheckingForUpdatesChanged: {
+        function onCheckingForUpdatesChanged() {
             if (!SystemImage.checkingForUpdates) {
                 console.info("Wizard: Update check finished")
                 if (SystemImage.updateAvailable) {
@@ -258,7 +258,7 @@ StyledItem {
 
         Connections {
             target: pageStack.currentPage
-            onSkipValidChanged: pageStack.checkSkip()
+            function onSkipValidChanged() { pageStack.checkSkip() }
         }
 
         Component.onCompleted: {

@@ -42,7 +42,7 @@ LocalComponents.Page {
 
     Connections {
         target: root.modemManager
-        onGotSimCardChanged: {
+        function onGotSimCardChanged() {
             if (!hadSIM && root.modemManager.gotSimCard) { // show the restart dialog in case a SIM gets inserted
                 restartDialog.visible = true;
             }

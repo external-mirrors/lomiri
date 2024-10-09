@@ -433,7 +433,7 @@ Rectangle {
                     }
                     Connections {
                         target: shellRect
-                        onModeChanged: {
+                        function onModeChanged() {
                             if (shellModeSelector.guard) {
                                 return;
                             }

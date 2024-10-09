@@ -63,7 +63,7 @@ Rectangle {
 
                 Connections {
                     target: root
-                    onPositionChanged: {
+                    function onPositionChanged() {
                         rect.rotation = position/100
                     }
                 }

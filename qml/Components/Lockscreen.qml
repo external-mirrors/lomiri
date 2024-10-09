@@ -142,12 +142,12 @@ Showable {
         Connections {
             target: pinPadLoader.item
 
-            onEntered: {
+            function onEntered() {
                 pinPadLoader.waiting = true
                 root.entered(passphrase);
             }
 
-            onCancel: {
+            function onCancel() {
                 root.cancel()
             }
         }

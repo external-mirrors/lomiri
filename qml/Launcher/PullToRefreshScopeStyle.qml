@@ -30,12 +30,12 @@ PullToRefreshStyle {
         property bool willRefresh: false
 
         target: styledItem.target
-        onDraggingChanged: {
+        function onDraggingChanged() {
             if (!styledItem.target.dragging && releaseToRefresh) {
                 willRefresh = true
             }
         }
-        onContentYChanged: {
+        function onContentYChanged() {
             if (styledItem.target.originY - styledItem.target.contentY == 0 && willRefresh) {
                 styledItem.refresh()
                 willRefresh = false

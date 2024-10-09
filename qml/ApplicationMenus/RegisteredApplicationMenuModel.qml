@@ -42,12 +42,12 @@ Item {
 
     Connections {
         target: ApplicationMenuRegistry
-        onSurfaceMenuRegistered: {
+        function onSurfaceMenuRegistered(surfaceId) {
             if (surfaceId === persistentSurfaceId) {
                 update();
             }
         }
-        onSurfaceMenuUnregistered: {
+        function onSurfaceMenuUnregistered(surfaceId) {
             if (surfaceId === persistentSurfaceId) {
                 update();
             }

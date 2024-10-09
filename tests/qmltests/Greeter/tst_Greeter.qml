@@ -354,7 +354,7 @@ Item {
         Connections {
             id: launcherOffsetWatcher
             property var values: []
-            onLauncherOffsetChanged: {
+            function onLauncherOffsetChanged() {
                 values.push(target.launcherOffset);
             }
         }

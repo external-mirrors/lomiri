@@ -99,7 +99,7 @@ Item {
 
         Connections {
             target: loader.item
-            onFinished: AccountsService.demoEdges = false
+            function onFinished() { AccountsService.demoEdges = false }
         }
     }
 }

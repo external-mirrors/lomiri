@@ -62,7 +62,7 @@ Canvas {
 
     Connections {
         target: UInput
-        onMouseMoved: {
+        function onMouseMoved() {
             var newX = root.x;
             newX += dx;
             if (newX < 0) newX = 0;

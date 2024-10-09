@@ -43,8 +43,8 @@ Rectangle {
     Connections {
         target: lockscreen
 
-        onEmergencyCall: emergencyCheckBox.checked = true
-        onEntered: {
+        function onEmergencyCall() { emergencyCheckBox.checked = true }
+        function onEntered(passphrase) {
             enteredLabel.text = passphrase
             lockscreen.clear(true)
         }

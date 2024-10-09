@@ -58,7 +58,7 @@ Column {
 
         Connections {
             target: ApplicationManager
-            onCountChanged: {
+            function onCountChanged() {
                 d.application = ApplicationManager.findApplication(root.appId);
             }
         }

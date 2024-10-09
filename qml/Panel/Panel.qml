@@ -255,12 +255,12 @@ Item {
 
                         Connections {
                             target: __applicationMenus
-                            onShownChanged: bar.dismiss();
+                            function onShownChanged() { bar.dismiss(); }
                         }
 
                         Connections {
                             target: __indicators
-                            onShownChanged: bar.dismiss();
+                            function onShownChanged() { bar.dismiss(); }
                         }
 
                         onDoubleClicked: panelState.restoreClicked()

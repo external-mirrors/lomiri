@@ -103,7 +103,7 @@ Item {
 
         Connections {
             target: root.lomiriMenuModel
-            onModelReset: d.firstInvisibleIndex = undefined
+            function onModelReset() { d.firstInvisibleIndex = undefined }
         }
 
         Component {
@@ -190,7 +190,7 @@ Item {
 
                 Connections {
                     target: d
-                    onDismissAll: visualItem.dismiss()
+                    function onDismissAll() { visualItem.dismiss() }
                 }
 
                 RowLayout {
@@ -362,7 +362,7 @@ Item {
 
         Connections {
             target: d
-            onDismissAll: overflowButton.dismiss()
+            function onDismissAll() { overflowButton.dismiss() }
         }
 
         Component {

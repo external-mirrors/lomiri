@@ -305,12 +305,12 @@ FocusScope {
 
     Connections {
         target: LauncherModel
-        onHint: hint();
+        function onHint() { hint(); }
     }
 
     Connections {
         target: i18n
-        onLanguageChanged: LauncherModel.refresh()
+        function onLanguageChanged() { LauncherModel.refresh() }
     }
 
     SequentialAnimation {
@@ -458,7 +458,7 @@ FocusScope {
         property var dismissTimer: Timer { interval: 500 }
         Connections {
             target: panel.dismissTimer
-            onTriggered: {
+            function onTriggered() {
                 if (root.state !== "drawer" && root.autohideEnabled && !root.lockedVisible) {
                     if (!edgeBarrier.containsMouse && !panel.preventHiding) {
                         root.state = ""

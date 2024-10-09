@@ -126,7 +126,7 @@ StyledItem {
     }
     Connections {
         target: ApplicationManager
-        onFocusRequested: {
+        function onFocusRequested(appId) {
             if (shell.mainApp && shell.mainApp.appId === appId) {
                 _onMainAppChanged(appId);
             }
@@ -424,7 +424,7 @@ StyledItem {
         property bool toggleDrawerAfterUnlock: false
         Connections {
             target: greeter
-            onActiveChanged: {
+            function onActiveChanged() {
                 if (greeter.active)
                     return
 
@@ -497,7 +497,7 @@ StyledItem {
         id: callConnection
         target: callManager
 
-        onHasCallsChanged: {
+        function onHasCallsChanged() {
             if (greeter.locked && callManager.hasCalls && greeter.lockedApp !== "dialer-app") {
                 // We just received an incoming call while locked.  The
                 // indicator will have already launched dialer-app for us, but
@@ -516,7 +516,7 @@ StyledItem {
         id: powerConnection
         target: Powerd
 
-        onStatusChanged: {
+        function onStatusChanged(reason) {
             if (Powerd.status === Powerd.Off && reason !== Powerd.Proximity &&
                     !callManager.hasCalls && !wizard.active) {
                 // We don't want to simply call greeter.showNow() here, because
@@ -851,7 +851,7 @@ StyledItem {
 
     Connections {
         target: SessionBroadcast
-        onShowHome: if (shell.mode !== "greeter") showHome()
+        function onShowHome() { if (shell.mode !== "greeter") showHome() }
     }
 
     URLDispatcher {
@@ -869,7 +869,7 @@ StyledItem {
         Connections {
             target: stage
             ignoreUnknownSignals: true
-            onItemSnapshotRequested: itemGrabber.capture(item)
+            function onItemSnapshotRequested(item) { itemGrabber.capture(item) }
         }
     }
 

@@ -57,12 +57,12 @@ ListItem.Empty {
 
             Connections {
                 target: listItem
-                onCheckedChanged: checkBox.checked = listItem.checked
+                function onCheckedChanged() { checkBox.checked = listItem.checked }
             }
 
             Connections {
                 target: listItem.__mouseArea
-                onClicked: {
+                function onClicked() {
                     listItem.checked = !listItem.checked
                     listItem.triggered(listItem.checked)
                 }

@@ -148,7 +148,7 @@ Rectangle {
                 }
                 Connections {
                     target: fakeApplication
-                    onStateChanged: {
+                    function onStateChanged(state) {
                         testCase.setApplicationState(state);
                     }
                 }

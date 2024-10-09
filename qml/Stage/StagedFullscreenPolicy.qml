@@ -26,6 +26,7 @@ import QtMir.Application 0.1
 // Chrome not set and state change to restored -> client window stays "restored"
 // Chrome not set and state change to fulscreen -> client window stays "fullscreen"
 QtObject {
+    id: root
     property bool active: true
 
     function applyPolicy(surfaceState, surfaceChrome) {
@@ -38,7 +39,7 @@ QtObject {
     property var surface: null
     property var _connections: Connections {
         target: surface
-        onShellChromeChanged: {
+        function onShellChromeChanged() {
             if (!active || !surface) return;
             if (surface.shellChrome === Mir.LowChrome) {
                 surface.requestState(Mir.FullscreenState);

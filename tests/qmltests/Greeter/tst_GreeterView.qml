@@ -313,7 +313,7 @@ StyledItem {
                         }
                         Connections {
                             target: LightDMController
-                            onSessionModeChanged: {
+                            function onSessionModeChanged() {
                                 if (LightDMController.userMode === "full") {
                                     multipleSessionsCheckbox.checked = true;
                                 } else {
@@ -373,7 +373,7 @@ StyledItem {
                         }
                         Connections {
                             target: LightDMController
-                            onSessionModeChanged: {
+                            function onSessionModeChanged() {
                                 if (LightDMController.sessionMode === "full") {
                                     multipleSessionsCheckbox.checked = true;
                                 } else {

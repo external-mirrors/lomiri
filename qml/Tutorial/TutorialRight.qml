@@ -29,7 +29,7 @@ TutorialPage {
     Connections {
         target: stage
         ignoreUnknownSignals: true
-        onSpreadShownChanged: if (stage.spreadShown && root.shown) root.hide()
+        function onSpreadShownChanged() { if (stage.spreadShown && root.shown) root.hide() }
     }
 
     mouseArea {

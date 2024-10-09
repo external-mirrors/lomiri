@@ -209,7 +209,7 @@ FocusScope {
 
         Connections {
             target: i18n
-            onLanguageChanged: appDrawerModel.refresh()
+            function onLanguageChanged() { appDrawerModel.refresh() }
         }
 
         Item {

@@ -47,7 +47,7 @@ FocusScope {
 
     Connections {
         target: surface
-        onReady:  d.surfaceUp()
+        function onReady() {  d.surfaceUp() }
     }
 
     Component.onCompleted: {

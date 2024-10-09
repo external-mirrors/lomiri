@@ -47,7 +47,7 @@ MouseArea {
     Connections {
         target: topLevelSurfaceList
 
-        onClosedAllWindows: {
+        function onClosedAllWindows() {
             doOnClosedAllWindows();
         }
     }
@@ -292,7 +292,7 @@ MouseArea {
     Connections {
         target: root.lomiriSessionService
 
-        onLogoutRequested: {
+        function onLogoutRequested() {
             // Display a dialog to ask the user to confirm.
             if (!dialogLoader.active) {
                 dialogLoader.sourceComponent = logoutDialogComponent;
@@ -301,12 +301,12 @@ MouseArea {
             }
         }
 
-        onShutdownRequested: {
+        function onShutdownRequested() {
             // Display a dialog to ask the user to confirm.
             showPowerDialog();
         }
 
-        onRebootRequested: {
+        function onRebootRequested() {
             // Display a dialog to ask the user to confirm.
 
             // display a combined reboot/shutdown dialog, sadly the session indicator calls rather the "Reboot()" method
@@ -315,7 +315,7 @@ MouseArea {
             showPowerDialog();
         }
 
-        onLogoutReady: {
+        function onLogoutReady() {
             doOnClosedAllWindows = function(lomiriSessionService) {
                 return function() {
                     Qt.quit();

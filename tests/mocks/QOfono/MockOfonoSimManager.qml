@@ -48,6 +48,6 @@ Item {
 
     Connections {
         target: MockQOfono
-        onModemsChanged: asyncTimer.start()
+        function onModemsChanged() { asyncTimer.start() }
     }
 }

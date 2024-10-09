@@ -262,12 +262,12 @@ FocusScope {
 
         Connections {
             target: ApplicationMenuRegistry
-            onSurfaceMenuRegistered: {
+            function onSurfaceMenuRegistered(surfaceId) {
                 if (surface && surfaceId === surface.persistentId) {
                     sharedAppModel.menus = Qt.binding(function() { return surface ? ApplicationMenuRegistry.getMenusForSurface(surface.persistentId) : [] });
                 }
             }
-            onSurfaceMenuUnregistered: {
+            function onSurfaceMenuUnregistered(surfaceId) {
                 if (surface && surfaceId === surface.persistentId) {
                     sharedAppModel.menus = Qt.binding(function() { return surface ? ApplicationMenuRegistry.getMenusForSurface(surface.persistentId) : [] });
                 }

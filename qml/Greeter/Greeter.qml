@@ -371,19 +371,19 @@ Showable {
 
         Connections {
             target: loader.item
-            onSelected: {
+            function onSelected(index) {
                 d.selectUser(index);
             }
-            onResponded: {
+            function onResponded(response) {
                 if (root.locked) {
                     LightDMService.greeter.respond(response);
                 } else {
                     d.login();
                 }
             }
-            onTease: root.tease()
-            onEmergencyCall: root.emergencyCall()
-            onRequiredChanged: {
+            function onTease() { root.tease() }
+            function onEmergencyCall() { root.emergencyCall() }
+            function onRequiredChanged() {
                 if (!loader.item.required) {
                     ShellNotifier.greeter.hide(false);
                 }
@@ -502,10 +502,10 @@ Showable {
     Connections {
         target: LightDMService.greeter
 
-        onShowGreeter: root.forceShow()
-        onHideGreeter: root.forcedUnlock = true
+        function onShowGreeter() { root.forceShow() }
+        function onHideGreeter() { root.forcedUnlock = true }
 
-        onLoginError: {
+        function onLoginError(automatic) {
             if (!loader.item) {
                 return;
             }
@@ -526,18 +526,18 @@ Showable {
             }
         }
 
-        onLoginSuccess: {
+        function onLoginSuccess(automatic) {
             if (!automatic) {
                 d.login();
             }
         }
 
-        onRequestAuthenticationUser: d.selectUser(d.getUserIndex(user))
+        function onRequestAuthenticationUser(user) { d.selectUser(d.getUserIndex(user)) }
     }
 
     Connections {
         target: ShellNotifier.greeter
-        onHide: {
+        function onHide(now) {
             if (now) {
                 root.hideNow(); // skip hide animation
             } else {
@@ -554,8 +554,8 @@ Showable {
 
     Connections {
         target: DBusLomiriSessionService
-        onLockRequested: root.forceShow()
-        onUnlocked: {
+        function onLockRequested() { root.forceShow() }
+        function onUnlocked() {
             root.forcedUnlock = true;
             ShellNotifier.greeter.hide(true);
         }
@@ -575,7 +575,7 @@ Showable {
 
     Connections {
         target: i18n
-        onLanguageChanged: LightDMService.infographic.readyForDataChange()
+        function onLanguageChanged() { LightDMService.infographic.readyForDataChange() }
     }
 
     Timer {

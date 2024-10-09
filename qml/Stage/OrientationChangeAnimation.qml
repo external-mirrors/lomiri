@@ -75,7 +75,7 @@ QtObject {
 
     property Connections chosenAnimationConns: Connections {
         target: root.chosenAnimation
-        onReadyChanged: {
+        function onReadyChanged() {
             if (root.chosenAnimation.ready) {
                 root.chosenAnimation.start();
             }

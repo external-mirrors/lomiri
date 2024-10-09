@@ -535,7 +535,7 @@ Rectangle {
             id: appRepeaterConnections
             ignoreUnknownSignals : true
             property var itemAddedCallback: null
-            onItemAdded: {
+            function onItemAdded(index, item) {
                 if (itemAddedCallback) {
                     itemAddedCallback(item);
                 }

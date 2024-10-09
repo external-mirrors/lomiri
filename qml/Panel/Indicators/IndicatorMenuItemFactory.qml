@@ -683,7 +683,7 @@ Item {
                 property bool enabled: true
                 target: (enabled && calendarItem.visible) ? calendarItem : null
 
-                onSelectedDateChanged: {
+                function onSelectedDateChanged() {
                     menuModel.activate(menuIndex, selectedDate.getTime() / 1000 | 0)
                 }
             }

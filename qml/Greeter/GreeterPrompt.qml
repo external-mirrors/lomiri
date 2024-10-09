@@ -65,10 +65,10 @@ FocusScope {
 
         Connections {
             target: loader.item
-            onClicked: root.clicked()
-            onCanceled: root.canceled()
-            onAccepted: {
-                if (response == enteredText)
+            function onClicked() { root.clicked() }
+            function onCanceled() { root.canceled() }
+            function onAccepted(response) {
+                if (response == root.enteredText)
                     root.accepted();
                 else
                     waitingToAccept = true;

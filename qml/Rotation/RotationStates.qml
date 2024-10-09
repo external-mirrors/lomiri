@@ -116,7 +116,7 @@ StateGroup {
 
         property Connections shellConnections: Connections {
             target: root.orientedShell
-            onOrientationChangesEnabledChanged: {
+            function onOrientationChangesEnabledChanged() {
                 d.tryUpdateState();
             }
         }

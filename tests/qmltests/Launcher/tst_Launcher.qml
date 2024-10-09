@@ -71,7 +71,7 @@ Rectangle {
                 Connections {
                     target: testCase.findChild(launcher, "launcherPanel")
 
-                    onXChanged: {
+                    function onXChanged() {
                         if (target.x > launcher.maxPanelX) {
                             launcher.maxPanelX = target.x;
                         }

@@ -36,7 +36,7 @@ Item {
 
     Connections {
         target: i18n
-        onLanguageChanged: {
+        function onLanguageChanged() {
             if (visible) {
                 timeLabel.text = Qt.formatTime(clock.currentDate); // kicks time
                 clock.currentDate = new Date(); // kicks date

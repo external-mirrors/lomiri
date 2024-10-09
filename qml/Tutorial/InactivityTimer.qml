@@ -41,12 +41,12 @@ Item {
 
     Connections {
         target: page
-        onIsReadyChanged: {
+        function onIsReadyChanged() {
             if (page.isReady && inactivityTimer.running) {
                 inactivityTimer.restart();
             }
         }
-        onPausedChanged: {
+        function onPausedChanged() {
             if (root.paused) {
                 delayTimer.stop();
                 inactivityTimer.stop();

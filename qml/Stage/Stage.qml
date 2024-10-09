@@ -492,9 +492,9 @@ FocusScope {
 
     Connections {
         target: panelState
-        onCloseClicked: { if (priv.focusedAppDelegate) { priv.focusedAppDelegate.close(); } }
-        onMinimizeClicked: { if (priv.focusedAppDelegate) { priv.focusedAppDelegate.requestMinimize(); } }
-        onRestoreClicked: { if (priv.focusedAppDelegate) { priv.focusedAppDelegate.requestRestore(); } }
+        function onCloseClicked() { if (priv.focusedAppDelegate) { priv.focusedAppDelegate.close(); } }
+        function onMinimizeClicked() { if (priv.focusedAppDelegate) { priv.focusedAppDelegate.requestMinimize(); } }
+        function onRestoreClicked() { if (priv.focusedAppDelegate) { priv.focusedAppDelegate.requestRestore(); } }
     }
 
     Binding {
@@ -587,7 +587,7 @@ FocusScope {
             property var focusRequestedConnection: Connections {
                 target: model.application
 
-                onFocusRequested: {
+                function onFocusRequested() {
                     // Application emits focusRequested when it has no surface (i.e. their processes died).
                     // Find the topmost window for this application and activate it, after which the app
                     // will be requested to be running.
@@ -879,7 +879,7 @@ FocusScope {
 
         Connections {
             target: root.topLevelSurfaceList
-            onListChanged: priv.updateMainAndSideStageIndexes()
+            function onListChanged() { priv.updateMainAndSideStageIndexes() }
         }
 
 
@@ -1096,10 +1096,10 @@ FocusScope {
 
                 Connections {
                     target: appDelegate
-                    onXChanged: appDelegate.updateNormalGeometry();
-                    onYChanged: appDelegate.updateNormalGeometry();
-                    onWidthChanged: appDelegate.updateNormalGeometry();
-                    onHeightChanged: appDelegate.updateNormalGeometry();
+                    function onXChanged() { appDelegate.updateNormalGeometry(); }
+                    function onYChanged() {  appDelegate.updateNormalGeometry(); }
+                    function onWidthChanged() {  appDelegate.updateNormalGeometry(); }
+                    function onHeightChanged() {  appDelegate.updateNormalGeometry(); }
                 }
 
                 // True when the Stage is focusing this app and playing its own animation.
@@ -1123,7 +1123,7 @@ FocusScope {
 
                 Connections {
                     target: root
-                    onShellOrientationAngleChanged: {
+                    function onShellOrientationAngleChanged() {
                         // at this point decoratedWindow.surfaceOrientationAngle is the old shellOrientationAngle
                         if (application && application.rotatesWindowContents) {
                             if (root.state == "windowed") {
@@ -1276,16 +1276,16 @@ FocusScope {
 
                 Connections {
                     target: model.window
-                    onFocusedChanged: {
+                    function onFocusedChanged() {
                         updateQmlFocusFromMirSurfaceFocus();
                         if (!model.window.focused) {
                             inhibitSlideAnimation = false;
                         }
                     }
-                    onFocusRequested: {
+                    function onFocusRequested() {
                         appDelegate.activate();
                     }
-                    onStateChanged: {
+                    function onStateChanged(value) {
                         if (value == Mir.MinimizedState) {
                             appDelegate.minimize();
                         } else if (value == Mir.MaximizedState) {

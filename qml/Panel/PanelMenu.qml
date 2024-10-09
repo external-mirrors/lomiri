@@ -310,7 +310,7 @@ Showable {
 
     Connections {
         target: showAnimation
-        onRunningChanged: {
+        function onRunningChanged() {
             if (showAnimation.running) {
                 root.state = "commit";
             }
@@ -319,7 +319,7 @@ Showable {
 
     Connections {
         target: hideAnimation
-        onRunningChanged: {
+        function onRunningChanged() {
             if (hideAnimation.running) {
                 root.state = "initial";
             }

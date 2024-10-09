@@ -52,7 +52,7 @@ Showable {
 
         Connections {
             target: loader.item
-            onQuit: wizard.hide()
+            function onQuit() { wizard.hide() }
         }
     }
 }

@@ -30,7 +30,7 @@ Rectangle {
 
     Connections {
         target: surfaceContainerLoader.status === Loader.Ready ? surfaceContainerLoader.item : null
-        onSurfaceChanged: {
+        function onSurfaceChanged(surface) {
             surfaceCheckbox.checked = surfaceContainerLoader.item.surface !== null
         }
     }

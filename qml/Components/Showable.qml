@@ -143,7 +143,7 @@ Item {
 
     Connections {
         target: hideAnimation ? hideAnimation: null
-        onRunningChanged: {
+        function onRunningChanged() {
             if (!hideAnimation.running) {
                 required = false;
             }

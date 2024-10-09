@@ -53,7 +53,7 @@ Item {
 
     Connections {
         target: menu
-        onModelDataChanged: {
+        function onModelDataChanged() {
             cachedState = menu.get(0, "actionState");
 
             var ext = menu.get(0, "ext");

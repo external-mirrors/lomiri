@@ -39,7 +39,7 @@ Item {
     property var screen: null
     Connections {
         target: screen
-        onFormFactorChanged: calculateUsageMode();
+        function onFormFactorChanged() { calculateUsageMode(); }
     }
 
     onWidthChanged: calculateUsageMode();

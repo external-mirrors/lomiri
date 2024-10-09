@@ -98,10 +98,10 @@ FocusScope {
 
     Connections {
         target: root.surface
-        onFocusRequested: {
+        function onFocusRequested() {
             root.surface.activate();
         }
-        onFocusedChanged: {
+        function onFocusedChanged() {
             if (root.surface.focused) {
                 childWindow.focus = true;
                 // Propagate

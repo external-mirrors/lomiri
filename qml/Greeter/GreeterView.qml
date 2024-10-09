@@ -231,8 +231,8 @@ FocusScope {
 
             Connections {
                 target: sessionChooserLoader.item
-                onSessionSelected: loginList.currentSession = sessionKey
-                onShowLoginList: {
+                function onSessionSelected(sessionKey) { loginList.currentSession = sessionKey }
+                function onShowLoginList() {
                     lockscreen.state = "LoginList"
                     loginList.tryToUnlock();
                 }
@@ -294,7 +294,7 @@ FocusScope {
             // this is mainly for testing
             Connections {
                 target: LightDMService.sessions
-                onIconSearchDirectoriesChanged: {
+                function onIconSearchDirectoriesChanged() {
                     badge.source = LightDMService.sessions.iconUrl(root.currentSession)
                 }
             }

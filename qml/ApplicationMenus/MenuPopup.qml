@@ -342,12 +342,12 @@ LomiriShape {
 
                         Connections {
                             target: d
-                            onCurrentIndexChanged: {
+                            function onCurrentIndexChanged() {
                                 if (popup && d.currentIndex != __ownIndex) {
                                     popup.visible = false;
                                 }
                             }
-                            onDismissAll: {
+                            function onDismissAll() {
                                 if (popup) {
                                     popup.destroy();
                                     popup = null;
@@ -505,7 +505,7 @@ LomiriShape {
 
                 Connections {
                     target: item
-                    onChildActivated: childActivated();
+                    function onChildActivated() { childActivated(); }
                 }
             }
         }

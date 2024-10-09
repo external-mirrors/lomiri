@@ -27,7 +27,7 @@ Repeater {
         boundsItem: root.boundsItem
         Connections {
             target: childWindowTree.surface
-            onFocusedChanged: {
+            function onFocusedChanged() {
                 if (childWindowTree.surface.focused) {
                     childWindowTree.focus = true;
                     // focus the Loader
