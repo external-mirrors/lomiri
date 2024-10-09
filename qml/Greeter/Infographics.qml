@@ -15,7 +15,7 @@
  */
 
 import "Gradient.js" as Gradient
-import QtQuick 2.12
+import QtQuick 2.15
 import Lomiri.Components 1.3
 
 Item {

@@ -15,7 +15,7 @@
  */
 
 
-import QtQuick 2.12
+import QtQuick 2.15
 import Cursor 1.1
 
 Rectangle {

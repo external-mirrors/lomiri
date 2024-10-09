@@ -15,7 +15,7 @@
  */
 
 pragma Singleton
-import QtQuick 2.12
+import QtQuick 2.15
 
 QtObject {
     readonly property real pushThreshold: units.gu(8)

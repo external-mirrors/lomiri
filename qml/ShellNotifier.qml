@@ -19,7 +19,7 @@
  */
 
 pragma Singleton
-import QtQuick 2.12
+import QtQuick 2.15
 
 QtObject {
     property var greeter: QtObject {
