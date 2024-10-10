@@ -14,7 +14,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.12
+import QtQuick 2.15
+import QtQml 2.15
 import QtQuick.Window 2.2 as QtQuickWindow
 import Lomiri.InputInfo 0.1
 import Lomiri.Session 0.1
@@ -39,7 +40,7 @@ Item {
     property var screen: null
     Connections {
         target: screen
-        onFormFactorChanged: calculateUsageMode();
+        function onFormFactorChanged() { calculateUsageMode(); }
     }
 
     onWidthChanged: calculateUsageMode();
@@ -113,6 +114,7 @@ Item {
         target: QuickUtils
         property: "keyboardAttached"
         value: keyboardsModel.count > 0
+        restoreMode: Binding.RestoreBinding
     }
 
     readonly property int pointerInputDevices: miceModel.count + touchPadModel.count
@@ -209,12 +211,14 @@ Item {
 
     Binding {
         target: oskSettings
+        restoreMode: Binding.RestoreBinding
         property: "disableHeight"
         value: !shell.oskEnabled || shell.usageScenario == "desktop"
     }
 
     Binding {
         target: lomiriSettings
+        restoreMode: Binding.RestoreBinding
         property: "oskSwitchVisible"
         value: shell.hasKeyboard
     }

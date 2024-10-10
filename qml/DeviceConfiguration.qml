@@ -14,7 +14,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.12
+import QtQuick 2.15
+import QtQml 2.15
 import Utils 0.1
 
 QtObject {
@@ -43,6 +44,7 @@ QtObject {
         target: priv
         property: "state"
         value: root.overrideName ? overrideName : deviceConfig.name
+        restoreMode: Binding.RestoreBinding
     }
 
     readonly property var priv: StateGroup {

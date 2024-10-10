@@ -14,7 +14,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.12
+import QtQuick 2.15
+import QtQml 2.15
 import QtTest 1.0
 import Lomiri.Components 1.3
 import Lomiri.Components.ListItems 1.3
@@ -39,6 +40,7 @@ Item {
 
     Binding {
         target: MouseTouchAdaptor
+        restoreMode: Binding.RestoreBinding
         property: "enabled"
         value: false
     }

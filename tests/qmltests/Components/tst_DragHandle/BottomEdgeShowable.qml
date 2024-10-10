@@ -14,7 +14,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.12
+import QtQuick 2.15
+import QtQml 2.15
 import "../../../../qml/Components"
 import Lomiri.Components 1.3
 import Lomiri.Gestures 0.1
@@ -31,6 +32,7 @@ Showable {
     Binding {
         when: stretch
         target: root
+        restoreMode: Binding.RestoreBinding
         property: "y"
         value: root.parent.height - root.height
     }

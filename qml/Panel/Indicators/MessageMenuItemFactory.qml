@@ -18,7 +18,7 @@
  *      Olivier Tilloy <olivier.tilloy@canonical.com>
  */
 
-import QtQuick 2.12
+import QtQuick 2.15
 import Lomiri.Components 1.3
 import Lomiri.Settings.Menus 0.1 as Menus
 import QMenuModel 1.0 as QMenuModel

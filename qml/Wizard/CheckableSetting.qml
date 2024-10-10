@@ -14,7 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.12
+import QtQuick 2.15
 import Lomiri.Components 1.3
 import Lomiri.Components.ListItems 1.3 as ListItem
 
@@ -57,12 +57,12 @@ ListItem.Empty {
 
             Connections {
                 target: listItem
-                onCheckedChanged: checkBox.checked = listItem.checked
+                function onCheckedChanged() { checkBox.checked = listItem.checked }
             }
 
             Connections {
                 target: listItem.__mouseArea
-                onClicked: {
+                function onClicked() {
                     listItem.checked = !listItem.checked
                     listItem.triggered(listItem.checked)
                 }

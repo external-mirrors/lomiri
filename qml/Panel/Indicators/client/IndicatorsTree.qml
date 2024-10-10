@@ -17,7 +17,7 @@
  *      Nick Dedekind <nick.dededkind@canonical.com>
  */
 
-import QtQuick 2.12
+import QtQuick 2.15
 import Lomiri.Components 1.3
 import Lomiri.Indicators 0.1 as Indicators
 import ".."

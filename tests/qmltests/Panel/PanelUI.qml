@@ -15,7 +15,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.12
+import QtQuick 2.15
+import QtQml 2.15
 import QtQuick.Layouts 1.1
 import QtTest 1.0
 import Lomiri.SelfTest 0.1
@@ -48,6 +49,7 @@ PanelTest {
 
     Binding {
         target: QuickUtils
+        restoreMode: Binding.RestoreBinding
         property: "keyboardAttached"
         value: keyboardAttached.checked
     }
@@ -179,6 +181,7 @@ PanelTest {
 
             Binding {
                 target: panel
+                restoreMode: Binding.RestoreBinding
                 property: "fullscreenMode"
                 value: fullscreenCB.checked
             }
@@ -197,12 +200,14 @@ PanelTest {
 
             Binding {
                 target: PanelState
+                restoreMode: Binding.RestoreBinding
                 property: "decorationsVisible"
                 value: windowControlsCB.checked
             }
 
             Binding {
                 target: PanelState
+                restoreMode: Binding.RestoreBinding
                 property: "title"
                 value: "Fake window title"
             }

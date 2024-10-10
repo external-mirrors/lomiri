@@ -14,7 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.12
+import QtQuick 2.15
 import QtTest 1.0
 import ".."
 import "../../../qml/Components"
@@ -43,8 +43,8 @@ Rectangle {
     Connections {
         target: lockscreen
 
-        onEmergencyCall: emergencyCheckBox.checked = true
-        onEntered: {
+        function onEmergencyCall() { emergencyCheckBox.checked = true }
+        function onEntered(passphrase) {
             enteredLabel.text = passphrase
             lockscreen.clear(true)
         }

@@ -14,7 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.12
+import QtQuick 2.15
 import Lomiri.Components 1.3
 
 TutorialPage {
@@ -29,7 +29,7 @@ TutorialPage {
     Connections {
         target: stage
         ignoreUnknownSignals: true
-        onSpreadShownChanged: if (stage.spreadShown && root.shown) root.hide()
+        function onSpreadShownChanged() { if (stage.spreadShown && root.shown) root.hide() }
     }
 
     mouseArea {

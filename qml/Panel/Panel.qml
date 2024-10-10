@@ -15,7 +15,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.12
+import QtQuick 2.15
+import QtQml 2.15
 import Lomiri.Components 1.3
 import Lomiri.Layouts 1.0
 import QtMir.Application 0.1
@@ -90,6 +91,7 @@ Item {
 
     Binding {
         target: panelState
+        restoreMode: Binding.RestoreBinding
         property: "panelHeight"
         value: minimizedPanelHeight
     }
@@ -255,12 +257,12 @@ Item {
 
                         Connections {
                             target: __applicationMenus
-                            onShownChanged: bar.dismiss();
+                            function onShownChanged() { bar.dismiss(); }
                         }
 
                         Connections {
                             target: __indicators
-                            onShownChanged: bar.dismiss();
+                            function onShownChanged() { bar.dismiss(); }
                         }
 
                         onDoubleClicked: panelState.restoreClicked()

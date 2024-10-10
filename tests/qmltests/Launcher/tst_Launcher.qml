@@ -14,7 +14,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.12
+import QtQuick 2.15
+import QtQml 2.15
 import QtQuick.Layouts 1.1
 import QtTest 1.0
 import Lomiri.SelfTest 0.1
@@ -71,7 +72,7 @@ Rectangle {
                 Connections {
                     target: testCase.findChild(launcher, "launcherPanel")
 
-                    onXChanged: {
+                    function onXChanged() {
                         if (target.x > launcher.maxPanelX) {
                             launcher.maxPanelX = target.x;
                         }
@@ -92,16 +93,19 @@ Rectangle {
 
     Binding {
         target: launcherLoader.item
+        restoreMode: Binding.RestoreBinding
         property: "lockedVisible"
         value: lockedVisibleCheckBox.checked
     }
     Binding {
         target: launcherLoader.item
+        restoreMode: Binding.RestoreBinding
         property: "privateMode"
         value: privateModeCheckBox.checked
     }
     Binding {
         target: launcherLoader.item
+        restoreMode: Binding.RestoreBinding
         property: "panelWidth"
         value: units.gu(Math.round(widthSlider.value))
     }

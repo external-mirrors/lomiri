@@ -17,7 +17,7 @@
  *      Nick Dedekind <nick.dedekind@canonical.com>
  */
 
-import QtQuick 2.12
+import QtQuick 2.15
 
 Item {
     property var menu: null
@@ -53,7 +53,7 @@ Item {
 
     Connections {
         target: menu
-        onModelDataChanged: {
+        function onModelDataChanged() {
             cachedState = menu.get(0, "actionState");
 
             var ext = menu.get(0, "ext");

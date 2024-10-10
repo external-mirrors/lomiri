@@ -14,7 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.12
+import QtQuick 2.15
 import UInput 0.1
 
 Canvas {
@@ -62,7 +62,7 @@ Canvas {
 
     Connections {
         target: UInput
-        onMouseMoved: {
+        function onMouseMoved() {
             var newX = root.x;
             newX += dx;
             if (newX < 0) newX = 0;

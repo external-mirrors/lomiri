@@ -14,7 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.12
+import QtQuick 2.15
 import Lomiri.Components 1.3
 import Powerd 0.1
 
@@ -116,7 +116,7 @@ StateGroup {
 
         property Connections shellConnections: Connections {
             target: root.orientedShell
-            onOrientationChangesEnabledChanged: {
+            function onOrientationChangesEnabledChanged() {
                 d.tryUpdateState();
             }
         }

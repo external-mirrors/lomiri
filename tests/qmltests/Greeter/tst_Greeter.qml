@@ -14,7 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.12
+import QtQuick 2.15
 import QtTest 1.0
 import ".."
 import "../../../qml/Greeter"
@@ -354,7 +354,7 @@ Item {
         Connections {
             id: launcherOffsetWatcher
             property var values: []
-            onLauncherOffsetChanged: {
+            function onLauncherOffsetChanged() {
                 values.push(target.launcherOffset);
             }
         }

@@ -15,7 +15,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.12
+import QtQuick 2.15
+import QtQml 2.15
 import QtQuick.Window 2.2
 import QtTest 1.0
 import ".."
@@ -313,7 +314,7 @@ StyledItem {
                         }
                         Connections {
                             target: LightDMController
-                            onSessionModeChanged: {
+                            function onSessionModeChanged() {
                                 if (LightDMController.userMode === "full") {
                                     multipleSessionsCheckbox.checked = true;
                                 } else {
@@ -373,7 +374,7 @@ StyledItem {
                         }
                         Connections {
                             target: LightDMController
-                            onSessionModeChanged: {
+                            function onSessionModeChanged() {
                                 if (LightDMController.sessionMode === "full") {
                                     multipleSessionsCheckbox.checked = true;
                                 } else {
@@ -397,6 +398,7 @@ StyledItem {
                         visible: LightDMController.sessionMode === "full"
                         Binding {
                             target: LightDMController
+                            restoreMode: Binding.RestoreBinding
                             property: "numSessions"
                             value: numSessionsSlider.value
                         }
@@ -431,6 +433,7 @@ StyledItem {
  */
     Binding {
         target: LightDM.Infographic
+        restoreMode: Binding.RestoreBinding
         property: "username"
         value: "has-password"
     }

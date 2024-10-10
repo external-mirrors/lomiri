@@ -14,7 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.12
+import QtQuick 2.15
 import Lomiri.Components 1.3
 import Lomiri.Indicators 0.1
 import Lomiri.ApplicationMenu 0.1
@@ -42,12 +42,12 @@ Item {
 
     Connections {
         target: ApplicationMenuRegistry
-        onSurfaceMenuRegistered: {
+        function onSurfaceMenuRegistered(surfaceId) {
             if (surfaceId === persistentSurfaceId) {
                 update();
             }
         }
-        onSurfaceMenuUnregistered: {
+        function onSurfaceMenuUnregistered(surfaceId) {
             if (surfaceId === persistentSurfaceId) {
                 update();
             }

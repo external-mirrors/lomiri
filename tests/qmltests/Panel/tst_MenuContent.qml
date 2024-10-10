@@ -14,7 +14,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.12
+import QtQuick 2.15
+import QtQml 2.15
 import QtTest 1.0
 import Lomiri.SelfTest 0.1 as UT
 import "../../../qml/Panel"
@@ -41,6 +42,7 @@ PanelTest {
 
             Binding {
                 target: parent
+                restoreMode: Binding.RestoreBinding
                 property: "objectName"
                 value: modelData ? modelData.identifier : ""
             }

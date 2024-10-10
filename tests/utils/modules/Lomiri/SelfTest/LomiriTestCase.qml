@@ -14,7 +14,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.12
+import QtQuick 2.15
+import QtQml 2.15
 import QtTest 1.0
 import QtMir.Application 0.1
 import WindowManager 1.0
@@ -50,12 +51,14 @@ TestCase {
 
     Binding {
         target: WindowManagerObjects
+        restoreMode: Binding.RestoreBinding
         property: "surfaceManager"
         value: SurfaceManager
     }
 
     Binding {
         target: WindowManagerObjects
+        restoreMode: Binding.RestoreBinding
         property: "applicationManager"
         value: ApplicationManager
     }

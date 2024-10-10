@@ -14,7 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.12
+import QtQuick 2.15
 import Lomiri.Components 1.3
 import Lomiri.Components.Styles 1.3
 
@@ -30,12 +30,12 @@ PullToRefreshStyle {
         property bool willRefresh: false
 
         target: styledItem.target
-        onDraggingChanged: {
+        function onDraggingChanged() {
             if (!styledItem.target.dragging && releaseToRefresh) {
                 willRefresh = true
             }
         }
-        onContentYChanged: {
+        function onContentYChanged() {
             if (styledItem.target.originY - styledItem.target.contentY == 0 && willRefresh) {
                 styledItem.refresh()
                 willRefresh = false

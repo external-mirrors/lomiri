@@ -14,7 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.12
+import QtQuick 2.15
 import QOfono 0.2
 import Lomiri.Components 1.3
 import Lomiri.Components.Popups 1.3
@@ -42,7 +42,7 @@ LocalComponents.Page {
 
     Connections {
         target: root.modemManager
-        onGotSimCardChanged: {
+        function onGotSimCardChanged() {
             if (!hadSIM && root.modemManager.gotSimCard) { // show the restart dialog in case a SIM gets inserted
                 restartDialog.visible = true;
             }

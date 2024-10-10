@@ -14,7 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.12
+import QtQuick 2.15
 import Lomiri.Components 1.3
 import QtMir.Application 0.1
 import "Spread/MathUtils.js" as MathUtils
@@ -262,12 +262,12 @@ FocusScope {
 
         Connections {
             target: ApplicationMenuRegistry
-            onSurfaceMenuRegistered: {
+            function onSurfaceMenuRegistered(surfaceId) {
                 if (surface && surfaceId === surface.persistentId) {
                     sharedAppModel.menus = Qt.binding(function() { return surface ? ApplicationMenuRegistry.getMenusForSurface(surface.persistentId) : [] });
                 }
             }
-            onSurfaceMenuUnregistered: {
+            function onSurfaceMenuUnregistered(surfaceId) {
                 if (surface && surfaceId === surface.persistentId) {
                     sharedAppModel.menus = Qt.binding(function() { return surface ? ApplicationMenuRegistry.getMenusForSurface(surface.persistentId) : [] });
                 }

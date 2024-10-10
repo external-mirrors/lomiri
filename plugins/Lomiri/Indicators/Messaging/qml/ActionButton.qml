@@ -18,7 +18,7 @@
  *      Olivier Tilloy <olivier.tilloy@canonical.com>
  */
 
-import QtQuick 2.12
+import QtQuick 2.15
 import Lomiri.Components 0.1
 import Lomiri.IndicatorsLegacy 0.1 as Indicators
 

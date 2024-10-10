@@ -15,7 +15,7 @@
  */
 
 import "Gradient.js" as Gradient
-import QtQuick 2.12
+import QtQuick 2.15
 import Lomiri.Components 1.3
 
 Item {
@@ -48,14 +48,14 @@ Item {
         target: model
         ignoreUnknownSignals: model === undefined
 
-        onDataAboutToAppear: startHideAnimation() // hide "no data" label
-        onDataAppeared: startShowAnimation()
+        function onDataAboutToAppear() { startHideAnimation() } // hide "no data" label
+        function onDataAppeared() {  startShowAnimation() }
 
-        onDataAboutToChange: startHideAnimation()
-        onDataChanged: startShowAnimation()
+        function onDataAboutToChange() {  startHideAnimation() }
+        function onDataChanged() {  startShowAnimation() }
 
-        onDataAboutToDisappear: startHideAnimation()
-        onDataDisappeared: startShowAnimation() // show "no data" label
+        function onDataAboutToDisappear() {  startHideAnimation() }
+        function onDataDisappeared() { startShowAnimation() } // show "no data" label
     }
 
     LiveTimer {

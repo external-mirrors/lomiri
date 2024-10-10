@@ -14,7 +14,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.12
+import QtQuick 2.15
+import QtQml 2.15
 import Lomiri.Components 1.3
 import Lomiri.Components.ListItems 1.3 as ListItems
 import Lomiri.Indicators 0.1 as Indicators
@@ -34,17 +35,17 @@ PageStack {
         property bool ready: false
 
         // fix async creation with signal from model before it's finished.
-        onRowsInserted: {
+        function onRowsInserted(parent, first, last) {
             if (submenuIndex !== undefined && first <= submenuIndex) {
                 reset(true);
             }
         }
-        onRowsRemoved: {
+        function onRowsRemoved(parent, first, last) {
             if (submenuIndex !== undefined && first <= submenuIndex) {
                 reset(true);
             }
         }
-        onModelReset: {
+        function onModelReset() {
             if (root.submenuIndex !== undefined) {
                 reset(true);
             }
@@ -156,7 +157,7 @@ PageStack {
 
                 Connections {
                     target: listView.model ? listView.model : null
-                    onRowsAboutToBeRemoved: {
+                    function onRowsAboutToBeRemoved(parent, first, last) {
                         // track current item deletion.
                         if (listView.selectedIndex >= first && listView.selectedIndex <= last) {
                             listView.selectedIndex = -1;
@@ -205,6 +206,7 @@ PageStack {
 
                     Binding {
                         target: item ? item : null
+                        restoreMode: Binding.RestoreBinding
                         property: "objectName"
                         value: model.action
                     }
@@ -213,7 +215,7 @@ PageStack {
                     // This is a workaround for a Qt bug. https://bugreports.qt-project.org/browse/QTBUG-34351
                     Connections {
                         target: listView
-                        onSelectedIndexChanged: {
+                        function onSelectedIndexChanged() {
                             if (loader.item && loader.item.hasOwnProperty("selected")) {
                                 loader.item.selected = listView.selectedIndex == index;
                             }

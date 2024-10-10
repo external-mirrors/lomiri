@@ -14,7 +14,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.12
+import QtQuick 2.15
+import QtQml 2.15
 import AccountsService 0.1
 import GlobalShortcut 1.0
 import QMenuModel 1.0
@@ -72,12 +73,14 @@ QtObject {
         target: root.focusedSurface
         property: "keymap"
         value: root.currentKeymap
+        restoreMode: Binding.RestoreBinding
     }
 
     property Binding lomiriKeymapBinding: Binding {
         target: Mir
         property: "currentKeymap"
         value: root.currentKeymap
+        restoreMode: Binding.RestoreBinding
     }
 
     // indicator

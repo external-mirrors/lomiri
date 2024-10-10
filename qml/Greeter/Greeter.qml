@@ -15,7 +15,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.12
+import QtQuick 2.15
+import QtQml 2.15
 import AccountsService 0.1
 import Biometryd 0.0
 import GSettings 1.0
@@ -371,19 +372,19 @@ Showable {
 
         Connections {
             target: loader.item
-            onSelected: {
+            function onSelected(index) {
                 d.selectUser(index);
             }
-            onResponded: {
+            function onResponded(response) {
                 if (root.locked) {
                     LightDMService.greeter.respond(response);
                 } else {
                     d.login();
                 }
             }
-            onTease: root.tease()
-            onEmergencyCall: root.emergencyCall()
-            onRequiredChanged: {
+            function onTease() { root.tease() }
+            function onEmergencyCall() { root.emergencyCall() }
+            function onRequiredChanged() {
                 if (!loader.item.required) {
                     ShellNotifier.greeter.hide(false);
                 }
@@ -394,54 +395,63 @@ Showable {
             target: loader.item
             property: "panelHeight"
             value: root.panelHeight
+            restoreMode: Binding.RestoreBinding
         }
 
         Binding {
             target: loader.item
             property: "launcherOffset"
             value: d.launcherOffsetProxy
+            restoreMode: Binding.RestoreBinding
         }
 
         Binding {
             target: loader.item
             property: "dragHandleLeftMargin"
             value: root.dragHandleLeftMargin
+            restoreMode: Binding.RestoreBinding
         }
 
         Binding {
             target: loader.item
             property: "delayMinutes"
             value: forcedDelayTimer.delayMinutes
+            restoreMode: Binding.RestoreBinding
         }
 
         Binding {
             target: loader.item
             property: "background"
             value: root.background
+            restoreMode: Binding.RestoreBinding
         }
 
         Binding {
             target: loader.item
             property: "backgroundSourceSize"
             value: root.backgroundSourceSize
+            restoreMode: Binding.RestoreBinding
         }
 
         Binding {
             target: loader.item
             property: "hasCustomBackground"
             value: root.hasCustomBackground
+            restoreMode: Binding.RestoreBinding
         }
 
         Binding {
             target: loader.item
             property: "locked"
             value: root.locked
+            restoreMode: Binding.RestoreBinding
         }
 
         Binding {
             target: loader.item
             property: "waiting"
             value: d.waiting
+            restoreMode: Binding.RestoreBinding
         }
 
         Binding {
@@ -502,10 +512,10 @@ Showable {
     Connections {
         target: LightDMService.greeter
 
-        onShowGreeter: root.forceShow()
-        onHideGreeter: root.forcedUnlock = true
+        function onShowGreeter() { root.forceShow() }
+        function onHideGreeter() { root.forcedUnlock = true }
 
-        onLoginError: {
+        function onLoginError(automatic) {
             if (!loader.item) {
                 return;
             }
@@ -526,18 +536,18 @@ Showable {
             }
         }
 
-        onLoginSuccess: {
+        function onLoginSuccess(automatic) {
             if (!automatic) {
                 d.login();
             }
         }
 
-        onRequestAuthenticationUser: d.selectUser(d.getUserIndex(user))
+        function onRequestAuthenticationUser(user) { d.selectUser(d.getUserIndex(user)) }
     }
 
     Connections {
         target: ShellNotifier.greeter
-        onHide: {
+        function onHide(now) {
             if (now) {
                 root.hideNow(); // skip hide animation
             } else {
@@ -554,8 +564,8 @@ Showable {
 
     Connections {
         target: DBusLomiriSessionService
-        onLockRequested: root.forceShow()
-        onUnlocked: {
+        function onLockRequested() { root.forceShow() }
+        function onUnlocked() {
             root.forcedUnlock = true;
             ShellNotifier.greeter.hide(true);
         }
@@ -575,7 +585,7 @@ Showable {
 
     Connections {
         target: i18n
-        onLanguageChanged: LightDMService.infographic.readyForDataChange()
+        function onLanguageChanged() { LightDMService.infographic.readyForDataChange() }
     }
 
     Timer {

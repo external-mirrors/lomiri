@@ -14,7 +14,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.12
+import QtQuick 2.15
+import QtQml 2.15
 import "../../../qml/Components"
 import "tst_DragHandle"
 import Lomiri.Components 1.3
@@ -36,6 +37,7 @@ Rectangle {
 
     Binding {
         target: MouseTouchAdaptor
+        restoreMode: Binding.RestoreBinding
         property: "enabled"
         value: true
     }

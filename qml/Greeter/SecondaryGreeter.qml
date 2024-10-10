@@ -14,7 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.12
+import QtQuick 2.15
 import Lomiri.Components 1.3
 
 import "../Components"
@@ -57,14 +57,14 @@ Showable {
 
     Connections {
         target: ShellNotifier.greeter
-        onHide: {
+        function onHide(now) {
             if (now) {
                 root.hideNow(); // skip hide animation
             } else {
                 root.hide();
             }
         }
-        onShownChanged: {
+        function onShownChanged() {
             if (ShellNotifier.greeter.shown) {
                 root.show();
             } else {

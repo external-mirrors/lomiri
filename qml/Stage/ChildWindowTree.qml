@@ -14,7 +14,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.12
+import QtQuick 2.15
+import QtQml 2.15
 import Lomiri.Components 1.3
 import QtMir.Application 0.1
 
@@ -82,6 +83,7 @@ FocusScope {
 
     Binding {
         target: root.surface
+        restoreMode: Binding.RestoreBinding
         when: childWindow.dragging
         property: "requestedPosition"
         value: Qt.point(root.windowedX - root.displacementX,
@@ -98,10 +100,10 @@ FocusScope {
 
     Connections {
         target: root.surface
-        onFocusRequested: {
+        function onFocusRequested() {
             root.surface.activate();
         }
-        onFocusedChanged: {
+        function onFocusedChanged() {
             if (root.surface.focused) {
                 childWindow.focus = true;
                 // Propagate
@@ -117,12 +119,14 @@ FocusScope {
         active: root.surface && root.surface.childSurfaceList.count > 0
         Binding {
             target: childRepeaterLoader.item
+            restoreMode: Binding.RestoreBinding
             when: childRepeaterLoader.item
             property: "model"
             value: root.surface ? root.surface.childSurfaceList : null
         }
         Binding {
             target: childRepeaterLoader.item
+            restoreMode: Binding.RestoreBinding
             when: childRepeaterLoader.item
             property: "boundsItem"
             value: root.boundsItem

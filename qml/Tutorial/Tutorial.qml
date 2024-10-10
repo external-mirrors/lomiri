@@ -14,7 +14,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.12
+import QtQuick 2.15
+import QtQml 2.15
 import Lomiri.Components 1.3
 import AccountsService 0.1
 
@@ -59,47 +60,54 @@ Item {
             target: loader.item
             property: "launcher"
             value: root.launcher
+            restoreMode: Binding.RestoreBinding
         }
 
         Binding {
             target: loader.item
             property: "panel"
             value: root.panel
+            restoreMode: Binding.RestoreBinding
         }
 
         Binding {
             target: loader.item
             property: "stage"
             value: root.stage
+            restoreMode: Binding.RestoreBinding
         }
 
         Binding {
             target: loader.item
             property: "usageScenario"
             value: root.usageScenario
+            restoreMode: Binding.RestoreBinding
         }
 
         Binding {
             target: loader.item
             property: "paused"
             value: root.paused
+            restoreMode: Binding.RestoreBinding
         }
 
         Binding {
             target: loader.item
             property: "delayed"
             value: root.delayed
+            restoreMode: Binding.RestoreBinding
         }
 
         Binding {
             target: loader.item
             property: "lastInputTimestamp"
             value: root.lastInputTimestamp
+            restoreMode: Binding.RestoreBinding
         }
 
         Connections {
             target: loader.item
-            onFinished: AccountsService.demoEdges = false
+            function onFinished() { AccountsService.demoEdges = false }
         }
     }
 }

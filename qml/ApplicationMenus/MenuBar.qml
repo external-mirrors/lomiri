@@ -14,7 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.12
+import QtQuick 2.15
 import QtQuick.Layouts 1.1
 import Utils 0.1
 import Lomiri.Components 1.3
@@ -103,7 +103,7 @@ Item {
 
         Connections {
             target: root.lomiriMenuModel
-            onModelReset: d.firstInvisibleIndex = undefined
+            function onModelReset() { d.firstInvisibleIndex = undefined }
         }
 
         Component {
@@ -190,7 +190,7 @@ Item {
 
                 Connections {
                     target: d
-                    onDismissAll: visualItem.dismiss()
+                    function onDismissAll() { visualItem.dismiss() }
                 }
 
                 RowLayout {
@@ -362,7 +362,7 @@ Item {
 
         Connections {
             target: d
-            onDismissAll: overflowButton.dismiss()
+            function onDismissAll() { overflowButton.dismiss() }
         }
 
         Component {

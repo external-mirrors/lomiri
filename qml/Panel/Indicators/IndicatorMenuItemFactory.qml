@@ -14,7 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.12
+import QtQuick 2.15
 import QtQuick.Window 2.2
 import Lomiri.Settings.Menus 0.1 as Menus
 import Lomiri.Settings.Components 0.1
@@ -683,7 +683,7 @@ Item {
                 property bool enabled: true
                 target: (enabled && calendarItem.visible) ? calendarItem : null
 
-                onSelectedDateChanged: {
+                function onSelectedDateChanged() {
                     menuModel.activate(menuIndex, selectedDate.getTime() / 1000 | 0)
                 }
             }

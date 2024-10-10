@@ -14,7 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.12
+import QtQuick 2.15
 import QtMir.Application 0.1
 
 // This component will change the state of the surface based on the surface
@@ -26,6 +26,7 @@ import QtMir.Application 0.1
 // Chrome not set and state change to restored -> client window stays "restored"
 // Chrome not set and state change to fulscreen -> client window stays "fullscreen"
 QtObject {
+    id: root
     property bool active: true
 
     function applyPolicy(surfaceState, surfaceChrome) {
@@ -38,8 +39,8 @@ QtObject {
     property var surface: null
     property var _connections: Connections {
         target: surface
-        onShellChromeChanged: {
-            if (!active || !surface) return;
+        function onShellChromeChanged() {
+            if (!root.active || !surface) return;
             if (surface.shellChrome === Mir.LowChrome) {
                 surface.requestState(Mir.FullscreenState);
             } else {

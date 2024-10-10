@@ -14,7 +14,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.12
+import QtQuick 2.15
+import QtQml 2.15
 import Lomiri.Gestures 0.1
 
 TouchGestureArea {
@@ -139,6 +140,7 @@ TouchGestureArea {
             }
             return sum/root.touchPoints.length - priv.dragObject.width/2;
         }
+        restoreMode: Binding.RestoreBinding
     }
 
     Binding {
@@ -153,5 +155,6 @@ TouchGestureArea {
             }
             return sum/root.touchPoints.length - priv.dragObject.height/2;
         }
+        restoreMode: Binding.RestoreBinding
     }
 }

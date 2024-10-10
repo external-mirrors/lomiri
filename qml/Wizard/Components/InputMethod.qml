@@ -14,7 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.12
+import QtQuick 2.15
 import QtMir.Application 0.1
 import Lomiri.Components 0.1
 
@@ -25,13 +25,13 @@ Item {
 
     Connections {
         target: SurfaceManager
-        onSurfaceCreated: {
+        function onSurfaceCreated(surface) {
             if (surface.type == MirSurfaceItem.InputMethod) {
                 inputMethodRoot.surface = surface;
             }
         }
 
-        onSurfaceDestroyed: {
+        function onSurfaceDestroyed(surface) {
             if (inputMethodRoot.surface == surface) {
                 inputMethodRoot.surface = null;
                 surface.parent = null;
@@ -87,7 +87,7 @@ Item {
     Connections {
         target: surface
         ignoreUnknownSignals: true // don't wanna spam the log when surface is null
-        onStateChanged: {
+        function onStateChanged(state) {
             if (state == MirSurfaceItem.Minimized) {
                 inputMethodRoot.hide();
             } else if (state == MirSurfaceItem.Maximized) {
