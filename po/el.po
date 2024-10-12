@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-06 08:14+0000\n"
-"PO-Revision-Date: 2024-03-11 08:26+0000\n"
-"Last-Translator: Giannis Vassilopoulos <jv23040320@gmail.com>\n"
+"PO-Revision-Date: 2024-10-12 15:31+0000\n"
+"Last-Translator: ikozyris <ioannis.kozyris@outlook.com>\n"
 "Language-Team: Greek <https://hosted.weblate.org/projects/lomiri/lomiri/el/>"
 "\n"
 "Language: el\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.5-dev\n"
+"X-Generator: Weblate 5.8-dev\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:35+0000\n"
 
 #: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
@@ -97,7 +97,7 @@ msgstr "Ξεκαρφίτσωμα συντόμευσης"
 
 #: plugins/WindowManager/Screen.cpp:160
 msgid "Unknown"
-msgstr ""
+msgstr "'Αγνωστο"
 
 #: plugins/WindowManager/Screen.cpp:162
 msgid "VGA"
@@ -162,7 +162,7 @@ msgstr "Αποσύνδεση"
 #: qml/Greeter/GreeterView.qml:452 qml/Wizard/Pages/passcode-confirm.qml:32
 #: qml/Wizard/Pages/passcode-set.qml:32
 msgid "Cancel"
-msgstr "Ακύρωση"
+msgstr "Ακύρωση"
 
 #: qml/Components/Dialogs.qml:211
 msgctxt "Title: Reboot dialog"
