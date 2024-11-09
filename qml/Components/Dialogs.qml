@@ -22,6 +22,7 @@ import GlobalShortcut 1.0
 import Lomiri.Components 1.3
 import Lomiri.Platform 1.0
 import Utils 0.1
+import ".."
 
 MouseArea {
     id: root
@@ -36,11 +37,16 @@ MouseArea {
     property string usageScenario
     property size screenSize: Qt.size(Screen.width, Screen.height)
     property bool hasKeyboard: false
+    property alias deviceConfiguration: _deviceConfiguration
 
     signal powerOffClicked();
 
     function showPowerDialog() {
         d.showPowerDialog();
+    }
+
+    DeviceConfiguration {
+        id: _deviceConfiguration
     }
 
     property var doOnClosedAllWindows: function() {}
@@ -274,6 +280,7 @@ MouseArea {
             Button {
                 width: parent.width
                 text: i18n.ctr("Button: Restart the system to Recovery", "Restart to Recovery")
+                visible: deviceConfiguration.supportsRebootToRecovery
                 onClicked: {
                     doOnClosedAllWindows = function(lomiriSessionService, powerDialog) {
                         return function() {

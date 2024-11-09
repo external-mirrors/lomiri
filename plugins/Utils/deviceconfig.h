@@ -34,6 +34,7 @@ class DeviceConfig: public QObject
     Q_PROPERTY(Qt::ScreenOrientation invertedPortraitOrientation READ invertedPortraitOrientation NOTIFY changed)
     Q_PROPERTY(QString category READ category NOTIFY changed)
     Q_PROPERTY(bool supportsMultiColorLed READ supportsMultiColorLed NOTIFY changed)
+    Q_PROPERTY(bool supportsRebootToRecovery READ supportsRebootToRecovery NOTIFY changed)
 
     Q_PROPERTY(quint8 sensorLocationX READ sensorLocationX NOTIFY changed FINAL)
     Q_PROPERTY(quint8 sensorLocationY READ sensorLocationY NOTIFY changed FINAL)
@@ -55,6 +56,7 @@ public:
     Qt::ScreenOrientation invertedPortraitOrientation() const;
     QString category() const;
     bool supportsMultiColorLed() const;
+    bool supportsRebootToRecovery() const;
 
     quint8 sensorLocationX() const;
     quint8 sensorLocationY() const;
