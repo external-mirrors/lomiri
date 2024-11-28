@@ -2,9 +2,9 @@
 
 Lomiri is the operating environment for everywhere. It is able to span the gaps between touch, mouse, and keyboard; between phones, tablets, and workstations; and look good doing it.
 
-This repository contains the new version of Lomiri which powers Ubuntu Touch based on Ubuntu 20.04 and serves as the upstream for packaging Lomiri outside of Ubuntu Touch. Most of the time, you'll want to contribute to the version of Lomiri on Ubuntu Touch based on Ubuntu 16.04, available on [GitHub](https://github.com/ubports/unity8). Changes there will be merged back into this repository from time to time.
+This repository contains the new version of Lomiri which powers Ubuntu Touch and serves as the upstream for packaging Lomiri outside of Ubuntu Touch.
 
-Lomiri has been renamed from Unity8. Most of the software on-device in Ubuntu Touch based on Ubuntu 16.04 is still called `unity8`.
+Unity8 has been renamed to Lomiri in Ubuntu Touch based on Ubuntu 20.04 and higher.
 
 ## Developing Lomiri on Ubuntu Touch
 
