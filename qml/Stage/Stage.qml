@@ -1400,6 +1400,10 @@ FocusScope {
 
                     updateQmlFocusFromMirSurfaceFocus();
 
+                    // Make apps maximized on phones & tablets
+                    if (root.mode == "staged" || root.mode == "stagedWithSideStage")
+                        appDelegate.maximize()
+
                     refreshStage();
                     _constructing = false;
                 }
