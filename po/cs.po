@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-06 08:14+0000\n"
-"PO-Revision-Date: 2024-01-15 12:06+0000\n"
-"Last-Translator: Jozef Mlich <jmlich83@gmail.com>\n"
+"PO-Revision-Date: 2024-12-25 04:15+0000\n"
+"Last-Translator: Adam Havelka <adam@uxes.cz>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/lomiri/lomiri/cs/>"
 "\n"
 "Language: cs\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.4-dev\n"
+"X-Generator: Weblate 5.10-dev\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:35+0000\n"
 
 #: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
@@ -444,8 +444,8 @@ msgstr "Plně nabito"
 msgid "%1 hour"
 msgid_plural "%1 hours"
 msgstr[0] "%1 hodina"
-msgstr[1] "%1 hodin"
-msgstr[2] "%1 hodiny"
+msgstr[1] "%1 hodiny"
+msgstr[2] "%1 hodin"
 
 #: qml/Greeter/CoverPage.qml:171
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1099
@@ -453,8 +453,8 @@ msgstr[2] "%1 hodiny"
 msgid "%1 minute"
 msgid_plural "%1 minutes"
 msgstr[0] "%1 minuta"
-msgstr[1] "%1 minut"
-msgstr[2] "%1 minuty"
+msgstr[1] "%1 minuty"
+msgstr[2] "%1 minut"
 
 #: qml/Greeter/CoverPage.qml:178
 #, qt-format
