@@ -84,8 +84,9 @@ QString AppDrawerProxyModel::filterString() const
 
 void AppDrawerProxyModel::setFilterString(const QString &filterString)
 {
-    if (m_filterString != filterString) {
-        m_filterString = filterString;
+    const QString filterStringOptimised = removeDiacritics(filterString);
+    if (m_filterString != filterStringOptimised) {
+        m_filterString = filterStringOptimised;
         Q_EMIT filterStringChanged();
         invalidateFilter();
     }
@@ -158,7 +159,7 @@ bool AppDrawerProxyModel::filterAcceptsRow(int source_row, const QModelIndex &so
         allWords.prepend(m_source->data(m_source->index(source_row, 0), AppDrawerModelInterface::RoleName).toString());
         bool found = false;
         Q_FOREACH (const QString &currentWord, allWords) {
-            if (currentWord.contains(m_filterString, Qt::CaseInsensitive)) {
+            if (removeDiacritics(currentWord).contains(m_filterString, Qt::CaseInsensitive)) {
                 found = true;
                 break;
             }
@@ -168,6 +169,16 @@ bool AppDrawerProxyModel::filterAcceptsRow(int source_row, const QModelIndex &so
         }
     }
     return true;
+}
+
+QString AppDrawerProxyModel::removeDiacritics(const QString &input) const
+{
+    QString normalized = input.normalized(QString::NormalizationForm_D);
+
+    QString result = normalized;
+    result.remove(QRegularExpression("[\\p{M}]"));
+
+    return result;
 }
 
 QString AppDrawerProxyModel::appId(int index) const
