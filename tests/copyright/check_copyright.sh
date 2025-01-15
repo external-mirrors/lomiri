@@ -50,9 +50,9 @@ ignore_pat="$ignore_pat|/tests/.*/.*\\.desktop$"
 # xml files
 ignore_pat="$ignore_pat|\\.xml$"
 # /data/ files
-ignore_pat="$ignore_pat|/data/.*\\.conf$|/data/.*\\.in|/data/.*\\.url-dispatcher$|/data/.*\\.pkla$|/data/test.*$"
+ignore_pat="$ignore_pat|/data/.*\\.conf$|/data/.*\\.in|/data/.*\\.url-dispatcher$|/data/.*\\.rules$|/data/test.*$"
 # polkit files
-ignore_pat="$ignore_pat|\\.pkla$"
+ignore_pat="$ignore_pat|\\.rules$"
 # /debian/ files
 ignore_pat="$ignore_pat|/debian/"
 # qmldir files

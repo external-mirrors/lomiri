@@ -1,0 +1,8 @@
+// Allow welcome wizard to set AccountsService fields
+polkit.addRule(function(action, subject)
+{
+    if (action.id == "org.freedesktop.accounts.user-administration" && subject.user == "lightdm")
+    {
+        return subject.active ? polkit.Result.YES : polkit.Result.NO;
+    }
+});
