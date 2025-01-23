@@ -18,7 +18,6 @@
 #include "SessionsModel.h"
 #include <QtCore/QFile>
 #include <QtCore/QSortFilterProxyModel>
-#include <QDebug>
 
 QHash<int, QByteArray> SessionsModel::roleNames() const
 {
@@ -50,72 +49,55 @@ void SessionsModel::setIconSearchDirectories(const QList<QUrl> searchDirectories
 
 QUrl SessionsModel::iconUrl(const QString sessionKey) const
 {
-    const QStringList imgExtensions { "svg", "png" };
-    Q_FOREACH(const QString& imgExt, imgExtensions)
+    Q_FOREACH(const QUrl& searchDirectory, m_iconSearchDirectories)
     {
-        Q_FOREACH(const QUrl& searchDirectory, m_iconSearchDirectories)
-        {
-            // This is an established icon naming convention
-            QString customIconUrl = searchDirectory.toString(QUrl::StripTrailingSlash) +
-                "/custom_" + sessionKey  + "_badge." + imgExt;
-            QString iconUrl = searchDirectory.toString(QUrl::StripTrailingSlash) +
-                "/" + sessionKey  + "_badge." + imgExt;
+        // This is an established icon naming convention
+        QString customIconUrl = searchDirectory.toString(QUrl::StripTrailingSlash) +
+            "/custom_" + sessionKey  + "_badge.png";
+        QString iconUrl = searchDirectory.toString(QUrl::StripTrailingSlash) +
+            "/" + sessionKey  + "_badge.png";
 
-            QFile customIconFile(customIconUrl);
-            QFile iconFile(iconUrl);
-            if (customIconFile.exists()) {
-                qWarning() << "Found custom session badge icon: " << customIconUrl;
-                return QUrl(customIconUrl);
-            } else if (iconFile.exists()) {
-                qWarning() << "Found session badge icon: " << iconUrl;
-                return QUrl(iconUrl);
-            } else {
-                qWarning() << "Failed to find icon file: " << iconUrl;
+        QFile customIconFile(customIconUrl);
+        QFile iconFile(iconUrl);
+        if (customIconFile.exists()) {
+            return QUrl(customIconUrl);
+        } else if (iconFile.exists()) {
+            return QUrl(iconUrl);
+        } else {
+            // Search the legacy way
+            QString path = searchDirectory.toString(QUrl::StripTrailingSlash) + "/";
+            bool iconFound = false;
+            if (sessionKey == "ubuntu" || sessionKey == "ubuntu-2d") {
+                path += "ubuntu_badge.png";
+                iconFound = true;
+            } else if(
+                        sessionKey == "gnome-classic" ||
+                        sessionKey == "gnome-flashback-compiz" ||
+                        sessionKey == "gnome-flashback-metacity" ||
+                        sessionKey == "gnome-shell" ||
+                        sessionKey == "gnome-wayland" ||
+                        sessionKey == "gnome"
+                    ){
+                path += "gnome_badge.png";
+                iconFound = true;
+            } else if (sessionKey == "plasma") {
+                path += "kde_badge.png";
+                iconFound = true;
+            } else if (sessionKey == "xterm") {
+                path += "recovery_console_badge.png";
+                iconFound = true;
+            } else if (sessionKey == "remote-login") {
+                path += "remote_login_help.png";
+                iconFound = true;
             }
-            // Skip the legacy part for .svg image extension... (SVGs have never been shipped in
-            // lomiri sources, they only exist in ayatana-greeter-badges).
-            if (imgExt == "png") {
 
-                qWarning() << "Trying legacy mechanism for finding an appropriate icon file.";
-
-                // Search the legacy way, only needed if ayatana-greeter-badges is not used
-                // as session icon badge source.
-                QString path = searchDirectory.toString(QUrl::StripTrailingSlash) + "/";
-                bool iconFound = false;
-                if (sessionKey == "ubuntu" || sessionKey == "ubuntu-2d") {
-                    path += "ubuntu_badge.png";
-                    iconFound = true;
-                } else if(
-                            sessionKey == "gnome-classic" ||
-                            sessionKey == "gnome-flashback-compiz" ||
-                            sessionKey == "gnome-flashback-metacity" ||
-                            sessionKey == "gnome-shell" ||
-                            sessionKey == "gnome-wayland" ||
-                            sessionKey == "gnome"
-                        ) {
-                    path += "gnome_badge.png";
-                    iconFound = true;
-                } else if (sessionKey == "plasma") {
-                    path += "kde_badge.png";
-                    iconFound = true;
-                } else if (sessionKey == "xterm") {
-                    path += "recovery_console_badge.png";
-                    iconFound = true;
-                } else if (sessionKey == "remote-login") {
-                    path += "remote_login_help.png";
-                    iconFound = true;
-                }
-
-                if (QFile(path).exists() && iconFound) {
-                    qWarning() << "Using session badge icon: " << path << " for session type: " << sessionKey;
-                    return path;
-                }
+            if (QFile(path).exists() && iconFound) {
+                return path;
             }
         }
     }
 
     // FIXME make this smarter
-    qWarning() << "No suitable icon found! Falling back to unknown_badge.png icon.";
     return QUrl("./graphics/session_icons/unknown_badge.png");
 }
 

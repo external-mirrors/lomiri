@@ -59,7 +59,6 @@ private:
     QLightDM::SessionsModel* m_model;
     QHash<int, QByteArray> m_roleNames;
     QList<QUrl> m_iconSearchDirectories{
-        QUrl("/usr/share/ayatana-greeter/badges"),
         QUrl(SHELL_APP_FULL_DIR "/Greeter/graphics/session_icons"),
         QUrl("/usr/local/share/lomiri-greeter"),
         QUrl("/usr/share/lomiri-greeter/")};
