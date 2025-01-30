@@ -321,6 +321,8 @@ Item {
             } else {
                 if (screen.formFactor === Screen.Tablet) {
                     return "tablet";
+                } else if (shell.hasTouchscreen) {
+                    return "tablet";
                 } else if (screen.formFactor === Screen.Phone) {
                     return "phone";
                 } else {
