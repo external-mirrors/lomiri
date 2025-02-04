@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-06 08:14+0000\n"
-"PO-Revision-Date: 2025-02-04 07:51+0000\n"
+"PO-Revision-Date: 2025-02-04 18:53+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/lomiri/lomiri/"
 "hr/>\n"
@@ -528,7 +528,7 @@ msgstr "Odaberi okruženje radne površine"
 
 #: qml/Launcher/Drawer.qml:240
 msgid "Search…"
-msgstr "Pretraživanje …"
+msgstr "Traži …"
 
 #: qml/Launcher/PullToRefreshScopeStyle.qml:56
 msgid "Pull to refresh…"
