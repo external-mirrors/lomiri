@@ -187,7 +187,7 @@ void System::updateSessionLocale(const QString &locale)
 
     // Restart bits of the session to pick up new language.
     const QStringList units {
-        "ayatana-indicators.target",
+        "lomiri-indicators.target",
         "lomiri-location-service-trust-stored.service",
         "pulseaudio-trust-stored.service",
         "sync-monitor.service",
