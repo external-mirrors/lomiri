@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-06 08:14+0000\n"
-"PO-Revision-Date: 2025-03-16 19:36+0000\n"
+"PO-Revision-Date: 2025-03-16 19:53+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/lomiri/lomiri/es/"
 ">\n"
@@ -30,11 +30,11 @@ msgstr "La interfaz convergente Lomiri"
 
 #: data/lomiri-greeter.desktop.in:4
 msgid "Lomiri Greeter"
-msgstr "Iniciador de sesión Lomiri"
+msgstr "Pantalla de acceso de Lomiri"
 
 #: data/lomiri-greeter.desktop.in:5
 msgid "The converged Lomiri shell's Greeter"
-msgstr "El Iniciador de sesión de la interfaz convergente Lomiri"
+msgstr "La pantalla de acceso de la interfaz convergente Lomiri"
 
 #: data/indicators-client.desktop.in:4
 msgid "Indicators Client"
@@ -66,7 +66,7 @@ msgstr "Contraseña incorrecta. Inténtelo de nuevo"
 
 #: plugins/LightDM/Greeter.cpp:270
 msgid "Log In"
-msgstr "Iniciar sesión"
+msgstr "Acceder"
 
 #: plugins/LightDM/Greeter.cpp:270
 msgid "Retry"
@@ -232,7 +232,7 @@ msgstr "Super + Espacio"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:93
 msgid "Switches to next keyboard layout."
-msgstr "Cambia a la siguiente disposición de teclado."
+msgstr "Cambia a la disposición de teclado siguiente."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:101
 msgid "Super + Shift + Space"
@@ -240,7 +240,7 @@ msgstr "Super + Mayús + Espacio"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:106
 msgid "Switches to previous keyboard layout."
-msgstr "Cambia a la anterior disposición de teclado."
+msgstr "Cambia a la disposición de teclado anterior."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:114
 msgid "Ctrl + Alt + T"
