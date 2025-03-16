@@ -8,16 +8,15 @@ msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-06 08:14+0000\n"
-"PO-Revision-Date: 2021-05-23 05:10+0000\n"
+"PO-Revision-Date: 2025-03-16 11:36+0000\n"
 "Last-Translator: Wannaphong Phatthiyaphaibun <wannaphong@yahoo.com>\n"
-"Language-Team: Thai <https://translate.ubports.com/projects/ubports/lomiri/"
-"th/>\n"
+"Language-Team: Thai <https://hosted.weblate.org/projects/lomiri/lomiri/th/>\n"
 "Language: th\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.11.3\n"
+"X-Generator: Weblate 5.11-dev\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:36+0000\n"
 
 #: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
@@ -50,11 +49,11 @@ msgstr ""
 
 #: plugins/LightDM/Greeter.cpp:199
 msgid "Password: "
-msgstr ""
+msgstr "รหัสผ่าน: "
 
 #: plugins/LightDM/Greeter.cpp:214
 msgid "Username"
-msgstr ""
+msgstr "ชื่อผู้ใช้งาน"
 
 #: plugins/LightDM/Greeter.cpp:258
 msgid "Failed to authenticate"
@@ -95,11 +94,11 @@ msgstr ""
 
 #: plugins/WindowManager/Screen.cpp:160
 msgid "Unknown"
-msgstr ""
+msgstr "ไม่รู้จัก"
 
 #: plugins/WindowManager/Screen.cpp:162
 msgid "VGA"
-msgstr ""
+msgstr "VGA"
 
 #: plugins/WindowManager/Screen.cpp:166
 msgid "DVI"
@@ -119,19 +118,19 @@ msgstr ""
 
 #: plugins/WindowManager/Screen.cpp:178
 msgid "Component"
-msgstr ""
+msgstr "ส่วนประกอบ"
 
 #: plugins/WindowManager/Screen.cpp:180
 msgid "DisplayPort"
-msgstr ""
+msgstr "DisplayPort"
 
 #: plugins/WindowManager/Screen.cpp:183
 msgid "HDMI"
-msgstr ""
+msgstr "HDMI"
 
 #: plugins/WindowManager/Screen.cpp:185
 msgid "TV"
-msgstr ""
+msgstr "ทีวี"
 
 #: plugins/WindowManager/Screen.cpp:187
 msgid "Virtual"
@@ -149,12 +148,12 @@ msgstr ""
 #: qml/Components/Dialogs.qml:180
 msgctxt "Button: Lock the system"
 msgid "Lock"
-msgstr ""
+msgstr "ล็อก"
 
 #: qml/Components/Dialogs.qml:191
 msgctxt "Button: Log out from the system"
 msgid "Log Out"
-msgstr ""
+msgstr "ลงชื่อออก"
 
 #: qml/Components/Dialogs.qml:199 qml/Components/Dialogs.qml:284
 #: qml/Greeter/GreeterView.qml:452 qml/Wizard/Pages/passcode-confirm.qml:32
@@ -169,20 +168,20 @@ msgstr ""
 
 #: qml/Components/Dialogs.qml:212
 msgid "Are you sure you want to reboot?"
-msgstr ""
+msgstr "คุณแน่ใจว่าต้องการรีบูต?"
 
 #: qml/Components/Dialogs.qml:215
 msgid "No"
-msgstr ""
+msgstr "ไม่"
 
 #: qml/Components/Dialogs.qml:223
 msgid "Yes"
-msgstr ""
+msgstr "ใช่"
 
 #: qml/Components/Dialogs.qml:243
 msgctxt "Title: Power off/Restart dialog"
 msgid "Power"
-msgstr ""
+msgstr "พลังงาน"
 
 #: qml/Components/Dialogs.qml:244
 msgid ""
@@ -193,7 +192,7 @@ msgstr ""
 #: qml/Components/Dialogs.qml:248
 msgctxt "Button: Power off the system"
 msgid "Power off"
-msgstr ""
+msgstr "ปิดเครื่อง"
 
 #: qml/Components/Dialogs.qml:263
 msgctxt "Button: Restart the system"
@@ -202,7 +201,7 @@ msgstr ""
 
 #: qml/Components/Dialogs.qml:276
 msgid "Screenshot"
-msgstr ""
+msgstr "ภาพหน้าจอ"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:41
 msgid "Keyboard Shortcuts"
@@ -214,11 +213,11 @@ msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:67
 msgid "Takes a screenshot."
-msgstr ""
+msgstr "จับภาพหน้าจอ"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:75
 msgid "Alt + PrtScr"
-msgstr ""
+msgstr "Alt + PrtScr"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:80
 msgid "Takes a screenshot of the current window."
@@ -250,7 +249,7 @@ msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:131
 msgid "Launcher"
-msgstr ""
+msgstr "ตัวเรียกใช้งาน"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:138
 msgid "Super (Hold)"
@@ -358,11 +357,11 @@ msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:320
 msgid "Alt + F4"
-msgstr ""
+msgstr "Alt + F4"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:325
 msgid "Closes the current window."
-msgstr ""
+msgstr "ปิดหน้าต่างปัจจุบัน"
 
 #: qml/Components/Lockscreen.qml:214 qml/Greeter/GreeterView.qml:472
 msgid "Return to Call"
@@ -400,7 +399,7 @@ msgstr ""
 
 #: qml/Components/ModeSwitchWarningDialog.qml:94
 msgid "Close all"
-msgstr ""
+msgstr "ปิดทั้งหมด"
 
 #: qml/Components/SharingPicker.qml:54
 msgid "Preview Share Item"
@@ -437,16 +436,14 @@ msgstr ""
 #, qt-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 ชั่วโมง"
 
 #: qml/Greeter/CoverPage.qml:171
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1099
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 นาที"
 
 #: qml/Greeter/CoverPage.qml:178
 #, qt-format
@@ -465,7 +462,7 @@ msgstr "ปลดล็อก"
 
 #: qml/Greeter/DelayedLockscreen.qml:43
 msgid "Device Locked"
-msgstr ""
+msgstr "อุปกรณ์ถูกล็อก"
 
 #: qml/Greeter/DelayedLockscreen.qml:58
 msgid "You have been locked out due to too many failed passphrase attempts."
@@ -487,7 +484,7 @@ msgstr[1] ""
 #: tests/qmltests/Greeter/tst_Greeter.qml:625
 #: tests/qmltests/Greeter/tst_Greeter.qml:637
 msgid "Try again"
-msgstr ""
+msgstr "ลองอีกครั้ง"
 
 #: qml/Greeter/Greeter.qml:628 tests/qmltests/Greeter/tst_Greeter.qml:552
 #: tests/qmltests/Greeter/tst_Greeter.qml:603
@@ -641,7 +638,7 @@ msgstr ""
 
 #: qml/Wizard/Pages/10-welcome.qml:29
 msgid "Language"
-msgstr ""
+msgstr "ภาษา"
 
 #: qml/Wizard/Pages/10-welcome.qml:176
 #: qml/Wizard/Pages/10-welcome-update.qml:128
@@ -657,7 +654,7 @@ msgstr "ถัดไป"
 #: qml/Wizard/Pages/10-welcome-update.qml:92
 #, qt-format
 msgid "Welcome to %1 %2"
-msgstr ""
+msgstr "ยินดีต้อนรับสู่ %1 %2"
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
 #: qml/Wizard/Pages/10-welcome-update.qml:108
@@ -667,19 +664,19 @@ msgstr ""
 
 #: qml/Wizard/Pages/11-changelog.qml:28
 msgid "What's new"
-msgstr ""
+msgstr "มีอะไรใหม่"
 
 #: qml/Wizard/Pages/11-changelog.qml:74
 msgid "Loading..."
-msgstr ""
+msgstr "กำลังโหลด..."
 
 #: qml/Wizard/Pages/20-keyboard.qml:31
 msgid "Select Keyboard"
-msgstr ""
+msgstr "เลือกแป้นพิมพ์"
 
 #: qml/Wizard/Pages/20-keyboard.qml:71
 msgid "Keyboard language"
-msgstr ""
+msgstr "แป้นพิมพ์ภาษา"
 
 #: qml/Wizard/Pages/20-keyboard.qml:93
 msgid "Keyboard layout"
@@ -689,7 +686,7 @@ msgstr ""
 #: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/79-system-update.qml:144
 #: qml/Wizard/Pages/sim.qml:101
 msgid "Skip"
-msgstr ""
+msgstr "ข้าม"
 
 #: qml/Wizard/Pages/30-wifi.qml:31
 msgid "Connect to Wi‑Fi"
@@ -697,7 +694,7 @@ msgstr ""
 
 #: qml/Wizard/Pages/30-wifi.qml:139
 msgid "Connected"
-msgstr ""
+msgstr "เชื่อมต่อแล้ว"
 
 #: qml/Wizard/Pages/30-wifi.qml:172
 msgid "Available Wi-Fi networks"
@@ -709,11 +706,11 @@ msgstr ""
 
 #: qml/Wizard/Pages/50-timezone.qml:30
 msgid "Time Zone"
-msgstr ""
+msgstr "เขตเวลา"
 
 #: qml/Wizard/Pages/50-timezone.qml:182
 msgid "Enter your city"
-msgstr ""
+msgstr "กรอกเมืองของคุณ"
 
 #: qml/Wizard/Pages/60-account.qml:24
 msgid "Personalize Your Device"
@@ -730,7 +727,7 @@ msgstr ""
 #: qml/Wizard/Pages/70-passwd-type.qml:103
 msgctxt "Label: Type of security method"
 msgid "Create new password"
-msgstr ""
+msgstr "สร้างรหัสผ่านใหม่"
 
 #: qml/Wizard/Pages/70-passwd-type.qml:105
 msgctxt "Label: Type of security method"
@@ -761,7 +758,7 @@ msgstr ""
 #, qt-format
 msgctxt "version of the system update"
 msgid "Version %1"
-msgstr ""
+msgstr "รุ่น %1"
 
 #: qml/Wizard/Pages/79-system-update.qml:95
 msgid "This could take a few minutes..."
@@ -779,7 +776,7 @@ msgstr ""
 #: qml/Wizard/Pages/80-finished.qml:95
 #, qt-format
 msgid "Welcome to %1"
-msgstr ""
+msgstr "ยินดีต้อนรับสู่%1"
 
 #: qml/Wizard/Pages/80-finished.qml:111
 msgid "You are ready to use your device now"
@@ -791,7 +788,7 @@ msgstr ""
 
 #: qml/Wizard/Pages/80-finished.qml:131
 msgid "Get Started"
-msgstr ""
+msgstr "เริ่มต้น"
 
 #: qml/Wizard/Pages/passcode-confirm.qml:43
 #: qml/Wizard/Pages/passcode-desktop.qml:104
