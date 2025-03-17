@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-06 08:14+0000\n"
-"PO-Revision-Date: 2025-03-16 11:36+0000\n"
+"PO-Revision-Date: 2025-03-17 11:17+0000\n"
 "Last-Translator: Wannaphong Phatthiyaphaibun <wannaphong@yahoo.com>\n"
 "Language-Team: Thai <https://hosted.weblate.org/projects/lomiri/lomiri/th/>\n"
 "Language: th\n"
@@ -61,7 +61,7 @@ msgstr ""
 
 #: plugins/LightDM/Greeter.cpp:260
 msgid "Invalid password, please try again"
-msgstr ""
+msgstr "รหัสผ่านไม่ถูกต้อง กรุณาลองอีกครั้ง"
 
 #: plugins/LightDM/Greeter.cpp:270
 msgid "Log In"
@@ -73,7 +73,7 @@ msgstr ""
 
 #: plugins/LightDM/UsersModel.cpp:157
 msgid "Login"
-msgstr ""
+msgstr "ลงชื่อ"
 
 #: plugins/LightDM/UsersModel.cpp:165
 msgid "Guest Session"
