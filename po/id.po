@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-06 08:14+0000\n"
-"PO-Revision-Date: 2023-12-06 00:23+0000\n"
-"Last-Translator: Reza Almanda <rezaalmanda27@gmail.com>\n"
+"PO-Revision-Date: 2025-03-17 15:58+0000\n"
+"Last-Translator: Wachid Adi Nugroho <wachidadinugroho.maya@gmail.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/lomiri/lomiri/"
 "id/>\n"
 "Language: id\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.3-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:35+0000\n"
 
 #: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
@@ -182,7 +182,7 @@ msgstr "Ya"
 #: qml/Components/Dialogs.qml:243
 msgctxt "Title: Power off/Restart dialog"
 msgid "Power"
-msgstr ""
+msgstr "Daya"
 
 #: qml/Components/Dialogs.qml:244
 msgid ""
@@ -200,7 +200,7 @@ msgstr "Matikan daya"
 #: qml/Components/Dialogs.qml:263
 msgctxt "Button: Restart the system"
 msgid "Restart"
-msgstr "Booting ulang"
+msgstr "Mulai ulang"
 
 #: qml/Components/Dialogs.qml:276
 #, fuzzy
@@ -214,7 +214,7 @@ msgstr "Pintasan papan ketik"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:62
 msgid "PrtScr"
-msgstr ""
+msgstr "PrtScr"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:67
 msgid "Takes a screenshot."
@@ -222,7 +222,7 @@ msgstr "Ambil tangkapan layar"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:75
 msgid "Alt + PrtScr"
-msgstr ""
+msgstr "Alt + PrtScr"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:80
 msgid "Takes a screenshot of the current window."
@@ -230,143 +230,143 @@ msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:88
 msgid "Super + Space"
-msgstr ""
+msgstr "Super + Spasi"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:93
 msgid "Switches to next keyboard layout."
-msgstr ""
+msgstr "Berganti ke tata letak papan ketik selanjutnya."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:101
 msgid "Super + Shift + Space"
-msgstr ""
+msgstr "Super + Shift + Spasi"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:106
 msgid "Switches to previous keyboard layout."
-msgstr ""
+msgstr "Berganti ke tata letak papan ketik sebelumnya."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:114
 msgid "Ctrl + Alt + T"
-msgstr ""
+msgstr "Ctrl + Alt + T"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:119
 msgid "Starts the Terminal application."
-msgstr ""
+msgstr "Memulai aplikasi Terminal"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:131
 msgid "Launcher"
-msgstr ""
+msgstr "Peluncur"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:138
 msgid "Super (Hold)"
-msgstr ""
+msgstr "Super (Tahan)"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:143
 msgid "Opens the launcher, displays shortcuts."
-msgstr ""
+msgstr "Buka peluncur, tampilkan pintasan."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:151
 msgid "Alt + F1"
-msgstr ""
+msgstr "Alt + F1"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:156
 msgid "Opens launcher keyboard navigation mode."
-msgstr ""
+msgstr "Buka peluncur mode navigasi papan ketik."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:164
 msgid "Super + Tab"
-msgstr ""
+msgstr "Super + Tab"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:169
 msgid "Switches applications via the launcher."
-msgstr ""
+msgstr "Berganti aplikasi melalui peluncur."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:177
 msgid "Super + 1 to 0"
-msgstr ""
+msgstr "Super + 1 sampai 0"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:182
 msgid "Same as clicking on a launcher icon."
-msgstr ""
+msgstr "Sama seperti mengklik pada ikon peluncur."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:190
 msgid "Super + A"
-msgstr ""
+msgstr "Super + A"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:195
 msgid "Opens the Application Drawer."
-msgstr ""
+msgstr "Buka Laci Aplikasi."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:211
 msgid "Switching"
-msgstr ""
+msgstr "Bertukar"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:218
 msgid "Alt + Tab"
-msgstr ""
+msgstr "Alt + Tab"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:223
 msgid "Switches between applications."
-msgstr ""
+msgstr "Bertukar antar aplikasi."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:231
 msgid "Super + W"
-msgstr ""
+msgstr "Super + W"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:236
 msgid "Opens the desktop spread."
-msgstr ""
+msgstr "Buka menyebar desktop."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:244
 msgid "Cursor Left or Right"
-msgstr ""
+msgstr "Kursor Kiri atau Kanan"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:249
 msgid "Moves the focus."
-msgstr ""
+msgstr "Pindahkan fokus."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:261
 msgid "Windows"
-msgstr ""
+msgstr "Jendela-jendela"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:268
 msgid "Ctrl + Super + D"
-msgstr ""
+msgstr "Ctrl + Super + D"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:273
 msgid "Minimizes all windows."
-msgstr ""
+msgstr "Minimalkan semua jendela."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:281
 msgid "Ctrl + Super + Up"
-msgstr ""
+msgstr "Ctrl + Super + Atas"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:286
 msgid "Maximizes the current window."
-msgstr ""
+msgstr "Maksimalkan jendela saat ini."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:294
 msgid "Ctrl + Super + Down"
-msgstr ""
+msgstr "Ctrl + Super + Bawah"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:299
 msgid "Minimizes or restores the current window."
-msgstr ""
+msgstr "Minimalkan atau kembalikan jendela saat ini."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:307
 msgid "Ctrl + Super + Left or Right"
-msgstr ""
+msgstr "Ctrl + Super + Kiri atau Kanan"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:312
 msgid "Semi-maximizes the current window."
-msgstr ""
+msgstr "Semi-maksimalkan jendela saat ini."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:320
 msgid "Alt + F4"
-msgstr ""
+msgstr "Alt + F4"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:325
 msgid "Closes the current window."
-msgstr ""
+msgstr "Tutup jendela saat ini."
 
 #: qml/Components/Lockscreen.qml:214 qml/Greeter/GreeterView.qml:472
 msgid "Return to Call"
@@ -378,53 +378,54 @@ msgstr "Panggilan Darurat"
 
 #: qml/Components/Lockscreen.qml:247
 msgid "OK"
-msgstr "OK"
+msgstr "Oke"
 
 #: qml/Components/ModeSwitchWarningDialog.qml:33
 msgid "Apps may have unsaved data:"
-msgstr ""
+msgstr "Aplikasi mungkin mempunyai data yang belum tersimpan:"
 
 #: qml/Components/ModeSwitchWarningDialog.qml:60
 msgctxt ""
 "Re-dock means connect the device again to an external screen/mouse/keyboard"
 msgid "Re-dock, save your work and close these apps to continue."
 msgstr ""
+"Kaitkan ulang, simpan pekerjaanmu dan tutup aplikasinya untuk melanjutkan."
 
 #: qml/Components/ModeSwitchWarningDialog.qml:67
 msgid "Or force close now (unsaved data will be lost)."
-msgstr ""
+msgstr "Atau paksa tutup sekarang (data yang belum tersimpan akan hilang)."
 
 #: qml/Components/ModeSwitchWarningDialog.qml:80
 msgid "OK, I will reconnect"
-msgstr ""
+msgstr "Oke, Saya akan menyambungkan lagi"
 
 #: qml/Components/ModeSwitchWarningDialog.qml:81
 msgid "Reconnect now!"
-msgstr ""
+msgstr "Sambungkan lagi sekarang!"
 
 #: qml/Components/ModeSwitchWarningDialog.qml:94
 msgid "Close all"
-msgstr ""
+msgstr "Tutup semua"
 
 #: qml/Components/SharingPicker.qml:54
 msgid "Preview Share Item"
-msgstr ""
+msgstr "Pratinjau Perihal yang Dibagikan"
 
 #: qml/Components/VirtualTouchPad.qml:312
 msgid ""
 "Your device is now connected to an external display. Use this screen as a "
 "touch pad to interact with the pointer."
 msgstr ""
+"Perangkan anda sekarang terhubung ke penampil luar. Gunakan layar ini "
+"sebagai papan sentuh untuk berinteraksi dengan penunjuknya."
 
 #: qml/Components/VirtualTouchPad.qml:322
-#, fuzzy
-#| msgid "Tap to return to call..."
 msgid "Tap left button to click."
-msgstr "Ketuk untuk kembali ke panggilan..."
+msgstr "Ketuk tombol kiri untuk klik."
 
 #: qml/Components/VirtualTouchPad.qml:334
 msgid "Tap right button to right click."
-msgstr ""
+msgstr "Ketuk tombol kanan untuk klik."
 
 #: qml/Components/VirtualTouchPad.qml:346
 msgid "Swipe with two fingers to scroll."
