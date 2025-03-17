@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-06 08:14+0000\n"
-"PO-Revision-Date: 2025-03-17 16:26+0000\n"
+"PO-Revision-Date: 2025-03-17 17:02+0000\n"
 "Last-Translator: Wachid Adi Nugroho <wachidadinugroho.maya@gmail.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/lomiri/lomiri/"
 "id/>\n"
@@ -630,28 +630,29 @@ msgstr "Usap panjang dari tepi kiri untuk membuka Laci Aplikasi"
 
 #: qml/Tutorial/TutorialLeft.qml:47
 msgid "Short swipe from the left edge to open the launcher"
-msgstr ""
+msgstr "Usap pendek dari tepi kiri untuk membuka peluncurnya"
 
 #: qml/Tutorial/TutorialRight.qml:54
 msgid "Push your mouse against the right edge to view your open apps"
 msgstr ""
+"Dorong tetikusmu ke arah tepi kanan untuk melihat aplikasimu yang terbuka"
 
 #: qml/Tutorial/TutorialRight.qml:55
 msgid "Swipe from the right edge to view your open apps"
-msgstr ""
+msgstr "Usap dari tepi kanan untuk melihat aplikasimu yang terbuka"
 
 #: qml/Tutorial/TutorialTop.qml:53
 msgid "Swipe from the top edge to access notifications and quick settings"
-msgstr ""
+msgstr "Usap dari tepi atas untuk mengakses notifikasi dan pengaturan cepat"
 
 #: qml/Wizard/Page.qml:59
 msgctxt "Button: Go back one page in the Wizard"
 msgid "Back"
-msgstr ""
+msgstr "Kembali"
 
 #: qml/Wizard/Pages/10-welcome.qml:29
 msgid "Language"
-msgstr ""
+msgstr "Bahasa"
 
 #: qml/Wizard/Pages/10-welcome.qml:176
 #: qml/Wizard/Pages/10-welcome-update.qml:128
@@ -661,101 +662,100 @@ msgstr ""
 #: qml/Wizard/Pages/passcode-desktop.qml:154
 #: qml/Wizard/Pages/password-set.qml:153
 msgid "Next"
-msgstr ""
+msgstr "Selanjutnya"
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
 #: qml/Wizard/Pages/10-welcome-update.qml:92
 #, qt-format
 msgid "Welcome to %1 %2"
-msgstr ""
+msgstr "Selamat datang di %1 %2"
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
 #: qml/Wizard/Pages/10-welcome-update.qml:108
 #, qt-format
 msgid "We will make sure your device is ready to use %1 %2"
-msgstr ""
+msgstr "Kami akan memastikan perangkat anda siap digunakan %1 %2"
 
 #: qml/Wizard/Pages/11-changelog.qml:28
 msgid "What's new"
-msgstr ""
+msgstr "Apa yang baru"
 
 #: qml/Wizard/Pages/11-changelog.qml:74
-#, fuzzy
 msgid "Loading..."
-msgstr "Berbicara..."
+msgstr "Memuat..."
 
 #: qml/Wizard/Pages/20-keyboard.qml:31
 msgid "Select Keyboard"
-msgstr ""
+msgstr "Pilih Papan Ketik"
 
 #: qml/Wizard/Pages/20-keyboard.qml:71
 msgid "Keyboard language"
-msgstr ""
+msgstr "Bahasa papan ketik"
 
 #: qml/Wizard/Pages/20-keyboard.qml:93
 msgid "Keyboard layout"
-msgstr ""
+msgstr "Tata letak papan ketik"
 
 #: qml/Wizard/Pages/20-keyboard.qml:152 qml/Wizard/Pages/30-wifi.qml:213
 #: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/79-system-update.qml:144
 #: qml/Wizard/Pages/sim.qml:101
 msgid "Skip"
-msgstr ""
+msgstr "Lewati"
 
 #: qml/Wizard/Pages/30-wifi.qml:31
 msgid "Connect to Wi‑Fi"
-msgstr ""
+msgstr "Hubungkan ke Wi-Fi"
 
 #: qml/Wizard/Pages/30-wifi.qml:139
 msgid "Connected"
-msgstr ""
+msgstr "Terhubung"
 
 #: qml/Wizard/Pages/30-wifi.qml:172
 msgid "Available Wi-Fi networks"
-msgstr ""
+msgstr "Jaringan Wi-Fi yang tersedia"
 
 #: qml/Wizard/Pages/30-wifi.qml:173
 msgid "No available Wi-Fi networks"
-msgstr ""
+msgstr "Jaringan Wi-Fi tidak tersedia"
 
 #: qml/Wizard/Pages/50-timezone.qml:30
 msgid "Time Zone"
-msgstr ""
+msgstr "Zona Waktu"
 
 #: qml/Wizard/Pages/50-timezone.qml:182
 msgid "Enter your city"
-msgstr ""
+msgstr "Masukkan kota anda"
 
 #: qml/Wizard/Pages/60-account.qml:24
 msgid "Personalize Your Device"
-msgstr ""
+msgstr "Personalisasikan Perangkat Anda"
 
 #: qml/Wizard/Pages/60-account.qml:54
 msgid "Preferred Name"
-msgstr ""
+msgstr "Nama yang disukai"
 
 #: qml/Wizard/Pages/70-passwd-type.qml:40
 msgid "Lock Screen"
-msgstr ""
+msgstr "Kunci Layar"
 
 #: qml/Wizard/Pages/70-passwd-type.qml:103
 msgctxt "Label: Type of security method"
 msgid "Create new password"
-msgstr ""
+msgstr "Buat kata sandi baru"
 
 #: qml/Wizard/Pages/70-passwd-type.qml:105
 msgctxt "Label: Type of security method"
 msgid "Create passcode (numbers only)"
-msgstr ""
+msgstr "Buat kode sandi (hanya angka)"
 
 #: qml/Wizard/Pages/70-passwd-type.qml:107
 msgctxt "Label: Type of security method"
 msgid "No lock code"
-msgstr ""
+msgstr "Tanpa kode kunci"
 
 #: qml/Wizard/Pages/79-system-update.qml:28
 msgid "Update Device"
-msgstr ""
+msgstr "Perbarui Perangkat"
 
 #: qml/Wizard/Pages/79-system-update.qml:55
 msgid ""
