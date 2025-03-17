@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-06 08:14+0000\n"
-"PO-Revision-Date: 2025-03-17 15:58+0000\n"
+"PO-Revision-Date: 2025-03-17 16:26+0000\n"
 "Last-Translator: Wachid Adi Nugroho <wachidadinugroho.maya@gmail.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/lomiri/lomiri/"
 "id/>\n"
@@ -429,41 +429,39 @@ msgstr "Ketuk tombol kanan untuk klik."
 
 #: qml/Components/VirtualTouchPad.qml:346
 msgid "Swipe with two fingers to scroll."
-msgstr ""
+msgstr "Usap dengan dua jari untuk gulir."
 
 #: qml/Components/VirtualTouchPad.qml:391
 msgid "Find more settings in the system settings."
-msgstr ""
+msgstr "Temukan pengaturan tambahan pada pengaturan sistem."
 
 #: qml/Greeter/CoverPage.qml:160
 msgid "Fully charged"
-msgstr ""
+msgstr "Sudah dicas penuh"
 
 #: qml/Greeter/CoverPage.qml:168
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1095
 #, qt-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 jam"
 
 #: qml/Greeter/CoverPage.qml:171
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1099
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 menit"
 
 #: qml/Greeter/CoverPage.qml:178
 #, qt-format
 msgid "%1, %2 until full"
-msgstr ""
+msgstr "%1, %2 sampai penuh"
 
 #: qml/Greeter/CoverPage.qml:181
 #, qt-format
 msgid "%1 until full"
-msgstr ""
+msgstr "%1 sampai penuh"
 
 #: qml/Greeter/CoverPage.qml:197
 #: tests/qmltests/Greeter/tst_GreeterView.qml:1239
@@ -488,7 +486,7 @@ msgstr ""
 #, qt-format
 msgid "Please wait %1 minute and then try again…"
 msgid_plural "Please wait %1 minutes and then try again…"
-msgstr[0] "Harap tunggu %1 menit lalu coba lagi..."
+msgstr[0] "Harap tunggu %1 menit dan lalu coba lagi…"
 
 #: qml/Greeter/Greeter.qml:627 tests/qmltests/Greeter/tst_Greeter.qml:578
 #: tests/qmltests/Greeter/tst_Greeter.qml:597
@@ -512,29 +510,27 @@ msgstr "Masukkan kode sandi"
 
 #: qml/Greeter/GreeterView.qml:472
 msgid "Emergency"
-msgstr ""
+msgstr "Darurat"
 
 #: qml/Greeter/PromptList.qml:143
 msgid "Passphrase"
-msgstr ""
+msgstr "Frasa sandi"
 
 #: qml/Greeter/PromptList.qml:143
 msgid "Passcode"
-msgstr ""
+msgstr "Kode sandi"
 
 #: qml/Greeter/SessionsList.qml:124
 msgid "Select desktop environment"
-msgstr ""
+msgstr "Pilih lingkungan desktop"
 
 #: qml/Launcher/Drawer.qml:240
-#, fuzzy
-#| msgid "Search"
 msgid "Search…"
-msgstr "Cari"
+msgstr "Cari…"
 
 #: qml/Launcher/PullToRefreshScopeStyle.qml:56
 msgid "Pull to refresh…"
-msgstr "Tarik untuk menyegarkan..."
+msgstr "Tarik untuk menyegarkan…"
 
 #: qml/Launcher/PullToRefreshScopeStyle.qml:61
 msgid "Release to refresh…"
@@ -546,7 +542,7 @@ msgstr "Tampilkan sandi"
 
 #: qml/Notifications/Notification.qml:322
 msgid "New message"
-msgstr ""
+msgstr "Pesan baru"
 
 #: qml/Panel/ActiveCallHint.qml:79
 msgid "Tap to return to call..."
@@ -564,21 +560,20 @@ msgstr "Tak ada yang sedang diputar"
 #, qt-format
 msgid "%1 second"
 msgid_plural "%1 seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 detik"
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1107
 msgid "0 seconds"
-msgstr ""
+msgstr "0 detik"
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1109
 #, qt-format
 msgid "%1 remaining"
-msgstr ""
+msgstr "%1 tersisa"
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1115
 msgid "In queue…"
-msgstr "Dalam antrian..."
+msgstr "Dalam antrian…"
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1119
 msgid "Downloading"
@@ -586,7 +581,7 @@ msgstr "Sedang mengunduh"
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1121
 msgid "Paused, tap to resume"
-msgstr "Jeda, ketuk untuk melanjutkan"
+msgstr "Dijeda, ketuk untuk melanjutkan"
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1123
 msgid "Canceled"
@@ -604,17 +599,17 @@ msgstr "Gagal, ketuk untuk mencoba ulang"
 #: qml/Panel/Indicators/MessageMenuItemFactory.qml:210
 msgctxt "Button: Send a reply message"
 msgid "Send"
-msgstr ""
+msgstr "Kirim"
 
 #: qml/Panel/Indicators/MessageMenuItemFactory.qml:152
 msgctxt "Label: Hint in message indicator line edit"
 msgid "Reply"
-msgstr ""
+msgstr "Balas"
 
 #: qml/Panel/Indicators/MessageMenuItemFactory.qml:209
 msgctxt "Button: Call back on phone"
 msgid "Call back"
-msgstr ""
+msgstr "Panggil kembali"
 
 #: qml/Panel/PanelMenuPage.qml:92
 msgid "Back"
@@ -623,16 +618,15 @@ msgstr "Kembali"
 #: qml/Stage/SideStage.qml:80
 msgid "Drag using 3 fingers any application from one window to the other"
 msgstr ""
+"Tarik menggunakan 3 jari aplikasi apapun dari satu jendela ke yang lainnya"
 
 #: qml/Stage/Stage.qml:834
 msgid "No running apps"
-msgstr ""
+msgstr "Tidak ada aplikasi yang sedang berjalan"
 
 #: qml/Tutorial/TutorialLeftLong.qml:49
-#, fuzzy
-#| msgid "Try swiping from the top edge to access the indicators"
 msgid "Long swipe from the left edge to open the Application Drawer"
-msgstr "Coba usap dari tepi atas untuk mengakses indikator"
+msgstr "Usap panjang dari tepi kiri untuk membuka Laci Aplikasi"
 
 #: qml/Tutorial/TutorialLeft.qml:47
 msgid "Short swipe from the left edge to open the launcher"
