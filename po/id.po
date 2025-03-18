@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-06 08:14+0000\n"
-"PO-Revision-Date: 2025-03-18 00:19+0000\n"
+"PO-Revision-Date: 2025-03-18 07:48+0000\n"
 "Last-Translator: Wachid Adi Nugroho <wachidadinugroho.maya@gmail.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/lomiri/lomiri/"
 "id/>\n"
@@ -26,15 +26,15 @@ msgstr "Lomiri"
 
 #: data/lomiri.desktop.in:5
 msgid "The converged Lomiri shell"
-msgstr ""
+msgstr "Konvergensi Lomiri shell"
 
 #: data/lomiri-greeter.desktop.in:4
 msgid "Lomiri Greeter"
-msgstr ""
+msgstr "Penyambut Lomiri"
 
 #: data/lomiri-greeter.desktop.in:5
 msgid "The converged Lomiri shell's Greeter"
-msgstr ""
+msgstr "Penyambut Konvergensi Lomiri shell"
 
 #: data/indicators-client.desktop.in:4
 msgid "Indicators Client"
@@ -203,10 +203,8 @@ msgid "Restart"
 msgstr "Mulai ulang"
 
 #: qml/Components/Dialogs.qml:276
-#, fuzzy
-#| msgid "Takes a screenshot."
 msgid "Screenshot"
-msgstr "Ambil tangkapan layar"
+msgstr "Tangkapan layar"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:41
 msgid "Keyboard Shortcuts"
@@ -218,7 +216,7 @@ msgstr "PrtScr"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:67
 msgid "Takes a screenshot."
-msgstr "Ambil tangkapan layar"
+msgstr "Ambil tangkapan layar."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:75
 msgid "Alt + PrtScr"
@@ -497,16 +495,12 @@ msgstr "Coba lagi"
 
 #: qml/Greeter/Greeter.qml:628 tests/qmltests/Greeter/tst_Greeter.qml:552
 #: tests/qmltests/Greeter/tst_Greeter.qml:603
-#, fuzzy
-#| msgid "Enter passphrase"
 msgid "Enter passphrase to unlock"
-msgstr "Masukkan frasa sandi"
+msgstr "Masukkan frasa sandi untuk membuka kunci"
 
 #: qml/Greeter/Greeter.qml:629
-#, fuzzy
-#| msgid "Enter passcode"
 msgid "Enter passcode to unlock"
-msgstr "Masukkan kode sandi"
+msgstr "Masukkan kode sandi untuk membuka kunci"
 
 #: qml/Greeter/GreeterView.qml:472
 msgid "Emergency"
