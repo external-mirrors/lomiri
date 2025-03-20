@@ -44,7 +44,7 @@ Item {
         }
         return false;
     }
-    readonly property QtObject contactWatcher: _contactWatcher
+    readonly property QtObject contactWatcher: contactWatcherLoader.status == Loader.Ready ? contactWatcherLoader.item : null
     property int labelSwitchInterval: 6000
     implicitWidth: row.x + row.width
 
@@ -191,10 +191,18 @@ Item {
         }
     }
 
-    Telephony.ContactWatcher {
-        id: _contactWatcher
-        objectName: "contactWatcher"
-        phoneNumber: d.activeCall ? d.activeCall.phoneNumber : ""
+    Loader {
+        id: contactWatcherLoader
+        sourceComponent: callHint.active ? contactWatcherComp : null
+    }
+
+    Component {
+        id: contactWatcherComp
+        Telephony.ContactWatcher {
+            id: _contactWatcher
+            objectName: "contactWatcher"
+            phoneNumber: d.activeCall ? d.activeCall.phoneNumber : ""
+        }
     }
 
     QtObject {
