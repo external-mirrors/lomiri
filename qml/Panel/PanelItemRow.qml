@@ -35,7 +35,6 @@ Item {
     property real selectionChangeBuffer: units.gu(2)
     property bool enableLateralChanges: false
     property bool lightMode: false
-    readonly property color hightlightColor: lightMode ? "#000000" : "#ffffff"
 
     property alias delegate: row.delegate
     property alias contentX: row.contentX
@@ -203,7 +202,7 @@ Item {
 
         anchors.bottom: row.bottom
         height: units.dp(2)
-        color: root.hightlightColor
+        color: theme.palette.normal.foregroundText
         visible: currentItem !== null
         opacity: 0.0
 

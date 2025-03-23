@@ -60,7 +60,6 @@ FocusScope {
             readonly property real contentY: gridView.contentY - gridView.originY
             y: -contentY - units.gu(5)
 
-            readonly property color pullLabelColor: "white"
             style: PullToRefreshScopeStyle {
                 activationThreshold: Math.min(units.gu(14), gridView.height / 5)
             }

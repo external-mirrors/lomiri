@@ -21,7 +21,7 @@ Rectangle {
     width: units.gu(4)
     height: width
     radius: height / 2
-    color: theme.palette.normal.background
+    color: "#000000"
     opacity: 0.95
 
     // to be set from outside

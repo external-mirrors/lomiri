@@ -48,7 +48,7 @@ PullToRefreshStyle {
         anchors.horizontalCenter: parent.horizontalCenter
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
-        color: styledItem.pullLabelColor
+        color: theme.palette.normal.foregroundText
         states: [
             State {
                 name: "pulling"
