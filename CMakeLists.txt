@@ -134,9 +134,9 @@ add_definitions(-DSHELL_APP_FULL_DIR=\"${SHELL_APP_FULL_DIR}\")
 set(SHELL_PRIVATE_FULL_LIBDIR ${CMAKE_INSTALL_FULL_LIBDIR}/lomiri)
 set(SHELL_PRIVATE_FULL_LIBEXECDIR ${CMAKE_INSTALL_FULL_LIBEXECDIR}/lomiri)
 
-execute_process(COMMAND ${PKG_CONFIG_EXECUTABLE} --variable=plugin_private_module_dir LomiriSystemSettings OUTPUT_VARIABLE USS_PRIVATE_PLUGINDIR OUTPUT_STRIP_TRAILING_WHITESPACE)
-if(USS_PRIVATE_PLUGINDIR STREQUAL "")
-    message(FATAL_ERROR "Could not determine USS private plugin installation dir.")
+execute_process(COMMAND ${PKG_CONFIG_EXECUTABLE} --variable=plugin_private_module_dir LomiriSystemSettings OUTPUT_VARIABLE LOMIRI_SYSTEM_SETTINGS_PRIVATE_PLUGINDIR OUTPUT_STRIP_TRAILING_WHITESPACE)
+if(LOMIRI_SYSTEM_SETTINGS_PRIVATE_PLUGINDIR STREQUAL "")
+    message(FATAL_ERROR "Could not determine LomiriSystemSettings private plugin installation dir.")
 endif()
 
 execute_process(COMMAND ${PKG_CONFIG_EXECUTABLE} --variable=plugindir_suffix lomiri-shell-api OUTPUT_VARIABLE SHELL_INSTALL_QML OUTPUT_STRIP_TRAILING_WHITESPACE)

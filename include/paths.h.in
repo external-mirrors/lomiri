@@ -117,11 +117,11 @@ inline QStringList fallbackImportPaths() {
     QStringList paths;
     if (isRunningInstalled()) {
         paths << installRoot() + QStringLiteral("@CMAKE_INSTALL_PREFIX@/@SHELL_INSTALL_QML@");
-        paths << installRoot() + QStringLiteral("@USS_PRIVATE_PLUGINDIR@");
+        paths << installRoot() + QStringLiteral("@LOMIRI_SYSTEM_SETTINGS_PRIVATE_PLUGINDIR@");
         paths << installRoot() + QStringLiteral("@SHELL_PLUGINDIR@");
         paths << installRoot() + QStringLiteral("@CMAKE_INSTALL_PREFIX@/@SHELL_INSTALL_QML@/mocks");
     } else {
-        paths << QStringLiteral("@USS_PRIVATE_PLUGINDIR@");
+        paths << QStringLiteral("@LOMIRI_SYSTEM_SETTINGS_PRIVATE_PLUGINDIR@");
         paths << QStringLiteral("@SHELL_PLUGINDIR@");
         paths << buildDirectory() + QStringLiteral("/tests/mocks");
     }
