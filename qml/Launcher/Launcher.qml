@@ -610,6 +610,10 @@ FocusScope {
             }
             lastDragPoints = [];
         }
+
+        GestureAreaSizeHint {
+            anchors.fill: parent
+        }
     }
 
     states: [

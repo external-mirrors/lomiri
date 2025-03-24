@@ -2380,6 +2380,10 @@ FocusScope {
                 }
             }
         }
+
+        GestureAreaSizeHint {
+            anchors.fill: parent
+        }
     }
 
     TabletSideStageTouchGesture {
