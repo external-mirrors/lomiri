@@ -135,6 +135,7 @@ bool InputDispatcherFilter::eventFilter(QObject *o, QEvent *e)
 QPointF InputDispatcherFilter::adjustedPositionForMovement(const QPointF &pt, const QPointF &movement) const
 {
     QPointF adjusted = pt + movement;
+    MousePointer* pointer = nullptr;
 
     auto screen = screenAt(adjusted); // first check if our move was to a screen with an enabled pointer.
     if (screen) {
@@ -144,13 +145,14 @@ QPointF InputDispatcherFilter::adjustedPositionForMovement(const QPointF &pt, co
         // bound the new position to the old screen geometry
         adjusted.rx() = qMax(screenBounds.left(), qMin(adjusted.x(), screenBounds.right()-1));
         adjusted.ry() = qMax(screenBounds.top(), qMin(adjusted.y(), screenBounds.bottom()-1));
-    } else {
+    } else if ((pointer = currentPointer(pt)) && pointer->centerAdjust()) {
         auto screens = QGuiApplication::screens();
 
         // center of first screen with a pointer.
         Q_FOREACH(QScreen* screen, screens) {
             Q_FOREACH(MousePointer* pointer, m_pointers) {
                 if (pointer->screen() == screen) {
+                    pointer->setCenterAdjust(false);
                     return screen->geometry().center();
                 }
             }

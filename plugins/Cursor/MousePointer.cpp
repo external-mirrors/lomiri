@@ -27,6 +27,8 @@ MousePointer::MousePointer(QQuickItem *parent)
     : MirMousePointerInterface(parent)
     , m_cursorName(QStringLiteral("left_ptr"))
     , m_themeName(QStringLiteral("default"))
+    , m_active(false)
+    , m_centerAdjust(true) // Center the pointer when the screen spawns
 {
     connect(InputDispatcherFilter::instance(), &InputDispatcherFilter::pushedLeftBoundary,
             this, [this](QScreen* screen, qreal amount, Qt::MouseButtons buttons) {
@@ -225,4 +227,9 @@ void MousePointer::setActive(bool value)
         m_active = value;
         Q_EMIT activeChanged();
     }
+}
+
+void MousePointer::setCenterAdjust(bool value)
+{
+    m_centerAdjust = value;
 }

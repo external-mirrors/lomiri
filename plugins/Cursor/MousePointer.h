@@ -56,6 +56,9 @@ public:
     bool isActive() { return m_active; }
     void setActive(bool value);
 
+    bool centerAdjust() { return m_centerAdjust; }
+    void setCenterAdjust(bool value);
+
 Q_SIGNALS:
     void pushedLeftBoundary(qreal amount, Qt::MouseButtons buttons);
     void pushedRightBoundary(qreal amount, Qt::MouseButtons buttons);
@@ -87,6 +90,7 @@ private:
     QString m_cursorName;
     QString m_themeName;
     bool m_active;
+    bool m_centerAdjust;
 
     // Accumulated, unapplied, mouse movement.
     QPointF m_accumulatedMovement;
