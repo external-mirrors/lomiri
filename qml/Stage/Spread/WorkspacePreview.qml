@@ -184,6 +184,7 @@ Item {
             }
             Label {
                 text: qsTr("Drop here")
+                color: "white"
             }
         }
     }
@@ -205,6 +206,7 @@ Item {
             }
             Label {
                 text: qsTr("Drop and go")
+                color: "white"
             }
         }
     }
