@@ -22,6 +22,7 @@ Canvas {
 
     property int topBoundaryOffset // effectively panel height
     property Item confiningItem
+    property bool active
 
     signal pushedLeftBoundary(real amount, int buttons)
     signal pushedRightBoundary(real amount, int buttons)
