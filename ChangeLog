@@ -1,6 +1,406 @@
+2025-03-28 Mike Gabriel
+
+        * Release 0.4.0 (HEAD -> main, tag: 0.4.0)
+
+2025-03-25 Marius Gripsgard
+
+        * Merge branch 'personal/fredldotme/mousepointer-multiscreen' into
+          'main' (4c649d652)
+
+2025-03-24 Alfred Neumayer
+
+        * plugins & qml: Fix moving mouse cursor to second screen (8f5b1e07c)
+
+2025-03-25 Niko
+
+        * Translated using Weblate (Serbian) (dbc4cdb47)
+
+2025-03-24 Marius Gripsgard
+
+        * Merge branch 'main_-_edgevisualhint' into 'main' (e9aa6d1b6)
+
+2025-03-12 Kugi Eusebio
+
+        * Add visual hint when left and right edge gesture areas are resized
+          (08d48e53f)
+
+2025-03-24 Marius Gripsgard
+
+        * Merge branch 'uss' into 'main' (26a44cfa7)
+
+2025-03-23 Luca Weiss
+
+        * Replace outdated USS abbreviation for lomiri-system-settings
+          (193097c31)
+
+2025-03-23 Mike Gabriel
+
+        * Merge branch 'personal/fredldotme/lightmode-fixes' into 'main'
+          (3c9dd5e44)
+
+2025-03-21 Alfred Neumayer
+
+        * qml: Various light mode fixes (073b36a79)
+
+2025-03-20 Mike Gabriel
+
+        * Merge branch 'personal/lduboeuf/lazy_load' into 'main' (2a188d406)
+
+2025-03-18 Lionel Duboeuf
+
+        * Only load ContactWatcher on demand. This prevents having the
+          contact database opened permanently. (e4b941ccb)
+
+2025-03-18 Wachid Adi Nugroho
+
+        * Translated using Weblate (Indonesian) (5c33fe88a)
+        * Translated using Weblate (Indonesian) (048e27774)
+
+2025-03-17 Wachid Adi Nugroho
+
+        * Translated using Weblate (Indonesian) (18b0019bf)
+        * Translated using Weblate (Indonesian) (75fe9b12a)
+        * Translated using Weblate (Indonesian) (22e8239fd)
+
+2025-03-17 Wannaphong Phatthiyaphaibun
+
+        * Translated using Weblate (Thai) (66f6ce68c)
+
+2025-03-16 Adolfo Jayme Barrientos
+
+        * Translated using Weblate (Spanish) (dc206a908)
+        * Translated using Weblate (Spanish) (64f8c7153)
+
+2025-03-16 Wannaphong Phatthiyaphaibun
+
+        * Translated using Weblate (Thai) (f6a4dd520)
+
+2025-03-13 Niko
+
+        * Translated using Weblate (Serbian) (45548ae63)
+
+2025-03-12 Niko
+
+        * Translated using Weblate (Serbian) (59b1fcfc7)
+
+2025-03-04 Viral
+
+        * Translated using Weblate (Russian) (6239076a7)
+
+2025-03-03 Serhii Horichenko
+
+        * Translated using Weblate (Ukrainian) (eb1766426)
+
+2025-02-06 Milo Ivir
+
+        * Translated using Weblate (Croatian) (9adb23aac)
+
+2025-02-07 Mike Gabriel
+
+        * Merge branch 'personal/peat-psuwit/cleanup-transitional' into
+          'main' (bc039fe9b)
+
+2025-02-07 Ratchanan Srirattanamet
+
+        * d/control: follow rename qml-module-lomiri-telephony{0.1 => }
+          (1a24ea2c6)
+
+2025-02-05 Ratchanan Srirattanamet
+
+        * Merge branch
+          'personal/sunweaver/ayatana-indicators-target-in-wizard'
+          into 'main' (34a5ab10c)
+
+2025-01-30 Mike Gabriel
+
+        * plugins/Wizard/System.cpp: Restart lomiri-indicators.target, not
+          ayatana-indicators.target after wizard run has completed.
+          (02591f574)
+
+2025-02-04 Milo Ivir
+
+        * Translated using Weblate (Croatian) (621e15fd7)
+
+2025-02-02 Milo Ivir
+
+        * Translated using Weblate (Croatian) (e8189dde2)
+
+2025-01-29 Ratchanan Srirattanamet
+
+        * Merge branch 'personal/sunweaver/copyright-test' into 'main'
+          (e5e1d5139)
+
+2025-01-28 Mike Gabriel
+
+        * tests/copyright/check_copyright.sh: Ignore ('new')
+          lomiri-indicators.target file in data/. (f0eec8a65)
+
+2025-01-29 Ratchanan Srirattanamet
+
+        * Merge branch 'personal/sunweaver/regression-fix-polkit' into 'main'
+          (2ba70760a)
+
+2025-01-28 Mike Gabriel
+
+        * d/lomiri-common.install: Install polkit .rules file instead of the
+          removed .pkla file. (fdbe026f2)
+
+2025-01-23 Mike Gabriel
+
+        * Revert "plugins/LightDM/SessionsModel.(cpp|h): Support using
+          session badge icon from (new project)
+          ayatana-greeter-badges." (9782c3cb8)
+        * plugins/LightDM/SessionsModel.(cpp|h): Support using session badge
+          icon from (new project) ayatana-greeter-badges.
+          (db9862e18)
+
+2025-01-20 Mike Gabriel
+
+        * Merge branch 'pr/drop-pkla' into 'main' (b002099ee)
+
+2025-01-15 Robert Tari
+
+        * Drop the deprecated PolicyKit *.pkla file (aa7e7c50b)fixes:
+          https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1093069
+
+2025-01-12 தமிழ்நேரம்
+
+        * Translated using Weblate (Tamil) (140020ac4)
+
+2025-01-10 Mike Gabriel
+
+        * Merge branch 'main_diacritics' into 'main' (29872f55f)
+
+2025-01-09 Adam Havelka
+
+        * normalize drawer's search input by removing diacritical marks using
+          regex (a3f5ac5d2)
+
+2025-01-06 Adam Havelka
+
+        * Translated using Weblate (Czech) (cfd51625b)
+
+2024-12-28 Hosted Weblate
+
+        * Update translation files (a6c4f22d3)
+
+2024-12-27 Hosted Weblate
+
+        * Update translation files (34da75300)
+
+2024-12-24 Adam Havelka
+
+        * Translated using Weblate (Czech) (134c37425)
+
+2024-11-28 Mike Gabriel
+
+        * Merge branch 'capsia-main-patch-01532' into 'main' (6d8d64d02)
+
+2024-11-26 Capsia
+
+        * Drop suggestion to contribute on GitHub and references to 16.04
+          (877250563)
+
+2024-11-06 Ettore Atalan
+
+        * Translated using Weblate (German) (46c3037f1)
+
+2024-10-18 Allan Nordhøy
+
+        * Translated using Weblate (Norwegian Bokmål) (47133aa00)
+
+2024-10-12 ikozyris
+
+        * Translated using Weblate (Greek) (6c41345c1)
+
+2024-10-10 Mike Gabriel
+
+        * Merge branch 'personal/lduboeuf/fix_QML_warnings' into 'main'
+          (9c0309812)
+
+2024-10-09 Lionel Duboeuf
+
+        * Add Missing QtQml imports for Bindings (c84a4e590)
+        * Qtquick 5.12->5.15 (fa8d548f7)
+        * Fix Warnings with Bindings (495ded390)
+        * Specify which properties belong to whom. (f93c467cb)
+        * fix deprecated Warnings with Connections signal handlers
+          (931c3781f)
+
+2024-10-03 Ratchanan Srirattanamet
+
+        * Merge branch 'lomiri-target' into 'main' (1d2a0256a)
+
+2024-10-02 Rahammetoela
+
+        * remove the @CONFLICT_UNITS@ producing code (f28815986)
+        * remove Conflicts= from lomiri-MODE.service (92b19ff25)
+
+2024-10-01 Rahammetoela Toekiman
+
+        * introduce lomiri.target (2ff113c7b)
+
+2024-09-22 umesaburo sagawa
+
+        * Translated using Weblate (Japanese) (2ded36f23)
+
+2024-09-25 Mike Gabriel
+
+        * Merge branch 'personal/notkit/ims-volte' into 'main' (4ba828521)
+
+2024-09-24 TheKit
+
+        * IndicatorMenuItemFactory: pass imsIcon to ModemInfoItem (304dbdf94)
+
+2024-09-10 Mike Gabriel
+
+        * Merge branch 'fix/accountsserviceStringDefaults' into 'main'
+          (6f20fcf17)
+
+2024-09-08 OPNA2608
+
+        *
+          lomiri/plugins/AccountsService/com.lomiri.shell.AccountsService.xml:
+          Fix defaults (369c7aac2)
+
+2024-09-01 Mike Gabriel
+
+        * Merge branch 'main_-_sidestagecancel' into 'main' (26daeb41c)
+
+2024-08-10 Kugi Eusebio
+
+        * Hide side stage when app drag was cancelled (367afa198)
+
+2024-08-16 Jack Torrent
+
+        * Translated using Weblate (Turkish) (578df9834)
+
+2024-08-21 Benedek Vigh (冯白诺)
+
+        * Translated using Weblate (Hungarian) (8b2fce681)
+
+2024-08-20 Mike Gabriel
+
+        * Merge branch 'main_-_errorpage' into 'main' (c2a81dad7)
+
+2024-08-10 Kugi Eusebio
+
+        * Make texts black and enable wrapping (3c7f3835d)
+
+2024-08-17 Mike Gabriel
+
+        * Merge branch 'main_-_fix113' into 'main' (1f9068397)
+
+2024-08-11 Kugi Eusebio
+
+        * Explicitly check if priv.focusedAppDelegate is null when displaying
+          window controls in the panel (6c046532e)
+
+2024-08-17 Mike Gabriel
+
+        * Merge branch 'main_-_spreadViaKeyboard' into 'main' (160616942)
+
+2024-08-11 Kugi Eusebio
+
+        * Only close spread upon closing the last app when workspace is not
+          enabled (154775a3b)
+
+2024-08-17 Mike Gabriel
+
+        * Merge branch 'main_-_stageAppFocus' into 'main' (251b6a352)
+
+2024-08-10 Kugi Eusebio
+
+        * Activate the app that was dropped to the Main or Side stage
+          (4e9be34d8)
+
+2024-08-17 Mike Gabriel
+
+        * Merge branch 'main_-_shortswipe_windowed' into 'main' (42cd8da27)
+
+2024-08-10 Kugi Eusebio
+
+        * Remove special code for short right edge swipe in windowed mode
+          (821c15ee6)
+
+2024-08-17 Mike Gabriel
+
+        * Merge branch 'main_-_moveAppWorkspaceShortcut' into 'main'
+          (9fc0b9d46)
+
+2024-08-11 Kugi Eusebio
+
+        * Add keyboard shortcut for moving apps between workspaces
+          (92455566d)
+
+2024-08-17 Mike Gabriel
+
+        * Merge branch 'main_-_workspacePreviewFixes' into 'main' (005e9645a)
+
+2024-08-12 Kugi Eusebio
+
+        * Fixes and adjustments in the workspace previews (c4f504758)
+
+2024-08-15 Mike Gabriel
+
+        * Merge branch 'main_-_windowdraggesture' into 'main' (ecce29284)
+
+2024-08-10 Kugi Eusebio
+
+        * Put the gesture area on top of the overlay (d287ae0ca)
+
+2024-08-15 Mike Gabriel
+
+        * Merge branch 'main_-_sidestagehint' into 'main' (752af40f0)
+
+2024-08-10 Kugi Eusebio
+
+        * Hide side stage hint when appropriate (773740805)
+
+2024-08-15 Mike Gabriel
+
+        * Merge branch 'main_-_topSwipeDown' into 'main' (53a338d99)
+
+2024-08-11 Kugi Eusebio
+
+        * Add swipe down to temporarily show the top bar when in fullscreen
+          (76947da17)
+
+2024-08-11 umesaburo sagawa
+
+        * Translated using Weblate (Japanese) (d07ee9194)
+
+2024-08-13 Ratchanan Srirattanamet
+
+        * Merge branch 'personal/gberh/lightdm-compat' into 'main'
+          (fbcf083f5)
+
+2024-08-12 Guido Berhoerster
+
+        * Fix compatibility with LightDM >= 1.32 (1451590f4)
+
+2024-08-07 umesaburo sagawa
+
+        * Translated using Weblate (Japanese) (b89a2deef)
+
+2024-07-22 Jiri Grönroos
+
+        * Translated using Weblate (Finnish) (8a455cc77)
+
+2024-07-28 Mike Gabriel
+
+        * Merge branch
+          'fix/testAsynchronousChangeForKeymaps-regular-accountsservice'
+          into 'main' (9b0ac1a6b)
+
+2024-07-26 OPNA2608
+
+        * tests/plugins/AccountsService/client.cpp: Fix non-Ubuntu
+          AccountsService InputSources test (353153c4e)
+
 2024-07-20 Mike Gabriel
 
-        * Release 0.3.0 (HEAD -> main, tag: 0.3.0)
+        * Release 0.3.0 (0b85fddd0) (tag: 0.3.0)
 
 2024-07-08 Ricky From Hong Kong
 
