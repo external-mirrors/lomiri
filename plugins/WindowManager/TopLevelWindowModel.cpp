@@ -326,10 +326,6 @@ void TopLevelWindowModel::connectSurface(lomiriapi::MirSurfaceInterface *surface
         }
     });
     connect(surface, &QObject::destroyed, this, [this, surface](QObject*){
-        int i = indexOf(surface);
-        if (i >= 0) {
-            m_windowModel[i].removeOnceSurfaceDestroyed = true;
-        }
         this->onSurfaceDestroyed(surface);
     });
 }
@@ -370,9 +366,9 @@ void TopLevelWindowModel::onSurfaceDestroyed(lomiriapi::MirSurfaceInterface *sur
 
     auto application = m_windowModel[i].application;
 
-    // Clean up windows immediately, we cannot reliably restart them from an OOM situation
+    // Clean up non-touch windows immediately, we cannot reliably restart them from an OOM situation
     // and we cannot allow stuck windows to stick around after actually having closed them.
-    if (application->appId() == QStringLiteral("xwayland.qtmir")) {
+    if (application->appId() == QStringLiteral("xwayland.qtmir") || !application->isTouchApp()) {
         m_windowModel[i].removeOnceSurfaceDestroyed = true;
     }
 
