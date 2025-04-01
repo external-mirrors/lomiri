@@ -18,7 +18,7 @@ import QtQuick 2.15
 import Lomiri.Components 1.3
 
 import "../Components"
-import ".." 0.1
+import ".."
 
 Showable {
     id: root
