@@ -25,8 +25,8 @@ import Lomiri.Components 1.3
 import Lomiri.Launcher 0.1
 import Lomiri.Session 0.1
 
-import "." 0.1
-import ".." 0.1
+import "."
+import ".."
 import "../Components"
 
 Showable {
