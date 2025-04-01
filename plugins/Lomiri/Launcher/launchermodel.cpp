@@ -529,7 +529,7 @@ void LauncherModel::applicationAdded(const QModelIndex &parent, int row)
             Q_EMIT dataChanged(index(itemIndex), index(itemIndex), {RoleRecent});
         }
         item->setRunning(true);
-    } else {
+    } else if (app->surfaceCount() > 0) {
         LauncherItem *item = new LauncherItem(app->appId(), app->name(), app->icon().toString(), this);
         item->setRecent(true);
         item->setRunning(true);
@@ -561,12 +561,42 @@ void LauncherModel::updateSurfaceListForSurface()
 
 void LauncherModel::updateSurfaceListForApp(ApplicationInfoInterface* app)
 {
+    LauncherItem *item = nullptr;
     int idx = findApplication(app->appId());
+
     if (idx < 0) {
-        qWarning() << "Received a surface count changed event from an app that's not in the Launcher model";
+        qWarning() << "Received a surface count changed event from an app that's not in the Launcher model, creating icon...";
+        item = new LauncherItem(app->appId(), app->name(), app->icon().toString(), this);
+        item->setRecent(true);
+        item->setRunning(true);
+        item->setFocused(app->focused());
+
+        beginInsertRows(QModelIndex(), m_list.count(), m_list.count());
+        m_list.append(item);
+        endInsertRows();
+        m_asAdapter->syncItems(m_list);
+
+        // Now it should be in the model, this one should have a high success rate in finding the app.
+        idx = findApplication(app->appId());
+    }
+
+    // Only delete if we're sure it's not in the list.
+    if (idx < 0) {
+        qWarning() << "Couldn't create launcher icon.";
+        if (item)
+            delete item;
         return;
     }
-    LauncherItem *item = m_list.at(idx);
+
+    item = m_list.at(idx);
+    if (!item->pinned() && item->running() && app->surfaceCount() <= 0) {
+        beginRemoveRows(QModelIndex(), idx, idx);
+        m_list.takeAt(idx)->deleteLater();
+        endRemoveRows();
+        m_asAdapter->syncItems(m_list);
+        return;
+    }
+
     QList<QPair<QString, QString> > surfaces;
     for (int i = 0; i < app->surfaceList()->count(); ++i) {
         MirSurfaceInterface* iface = app->surfaceList()->get(i);

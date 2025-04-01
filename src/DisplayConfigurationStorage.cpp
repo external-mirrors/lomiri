@@ -105,7 +105,7 @@ bool DisplayConfigurationStorage::load(const miroil::DisplayId &displayId, miroi
         }
         if (json.contains("orientation")) options.orientation = static_cast<MirOrientation>(json["orientation"].toInt());
         if (json.contains("form_factor")) options.form_factor = static_cast<MirFormFactor>(json["form_factor"].toInt());
-        if (json.contains("scale")) options.scale = json["form_factor"].toDouble();
+        if (json.contains("scale")) options.scale = json["scale"].toDouble();
 
         return true;
     }
