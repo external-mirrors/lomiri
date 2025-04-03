@@ -26,16 +26,16 @@ Item {
     property bool greeterShown: false
 
     readonly property bool active: {
-        var application = ApplicationManager.findApplication("dialer-app");
+        var application = ApplicationManager.findApplication("lomiri-dialer-app");
 
         if (callManager.callIndicatorVisible) {
             // at the moment, callIndicatorVisible is only "valid" if dialer is in focus.
-            if (application && ApplicationManager.focusedApplicationId === "dialer-app") {
+            if (application && ApplicationManager.focusedApplicationId === "lomiri-dialer-app") {
                 // Don't show if application is still starting; might get a fleeting true/false.
                 return application.state !== ApplicationInfoInterface.Starting;
             }
         }
-        if (greeterShown || ApplicationManager.focusedApplicationId !== "dialer-app") {
+        if (greeterShown || ApplicationManager.focusedApplicationId !== "lomiri-dialer-app") {
             if (application) {
                 // Don't show if application is still starting; might get a fleeting true/false.
                 return application.state !== ApplicationInfoInterface.Starting && callManager.hasCalls;

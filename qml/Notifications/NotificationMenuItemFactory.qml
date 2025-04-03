@@ -158,7 +158,7 @@ Loader {
             }
 
             onEmergencyCall: {
-                shell.startLockedApp("dialer-app");
+                shell.startLockedApp("lomiri-dialer-app");
                 menuModel.activate(menuIndex, false);
             }
 

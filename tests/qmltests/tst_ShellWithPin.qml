@@ -265,7 +265,7 @@ Item {
 
             tap(findChild(greeter, "emergencyCallLabel"));
 
-            tryCompare(greeter, "lockedApp", "dialer-app")
+            tryCompare(greeter, "lockedApp", "lomiri-dialer-app")
             tryCompare(greeter, "hasLockedApp", true)
             tryCompare(greeter, "shown", false);
             tryCompare(panel, "fullscreenMode", true)
@@ -297,7 +297,7 @@ Item {
             waitUntilAppWindowIsFullyLoaded(dialerSurfaceId);
 
             tryCompare(greeter, "shown", false);
-            ApplicationManager.stopApplication("dialer-app"); // kill dialer-app, as if it crashed
+            ApplicationManager.stopApplication("lomiri-dialer-app"); // kill lomiri-dialer-app, as if it crashed
             tryCompare(greeter, "shown", true);
             tryCompare(findChild(greeter, "lockscreen"), "shown", true);
             tryCompare(findChild(greeter, "coverPage"), "shown", false);
@@ -401,14 +401,14 @@ Item {
             compare(stage.usageScenario, "phone");
 
             tap(findChild(shell, "emergencyCallLabel"));
-            confirmLockedApp("dialer-app", shell);
+            confirmLockedApp("lomiri-dialer-app", shell);
 
             // OK, we're in. Now try (but fail) to switch to tablet mode
             shell.usageScenario = "tablet";
             compare(stage.usageScenario, "phone");
 
             // And when we kill the app, we go back to locked tablet mode
-            ApplicationManager.stopApplication("dialer-app");
+            ApplicationManager.stopApplication("lomiri-dialer-app");
             var greeter = findChild(shell, "greeter")
             tryCompare(greeter, "fullyShown", true)
             compare(stage.usageScenario, "tablet");
@@ -417,7 +417,7 @@ Item {
         function test_emergencyDialerIncoming() {
             var shell = createShell();
             callManager.foregroundCall = phoneCall
-            confirmLockedApp("dialer-app", shell);
+            confirmLockedApp("lomiri-dialer-app", shell);
         }
 
         function test_emergencyDialerActiveCallPanel() {
@@ -431,7 +431,7 @@ Item {
             var greeter = findChild(shell, "greeter");
 
             tap(findChild(shell, "emergencyCallLabel"));
-            confirmLockedApp("dialer-app", shell);
+            confirmLockedApp("lomiri-dialer-app", shell);
             callManager.foregroundCall = phoneCall;
 
             showGreeter(shell);
@@ -440,9 +440,9 @@ Item {
             tryCompare(greeter, "hasLockedApp", false);
 
             // simulate a callHint press, the real thing requires dialer: url support
-            ApplicationManager.requestFocusApplication("dialer-app");
+            ApplicationManager.requestFocusApplication("lomiri-dialer-app");
 
-            confirmLockedApp("dialer-app", shell);
+            confirmLockedApp("lomiri-dialer-app", shell);
         }
 
         function test_normalDialerActiveCallPanel() {
@@ -464,8 +464,8 @@ Item {
             tryCompare(greeter, "shown", false);
             tryCompare(LightDM.Greeter, "active", false);
 
-            startApplication("dialer-app");
-            tryCompare(ApplicationManager, "focusedApplicationId", "dialer-app");
+            startApplication("lomiri-dialer-app");
+            tryCompare(ApplicationManager, "focusedApplicationId", "lomiri-dialer-app");
             callManager.foregroundCall = phoneCall;
 
             ApplicationManager.requestFocusApplication("gallery-app");
@@ -474,9 +474,9 @@ Item {
             tryCompare(callHint, "visible", true);
 
             // simulate a callHint press, the real thing requires dialer: url support
-            ApplicationManager.requestFocusApplication("dialer-app");
+            ApplicationManager.requestFocusApplication("lomiri-dialer-app");
 
-            tryCompare(ApplicationManager, "focusedApplicationId", "dialer-app");
+            tryCompare(ApplicationManager, "focusedApplicationId", "lomiri-dialer-app");
             tryCompare(greeter, "shown", false);
             tryCompare(LightDM.Greeter, "active", false);
         }

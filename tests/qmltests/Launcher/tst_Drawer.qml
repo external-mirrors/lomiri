@@ -196,10 +196,10 @@ StyledItem {
             dragDrawerIntoView();
 
             var appList = findChild(launcher, "drawerAppList");
-            var dialerApp = findChild(appList, "drawerItem_dialer-app");
+            var dialerApp = findChild(appList, "drawerItem_lomiri-dialer-app");
             mouseClick(dialerApp, dialerApp.width / 2, dialerApp.height / 2);
 
-            tryCompare(launcher, "lastSelectedApplication", "dialer-app");
+            tryCompare(launcher, "lastSelectedApplication", "lomiri-dialer-app");
 
             tryCompare(launcher, "state", "");
         }
@@ -210,7 +210,7 @@ StyledItem {
             tryCompare(launcher, "focus", true);
 
             var appList = findChild(launcher, "drawerAppList");
-            var dialerApp = findChild(appList, "drawerItem_dialer-app");
+            var dialerApp = findChild(appList, "drawerItem_lomiri-dialer-app");
             mouseClick(dialerApp, dialerApp.width / 2, dialerApp.height / 2);
 
             tryCompare(launcher, "focus", false);

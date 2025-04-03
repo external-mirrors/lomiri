@@ -25,7 +25,7 @@ MockAppDrawerModel::MockAppDrawerModel(QObject *parent):
     AppDrawerModelInterface(parent),
     m_refresing(false)
 {
-    MockLauncherItem *item = new MockLauncherItem("dialer-app", "/usr/share/applications/dialer-app.desktop", "Dialer", "dialer-app", this);
+    MockLauncherItem *item = new MockLauncherItem("lomiri-dialer-app", "/usr/share/applications/lomiri-dialer-app.desktop", "Dialer", "lomiri-dialer-app", this);
     m_list.append(item);
     item = new MockLauncherItem("camera-app", "/usr/share/applications/camera-app.desktop", "Camera", "camera", this);
     m_list.append(item);

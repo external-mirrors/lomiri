@@ -978,14 +978,14 @@ Rectangle {
             verify(appRepeaterConnections.target);
             appRepeaterConnections.itemAddedCallback = function(item) {
                 dialerDelegate = item;
-                verify(item.application.appId, "dialer-app");
+                verify(item.application.appId, "lomiri-dialer-app");
             }
 
-            WindowStateStorage.saveStage("dialer-app", ApplicationInfoInterface.SideStage)
-            var dialerApp = ApplicationManager.startApplication("dialer-app");
+            WindowStateStorage.saveStage("lomiri-dialer-app", ApplicationInfoInterface.SideStage)
+            var dialerApp = ApplicationManager.startApplication("lomiri-dialer-app");
             verify(dialerApp);
 
-            // ensure the mock dialer-app is as we expect
+            // ensure the mock lomiri-dialer-app is as we expect
             compare(dialerApp.rotatesWindowContents, false);
             compare(dialerApp.supportedOrientations, Qt.PortraitOrientation | Qt.InvertedPortraitOrientation);
 
@@ -1365,10 +1365,10 @@ Rectangle {
             // Launch a portrait-only application
 
             var dialerSurfaceId = topLevelSurfaceList.nextId;
-            var dialerApp = ApplicationManager.startApplication("dialer-app");
+            var dialerApp = ApplicationManager.startApplication("lomiri-dialer-app");
             verify(dialerApp);
 
-            // ensure the mock dialer-app is as we expect
+            // ensure the mock lomiri-dialer-app is as we expect
             compare(dialerApp.rotatesWindowContents, false);
             compare(dialerApp.supportedOrientations, Qt.PortraitOrientation | Qt.InvertedPortraitOrientation);
 

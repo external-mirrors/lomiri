@@ -137,8 +137,8 @@ Rectangle {
             spacing: units.gu(1)
             Button {
                 id: loadWidthDialerApp
-                text: "Load with dialer-app"
-                onClicked: { testCase.restartWithApp("dialer-app"); }
+                text: "Load with lomiri-dialer-app"
+                onClicked: { testCase.restartWithApp("lomiri-dialer-app"); }
             }
             Button {
                 id: loadWithWeatherApp

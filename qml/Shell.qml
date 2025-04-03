@@ -150,7 +150,7 @@ StyledItem {
                 wizard.hide();
             }
 
-            if (appId === "dialer-app" && callManager.hasCalls && greeter.locked) {
+            if (appId === "lomiri-dialer-app" && callManager.hasCalls && greeter.locked) {
                 // If we are in the middle of a call, make dialer lockedApp. The
                 // Greeter will show it when it's notified of the focus.
                 // This can happen if user backs out of dialer back to greeter, then
@@ -472,7 +472,7 @@ StyledItem {
                 }
             }
 
-            onEmergencyCall: startLockedApp("dialer-app")
+            onEmergencyCall: startLockedApp("lomiri-dialer-app")
         }
     }
 
@@ -499,16 +499,16 @@ StyledItem {
         target: callManager
 
         function onHasCallsChanged() {
-            if (greeter.locked && callManager.hasCalls && greeter.lockedApp !== "dialer-app") {
+            if (greeter.locked && callManager.hasCalls && greeter.lockedApp !== "lomiri-dialer-app") {
                 // We just received an incoming call while locked.  The
-                // indicator will have already launched dialer-app for us, but
-                // there is a race between "hasCalls" changing and the dialer
-                // starting up.  So in case we lose that race, we'll start/
-                // focus the dialer ourselves here too.  Even if the indicator
-                // didn't launch the dialer for some reason (or maybe a call
-                // started via some other means), if an active call is
+                // indicator will have already launched lomiri-dialer-app for
+                // us, but there is a race between "hasCalls" changing and the
+                // dialer starting up.  So in case we lose that race, we'll
+                // start/focus the dialer ourselves here too.  Even if the
+                // indicator didn't launch the dialer for some reason (or maybe
+                // a call started via some other means), if an active call is
                 // happening, we want to be in the dialer.
-                startLockedApp("dialer-app")
+                startLockedApp("lomiri-dialer-app")
             }
         }
     }

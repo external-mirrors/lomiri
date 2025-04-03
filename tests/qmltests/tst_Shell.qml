@@ -1070,7 +1070,7 @@ Rectangle {
         function test_surfaceLosesActiveFocusWhilePanelIsOpen() {
             loadShell("phone");
             swipeAwayGreeter();
-            var appDelegate = startApplication("dialer-app");
+            var appDelegate = startApplication("lomiri-dialer-app");
             var appSurface = appDelegate.surface;
             verify(appSurface);
 
@@ -1154,7 +1154,7 @@ Rectangle {
             var greeter = findChild(shell, "greeter");
 
             var appSurfaceId = topLevelSurfaceList.nextId;
-            var app = ApplicationManager.startApplication("dialer-app");
+            var app = ApplicationManager.startApplication("lomiri-dialer-app");
             waitUntilAppWindowIsFullyLoaded(appSurfaceId);
 
             // Minimize the application we just launched
@@ -1163,7 +1163,7 @@ Rectangle {
             showGreeter();
 
             // The main point of this test
-            ApplicationManager.requestFocusApplication("dialer-app");
+            ApplicationManager.requestFocusApplication("lomiri-dialer-app");
             tryCompare(greeter, "shown", false);
             waitForRendering(greeter);
         }
@@ -1227,7 +1227,7 @@ Rectangle {
             waitUntilAppWindowIsFullyLoaded(cameraSurfaceId);
             tryCompare(panel, "fullscreenMode", true);
             var dialerSurfaceId = topLevelSurfaceList.nextId;
-            var dialerApp = ApplicationManager.startApplication("dialer-app");
+            var dialerApp = ApplicationManager.startApplication("lomiri-dialer-app");
             waitUntilAppWindowIsFullyLoaded(dialerSurfaceId);
             tryCompare(panel, "fullscreenMode", false);
             ApplicationManager.requestFocusApplication(cameraApp.appId);
@@ -1462,7 +1462,7 @@ Rectangle {
             selectUser(data.user)
 
             var greeter = findChild(shell, "greeter")
-            var app = ApplicationManager.startApplication("dialer-app")
+            var app = ApplicationManager.startApplication("lomiri-dialer-app")
 
             confirmLoggedIn(data.loggedIn)
 
@@ -1510,8 +1510,8 @@ Rectangle {
             tryCompare(ApplicationManager, "focusedApplicationId", "lomiri-terminal-app");
 
             // start something else
-            ApplicationManager.startApplication("dialer-app");
-            tryCompare(ApplicationManager, "focusedApplicationId", "dialer-app");
+            ApplicationManager.startApplication("lomiri-dialer-app");
+            tryCompare(ApplicationManager, "focusedApplicationId", "lomiri-dialer-app");
 
             // terminal running in background, should get focused
             keyClick(Qt.Key_T, Qt.ControlModifier|Qt.AltModifier);
@@ -1606,7 +1606,7 @@ Rectangle {
             verify(desktopStage != null)
 
             var app1SurfaceId = topLevelSurfaceList.nextId;
-            var app1 = ApplicationManager.startApplication("dialer-app")
+            var app1 = ApplicationManager.startApplication("lomiri-dialer-app")
             waitUntilAppWindowIsFullyLoaded(app1SurfaceId);
 
             var app2SurfaceId = topLevelSurfaceList.nextId;
@@ -1923,7 +1923,7 @@ Rectangle {
             }
             tryCompare(stage, "state", "windowed")
 
-            tryCompare(ApplicationManager, "focusedApplicationId", "dialer-app")
+            tryCompare(ApplicationManager, "focusedApplicationId", "lomiri-dialer-app")
 
             keyRelease(Qt.Key_Alt);
         }
@@ -2017,7 +2017,7 @@ Rectangle {
             loadShell("desktop", 0);
 
             var appSurfaceId = topLevelSurfaceList.nextId;
-            var app = ApplicationManager.startApplication("dialer-app")
+            var app = ApplicationManager.startApplication("lomiri-dialer-app")
             waitUntilAppWindowIsFullyLoaded(appSurfaceId);
 
             var appContainer = findChild(shell, "appContainer");
@@ -2537,7 +2537,7 @@ Rectangle {
 
             // start some app
             var appSurfaceId = topLevelSurfaceList.nextId;
-            var app = ApplicationManager.startApplication("dialer-app");
+            var app = ApplicationManager.startApplication("lomiri-dialer-app");
             waitUntilAppWindowIsFullyLoaded(appSurfaceId);
             var appSurface = app.surfaceList.get(0);
 
@@ -2576,7 +2576,7 @@ Rectangle {
             tryCompare(app2Surface, "keymap", "fr");
 
             // focus our first app, make sure it also has the "fr" keymap
-            ApplicationManager.requestFocusApplication("dialer-app");
+            ApplicationManager.requestFocusApplication("lomiri-dialer-app");
             tryCompare(appSurface, "keymap", "fr");
 
             // switch to previous keymap, should be "cz+qwerty"
@@ -2610,7 +2610,7 @@ Rectangle {
             verify(panel);
 
             // start dialer, maximize it
-            var appDelegate = startApplication("dialer-app");
+            var appDelegate = startApplication("lomiri-dialer-app");
             verify(appDelegate);
 
             var maximizeButton = findChild(appDelegate, "maximizeWindowButton");
@@ -2671,7 +2671,7 @@ Rectangle {
             waitUntilAppWindowIsFullyLoaded(app2SurfaceId);
 
             var app1SurfaceId = topLevelSurfaceList.nextId;
-            var app1 = ApplicationManager.startApplication("dialer-app")
+            var app1 = ApplicationManager.startApplication("lomiri-dialer-app")
             waitUntilAppWindowIsFullyLoaded(app1SurfaceId);
 
             var countBeforeClose = topLevelSurfaceList.count;
@@ -2894,7 +2894,7 @@ Rectangle {
             swipeAwayGreeter();
 
             var app1SurfaceId = topLevelSurfaceList.nextId;
-            var app1 = ApplicationManager.startApplication("dialer-app")
+            var app1 = ApplicationManager.startApplication("lomiri-dialer-app")
             waitUntilAppWindowIsFullyLoaded(app1SurfaceId);
 
             var launcherDelegate1 = findChild(shell, "launcherDelegate1");
@@ -2956,7 +2956,7 @@ Rectangle {
             loadShell("desktop", 0);
 
             var appSurfaceId = topLevelSurfaceList.nextId;
-            var app = ApplicationManager.startApplication("dialer-app")
+            var app = ApplicationManager.startApplication("lomiri-dialer-app")
             waitUntilAppWindowIsFullyLoaded(appSurfaceId);
 
             // start dialer
@@ -2987,7 +2987,7 @@ Rectangle {
             waitUntilAppWindowIsFullyLoaded(appSurfaceId);
 
             appSurfaceId = topLevelSurfaceList.nextId;
-            app = ApplicationManager.startApplication("dialer-app")
+            app = ApplicationManager.startApplication("lomiri-dialer-app")
             waitUntilAppWindowIsFullyLoaded(appSurfaceId);
 
             appSurfaceId = topLevelSurfaceList.nextId;
@@ -3004,7 +3004,7 @@ Rectangle {
             tryCompare(stage, "state", "spread");
 
             tryCompare(ApplicationManager, "count", 3);
-            tryCompareFunction(function() {return appRepeater.itemAt(spread.highlightedIndex).appId == "dialer-app"}, true);
+            tryCompareFunction(function() {return appRepeater.itemAt(spread.highlightedIndex).appId == "lomiri-dialer-app"}, true);
 
             // Close one app with Q while in spread
             keyClick(Qt.Key_Q);
@@ -3025,7 +3025,7 @@ Rectangle {
 
             // Now start the apps again
             appSurfaceId = topLevelSurfaceList.nextId;
-            app = ApplicationManager.startApplication("dialer-app");
+            app = ApplicationManager.startApplication("lomiri-dialer-app");
             waitUntilAppWindowIsFullyLoaded(appSurfaceId);
 
             appSurfaceId = topLevelSurfaceList.nextId;
@@ -3057,7 +3057,7 @@ Rectangle {
             loadShell("desktop", 0);
 
             var appSurfaceId = topLevelSurfaceList.nextId;
-            var app = ApplicationManager.startApplication("dialer-app")
+            var app = ApplicationManager.startApplication("lomiri-dialer-app")
             waitUntilAppWindowIsFullyLoaded(appSurfaceId);
 
             // start dialer
@@ -3075,7 +3075,7 @@ Rectangle {
             tryCompare(appDelegate, "visible", true);
             tryCompare(appDelegate, "focus", true);
             tryCompare(topLevelSurfaceList.focusedWindow, "surface", appDelegate.surface);
-            tryCompare(topLevelSurfaceList.applicationAt(0), "appId", "dialer-app");
+            tryCompare(topLevelSurfaceList.applicationAt(0), "appId", "lomiri-dialer-app");
         }
 
         function test_touchMenuPosition_data() {
@@ -3131,7 +3131,7 @@ Rectangle {
             loadShell("desktop", 0);
 
             // start dialer
-            var appDelegate = startApplication("dialer-app")
+            var appDelegate = startApplication("lomiri-dialer-app")
             verify(appDelegate);
             tryCompare(appDelegate, "state", "normal");
 
@@ -3223,7 +3223,7 @@ Rectangle {
             loadShell("desktop", 0);
 
             var appDelegate = startApplication("gmail-webapp");
-            var appDelegate2 = startApplication("dialer-app");
+            var appDelegate2 = startApplication("lomiri-dialer-app");
 
             tryCompare(appDelegate2.surface, "activeFocus", true);
 
