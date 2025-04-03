@@ -583,8 +583,13 @@ void LauncherModel::updateSurfaceListForApp(ApplicationInfoInterface* app)
     // Only delete if we're sure it's not in the list.
     if (idx < 0) {
         qWarning() << "Couldn't create launcher icon.";
-        if (item)
+        if (item) {
+            beginRemoveRows(QModelIndex(), m_list.count() - 1, m_list.count() - 1);
+            m_list.removeLast();
+            endRemoveRows();
+
             delete item;
+        }
         return;
     }
 
