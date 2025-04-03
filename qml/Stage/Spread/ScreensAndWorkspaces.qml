@@ -33,8 +33,7 @@ Item {
     property QtObject activeWorkspace: null
 
     property string mode : "staged"
-    property bool launcherLockedVisible: false
-    property real topPanelHeight
+    property Item availableDesktopArea
 
     signal closeSpread();
 
@@ -222,8 +221,7 @@ Item {
                     anchors.horizontalCenter: parent.horizontalCenter
                     screen: model.screen
                     background: root.background
-                    launcherLockedVisible: root.launcherLockedVisible
-                    topPanelHeight: root.topPanelHeight
+                    availableDesktopArea: root.availableDesktopArea
 
                     workspaceModel: model.screen.workspaces
                     activeWorkspace: root.activeWorkspace
