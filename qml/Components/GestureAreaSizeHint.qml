@@ -46,6 +46,5 @@ Rectangle {
         Component.onCompleted: root.enabled = true
 
         onWidthChanged: root.show()
-        onHeightChanged: root.show()
     }
 }
