@@ -59,7 +59,7 @@ Item {
         WindowStateStorage.clear();
         WindowStateStorage.geometry = {
             'lomiri-dash': Qt.rect(0, units.gu(3), units.gu(50), units.gu(40)),
-            'dialer-app': Qt.rect(units.gu(51), units.gu(3), units.gu(50), units.gu(40)),
+            'lomiri-dialer-app': Qt.rect(units.gu(51), units.gu(3), units.gu(50), units.gu(40)),
             'gmail-webapp': Qt.rect(0, units.gu(44), units.gu(50), units.gu(40)),
             'twitter-webapp': Qt.rect(units.gu(51), units.gu(44), units.gu(50), units.gu(40))
         }
@@ -229,8 +229,8 @@ Item {
 
         function test_appFocusSwitch_data() {
             return [
-                {tag: "dash to dialer", apps: [ "lomiri-dash", "dialer-app", "gmail-webapp" ], focusfrom: 0, focusTo: 1 },
-                {tag: "dialer to dash", apps: [ "lomiri-dash", "dialer-app", "gmail-webapp" ], focusfrom: 1, focusTo: 0 },
+                {tag: "dash to dialer", apps: [ "lomiri-dash", "lomiri-dialer-app", "gmail-webapp" ], focusfrom: 0, focusTo: 1 },
+                {tag: "dialer to dash", apps: [ "lomiri-dash", "lomiri-dialer-app", "gmail-webapp" ], focusfrom: 1, focusTo: 0 },
             ]
         }
 
@@ -246,8 +246,8 @@ Item {
 
         function test_tappingOnWindowChangesFocusedApp_data() {
             return [
-                {tag: "dash to dialer", apps: [ "lomiri-dash", "dialer-app", "gmail-webapp"], focusfrom: 0, focusTo: 1 },
-                {tag: "dialer to dash", apps: [ "lomiri-dash", "dialer-app", "gmail-webapp"], focusfrom: 1, focusTo: 0 }
+                {tag: "dash to dialer", apps: [ "lomiri-dash", "lomiri-dialer-app", "gmail-webapp"], focusfrom: 0, focusTo: 1 },
+                {tag: "dialer to dash", apps: [ "lomiri-dash", "lomiri-dialer-app", "gmail-webapp"], focusfrom: 1, focusTo: 0 }
             ]
         }
 
@@ -299,8 +299,8 @@ Item {
 
         function test_tappingOnDecorationFocusesApplication_data() {
             return [
-                {tag: "dash to dialer", apps: [ "lomiri-dash", "dialer-app", "gmail-webapp"], focusfrom: 0, focusTo: 1 },
-                {tag: "dialer to dash", apps: [ "lomiri-dash", "dialer-app", "gmail-webapp"], focusfrom: 1, focusTo: 0 }
+                {tag: "dash to dialer", apps: [ "lomiri-dash", "lomiri-dialer-app", "gmail-webapp"], focusfrom: 0, focusTo: 1 },
+                {tag: "dialer to dash", apps: [ "lomiri-dash", "lomiri-dialer-app", "gmail-webapp"], focusfrom: 1, focusTo: 0 }
             ]
         }
 
@@ -380,7 +380,7 @@ Item {
         }
 
         function test_windowMaximize() {
-            var dialerDelegate = startApplication("dialer-app");
+            var dialerDelegate = startApplication("lomiri-dialer-app");
             startApplication("camera-app");
 
             tryCompareFunction(function(){ return dialerDelegate.surface !== null; }, true);
@@ -393,7 +393,7 @@ Item {
         }
 
         function test_windowMaximizeLeft() {
-            var dialerDelegate = startApplication("dialer-app");
+            var dialerDelegate = startApplication("lomiri-dialer-app");
             startApplication("camera-app");
 
             tryCompareFunction(function(){ return dialerDelegate.surface !== null; }, true);
@@ -408,7 +408,7 @@ Item {
         }
 
         function test_windowMaximizeRight() {
-            var dialerDelegate = startApplication("dialer-app");
+            var dialerDelegate = startApplication("lomiri-dialer-app");
             startApplication("camera-app");
 
             tryCompareFunction(function(){ return dialerDelegate.surface !== null; }, true);
@@ -423,7 +423,7 @@ Item {
         }
 
         function test_windowMinimize() {
-            var dialerDelegate = startApplication("dialer-app");
+            var dialerDelegate = startApplication("lomiri-dialer-app");
             startApplication("camera-app");
 
             tryCompareFunction(function(){ return dialerDelegate.surface !== null; }, true);
@@ -437,7 +437,7 @@ Item {
         }
 
         function test_windowMinimizeAll() {
-            var apps = ["lomiri-dash", "dialer-app", "camera-app"];
+            var apps = ["lomiri-dash", "lomiri-dialer-app", "camera-app"];
             apps.forEach(startApplication);
             verify(topSurfaceList.count == 3);
             keyClick(Qt.Key_D, Qt.MetaModifier|Qt.ControlModifier); // Ctrl+Super+D shortcut to minimize all
@@ -446,7 +446,7 @@ Item {
 
         function test_windowClose() {
             var dialerSurfaceId = topSurfaceList.nextId;
-            var dialerDelegate = startApplication("dialer-app");
+            var dialerDelegate = startApplication("lomiri-dialer-app");
             verify(topSurfaceList.indexForId(dialerSurfaceId) !== -1);
             startApplication("gmail-webapp");
             verify(topSurfaceList.count == 3);
@@ -464,7 +464,7 @@ Item {
         }
 
         function test_windowMaximizeHorizontally() {
-            var dialerDelegate = startApplication("dialer-app");
+            var dialerDelegate = startApplication("lomiri-dialer-app");
 
             var dialerMaximizeButton = findChild(dialerDelegate, "maximizeWindowButton");
             verify(dialerMaximizeButton);
@@ -479,7 +479,7 @@ Item {
         }
 
         function test_windowMaximizeVertically() {
-            var dialerDelegate = startApplication("dialer-app");
+            var dialerDelegate = startApplication("lomiri-dialer-app");
 
             var dialerMaximizeButton = findChild(dialerDelegate, "maximizeWindowButton");
             verify(dialerMaximizeButton);
@@ -494,7 +494,7 @@ Item {
         }
 
         function test_smashCursorKeys() {
-            var apps = ["dialer-app", "gmail-webapp"];
+            var apps = ["lomiri-dialer-app", "gmail-webapp"];
             apps.forEach(startApplication);
             verify(topSurfaceList.count == 3);
             keyClick(Qt.Key_D, Qt.MetaModifier|Qt.ControlModifier); // Ctrl+Super+D shortcut to minimize all
@@ -523,7 +523,7 @@ Item {
 
         function test_maximizeApplicationHidesSurfacesBehindIt() {
             var dashDelegate = startApplication("lomiri-dash");
-            var dialerDelegate = startApplication("dialer-app");
+            var dialerDelegate = startApplication("lomiri-dialer-app");
             var gmailDelegate = startApplication("gmail-webapp");
 
             // maximize without raising
@@ -543,7 +543,7 @@ Item {
             var dashApp = topSurfaceList.applicationAt(0);
 
             var dialerSurfaceId = topSurfaceList.nextId;
-            var dialerDelegate = startApplication("dialer-app");
+            var dialerDelegate = startApplication("lomiri-dialer-app");
             verify(dialerDelegate);
             var dialerApp = dialerDelegate.application;
 
@@ -584,7 +584,7 @@ Item {
 
             maximizeDelegate(dashDelegate);
 
-            var dialerDelegate = startApplication("dialer-app");
+            var dialerDelegate = startApplication("lomiri-dialer-app");
             verify(dialerDelegate);
 
             tryCompare(dialerDelegate, "visible", true, 5000, "Dialer should be visible");
@@ -594,7 +594,7 @@ Item {
         function test_occlusionWithMultipleMaximized() {
             var dashAppDelegate = startApplication("lomiri-dash");
 
-            var dialerAppDelegate = startApplication("dialer-app");
+            var dialerAppDelegate = startApplication("lomiri-dialer-app");
 
             var facebookAppDelegate = startApplication("facebook-webapp");
 
@@ -637,7 +637,7 @@ Item {
             verify(panelState.dropShadow == false);
 
             // start a foreground app, not maximized
-            var dialerAppDelegate = startApplication("dialer-app");
+            var dialerAppDelegate = startApplication("lomiri-dialer-app");
 
             // verify the drop shadow becomes visible
             tryCompareFunction(function() { return panelState.dropShadow; }, true);
@@ -690,7 +690,7 @@ Item {
         }
 
         function test_hideMaximizeButtonWhenSizeConstrained() {
-            var dialerDelegate = startApplication("dialer-app");
+            var dialerDelegate = startApplication("lomiri-dialer-app");
 
             var dialerMaximizeButton = findChild(dialerDelegate, "maximizeWindowButton");
             tryCompare(dialerMaximizeButton, "visible", true);
@@ -724,7 +724,7 @@ Item {
         }
 
         function test_doubleClickMaximizes() {
-            var dialerDelegate = startApplication("dialer-app");
+            var dialerDelegate = startApplication("lomiri-dialer-app");
 
             var dialerMaximizeButton = findChild(dialerDelegate, "maximizeWindowButton");
             tryCompare(dialerMaximizeButton, "visible", true);
@@ -755,7 +755,7 @@ Item {
         }
 
         function test_canMoveWindowWithLeftMouseButtonOnly(data) {
-            var appDelegate = startApplication("dialer-app");
+            var appDelegate = startApplication("lomiri-dialer-app");
             verify(appDelegate);
 
             var posBefore = Qt.point(appDelegate.x, appDelegate.y);
@@ -768,7 +768,7 @@ Item {
         }
 
         function test_spreadDisablesWindowDrag() {
-            var appDelegate = startApplication("dialer-app");
+            var appDelegate = startApplication("lomiri-dialer-app");
             verify(appDelegate);
             var decoration = findChild(appDelegate, "appWindowDecoration");
             verify(decoration);
@@ -795,7 +795,7 @@ Item {
 
         // regression test for https://bugs.launchpad.net/lomiri/+source/lomiri/+bug/1627281
         function test_doubleTapToMaximizeWindow() {
-            var dialerAppDelegate = startApplication("dialer-app");
+            var dialerAppDelegate = startApplication("lomiri-dialer-app");
             verify(dialerAppDelegate);
             var decoration = findChild(dialerAppDelegate, "appWindowDecoration");
             verify(decoration);
@@ -812,7 +812,7 @@ Item {
 
         function test_saveRestoreSize() {
             var originalWindowCount = topSurfaceList.count;
-            var appDelegate = startApplication("dialer-app");
+            var appDelegate = startApplication("lomiri-dialer-app");
             compare(topSurfaceList.count, originalWindowCount + 1);
 
             var initialWindowX = appDelegate.windowedX;
@@ -835,7 +835,7 @@ Item {
             mouseClick(closeButton);
             tryCompare(topSurfaceList, "count", originalWindowCount);
             wait(100); // plus some spare room
-            appDelegate = startApplication("dialer-app");
+            appDelegate = startApplication("lomiri-dialer-app");
 
             // Make sure its size is again the same as before
             tryCompare(appDelegate, "width", initialWindowWidth + resizeDelta);
@@ -844,7 +844,7 @@ Item {
 
         function test_saveRestoreMaximized() {
             var originalWindowCount = topSurfaceList.count;
-            var appDelegate = startApplication("dialer-app");
+            var appDelegate = startApplication("lomiri-dialer-app");
             compare(topSurfaceList.count, originalWindowCount + 1);
 
             var initialWindowX = appDelegate.windowedX;
@@ -862,7 +862,7 @@ Item {
             appDelegate.close();
             tryCompare(topSurfaceList, "count", originalWindowCount);
             wait(100); // plus some spare room
-            appDelegate = startApplication("dialer-app");
+            appDelegate = startApplication("lomiri-dialer-app");
 
             // Make sure it's again where we left it in normal state before destroying
             tryCompare(appDelegate, "windowedX", initialWindowX + moveDelta)
@@ -878,7 +878,7 @@ Item {
         }
 
         function test_grabbingCursorOnDecorationPress() {
-            var appDelegate = startApplication("dialer-app");
+            var appDelegate = startApplication("lomiri-dialer-app");
             verify(appDelegate);
             var decoration = findChild(appDelegate, "appWindowDecoration");
             verify(decoration);
@@ -910,7 +910,7 @@ Item {
         }
 
         function test_menuPositioning(data) {
-            var appDelegate = startApplication("dialer-app");
+            var appDelegate = startApplication("lomiri-dialer-app");
             appDelegate.windowedX = data.windowPosition.x;
             appDelegate.windowedY = data.windowPosition.y;
 
@@ -956,7 +956,7 @@ Item {
         }
 
         function test_submenuPositioning(data) {
-            var appDelegate = startApplication("dialer-app");
+            var appDelegate = startApplication("lomiri-dialer-app");
             appDelegate.windowedX = data.windowPosition.x;
             appDelegate.windowedY = data.windowPosition.y;
 
@@ -991,7 +991,7 @@ Item {
         }
 
         function test_menuDoubleClickNoMaximizeWindowBehind() {
-            var appDelegate1 = startApplication("dialer-app");
+            var appDelegate1 = startApplication("lomiri-dialer-app");
             var appDelegate2 = startApplication("gmail-webapp");
 
             // Open menu
@@ -1073,8 +1073,8 @@ Item {
         }
 
         function test_ignoreSavedFullscreen() {
-            WindowStateStorage.saveState("dialer-app", WindowStateStorage.WindowStateFullscreen);
-            var appDelegate = startApplication("dialer-app");
+            WindowStateStorage.saveState("lomiri-dialer-app", WindowStateStorage.WindowStateFullscreen);
+            var appDelegate = startApplication("lomiri-dialer-app");
             tryCompare(appDelegate, "state", "normal");
         }
     }

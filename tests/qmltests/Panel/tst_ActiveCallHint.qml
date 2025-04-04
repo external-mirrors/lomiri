@@ -71,7 +71,7 @@ Item {
             callHint.labelSwitchInterval = 300;
             call1.elapsedTime = 0;
 
-            ApplicationManager.stopApplication("dialer-app");
+            ApplicationManager.stopApplication("lomiri-dialer-app");
         }
 
         function test_activeHint_data() {
@@ -98,13 +98,13 @@ Item {
                 var dashApp = ApplicationManager.startApplication("lomiri-dash");
                 tryCompare(dashApp.surfaceList, "count", 1);
 
-                var application = ApplicationManager.startApplication("dialer-app");
+                var application = ApplicationManager.startApplication("lomiri-dialer-app");
                 tryCompare(application.surfaceList, "count", 1);
 
                 if (data.focused) {
                     // Dialer has to be explicitly activated because we don't have TLWM.
                     application.surfaceList.get(0).activate();
-                    tryCompare(ApplicationManager, "focusedApplicationId", "dialer-app");
+                    tryCompare(ApplicationManager, "focusedApplicationId", "lomiri-dialer-app");
                     tryCompare(application, "state", ApplicationInfoInterface.Running);
                 } else {
                     dashApp.surfaceList.get(0).activate();
@@ -118,7 +118,7 @@ Item {
 
             if (data.dialer) {
                 // clean up
-                ApplicationManager.stopApplication("dialer-app");
+                ApplicationManager.stopApplication("lomiri-dialer-app");
                 ApplicationManager.stopApplication("lomiri-dash");
                 tryCompare(ApplicationManager, "count", 0);
             }

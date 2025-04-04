@@ -119,7 +119,7 @@ Rectangle {
             }
             ApplicationCheckBox {
                 id: dialerCheckBox
-                appId: "dialer-app"
+                appId: "lomiri-dialer-app"
             }
             ApplicationCheckBox {
                 id: facebookCheckBox
@@ -353,7 +353,7 @@ Rectangle {
 
             swipeSurfaceDownwards(dialerSurfaceId);
 
-            // Check that dialer-app has been closed
+            // Check that lomiri-dialer-app has been closed
 
             tryCompareFunction(function() {
                 return findChild(stage, "appWindow_" + dialerCheckBox.appId);
@@ -547,7 +547,7 @@ Rectangle {
         function test_applicationLoadsInDefaultStage_data() {
             return [
                 { tag: "MainStage", appId: "morph-browser", mainStageAppId: "morph-browser", sideStageAppId: "" },
-                { tag: "SideStage", appId: "dialer-app", mainStageAppId: "facebook-webapp", sideStageAppId: "dialer-app" },
+                { tag: "SideStage", appId: "lomiri-dialer-app", mainStageAppId: "facebook-webapp", sideStageAppId: "lomiri-dialer-app" },
             ];
         }
 

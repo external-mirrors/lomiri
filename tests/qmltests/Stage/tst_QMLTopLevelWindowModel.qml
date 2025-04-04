@@ -154,7 +154,7 @@ Item {
         */
         function test_closeLastFocusedApp()
         {
-            var dialerApp = ApplicationManager.startApplication("dialer-app");
+            var dialerApp = ApplicationManager.startApplication("lomiri-dialer-app");
             var webbrowserSurfaceId = tlwm.nextId;
             var webbrowserApp  = ApplicationManager.startApplication("morph-browser");
             waitUntilAppSurfaceShowsUp(webbrowserSurfaceId);

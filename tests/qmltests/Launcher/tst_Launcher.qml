@@ -446,7 +446,7 @@ Rectangle {
         /* If I click on the icon of an application on the launcher
            Launcher::launcherApplicationSelected signal should be emitted with the
            corresponding desktop file. E.g. clicking on phone icon should yield
-           launcherApplicationSelected("[...]dialer-app.desktop") */
+           launcherApplicationSelected("[...]lomiri-dialer-app.desktop") */
         function test_clickingOnAppIconCausesSignalEmission_data() {
             return [
                 {tag: "by mouse", mouse: true},

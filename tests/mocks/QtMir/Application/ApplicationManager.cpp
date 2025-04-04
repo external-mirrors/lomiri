@@ -321,10 +321,10 @@ void ApplicationManager::buildListOfAvailableApplications()
     m_availableApplications.append(application);
 
     application = new ApplicationInfo(this);
-    application->setAppId("dialer-app");
+    application->setAppId("lomiri-dialer-app");
     application->setName("Dialer");
     application->setScreenshotId("dialer");
-    application->setIconId("dialer-app");
+    application->setIconId("lomiri-dialer-app");
     application->setSupportedOrientations(Qt::PortraitOrientation
                                         | Qt::InvertedPortraitOrientation);
     m_availableApplications.append(application);

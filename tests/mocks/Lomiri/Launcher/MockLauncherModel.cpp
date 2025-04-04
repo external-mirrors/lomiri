@@ -22,7 +22,7 @@
 
 MockLauncherModel::MockLauncherModel(QObject* parent): LauncherModelInterface(parent)
 {
-    MockLauncherItem *item = new MockLauncherItem("dialer-app", "/usr/share/applications/dialer-app.desktop", "Dialer", "dialer-app", this);
+    MockLauncherItem *item = new MockLauncherItem("lomiri-dialer-app", "/usr/share/applications/lomiri-dialer-app.desktop", "Dialer", "lomiri-dialer-app", this);
     item->setProgress(0);
     item->setPinned(true);
     item->setSurfaceCount(1);
