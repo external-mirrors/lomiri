@@ -17,7 +17,6 @@
 import QtQuick 2.15
 import Lomiri.Components 1.3
 import WindowManager 1.0
-import GSettings 1.0
 import "MathUtils.js" as MathUtils
 import "../../Components"
 
@@ -35,17 +34,11 @@ Item {
     property int selectedIndex: -1
     property bool readOnly: true
     property var activeWorkspace: null
-    property bool launcherLockedVisible: false
-    property real topPanelHeight
+    property Item availableDesktopArea
 
     signal commitScreenSetup();
     signal closeSpread();
     signal clicked(var workspace);
-
-    GSettings {
-        id: settings
-        schema.id: "com.lomiri.Shell"
-    }
 
     DropArea {
         anchors.fill: root
@@ -153,12 +146,9 @@ Item {
             readonly property real screenHeight: screenIsLandscape ? screenSize.width >= screenSize.height ? screenSize.height : screenSize.width
                                                                             : screenSize.width >= screenSize.height ? screenSize.width : screenSize.height
 
-            // Deduct top panel's height to screen's height
-            // and deduct launcher's width to screen's width, if locked,
-            // to accurately get available desktop area
-            readonly property real screenSpaceHeight: screenHeight - root.topPanelHeight
-            readonly property real launcherWidth: root.launcherLockedVisible ? units.gu(settings.launcherWidth) : 0
-            readonly property real screenSpaceWidth: screenWidth - launcherWidth
+            readonly property real screenSpaceHeight: root.availableDesktopArea.height
+            readonly property real screenSpaceWidth: root.availableDesktopArea.width
+            readonly property real launcherWidth: screenWidth - screenSpaceWidth
             property real itemWidth: height * screenSpaceWidth / screenSpaceHeight
             property int foldingAreaWidth: itemWidth / 2
             property int maxAngle: 40

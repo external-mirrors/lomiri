@@ -109,8 +109,6 @@ FocusScope {
     }
 
     property int launcherLeftMargin : 0
-    property bool launcherLockedVisible: false
-    property real topPanelHeight
 
     Binding {
         target: topLevelSurfaceList
@@ -758,8 +756,7 @@ FocusScope {
             visible: showAllowed
             enabled: workspaceEnabled
             mode: root.mode
-            launcherLockedVisible: root.launcherLockedVisible
-            topPanelHeight: root.topPanelHeight
+            availableDesktopArea: root.availableDesktopArea
             onCloseSpread: priv.goneToSpread = false;
             // Clicking a workspace should put it front and center
             onActiveWorkspaceChanged: activeWorkspace.activate()
@@ -2296,8 +2293,7 @@ FocusScope {
         height: units.gu(20)
         width: root.width - units.gu(8)
         background: root.background
-        launcherLockedVisible: root.launcherLockedVisible
-        topPanelHeight: root.topPanelHeight
+        availableDesktopArea: root.availableDesktopArea
         onActiveChanged: {
             if (!active) {
                 appContainer.focus = true;

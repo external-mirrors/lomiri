@@ -335,8 +335,6 @@ StyledItem {
             rightEdgePushProgress: rightEdgeBarrier.progress
             availableDesktopArea: availableDesktopAreaItem
             launcherLeftMargin: launcher.visibleWidth
-            launcherLockedVisible: launcher.lockedVisible
-            topPanelHeight: panel.panelHeight
 
             property string usageScenario: shell.usageScenario === "phone" || greeter.hasLockedApp
                                                        ? "phone"
