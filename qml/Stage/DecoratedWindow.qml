@@ -96,6 +96,18 @@ FocusScope {
         moveHandler.cancelDrag();
     }
 
+    Connections {
+        target: root.surface
+        function onSizeChanged(size) {
+            let width = Math.max(size.width, root.minimumWidth)
+            width = Math.min(width, root.maximumWidth)
+            let height = Math.max(size.height, root.minimumHeight)
+            height = Math.min(height, root.maximumHeight)
+            implicitWidth = width
+            implicitHeight = height
+        }
+    }
+
     QtObject {
         id: d
         property int requestedDecorationHeight: root.hasDecoration ? decoration.height : 0
