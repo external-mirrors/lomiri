@@ -1,6 +1,133 @@
+2025-04-17 Mike Gabriel
+
+        * Release 0.4.1 (HEAD -> main, tag: 0.4.1)
+
+2025-04-04 Mike Gabriel
+
+        * Merge branch 'personal/peat-psuwit/no-edge-hint-on-rotate' into
+          'main' (c965f499f)
+
+2025-04-01 Ratchanan Srirattanamet
+
+        * GestureAreaSizeHint: don't display on height change, including on
+          rotate (c218689eb)
+
+2025-04-04 Mike Gabriel
+
+        * Merge branch 'personal/peat-psuwit/dialer-app' into 'main'
+          (d86f8f243)
+
+2025-04-03 Ratchanan Srirattanamet
+
+        * qml/, tests/: follow rename { => lomiri-}dialer-app (28f1d7cd8)
+
+2025-04-04 Mike Gabriel
+
+        * Merge branch 'personal/peat-psuwit/122-availabledesktoparea' into
+          'main' (77e47a774)
+
+2025-04-03 Ratchanan Srirattanamet
+
+        * Workspaces: use AvailableDesktopArea for screen space instead
+          (3f991507d)
+
+2025-04-03 Ida Brenna
+
+        * Translated using Weblate (Norwegian Bokmål) (adb08efd1)
+
+2025-04-03 Valery Levanchuk
+
+        * Translated using Weblate (Belarusian) (20157346e)
+
+2025-04-03 Alfred Neumayer
+
+        * Merge branch
+          'personal/peat-psuwit/launchermodel-remove-before-delete'
+          into 'main' (2a0885777)
+
+2025-04-02 Ratchanan Srirattanamet
+
+        * plugins/Lomiri/Launcher: remove "leaked" item from list before
+          deleting (dc1a86715)
+          Fixes: 1430cd6d
+          ("plugins/Lomiri/Launcher: Plug a memory leak")
+
+        * Merge branch 'personal/sunweaver/lomiri-fails-to-start' into 'main'
+          (212cbd227)
+
+2025-04-01 Mike Gabriel
+
+        * qml/Greeter/{Greeter.qml,SecondaryGreeter.qml}: Drop version from
+          imports of ./ and ../. (ceb53a5d0)
+        * Merge branch
+          'personal/sunweaver/desktop-mode-improvments-by-fredldotme-selected-commits'
+          into 'main' (091e96b0d)
+
+2025-03-29 Alfred Neumayer
+
+        * plugins/WindowManager: Don't set removeOnceSurfaceDestroyed for all
+          windows (f3d98271d)
+
+2025-03-28 Alfred Neumayer
+
+        * tests: Disable session-broadcast tests for now (00baa3c56)
+
+2024-08-05 Alfred
+
+        * tests: Fix expectation in LauncherModel tests (5ad0c4f55)
+
+2024-07-06 Alfred
+
+        * tests/plugins/Lomiri: Adapt tests to work check with and without a
+          surface (79175ac86)
+        * tests/plugins/Lomiri: Reset launcher icons during
+          testSurfaceCountUpdates() (d105f492b)
+        * plugins/Lomiri/Launcher: Synchronize items with AccountsService and
+          add comments for context (538593681)
+
+2024-06-16 Alfred
+
+        * tests: Adapt to new launcher icon visibility policy (a55e4b78d)
+
+2024-06-07 Alfred
+
+        * plugins/Lomiri/Launcher: Plug a memory leak (1430cd6df)
+
+2024-03-03 Alfred Neumayer
+
+        * plugins/WindowManager: Destroy QML windows after their surfaces
+          (e0a435643)
+
+2024-03-01 Alfred Neumayer
+
+        * qml/Stage: Workaround WorkspacePreview renderer crashes (0e8e5697c)
+        * qml: Workspace switcher improvements (2ce5972a2)
+
+2024-02-27 Alfred Neumayer
+
+        * plugins/Lomiri/Launcher: Hide surface-less app icons (e6572cc5b)
+
+2024-02-24 Alfred Neumayer
+
+        * qml/Shell: Hide and disallow Launcher in Greeter-only mode
+          (0862e80af)
+
+2024-02-23 Alfred Neumayer
+
+        * DisplayConfigurationStorage: Fix typo (b64ab836b)
+
+2025-03-28 Marius Gripsgard
+
+        * Merge branch 'personal/fredldotme/another-lightmode-fix' into
+          'main' (6d269b2d7)
+
+2025-03-25 Alfred Neumayer
+
+        * qml: Color "Drop" labels in Workspace preview in white (d2827bc62)
+
 2025-03-28 Mike Gabriel
 
-        * Release 0.4.0 (HEAD -> main, tag: 0.4.0)
+        * Release 0.4.0 (248b88c17) (tag: 0.4.0)
 
 2025-03-25 Marius Gripsgard
 
