@@ -38,8 +38,8 @@ echo "DBUS_SESSION_BUS_ADDRESS=${DBUS_SESSION_BUS_ADDRESS}" >"$XDG_RUNTIME_DIR/d
 
 # If touch session script (which sets up grid units and mir variables) is available, use it
 TOUCH_WRAPPER=
-if which ubuntu-touch-lightdm-session >/dev/null; then
-    TOUCH_WRAPPER=ubuntu-touch-lightdm-session
+if which lomiri-touch-session >/dev/null; then
+    TOUCH_WRAPPER=lomiri-touch-session
 fi
 
 # Advertise as a lomiri session, so that indicator-network will start.
@@ -76,7 +76,32 @@ if [ "$(id -u phablet 2>/dev/null)" = "32011" ]; then
 fi
 
 # And finally actually start the greeter
+if [ -n "$(command -v device-info)" ]; then
+    GRID_UNIT_PX="$(device-info get GridUnit)"
+fi
+
+export GRID_UNIT_PX="${GRID_UNIT_PX:-18}"
+export MIR_SERVER_ENABLE_MIRCLIENT=1
+
+rm "$XDG_RUNTIME_DIR/mir_socket"
 exec env MIR_SERVER_FILE=$SUB_SOCKET $TOUCH_WRAPPER $@ &
 CMD_PID=$!
+
+count=0
+limit=60
+while [ true ]; do
+    count=$((count + 1))
+    [ $count -gt $limit ] && break
+    [ -e "$XDG_RUNTIME_DIR/mir_socket" ] && break
+    sleep 1s
+done
+
+systemctl --user restart maliit-server.service &
+systemctl --user restart lomiri-indicators.target &
+
 wait $CMD_PID
 CMD_PID=
+
+systemctl --user stop maliit-server.service
+systemctl --user stop lomiri-indicators.target
+
