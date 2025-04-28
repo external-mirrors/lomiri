@@ -40,4 +40,7 @@ export LOMIRI_AS_SYSTEMD_UNIT=1
 export MIR_SERVER_ENABLE_X11=1
 export MIR_SERVER_XWAYLAND_PATH=@CMAKE_INSTALL_FULL_LIBEXECDIR@/Xwayland.lomiri
 
+# Let's not trigger weird Qt JIT bugs
+export QV4_FORCE_INTERPRETER=1
+
 exec ${LOMIRI_BINARY:-lomiri} "$@"
