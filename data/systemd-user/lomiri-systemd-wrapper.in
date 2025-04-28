@@ -40,4 +40,14 @@ export LOMIRI_AS_SYSTEMD_UNIT=1
 export MIR_SERVER_ENABLE_X11=1
 export MIR_SERVER_XWAYLAND_PATH=@CMAKE_INSTALL_FULL_LIBEXECDIR@/Xwayland.lomiri
 
+# Let's not trigger weird Qt JIT bugs
+#
+# We have complex machinery with rendering and happenings on different threads
+# as such we happen to trigger JIT bugs with our heavy use of advanced QML
+# There is an environment variable to flip the behavior though.
+#
+# This works around issues similar in nature to the ones listed here:
+# https://gitlab.com/ubports/ubuntu-touch/-/issues/2228
+export QV4_FORCE_INTERPRETER=1
+
 exec ${LOMIRI_BINARY:-lomiri} "$@"
