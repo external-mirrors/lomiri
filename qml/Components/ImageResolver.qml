@@ -26,7 +26,7 @@ Item {
 
     property bool cache: true
 
-    readonly property url background: {
+    readonly property url resolvedImage: {
         for (var i = 0; i < repeater.count; i++) {
             var image = repeater.itemAt(i);
             var expectedImageSource = Qt.resolvedUrl(candidates[i]);

@@ -19,6 +19,7 @@ import QtQml.StateMachine 1.0 as DSM
 import Lomiri.Components 1.3
 import Lomiri.Launcher 0.1
 import Lomiri.Components.Popups 1.3
+import GSettings 1.0
 import Utils 0.1
 import "../Components"
 
@@ -97,9 +98,26 @@ Rectangle {
                 width: parent.width * .6
                 height: width
                 anchors.centerIn: parent
-                source: "graphics/home.svg"
-                color: "white"
+                source: homeLogoResolver.resolvedImage
                 rotation: root.rotation
+            }
+
+            ImageResolver {
+                id: homeLogoResolver
+                objectName: "homeLogoResolver"
+
+                readonly property url defaultLogo: "file://" + Constants.defaultLogo
+
+                GSettings {
+                    id: logoSettings
+                    schema.id: "com.lomiri.Shell.Launcher"
+                }
+
+                candidates: [
+                    logoSettings.logoPictureUri,
+                    "image://theme/start-here-symbolic,start-here",
+                    defaultLogo
+                ]
             }
 
             AbstractButton {
