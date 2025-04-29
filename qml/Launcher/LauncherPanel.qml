@@ -95,7 +95,7 @@ Rectangle {
 
             Icon {
                 objectName: "dashItem"
-                width: parent.width * .6
+                width: parent.width * .75
                 height: width
                 anchors.centerIn: parent
                 source: homeLogoResolver.resolvedImage
