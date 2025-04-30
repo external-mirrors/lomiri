@@ -29,7 +29,6 @@ class MousePointer : public MirMousePointerInterface {
     Q_OBJECT
     Q_PROPERTY(QQuickItem* confiningItem READ confiningItem WRITE setConfiningItem NOTIFY confiningItemChanged)
     Q_PROPERTY(int topBoundaryOffset READ topBoundaryOffset WRITE setTopBoundaryOffset NOTIFY topBoundaryOffsetChanged)
-    Q_PROPERTY(bool active READ isActive WRITE setActive NOTIFY activeChanged)
 
 public:
     MousePointer(QQuickItem *parent = nullptr);
@@ -53,9 +52,6 @@ public:
 
     QScreen* screen() const { return m_registeredScreen; }
 
-    bool isActive() { return m_active; }
-    void setActive(bool value);
-
 Q_SIGNALS:
     void pushedLeftBoundary(qreal amount, Qt::MouseButtons buttons);
     void pushedRightBoundary(qreal amount, Qt::MouseButtons buttons);
@@ -69,8 +65,6 @@ Q_SIGNALS:
     void confiningItemChanged();
 
     void topBoundaryOffsetChanged(int topBoundaryOffset);
-
-    void activeChanged();
 
 protected:
     void itemChange(ItemChange change, const ItemChangeData &value) override;
@@ -86,7 +80,6 @@ private:
     QPointer<QScreen> m_registeredScreen;
     QString m_cursorName;
     QString m_themeName;
-    bool m_active;
 
     // Accumulated, unapplied, mouse movement.
     QPointF m_accumulatedMovement;

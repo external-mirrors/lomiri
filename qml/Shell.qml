@@ -895,7 +895,7 @@ StyledItem {
 
         z: itemGrabber.z + 1
         topBoundaryOffset: panel.panelHeight
-        active: shell.hasMouse
+        enabled: shell.hasMouse && screenWindow.active
         visible: enabled
 
         property bool mouseNeverMoved: true

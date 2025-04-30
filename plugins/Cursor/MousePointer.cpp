@@ -218,11 +218,3 @@ void MousePointer::setConfiningItem(QQuickItem *item)
         Q_EMIT confiningItemChanged();
     }
 }
-
-void MousePointer::setActive(bool value)
-{
-    if (m_active != value) {
-        m_active = value;
-        Q_EMIT activeChanged();
-    }
-}

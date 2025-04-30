@@ -62,24 +62,18 @@ bool InputDispatcherFilter::eventFilter(QObject *o, QEvent *e)
         case QEvent::MouseButtonPress:
         case QEvent::MouseButtonRelease:
         {
+            // if we don't have any pointers, filter all mouse events.
+            auto pointer = currentPointer();
+            if (!pointer || !pointer->window()) return true;
+
             QMouseEvent* me = static_cast<QMouseEvent*>(e);
 
             // Local position gives relative change of mouse pointer.
             QPointF movement = me->localPos();
 
             // Adjust the position
-            // Get the pos from mir
-            QPointF oldPos = me->screenPos();
+            QPointF oldPos = pointer->window()->geometry().topLeft() + pointer->position();
             QPointF newPos = adjustedPositionForMovement(oldPos, movement);
-
-            // if we don't have any pointers, filter all mouse events.
-            auto pointer = currentPointer(newPos);
-            if (!pointer || !pointer->window()) return true;
-
-            // Activate the current pointer
-            for (MousePointer* p : m_pointers)
-                p->setEnabled(false);
-            pointer->setEnabled(pointer->isActive());
 
             QScreen* currentScreen = screenAt(newPos);
             if (currentScreen) {
@@ -106,7 +100,7 @@ bool InputDispatcherFilter::eventFilter(QObject *o, QEvent *e)
                 } else if (newX <  screenRect.left()) { // left edge
                     Q_EMIT pushedLeftBoundary(currentScreen, qAbs(newX), me->buttons());
                     m_pushing = true;
-                } else if (newX >=  screenRect.right()) { // right edge
+                } else if (newX >= screenRect.right()) { // right edge
                     Q_EMIT pushedRightBoundary(currentScreen, newX - (screenRect.right() - 1), me->buttons());
                     m_pushing = true;
                 } else if (newY < screenRect.top() + pointer->topBoundaryOffset()) { // top edge
@@ -150,7 +144,7 @@ QPointF InputDispatcherFilter::adjustedPositionForMovement(const QPointF &pt, co
         // center of first screen with a pointer.
         Q_FOREACH(QScreen* screen, screens) {
             Q_FOREACH(MousePointer* pointer, m_pointers) {
-                if (pointer->screen() == screen) {
+                if (pointer->isEnabled() && pointer->screen() == screen) {
                     return screen->geometry().center();
                 }
             }
@@ -162,6 +156,8 @@ QPointF InputDispatcherFilter::adjustedPositionForMovement(const QPointF &pt, co
 QScreen *InputDispatcherFilter::screenAt(const QPointF &pt) const
 {
     Q_FOREACH(MousePointer* pointer, m_pointers) {
+        if (!pointer->isEnabled()) continue;
+
         QScreen* screen = pointer->screen();
         if (screen && screen->geometry().contains(pt.toPoint()))
             return screen;
@@ -169,12 +165,11 @@ QScreen *InputDispatcherFilter::screenAt(const QPointF &pt) const
     return nullptr;
 }
 
-MousePointer *InputDispatcherFilter::currentPointer(const QPointF& point) const
+MousePointer *InputDispatcherFilter::currentPointer() const
 {
     Q_FOREACH(MousePointer* pointer, m_pointers) {
-        QScreen* screen = pointer->screen();
-        if (screen && screen->geometry().contains(point.toPoint()))
-            return pointer;
+        if (!pointer->isEnabled()) continue;
+        return pointer;
     }
     return nullptr;
 }
