@@ -16,6 +16,7 @@
 
 #include "globalfunctions.h"
 
+#include <QColor>
 #include <QQmlEngine>
 #include <private/qquickitem_p.h>
 
@@ -55,4 +56,9 @@ QQuickItem *GlobalFunctions::itemAt(QQuickItem* parent, int x, int y, QJSValue m
 bool GlobalFunctions::itemUnderMouse(QQuickItem* item)
 {
     return item && item->isUnderMouse();
+}
+
+bool GlobalFunctions::isValidColor(const QString & colorName)
+{
+    return QColor::isValidColor(colorName);
 }

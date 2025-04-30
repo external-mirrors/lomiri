@@ -39,6 +39,8 @@ public:
                                           QJSValue matcher);
 
     static Q_INVOKABLE bool itemUnderMouse(QQuickItem* item);
+
+    static Q_INVOKABLE bool isValidColor(const QString & colorName);
 };
 
 #endif // GLOBALFUNCTIONS_H

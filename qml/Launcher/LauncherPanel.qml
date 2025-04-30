@@ -90,8 +90,23 @@ Rectangle {
             objectName: "buttonShowDashHome"
             width: parent.width
             height: width * .9
-            color: LomiriColors.orange
+            color: {
+                if (Functions.isValidColor(launcherSettings.homeButtonBackgroundColor)) {
+                    return launcherSettings.homeButtonBackgroundColor;
+                } else {
+                    if (launcherSettings.homeButtonBackgroundColor != '')
+                        console.warn(`Invalid color name '${launcherSettings.homeButtonBackgroundColor}'`);
+
+                    // Inverse of panel's color.
+                    return lightMode ? "#111111" : "#FEFEFE";
+                }
+            }
             readonly property bool highlighted: root.highlightIndex == -1;
+
+            GSettings {
+                id: launcherSettings
+                schema.id: "com.lomiri.Shell.Launcher"
+            }
 
             Icon {
                 objectName: "dashItem"
@@ -108,13 +123,8 @@ Rectangle {
 
                 readonly property url defaultLogo: "file://" + Constants.defaultLogo
 
-                GSettings {
-                    id: logoSettings
-                    schema.id: "com.lomiri.Shell.Launcher"
-                }
-
                 candidates: [
-                    logoSettings.logoPictureUri,
+                    launcherSettings.logoPictureUri,
                     "image://theme/start-here",
                     defaultLogo
                 ]
