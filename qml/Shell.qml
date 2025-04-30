@@ -473,6 +473,12 @@ StyledItem {
             }
 
             onEmergencyCall: startLockedApp("lomiri-dialer-app")
+
+            // Quit the greeter as soon as a session has been started
+            onSessionStarted: {
+                if (shell.mode == "greeter")
+                    Qt.quit();
+            }
         }
     }
 
