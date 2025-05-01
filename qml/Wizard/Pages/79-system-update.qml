@@ -84,7 +84,7 @@ LocalComponents.Page {
 
                 candidates: [
                     logoSettings.logoPictureUri,
-                    "image://theme/start-here-symbolic,start-here",
+                    "image://theme/start-here",
                     defaultLogo
                 ]
             }
