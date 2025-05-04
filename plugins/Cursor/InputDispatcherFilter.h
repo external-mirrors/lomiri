@@ -51,7 +51,7 @@ protected:
     QPointF adjustedPositionForMovement(const QPointF& pt, const QPointF& movement) const;
     QScreen* screenAt(const QPointF& pt) const;
 
-    MousePointer* currentPointer(const QPointF& point) const;
+    MousePointer* currentPointer() const;
 
 private:
     QObject* m_inputDispatcher;
