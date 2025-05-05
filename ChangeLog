@@ -1,6 +1,88 @@
+2025-05-05 Mike Gabriel
+
+        * Release 0.5.0 (HEAD -> main, tag: 0.5.0)
+
+2025-05-04 Priit Jõerüüt
+
+        * Translated using Weblate (Estonian) (a7b8fba78)
+
+2025-05-05 Ratchanan Srirattanamet
+
+        * Merge branch 'personal/fredldotme/mouse-revert' into 'main'
+          (282f435fa)
+
+2025-04-30 Alfred Neumayer
+
+        * treewide: Mostly revert mouse pointer changes (0962fa21d)
+
+2025-05-04 Mike Gabriel
+
+        * Merge branch 'personal/peat-psuwit/g_get_os_info' into 'main'
+          (c46f3faee)
+
+2025-05-03 Ratchanan Srirattanamet
+
+        * Wizard: use g_get_os_info() to read /etc/os-release (81b6d9906)
+
+2025-05-02 Mike Gabriel
+
+        * Merge branch 'personal/peat-psuwit/home-button-background' into
+          'main' (1b323c4fe)
+
+2025-05-01 Ratchanan Srirattanamet
+
+        * LauncherPanel: allow customizing home button background color
+          (1ec13b33b)
+          Fixes:
+          https://gitlab.com/ubports/development/core/lomiri/-/issues/125
+
+2025-05-02 Mike Gabriel
+
+        * Merge branch 'personal/peat-psuwit/no-symbolic-icon-support' into
+          'main' (33e2eb96d)
+
+2025-05-02 Ratchanan Srirattanamet
+
+        * LauncherPanel, Wizard: don't ask for `-symbolic` from icon theme
+          (e57c76839)
+
+2025-04-30 Ratchanan Srirattanamet
+
+        * Merge branch 'personal/fredldotme/encryption' into 'main'
+          (b355a5a09)
+
+2025-04-22 Alfred Neumayer
+
+        * qml: Quit greeter as soon as session has started (6e7006faf)
+        * data/lomiri-greeter-wrapper: Watch lomiri process and start/stop
+          indicators & maliit (69764f9b1)
+
+2025-04-16 Alfred Neumayer
+
+        * data: Fix lomiri-greeter-wrapper for Maliit & Mirclient use
+          (67ef610f2)
+
+2025-04-29 Mike Gabriel
+
+        * Merge branch 'personal/peat-psuwit/start-here-sizing' into 'main'
+          (87fb0d884)
+
+2025-04-29 Ratchanan Srirattanamet
+
+        * LauncherPanel: increase size of home logo to match app icons
+          (0bf3ab5b1)
+
+2025-04-29 Mike Gabriel
+
+        * Merge branch 'logo-resolver' into 'main' (42e9d8f06)
+
+2024-03-26 Aster Boese
+
+        * Switch wallpaper and logo resolution to ImageResolver (4218e7309)
+
 2025-04-17 Mike Gabriel
 
-        * Release 0.4.1 (HEAD -> main, tag: 0.4.1)
+        * Release 0.4.1 (5911df7b4) (tag: 0.4.1)
 
 2025-04-04 Mike Gabriel
 
