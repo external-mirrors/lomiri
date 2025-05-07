@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-06 08:14+0000\n"
-"PO-Revision-Date: 2025-05-05 05:36+0000\n"
+"PO-Revision-Date: 2025-05-10 18:00+0000\n"
 "Last-Translator: Priit Jõerüüt <hwlate@joeruut.com>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/lomiri/lomiri/"
 "et/>\n"
@@ -78,7 +78,7 @@ msgstr "Logi sisse"
 
 #: plugins/LightDM/UsersModel.cpp:165
 msgid "Guest Session"
-msgstr ""
+msgstr "Külalissessioon"
 
 #: plugins/Lomiri/Launcher/launcheritem.cpp:48
 #: plugins/Lomiri/Launcher/launcheritem.cpp:122
@@ -95,7 +95,7 @@ msgstr "Eemalda otsetee kinnitus"
 
 #: plugins/WindowManager/Screen.cpp:160
 msgid "Unknown"
-msgstr "Pole teada"
+msgstr "Teadmata"
 
 #: plugins/WindowManager/Screen.cpp:162
 msgid "VGA"
@@ -144,12 +144,12 @@ msgstr "Logi välja"
 
 #: qml/Components/Dialogs.qml:177
 msgid "Are you sure you want to log out?"
-msgstr ""
+msgstr "Kas sa oled kindel, et soovid logida välja?"
 
 #: qml/Components/Dialogs.qml:180
 msgctxt "Button: Lock the system"
 msgid "Lock"
-msgstr ""
+msgstr "Lukusta"
 
 #: qml/Components/Dialogs.qml:191
 msgctxt "Button: Log out from the system"
@@ -169,7 +169,7 @@ msgstr "Taaskäivita"
 
 #: qml/Components/Dialogs.qml:212
 msgid "Are you sure you want to reboot?"
-msgstr ""
+msgstr "Kas sa oled kindel, et soovid taaskäivitada?"
 
 #: qml/Components/Dialogs.qml:215
 msgid "No"
@@ -202,35 +202,35 @@ msgstr "Taaskäivita"
 
 #: qml/Components/Dialogs.qml:276
 msgid "Screenshot"
-msgstr ""
+msgstr "Ekraanitõmmis"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:41
 msgid "Keyboard Shortcuts"
-msgstr ""
+msgstr "Klaviatuuri kiirklahvid"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:62
 msgid "PrtScr"
-msgstr ""
+msgstr "PrtScr"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:67
 msgid "Takes a screenshot."
-msgstr ""
+msgstr "Teeb ekraanitõmmise."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:75
 msgid "Alt + PrtScr"
-msgstr ""
+msgstr "Alt + PrtScr"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:80
 msgid "Takes a screenshot of the current window."
-msgstr ""
+msgstr "Teeb ekraanitõmmise aktiivsest aknast."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:88
 msgid "Super + Space"
-msgstr ""
+msgstr "Super + tühikuklahv"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:93
 msgid "Switches to next keyboard layout."
-msgstr ""
+msgstr "Vahetab järgmisele klahvistikupaigutusele."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:101
 msgid "Super + Shift + Space"
@@ -374,7 +374,7 @@ msgstr ""
 
 #: qml/Components/Lockscreen.qml:247
 msgid "OK"
-msgstr ""
+msgstr "Sobib"
 
 #: qml/Components/ModeSwitchWarningDialog.qml:33
 msgid "Apps may have unsaved data:"
@@ -445,8 +445,8 @@ msgstr[1] ""
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 minut"
+msgstr[1] "%1 minutit"
 
 #: qml/Greeter/CoverPage.qml:178
 #, qt-format
@@ -461,7 +461,7 @@ msgstr ""
 #: qml/Greeter/CoverPage.qml:197
 #: tests/qmltests/Greeter/tst_GreeterView.qml:1239
 msgid "Unlock"
-msgstr ""
+msgstr "Eemalda lukustus"
 
 #: qml/Greeter/DelayedLockscreen.qml:43
 msgid "Device Locked"
@@ -516,7 +516,7 @@ msgstr ""
 
 #: qml/Launcher/Drawer.qml:240
 msgid "Search…"
-msgstr ""
+msgstr "Otsi…"
 
 #: qml/Launcher/PullToRefreshScopeStyle.qml:56
 msgid "Pull to refresh…"
@@ -528,11 +528,11 @@ msgstr ""
 
 #: qml/Notifications/NotificationMenuItemFactory.qml:124
 msgid "Show password"
-msgstr ""
+msgstr "Näita salasõna"
 
 #: qml/Notifications/Notification.qml:322
 msgid "New message"
-msgstr ""
+msgstr "Uus sõnum"
 
 #: qml/Panel/ActiveCallHint.qml:79
 msgid "Tap to return to call..."
@@ -568,7 +568,7 @@ msgstr ""
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1119
 msgid "Downloading"
-msgstr ""
+msgstr "Laadin alla"
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1121
 msgid "Paused, tap to resume"
@@ -580,7 +580,7 @@ msgstr ""
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1125
 msgid "Finished"
-msgstr ""
+msgstr "Valmis"
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1127
 msgid "Failed, tap to retry"
@@ -604,7 +604,7 @@ msgstr ""
 
 #: qml/Panel/PanelMenuPage.qml:92
 msgid "Back"
-msgstr ""
+msgstr "Tagasi"
 
 #: qml/Stage/SideStage.qml:80
 msgid "Drag using 3 fingers any application from one window to the other"
@@ -651,7 +651,7 @@ msgstr ""
 #: qml/Wizard/Pages/passcode-desktop.qml:154
 #: qml/Wizard/Pages/password-set.qml:153
 msgid "Next"
-msgstr ""
+msgstr "Edasi"
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
 #: qml/Wizard/Pages/10-welcome-update.qml:92
@@ -671,7 +671,7 @@ msgstr ""
 
 #: qml/Wizard/Pages/11-changelog.qml:74
 msgid "Loading..."
-msgstr ""
+msgstr "Laadin..."
 
 #: qml/Wizard/Pages/20-keyboard.qml:31
 msgid "Select Keyboard"
@@ -689,7 +689,7 @@ msgstr ""
 #: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/79-system-update.qml:144
 #: qml/Wizard/Pages/sim.qml:101
 msgid "Skip"
-msgstr ""
+msgstr "Jäta vahele"
 
 #: qml/Wizard/Pages/30-wifi.qml:31
 msgid "Connect to Wi‑Fi"
@@ -730,7 +730,7 @@ msgstr ""
 #: qml/Wizard/Pages/70-passwd-type.qml:103
 msgctxt "Label: Type of security method"
 msgid "Create new password"
-msgstr ""
+msgstr "Loo uus salasõna"
 
 #: qml/Wizard/Pages/70-passwd-type.qml:105
 msgctxt "Label: Type of security method"
@@ -787,7 +787,7 @@ msgstr ""
 
 #: qml/Wizard/Pages/80-finished.qml:131
 msgid "Continue"
-msgstr ""
+msgstr "Jätka"
 
 #: qml/Wizard/Pages/80-finished.qml:131
 msgid "Get Started"
@@ -838,7 +838,7 @@ msgstr ""
 
 #: qml/Wizard/Pages/password-set.qml:31
 msgid "Lock Screen Password"
-msgstr ""
+msgstr "Lukustusvaate salasõna"
 
 #: qml/Wizard/Pages/password-set.qml:68
 msgid "Enter at least 8 characters"
@@ -846,11 +846,11 @@ msgstr ""
 
 #: qml/Wizard/Pages/password-set.qml:80
 msgid "Choose password"
-msgstr ""
+msgstr "Vali salasõna"
 
 #: qml/Wizard/Pages/password-set.qml:110
 msgid "Confirm password"
-msgstr ""
+msgstr "Korda salasõna"
 
 #: qml/Wizard/Pages/sim.qml:27
 msgid "No SIM card installed"
@@ -878,28 +878,28 @@ msgstr ""
 
 #: qml/Wizard/PasswordMeter.qml:87
 msgid "Password too short"
-msgstr ""
+msgstr "Salasõna on liiga lühike"
 
 #: qml/Wizard/PasswordMeter.qml:89
 msgid "Passwords match"
-msgstr ""
+msgstr "Salasõnad klapivad omavahel"
 
 #: qml/Wizard/PasswordMeter.qml:91
 msgid "Passwords do not match"
-msgstr ""
+msgstr "Salasõnad ei klapi omavahel"
 
 #: qml/Wizard/PasswordMeter.qml:95
 msgid "Strong password"
-msgstr ""
+msgstr "Väga hea salasõna"
 
 #: qml/Wizard/PasswordMeter.qml:97
 msgid "Fair password"
-msgstr ""
+msgstr "Üsna hea salasõna"
 
 #: qml/Wizard/PasswordMeter.qml:99
 msgid "Weak password"
-msgstr ""
+msgstr "Kehv salasõna"
 
 #: qml/Wizard/PasswordMeter.qml:101
 msgid "Very weak password"
-msgstr ""
+msgstr "Väga kehv salasõna"
