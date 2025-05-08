@@ -98,7 +98,8 @@ Rectangle {
                         console.warn(`Invalid color name '${launcherSettings.homeButtonBackgroundColor}'`);
 
                     // Use panel color for icon background.
-                    return lightMode ? "#FEFEFE" : "#111111";
+                    // For an unknown reason, the lightMode color is slightly darker than #FEFEFE (see above)
+                    return lightMode ? "#F7F3F6" : "#111111";
                 }
             }
             readonly property bool highlighted: root.highlightIndex == -1;
