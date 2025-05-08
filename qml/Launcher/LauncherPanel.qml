@@ -97,8 +97,8 @@ Rectangle {
                     if (launcherSettings.homeButtonBackgroundColor != '')
                         console.warn(`Invalid color name '${launcherSettings.homeButtonBackgroundColor}'`);
 
-                    // Inverse of panel's color.
-                    return lightMode ? "#111111" : "#FEFEFE";
+                    // Use panel color for icon background.
+                    return lightMode ? "#FEFEFE" : "#111111";
                 }
             }
             readonly property bool highlighted: root.highlightIndex == -1;
