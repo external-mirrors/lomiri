@@ -97,8 +97,7 @@ Rectangle {
                     if (launcherSettings.homeButtonBackgroundColor != '')
                         console.warn(`Invalid color name '${launcherSettings.homeButtonBackgroundColor}'`);
 
-                    // Inverse of panel's color.
-                    return lightMode ? "#111111" : "#FEFEFE";
+                    return LomiriColors.orange;
                 }
             }
             readonly property bool highlighted: root.highlightIndex == -1;
@@ -125,7 +124,6 @@ Rectangle {
 
                 candidates: [
                     launcherSettings.logoPictureUri,
-                    "image://theme/start-here",
                     defaultLogo
                 ]
             }
