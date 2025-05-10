@@ -91,6 +91,11 @@ Rectangle {
             width: parent.width
             height: width * .9
             color: {
+                // To exchange the default Lomiri home logo bgcolor by your distro's bgcolor, add a gsettings override:
+                //
+                // [com.lomiri.Shell.Launcher]
+                // home-button-background-color='<some-RGB-value-such-as-#123456>'
+                //
                 if (Functions.isValidColor(launcherSettings.homeButtonBackgroundColor)) {
                     return launcherSettings.homeButtonBackgroundColor;
                 } else {
@@ -123,6 +128,11 @@ Rectangle {
                 readonly property url defaultLogo: "file://" + Constants.defaultLogo
 
                 candidates: [
+                    // To exchange the default Lomiri home logo by your distro's logo, add a gsettings override:
+                    //
+                    // [com.lomiri.Shell.Launcher]
+                    // logo-picture-uri='image://theme/start-here'
+                    //
                     launcherSettings.logoPictureUri,
                     defaultLogo
                 ]
