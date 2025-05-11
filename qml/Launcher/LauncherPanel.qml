@@ -91,14 +91,18 @@ Rectangle {
             width: parent.width
             height: width * .9
             color: {
+                // To exchange the default Lomiri home logo bgcolor by your distro's bgcolor, add a gsettings override:
+                //
+                // [com.lomiri.Shell.Launcher]
+                // home-button-background-color='<some-RGB-value-such-as-#123456>'
+                //
                 if (Functions.isValidColor(launcherSettings.homeButtonBackgroundColor)) {
                     return launcherSettings.homeButtonBackgroundColor;
                 } else {
                     if (launcherSettings.homeButtonBackgroundColor != '')
                         console.warn(`Invalid color name '${launcherSettings.homeButtonBackgroundColor}'`);
 
-                    // Inverse of panel's color.
-                    return lightMode ? "#111111" : "#FEFEFE";
+                    return LomiriColors.orange;
                 }
             }
             readonly property bool highlighted: root.highlightIndex == -1;
@@ -124,8 +128,12 @@ Rectangle {
                 readonly property url defaultLogo: "file://" + Constants.defaultLogo
 
                 candidates: [
+                    // To exchange the default Lomiri home logo by your distro's logo, add a gsettings override:
+                    //
+                    // [com.lomiri.Shell.Launcher]
+                    // logo-picture-uri='image://theme/start-here'
+                    //
                     launcherSettings.logoPictureUri,
-                    "image://theme/start-here",
                     defaultLogo
                 ]
             }
