@@ -17,6 +17,7 @@
 #include "InputDispatcherFilter.h"
 #include "MousePointer.h"
 
+#include <QDebug>
 #include <QEvent>
 #include <QGuiApplication>
 #include <QQuickWindow>
@@ -66,14 +67,25 @@ bool InputDispatcherFilter::eventFilter(QObject *o, QEvent *e)
             auto pointer = currentPointer();
             if (!pointer || !pointer->window()) return true;
 
+            if (!pointer->parentItem()) {
+                qDebug() << "Huh? a MousePointer without a parent?";
+                return true;
+            }
+
             QMouseEvent* me = static_cast<QMouseEvent*>(e);
 
             // Local position gives relative change of mouse pointer.
             QPointF movement = me->localPos();
 
+            // Because the movement is relative to the visual display, run both old and new
+            // pointer position through mapToGlobal() to take Shell's rotation into account,
+            // then recalculate the movement as a difference between them.
+            QPointF oldPos = pointer->parentItem()->mapToGlobal(pointer->position());
+            QPointF newPos = pointer->parentItem()->mapToGlobal(pointer->position() + movement);
+            movement = newPos - oldPos;
+
             // Adjust the position
-            QPointF oldPos = pointer->window()->geometry().topLeft() + pointer->position();
-            QPointF newPos = adjustedPositionForMovement(oldPos, movement);
+            newPos = adjustedPositionForMovement(oldPos, movement);
 
             QScreen* currentScreen = screenAt(newPos);
             if (currentScreen) {
