@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-06 08:14+0000\n"
-"PO-Revision-Date: 2025-05-10 18:00+0000\n"
+"PO-Revision-Date: 2025-05-14 23:12+0000\n"
 "Last-Translator: Priit Jõerüüt <hwlate@joeruut.com>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/lomiri/lomiri/"
 "et/>\n"
@@ -451,12 +451,12 @@ msgstr[1] "%1 minutit"
 #: qml/Greeter/CoverPage.qml:178
 #, qt-format
 msgid "%1, %2 until full"
-msgstr ""
+msgstr "%1, %2 täitumiseni"
 
 #: qml/Greeter/CoverPage.qml:181
 #, qt-format
 msgid "%1 until full"
-msgstr ""
+msgstr "%1 täitumiseni"
 
 #: qml/Greeter/CoverPage.qml:197
 #: tests/qmltests/Greeter/tst_GreeterView.qml:1239
@@ -465,38 +465,42 @@ msgstr "Eemalda lukustus"
 
 #: qml/Greeter/DelayedLockscreen.qml:43
 msgid "Device Locked"
-msgstr ""
+msgstr "Nutiseade on lukustatud"
 
 #: qml/Greeter/DelayedLockscreen.qml:58
 msgid "You have been locked out due to too many failed passphrase attempts."
 msgstr ""
+"Sa oled liiga palju kordi üritanud salafraasi sisestada ja nüüd enam ei saa "
+"mõnda aega ligi."
 
 #: qml/Greeter/DelayedLockscreen.qml:59
 msgid "You have been locked out due to too many failed passcode attempts."
 msgstr ""
+"Sa oled liiga palju kordi üritanud salakoodi sisestada ja nüüd enam ei saa "
+"mõnda aega ligi."
 
 #: qml/Greeter/DelayedLockscreen.qml:68
 #, qt-format
 msgid "Please wait %1 minute and then try again…"
 msgid_plural "Please wait %1 minutes and then try again…"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Palun oota %1 minut ja proovi siis uuesti…"
+msgstr[1] "Palun oota %1 minutit ja proovi siis uuesti…"
 
 #: qml/Greeter/Greeter.qml:627 tests/qmltests/Greeter/tst_Greeter.qml:578
 #: tests/qmltests/Greeter/tst_Greeter.qml:597
 #: tests/qmltests/Greeter/tst_Greeter.qml:625
 #: tests/qmltests/Greeter/tst_Greeter.qml:637
 msgid "Try again"
-msgstr ""
+msgstr "Proovi uuesti"
 
 #: qml/Greeter/Greeter.qml:628 tests/qmltests/Greeter/tst_Greeter.qml:552
 #: tests/qmltests/Greeter/tst_Greeter.qml:603
 msgid "Enter passphrase to unlock"
-msgstr ""
+msgstr "Lukustuse eemaldamiseks sisesta salafraas"
 
 #: qml/Greeter/Greeter.qml:629
 msgid "Enter passcode to unlock"
-msgstr ""
+msgstr "Lukustuse eemaldamiseks sisesta salakood"
 
 #: qml/Greeter/GreeterView.qml:472
 msgid "Emergency"
@@ -504,11 +508,11 @@ msgstr ""
 
 #: qml/Greeter/PromptList.qml:143
 msgid "Passphrase"
-msgstr ""
+msgstr "Salafraas"
 
 #: qml/Greeter/PromptList.qml:143
 msgid "Passcode"
-msgstr ""
+msgstr "Salakood"
 
 #: qml/Greeter/SessionsList.qml:124
 msgid "Select desktop environment"
@@ -536,26 +540,26 @@ msgstr "Uus sõnum"
 
 #: qml/Panel/ActiveCallHint.qml:79
 msgid "Tap to return to call..."
-msgstr ""
+msgstr "Klõpsa tagasihelistamiseks..."
 
 #: qml/Panel/ActiveCallHint.qml:93
 msgid "Conference"
-msgstr ""
+msgstr "Rühmakõne"
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:967
 msgid "Nothing is playing"
-msgstr ""
+msgstr "Mitte midagi pole esitamisel"
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1104
 #, qt-format
 msgid "%1 second"
 msgid_plural "%1 seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 sekund"
+msgstr[1] "%1 sekundit"
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1107
 msgid "0 seconds"
-msgstr ""
+msgstr "0 sekundit"
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1109
 #, qt-format
@@ -667,7 +671,7 @@ msgstr ""
 
 #: qml/Wizard/Pages/11-changelog.qml:28
 msgid "What's new"
-msgstr ""
+msgstr "Mida on meil uut"
 
 #: qml/Wizard/Pages/11-changelog.qml:74
 msgid "Loading..."
@@ -675,15 +679,15 @@ msgstr "Laadin..."
 
 #: qml/Wizard/Pages/20-keyboard.qml:31
 msgid "Select Keyboard"
-msgstr ""
+msgstr "Vali klahvistik"
 
 #: qml/Wizard/Pages/20-keyboard.qml:71
 msgid "Keyboard language"
-msgstr ""
+msgstr "Klahvistiku keel"
 
 #: qml/Wizard/Pages/20-keyboard.qml:93
 msgid "Keyboard layout"
-msgstr ""
+msgstr "Klahvistiku paigutus"
 
 #: qml/Wizard/Pages/20-keyboard.qml:152 qml/Wizard/Pages/30-wifi.qml:213
 #: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/79-system-update.qml:144
@@ -693,39 +697,39 @@ msgstr "Jäta vahele"
 
 #: qml/Wizard/Pages/30-wifi.qml:31
 msgid "Connect to Wi‑Fi"
-msgstr ""
+msgstr "Ühenda WiFi-võrkku"
 
 #: qml/Wizard/Pages/30-wifi.qml:139
 msgid "Connected"
-msgstr ""
+msgstr "Ühendatud"
 
 #: qml/Wizard/Pages/30-wifi.qml:172
 msgid "Available Wi-Fi networks"
-msgstr ""
+msgstr "Saadaval WiFi-võrgud"
 
 #: qml/Wizard/Pages/30-wifi.qml:173
 msgid "No available Wi-Fi networks"
-msgstr ""
+msgstr "WiFi-võrke pole saadaval"
 
 #: qml/Wizard/Pages/50-timezone.qml:30
 msgid "Time Zone"
-msgstr ""
+msgstr "Ajavöönd"
 
 #: qml/Wizard/Pages/50-timezone.qml:182
 msgid "Enter your city"
-msgstr ""
+msgstr "Sisesta oma linn"
 
 #: qml/Wizard/Pages/60-account.qml:24
 msgid "Personalize Your Device"
-msgstr ""
+msgstr "Muuda nutiseade isikupäraseks"
 
 #: qml/Wizard/Pages/60-account.qml:54
 msgid "Preferred Name"
-msgstr ""
+msgstr "Eelistatud nimi"
 
 #: qml/Wizard/Pages/70-passwd-type.qml:40
 msgid "Lock Screen"
-msgstr ""
+msgstr "Lukustusvaade"
 
 #: qml/Wizard/Pages/70-passwd-type.qml:103
 msgctxt "Label: Type of security method"
@@ -735,55 +739,57 @@ msgstr "Loo uus salasõna"
 #: qml/Wizard/Pages/70-passwd-type.qml:105
 msgctxt "Label: Type of security method"
 msgid "Create passcode (numbers only)"
-msgstr ""
+msgstr "Loo salakood (vaid numbrid)"
 
 #: qml/Wizard/Pages/70-passwd-type.qml:107
 msgctxt "Label: Type of security method"
 msgid "No lock code"
-msgstr ""
+msgstr "Lukustuskoodi pole"
 
 #: qml/Wizard/Pages/79-system-update.qml:28
 msgid "Update Device"
-msgstr ""
+msgstr "Uuenda nutiseadet"
 
 #: qml/Wizard/Pages/79-system-update.qml:55
 msgid ""
 "There is a system update available and ready to install. Afterwards, the "
 "device will automatically restart."
 msgstr ""
+"Saadavalt on süsteemitarkvara uuendus, mille paigaldamise järel nutiseade "
+"käivitub automaatselt uuesti."
 
 #: qml/Wizard/Pages/79-system-update.qml:76
 msgctxt "string identifying name of the update"
 msgid "Ubuntu Touch system"
-msgstr ""
+msgstr "Operatsioonisüsteem Ubuntu Touch"
 
 #: qml/Wizard/Pages/79-system-update.qml:83
 #, qt-format
 msgctxt "version of the system update"
 msgid "Version %1"
-msgstr ""
+msgstr "Versioon %1"
 
 #: qml/Wizard/Pages/79-system-update.qml:95
 msgid "This could take a few minutes..."
-msgstr ""
+msgstr "Selleks võib kuluda mõni minut..."
 
 #: qml/Wizard/Pages/79-system-update.qml:109
 msgid "Install and restart now"
-msgstr ""
+msgstr "Paigalda kohe ja käivita siis uuesti"
 
 #: qml/Wizard/Pages/80-finished.qml:93
 msgid "Welcome Back"
-msgstr ""
+msgstr "Tere tulemast tagasi"
 
 #. TRANSLATORS: %1 contains the distro name
 #: qml/Wizard/Pages/80-finished.qml:95
 #, qt-format
 msgid "Welcome to %1"
-msgstr ""
+msgstr "Tere tulemast, see on %1"
 
 #: qml/Wizard/Pages/80-finished.qml:111
 msgid "You are ready to use your device now"
-msgstr ""
+msgstr "Võid alustada nüüd selle nutiseadme kasutamist"
 
 #: qml/Wizard/Pages/80-finished.qml:131
 msgid "Continue"
@@ -796,45 +802,45 @@ msgstr ""
 #: qml/Wizard/Pages/passcode-confirm.qml:43
 #: qml/Wizard/Pages/passcode-desktop.qml:104
 msgid "Confirm passcode"
-msgstr ""
+msgstr "Korda salakoodi"
 
 #: qml/Wizard/Pages/passcode-confirm.qml:45
 msgid "Incorrect passcode."
-msgstr ""
+msgstr "Vigane salakood."
 
 #: qml/Wizard/Pages/passcode-confirm.qml:45
 msgctxt "Enter the passcode again"
 msgid "Please re-enter."
-msgstr ""
+msgstr "Palun sisesta uuesti."
 
 #: qml/Wizard/Pages/passcode-desktop.qml:31
 msgid "Lock Screen Passcode"
-msgstr ""
+msgstr "Lukustusvaate salakood"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:68
 msgid "Enter at least 4 numbers to setup your passcode"
-msgstr ""
+msgstr "Salakoodi lisamiseks pead sisestama vähemalt 4 numbrit"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:84
 #: qml/Wizard/Pages/passcode-set.qml:54
 msgid "Choose passcode"
-msgstr ""
+msgstr "Sisesta salakood"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:139
 msgid "Passcode too short"
-msgstr ""
+msgstr "Salakood on liiga lühikene"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:141
 msgid "Passcodes match"
-msgstr ""
+msgstr "Salakoodid klapivad"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:143
 msgid "Passcodes do not match"
-msgstr ""
+msgstr "Salakood ei klapi"
 
 #: qml/Wizard/Pages/passcode-set.qml:62
 msgid "Passcode must be at least 4 characters long"
-msgstr ""
+msgstr "Salakood peab olema vähemalt 4 numbri pikkune"
 
 #: qml/Wizard/Pages/password-set.qml:31
 msgid "Lock Screen Password"
@@ -842,11 +848,11 @@ msgstr "Lukustusvaate salasõna"
 
 #: qml/Wizard/Pages/password-set.qml:68
 msgid "Enter at least 8 characters"
-msgstr ""
+msgstr "Sisesta vähemalt 8 tähemärki"
 
 #: qml/Wizard/Pages/password-set.qml:80
 msgid "Choose password"
-msgstr "Vali salasõna"
+msgstr "Sisesta salasõna"
 
 #: qml/Wizard/Pages/password-set.qml:110
 msgid "Confirm password"
@@ -854,27 +860,27 @@ msgstr "Korda salasõna"
 
 #: qml/Wizard/Pages/sim.qml:27
 msgid "No SIM card installed"
-msgstr ""
+msgstr "SIM-kaart on sisestamata"
 
 #: qml/Wizard/Pages/sim.qml:54
 msgid "SIM card added"
-msgstr ""
+msgstr "SIM-kaart on sisestatud"
 
 #: qml/Wizard/Pages/sim.qml:55
 msgid "You must restart the device to access the mobile network."
-msgstr ""
+msgstr "Mobiilsidevõrgu kasutamiseks pead nutiseadme uuesti käivitama."
 
 #: qml/Wizard/Pages/sim.qml:59
 msgid "Restart"
-msgstr ""
+msgstr "Käivita uuesti"
 
 #: qml/Wizard/Pages/sim.qml:78
 msgid "You won’t be able to make calls or use text messaging without a SIM."
-msgstr ""
+msgstr "Ilma SIM-kaardita sa ei saa helistada ega saata tekstisõnumeid."
 
 #: qml/Wizard/Pages/sim.qml:90
 msgid "To proceed with no SIM tap Skip."
-msgstr ""
+msgstr "Jätkamaks ilma SIM-kaardita klõpsi „Jäta vahele“."
 
 #: qml/Wizard/PasswordMeter.qml:87
 msgid "Password too short"
