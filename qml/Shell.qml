@@ -765,7 +765,7 @@ StyledItem {
             deferred: shell.mode === "greeter"
 
             function unlockWhenDoneWithWizard() {
-                if (!active) {
+                if (!active && shell.mode !== "greeter") {
                     ModemConnectivity.unlockAllModems();
                 }
             }
