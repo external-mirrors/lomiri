@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-06 08:14+0000\n"
-"PO-Revision-Date: 2025-06-23 03:22+0000\n"
+"PO-Revision-Date: 2025-06-28 18:47+0000\n"
 "Last-Translator: phmqXPD <phmq.xpd@gmail.com>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/lomiri/lomiri/"
 "vi/>\n"
@@ -160,7 +160,7 @@ msgstr "Đăng xuất"
 #: qml/Greeter/GreeterView.qml:452 qml/Wizard/Pages/passcode-confirm.qml:32
 #: qml/Wizard/Pages/passcode-set.qml:32
 msgid "Cancel"
-msgstr "Huỷ bỏ"
+msgstr "Hủy bỏ"
 
 #: qml/Components/Dialogs.qml:211
 msgctxt "Title: Reboot dialog"
