@@ -120,6 +120,28 @@ bool InputDispatcherFilter::eventFilter(QObject *o, QEvent *e)
             o->event(&eCopy);
             return true;
         }
+        // Adjust position for Wheel event the same way as mouse events
+        case QEvent::Wheel:
+        {
+            // if we don't have any pointers, filter all mouse events.
+            auto pointer = currentPointer();
+            if (!pointer || !pointer->window()) return true;
+
+            QWheelEvent* we = static_cast<QWheelEvent*>(e);
+
+            // Local position gives relative change of mouse pointer.
+            QPointF movement = we->position();
+
+            // Adjust the position
+            QPointF oldPos = pointer->window()->geometry().topLeft() + pointer->position();
+            QPointF newPos = adjustedPositionForMovement(oldPos, movement);
+
+            // Send the event
+            QWheelEvent eCopy(we->position(), newPos, we->pixelDelta(), we->angleDelta(), we->buttons(), we->modifiers(), we->phase(), we->inverted());
+            eCopy.setTimestamp(we->timestamp());
+            o->event(&eCopy);
+            return true;
+        }
         default:
             break;
     }
