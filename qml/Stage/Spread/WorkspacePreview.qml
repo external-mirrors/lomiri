@@ -47,6 +47,7 @@ Item {
         sourceSize.height: height
         fillMode: Image.PreserveAspectCrop
         autoTransform: true
+        asynchronous: true
 
         Repeater {
             id: topLevelSurfaceRepeater
