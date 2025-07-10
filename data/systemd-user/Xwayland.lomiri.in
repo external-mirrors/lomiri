@@ -28,7 +28,11 @@ ARGS=""
 
 XWAYLAND_SHM=$(device-info get XwaylandShm)
 HAS_XWAYLAND_SHM=$?
-if [ "$HAS_XWAYLAND_SHM" = "0" ]; then
+
+# Default to shm mode on for the phone
+if [ "$HAS_XWAYLAND_SHM" = "1" ]; then
+    [ -f /system/build.prop ] && ARGS="$ARGS -shm"
+elif [ "$HAS_XWAYLAND_SHM" = "0" ]; then
     if [ "$XWAYLAND_SHM" = "true" ]; then
         ARGS="$ARGS -shm"
     fi
