@@ -279,6 +279,7 @@ Item {
                     id: workspacePreview
                     height: listView.height
                     width: listView.itemWidth - settings.launcherWidth
+                    anchors.horizontalCenter: parent.horizontalCenter
                     screen: root.screen
                     background: root.background
                     screenHeight: listView.screenSpaceHeight
