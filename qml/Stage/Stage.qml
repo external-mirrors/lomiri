@@ -1083,7 +1083,6 @@ FocusScope {
             Behavior on opacity { LomiriNumberAnimation {} }
             visible: opacity > 0
             enabled: workspaceSwitcher
-            smooth: true
 
             Drag.active: surface != null
             Drag.keys: ["application"]
