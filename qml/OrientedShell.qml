@@ -174,6 +174,12 @@ Item {
     onPhysicalOrientationChanged: {
         if (!orientationLocked) {
             orientation = physicalOrientation;
+        } else {
+            if (orientation !== physicalOrientation && !shell.showingGreeter) {
+                rotateButton.show()
+            } else {
+                rotateButton.hide()
+            }
         }
     }
     onOrientationLockedChanged: {
@@ -336,6 +342,18 @@ Item {
         transform: Rotation {
             origin.x: shell.transformOriginX; origin.y: shell.transformOriginY; axis { x: 0; y: 0; z: 1 }
             angle: shell.transformRotationAngle
+        }
+    }
+
+    RotateButton {
+        id: rotateButton
+
+        screenOrientation: root.orientation
+        screenOrientationLocked: root.orientationLocked
+
+        onClicked: {
+            orientationLock.savedOrientation = root.orientation
+            root.orientation = root.physicalOrientation
         }
     }
 
