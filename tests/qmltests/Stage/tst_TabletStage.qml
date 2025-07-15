@@ -806,5 +806,48 @@ Rectangle {
             tryCompare(surfaceItem, "mousePressCount", 3);
             tryCompare(surfaceItem, "mouseReleaseCount", 3);
         }
+
+        function test_moveAppToSideStageWithShortcut() {
+            var webbrowserSurfaceId = launchApp("morph");
+            webbrowserCheckBox.checked = true;
+            waitUntilAppSurfaceShowsUp(webbrowserSurfaceId);
+
+            var webbrowserApp = ApplicationManager.findApplication(webbrowserCheckBox.appId);
+            var webbrowserDelegate = findChild(stage, "appDelegate_" + webbrowserSurfaceId);
+            compare(webbrowserDelegate.stage, ApplicationInfoInterface.MainStage);
+
+            tryCompare(webbrowserApp, "state", ApplicationInfoInterface.Running);
+
+            var gallerySurfaceId = launchApp("gallery");
+            galleryCheckBox.checked = true;
+            waitUntilAppSurfaceShowsUp(gallerySurfaceId);
+
+            var galleryApp = ApplicationManager.findApplication(galleryCheckBox.appId);
+            var galleryDelegate = findChild(stage, "appDelegate_" + gallerySurfaceId);
+            compare(galleryDelegate.stage, ApplicationInfoInterface.MainStage);
+
+            tryCompare(galleryApp, "state", ApplicationInfoInterface.Running);
+            tryCompare(webbrowserApp, "state", ApplicationInfoInterface.Suspended);
+            compare(galleryDelegate.stage, ApplicationInfoInterface.MainStage);
+            compare(webbrowserDelegate.stage, ApplicationInfoInterface.MainStage);
+
+            keyClick(Qt.Key_S, Qt.MetaModifier);
+            tryCompare(sideStage, "x", stage.width - sideStage.width)
+            waitForRendering(stage)
+
+            keyClick(Qt.Key_Right, Qt.MetaModifier | Qt.ControlModifier);
+
+            tryCompare(galleryApp, "state", ApplicationInfoInterface.Running);
+            tryCompare(webbrowserApp, "state", ApplicationInfoInterface.Running);
+            compare(galleryDelegate.stage, ApplicationInfoInterface.SideStage);
+            compare(webbrowserDelegate.stage, ApplicationInfoInterface.MainStage);
+
+            keyClick(Qt.Key_Left, Qt.MetaModifier | Qt.ControlModifier);
+
+            tryCompare(galleryApp, "state", ApplicationInfoInterface.Running);
+            tryCompare(webbrowserApp, "state", ApplicationInfoInterface.Suspended);
+            compare(galleryDelegate.stage, ApplicationInfoInterface.MainStage);
+            compare(webbrowserDelegate.stage, ApplicationInfoInterface.MainStage);
+        }
     }
 }
