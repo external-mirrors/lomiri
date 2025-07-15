@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2013-2017 Canonical Ltd.
- * Copyright (C) 2020 UBports Foundation
+ * Copyright (C) 2020-2026 UBports Foundation
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -457,7 +457,8 @@ Item {
 
                 height: parent.height
                 expanded: indicators.expanded
-                selected: ListView.isCurrentItem
+                finishedExpanding: Math.floor(height) == Math.floor(__indicators.expandedPanelHeight)
+                selected: index == indicators.currentMenuIndex
 
                 identifier: model.identifier
                 busName: indicatorProperties.busName

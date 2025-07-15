@@ -128,3 +128,8 @@ quint8 DeviceConfig::sensorRadius() const
 {
     return QString::fromStdString(m_info->get("udfpSensorRadius", "0")).toUInt();
 }
+
+quint16 DeviceConfig::collapsedPanelHeight() const
+{
+    return QString::fromStdString(m_info->get("DisplayCutouts", "0;")).split(";")[0].toUInt();
+}
