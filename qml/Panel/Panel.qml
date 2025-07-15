@@ -457,7 +457,8 @@ Item {
 
                 height: parent.height
                 expanded: indicators.expanded
-                selected: ListView.isCurrentItem
+                finishedExpanding: Math.floor(height) == Math.floor(__indicators.expandedPanelHeight)
+                selected: index == indicators.currentMenuIndex
 
                 identifier: model.identifier
                 busName: indicatorProperties.busName

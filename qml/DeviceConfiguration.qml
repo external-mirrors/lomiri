@@ -37,6 +37,8 @@ QtObject {
     readonly property alias invertedPortraitOrientation: priv.invertedPortraitOrientation
 
     readonly property alias category: priv.category
+    readonly property string cutouts: deviceConfig.cutouts
+    readonly property bool cutoutsDebug: deviceConfig.cutoutsDebug
 
     readonly property var deviceConfig: DeviceConfig {}
 

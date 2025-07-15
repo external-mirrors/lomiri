@@ -87,6 +87,16 @@ QString DeviceConfig::category() const
     return value;
 }
 
+QString DeviceConfig::cutouts() const
+{
+    return qgetenv("__TEMP_CUTOUTS_CONFIG");
+}
+
+bool DeviceConfig::cutoutsDebug() const
+{
+    return qgetenv("__TEMP_CUTOUTS_DEBUG") == "1";
+}
+
 Qt::ScreenOrientation DeviceConfig::stringToOrientation(const std::string &orientationString, Qt::ScreenOrientation defaultValue) const
 {
     if (orientationString == "Landscape") {

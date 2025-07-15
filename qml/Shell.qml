@@ -50,6 +50,10 @@ import WindowManager 1.0
 StyledItem {
     id: shell
 
+    DeviceConfiguration {
+        id: deviceConfig
+    }
+
     readonly property bool lightMode: settings.lightMode
     theme.name: lightMode ? "Lomiri.Components.Themes.Ambiance" :
                             "Lomiri.Components.Themes.SuruDark"
@@ -596,7 +600,7 @@ StyledItem {
             lightMode: shell.lightMode
 
             mode: shell.usageScenario == "desktop" ? "windowed" : "staged"
-            minimizedPanelHeight: units.gu(3)
+            minimizedPanelHeight: parseFloat(deviceConfig.cutouts.split(";")[0])
             expandedPanelHeight: units.gu(7)
             applicationMenuContentX: launcher.lockedVisible ? launcher.panelWidth : 0
 

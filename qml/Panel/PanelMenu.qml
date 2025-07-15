@@ -195,7 +195,13 @@ Showable {
         unitProgress: root.unitProgress
 
         height: expanded ? expandedPanelHeight : minimizedPanelHeight
-        Behavior on height { NumberAnimation { duration: LomiriAnimation.SnapDuration; easing: LomiriAnimation.StandardEasing } }
+        Behavior on height {
+            NumberAnimation {
+                id: indicatorsBarHeightAnimation
+                duration: LomiriAnimation.SnapDuration
+                easing: LomiriAnimation.StandardEasing
+            }
+        }
     }
 
     ScrollCalculator {
@@ -375,7 +381,7 @@ Showable {
                 lateralPosition: d.rowMappedLateralPosition
                 // vertical velocity determines if changes in lateral position has an effect
                 enableLateralChanges: d.activeDragHandle &&
-                                      !yVelocityCalculator.velocityAboveThreshold
+                                      !yVelocityCalculator.velocityAboveThreshold && !indicatorsBarHeightAnimation.running
             }
             // left scroll bar handling
             PropertyChanges {

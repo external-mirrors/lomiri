@@ -22,7 +22,7 @@ import "../Components"
 Item {
     id: root
     property alias expanded: row.expanded
-    property alias interactive: flickable.interactive
+    property alias interactive: row.interactive
     property alias model: row.model
     property alias unitProgress: row.unitProgress
     property alias enableLateralChanges: row.enableLateralChanges
@@ -51,7 +51,6 @@ Item {
             row.resetCurrentItem();
         }
         row.selectPreviousItem();
-        d.alignIndicators();
     }
 
     function selectNextItem() {
@@ -59,7 +58,6 @@ Item {
             row.resetCurrentItem();
         }
         row.selectNextItem();
-        d.alignIndicators();
     }
 
     function setCurrentItemIndex(index) {
@@ -67,7 +65,6 @@ Item {
             row.resetCurrentItem();
         }
         row.setCurrentItemIndex(index);
-        d.alignIndicators();
     }
 
     function addScrollOffset(scrollAmmout) {
@@ -128,46 +125,6 @@ Item {
         Behavior on alignmentAdjustment {
             NumberAnimation { duration: LomiriAnimation.BriskDuration; easing: LomiriAnimation.StandardEasing}
         }
-
-        function alignIndicators() {
-            flickable.resetContentXComponents();
-
-            if (expanded && !flickable.moving) {
-
-                if (root.alignment == Qt.AlignLeft) {
-                    // current item overlap on left
-                    if (row.currentItem && flickable.contentX > (row.currentItem.x - row.contentX)) {
-                        d.alignmentAdjustment -= (flickable.contentX - (row.currentItem.x - row.contentX));
-
-                    // current item overlap on right
-                    } else if (row.currentItem && flickable.contentX + flickable.width < (row.currentItem.x - row.contentX) + row.currentItem.width) {
-                        d.alignmentAdjustment += ((row.currentItem.x - row.contentX) + row.currentItem.width) - (flickable.contentX + flickable.width);
-                    }
-                } else {
-                    // gap between left and row?
-                    if (flickable.contentX + flickable.width > row.width) {
-                        // row width is less than flickable
-                        if (row.width < flickable.width) {
-                            d.alignmentAdjustment -= flickable.contentX;
-                        } else {
-                            d.alignmentAdjustment -= ((flickable.contentX + flickable.width) - row.width);
-                        }
-
-                        // gap between right and row?
-                    } else if (flickable.contentX < 0) {
-                        d.alignmentAdjustment -= flickable.contentX;
-
-                    // current item overlap on left
-                    } else if (row.currentItem && (flickable.contentX + flickable.width) < (row.width - (row.currentItem.x - row.contentX))) {
-                        d.alignmentAdjustment += ((row.width - (row.currentItem.x - row.contentX)) - (flickable.contentX + flickable.width));
-
-                    // current item overlap on right
-                    } else if (row.currentItem && flickable.contentX > (row.width - (row.currentItem.x - row.contentX) - row.currentItem.width)) {
-                        d.alignmentAdjustment -= flickable.contentX - (row.width - (row.currentItem.x - row.contentX) - row.currentItem.width);
-                    }
-                }
-            }
-        }
     }
 
     Item {
@@ -175,9 +132,47 @@ Item {
         anchors.fill: parent
         clip: expanded || row.width > rowContainer.width
 
+        PanelItemRow {
+            id: row
+            objectName: "panelItemRow"
+            lightMode: root.lightMode
+            anchors.fill: parent
+            // Compensate for the Flickable rotation (ie, counter-rotate)
+            rotation: root.alignment != Qt.AlignRight ? 0 : 180
+
+            lateralPosition: {
+                if (root.lateralPosition == -1) return -1;
+
+                var mapped = root.mapToItem(row, root.lateralPosition, 0);
+                return Math.min(Math.max(mapped.x, 0), row.width);
+            }
+
+            onCurrentItemChanged: {
+                if (!currentItem) d.initialItem = undefined;
+                else if (!d.initialItem) d.initialItem = currentItem;
+            }
+
+            MouseArea {
+                anchors.fill: parent
+                enabled: root.expanded
+                propagateComposedEvents: true
+                onClicked: {
+                    console.log("indicator clicked");
+                    row.selectItemAt(mouse.x);
+                    mouse.accepted = false;
+                }
+                onPressed: {
+                    console.log("indicator clicked");
+                    row.selectItemAt(mouse.x);
+                    mouse.accepted = false;
+                }
+            }
+        }
+
         Flickable {
             id: flickable
             objectName: "flickable"
+            visible: false
 
             // we rotate it because we want the Flickable to align its content item
             // on the right instead of on the left
@@ -202,49 +197,9 @@ Item {
                 }
             }
 
-            PanelItemRow {
-                id: row
-                objectName: "panelItemRow"
-                lightMode: root.lightMode
-                anchors {
-                    top: parent.top
-                    bottom: parent.bottom
-                }
-
-                // Compensate for the Flickable rotation (ie, counter-rotate)
-                rotation: root.alignment != Qt.AlignRight ? 0 : 180
-
-                lateralPosition: {
-                    if (root.lateralPosition == -1) return -1;
-
-                    var mapped = root.mapToItem(row, root.lateralPosition, 0);
-                    return Math.min(Math.max(mapped.x, 0), row.width);
-                }
-
-                onCurrentItemChanged: {
-                    if (!currentItem) d.initialItem = undefined;
-                    else if (!d.initialItem) d.initialItem = currentItem;
-                }
-
-                MouseArea {
-                    anchors.fill: parent
-                    enabled: root.expanded
-                    onClicked: {
-                        row.selectItemAt(mouse.x);
-                        d.alignIndicators();
-                    }
-                }
-            }
+            
 
         }
-    }
-
-    Timer {
-        id: alignmentTimer
-        interval: LomiriAnimation.FastDuration // enough for row animation.
-        repeat: false
-
-        onTriggered: d.alignIndicators();
     }
 
     states: [
@@ -290,7 +245,6 @@ Item {
                     d.scrollOffset -= d.rowOffset;
                     d.rowOffset = 0;
                     d.initialItem = undefined;
-                    alignmentTimer.start();
                 }
             }
             PropertyChanges {

@@ -33,6 +33,8 @@ class DeviceConfig: public QObject
     Q_PROPERTY(Qt::ScreenOrientation portraitOrientation READ portraitOrientation NOTIFY changed)
     Q_PROPERTY(Qt::ScreenOrientation invertedPortraitOrientation READ invertedPortraitOrientation NOTIFY changed)
     Q_PROPERTY(QString category READ category NOTIFY changed)
+    Q_PROPERTY(QString cutouts READ cutouts NOTIFY changed)
+    Q_PROPERTY(bool cutoutsDebug READ cutoutsDebug NOTIFY changed)
     Q_PROPERTY(bool supportsMultiColorLed READ supportsMultiColorLed NOTIFY changed)
 
 public:
@@ -48,6 +50,8 @@ public:
     Qt::ScreenOrientation portraitOrientation() const;
     Qt::ScreenOrientation invertedPortraitOrientation() const;
     QString category() const;
+    QString cutouts() const;
+    bool cutoutsDebug() const;
     bool supportsMultiColorLed() const;
 
 // for tests
