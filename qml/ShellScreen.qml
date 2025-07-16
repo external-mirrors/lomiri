@@ -32,7 +32,8 @@ ScreenWindow {
         if (Screens.count === 1)
             return true;
 
-        if (deviceConfiguration.category == "phone" && Screens.count > 1 && screenIndex === 1)
+        if ((deviceConfiguration.category == "phone" || deviceConfiguration.category == "tablet")
+             && Screens.count > 1 && screenIndex === 1)
             return true;
 
         return (Screens.count > 1 && screenIndex === 0)
@@ -48,7 +49,8 @@ ScreenWindow {
         height: screenWindow.height
 
         sourceComponent: {
-            if (deviceConfiguration.category == "phone" && Screens.count > 1 && screenIndex === 0) {
+            if ((deviceConfiguration.category == "phone" || deviceConfiguration.category == "tablet")
+                 && Screens.count > 1 && screenIndex === 0) {
                 return disabledScreenComponent;
             }
             return shellComponent;
