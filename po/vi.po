@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-06 08:14+0000\n"
-"PO-Revision-Date: 2025-06-28 18:47+0000\n"
+"PO-Revision-Date: 2025-07-17 00:37+0000\n"
 "Last-Translator: phmqXPD <phmq.xpd@gmail.com>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/lomiri/lomiri/"
 "vi/>\n"
@@ -517,7 +517,7 @@ msgstr "Chọn môi trường màn hình nền"
 
 #: qml/Launcher/Drawer.qml:240
 msgid "Search…"
-msgstr "Tìm…"
+msgstr "Tìm kiếm…"
 
 #: qml/Launcher/PullToRefreshScopeStyle.qml:56
 msgid "Pull to refresh…"
@@ -604,7 +604,7 @@ msgstr "Gọi lại"
 
 #: qml/Panel/PanelMenuPage.qml:92
 msgid "Back"
-msgstr "Quay lại"
+msgstr "Trở lại"
 
 #: qml/Stage/SideStage.qml:80
 msgid "Drag using 3 fingers any application from one window to the other"
@@ -651,7 +651,7 @@ msgstr "Ngôn ngữ"
 #: qml/Wizard/Pages/passcode-desktop.qml:154
 #: qml/Wizard/Pages/password-set.qml:153
 msgid "Next"
-msgstr "Tiếp theo"
+msgstr "Tiếp"
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
 #: qml/Wizard/Pages/10-welcome-update.qml:92
