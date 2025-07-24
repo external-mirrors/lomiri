@@ -243,7 +243,7 @@ Pre-Depends:
 Depends:
  accountsservice-ubuntu-schemas (>= 0.0.7),
  lomiri-schemas (>= 0.1.4~),
- qml-module-gsettings1.0,
+ qml-module-gsettings,
  qml-module-qtmultimedia,
  ${misc:Depends},
  ${shlibs:Depends},
