@@ -1044,6 +1044,16 @@ FocusScope {
                 }
                 z: normalZ
 
+                Connections {
+                    target: decoratedWindow.surface
+                    function onTeardownRequested() {
+                        if (!decoratedWindow.surface)
+                            return;
+
+                        topLevelSurfaceList.removeAt(appRepeater.indexOf(appDelegate));
+                    }
+                }
+
                 opacity: fakeDragItem.surface == model.window.surface && fakeDragItem.Drag.active ? 0 : 1
                 Behavior on opacity { LomiriNumberAnimation {} }
 

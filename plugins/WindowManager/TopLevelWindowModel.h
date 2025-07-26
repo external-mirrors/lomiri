@@ -160,6 +160,11 @@ public:
     Q_INVOKABLE Window *windowAt(int index) const;
 
     /**
+     * @brief Removes a window from the model at the given index
+     */
+    Q_INVOKABLE void removeAt(int index);
+
+    /**
      * @brief Returns the application at the given index
      */
     Q_INVOKABLE lomiri::shell::application::ApplicationInfoInterface *applicationAt(int index) const;
@@ -232,7 +237,6 @@ private:
     void setFocusedWindow(Window *window);
     void removeInputMethodWindow();
     void deleteAt(int index);
-    void removeAt(int index);
     void removeSurfaces(const QVector<lomiri::shell::application::MirSurfaceInterface *> surfaces);
 
     void addApplication(lomiri::shell::application::ApplicationInfoInterface *application);
