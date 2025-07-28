@@ -139,5 +139,12 @@ void LomiriApplication::setupQmlEngine()
 
     m_qmlEngine->setNetworkAccessManagerFactory(new CachingNetworkManagerFactory);
 
-    QObject::connect(m_qmlEngine, &QQmlEngine::quit, this, &QGuiApplication::quit);
+    QObject::connect(m_qmlEngine, &QQmlEngine::quit, this, [=](){
+        qDebug().nospace().noquote() << "Quitting Lomiri... Bye!";
+        ::exit(0);
+    });
+    QObject::connect(m_qmlEngine, &QQmlEngine::exit, this, [=](int ret){
+        qDebug().nospace().noquote() << "Exiting Lomiri... Bye!";
+        ::exit(ret);
+    });
 }
