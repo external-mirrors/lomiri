@@ -680,7 +680,8 @@ Rectangle {
             broadcastHomeSpy.clear();
 
             GSettingsController.setLifecycleExemptAppids([]);
-            GSettingsController.setPictureUri("");
+            GSettingsController.setBackgroundPictureUriShell("");
+            GSettingsController.setBackgroundPictureUriGreeter("");
         }
 
         function ensureInputMethodSurface() {
@@ -2415,35 +2416,61 @@ Rectangle {
             return [
                 {tag: "color",
                  accounts: Qt.resolvedUrl("data:image/svg+xml,<svg><rect width='100%' height='100%' fill='#dd4814'/></svg>"),
-                 gsettings: "",
-                 output: Qt.resolvedUrl("data:image/svg+xml,<svg><rect width='100%' height='100%' fill='#dd4814'/></svg>")},
+                 gsettingsShell: "",
+                 gsettingsGreeter: "",
+                 outputShell: Qt.resolvedUrl("data:image/svg+xml,<svg><rect width='100%' height='100%' fill='#dd4814'/></svg>"),
+                 outputGreeter: Qt.resolvedUrl("data:image/svg+xml,<svg><rect width='100%' height='100%' fill='#dd4814'/></svg>")},
 
-                {tag: "empty", accounts: "", gsettings: "", output: "defaultBackground"},
+                {tag: "empty", accounts: "", gsettingsShell: "", gsettingsGreeter: "", outputShell: "defaultBackground", outputGreeter: "defaultBackground"},
 
                 {tag: "as-specified",
                  accounts: Qt.resolvedUrl("../data/lomiri/backgrounds/blue.png"),
-                 gsettings: "",
-                 output: Qt.resolvedUrl("../data/lomiri/backgrounds/blue.png")},
+                 gsettingsShell: "",
+                 gsettingsGreeter: "",
+                 outputShell: Qt.resolvedUrl("../data/lomiri/backgrounds/blue.png"),
+                 outputGreeter: Qt.resolvedUrl("../data/lomiri/backgrounds/blue.png")},
 
-                {tag: "gs-specified",
+                {tag: "gs-specified-same",
                  accounts: "",
-                 gsettings: Qt.resolvedUrl("../data/lomiri/backgrounds/red.png"),
-                 output: Qt.resolvedUrl("../data/lomiri/backgrounds/red.png")},
+                 gsettingsShell: Qt.resolvedUrl("../data/lomiri/backgrounds/red.png"),
+                 gsettingsGreeter: Qt.resolvedUrl("../data/lomiri/backgrounds/red.png"),
+                 outputShell: Qt.resolvedUrl("../data/lomiri/backgrounds/red.png"),
+                 outputGreeter: Qt.resolvedUrl("../data/lomiri/backgrounds/red.png")},
 
-                {tag: "both-specified",
+                {tag: "gs-specified-differing",
+                 accounts: "",
+                 gsettingsShell: Qt.resolvedUrl("../data/lomiri/backgrounds/red.png"),
+                 gsettingsGreeter: Qt.resolvedUrl("../data/lomiri/backgrounds/blue.png"),
+                 outputShell: Qt.resolvedUrl("../data/lomiri/backgrounds/red.png"),
+                 outputGreeter: Qt.resolvedUrl("../data/lomiri/backgrounds/blue.png")},
+
+                {tag: "both-specified-gs-same",
                  accounts: Qt.resolvedUrl("../data/lomiri/backgrounds/blue.png"),
-                 gsettings: Qt.resolvedUrl("../data/lomiri/backgrounds/red.png"),
-                 output: Qt.resolvedUrl("../data/lomiri/backgrounds/blue.png")},
+                 gsettingsShell: Qt.resolvedUrl("../data/lomiri/backgrounds/red.png"),
+                 gsettingsGreeter: Qt.resolvedUrl("../data/lomiri/backgrounds/red.png"),
+                 outputShell: Qt.resolvedUrl("../data/lomiri/backgrounds/blue.png"),
+                 outputGreeter: Qt.resolvedUrl("../data/lomiri/backgrounds/blue.png")},
+
+                {tag: "both-specified-gs-differing",
+                 accounts: Qt.resolvedUrl("../data/lomiri/backgrounds/blue.png"),
+                 gsettingsShell: Qt.resolvedUrl("../data/lomiri/backgrounds/red.png"),
+                 gsettingsGreeter: Qt.resolvedUrl("../data/lomiri/backgrounds/black.png"),
+                 outputShell: Qt.resolvedUrl("../data/lomiri/backgrounds/blue.png"),
+                 outputGreeter: Qt.resolvedUrl("../data/lomiri/backgrounds/blue.png")},
 
                 {tag: "invalid-as",
                  accounts: Qt.resolvedUrl("../data/lomiri/backgrounds/nope.png"),
-                 gsettings: Qt.resolvedUrl("../data/lomiri/backgrounds/red.png"),
-                 output: Qt.resolvedUrl("../data/lomiri/backgrounds/red.png")},
+                 gsettingsShell: Qt.resolvedUrl("../data/lomiri/backgrounds/red.png"),
+                 gsettingsGreeter: Qt.resolvedUrl("../data/lomiri/backgrounds/red.png"),
+                 outputShell: Qt.resolvedUrl("../data/lomiri/backgrounds/red.png"),
+                 outputGreeter: Qt.resolvedUrl("../data/lomiri/backgrounds/red.png")},
 
                 {tag: "invalid-both",
                  accounts: Qt.resolvedUrl("../data/lomiri/backgrounds/nope.png"),
-                 gsettings: Qt.resolvedUrl("../data/lomiri/backgrounds/stillnope.png"),
-                 output: "defaultBackground"},
+                 gsettingsShell: Qt.resolvedUrl("../data/lomiri/backgrounds/stillnope.png"),
+                 gsettingsGreeter: Qt.resolvedUrl("../data/lomiri/backgrounds/stillnope.png"),
+                 outputShell: "defaultBackground",
+                 outputGreeter: "defaultBackground"},
             ]
         }
         function test_background(data) {
@@ -2452,14 +2479,30 @@ Rectangle {
             waitForRendering(shell);
 
             AccountsService.backgroundFile = data.accounts;
-            GSettingsController.setPictureUri(data.gsettings);
+            GSettingsController.setBackgroundPictureUriShell(data.gsettingsShell);
+            GSettingsController.setBackgroundPictureUriGreeter(data.gsettingsGreeter);
 
             var wallpaperResolver = findChild(shell, "wallpaperResolver");
-            if (data.output === "defaultBackground") {
+
+            shellRect.mode = "shell"
+            verify(shell.mode === "shell");
+
+            if (data.outputShell === "defaultBackground") {
                 tryCompare(wallpaperResolver, "resolvedImage", wallpaperResolver.defaultBackground);
                 verify(!wallpaperResolver.hasCustomBackground);
             } else {
-                tryCompare(wallpaperResolver, "resolvedImage", data.output);
+                tryCompare(wallpaperResolver, "resolvedImage", data.outputShell);
+                verify(wallpaperResolver.hasCustomBackground);
+            }
+
+            shellRect.mode = "greeter"
+            verify(shell.mode === "greeter");
+
+            if (data.outputGreeter === "defaultBackground") {
+                tryCompare(wallpaperResolver, "resolvedImage", wallpaperResolver.defaultBackground);
+                verify(!wallpaperResolver.hasCustomBackground);
+            } else {
+                tryCompare(wallpaperResolver, "resolvedImage", data.outputGreeter);
                 verify(wallpaperResolver.hasCustomBackground);
             }
         }

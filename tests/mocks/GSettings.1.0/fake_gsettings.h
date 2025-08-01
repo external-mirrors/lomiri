@@ -50,7 +50,7 @@ class GSettingsQml: public QObject, public QQmlParserStatus
 
     Q_PROPERTY(GSettingsSchemaQml* schema READ schema NOTIFY schemaChanged)
     Q_PROPERTY(QVariant disableHeight READ disableHeight WRITE setDisableHeight NOTIFY disableHeightChanged)
-    Q_PROPERTY(QVariant pictureUri READ pictureUri WRITE setPictureUri NOTIFY pictureUriChanged)
+    Q_PROPERTY(QVariant backgroundPictureUri READ backgroundPictureUri WRITE setBackgroundPictureUri NOTIFY backgroundPictureUriChanged)
     Q_PROPERTY(QVariant usageMode READ usageMode WRITE setUsageMode NOTIFY usageModeChanged)
     Q_PROPERTY(QVariant lockedOutTime READ lockedOutTime WRITE setLockedOutTime NOTIFY lockedOutTimeChanged)
     Q_PROPERTY(QVariant lifecycleExemptAppids READ lifecycleExemptAppids WRITE setLifecycleExemptAppids NOTIFY lifecycleExemptAppidsChanged)
@@ -68,7 +68,7 @@ public:
 
     GSettingsSchemaQml * schema() const;
     QVariant disableHeight() const;
-    QVariant pictureUri() const;
+    QVariant backgroundPictureUri() const;
     QVariant usageMode() const;
     QVariant lockedOutTime() const;
     QVariant lifecycleExemptAppids() const;
@@ -79,7 +79,7 @@ public:
     QVariant oskSwitchVisible() const;
 
     void setDisableHeight(const QVariant &val);
-    void setPictureUri(const QVariant &str);
+    void setBackgroundPictureUri(const QVariant &str);
     void setUsageMode(const QVariant &usageMode);
     void setLockedOutTime(const QVariant &timestamp);
     void setLifecycleExemptAppids(const QVariant &appIds);
@@ -92,7 +92,7 @@ public:
 Q_SIGNALS:
     void disableHeightChanged();
     void schemaChanged();
-    void pictureUriChanged();
+    void backgroundPictureUriChanged();
     void usageModeChanged();
     void lockedOutTimeChanged();
     void lifecycleExemptAppidsChanged();
@@ -120,8 +120,11 @@ public:
     bool disableHeight() const;
     Q_INVOKABLE void setDisableHeight(bool val);
 
-    QString pictureUri() const;
-    Q_INVOKABLE void setPictureUri(const QString &str);
+    QString backgroundPictureUriShell() const;
+    Q_INVOKABLE void setBackgroundPictureUriShell(const QString &str);
+
+    QString backgroundPictureUriGreeter() const;
+    Q_INVOKABLE void setBackgroundPictureUriGreeter(const QString &str);
 
     QString usageMode() const;
     Q_INVOKABLE void setUsageMode(const QString &usageMode);
@@ -149,7 +152,8 @@ public:
 
 Q_SIGNALS:
     void disableHeightChanged();
-    void pictureUriChanged(const QString&);
+    void backgroundPictureUriShellChanged(const QString&);
+    void backgroundPictureUriGreeterChanged(const QString&);
     void usageModeChanged(const QString&);
     void lockedOutTimeChanged(qint64 timestamp);
     void lifecycleExemptAppidsChanged(const QStringList&);
@@ -163,7 +167,8 @@ private:
     GSettingsControllerQml();
 
     bool m_disableHeight;
-    QString m_pictureUri;
+    QString m_backgroundPictureUriShell;
+    QString m_backgroundPictureUriGreeter;
     QString m_usageMode;
     qint64 m_lockedOutTime;
     QStringList m_lifecycleExemptAppids;
