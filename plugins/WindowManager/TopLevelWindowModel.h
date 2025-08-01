@@ -248,6 +248,7 @@ private:
     void connectWindow(Window *window);
     void connectSurface(lomiri::shell::application::MirSurfaceInterface *surface);
 
+    int countWindowsWithApplication(lomiri::shell::application::ApplicationInfoInterface *application);
     void onSurfaceDied(lomiri::shell::application::MirSurfaceInterface *surface);
     void onSurfaceDestroyed(lomiri::shell::application::MirSurfaceInterface *surface);
 
