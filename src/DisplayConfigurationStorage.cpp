@@ -33,9 +33,6 @@ inline QString stringFromEdid(const miroil::Edid& edid)
     str += QString::fromStdString(edid.vendor);
     str += QString("%1%2").arg(edid.product_code).arg(edid.serial_number);
 
-    for (int i = 0; i < 4; i++) {
-        str += QString::fromStdString(edid.descriptors[i].string_value());
-    }
     return str;
 }
 
