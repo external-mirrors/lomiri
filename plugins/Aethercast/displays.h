@@ -23,9 +23,8 @@
 
 #include <QObject>
 #include <QtDBus>
-#include "aethercast_device.h"
-#include "aethercast_manager.h"
-#include "freedesktop_properties.h"
+#include <org_aethercast.h>
+#include <freedesktop_properties.h>
 
 class Displays : public QObject
 {
@@ -88,8 +87,8 @@ private:
     void getAll();
 
     QDBusConnection m_dbus;
-    AethercastManager* m_manager;
-    QScopedPointer<FreeDesktopProperties> m_aethercastProperties;
+    OrgAethercastManagerInterface* m_manager;
+    QScopedPointer<OrgFreedesktopDBusPropertiesInterface> m_aethercastProperties;
     void updateProperties(QSharedPointer<QDBusInterface>);
     void updateProperty(const QString &key, const QVariant &value);
     void handleConnectError(QDBusError error);

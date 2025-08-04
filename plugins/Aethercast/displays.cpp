@@ -19,8 +19,7 @@
  */
 
 #include "displays.h"
-#include "aethercast_manager.h"
-#include "aethercast_device.h"
+#include <org_aethercast.h>
 #include "dbus-shared.h"
 
 #include <QQmlEngine>
@@ -34,9 +33,9 @@ Displays::Displays(const QDBusConnection &dbus, QObject *parent):
     QObject(parent),
     m_dbus(dbus)
 {
-    m_manager = new AethercastManager(AETHERCAST_SERVICE, AETHERCAST_PATH, m_dbus);
+    m_manager = new OrgAethercastManagerInterface(AETHERCAST_SERVICE, AETHERCAST_PATH, m_dbus);
 
-    m_aethercastProperties.reset(new FreeDesktopProperties(AETHERCAST_SERVICE, AETHERCAST_PATH, m_dbus));
+    m_aethercastProperties.reset(new OrgFreedesktopDBusPropertiesInterface(AETHERCAST_SERVICE, AETHERCAST_PATH, m_dbus));
 
     QObject::connect(m_aethercastProperties.data(), SIGNAL(PropertiesChanged(const QString&, const QVariantMap&, const QStringList&)),
                      this, SLOT(slotPropertiesChanged(const QString&, const QVariantMap&, const QStringList&)));
@@ -91,15 +90,9 @@ void Displays::setEnabled(bool enabled)
 {
     if (!m_manager)
         return;
-    bool ret = m_manager->setEnabled(enabled);
-    /* This is a hack to ensure the aethercast enabled switch stays
-     * in sync with the enabled property.  We should be able to rely
-     * on the propertiesChanged signal to catch this, but we can't
-     */
-    if (ret)
-        Q_EMIT(enabledChanged(enabled));
-    else
-        Q_EMIT(enabledChanged(!enabled));
+
+    m_manager->setEnabled(enabled);
+    Q_EMIT enabledChanged(enabled);
 }
 
 void Displays::handleConnectError(QDBusError error)
