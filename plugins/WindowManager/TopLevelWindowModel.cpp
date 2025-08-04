@@ -330,6 +330,18 @@ void TopLevelWindowModel::connectSurface(lomiriapi::MirSurfaceInterface *surface
     });
 }
 
+int TopLevelWindowModel::countWindowsWithApplication(lomiri::shell::application::ApplicationInfoInterface *application)
+{
+    int count = 0;
+
+    for (const auto & item : qAsConst(m_windowModel)) {
+        if (item.application == application)
+            count++;
+    }
+
+    return count;
+}
+
 void TopLevelWindowModel::onSurfaceDied(lomiriapi::MirSurfaceInterface *surface)
 {
     if (surface->type() == Mir::InputMethodType) {
@@ -351,7 +363,7 @@ void TopLevelWindowModel::onSurfaceDied(lomiriapi::MirSurfaceInterface *surface)
     //
     // Leave at most 1 entry in the model and only remove its surface, so shell can display a screenshot
     // in its place.
-    if (application->isTouchApp() && application->surfaceList()->count() == 1)
+    if (application->isTouchApp() && countWindowsWithApplication(application) == 1)
         m_windowModel[i].removeOnceSurfaceDestroyed = false;
     else
         m_windowModel[i].removeOnceSurfaceDestroyed = true;
