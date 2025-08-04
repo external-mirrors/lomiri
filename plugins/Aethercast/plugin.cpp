@@ -17,7 +17,6 @@
 #include "plugin.h"
 #include "aethercast_helper.h"
 #include "displays.h"
-#include "device.h"
 
 #include <QtQml/qqml.h>
 
@@ -30,6 +29,5 @@ void AethercastPlugin::registerTypes(const char *uri)
     qDBusRegisterMetaType<InterfaceList>();
     qDBusRegisterMetaType<ManagedObjectList>();
 
-    qmlRegisterType<Device>(uri, 1, 0, "AethercastDevice");
     qmlRegisterType<Displays>(uri, 1, 0, "AethercastDisplays");
 }

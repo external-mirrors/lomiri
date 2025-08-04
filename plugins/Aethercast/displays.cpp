@@ -21,6 +21,7 @@
 #include "displays.h"
 #include "aethercast_manager.h"
 #include "aethercast_device.h"
+#include "dbus-shared.h"
 
 #include <QQmlEngine>
 
@@ -31,8 +32,7 @@ Displays::Displays(QObject *parent):
 
 Displays::Displays(const QDBusConnection &dbus, QObject *parent):
     QObject(parent),
-    m_dbus(dbus),
-    m_devices(m_dbus)
+    m_dbus(dbus)
 {
     m_manager = new AethercastManager(AETHERCAST_SERVICE, AETHERCAST_PATH, m_dbus);
 
@@ -48,18 +48,6 @@ Displays::Displays(const QDBusConnection &dbus, QObject *parent):
 
         getAll();
     });
-
-    m_connectedDevices.filterOnStates(Device::State::Association |
-                                      Device::State::Configuration |
-                                      Device::State::Connected);
-    m_connectedDevices.setSourceModel(&m_devices);
-
-    m_disconnectedDevices.filterOnStates(Device::State::Idle |
-                                         Device::State::Disconnected |
-                                         Device::State::Failure);
-    m_disconnectedDevices.setSourceModel(&m_devices);
-    connect(&m_connectedDevices, SIGNAL(rowsInserted(const QModelIndex, int, int)), this, SIGNAL(connectedDevicesChanged()));
-    connect(&m_disconnectedDevices, SIGNAL(rowsInserted(const QModelIndex, int, int)), this, SIGNAL(disconnectedDevicesChanged()));
 }
 
 void Displays::getAll()
@@ -114,34 +102,6 @@ void Displays::setEnabled(bool enabled)
         Q_EMIT(enabledChanged(!enabled));
 }
 
-void Displays::scan()
-{
-    if (!m_manager)
-        return;
-    m_manager->Scan();
-}
-
-QAbstractItemModel * Displays::devices()
-{
-    auto ret = &m_devices;
-    QQmlEngine::setObjectOwnership(ret, QQmlEngine::CppOwnership);
-    return ret;
-}
-
-QAbstractItemModel * Displays::connectedDevices()
-{
-    auto ret = &m_connectedDevices;
-    QQmlEngine::setObjectOwnership(ret, QQmlEngine::CppOwnership);
-    return ret;
-}
-
-QAbstractItemModel * Displays::disconnectedDevices()
-{
-    auto ret = &m_disconnectedDevices;
-    QQmlEngine::setObjectOwnership(ret, QQmlEngine::CppOwnership);
-    return ret;
-}
-
 void Displays::handleConnectError(QDBusError error)
 {
     if (error.name() == "org.aethercast.Error.None")
@@ -162,34 +122,12 @@ void Displays::handleConnectError(QDBusError error)
         Q_EMIT(connectError(Error::Unknown));
 }
 
-void Displays::disconnectDevice(const QString &address)
-{
-    auto device = m_devices.getDeviceFromAddress(address);
-    if (!device)
-        return;
-    QDBusPendingReply<void> reply = device->disconnect();
-    QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
-    QObject::connect(watcher, SIGNAL(finished(QDBusPendingCallWatcher*)),
-                     this, SLOT(callFinishedSlot(QDBusPendingCallWatcher*)));
-}
-
 void Displays::callFinishedSlot(QDBusPendingCallWatcher *call)
 {
     QDBusPendingReply<void> reply = *call;
     if (reply.isFinished() && reply.isError())
         handleConnectError(reply.error());
     call->deleteLater();
-}
-
-void Displays::connectDevice(const QString &address)
-{
-    auto device = m_devices.getDeviceFromAddress(address);
-    if (!device)
-        return;
-    QDBusPendingReply<void> reply = device->connect();
-    QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(reply, this);
-    QObject::connect(watcher, SIGNAL(finished(QDBusPendingCallWatcher*)),
-                     this, SLOT(callFinishedSlot(QDBusPendingCallWatcher*)));
 }
 
 void Displays::updateProperty(const QString &key, const QVariant &value)

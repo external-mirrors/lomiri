@@ -2,8 +2,6 @@ add_library(Aethercast-qml MODULE
     plugin.cpp
     aethercast_device.cpp
     aethercast_manager.cpp
-    device.cpp
-    devicemodel.cpp
     displays.cpp
     freedesktop_objectmanager.cpp
     freedesktop_properties.cpp

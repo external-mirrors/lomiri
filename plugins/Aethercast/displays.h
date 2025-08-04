@@ -23,25 +23,13 @@
 
 #include <QObject>
 #include <QtDBus>
-#include "devicemodel.h"
 #include "aethercast_device.h"
 #include "aethercast_manager.h"
+#include "freedesktop_properties.h"
 
 class Displays : public QObject
 {
     Q_OBJECT
-
-    Q_PROPERTY (QAbstractItemModel* devices
-                READ devices
-                CONSTANT)
-
-    Q_PROPERTY (QAbstractItemModel* connectedDevices
-                READ connectedDevices
-                NOTIFY connectedDevicesChanged)
-
-    Q_PROPERTY (QAbstractItemModel* disconnectedDevices
-                READ disconnectedDevices
-                NOTIFY disconnectedDevicesChanged)
 
     Q_PROPERTY (bool scanning
                 READ scanning
@@ -56,8 +44,11 @@ class Displays : public QObject
                 READ state
                 NOTIFY stateChanged)
 
-
 public:
+    enum State { Idle=1, Disconnected=2, Association=4, Configuration=8, Connected=16, Failure=32 };
+    Q_ENUMS(State)
+    Q_DECLARE_FLAGS(States, State)
+
     explicit Displays(QObject *parent = nullptr);
     explicit Displays(const QDBusConnection &dbus, QObject *parent = nullptr);
     ~Displays() {}
@@ -74,13 +65,7 @@ public:
     };
     Q_ENUMS(Error)
 
-    Q_INVOKABLE void connectDevice(const QString &address);
-    Q_INVOKABLE void disconnectDevice(const QString &address);
-    Q_INVOKABLE void scan();
     void setProperties(const QMap<QString,QVariant> &properties);
-    QAbstractItemModel * devices();
-    QAbstractItemModel * connectedDevices();
-    QAbstractItemModel * disconnectedDevices();
     bool scanning() const { return m_manager->scanning(); }
     bool enabled() const { return m_manager->enabled(); }
     void setEnabled(bool);
@@ -103,9 +88,6 @@ private:
     void getAll();
 
     QDBusConnection m_dbus;
-    DeviceModel m_devices;
-    DeviceFilter m_connectedDevices;
-    DeviceFilter m_disconnectedDevices;
     AethercastManager* m_manager;
     QScopedPointer<FreeDesktopProperties> m_aethercastProperties;
     void updateProperties(QSharedPointer<QDBusInterface>);

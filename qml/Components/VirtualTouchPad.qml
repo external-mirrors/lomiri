@@ -228,10 +228,6 @@ Item {
         visible: aethercastDisplays.state === "connected"
 
         onClicked: {
-            for (let i = 0; i < aethercastDisplays.devices.count; i++) {
-                let device = aethercastDisplays.devices.get(i);
-                aethercastDisplays.disconnectDevice(device.address);
-            }
             aethercastDisplays.enabled = false
         }
 
