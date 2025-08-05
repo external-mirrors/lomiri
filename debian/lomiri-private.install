@@ -1,5 +1,6 @@
 usr/lib/*/liblomiri-private.*
 usr/lib/*/lomiri/qml/AccountsService
+usr/lib/*/lomiri/qml/Aethercast
 usr/lib/*/lomiri/qml/Cursor
 usr/lib/*/lomiri/qml/GlobalShortcut
 usr/lib/*/lomiri/qml/Greeter

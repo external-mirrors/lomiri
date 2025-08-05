@@ -12,6 +12,7 @@ macro(add_lomiri_plugin PLUGIN VERSION PATH)
 endmacro()
 
 add_subdirectory(AccountsService)
+add_subdirectory(Aethercast)
 add_subdirectory(BatteryMonitor)
 add_subdirectory(Cursor)
 add_subdirectory(GlobalShortcut)

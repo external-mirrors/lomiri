@@ -18,6 +18,7 @@ import QtQuick 2.15
 import QtQuick.Layouts 1.1
 import Lomiri.Components 1.3
 import Qt.labs.settings 1.0
+import Aethercast 1.0
 import UInput 0.1
 import "../Components"
 
@@ -25,6 +26,10 @@ Item {
     id: root
 
     property bool oskEnabled: false
+
+    AethercastDisplays {
+        id: aethercastDisplays
+    }
 
     Component.onCompleted: {
         UInput.createMouse();
@@ -215,9 +220,35 @@ Item {
     }
 
     AbstractButton {
+        id: disconnectButton
+        objectName: "disconnectButton"
+        anchors { right: parent.right; top: parent.top; margins: internalGu * 2 }
+        height: internalGu * 6
+        width: visible ? height : 0
+        visible: aethercastDisplays.state === "connected"
+
+        onClicked: {
+            aethercastDisplays.enabled = false
+        }
+
+        Rectangle {
+            anchors.fill: parent
+            radius: width / 2
+            color: LomiriColors.inkstone
+        }
+
+        Icon {
+            anchors.fill: parent
+            anchors.margins: internalGu * 1.5
+            name: "close"
+            color: "red"
+        }
+    }
+
+    AbstractButton {
         id: oskButton
         objectName: "oskButton"
-        anchors { right: parent.right; top: parent.top; margins: internalGu * 2 }
+        anchors { right: disconnectButton.left; top: parent.top; margins: internalGu * 2 }
         height: internalGu * 6
         width: height
 
