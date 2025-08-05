@@ -33,7 +33,7 @@ Displays::Displays(const QDBusConnection &dbus, QObject *parent):
     QObject(parent),
     m_dbus(dbus)
 {
-    m_manager = new OrgAethercastManagerInterface(AETHERCAST_SERVICE, AETHERCAST_PATH, m_dbus);
+    m_manager.reset(new OrgAethercastManagerInterface(AETHERCAST_SERVICE, AETHERCAST_PATH, m_dbus));
     m_manager->setTimeout(1000);
 
     m_aethercastProperties.reset(new OrgFreedesktopDBusPropertiesInterface(AETHERCAST_SERVICE, AETHERCAST_PATH, m_dbus));

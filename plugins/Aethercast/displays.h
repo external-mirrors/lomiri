@@ -87,7 +87,7 @@ private:
     void getAll();
 
     QDBusConnection m_dbus;
-    OrgAethercastManagerInterface* m_manager;
+    QScopedPointer<OrgAethercastManagerInterface> m_manager;
     QScopedPointer<OrgFreedesktopDBusPropertiesInterface> m_aethercastProperties;
     void updateProperties(QSharedPointer<QDBusInterface>);
     void updateProperty(const QString &key, const QVariant &value);
