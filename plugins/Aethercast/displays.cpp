@@ -34,8 +34,10 @@ Displays::Displays(const QDBusConnection &dbus, QObject *parent):
     m_dbus(dbus)
 {
     m_manager = new OrgAethercastManagerInterface(AETHERCAST_SERVICE, AETHERCAST_PATH, m_dbus);
+    m_manager->setTimeout(1000);
 
     m_aethercastProperties.reset(new OrgFreedesktopDBusPropertiesInterface(AETHERCAST_SERVICE, AETHERCAST_PATH, m_dbus));
+    m_aethercastProperties->setTimeout(1000);
 
     QObject::connect(m_aethercastProperties.data(), SIGNAL(PropertiesChanged(const QString&, const QVariantMap&, const QStringList&)),
                      this, SLOT(slotPropertiesChanged(const QString&, const QVariantMap&, const QStringList&)));
