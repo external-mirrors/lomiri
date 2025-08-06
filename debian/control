@@ -15,7 +15,7 @@ Build-Depends:
  g++:native,
  gdb <!cross>,
  graphviz <!cross>,
- lomiri-schemas (>= 0.1.4~),
+ lomiri-schemas (>= 0.1.5~),
  libdeviceinfo-dev,
  libevdev-dev,
  libgeonames-dev (>= 0.2),
@@ -172,7 +172,7 @@ Depends:
  qttranslations5-l10n,
  lomiri-application-impl-28,
  lomiri-notifications-impl-3,
- lomiri-schemas,
+ lomiri-schemas (>= 0.1.5~),
  lomiri-tests | lomiri-application-impl,
  ${misc:Depends},
 Description: Lomiri shell (common files)
@@ -242,7 +242,7 @@ Pre-Depends:
  ${misc:Pre-Depends},
 Depends:
  accountsservice-ubuntu-schemas (>= 0.0.7),
- lomiri-schemas (>= 0.1.4~),
+ lomiri-schemas (>= 0.1.5~),
  qml-module-gsettings,
  qml-module-qtmultimedia,
  ${misc:Depends},

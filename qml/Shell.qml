@@ -190,15 +190,24 @@ StyledItem {
 
         readonly property url defaultBackground: "file://" + Constants.defaultWallpaper
         readonly property bool hasCustomBackground: resolvedImage != defaultBackground
+        readonly property string gsettingsBackgroundPictureUri: ((shell.showingGreeter == true)
+                                                             ||  (shell.mode === "full-greeter")
+                                                             ||  (shell.mode === "greeter"))
+                                                              ? backgroundGreeterSettings.backgroundPictureUri
+                                                              : backgroundShellSettings.backgroundPictureUri
 
         GSettings {
-            id: backgroundSettings
-            schema.id: "org.gnome.desktop.background"
+            id: backgroundShellSettings
+            schema.id: "com.lomiri.Shell"
+        }
+        GSettings {
+            id: backgroundGreeterSettings
+            schema.id: "com.lomiri.Shell.Greeter"
         }
 
         candidates: [
             AccountsService.backgroundFile,
-            backgroundSettings.pictureUri,
+            gsettingsBackgroundPictureUri,
             defaultBackground
         ]
     }

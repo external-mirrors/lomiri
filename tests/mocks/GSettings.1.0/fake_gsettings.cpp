@@ -56,16 +56,29 @@ void GSettingsControllerQml::setDisableHeight(bool val)
     }
 }
 
-QString GSettingsControllerQml::pictureUri() const
+QString GSettingsControllerQml::backgroundPictureUriShell() const
 {
-    return m_pictureUri;
+    return m_backgroundPictureUriShell;
 }
 
-void GSettingsControllerQml::setPictureUri(const QString &str)
+QString GSettingsControllerQml::backgroundPictureUriGreeter() const
 {
-    if (str != m_pictureUri) {
-        m_pictureUri = str;
-        Q_EMIT pictureUriChanged(m_pictureUri);
+    return m_backgroundPictureUriGreeter;
+}
+
+void GSettingsControllerQml::setBackgroundPictureUriShell(const QString &str)
+{
+    if (str != m_backgroundPictureUriShell) {
+        m_backgroundPictureUriShell = str;
+        Q_EMIT backgroundPictureUriShellChanged(m_backgroundPictureUriShell);
+    }
+}
+
+void GSettingsControllerQml::setBackgroundPictureUriGreeter(const QString &str)
+{
+    if (str != m_backgroundPictureUriGreeter) {
+        m_backgroundPictureUriGreeter = str;
+        Q_EMIT backgroundPictureUriGreeterChanged(m_backgroundPictureUriGreeter);
     }
 }
 
@@ -223,8 +236,10 @@ void GSettingsQml::componentComplete()
     // properties in one object.  We should create properties based on the schema.
     connect(GSettingsControllerQml::instance(), &GSettingsControllerQml::disableHeightChanged,
             this, &GSettingsQml::disableHeightChanged);
-    connect(GSettingsControllerQml::instance(), &GSettingsControllerQml::pictureUriChanged,
-            this, &GSettingsQml::pictureUriChanged);
+    connect(GSettingsControllerQml::instance(), &GSettingsControllerQml::backgroundPictureUriShellChanged,
+            this, &GSettingsQml::backgroundPictureUriChanged);
+    connect(GSettingsControllerQml::instance(), &GSettingsControllerQml::backgroundPictureUriGreeterChanged,
+            this, &GSettingsQml::backgroundPictureUriChanged);
     connect(GSettingsControllerQml::instance(), &GSettingsControllerQml::usageModeChanged,
             this, &GSettingsQml::usageModeChanged);
     connect(GSettingsControllerQml::instance(), &GSettingsControllerQml::lockedOutTimeChanged,
@@ -243,7 +258,7 @@ void GSettingsQml::componentComplete()
             this, &GSettingsQml::oskSwitchVisibleChanged);
 
     Q_EMIT disableHeightChanged();
-    Q_EMIT pictureUriChanged();
+    Q_EMIT backgroundPictureUriChanged();
     Q_EMIT usageModeChanged();
     Q_EMIT lockedOutTimeChanged();
     Q_EMIT lifecycleExemptAppidsChanged();
@@ -273,19 +288,26 @@ void GSettingsQml::setDisableHeight(const QVariant &val)
     }
 }
 
-QVariant GSettingsQml::pictureUri() const
+QVariant GSettingsQml::backgroundPictureUri() const
 {
-    if (m_valid && m_schema->id() == "org.gnome.desktop.background") {
-        return GSettingsControllerQml::instance()->pictureUri();
-    } else {
+    if (m_valid && m_schema->id() == "com.lomiri.Shell") {
+        return GSettingsControllerQml::instance()->backgroundPictureUriShell();
+    }
+    else if (m_valid && m_schema->id() == "com.lomiri.Shell.Greeter") {
+        return GSettingsControllerQml::instance()->backgroundPictureUriGreeter();
+    }
+    else {
         return QVariant();
     }
 }
 
-void GSettingsQml::setPictureUri(const QVariant &str)
+void GSettingsQml::setBackgroundPictureUri(const QVariant &str)
 {
-    if (m_valid && m_schema->id() == "org.gnome.desktop.background") {
-        GSettingsControllerQml::instance()->setPictureUri(str.toString());
+    if (m_valid && m_schema->id() == "com.lomiri.Shell") {
+        GSettingsControllerQml::instance()->setBackgroundPictureUriShell(str.toString());
+    }
+    else if (m_valid && m_schema->id() == "com.lomiri.Shell.Greeter") {
+        GSettingsControllerQml::instance()->setBackgroundPictureUriGreeter(str.toString());
     }
 }
 
