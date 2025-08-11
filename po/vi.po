@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-01-06 08:14+0000\n"
-"PO-Revision-Date: 2025-07-17 00:37+0000\n"
-"Last-Translator: phmqXPD <phmq.xpd@gmail.com>\n"
+"PO-Revision-Date: 2025-08-14 10:01+0000\n"
+"Last-Translator: \"Bảo Nam (Namm)\" <namb20994@gmail.com>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/lomiri/lomiri/"
 "vi/>\n"
 "Language: vi\n"
@@ -160,7 +160,7 @@ msgstr "Đăng xuất"
 #: qml/Greeter/GreeterView.qml:452 qml/Wizard/Pages/passcode-confirm.qml:32
 #: qml/Wizard/Pages/passcode-set.qml:32
 msgid "Cancel"
-msgstr "Hủy bỏ"
+msgstr "Huỷ bỏ"
 
 #: qml/Components/Dialogs.qml:211
 msgctxt "Title: Reboot dialog"
@@ -376,7 +376,7 @@ msgstr "Cuộc gọi khẩn cấp"
 
 #: qml/Components/Lockscreen.qml:247
 msgid "OK"
-msgstr "Ô kê"
+msgstr "Chấp nhận"
 
 #: qml/Components/ModeSwitchWarningDialog.qml:33
 msgid "Apps may have unsaved data:"
