@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-06 08:14+0000\n"
+"POT-Creation-Date: 2025-08-14 20:08+0000\n"
 "PO-Revision-Date: 2025-03-25 05:29+0000\n"
 "Last-Translator: Niko <nikomoto1@gmail.com>\n"
 "Language-Team: Serbian <https://hosted.weblate.org/projects/lomiri/lomiri/sr/"
@@ -46,10 +46,6 @@ msgstr ""
 msgid "Application for testing the Indicators system"
 msgstr ""
 
-#: data/indicators-client.desktop.in:9
-msgid "NoDisplay=false"
-msgstr ""
-
 #: plugins/LightDM/Greeter.cpp:199
 msgid "Password: "
 msgstr "Лозинка: "
@@ -74,11 +70,11 @@ msgstr "Пријави се"
 msgid "Retry"
 msgstr "Покушај поново"
 
-#: plugins/LightDM/UsersModel.cpp:157
+#: plugins/LightDM/UsersModel.cpp:158
 msgid "Login"
 msgstr ""
 
-#: plugins/LightDM/UsersModel.cpp:165
+#: plugins/LightDM/UsersModel.cpp:166
 msgid "Guest Session"
 msgstr ""
 
@@ -382,15 +378,15 @@ msgstr "Alt + F4"
 msgid "Closes the current window."
 msgstr "Затвара тренутни прозор."
 
-#: qml/Components/Lockscreen.qml:214 qml/Greeter/GreeterView.qml:472
+#: qml/Components/Lockscreen.qml:223 qml/Greeter/GreeterView.qml:472
 msgid "Return to Call"
 msgstr "Врати се на позив"
 
-#: qml/Components/Lockscreen.qml:214
+#: qml/Components/Lockscreen.qml:223
 msgid "Emergency Call"
 msgstr "Хитан позив"
 
-#: qml/Components/Lockscreen.qml:247
+#: qml/Components/Lockscreen.qml:256
 msgid "OK"
 msgstr "OK"
 
@@ -424,7 +420,7 @@ msgstr "Затворите све"
 msgid "Preview Share Item"
 msgstr "Преглед дељене ставке"
 
-#: qml/Components/VirtualTouchPad.qml:312
+#: qml/Components/VirtualTouchPad.qml:343
 msgid ""
 "Your device is now connected to an external display. Use this screen as a "
 "touch pad to interact with the pointer."
@@ -432,30 +428,30 @@ msgstr ""
 "Ваш уређај је сада повезан на спољни монитор. користите овај екран као "
 "додирну плочицу да покрећете показивач."
 
-#: qml/Components/VirtualTouchPad.qml:322
+#: qml/Components/VirtualTouchPad.qml:353
 #, fuzzy
 #| msgid "Tap to return to call..."
 msgid "Tap left button to click."
 msgstr "Лупните да се вратите на позив..."
 
-#: qml/Components/VirtualTouchPad.qml:334
+#: qml/Components/VirtualTouchPad.qml:365
 msgid "Tap right button to right click."
 msgstr ""
 
-#: qml/Components/VirtualTouchPad.qml:346
+#: qml/Components/VirtualTouchPad.qml:377
 msgid "Swipe with two fingers to scroll."
 msgstr ""
 
-#: qml/Components/VirtualTouchPad.qml:391
+#: qml/Components/VirtualTouchPad.qml:422
 msgid "Find more settings in the system settings."
 msgstr ""
 
-#: qml/Greeter/CoverPage.qml:160
+#: qml/Greeter/CoverPage.qml:161
 msgid "Fully charged"
 msgstr ""
 
-#: qml/Greeter/CoverPage.qml:168
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1095
+#: qml/Greeter/CoverPage.qml:169
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1104
 #, qt-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
@@ -463,8 +459,8 @@ msgstr[0] "%1 sat"
 msgstr[1] "%1 sata"
 msgstr[2] "%1 sati"
 
-#: qml/Greeter/CoverPage.qml:171
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1099
+#: qml/Greeter/CoverPage.qml:172
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1108
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
@@ -472,18 +468,18 @@ msgstr[0] "%1 minut"
 msgstr[1] "%1 мinute"
 msgstr[2] "%1 мinuta"
 
-#: qml/Greeter/CoverPage.qml:178
+#: qml/Greeter/CoverPage.qml:179
 #, qt-format
 msgid "%1, %2 until full"
 msgstr ""
 
-#: qml/Greeter/CoverPage.qml:181
+#: qml/Greeter/CoverPage.qml:182
 #, qt-format
 msgid "%1 until full"
 msgstr ""
 
-#: qml/Greeter/CoverPage.qml:197
-#: tests/qmltests/Greeter/tst_GreeterView.qml:1239
+#: qml/Greeter/CoverPage.qml:198
+#: tests/qmltests/Greeter/tst_GreeterView.qml:1242
 msgid "Unlock"
 msgstr "Otključaj"
 
@@ -507,21 +503,21 @@ msgstr[0] "Сачекајте %1 минут, па покушајте понов�
 msgstr[1] "Сачекајте %1 минута, па покушајте поново…"
 msgstr[2] "Сачекајте %1 минута, па покушајте поново…"
 
-#: qml/Greeter/Greeter.qml:627 tests/qmltests/Greeter/tst_Greeter.qml:578
+#: qml/Greeter/Greeter.qml:637 tests/qmltests/Greeter/tst_Greeter.qml:578
 #: tests/qmltests/Greeter/tst_Greeter.qml:597
 #: tests/qmltests/Greeter/tst_Greeter.qml:625
 #: tests/qmltests/Greeter/tst_Greeter.qml:637
 msgid "Try again"
 msgstr "Покушајте поново"
 
-#: qml/Greeter/Greeter.qml:628 tests/qmltests/Greeter/tst_Greeter.qml:552
+#: qml/Greeter/Greeter.qml:638 tests/qmltests/Greeter/tst_Greeter.qml:552
 #: tests/qmltests/Greeter/tst_Greeter.qml:603
 #, fuzzy
 #| msgid "Enter passphrase"
 msgid "Enter passphrase to unlock"
 msgstr "Унесите приступну фразу"
 
-#: qml/Greeter/Greeter.qml:629
+#: qml/Greeter/Greeter.qml:639
 #, fuzzy
 #| msgid "Enter passcode"
 msgid "Enter passcode to unlock"
@@ -559,7 +555,7 @@ msgstr "Отпусти ради освежавања…"
 msgid "Show password"
 msgstr "Прикажи лозинку"
 
-#: qml/Notifications/Notification.qml:322
+#: qml/Notifications/Notification.qml:318
 msgid "New message"
 msgstr ""
 
@@ -571,11 +567,11 @@ msgstr "Лупните да се вратите на позив..."
 msgid "Conference"
 msgstr "Конференција"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:967
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:975
 msgid "Nothing is playing"
 msgstr "Ништа се не пушта"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1104
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1113
 #, qt-format
 msgid "%1 second"
 msgid_plural "%1 seconds"
@@ -583,36 +579,36 @@ msgstr[0] "%1 секунда"
 msgstr[1] "%1 секунде"
 msgstr[2] "%1 секунди"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1107
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1116
 msgid "0 seconds"
 msgstr "0 секунде"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1109
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1118
 #, qt-format
 msgid "%1 remaining"
 msgstr "Преостаје %1"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1115
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1129
 msgid "In queue…"
 msgstr "Заказано…"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1119
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1133
 msgid "Downloading"
 msgstr "Преузимање"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1121
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1135
 msgid "Paused, tap to resume"
 msgstr "Заустављено, лупните да наставите"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1123
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1137
 msgid "Canceled"
 msgstr "Отказано"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1125
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1139
 msgid "Finished"
 msgstr "Завршено"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1127
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1141
 msgid "Failed, tap to retry"
 msgstr "Неуспело, лупните да покушате поново"
 
@@ -632,15 +628,15 @@ msgctxt "Button: Call back on phone"
 msgid "Call back"
 msgstr "Позови назад"
 
-#: qml/Panel/PanelMenuPage.qml:92
+#: qml/Panel/PanelMenuPage.qml:93
 msgid "Back"
 msgstr "Nazad"
 
-#: qml/Stage/SideStage.qml:80
+#: qml/Stage/SideStage.qml:81
 msgid "Drag using 3 fingers any application from one window to the other"
 msgstr "Превуците користећи 3 прста било који програм са једног у други прозор"
 
-#: qml/Stage/Stage.qml:834
+#: qml/Stage/Stage.qml:902
 msgid "No running apps"
 msgstr ""
 
@@ -719,7 +715,7 @@ msgid "Keyboard layout"
 msgstr "Распоред тастатуре"
 
 #: qml/Wizard/Pages/20-keyboard.qml:152 qml/Wizard/Pages/30-wifi.qml:213
-#: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/79-system-update.qml:144
+#: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/79-system-update.qml:164
 #: qml/Wizard/Pages/sim.qml:101
 msgid "Skip"
 msgstr "Прескочи"
@@ -775,11 +771,11 @@ msgctxt "Label: Type of security method"
 msgid "No lock code"
 msgstr "Нема кода за закључавање"
 
-#: qml/Wizard/Pages/79-system-update.qml:28
+#: qml/Wizard/Pages/79-system-update.qml:30
 msgid "Update Device"
 msgstr "Ажурирајте уређај"
 
-#: qml/Wizard/Pages/79-system-update.qml:55
+#: qml/Wizard/Pages/79-system-update.qml:57
 msgid ""
 "There is a system update available and ready to install. Afterwards, the "
 "device will automatically restart."
@@ -787,7 +783,7 @@ msgstr ""
 "Постоји ажурирање система и спремно је за инсталацију. Након тога, уређај ће "
 "се аутоматски поново покренути."
 
-#: qml/Wizard/Pages/79-system-update.qml:76
+#: qml/Wizard/Pages/79-system-update.qml:96
 #, fuzzy
 #| msgctxt "string identifying name of the update"
 #| msgid "Ubuntu system"
@@ -795,17 +791,17 @@ msgctxt "string identifying name of the update"
 msgid "Ubuntu Touch system"
 msgstr "Убунту систем"
 
-#: qml/Wizard/Pages/79-system-update.qml:83
+#: qml/Wizard/Pages/79-system-update.qml:103
 #, qt-format
 msgctxt "version of the system update"
 msgid "Version %1"
 msgstr "Издање %1"
 
-#: qml/Wizard/Pages/79-system-update.qml:95
+#: qml/Wizard/Pages/79-system-update.qml:115
 msgid "This could take a few minutes..."
 msgstr "Ово може потрајати неколико минута..."
 
-#: qml/Wizard/Pages/79-system-update.qml:109
+#: qml/Wizard/Pages/79-system-update.qml:129
 msgid "Install and restart now"
 msgstr "Инсталирајте и покрените поново сада"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-06 08:14+0000\n"
+"POT-Creation-Date: 2025-08-14 20:08+0000\n"
 "PO-Revision-Date: 2025-05-19 10:38+0000\n"
 "Last-Translator: Ida Brenna <ida@larald.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/lomiri/"
@@ -44,10 +44,6 @@ msgstr "Indikator-klient"
 msgid "Application for testing the Indicators system"
 msgstr "Program for testing av indikatorsystemet"
 
-#: data/indicators-client.desktop.in:9
-msgid "NoDisplay=false"
-msgstr "NoDisplay=false"
-
 #: plugins/LightDM/Greeter.cpp:199
 msgid "Password: "
 msgstr "Passord: "
@@ -72,11 +68,11 @@ msgstr "Logg inn"
 msgid "Retry"
 msgstr "Prøv igjen"
 
-#: plugins/LightDM/UsersModel.cpp:157
+#: plugins/LightDM/UsersModel.cpp:158
 msgid "Login"
 msgstr "Logg inn"
 
-#: plugins/LightDM/UsersModel.cpp:165
+#: plugins/LightDM/UsersModel.cpp:166
 msgid "Guest Session"
 msgstr "Gjesteøkt"
 
@@ -366,15 +362,15 @@ msgstr "Alt + F4"
 msgid "Closes the current window."
 msgstr "Lukker gjeldende vindu."
 
-#: qml/Components/Lockscreen.qml:214 qml/Greeter/GreeterView.qml:472
+#: qml/Components/Lockscreen.qml:223 qml/Greeter/GreeterView.qml:472
 msgid "Return to Call"
 msgstr "Tilbake til samtale"
 
-#: qml/Components/Lockscreen.qml:214
+#: qml/Components/Lockscreen.qml:223
 msgid "Emergency Call"
 msgstr "Nødanrop"
 
-#: qml/Components/Lockscreen.qml:247
+#: qml/Components/Lockscreen.qml:256
 msgid "OK"
 msgstr "OK"
 
@@ -410,7 +406,7 @@ msgstr "Lukk alle"
 msgid "Preview Share Item"
 msgstr "Forhåndsvis delingselement"
 
-#: qml/Components/VirtualTouchPad.qml:312
+#: qml/Components/VirtualTouchPad.qml:343
 msgid ""
 "Your device is now connected to an external display. Use this screen as a "
 "touch pad to interact with the pointer."
@@ -418,54 +414,54 @@ msgstr ""
 "Enheten er nå koblet til en ekstern skjerm. Bruk denne skjermen som en "
 "pekeplate for å styre pekeren."
 
-#: qml/Components/VirtualTouchPad.qml:322
+#: qml/Components/VirtualTouchPad.qml:353
 msgid "Tap left button to click."
 msgstr "Trykk på venstre knapp for å klikke."
 
-#: qml/Components/VirtualTouchPad.qml:334
+#: qml/Components/VirtualTouchPad.qml:365
 msgid "Tap right button to right click."
 msgstr "Trykk på høyre knapp for høyreklikk."
 
-#: qml/Components/VirtualTouchPad.qml:346
+#: qml/Components/VirtualTouchPad.qml:377
 msgid "Swipe with two fingers to scroll."
 msgstr "Dra med to fingre for å rulle."
 
-#: qml/Components/VirtualTouchPad.qml:391
+#: qml/Components/VirtualTouchPad.qml:422
 msgid "Find more settings in the system settings."
 msgstr "Finn flere innstillinger i systeminnstillingene."
 
-#: qml/Greeter/CoverPage.qml:160
+#: qml/Greeter/CoverPage.qml:161
 msgid "Fully charged"
 msgstr "Fulladet"
 
-#: qml/Greeter/CoverPage.qml:168
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1095
+#: qml/Greeter/CoverPage.qml:169
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1104
 #, qt-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
 msgstr[0] "%1 time"
 msgstr[1] "%1 timer"
 
-#: qml/Greeter/CoverPage.qml:171
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1099
+#: qml/Greeter/CoverPage.qml:172
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1108
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
 msgstr[0] "%1 minutt"
 msgstr[1] "%1 minutter"
 
-#: qml/Greeter/CoverPage.qml:178
+#: qml/Greeter/CoverPage.qml:179
 #, qt-format
 msgid "%1, %2 until full"
 msgstr "%1,%2 til ferdig"
 
-#: qml/Greeter/CoverPage.qml:181
+#: qml/Greeter/CoverPage.qml:182
 #, qt-format
 msgid "%1 until full"
 msgstr "%1 til ferdig"
 
-#: qml/Greeter/CoverPage.qml:197
-#: tests/qmltests/Greeter/tst_GreeterView.qml:1239
+#: qml/Greeter/CoverPage.qml:198
+#: tests/qmltests/Greeter/tst_GreeterView.qml:1242
 msgid "Unlock"
 msgstr "Lås opp"
 
@@ -490,19 +486,19 @@ msgid_plural "Please wait %1 minutes and then try again…"
 msgstr[0] "Vent i %1 minutt, og prøv deretter på nytt …"
 msgstr[1] "Vent i %1 minutter, og prøv deretter på nytt …"
 
-#: qml/Greeter/Greeter.qml:627 tests/qmltests/Greeter/tst_Greeter.qml:578
+#: qml/Greeter/Greeter.qml:637 tests/qmltests/Greeter/tst_Greeter.qml:578
 #: tests/qmltests/Greeter/tst_Greeter.qml:597
 #: tests/qmltests/Greeter/tst_Greeter.qml:625
 #: tests/qmltests/Greeter/tst_Greeter.qml:637
 msgid "Try again"
 msgstr "Prøv igjen"
 
-#: qml/Greeter/Greeter.qml:628 tests/qmltests/Greeter/tst_Greeter.qml:552
+#: qml/Greeter/Greeter.qml:638 tests/qmltests/Greeter/tst_Greeter.qml:552
 #: tests/qmltests/Greeter/tst_Greeter.qml:603
 msgid "Enter passphrase to unlock"
 msgstr "Skriv inn passordfrase for å låse opp"
 
-#: qml/Greeter/Greeter.qml:629
+#: qml/Greeter/Greeter.qml:639
 msgid "Enter passcode to unlock"
 msgstr "Tast kode for å låse opp"
 
@@ -538,7 +534,7 @@ msgstr "Slipp for å oppdatere …"
 msgid "Show password"
 msgstr "Vis passord"
 
-#: qml/Notifications/Notification.qml:322
+#: qml/Notifications/Notification.qml:318
 msgid "New message"
 msgstr "Ny melding"
 
@@ -550,47 +546,47 @@ msgstr "Trykk for å gå tilbake til anrop …"
 msgid "Conference"
 msgstr "Konferanse"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:967
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:975
 msgid "Nothing is playing"
 msgstr "Ingenting spilles nå"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1104
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1113
 #, qt-format
 msgid "%1 second"
 msgid_plural "%1 seconds"
 msgstr[0] "%1 sekund"
 msgstr[1] "%1 sekunder"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1107
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1116
 msgid "0 seconds"
 msgstr "0 sekunder"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1109
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1118
 #, qt-format
 msgid "%1 remaining"
 msgstr "%1 gjenstår"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1115
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1129
 msgid "In queue…"
 msgstr "I kø …"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1119
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1133
 msgid "Downloading"
 msgstr "Laster ned"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1121
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1135
 msgid "Paused, tap to resume"
 msgstr "Satt på pause (trykk for å fortsette)"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1123
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1137
 msgid "Canceled"
 msgstr "Avbrutt"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1125
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1139
 msgid "Finished"
 msgstr "Fullført"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1127
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1141
 msgid "Failed, tap to retry"
 msgstr "Feilet. Trykk for å prøve på nytt"
 
@@ -610,15 +606,15 @@ msgctxt "Button: Call back on phone"
 msgid "Call back"
 msgstr "Ring tilbake"
 
-#: qml/Panel/PanelMenuPage.qml:92
+#: qml/Panel/PanelMenuPage.qml:93
 msgid "Back"
 msgstr "Tilbake"
 
-#: qml/Stage/SideStage.qml:80
+#: qml/Stage/SideStage.qml:81
 msgid "Drag using 3 fingers any application from one window to the other"
 msgstr "Dra et program fra et vindu til et annet med 3 fingre"
 
-#: qml/Stage/Stage.qml:834
+#: qml/Stage/Stage.qml:902
 msgid "No running apps"
 msgstr "Ingen kjørende programmer"
 
@@ -694,7 +690,7 @@ msgid "Keyboard layout"
 msgstr "Tastaturoppsett"
 
 #: qml/Wizard/Pages/20-keyboard.qml:152 qml/Wizard/Pages/30-wifi.qml:213
-#: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/79-system-update.qml:144
+#: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/79-system-update.qml:164
 #: qml/Wizard/Pages/sim.qml:101
 msgid "Skip"
 msgstr "Hopp over"
@@ -750,11 +746,11 @@ msgctxt "Label: Type of security method"
 msgid "No lock code"
 msgstr "Ingen låsekode"
 
-#: qml/Wizard/Pages/79-system-update.qml:28
+#: qml/Wizard/Pages/79-system-update.qml:30
 msgid "Update Device"
 msgstr "Oppdater enhet"
 
-#: qml/Wizard/Pages/79-system-update.qml:55
+#: qml/Wizard/Pages/79-system-update.qml:57
 msgid ""
 "There is a system update available and ready to install. Afterwards, the "
 "device will automatically restart."
@@ -762,22 +758,22 @@ msgstr ""
 "Systemoppdatering er klar for installasjon. Enheten starter til slutt på "
 "nytt for å fullføre installasjonen."
 
-#: qml/Wizard/Pages/79-system-update.qml:76
+#: qml/Wizard/Pages/79-system-update.qml:96
 msgctxt "string identifying name of the update"
 msgid "Ubuntu Touch system"
 msgstr "Ubuntu Touch-system"
 
-#: qml/Wizard/Pages/79-system-update.qml:83
+#: qml/Wizard/Pages/79-system-update.qml:103
 #, qt-format
 msgctxt "version of the system update"
 msgid "Version %1"
 msgstr "Versjon %1"
 
-#: qml/Wizard/Pages/79-system-update.qml:95
+#: qml/Wizard/Pages/79-system-update.qml:115
 msgid "This could take a few minutes..."
 msgstr "Dette kan ta litt tid …"
 
-#: qml/Wizard/Pages/79-system-update.qml:109
+#: qml/Wizard/Pages/79-system-update.qml:129
 msgid "Install and restart now"
 msgstr "Installer og start på nytt nå"
 
@@ -913,6 +909,9 @@ msgstr "Svakt passord"
 #: qml/Wizard/PasswordMeter.qml:101
 msgid "Very weak password"
 msgstr "Veldig svakt passord"
+
+#~ msgid "NoDisplay=false"
+#~ msgstr "NoDisplay=false"
 
 #~ msgid "Welcome to Lomiri"
 #~ msgstr "Velkommen til Lomiri"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-06 08:14+0000\n"
+"POT-Creation-Date: 2025-08-14 20:08+0000\n"
 "PO-Revision-Date: 2024-05-16 17:56+0000\n"
 "Last-Translator: Daniel Soohan Park <soobak0313@outlook.com>\n"
 "Language-Team: Korean <https://hosted.weblate.org/projects/lomiri/lomiri/ko/"
@@ -44,10 +44,6 @@ msgstr "지시자 클라이언트"
 msgid "Application for testing the Indicators system"
 msgstr "지시자 시스템을 테스트하기 위한 애플리케이션"
 
-#: data/indicators-client.desktop.in:9
-msgid "NoDisplay=false"
-msgstr "NoDisplay=false"
-
 #: plugins/LightDM/Greeter.cpp:199
 msgid "Password: "
 msgstr "암호: "
@@ -72,11 +68,11 @@ msgstr "로그인"
 msgid "Retry"
 msgstr "다시 시도"
 
-#: plugins/LightDM/UsersModel.cpp:157
+#: plugins/LightDM/UsersModel.cpp:158
 msgid "Login"
 msgstr "로그인"
 
-#: plugins/LightDM/UsersModel.cpp:165
+#: plugins/LightDM/UsersModel.cpp:166
 msgid "Guest Session"
 msgstr "손님 세션"
 
@@ -364,15 +360,15 @@ msgstr "Alt + F4"
 msgid "Closes the current window."
 msgstr "현재 창을 닫습니다."
 
-#: qml/Components/Lockscreen.qml:214 qml/Greeter/GreeterView.qml:472
+#: qml/Components/Lockscreen.qml:223 qml/Greeter/GreeterView.qml:472
 msgid "Return to Call"
 msgstr "다시 전화하기"
 
-#: qml/Components/Lockscreen.qml:214
+#: qml/Components/Lockscreen.qml:223
 msgid "Emergency Call"
 msgstr "긴급 통화"
 
-#: qml/Components/Lockscreen.qml:247
+#: qml/Components/Lockscreen.qml:256
 msgid "OK"
 msgstr "확인"
 
@@ -407,7 +403,7 @@ msgstr "모두 닫기"
 msgid "Preview Share Item"
 msgstr "공유 항목 미리 보기"
 
-#: qml/Components/VirtualTouchPad.qml:312
+#: qml/Components/VirtualTouchPad.qml:343
 msgid ""
 "Your device is now connected to an external display. Use this screen as a "
 "touch pad to interact with the pointer."
@@ -415,52 +411,52 @@ msgstr ""
 "장치를 외부 디스플레이에 연결했습니다. 포인터를 사용하려면 화면을 터치패드로 "
 "사용해 주세요."
 
-#: qml/Components/VirtualTouchPad.qml:322
+#: qml/Components/VirtualTouchPad.qml:353
 msgid "Tap left button to click."
 msgstr "왼쪽 단추를 눌러 클릭하세요."
 
-#: qml/Components/VirtualTouchPad.qml:334
+#: qml/Components/VirtualTouchPad.qml:365
 msgid "Tap right button to right click."
 msgstr "오른쪽 단추를 눌러 오른쪽 클릭하세요."
 
-#: qml/Components/VirtualTouchPad.qml:346
+#: qml/Components/VirtualTouchPad.qml:377
 msgid "Swipe with two fingers to scroll."
 msgstr "두 손가락으로 쓸어 스크롤하세요."
 
-#: qml/Components/VirtualTouchPad.qml:391
+#: qml/Components/VirtualTouchPad.qml:422
 msgid "Find more settings in the system settings."
 msgstr "시스템 설정에서 더 많은 설정을 찾아보세요."
 
-#: qml/Greeter/CoverPage.qml:160
+#: qml/Greeter/CoverPage.qml:161
 msgid "Fully charged"
 msgstr "충전 완료"
 
-#: qml/Greeter/CoverPage.qml:168
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1095
+#: qml/Greeter/CoverPage.qml:169
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1104
 #, qt-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
 msgstr[0] "%1시간"
 
-#: qml/Greeter/CoverPage.qml:171
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1099
+#: qml/Greeter/CoverPage.qml:172
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1108
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
 msgstr[0] "%1분"
 
-#: qml/Greeter/CoverPage.qml:178
+#: qml/Greeter/CoverPage.qml:179
 #, qt-format
 msgid "%1, %2 until full"
 msgstr "%1, %2가 가득 찰 때까지"
 
-#: qml/Greeter/CoverPage.qml:181
+#: qml/Greeter/CoverPage.qml:182
 #, qt-format
 msgid "%1 until full"
 msgstr "%1가 가득 찰 때까지"
 
-#: qml/Greeter/CoverPage.qml:197
-#: tests/qmltests/Greeter/tst_GreeterView.qml:1239
+#: qml/Greeter/CoverPage.qml:198
+#: tests/qmltests/Greeter/tst_GreeterView.qml:1242
 msgid "Unlock"
 msgstr "잠금 해제"
 
@@ -482,19 +478,19 @@ msgid "Please wait %1 minute and then try again…"
 msgid_plural "Please wait %1 minutes and then try again…"
 msgstr[0] "%1분 정도 기다린 후 다시 시도해 주세요…"
 
-#: qml/Greeter/Greeter.qml:627 tests/qmltests/Greeter/tst_Greeter.qml:578
+#: qml/Greeter/Greeter.qml:637 tests/qmltests/Greeter/tst_Greeter.qml:578
 #: tests/qmltests/Greeter/tst_Greeter.qml:597
 #: tests/qmltests/Greeter/tst_Greeter.qml:625
 #: tests/qmltests/Greeter/tst_Greeter.qml:637
 msgid "Try again"
 msgstr "다시 시도"
 
-#: qml/Greeter/Greeter.qml:628 tests/qmltests/Greeter/tst_Greeter.qml:552
+#: qml/Greeter/Greeter.qml:638 tests/qmltests/Greeter/tst_Greeter.qml:552
 #: tests/qmltests/Greeter/tst_Greeter.qml:603
 msgid "Enter passphrase to unlock"
 msgstr "잠금을 해제하려면 암호를 입력해 주세요"
 
-#: qml/Greeter/Greeter.qml:629
+#: qml/Greeter/Greeter.qml:639
 msgid "Enter passcode to unlock"
 msgstr "비밀번호를 입력해 주세요"
 
@@ -530,7 +526,7 @@ msgstr "놓으면 새로 고침"
 msgid "Show password"
 msgstr "암호 표시"
 
-#: qml/Notifications/Notification.qml:322
+#: qml/Notifications/Notification.qml:318
 msgid "New message"
 msgstr "새 메시지"
 
@@ -542,46 +538,46 @@ msgstr "다시 통화하려면 두드려 주세요..."
 msgid "Conference"
 msgstr "회의"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:967
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:975
 msgid "Nothing is playing"
 msgstr "연주하는 항목 없음"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1104
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1113
 #, qt-format
 msgid "%1 second"
 msgid_plural "%1 seconds"
 msgstr[0] "%1초"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1107
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1116
 msgid "0 seconds"
 msgstr "0초"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1109
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1118
 #, qt-format
 msgid "%1 remaining"
 msgstr "%1 남음"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1115
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1129
 msgid "In queue…"
 msgstr "대기 중…"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1119
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1133
 msgid "Downloading"
 msgstr "다운로드 중"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1121
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1135
 msgid "Paused, tap to resume"
 msgstr "일시 중지되었습니다. 계속하려면 눌러 주세요"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1123
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1137
 msgid "Canceled"
 msgstr "취소함"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1125
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1139
 msgid "Finished"
 msgstr "완료함"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1127
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1141
 msgid "Failed, tap to retry"
 msgstr "실패, 다시 시도하려면 눌러 주세요"
 
@@ -601,16 +597,16 @@ msgctxt "Button: Call back on phone"
 msgid "Call back"
 msgstr "부재중 번호로 전화"
 
-#: qml/Panel/PanelMenuPage.qml:92
+#: qml/Panel/PanelMenuPage.qml:93
 msgid "Back"
 msgstr "뒤로"
 
-#: qml/Stage/SideStage.qml:80
+#: qml/Stage/SideStage.qml:81
 msgid "Drag using 3 fingers any application from one window to the other"
 msgstr ""
 "어떤 어플리케이션이든 한 창에서 다른 창으로 세 손가락을 사용해 끌어놓으세요"
 
-#: qml/Stage/Stage.qml:834
+#: qml/Stage/Stage.qml:902
 msgid "No running apps"
 msgstr "실행 중인 앱 없음"
 
@@ -686,7 +682,7 @@ msgid "Keyboard layout"
 msgstr "키보드 배열"
 
 #: qml/Wizard/Pages/20-keyboard.qml:152 qml/Wizard/Pages/30-wifi.qml:213
-#: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/79-system-update.qml:144
+#: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/79-system-update.qml:164
 #: qml/Wizard/Pages/sim.qml:101
 msgid "Skip"
 msgstr "건너뛰기"
@@ -742,11 +738,11 @@ msgctxt "Label: Type of security method"
 msgid "No lock code"
 msgstr "잠금 암호 사용하지 않음"
 
-#: qml/Wizard/Pages/79-system-update.qml:28
+#: qml/Wizard/Pages/79-system-update.qml:30
 msgid "Update Device"
 msgstr "장치 업데이트"
 
-#: qml/Wizard/Pages/79-system-update.qml:55
+#: qml/Wizard/Pages/79-system-update.qml:57
 msgid ""
 "There is a system update available and ready to install. Afterwards, the "
 "device will automatically restart."
@@ -754,22 +750,22 @@ msgstr ""
 "설치할 준비가 된 시스템 업데이트가 있습니다. 이후에 장치가 자동으로 재시작됩"
 "니다."
 
-#: qml/Wizard/Pages/79-system-update.qml:76
+#: qml/Wizard/Pages/79-system-update.qml:96
 msgctxt "string identifying name of the update"
 msgid "Ubuntu Touch system"
 msgstr "Ubuntu Touch 시스템"
 
-#: qml/Wizard/Pages/79-system-update.qml:83
+#: qml/Wizard/Pages/79-system-update.qml:103
 #, qt-format
 msgctxt "version of the system update"
 msgid "Version %1"
 msgstr "%1"
 
-#: qml/Wizard/Pages/79-system-update.qml:95
+#: qml/Wizard/Pages/79-system-update.qml:115
 msgid "This could take a few minutes..."
 msgstr "몇 분 정도 걸릴 수 있습니다..."
 
-#: qml/Wizard/Pages/79-system-update.qml:109
+#: qml/Wizard/Pages/79-system-update.qml:129
 msgid "Install and restart now"
 msgstr "설치 및 다시 시작"
 
@@ -905,6 +901,9 @@ msgstr "약한 암호"
 #: qml/Wizard/PasswordMeter.qml:101
 msgid "Very weak password"
 msgstr "아주 약한 암호"
+
+#~ msgid "NoDisplay=false"
+#~ msgstr "NoDisplay=false"
 
 #, fuzzy
 #~ msgid "Welcome to Lomiri"

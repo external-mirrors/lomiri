@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-06 08:14+0000\n"
+"POT-Creation-Date: 2025-08-14 20:08+0000\n"
 "PO-Revision-Date: 2025-06-28 18:47+0000\n"
 "Last-Translator: தமிழ்நேரம் <anishprabu.t@gmail.com>\n"
-"Language-Team: Tamil <https://hosted.weblate.org/projects/lomiri/lomiri/ta/>"
-"\n"
+"Language-Team: Tamil <https://hosted.weblate.org/projects/lomiri/lomiri/ta/"
+">\n"
 "Language: ta\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -44,10 +44,6 @@ msgstr "குறிகாட்டிகள் கிளையன்ட்"
 msgid "Application for testing the Indicators system"
 msgstr "குறிகாட்டிகள் அமைப்பைச் சோதிப்பதற்கான பயன்பாடு"
 
-#: data/indicators-client.desktop.in:9
-msgid "NoDisplay=false"
-msgstr "Nodisplay = பொய்"
-
 #: plugins/LightDM/Greeter.cpp:199
 msgid "Password: "
 msgstr "கடவுச்சொல்: "
@@ -72,11 +68,11 @@ msgstr "புகுபதிகை"
 msgid "Retry"
 msgstr "மீண்டும் முயற்சிக்கவும்"
 
-#: plugins/LightDM/UsersModel.cpp:157
+#: plugins/LightDM/UsersModel.cpp:158
 msgid "Login"
 msgstr "புகுபதிவு"
 
-#: plugins/LightDM/UsersModel.cpp:165
+#: plugins/LightDM/UsersModel.cpp:166
 msgid "Guest Session"
 msgstr "விருந்தினர் அமர்வு"
 
@@ -366,15 +362,15 @@ msgstr "மாற்று + F4"
 msgid "Closes the current window."
 msgstr "தற்போதைய சாளரத்தை மூடுகிறது."
 
-#: qml/Components/Lockscreen.qml:214 qml/Greeter/GreeterView.qml:472
+#: qml/Components/Lockscreen.qml:223 qml/Greeter/GreeterView.qml:472
 msgid "Return to Call"
 msgstr "அழைப்புக்குத் திரும்பு"
 
-#: qml/Components/Lockscreen.qml:214
+#: qml/Components/Lockscreen.qml:223
 msgid "Emergency Call"
 msgstr "அவசர அழைப்பு"
 
-#: qml/Components/Lockscreen.qml:247
+#: qml/Components/Lockscreen.qml:256
 msgid "OK"
 msgstr ""
 
@@ -386,8 +382,7 @@ msgstr "பயன்பாடுகளில் சேமிக்கப்ப�
 msgctxt ""
 "Re-dock means connect the device again to an external screen/mouse/keyboard"
 msgid "Re-dock, save your work and close these apps to continue."
-msgstr ""
-"மீண்டும் தேய்ப்பது, உங்கள் வேலையைச் சேமிக்கவும், தொடர இந்த பயன்பாடுகளை மூடு."
+msgstr "மீண்டும் தேய்ப்பது, உங்கள் வேலையைச் சேமிக்கவும், தொடர இந்த பயன்பாடுகளை மூடு."
 
 #: qml/Components/ModeSwitchWarningDialog.qml:67
 msgid "Or force close now (unsaved data will be lost)."
@@ -409,7 +404,7 @@ msgstr "அனைத்தையும் மூடு"
 msgid "Preview Share Item"
 msgstr "முன்னோட்டம் பகிர்வு உருப்படி"
 
-#: qml/Components/VirtualTouchPad.qml:312
+#: qml/Components/VirtualTouchPad.qml:343
 msgid ""
 "Your device is now connected to an external display. Use this screen as a "
 "touch pad to interact with the pointer."
@@ -417,54 +412,54 @@ msgstr ""
 "உங்கள் சாதனம் இப்போது வெளிப்புற காட்சியுடன் இணைக்கப்பட்டுள்ளது. சுட்டிக்காட்டியுடன் தொடர்பு "
 "கொள்ள இந்தத் திரையை ஒரு டச் திண்டு பயன்படுத்தவும்."
 
-#: qml/Components/VirtualTouchPad.qml:322
+#: qml/Components/VirtualTouchPad.qml:353
 msgid "Tap left button to click."
 msgstr "சொடுக்கு செய்ய இடது பொத்தானைத் தட்டவும்."
 
-#: qml/Components/VirtualTouchPad.qml:334
+#: qml/Components/VirtualTouchPad.qml:365
 msgid "Tap right button to right click."
 msgstr "வலது சொடுக்கு செய்ய வலது பொத்தானைத் தட்டவும்."
 
-#: qml/Components/VirtualTouchPad.qml:346
+#: qml/Components/VirtualTouchPad.qml:377
 msgid "Swipe with two fingers to scroll."
 msgstr "உருட்ட இரண்டு விரல்களால் ச்வைப் செய்யவும்."
 
-#: qml/Components/VirtualTouchPad.qml:391
+#: qml/Components/VirtualTouchPad.qml:422
 msgid "Find more settings in the system settings."
 msgstr "கணினி அமைப்புகளில் மேலும் அமைப்புகளைக் கண்டறியவும்."
 
-#: qml/Greeter/CoverPage.qml:160
+#: qml/Greeter/CoverPage.qml:161
 msgid "Fully charged"
 msgstr "முழு மின்கலமும் மின்னேற்றப்பட்டது"
 
-#: qml/Greeter/CoverPage.qml:168
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1095
+#: qml/Greeter/CoverPage.qml:169
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1104
 #, qt-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
 msgstr[0] "%1 மணி நேரம்"
 msgstr[1] "%1 மணி நேரம்"
 
-#: qml/Greeter/CoverPage.qml:171
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1099
+#: qml/Greeter/CoverPage.qml:172
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1108
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
 msgstr[0] "%1 மணித்துளி"
 msgstr[1] "%1 நிமிடங்கள்"
 
-#: qml/Greeter/CoverPage.qml:178
+#: qml/Greeter/CoverPage.qml:179
 #, qt-format
 msgid "%1, %2 until full"
 msgstr "%1, %2 முழு வரை"
 
-#: qml/Greeter/CoverPage.qml:181
+#: qml/Greeter/CoverPage.qml:182
 #, qt-format
 msgid "%1 until full"
 msgstr "%1 வரை"
 
-#: qml/Greeter/CoverPage.qml:197
-#: tests/qmltests/Greeter/tst_GreeterView.qml:1239
+#: qml/Greeter/CoverPage.qml:198
+#: tests/qmltests/Greeter/tst_GreeterView.qml:1242
 msgid "Unlock"
 msgstr ""
 
@@ -474,13 +469,11 @@ msgstr "சாதனம் பூட்டப்பட்டுள்ளது"
 
 #: qml/Greeter/DelayedLockscreen.qml:58
 msgid "You have been locked out due to too many failed passphrase attempts."
-msgstr ""
-"தோல்வியுற்ற பல கடவுச்சொல் முயற்சிகள் காரணமாக நீங்கள் பூட்டப்பட்டிருக்கிறீர்கள்."
+msgstr "தோல்வியுற்ற பல கடவுச்சொல் முயற்சிகள் காரணமாக நீங்கள் பூட்டப்பட்டிருக்கிறீர்கள்."
 
 #: qml/Greeter/DelayedLockscreen.qml:59
 msgid "You have been locked out due to too many failed passcode attempts."
-msgstr ""
-"தோல்வியுற்ற பல கடவுகரமான முயற்சிகள் காரணமாக நீங்கள் பூட்டப்பட்டிருக்கிறீர்கள்."
+msgstr "தோல்வியுற்ற பல கடவுகரமான முயற்சிகள் காரணமாக நீங்கள் பூட்டப்பட்டிருக்கிறீர்கள்."
 
 #: qml/Greeter/DelayedLockscreen.qml:68
 #, qt-format
@@ -489,19 +482,19 @@ msgid_plural "Please wait %1 minutes and then try again…"
 msgstr[0] "தயவுசெய்து %1 மணித்துளி காத்திருந்து மீண்டும் முயற்சிக்கவும்…"
 msgstr[1] "தயவுசெய்து %1 நிமிடங்கள் காத்திருந்து மீண்டும் முயற்சிக்கவும்…"
 
-#: qml/Greeter/Greeter.qml:627 tests/qmltests/Greeter/tst_Greeter.qml:578
+#: qml/Greeter/Greeter.qml:637 tests/qmltests/Greeter/tst_Greeter.qml:578
 #: tests/qmltests/Greeter/tst_Greeter.qml:597
 #: tests/qmltests/Greeter/tst_Greeter.qml:625
 #: tests/qmltests/Greeter/tst_Greeter.qml:637
 msgid "Try again"
 msgstr "மீண்டும் முயற்சிக்கவும்"
 
-#: qml/Greeter/Greeter.qml:628 tests/qmltests/Greeter/tst_Greeter.qml:552
+#: qml/Greeter/Greeter.qml:638 tests/qmltests/Greeter/tst_Greeter.qml:552
 #: tests/qmltests/Greeter/tst_Greeter.qml:603
 msgid "Enter passphrase to unlock"
 msgstr "திறக்க பாச்ஃபிரேசை உள்ளிடவும்"
 
-#: qml/Greeter/Greeter.qml:629
+#: qml/Greeter/Greeter.qml:639
 msgid "Enter passcode to unlock"
 msgstr "திறக்க கடவுக்குறியீட்டை உள்ளிடவும்"
 
@@ -539,7 +532,7 @@ msgstr "புதுப்பிக்க வெளியீடு…"
 msgid "Show password"
 msgstr "கடவுச்சொல்லைக் காண்பி"
 
-#: qml/Notifications/Notification.qml:322
+#: qml/Notifications/Notification.qml:318
 msgid "New message"
 msgstr "புதிய செய்தி"
 
@@ -551,47 +544,47 @@ msgstr "அழைப்புக்குத் திரும்ப தட்�
 msgid "Conference"
 msgstr "மாநாடு"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:967
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:975
 msgid "Nothing is playing"
 msgstr "எதுவும் விளையாடுவதில்லை"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1104
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1113
 #, qt-format
 msgid "%1 second"
 msgid_plural "%1 seconds"
 msgstr[0] "%1 நொடி"
 msgstr[1] "%1 வினாடிகள்"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1107
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1116
 msgid "0 seconds"
 msgstr "0 விநாடிகள்"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1109
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1118
 #, qt-format
 msgid "%1 remaining"
 msgstr "%1 மீதமுள்ள"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1115
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1129
 msgid "In queue…"
 msgstr "வரிசையில்…"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1119
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1133
 msgid "Downloading"
 msgstr "பதிவிறக்குகிறது"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1121
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1135
 msgid "Paused, tap to resume"
 msgstr "இடைநிறுத்தப்பட்டு, மீண்டும் தொடங்க தட்டவும்"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1123
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1137
 msgid "Canceled"
 msgstr "ரத்து செய்யப்பட்டது"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1125
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1139
 msgid "Finished"
 msgstr "முடிந்தது"
 
-#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1127
+#: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1141
 msgid "Failed, tap to retry"
 msgstr "தோல்வியுற்றது, மீண்டும் முயற்சிக்கவும்"
 
@@ -611,15 +604,15 @@ msgctxt "Button: Call back on phone"
 msgid "Call back"
 msgstr "மீண்டும் அழைக்கவும்"
 
-#: qml/Panel/PanelMenuPage.qml:92
+#: qml/Panel/PanelMenuPage.qml:93
 msgid "Back"
 msgstr ""
 
-#: qml/Stage/SideStage.qml:80
+#: qml/Stage/SideStage.qml:81
 msgid "Drag using 3 fingers any application from one window to the other"
 msgstr "ஒரு சாளரத்திலிருந்து மற்றொன்றுக்கு 3 விரல்களைப் பயன்படுத்தி இழுக்கவும்"
 
-#: qml/Stage/Stage.qml:834
+#: qml/Stage/Stage.qml:902
 msgid "No running apps"
 msgstr "இயங்கும் பயன்பாடுகள் இல்லை"
 
@@ -633,8 +626,7 @@ msgstr "துவக்கியைத் திறக்க இடது வி
 
 #: qml/Tutorial/TutorialRight.qml:54
 msgid "Push your mouse against the right edge to view your open apps"
-msgstr ""
-"உங்கள் திறந்த பயன்பாடுகளைக் காண உங்கள் சுட்டியை வலது விளிம்பிற்கு எதிராக தள்ளுங்கள்"
+msgstr "உங்கள் திறந்த பயன்பாடுகளைக் காண உங்கள் சுட்டியை வலது விளிம்பிற்கு எதிராக தள்ளுங்கள்"
 
 #: qml/Tutorial/TutorialRight.qml:55
 msgid "Swipe from the right edge to view your open apps"
@@ -674,8 +666,7 @@ msgstr "%1 %2 க்கு வருக"
 #: qml/Wizard/Pages/10-welcome-update.qml:108
 #, qt-format
 msgid "We will make sure your device is ready to use %1 %2"
-msgstr ""
-"உங்கள் சாதனம் %1 %2 ஐப் பயன்படுத்தத் தயாராக இருப்பதை நாங்கள் உறுதி செய்வோம்"
+msgstr "உங்கள் சாதனம் %1 %2 ஐப் பயன்படுத்தத் தயாராக இருப்பதை நாங்கள் உறுதி செய்வோம்"
 
 #: qml/Wizard/Pages/11-changelog.qml:28
 msgid "What's new"
@@ -699,7 +690,7 @@ msgid "Keyboard layout"
 msgstr "விசைப்பலகை தளவமைப்பு"
 
 #: qml/Wizard/Pages/20-keyboard.qml:152 qml/Wizard/Pages/30-wifi.qml:213
-#: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/79-system-update.qml:144
+#: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/79-system-update.qml:164
 #: qml/Wizard/Pages/sim.qml:101
 msgid "Skip"
 msgstr "தவிர்"
@@ -755,11 +746,11 @@ msgctxt "Label: Type of security method"
 msgid "No lock code"
 msgstr "பூட்டு குறியீடு இல்லை"
 
-#: qml/Wizard/Pages/79-system-update.qml:28
+#: qml/Wizard/Pages/79-system-update.qml:30
 msgid "Update Device"
 msgstr "சாதனத்தைப் புதுப்பிக்கவும்"
 
-#: qml/Wizard/Pages/79-system-update.qml:55
+#: qml/Wizard/Pages/79-system-update.qml:57
 msgid ""
 "There is a system update available and ready to install. Afterwards, the "
 "device will automatically restart."
@@ -767,22 +758,22 @@ msgstr ""
 "கணினி புதுப்பிப்பு கிடைக்கிறது மற்றும் நிறுவ தயாராக உள்ளது. பின்னர், சாதனம் தானாக "
 "மறுதொடக்கம் செய்யும்."
 
-#: qml/Wizard/Pages/79-system-update.qml:76
+#: qml/Wizard/Pages/79-system-update.qml:96
 msgctxt "string identifying name of the update"
 msgid "Ubuntu Touch system"
 msgstr "உபுண்டு தொடு அமைப்பு"
 
-#: qml/Wizard/Pages/79-system-update.qml:83
+#: qml/Wizard/Pages/79-system-update.qml:103
 #, qt-format
 msgctxt "version of the system update"
 msgid "Version %1"
 msgstr "பதிப்பு %1"
 
-#: qml/Wizard/Pages/79-system-update.qml:95
+#: qml/Wizard/Pages/79-system-update.qml:115
 msgid "This could take a few minutes..."
 msgstr "இதற்கு சில நிமிடங்கள் ஆகலாம் ..."
 
-#: qml/Wizard/Pages/79-system-update.qml:109
+#: qml/Wizard/Pages/79-system-update.qml:129
 msgid "Install and restart now"
 msgstr "இப்போது நிறுவி மறுதொடக்கம் செய்"
 
@@ -919,6 +910,9 @@ msgstr "பலவீனமான கடவுச்சொல்"
 #: qml/Wizard/PasswordMeter.qml:101
 msgid "Very weak password"
 msgstr "மிகவும் பலவீனமான கடவுச்சொல்"
+
+#~ msgid "NoDisplay=false"
+#~ msgstr "Nodisplay = பொய்"
 
 #~ msgid "Send"
 #~ msgstr "அனுப்பு"
