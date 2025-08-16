@@ -27,6 +27,7 @@ set(QMLLAUNCHERPLUGIN_SRC
     appdrawermodel.cpp
     ualwrapper.cpp
     xdgwatcher.cpp
+    iconcachewatcher.cpp
     ${CMAKE_SOURCE_DIR}/plugins/AccountsService/AccountsServiceDBusAdaptor.cpp
     ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/ApplicationManagerInterface.h
     ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/ApplicationInfoInterface.h
