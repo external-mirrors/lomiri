@@ -91,7 +91,7 @@ find_package(Intl REQUIRED)
 
 pkg_check_modules(APPLICATION_API REQUIRED lomiri-shell-application=28)
 pkg_check_modules(GEONAMES REQUIRED geonames>=0.2)
-pkg_check_modules(GIO REQUIRED gio-2.0>=2.32)
+pkg_check_modules(GIO REQUIRED gio-2.0>=2.32 gio-unix-2.0)
 pkg_check_modules(GLIB REQUIRED glib-2.0>=2.32)
 pkg_check_modules(LAUNCHER_API REQUIRED lomiri-shell-launcher=13)
 pkg_check_modules(QMENUMODEL REQUIRED qmenumodel)

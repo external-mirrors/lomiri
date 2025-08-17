@@ -40,6 +40,7 @@ private:
     const QString toStandardAppId(const QFileInfo fileInfo) const;
     const QString getAppId(const QFileInfo file) const;
     const QString stripAppIdVersion(const QString rawAppID) const;
+    bool shouldShow(const QFileInfo &file) const;
 
     QFileSystemWatcher* m_watcher;
     QHash<const QString, QString> m_registry;

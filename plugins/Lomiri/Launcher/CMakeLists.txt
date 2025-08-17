@@ -12,6 +12,7 @@ include_directories(
     SYSTEM
     ${GSETTINGS_QT_INCLUDE_DIRS}
     ${GLIB_INCLUDE_DIRS}
+    ${GIO_INCLUDE_DIRS}
     ${UAL_INCLUDE_DIRS}
     )
 
@@ -48,6 +49,7 @@ target_link_libraries(LomiriLauncher-qml
     lomiri-private
     ${GSETTINGS_QT_LDFLAGS}
     ${GLIB_LIBRARIES}
+    ${GIO_LIBRARIES}
     ${UAL_LIBRARIES}
     Qt5::DBus Qt5::Qml Qt5::Gui Qt5::Concurrent
     )
