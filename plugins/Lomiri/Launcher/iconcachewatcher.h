@@ -28,6 +28,7 @@ Q_SIGNALS:
 
 private Q_SLOTS:
     void onCacheFileChanged(const QString &path);
+    void onIconDirectoryChanged(const QString &path);
 
 private:
     QFileSystemWatcher *m_watcher;

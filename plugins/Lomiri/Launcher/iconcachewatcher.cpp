@@ -25,33 +25,60 @@ IconCacheWatcher::IconCacheWatcher(QObject *parent)
     : QObject(parent),
       m_watcher(new QFileSystemWatcher(this))
 {
-    // Standard icon directories
-    QStringList iconDirs = {
-        "/usr/share/icons",
-        "/usr/local/share/icons",
-        QDir::homePath() + "/.local/share/icons"
+    // List of base directories
+    QStringList baseDirs = {
+        "/usr/share",
+        "/usr/local/share",
+        QDir::homePath() + "/.local/share"
     };
 
     QStringList cacheFiles;
-    for (const QString &dir : iconDirs) {
-        QDir d(dir);
-        if (!d.exists()) continue;
-        // Look for icon-theme.cache in all subdirs
-        QFileInfoList subdirs = d.entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot);
-        for (const QFileInfo &subdir : subdirs) {
-            QString cachePath = subdir.absoluteFilePath() + "/icon-theme.cache";
-            if (QFile::exists(cachePath)) {
-                cacheFiles << cachePath;
+    QStringList foldersToWatch;
+    for (const QString &base : baseDirs) {
+        // icons
+        QString iconsDir = base + "/icons";
+        QDir icons(iconsDir);
+        if (icons.exists()) {
+            foldersToWatch << iconsDir;
+            QFileInfoList subdirs = icons.entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot);
+            for (const QFileInfo &subdir : subdirs) {
+                QString cachePath = subdir.absoluteFilePath() + "/icon-theme.cache";
+                if (QFile::exists(cachePath)) {
+                    cacheFiles << cachePath;
+                }
             }
+        }
+        // pixmaps
+        QString pixmapsDir = base + "/pixmaps";
+        QDir pixmaps(pixmapsDir);
+        if (pixmaps.exists()) {
+            foldersToWatch << pixmapsDir;
+        }
+        // meta/gui
+        QString metaGuiDir = base + "/meta/gui";
+        QDir metaGui(metaGuiDir);
+        if (metaGui.exists()) {
+            foldersToWatch << metaGuiDir;
         }
     }
 
-    if (cacheFiles.isEmpty()) {
-        qWarning() << "No icon-theme.cache files found in standard icon directories.";
-    } else {
+    if (!cacheFiles.isEmpty()) {
         m_watcher->addPaths(cacheFiles);
         connect(m_watcher, &QFileSystemWatcher::fileChanged,
                 this, &IconCacheWatcher::onCacheFileChanged);
+    }
+
+    if (!foldersToWatch.isEmpty()) {
+        m_watcher->addPaths(foldersToWatch);
+        connect(m_watcher, &QFileSystemWatcher::directoryChanged,
+                this, &IconCacheWatcher::onIconDirectoryChanged);
+    }
+
+    if (foldersToWatch.isEmpty() && cacheFiles.isEmpty()) {
+        qWarning() << "No icon-theme.cache files found in standard icon directories.";
+    } else {
+        qDebug() << "IconCacheWatcher initialized with" << foldersToWatch.size() << "directories and"
+                 << cacheFiles.size() << "cache files.";
     }
 }
 
@@ -62,4 +89,9 @@ void IconCacheWatcher::onCacheFileChanged(const QString &path)
     if (QFile::exists(path)) {
         m_watcher->addPath(path);
     }
+}
+
+void IconCacheWatcher::onIconDirectoryChanged(const QString &path)
+{
+    Q_EMIT iconCacheChanged();
 }
