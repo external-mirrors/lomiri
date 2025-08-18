@@ -93,5 +93,11 @@ void IconCacheWatcher::onCacheFileChanged(const QString &path)
 
 void IconCacheWatcher::onIconDirectoryChanged(const QString &path)
 {
+    // Defer update if dpkg-new files are present (icon is still being installed)
+    QDir dir(path);
+    QStringList dpkgNewFiles = dir.entryList(QStringList("*.dpkg-new"), QDir::Files);
+    if (!dpkgNewFiles.isEmpty())
+        return;
+
     Q_EMIT iconCacheChanged();
 }
