@@ -17,6 +17,7 @@
 #include "ualwrapper.h"
 #include "xdgwatcher.h"
 #include "appdrawermodel.h"
+#include "iconcachewatcher.h"
 
 #include <QtTest>
 
@@ -57,6 +58,17 @@ private Q_SLOTS:
         QSignalSpy refreshingSpy(appDrawerModel, &AppDrawerModel::refreshingChanged);
 
         appDrawerModel->refresh();
+        QTRY_VERIFY(!appDrawerModel->refreshing());
+
+        QCOMPARE(refreshingSpy.count(), 2);
+        QCOMPARE(appDrawerModel->rowCount(QModelIndex()), 2);
+    }
+
+    void testIconCacheChanged() {
+        QSignalSpy refreshingSpy(appDrawerModel, &AppDrawerModel::refreshingChanged);
+        IconCacheWatcher::instance()->triggerMockIconCacheChanged();
+        qApp->processEvents();
+
         QTRY_VERIFY(!appDrawerModel->refreshing());
 
         QCOMPARE(refreshingSpy.count(), 2);
