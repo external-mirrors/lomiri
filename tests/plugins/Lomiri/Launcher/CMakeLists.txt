@@ -66,6 +66,7 @@ add_executable(appdrawermodeltestExec
     appdrawermodeltest.cpp
     ualwrapper.cpp
     xdgwatcher.cpp
+    iconcachewatcher.cpp
     ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Launcher/appdrawermodel.cpp
     ${LAUNCHER_API_INCLUDEDIR}/lomiri/shell/launcher/AppDrawerModelInterface.h
     ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Launcher/launcheritem.cpp
