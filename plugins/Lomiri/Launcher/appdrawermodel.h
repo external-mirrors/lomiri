@@ -23,8 +23,8 @@
 
 class UalWrapper;
 class XdgWatcher;
-
 class IconCacheWatcher;
+
 class AppDrawerModel: public AppDrawerModelInterface
 {
     Q_OBJECT
