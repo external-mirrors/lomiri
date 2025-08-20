@@ -23,6 +23,8 @@
 #include <QStandardPaths>
 #include <QTextStream>
 
+#include <gio/gdesktopappinfo.h>
+
 XdgWatcher::XdgWatcher(QObject* parent)
     : QObject(parent),
       m_watcher(new QFileSystemWatcher(this))
@@ -100,13 +102,26 @@ const QString XdgWatcher::getAppId(const QFileInfo fileInfo) const {
     return toStandardAppId(fileInfo);
 }
 
+// Returns true if the desktop file should be shown (check for NoDisplay)
+bool XdgWatcher::shouldShow(const QFileInfo &file) const {
+    GDesktopAppInfo *appinfo = g_desktop_app_info_new(file.fileName().toUtf8().constData());
+    if (appinfo) {
+        bool show = g_app_info_should_show(G_APP_INFO(appinfo));
+        g_object_unref(appinfo);
+        return show;
+    } else {
+        qWarning() << "XdgWatcher: appinfo is NULL for" << file.absoluteFilePath();
+        return true; // Show the app if we can't determine its visibility
+    }
+}
+
 // Watch for newly added apps
 void XdgWatcher::onDirectoryChanged(const QString &path) {
     const auto files = QDir(path).entryInfoList(QDir::Files);
     const auto watchedFiles = m_watcher->files();
     for (const auto &file: files) {
         const auto appPath = file.absoluteFilePath();
-        if (file.suffix() == "desktop" && !watchedFiles.contains(appPath)) {
+        if (file.suffix() == "desktop" && !watchedFiles.contains(appPath) && shouldShow(file)) {
             m_watcher->addPath(appPath);
 
             const auto appId = getAppId(file);

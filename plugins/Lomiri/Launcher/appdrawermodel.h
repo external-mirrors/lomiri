@@ -23,6 +23,7 @@
 
 class UalWrapper;
 class XdgWatcher;
+class IconCacheWatcher;
 
 class AppDrawerModel: public AppDrawerModelInterface
 {
@@ -59,6 +60,7 @@ private:
     ItemList m_list;
     UalWrapper *m_ual;
     XdgWatcher *m_xdgWatcher;
+    IconCacheWatcher *m_iconCacheWatcher;
     QFutureWatcher<ItemList> m_refreshFutureWatcher;
     bool m_refreshing;
 };

@@ -12,6 +12,7 @@ include_directories(
     SYSTEM
     ${GSETTINGS_QT_INCLUDE_DIRS}
     ${GLIB_INCLUDE_DIRS}
+    ${GIO_INCLUDE_DIRS}
     ${UAL_INCLUDE_DIRS}
     )
 
@@ -27,6 +28,7 @@ set(QMLLAUNCHERPLUGIN_SRC
     appdrawermodel.cpp
     ualwrapper.cpp
     xdgwatcher.cpp
+    iconcachewatcher.cpp
     ${CMAKE_SOURCE_DIR}/plugins/AccountsService/AccountsServiceDBusAdaptor.cpp
     ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/ApplicationManagerInterface.h
     ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/ApplicationInfoInterface.h
@@ -47,6 +49,7 @@ target_link_libraries(LomiriLauncher-qml
     lomiri-private
     ${GSETTINGS_QT_LDFLAGS}
     ${GLIB_LIBRARIES}
+    ${GIO_LIBRARIES}
     ${UAL_LIBRARIES}
     Qt5::DBus Qt5::Qml Qt5::Gui Qt5::Concurrent
     )

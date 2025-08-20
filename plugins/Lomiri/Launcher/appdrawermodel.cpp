@@ -18,6 +18,7 @@
 #include "appdrawermodel.h"
 #include "ualwrapper.h"
 #include "xdgwatcher.h"
+#include "iconcachewatcher.h"
 
 #include <QDebug>
 #include <QDateTime>
@@ -35,6 +36,7 @@ AppDrawerModel::AppDrawerModel(QObject *parent):
     AppDrawerModelInterface(parent),
     m_ual(new UalWrapper(this)),
     m_xdgWatcher(new XdgWatcher(this)),
+    m_iconCacheWatcher(new IconCacheWatcher(this)),
     m_refreshing(false)
 {
     connect(&m_refreshFutureWatcher, &QFutureWatcher<ItemList>::finished,
@@ -44,6 +46,9 @@ AppDrawerModel::AppDrawerModel(QObject *parent):
     connect(m_xdgWatcher, &XdgWatcher::appAdded, this, &AppDrawerModel::appAdded, Qt::QueuedConnection);
     connect(m_xdgWatcher, &XdgWatcher::appRemoved, this, &AppDrawerModel::appRemoved, Qt::QueuedConnection);
     connect(m_xdgWatcher, &XdgWatcher::appInfoChanged, this, &AppDrawerModel::appInfoChanged, Qt::QueuedConnection);
+
+    // Refresh app icons when icon cache changes
+    connect(m_iconCacheWatcher, &IconCacheWatcher::iconCacheChanged, this, &AppDrawerModel::refresh, Qt::QueuedConnection);
 
     refresh();
 }
