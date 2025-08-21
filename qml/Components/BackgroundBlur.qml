@@ -34,7 +34,7 @@ Item {
         sourceItem: root.sourceItem
         hideSource: root.occluding
         sourceRect: root.blurRect
-        live: false
+        live: true
         enabled: sourceItem != null
     }
 
@@ -46,13 +46,6 @@ Item {
         cached: false
         visible: sourceItem != null
         enabled: visible
-    }
-
-    Timer {
-        interval: 48
-        repeat: root.visible && (sourceItem != null)
-        running: repeat
-        onTriggered: shaderEffectSource.scheduleUpdate()
     }
 
     // When blur is disabled
