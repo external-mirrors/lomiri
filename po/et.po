@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-14 20:08+0000\n"
-"PO-Revision-Date: 2025-08-23 20:01+0000\n"
+"PO-Revision-Date: 2025-08-27 20:31+0000\n"
 "Last-Translator: Priit Jõerüüt <jrthwlate@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/lomiri/lomiri/"
 "et/>\n"
@@ -562,11 +562,11 @@ msgstr "0 sekundit"
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1118
 #, qt-format
 msgid "%1 remaining"
-msgstr ""
+msgstr "jäänud: %1"
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1129
 msgid "In queue…"
-msgstr ""
+msgstr "Tööde järjekorras…"
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1133
 msgid "Downloading"
@@ -574,7 +574,7 @@ msgstr "Laadin alla"
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1135
 msgid "Paused, tap to resume"
-msgstr ""
+msgstr "Peatatud, jätkamiseks klõpsa"
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1137
 msgid "Canceled"
@@ -586,7 +586,7 @@ msgstr "Valmis"
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1141
 msgid "Failed, tap to retry"
-msgstr ""
+msgstr "Ebaõnnestunud, jätkamiseks klõpsa"
 
 #: qml/Panel/Indicators/MessageMenuItemFactory.qml:151
 #: qml/Panel/Indicators/MessageMenuItemFactory.qml:210
