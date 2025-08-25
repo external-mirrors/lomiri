@@ -18,6 +18,7 @@
 
 import QtQuick 2.15
 import Lomiri.Components 1.3
+import Lomiri.SystemSettings.Update 1.0
 import Wizard 0.1
 import ".." as LocalComponents
 
@@ -28,6 +29,11 @@ LocalComponents.Page {
     customTitle: true
     buttonBarVisible: false
     onlyOnUpdate: true
+
+    // XXX: make this distro-agnostic in the future
+    property string distroName: System.distroName
+    property string distroVersion:
+        SystemImage.versionTag || System.version.split("Base-Version: ")[1]
 
     Component.onCompleted: {
         state = "reanchored";
@@ -89,7 +95,8 @@ LocalComponents.Page {
             font.weight: Font.Light
             lineHeight: 1.2
             // TRANSLATORS: %1 contains the distro name, %2 the version
-            text: i18n.tr("Welcome to %1 %2").arg(System.distroName).arg(System.version.split("Base-Version: ")[1])
+            text: i18n.tr("Welcome to %1 %2")
+                .arg(distroName).arg(distroVersion)
             color: whiteColor
         }
 
@@ -105,7 +112,8 @@ LocalComponents.Page {
             font.weight: Font.Light
             lineHeight: 1.2
             // TRANSLATORS: %1 contains the distro name, %2 the version
-            text: i18n.tr("We will make sure your device is ready to use %1 %2").arg(System.distroName).arg(System.version.split("Base-Version: ")[1])
+            text: i18n.tr("We will make sure your device is ready to use %1 %2")
+                .arg(distroName).arg(distroVersion)
             color: whiteColor
         }
 
