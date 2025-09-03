@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-14 20:08+0000\n"
-"PO-Revision-Date: 2025-02-07 15:53+0000\n"
+"PO-Revision-Date: 2025-09-09 18:02+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/lomiri/lomiri/"
 "hr/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.14-dev\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:35+0000\n"
 
 #: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
@@ -27,25 +27,23 @@ msgstr "Lomiri"
 
 #: data/lomiri.desktop.in:5
 msgid "The converged Lomiri shell"
-msgstr ""
+msgstr "Ujedinjena Lomiri ljuska"
 
 #: data/lomiri-greeter.desktop.in:4
-#, fuzzy
-#| msgid "Lomiri"
 msgid "Lomiri Greeter"
-msgstr "Lomiri"
+msgstr "Lomiri ekran prijave"
 
 #: data/lomiri-greeter.desktop.in:5
 msgid "The converged Lomiri shell's Greeter"
-msgstr ""
+msgstr "Ekran prijave ujedinjene Lomiri ljuske"
 
 #: data/indicators-client.desktop.in:4
 msgid "Indicators Client"
-msgstr ""
+msgstr "Klijent indikatora"
 
 #: data/indicators-client.desktop.in:5
 msgid "Application for testing the Indicators system"
-msgstr ""
+msgstr "Aplikacija za testiranje sustava indikatora"
 
 #: plugins/LightDM/Greeter.cpp:199
 msgid "Password: "
@@ -106,15 +104,15 @@ msgstr "DVI"
 
 #: plugins/WindowManager/Screen.cpp:168
 msgid "Composite"
-msgstr ""
+msgstr "Kompozit"
 
 #: plugins/WindowManager/Screen.cpp:170
 msgid "S-Video"
-msgstr ""
+msgstr "S-Video"
 
 #: plugins/WindowManager/Screen.cpp:176
 msgid "Internal"
-msgstr ""
+msgstr "Interno"
 
 #: plugins/WindowManager/Screen.cpp:178
 msgid "Component"
@@ -122,7 +120,7 @@ msgstr "Komponenta"
 
 #: plugins/WindowManager/Screen.cpp:180
 msgid "DisplayPort"
-msgstr ""
+msgstr "Priključak ekrana"
 
 #: plugins/WindowManager/Screen.cpp:183
 msgid "HDMI"
@@ -153,7 +151,7 @@ msgstr "Zaključaj"
 #: qml/Components/Dialogs.qml:191
 msgctxt "Button: Log out from the system"
 msgid "Log Out"
-msgstr "Odjava"
+msgstr "Odjavi se"
 
 #: qml/Components/Dialogs.qml:199 qml/Components/Dialogs.qml:284
 #: qml/Greeter/GreeterView.qml:452 qml/Wizard/Pages/passcode-confirm.qml:32
@@ -435,7 +433,7 @@ msgstr "Pronađi daljnje postavke u postavkama sustava."
 
 #: qml/Greeter/CoverPage.qml:161
 msgid "Fully charged"
-msgstr ""
+msgstr "Potpuno napunjeno"
 
 #: qml/Greeter/CoverPage.qml:169
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1104
@@ -458,12 +456,12 @@ msgstr[2] "%1 minuta"
 #: qml/Greeter/CoverPage.qml:179
 #, qt-format
 msgid "%1, %2 until full"
-msgstr ""
+msgstr "%1, %2 do potpunog napajanja"
 
 #: qml/Greeter/CoverPage.qml:182
 #, qt-format
 msgid "%1 until full"
-msgstr ""
+msgstr "%1 do potpunog napajanja"
 
 #: qml/Greeter/CoverPage.qml:198
 #: tests/qmltests/Greeter/tst_GreeterView.qml:1242
@@ -512,11 +510,11 @@ msgstr "Hitno"
 
 #: qml/Greeter/PromptList.qml:143
 msgid "Passphrase"
-msgstr "Lozinka"
+msgstr "Sigurnosna fraza"
 
 #: qml/Greeter/PromptList.qml:143
 msgid "Passcode"
-msgstr "Pristupni kod"
+msgstr "Sigurnosni kod"
 
 #: qml/Greeter/SessionsList.qml:124
 msgid "Select desktop environment"
@@ -540,7 +538,7 @@ msgstr "Prikaži lozinku"
 
 #: qml/Notifications/Notification.qml:318
 msgid "New message"
-msgstr ""
+msgstr "Nova poruka"
 
 #: qml/Panel/ActiveCallHint.qml:79
 msgid "Tap to return to call..."
@@ -665,17 +663,16 @@ msgstr "Dalje"
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
 #: qml/Wizard/Pages/10-welcome-update.qml:92
-#, fuzzy, qt-format
-#| msgid "Welcome to "
+#, qt-format
 msgid "Welcome to %1 %2"
-msgstr "Dobro došli u "
+msgstr "Dobro došli u %1 %2"
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
 #: qml/Wizard/Pages/10-welcome-update.qml:108
-#, fuzzy, qt-format
-#| msgid "We will make sure your device is ready to use "
+#, qt-format
 msgid "We will make sure your device is ready to use %1 %2"
-msgstr "Pobrinut ćemo se da je vaš uređaj spreman za upotrebu "
+msgstr ""
+"Pobrinut ćemo se da je vaš uređaj spreman za korštenje distribucije %1 %2"
 
 #: qml/Wizard/Pages/11-changelog.qml:28
 msgid "What's new"
@@ -783,7 +780,7 @@ msgstr "Ovo može potrajati nekoliko minuta..."
 
 #: qml/Wizard/Pages/79-system-update.qml:129
 msgid "Install and restart now"
-msgstr "Instaliraj i sada ponovo pokreni"
+msgstr "Instaliraj i ponovo pokreni sada"
 
 #: qml/Wizard/Pages/80-finished.qml:93
 msgid "Welcome Back"
@@ -810,7 +807,7 @@ msgstr "Započnite"
 #: qml/Wizard/Pages/passcode-confirm.qml:43
 #: qml/Wizard/Pages/passcode-desktop.qml:104
 msgid "Confirm passcode"
-msgstr "Potvrdi sigurnosni kod"
+msgstr "Potvrdite sigurnosni kod"
 
 #: qml/Wizard/Pages/passcode-confirm.qml:45
 msgid "Incorrect passcode."
@@ -832,7 +829,7 @@ msgstr "Upišite barem 4 brojke za postavljanje sigurnosnog koda"
 #: qml/Wizard/Pages/passcode-desktop.qml:84
 #: qml/Wizard/Pages/passcode-set.qml:54
 msgid "Choose passcode"
-msgstr "Odaberi sigurnosni kod"
+msgstr "Odaberite sigurnosni kod"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:139
 msgid "Passcode too short"
