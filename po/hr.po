@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-14 20:08+0000\n"
-"PO-Revision-Date: 2025-09-09 18:02+0000\n"
+"PO-Revision-Date: 2025-09-21 15:02+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/lomiri/lomiri/"
 "hr/>\n"
@@ -141,7 +141,7 @@ msgstr "Odjavi se"
 
 #: qml/Components/Dialogs.qml:177
 msgid "Are you sure you want to log out?"
-msgstr "Sigurno se želite odjaviti?"
+msgstr "Stvarno se želite odjaviti?"
 
 #: qml/Components/Dialogs.qml:180
 msgctxt "Button: Lock the system"
@@ -166,7 +166,7 @@ msgstr "Ponovo pokreni"
 
 #: qml/Components/Dialogs.qml:212
 msgid "Are you sure you want to reboot?"
-msgstr "Sigurno želite ponovo pokrenuti?"
+msgstr "Stvarno želite ponovo pokrenuti sustav?"
 
 #: qml/Components/Dialogs.qml:215
 msgid "No"
@@ -186,7 +186,7 @@ msgid ""
 "Are you sure you would like\n"
 "to power off?"
 msgstr ""
-"Sigurno želite\n"
+"Stvarno želite\n"
 "isključiti?"
 
 #: qml/Components/Dialogs.qml:248
