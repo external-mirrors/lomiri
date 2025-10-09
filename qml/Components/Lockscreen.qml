@@ -248,7 +248,6 @@ Showable {
         ShellDialog {
             id: dialog
             objectName: "infoPopup"
-            property var dialogLoader // dummy to satisfy ShellDialog's context dependent prop
 
             Button {
                 width: parent.width
