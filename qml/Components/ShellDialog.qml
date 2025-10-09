@@ -36,6 +36,7 @@ Dialog {
     focus: true
 
     enum Action {
+        None,
         Cancel,
         Lock,
         Logout,

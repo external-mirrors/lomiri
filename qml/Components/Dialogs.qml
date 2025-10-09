@@ -36,6 +36,7 @@ MouseArea {
     property string usageScenario
     property size screenSize: Qt.size(Screen.width, Screen.height)
     property bool hasKeyboard: false
+    property int delayedAction: ShellDialog.None
 
     signal powerOffClicked();
 
@@ -46,14 +47,16 @@ MouseArea {
     property var doOnClosedAllWindows: function() {}
 
     function triggerAction(action, dialog) {
+        delayedAction = ShellDialog.None
+
         switch (action) {
             case ShellDialog.Cancel:
                 dialog.hide()
                 break;
 
             case ShellDialog.Capture:
+                delayedAction = ShellDialog.Capture
                 dialog.hide()
-                itemGrabber.capture(shell)
                 break;
 
             case ShellDialog.PowerOff:
@@ -83,6 +86,12 @@ MouseArea {
                 lomiriSessionService.logout();
                 dialog.hide();
                 break;
+        }
+    }
+
+    function triggerDelayedAction() {
+        if ( delayedAction === ShellDialog.Capture) {
+            itemGrabber.capture(shell)
         }
     }
 
@@ -214,6 +223,7 @@ MouseArea {
                 dialog.onVisibleChanged.connect(function() {
                     if (!dialog.visible)   {
                         dialogLoader.active = false;
+                        triggerDelayedAction()
                     }
                 })
             }
