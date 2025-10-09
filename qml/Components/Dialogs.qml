@@ -165,6 +165,17 @@ MouseArea {
             }
         }
 
+        onStatusChanged: {
+            if (dialogLoader.status === Loader.Ready && dialogLoader.item) {
+                var dialog = dialogLoader.item
+                dialog.onVisibleChanged.connect(function() {
+                    if (!dialog.visible)   {
+                        dialogLoader.active = false;
+                    }
+                })
+            }
+        }
+
         property var previousSourceComponent: undefined
         property var previousFocusedItem: undefined
     }

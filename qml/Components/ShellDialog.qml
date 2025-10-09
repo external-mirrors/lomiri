@@ -33,12 +33,6 @@ Dialog {
 
     default property alias columnContents: column.data
 
-    onVisibleChanged: {
-        if (!visible && dialogLoader) {
-            dialogLoader.active = false;
-        }
-    }
-
     focus: true
 
     Component.onCompleted: {
