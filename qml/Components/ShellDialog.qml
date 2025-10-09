@@ -35,6 +35,15 @@ Dialog {
 
     focus: true
 
+    enum Action {
+        Cancel,
+        Lock,
+        Logout,
+        Capture,
+        PowerOff,
+        Reboot
+    }
+
     Component.onCompleted: {
         show();
     }

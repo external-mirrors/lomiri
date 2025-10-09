@@ -44,6 +44,49 @@ MouseArea {
     }
 
     property var doOnClosedAllWindows: function() {}
+
+    function triggerAction(action, dialog) {
+        switch (action) {
+            case ShellDialog.Cancel:
+                dialog.hide()
+                break;
+
+            case ShellDialog.Capture:
+                dialog.hide()
+                itemGrabber.capture(shell)
+                break;
+
+            case ShellDialog.PowerOff:
+                doOnClosedAllWindows = function(root, dialog) {
+                    return function() {
+                        dialog.hide();
+                        root.powerOffClicked();
+                    }
+                }(root, dialog);
+                topLevelSurfaceList.closeAllWindows();
+                break;
+
+            case ShellDialog.Reboot:
+                doOnClosedAllWindows = function(lomiriSessionService, dialog) {
+                    return function() {
+                        lomiriSessionService.reboot();
+                        dialog.hide();
+                    }
+                }(lomiriSessionService, dialog);
+                topLevelSurfaceList.closeAllWindows();
+                break;
+            case ShellDialog.Lock:
+                root.lomiriSessionService.PromptLock();
+                dialog.hide();
+                break;
+            case ShellDialog.Logout:
+                lomiriSessionService.logout();
+                dialog.hide();
+                break;
+        }
+    }
+
+
     Connections {
         target: topLevelSurfaceList
 
@@ -190,27 +233,19 @@ MouseArea {
                 width: parent.width
                 text: i18n.ctr("Button: Lock the system", "Lock")
                 visible: root.lomiriSessionService.CanLock()
-                onClicked: {
-                    root.lomiriSessionService.PromptLock();
-                    logoutDialog.hide();
-                }
+                onClicked: root.triggerAction(ShellDialog.Lock, logoutDialog)
                 Component.onCompleted: if (root.hasKeyboard) forceActiveFocus(Qt.TabFocusReason)
             }
             Button {
                 width: parent.width
                 focus: true
                 text: i18n.ctr("Button: Log out from the system", "Log Out")
-                onClicked: {
-                    lomiriSessionService.logout();
-                    logoutDialog.hide();
-                }
+                onClicked: root.triggerAction(ShellDialog.Logout, logoutDialog)
             }
             Button {
                 width: parent.width
                 text: i18n.tr("Cancel")
-                onClicked: {
-                    logoutDialog.hide();
-                }
+                onClicked: root.triggerAction(ShellDialog.Cancel, logoutDialog)
             }
         }
     }
@@ -224,23 +259,13 @@ MouseArea {
             Button {
                 width: parent.width
                 text: i18n.tr("No")
-                onClicked: {
-                    rebootDialog.hide();
-                }
+                onClicked: root.triggerAction(ShellDialog.Cancel, rebootDialog)
             }
             Button {
                 width: parent.width
                 focus: true
                 text: i18n.tr("Yes")
-                onClicked: {
-                    doOnClosedAllWindows = function(lomiriSessionService, rebootDialog) {
-                        return function() {
-                            lomiriSessionService.reboot();
-                            rebootDialog.hide();
-                        }
-                    }(lomiriSessionService, rebootDialog);
-                    topLevelSurfaceList.closeAllWindows();
-                }
+                onClicked: root.triggerAction(ShellDialog.Reboot, rebootDialog)
                 color: theme.palette.normal.negative
                 Component.onCompleted: if (root.hasKeyboard) forceActiveFocus(Qt.TabFocusReason)
             }
@@ -257,45 +282,24 @@ MouseArea {
                 width: parent.width
                 focus: true
                 text: i18n.ctr("Button: Power off the system", "Power off")
-                onClicked: {
-                    doOnClosedAllWindows = function(root, powerDialog) {
-                        return function() {
-                            powerDialog.hide();
-                            root.powerOffClicked();
-                        }
-                    }(root, powerDialog);
-                    topLevelSurfaceList.closeAllWindows();
-                }
+                onClicked: root.triggerAction(ShellDialog.PowerOff, powerDialog)
                 color: theme.palette.normal.negative
                 Component.onCompleted: if (root.hasKeyboard) forceActiveFocus(Qt.TabFocusReason)
             }
             Button {
                 width: parent.width
                 text: i18n.ctr("Button: Restart the system", "Restart")
-                onClicked: {
-                    doOnClosedAllWindows = function(lomiriSessionService, powerDialog) {
-                        return function() {
-                            lomiriSessionService.reboot();
-                            powerDialog.hide();
-                        }
-                    }(lomiriSessionService, powerDialog);
-                    topLevelSurfaceList.closeAllWindows();
-                }
+                onClicked: root.triggerAction(ShellDialog.Reboot, powerDialog)
             }
             Button {
                 width: parent.width
                 text: i18n.tr("Screenshot")
-                onClicked: {
-                    powerDialog.hide();
-                    itemGrabber.capture(shell);
-                }
+                onClicked: root.triggerAction(ShellDialog.Capture, powerDialog)
             }
             Button {
                 width: parent.width
                 text: i18n.tr("Cancel")
-                onClicked: {
-                    powerDialog.hide();
-                }
+                onClicked: root.triggerAction(ShellDialog.Cancel, powerDialog)
             }
         }
     }
