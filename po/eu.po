@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-14 20:08+0000\n"
-"PO-Revision-Date: 2025-10-06 21:02+0000\n"
+"PO-Revision-Date: 2025-10-23 08:02+0000\n"
 "Last-Translator: Joana R <git@joana.click>\n"
 "Language-Team: Basque <https://hosted.weblate.org/projects/lomiri/lomiri/eu/>"
 "\n"
@@ -38,11 +38,11 @@ msgstr "Lomiri konbergituren oskolaren Agurtzailea"
 
 #: data/indicators-client.desktop.in:4
 msgid "Indicators Client"
-msgstr ""
+msgstr "Adierazleen Bezeroa"
 
 #: data/indicators-client.desktop.in:5
 msgid "Application for testing the Indicators system"
-msgstr ""
+msgstr "Adierazleen sistema probatzeko aplikazioa"
 
 #: plugins/LightDM/Greeter.cpp:199
 msgid "Password: "
@@ -50,19 +50,19 @@ msgstr "Pasahitza: "
 
 #: plugins/LightDM/Greeter.cpp:214
 msgid "Username"
-msgstr ""
+msgstr "Erabiltzaile-izena"
 
 #: plugins/LightDM/Greeter.cpp:258
 msgid "Failed to authenticate"
-msgstr ""
+msgstr "Autentikazioak huts egin du"
 
 #: plugins/LightDM/Greeter.cpp:260
 msgid "Invalid password, please try again"
-msgstr ""
+msgstr "Pasahitz baliogabea, saiatu berriz"
 
 #: plugins/LightDM/Greeter.cpp:270
 msgid "Log In"
-msgstr ""
+msgstr "Sartu"
 
 #: plugins/LightDM/Greeter.cpp:270
 msgid "Retry"
@@ -70,7 +70,7 @@ msgstr "Saiatu berriz"
 
 #: plugins/LightDM/UsersModel.cpp:158
 msgid "Login"
-msgstr ""
+msgstr "Sartu"
 
 #: plugins/LightDM/UsersModel.cpp:166
 msgid "Guest Session"
@@ -665,7 +665,7 @@ msgstr ""
 #: qml/Wizard/Pages/passcode-desktop.qml:154
 #: qml/Wizard/Pages/password-set.qml:153
 msgid "Next"
-msgstr ""
+msgstr "Urr."
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
 #: qml/Wizard/Pages/10-welcome-update.qml:92
