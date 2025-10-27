@@ -41,6 +41,14 @@ LocalComponents.Page {
 
     function init()
     {
+        // Skip language autodetection when upgrading, since user probably want
+        // to retain the current language.
+        // Preferably this page shouldn't have to be loaded in that case, but at
+        // the moment it still has to be loaded, to determine `onlyOnInstall`
+        // property above.
+        if (System.isUpdate)
+            return;
+
         var detectedLang = "";
         // try to detect the language+country from the SIM card
         if (root.simManager0.present && root.simManager0.preferredLanguages.length > 0) {
