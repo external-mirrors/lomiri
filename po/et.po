@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-14 20:08+0000\n"
-"PO-Revision-Date: 2025-09-21 15:01+0000\n"
+"PO-Revision-Date: 2025-11-01 16:05+0000\n"
 "Last-Translator: Priit Jõerüüt <jrthwlate@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/lomiri/lomiri/"
 "et/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.14.1-dev\n"
 "X-Launchpad-Export-Date: 2017-04-07 06:30+0000\n"
 
 #: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
@@ -264,95 +264,95 @@ msgstr "Alt + F1"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:156
 msgid "Opens launcher keyboard navigation mode."
-msgstr ""
+msgstr "Avab käivitaja klahvistikult juhitavas vaates."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:164
 msgid "Super + Tab"
-msgstr ""
+msgstr "Super + Tab"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:169
 msgid "Switches applications via the launcher."
-msgstr ""
+msgstr "Vahetab rakenduse käivitaja kaudu."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:177
 msgid "Super + 1 to 0"
-msgstr ""
+msgstr "Super + 1 kuni 0"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:182
 msgid "Same as clicking on a launcher icon."
-msgstr ""
+msgstr "Sama, kui käivitaja ikooni klõpsimine."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:190
 msgid "Super + A"
-msgstr ""
+msgstr "Super + A"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:195
 msgid "Opens the Application Drawer."
-msgstr ""
+msgstr "Avan rakenduste laeka."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:211
 msgid "Switching"
-msgstr ""
+msgstr "Vaadete vahetamine"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:218
 msgid "Alt + Tab"
-msgstr ""
+msgstr "Alt + Tab"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:223
 msgid "Switches between applications."
-msgstr ""
+msgstr "Liigub avatud rakenduste vahel."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:231
 msgid "Super + W"
-msgstr ""
+msgstr "Super + W"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:236
 msgid "Opens the desktop spread."
-msgstr ""
+msgstr "Avan töölaua laienduse."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:244
 msgid "Cursor Left or Right"
-msgstr ""
+msgstr "Kursor vasakule või paremale"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:249
 msgid "Moves the focus."
-msgstr ""
+msgstr "Nihutab fookust."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:261
 msgid "Windows"
-msgstr ""
+msgstr "Aknad"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:268
 msgid "Ctrl + Super + D"
-msgstr ""
+msgstr "Ctrl + Super + D"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:273
 msgid "Minimizes all windows."
-msgstr ""
+msgstr "Minimeerib kõik aknad."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:281
 msgid "Ctrl + Super + Up"
-msgstr ""
+msgstr "Ctrl + Super + Nool üles"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:286
 msgid "Maximizes the current window."
-msgstr ""
+msgstr "Maksimeerib praeguse akna."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:294
 msgid "Ctrl + Super + Down"
-msgstr ""
+msgstr "Ctrl + Super + Nool alla"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:299
 msgid "Minimizes or restores the current window."
-msgstr ""
+msgstr "Minimeerib või taastab praeguse akna."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:307
 msgid "Ctrl + Super + Left or Right"
-msgstr ""
+msgstr "Ctrl + Super + Nool vasakule või paremale"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:312
 msgid "Semi-maximizes the current window."
-msgstr ""
+msgstr "Maksimeerib praeguse akna osaliselt."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:320
 msgid "Alt + F4"
@@ -376,7 +376,7 @@ msgstr "Sobib"
 
 #: qml/Components/ModeSwitchWarningDialog.qml:33
 msgid "Apps may have unsaved data:"
-msgstr ""
+msgstr "Rakendustel võib olla salvestamata andmeid:"
 
 #: qml/Components/ModeSwitchWarningDialog.qml:60
 msgctxt ""
@@ -386,23 +386,23 @@ msgstr ""
 
 #: qml/Components/ModeSwitchWarningDialog.qml:67
 msgid "Or force close now (unsaved data will be lost)."
-msgstr ""
+msgstr "Võis ulge sundkorras kohe (kõik salvestamata andmed lähevad kaotsi)."
 
 #: qml/Components/ModeSwitchWarningDialog.qml:80
 msgid "OK, I will reconnect"
-msgstr ""
+msgstr "Sobib, ühendan uuesti"
 
 #: qml/Components/ModeSwitchWarningDialog.qml:81
 msgid "Reconnect now!"
-msgstr ""
+msgstr "Ühenda uuesti kohe!"
 
 #: qml/Components/ModeSwitchWarningDialog.qml:94
 msgid "Close all"
-msgstr ""
+msgstr "Sulge kõik"
 
 #: qml/Components/SharingPicker.qml:54
 msgid "Preview Share Item"
-msgstr ""
+msgstr "Jagatava objekti eelvaade"
 
 #: qml/Components/VirtualTouchPad.qml:343
 msgid ""
