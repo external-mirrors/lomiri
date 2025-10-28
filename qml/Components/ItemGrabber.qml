@@ -28,6 +28,8 @@ Rectangle {
     color: "white"
     opacity: 0.0
 
+    signal snapshotTaken(string path)
+
     ScreenshotDirectory {
         id: screenshotDirectory
         objectName: "screenGrabber"
@@ -76,6 +78,7 @@ Rectangle {
                         } else {
                             console.log("ItemGrabber: Saving image to " + fileName);
                             result.saveToFile(fileName);
+                            root.snapshotTaken(fileName);
                         }
                     });
 
