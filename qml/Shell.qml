@@ -21,6 +21,7 @@ import QtQuick.Window 2.2
 import AccountsService 0.1
 import QtMir.Application 0.1
 import Lomiri.Components 1.3
+import Lomiri.Components.Extras 0.2 as Extras
 import Lomiri.Components.Popups 1.3
 import Lomiri.Gestures 0.1
 import Lomiri.Telephony 0.1 as Telephony
@@ -593,7 +594,7 @@ StyledItem {
             anchors.fill: parent //because this draws indicator menus
             blurSource: settings.enableBlur ? (greeter.shown ? greeter : stages) : null
             lightMode: shell.lightMode
-
+            enabled: !screenshotEditorContainer.visible
             mode: shell.usageScenario == "desktop" ? "windowed" : "staged"
             minimizedPanelHeight: units.gu(3)
             expandedPanelHeight: units.gu(7)
@@ -856,6 +857,61 @@ StyledItem {
                 }
             }
         }
+
+        Item {
+            id: screenshotEditorContainer
+            visible: false
+            z: itemGrabber.z - 1
+            anchors.fill: parent
+
+            function show(path) {
+                visible = true;
+                screenshotEditor.open(path);
+            }
+
+            function hide() {
+                visible = false;
+            }
+
+            Connections {
+                target: greeter
+                function onLockedChanged() {
+                    screenshotEditorContainer.hide()
+                }
+            }
+
+            PageHeader {
+                id: screenshotEditorHeader
+                anchors.left: parent.left
+                anchors.right: parent.right
+                anchors.top: parent.top
+                anchors.topMargin: panel.panelHeight
+                height: implicitHeight
+                trailingActionBar { actions: [
+                        Action {
+                            iconName: "document-save"
+                            text: "Save"
+                            onTriggered: {
+                                screenshotEditor.close(true);
+                                screenshotEditorContainer.hide();
+                            }
+                        }
+                   ]
+                }
+            }
+
+            Extras.PhotoEditor {
+                id: screenshotEditor
+                y: panel.panelHeight + screenshotEditorHeader.height
+                width: parent.width
+                height: parent.height - screenshotEditorHeader.height - panel.panelHeight
+
+                function show(path) {
+                    visible = true
+                    screenshotEditorContainer.open(path)
+                }
+            }
+        }
     }
 
     Dialogs {
@@ -894,6 +950,9 @@ StyledItem {
             target: stage
             ignoreUnknownSignals: true
             function onItemSnapshotRequested(item) { itemGrabber.capture(item) }
+        }
+        onSnapshotTaken: {
+            screenshotEditorContainer.show(path)
         }
     }
 
