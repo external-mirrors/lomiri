@@ -408,7 +408,6 @@ FocusScope {
         objectName: "drawer"
         anchors {
             top: parent.top
-            topMargin: root.inverted ? root.topPanelHeight : 0
             bottom: parent.bottom
             right: parent.left
         }
