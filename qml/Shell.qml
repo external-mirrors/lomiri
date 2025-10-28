@@ -645,7 +645,7 @@ StyledItem {
             objectName: "launcher"
 
             anchors.top: parent.top
-            anchors.topMargin: inverted ? 0 : panel.panelHeight
+            anchors.topMargin: panel.panelHeight
             anchors.bottom: parent.bottom
             width: parent.width
             dragAreaWidth: shell.edgeSize
