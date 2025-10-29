@@ -190,7 +190,7 @@ void System::updateSessionLocale(const QString &locale)
         "lomiri-indicators.target",
         "lomiri-location-service-trust-stored.service",
         "pulseaudio-trust-stored.service",
-        "sync-monitor.service",
+        "lomiri-sync-monitor.service",
         "maliit-server.service",
         "ciborium.service",
     };
