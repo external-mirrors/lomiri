@@ -8,97 +8,100 @@ msgstr ""
 "Project-Id-Version: lomiri\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-14 20:08+0000\n"
-"PO-Revision-Date: 2023-01-04 18:22+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
-"Language-Team: Tajik <https://hosted.weblate.org/projects/lomiri/lomiri/tg/"
-">\n"
+"PO-Revision-Date: 2025-11-01 16:05+0000\n"
+"Last-Translator: \"Хмеляускас Александр (JasonWalt Bab@)\" "
+"<mardimusa8@gmail.com>\n"
+"Language-Team: Tajik <https://hosted.weblate.org/projects/lomiri/lomiri/tg/>"
+"\n"
 "Language: tg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.15.1-dev\n"
+"X-Generator: Weblate 5.14.1-dev\n"
 
 #: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
+#, fuzzy
 msgid "Lomiri"
-msgstr ""
+msgstr "Ломири"
 
 #: data/lomiri.desktop.in:5
 msgid "The converged Lomiri shell"
-msgstr ""
+msgstr "Силсилаи муттаҳидшудаи Ломири"
 
 #: data/lomiri-greeter.desktop.in:4
 msgid "Lomiri Greeter"
-msgstr ""
+msgstr "Ломири Грейтер"
 
 #: data/lomiri-greeter.desktop.in:5
 msgid "The converged Lomiri shell's Greeter"
-msgstr ""
+msgstr "Greeter снаряди конвергеншудаи Ломири"
 
 #: data/indicators-client.desktop.in:4
 msgid "Indicators Client"
-msgstr ""
+msgstr "Муштарии нишондиҳандаҳо"
 
 #: data/indicators-client.desktop.in:5
 msgid "Application for testing the Indicators system"
-msgstr ""
+msgstr "Ариза барои санҷиши системаи Нишондиҳандаҳо"
 
 #: plugins/LightDM/Greeter.cpp:199
 msgid "Password: "
-msgstr ""
+msgstr "Рамз "
 
 #: plugins/LightDM/Greeter.cpp:214
+#, fuzzy
 msgid "Username"
-msgstr ""
+msgstr "Номи корбар"
 
 #: plugins/LightDM/Greeter.cpp:258
 msgid "Failed to authenticate"
-msgstr ""
+msgstr "Муваффақият тасдиқ карда нашуд"
 
 #: plugins/LightDM/Greeter.cpp:260
 msgid "Invalid password, please try again"
-msgstr ""
+msgstr "Пароли нодуруст, лутфан дубора кӯшиш кунед"
 
 #: plugins/LightDM/Greeter.cpp:270
 msgid "Log In"
-msgstr ""
+msgstr "Даромадан"
 
 #: plugins/LightDM/Greeter.cpp:270
 msgid "Retry"
-msgstr ""
+msgstr "Аз нав кӯшиш кунед"
 
 #: plugins/LightDM/UsersModel.cpp:158
 msgid "Login"
-msgstr ""
+msgstr "Даромадан"
 
 #: plugins/LightDM/UsersModel.cpp:166
 msgid "Guest Session"
-msgstr ""
+msgstr "Ҷаласаи меҳмонон"
 
 #: plugins/Lomiri/Launcher/launcheritem.cpp:48
 #: plugins/Lomiri/Launcher/launcheritem.cpp:122
 msgid "Pin shortcut"
-msgstr ""
+msgstr "Миёнабури Pin"
 
 #: plugins/Lomiri/Launcher/launcheritem.cpp:54
 msgid "Quit"
-msgstr ""
+msgstr "Истед"
 
 #: plugins/Lomiri/Launcher/launcheritem.cpp:122
 msgid "Unpin shortcut"
-msgstr ""
+msgstr "Миёнабурро кушоед"
 
 #: plugins/WindowManager/Screen.cpp:160
 msgid "Unknown"
-msgstr ""
+msgstr "Номаълум"
 
 #: plugins/WindowManager/Screen.cpp:162
 msgid "VGA"
-msgstr ""
+msgstr "VGA"
 
 #: plugins/WindowManager/Screen.cpp:166
 msgid "DVI"
-msgstr ""
+msgstr "DVI"
 
 #: plugins/WindowManager/Screen.cpp:168
 msgid "Composite"
