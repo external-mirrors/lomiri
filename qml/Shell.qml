@@ -23,6 +23,7 @@ import QtMir.Application 0.1
 import Lomiri.Components 1.3
 import Lomiri.Components.Extras 0.2 as Extras
 import Lomiri.Components.Popups 1.3
+import Lomiri.Content 1.1
 import Lomiri.Gestures 0.1
 import Lomiri.Telephony 0.1 as Telephony
 import Lomiri.ModemConnectivity 0.1
@@ -858,13 +859,57 @@ StyledItem {
             }
         }
 
+        ContentPeerPicker {
+            id: screenshotSharePicker
+            anchors {
+                fill: parent
+                topMargin: panel.panelHeight
+            }
+            visible: false
+            z: itemGrabber.z - 1
+            showTitle: true
+            contentType: ContentType.Pictures
+            handler: ContentHandler.Share
+
+            property string filePath : ""
+
+            Component {
+                id: resultComponent
+                ContentItem {}
+            }
+
+            onPeerSelected: {
+                let activeTransfer = peer.request();
+                activeTransfer.stateChanged.connect(function() {
+                    if (activeTransfer.state === ContentTransfer.InProgress) {
+                        const url = "file://" + screenshotSharePicker.filePath
+                        console.log("In progress: " + url);
+                        activeTransfer.items = [ resultComponent.createObject(parent,
+                            {"url": url})
+                        ];
+                        activeTransfer.state = ContentTransfer.Charged;
+                        screenshotSharePicker.visible = false;
+                        screenshotSharePicker.filePath = "";
+                        screenshotEditorContainer.hide();
+                    }
+                })
+            }
+
+            onCancelPressed: {
+                screenshotSharePicker.visible = false;
+                screenshotSharePicker.filePath = "";
+                screenshotEditorContainer.hide();
+            }
+        }
+
         Item {
             id: screenshotEditorContainer
             visible: false
-            z: itemGrabber.z - 1
+            z: itemGrabber.z - 2
             anchors.fill: parent
 
             function show(path) {
+                screenshotSharePicker.filePath = path;
                 visible = true;
                 screenshotEditor.open(path);
             }
@@ -895,6 +940,15 @@ StyledItem {
                                 screenshotEditor.close(true);
                                 screenshotEditorContainer.hide();
                             }
+                        },
+                        Action {
+                            iconName: "share"
+                            text: "Share"
+                            onTriggered: {
+                                screenshotEditor.close(true);
+                                screenshotEditorContainer.hide();
+                                screenshotSharePicker.visible = true;
+                            }
                         }
                    ]
                 }
@@ -905,11 +959,6 @@ StyledItem {
                 y: panel.panelHeight + screenshotEditorHeader.height
                 width: parent.width
                 height: parent.height - screenshotEditorHeader.height - panel.panelHeight
-
-                function show(path) {
-                    visible = true
-                    screenshotEditorContainer.open(path)
-                }
             }
         }
     }
