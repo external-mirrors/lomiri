@@ -37,6 +37,7 @@ set(QMLPLUGIN_SRC
     tabfocusfence.cpp
     expressionfiltermodel.cpp
     quicklistproxymodel.cpp
+    fileio.cpp
     plugin.cpp
     )
 
