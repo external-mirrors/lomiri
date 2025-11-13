@@ -873,6 +873,9 @@ StyledItem {
             anchors.fill: parent
 
             function show(path) {
+                if (wizard.active || greeter.shown)
+                    return;
+
                 screenshotSharePicker.filePath = path;
                 visible = true;
                 screenshotEditor.open(path);
@@ -898,7 +901,8 @@ StyledItem {
                 anchors.top: parent.top
                 anchors.topMargin: panel.panelHeight
                 height: implicitHeight
-                trailingActionBar { actions: [
+                trailingActionBar {
+                    actions: [
                         Action {
                             iconName: "document-save"
                             text: "Save"
@@ -996,6 +1000,7 @@ StyledItem {
     ItemGrabber {
         id: itemGrabber
         anchors.fill: parent
+        shell: shell
         z: dialogs.z + 10
         GlobalShortcut { shortcut: Qt.Key_Print; onTriggered: itemGrabber.capture(shell) }
         Connections {
