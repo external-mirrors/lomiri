@@ -895,11 +895,23 @@ StyledItem {
                 anchors.top: parent.top
                 anchors.topMargin: panel.panelHeight
                 height: implicitHeight
+                leadingActionBar {
+                    actions: [
+                        Action {
+                            iconName: "edit-delete"
+                            text: i18n.tr("Delete")
+                            onTriggered: {
+                                FileIo.remove(screenshotSharePicker.filePath);
+                                screenshotEditorContainer.hide();
+                            }
+                        }
+                    ]
+                }
                 trailingActionBar {
                     actions: [
                         Action {
                             iconName: "document-save"
-                            text: "Save"
+                            text: i18n.tr("Save")
                             onTriggered: {
                                 screenshotEditor.close(true);
                                 screenshotEditorContainer.hide();
@@ -907,7 +919,7 @@ StyledItem {
                         },
                         Action {
                             iconName: "share"
-                            text: "Share"
+                            text: i18n.tr("Share")
                             onTriggered: {
                                 screenshotEditor.close(true);
                                 screenshotSharePicker.visible = true;
