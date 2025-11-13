@@ -21,9 +21,7 @@ import QtQuick.Window 2.2
 import AccountsService 0.1
 import QtMir.Application 0.1
 import Lomiri.Components 1.3
-import Lomiri.Components.Extras 0.2 as Extras
 import Lomiri.Components.Popups 1.3
-import Lomiri.Content 1.1
 import Lomiri.Gestures 0.1
 import Lomiri.Telephony 0.1 as Telephony
 import Lomiri.ModemConnectivity 0.1
@@ -595,9 +593,9 @@ StyledItem {
             anchors.fill: parent //because this draws indicator menus
             blurSource: settings.enableBlur
                             ? (greeter.shown ? greeter
-                                : (screenshotEditorContainer.visible ? screenshotEditorContainer : stages))
+                                : (screenshotEditor.visible ? screenshotEditor : stages))
                             : null
-            z: screenshotEditorContainer.visible ? screenshotEditorContainer.z + 1 : 0
+            z: screenshotEditor.visible ? screenshotEditor.z + 1 : 0
             lightMode: shell.lightMode
             mode: shell.usageScenario == "desktop" ? "windowed" : "staged"
             minimizedPanelHeight: units.gu(3)
@@ -673,9 +671,9 @@ StyledItem {
             lockedVisible: (lockedByUser || shell.atDesktop) && lockAllowed
             blurSource: settings.enableBlur
                             ? (greeter.shown ? greeter
-                                : (screenshotEditorContainer.visible ? screenshotEditorContainer : stages))
+                                : (screenshotEditor.visible ? screenshotEditor : stages))
                             : null
-            z: screenshotEditorContainer.visible ? screenshotEditorContainer.z + 1 : 0
+            z: screenshotEditor.visible ? screenshotEditor.z + 1 : 0
             topPanelHeight: panel.panelHeight
             lightMode: shell.lightMode
             drawerEnabled: !greeter.active && tutorial.launcherLongSwipeEnabled
@@ -866,143 +864,15 @@ StyledItem {
             }
         }
 
-        Item {
-            id: screenshotEditorContainer
-            visible: false
-            z: itemGrabber.z - 2
+        ScreenshotEditor {
+            id: screenshotEditor
             anchors.fill: parent
-
-            property string prevLauncherState : "visible"
-
-            Connections {
-                target: panel
-
-                // Hide the launcher if the indicator panel has been tapped
-                function onFullyClosedChanged() {
-                    if (!screenshotEditorContainer.visible)
-                        return;
-
-                    if (panel.fullyClosed)
-                        launcher.switchToNextState("");
-                }
-            }
-
-            function show(path) {
-                if (wizard.active)
-                    return;
-
-                screenshotSharePicker.filePath = path;
-                visible = true;
-                screenshotEditor.open(path);
-                prevLauncherState = launcher.state;
-                launcher.switchToNextState("");
-            }
-
-            function hide() {
-                screenshotSharePicker.visible = false;
-                screenshotSharePicker.filePath = "";
-                visible = false;
-                launcher.switchToNextState(screenshotEditorContainer.prevLauncherState);
-            }
-
-            // Make locking the screen abort the editing session, otherwise we
-            // would show the editor above the lockscreen.
-            Connections {
-                target: greeter
-                function onLockedChanged() {
-                    if (!screenshotEditorContainer.visible)
-                        return;
-
-                    if (greeter.locked)
-                        screenshotEditorContainer.hide()
-                }
-            }
-
-            PageHeader {
-                id: screenshotEditorHeader
-                anchors.left: parent.left
-                anchors.right: parent.right
-                anchors.top: parent.top
-                anchors.topMargin: panel.panelHeight
-                height: implicitHeight
-                leadingActionBar {
-                    actions: [
-                        Action {
-                            iconName: "edit-delete"
-                            text: i18n.tr("Delete")
-                            onTriggered: {
-                                FileIo.remove(screenshotSharePicker.filePath);
-                                screenshotEditorContainer.hide();
-                            }
-                        }
-                    ]
-                }
-                trailingActionBar {
-                    actions: [
-                        Action {
-                            iconName: "document-save"
-                            text: i18n.tr("Save")
-                            onTriggered: {
-                                screenshotEditor.close(true);
-                                screenshotEditorContainer.hide();
-                            }
-                        },
-                        Action {
-                            iconName: "share"
-                            text: i18n.tr("Share")
-                            onTriggered: {
-                                screenshotEditor.close(true);
-                                screenshotSharePicker.visible = true;
-                            }
-                        }
-                   ]
-                }
-            }
-
-            Extras.PhotoEditor {
-                id: screenshotEditor
-                y: panel.panelHeight + screenshotEditorHeader.height
-                width: parent.width
-                height: parent.height - screenshotEditorHeader.height - panel.panelHeight
-            }
-
-            ContentPeerPicker {
-                id: screenshotSharePicker
-                anchors {
-                    fill: parent
-                    topMargin: panel.panelHeight
-                }
-                visible: false
-                showTitle: true
-                contentType: ContentType.Pictures
-                handler: ContentHandler.Share
-
-                property string filePath : ""
-
-                Component {
-                    id: resultComponent
-                    ContentItem {}
-                }
-
-                onPeerSelected: {
-                    let activeTransfer = peer.request();
-                    activeTransfer.stateChanged.connect(function() {
-                        if (activeTransfer.state === ContentTransfer.InProgress) {
-                            const url = "file://" + screenshotSharePicker.filePath
-                            console.log("In progress: " + url);
-                            activeTransfer.items = [ resultComponent.createObject(parent,
-                                {"url": url})
-                            ];
-                            activeTransfer.state = ContentTransfer.Charged;
-                            screenshotEditorContainer.hide();
-                        }
-                    })
-                }
-
-                onCancelPressed: {
-                    screenshotEditorContainer.hide();
-                }
-            }
+            z: itemGrabber.z - 2
+            itemGrabber: itemGrabber
+            panel: panel
+            launcher: launcher
+            greeter: greeter
+            wizard: wizard
         }
     }
 
@@ -1045,7 +915,7 @@ StyledItem {
             function onItemSnapshotRequested(item) { itemGrabber.capture(item) }
         }
         onSnapshotTaken: {
-            screenshotEditorContainer.show(path)
+            screenshotEditor.show(path)
         }
     }
 
