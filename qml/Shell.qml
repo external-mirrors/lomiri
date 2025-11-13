@@ -648,7 +648,7 @@ StyledItem {
                 ? shell.topLevelSurfaceList.focusedWindow.state == Mir.FullscreenState
                 : false
             fullscreenMode: (focusedSurfaceIsFullscreen && !LightDMService.greeter.active && launcher.progress == 0 && !stage.spreadShown)
-                            || greeter.hasLockedApp || screenshotSharePicker.visible || screenshotEditorContainer.visible
+                            || greeter.hasLockedApp || screenshotEditorContainer.visible
             greeterShown: greeter && greeter.shown
             hasKeyboard: shell.hasKeyboard
             panelState: panelState
@@ -866,53 +866,10 @@ StyledItem {
             }
         }
 
-        ContentPeerPicker {
-            id: screenshotSharePicker
-            anchors {
-                fill: parent
-                topMargin: panel.panelHeight
-            }
-            visible: false
-            z: itemGrabber.z - 1
-            showTitle: true
-            contentType: ContentType.Pictures
-            handler: ContentHandler.Share
-
-            property string filePath : ""
-
-            Component {
-                id: resultComponent
-                ContentItem {}
-            }
-
-            onPeerSelected: {
-                let activeTransfer = peer.request();
-                activeTransfer.stateChanged.connect(function() {
-                    if (activeTransfer.state === ContentTransfer.InProgress) {
-                        const url = "file://" + screenshotSharePicker.filePath
-                        console.log("In progress: " + url);
-                        activeTransfer.items = [ resultComponent.createObject(parent,
-                            {"url": url})
-                        ];
-                        activeTransfer.state = ContentTransfer.Charged;
-                        screenshotSharePicker.visible = false;
-                        screenshotSharePicker.filePath = "";
-                        screenshotEditorContainer.hide();
-                    }
-                })
-            }
-
-            onCancelPressed: {
-                screenshotSharePicker.visible = false;
-                screenshotSharePicker.filePath = "";
-                screenshotEditorContainer.hide();
-            }
-        }
-
         Item {
             id: screenshotEditorContainer
             visible: false
-            z: itemGrabber.z - 2
+            z: itemGrabber.z - 1
             anchors.fill: parent
 
             function show(path) {
@@ -922,6 +879,8 @@ StyledItem {
             }
 
             function hide() {
+                screenshotSharePicker.visible = false;
+                screenshotSharePicker.filePath = "";
                 visible = false;
             }
 
@@ -953,7 +912,6 @@ StyledItem {
                             text: "Share"
                             onTriggered: {
                                 screenshotEditor.close(true);
-                                screenshotEditorContainer.hide();
                                 screenshotSharePicker.visible = true;
                             }
                         }
@@ -966,6 +924,44 @@ StyledItem {
                 y: panel.panelHeight + screenshotEditorHeader.height
                 width: parent.width
                 height: parent.height - screenshotEditorHeader.height - panel.panelHeight
+            }
+
+            ContentPeerPicker {
+                id: screenshotSharePicker
+                anchors {
+                    fill: parent
+                    topMargin: panel.panelHeight
+                }
+                visible: false
+                showTitle: true
+                contentType: ContentType.Pictures
+                handler: ContentHandler.Share
+
+                property string filePath : ""
+
+                Component {
+                    id: resultComponent
+                    ContentItem {}
+                }
+
+                onPeerSelected: {
+                    let activeTransfer = peer.request();
+                    activeTransfer.stateChanged.connect(function() {
+                        if (activeTransfer.state === ContentTransfer.InProgress) {
+                            const url = "file://" + screenshotSharePicker.filePath
+                            console.log("In progress: " + url);
+                            activeTransfer.items = [ resultComponent.createObject(parent,
+                                {"url": url})
+                            ];
+                            activeTransfer.state = ContentTransfer.Charged;
+                            screenshotEditorContainer.hide();
+                        }
+                    })
+                }
+
+                onCancelPressed: {
+                    screenshotEditorContainer.hide();
+                }
             }
         }
     }
