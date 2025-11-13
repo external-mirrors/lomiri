@@ -867,7 +867,7 @@ StyledItem {
             anchors.fill: parent
 
             function show(path) {
-                if (wizard.active || greeter.shown)
+                if (wizard.active)
                     return;
 
                 screenshotSharePicker.filePath = path;
