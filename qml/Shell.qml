@@ -905,10 +905,16 @@ StyledItem {
                 launcher.switchToNextState(screenshotEditorContainer.prevLauncherState);
             }
 
+            // Make locking the screen abort the editing session, otherwise we
+            // would show the editor above the lockscreen.
             Connections {
                 target: greeter
                 function onLockedChanged() {
-                    screenshotEditorContainer.hide()
+                    if (!screenshotEditorContainer.visible)
+                        return;
+
+                    if (greeter.locked)
+                        screenshotEditorContainer.hide()
                 }
             }
 
