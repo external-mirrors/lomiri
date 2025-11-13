@@ -874,6 +874,19 @@ StyledItem {
 
             property string prevLauncherState : "visible"
 
+            Connections {
+                target: panel
+
+                // Hide the launcher if the indicator panel has been tapped
+                function onFullyClosedChanged() {
+                    if (!screenshotEditorContainer.visible)
+                        return;
+
+                    if (panel.fullyClosed)
+                        launcher.switchToNextState("");
+                }
+            }
+
             function show(path) {
                 if (wizard.active)
                     return;
