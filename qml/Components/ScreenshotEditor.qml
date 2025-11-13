@@ -30,20 +30,7 @@ Item {
     property var greeter : null
     property var wizard : null
 
-    property string prevLauncherState : "visible"
-
-    Connections {
-        target: panel
-
-        // Hide the launcher if the indicator panel has been tapped
-        function onFullyClosedChanged() {
-            if (!root.visible)
-                return;
-
-            if (panel.fullyClosed)
-                launcher.switchToNextState("");
-        }
-    }
+    property string prevLauncherState : ""
 
     function show(path) {
         if (wizard.active)
@@ -52,15 +39,22 @@ Item {
         screenshotSharePicker.filePath = path;
         visible = true;
         screenshotEditor.open(path);
-        prevLauncherState = launcher.state;
-        launcher.switchToNextState("");
     }
 
     function hide() {
         screenshotSharePicker.visible = false;
         screenshotSharePicker.filePath = "";
         visible = false;
-        launcher.switchToNextState(root.prevLauncherState);
+    }
+
+    // Don't store and restore the wrong state once the editor has been opened already
+    onVisibleChanged: {
+        if (visible) {
+            prevLauncherState = launcher.state;
+            launcher.switchToNextState("");
+        } else {
+            launcher.switchToNextState(root.prevLauncherState);
+        }
     }
 
     // Make locking the screen abort the editing session, otherwise we
@@ -73,6 +67,19 @@ Item {
 
             if (greeter.locked)
                 root.hide()
+        }
+    }
+
+    Connections {
+        target: panel
+
+        // Hide the launcher if the indicator panel has been tapped
+        function onFullyClosedChanged() {
+            if (!root.visible)
+                return;
+
+            if (panel.fullyClosed)
+                launcher.switchToNextState("");
         }
     }
 
@@ -147,7 +154,7 @@ Item {
             activeTransfer.stateChanged.connect(function() {
                 if (activeTransfer.state === ContentTransfer.InProgress) {
                     const url = "file://" + screenshotSharePicker.filePath
-                    console.log("In progress: " + url);
+                    console.log("File transfer in progress: " + url);
                     activeTransfer.items = [ resultComponent.createObject(parent,
                                                                           {"url": url})
                             ];
