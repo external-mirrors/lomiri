@@ -593,7 +593,11 @@ StyledItem {
             id: panel
             objectName: "panel"
             anchors.fill: parent //because this draws indicator menus
-            blurSource: settings.enableBlur ? (greeter.shown ? greeter : stages) : null
+            blurSource: settings.enableBlur
+                            ? (greeter.shown ? greeter
+                                : (screenshotEditorContainer.visible ? screenshotEditorContainer : stages))
+                            : null
+            z: screenshotEditorContainer.visible ? screenshotEditorContainer.z + 1 : 0
             lightMode: shell.lightMode
             mode: shell.usageScenario == "desktop" ? "windowed" : "staged"
             minimizedPanelHeight: units.gu(3)
@@ -640,7 +644,7 @@ StyledItem {
                 ? shell.topLevelSurfaceList.focusedWindow.state == Mir.FullscreenState
                 : false
             fullscreenMode: (focusedSurfaceIsFullscreen && !LightDMService.greeter.active && launcher.progress == 0 && !stage.spreadShown)
-                            || greeter.hasLockedApp || screenshotEditorContainer.visible
+                            || greeter.hasLockedApp
             greeterShown: greeter && greeter.shown
             hasKeyboard: shell.hasKeyboard
             panelState: panelState
@@ -667,7 +671,11 @@ StyledItem {
             superTabPressed: physicalKeysMapper.superTabPressed
             panelWidth: units.gu(settings.launcherWidth)
             lockedVisible: (lockedByUser || shell.atDesktop) && lockAllowed
-            blurSource: settings.enableBlur ? (greeter.shown ? greeter : stages) : null
+            blurSource: settings.enableBlur
+                            ? (greeter.shown ? greeter
+                                : (screenshotEditorContainer.visible ? screenshotEditorContainer : stages))
+                            : null
+            z: screenshotEditorContainer.visible ? screenshotEditorContainer.z + 1 : 0
             topPanelHeight: panel.panelHeight
             lightMode: shell.lightMode
             drawerEnabled: !greeter.active && tutorial.launcherLongSwipeEnabled
@@ -861,7 +869,7 @@ StyledItem {
         Item {
             id: screenshotEditorContainer
             visible: false
-            z: itemGrabber.z - 1
+            z: itemGrabber.z - 2
             anchors.fill: parent
 
             function show(path) {
