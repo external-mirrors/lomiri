@@ -872,6 +872,8 @@ StyledItem {
             z: itemGrabber.z - 2
             anchors.fill: parent
 
+            property string prevLauncherState : "visible"
+
             function show(path) {
                 if (wizard.active)
                     return;
@@ -879,12 +881,15 @@ StyledItem {
                 screenshotSharePicker.filePath = path;
                 visible = true;
                 screenshotEditor.open(path);
+                prevLauncherState = launcher.state;
+                launcher.switchToNextState("");
             }
 
             function hide() {
                 screenshotSharePicker.visible = false;
                 screenshotSharePicker.filePath = "";
                 visible = false;
+                launcher.switchToNextState(screenshotEditorContainer.prevLauncherState);
             }
 
             Connections {
