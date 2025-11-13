@@ -595,7 +595,6 @@ StyledItem {
             anchors.fill: parent //because this draws indicator menus
             blurSource: settings.enableBlur ? (greeter.shown ? greeter : stages) : null
             lightMode: shell.lightMode
-            enabled: !screenshotEditorContainer.visible
             mode: shell.usageScenario == "desktop" ? "windowed" : "staged"
             minimizedPanelHeight: units.gu(3)
             expandedPanelHeight: units.gu(7)
@@ -641,7 +640,7 @@ StyledItem {
                 ? shell.topLevelSurfaceList.focusedWindow.state == Mir.FullscreenState
                 : false
             fullscreenMode: (focusedSurfaceIsFullscreen && !LightDMService.greeter.active && launcher.progress == 0 && !stage.spreadShown)
-                            || greeter.hasLockedApp
+                            || greeter.hasLockedApp || screenshotSharePicker.visible || screenshotEditorContainer.visible
             greeterShown: greeter && greeter.shown
             hasKeyboard: shell.hasKeyboard
             panelState: panelState
