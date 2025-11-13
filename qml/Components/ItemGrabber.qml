@@ -28,6 +28,8 @@ Rectangle {
     color: "white"
     opacity: 0.0
 
+    property var shell : null
+
     signal snapshotTaken(string path)
 
     ScreenshotDirectory {
@@ -41,6 +43,11 @@ Rectangle {
     }
 
     function capture(item) {
+        // Disallow spamming the lightdm home directory with screenshots
+        // without access for removal to them
+        if (shell.mode === "greeter")
+            return;
+
         d.target = item;
         visible = true;
         shutterSound.stop();
