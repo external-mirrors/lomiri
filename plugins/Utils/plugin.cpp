@@ -43,6 +43,7 @@
 #include "tabfocusfence.h"
 #include "expressionfiltermodel.h"
 #include "quicklistproxymodel.h"
+#include "fileio.h"
 
 static QObject *createWindowStateStorage(QQmlEngine *engine, QJSEngine *scriptEngine)
 {
@@ -63,6 +64,13 @@ static QObject *createGlobalFunctions(QQmlEngine *engine, QJSEngine *scriptEngin
     Q_UNUSED(engine)
     Q_UNUSED(scriptEngine)
     return new GlobalFunctions();
+}
+
+static QObject *createFileIo(QQmlEngine *engine, QJSEngine *scriptEngine)
+{
+    Q_UNUSED(engine)
+    Q_UNUSED(scriptEngine)
+    return new FileIo();
 }
 
 void UtilsPlugin::registerTypes(const char *uri)
@@ -94,4 +102,5 @@ void UtilsPlugin::registerTypes(const char *uri)
     qmlRegisterType<TabFocusFenceItem>(uri, 0, 1, "TabFocusFence");
     qmlRegisterType<ExpressionFilterModel>(uri, 0, 1, "ExpressionFilterModel");
     qmlRegisterType<QuickListProxyModel>(uri, 0, 1, "QuickListProxyModel");
+    qmlRegisterSingletonType<FileIo>(uri, 0, 1, "FileIo", createFileIo);
 }
