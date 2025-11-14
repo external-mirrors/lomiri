@@ -615,7 +615,13 @@ StyledItem {
                     // greeter or tell the session to load the app.  This will
                     // involve taking the url-dispatcher dbus name and using
                     // SessionBroadcast to tell the session.
-                    profile: shell.mode === "greeter" ? "desktop_greeter" : "phone"
+                    // For now indicators will just hide their buttons that
+                    // usually spawn lomiri-system-settings, based on the
+                    // active username being 'lightdm'.
+                    profile: shell.mode === "greeter"
+                                 ? ((shell.usageScenario === "phone" || shell.usageScenario === "tablet")
+                                     ? "phone_greeter" : "desktop_greeter")
+                                 : "phone"
                     Component.onCompleted: {
                         load();
                     }

@@ -43,8 +43,8 @@ if which lomiri-touch-session >/dev/null; then
 fi
 
 # Advertise as a lomiri session, so that indicator-network will start.
-export XDG_SESSION_DESKTOP=lomiri
-export DESKTOP_SESSION=$XDG_SESSION_DESKTOP
+set_greeter_var XDG_SESSION_DESKTOP lomiri
+set_greeter_var DESKTOP_SESSION $XDG_SESSION_DESKTOP
 
 set_greeter_var QT_IM_MODULE Maliit
 set_greeter_var QT_QPA_PLATFORM ubuntumirclient
