@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-14 20:08+0000\n"
-"PO-Revision-Date: 2025-11-11 11:51+0000\n"
+"PO-Revision-Date: 2025-11-18 11:51+0000\n"
 "Last-Translator: Wenwen Luo <wenwenluo130@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "lomiri/lomiri/zh_LATN@pinyin/>\n"
@@ -37,19 +37,19 @@ msgstr "融合型Lomiri外壳的首页"
 
 #: data/indicators-client.desktop.in:4
 msgid "Indicators Client"
-msgstr ""
+msgstr "指示器客户端"
 
 #: data/indicators-client.desktop.in:5
 msgid "Application for testing the Indicators system"
-msgstr ""
+msgstr "检验指示器系统的应用"
 
 #: plugins/LightDM/Greeter.cpp:199
 msgid "Password: "
-msgstr ""
+msgstr "密码： "
 
 #: plugins/LightDM/Greeter.cpp:214
 msgid "Username"
-msgstr ""
+msgstr "用户名"
 
 #: plugins/LightDM/Greeter.cpp:258
 msgid "Failed to authenticate"
@@ -90,7 +90,7 @@ msgstr ""
 
 #: plugins/WindowManager/Screen.cpp:160
 msgid "Unknown"
-msgstr ""
+msgstr "未知"
 
 #: plugins/WindowManager/Screen.cpp:162
 msgid "VGA"
@@ -168,11 +168,11 @@ msgstr ""
 
 #: qml/Components/Dialogs.qml:215
 msgid "No"
-msgstr ""
+msgstr "否"
 
 #: qml/Components/Dialogs.qml:223
 msgid "Yes"
-msgstr ""
+msgstr "是"
 
 #: qml/Components/Dialogs.qml:243
 msgctxt "Title: Power off/Restart dialog"
@@ -369,7 +369,7 @@ msgstr ""
 
 #: qml/Components/Lockscreen.qml:256
 msgid "OK"
-msgstr ""
+msgstr "确认"
 
 #: qml/Components/ModeSwitchWarningDialog.qml:33
 msgid "Apps may have unsaved data:"
@@ -432,8 +432,8 @@ msgstr ""
 #, qt-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1小时"
+msgstr[1] "%1小时"
 
 #: qml/Greeter/CoverPage.qml:172
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1108
@@ -599,7 +599,7 @@ msgstr ""
 
 #: qml/Panel/PanelMenuPage.qml:93
 msgid "Back"
-msgstr ""
+msgstr "返回"
 
 #: qml/Stage/SideStage.qml:81
 msgid "Drag using 3 fingers any application from one window to the other"
