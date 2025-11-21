@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-14 20:08+0000\n"
-"PO-Revision-Date: 2025-11-18 11:51+0000\n"
+"PO-Revision-Date: 2025-11-28 07:00+0000\n"
 "Last-Translator: Priit Jõerüüt <jrthwlate@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/lomiri/lomiri/"
 "et/>\n"
@@ -38,11 +38,11 @@ msgstr "Eri seadmetele kohanduva Lomiri kasutajaliidese tervitusvaade"
 
 #: data/indicators-client.desktop.in:4
 msgid "Indicators Client"
-msgstr ""
+msgstr "Indikaatorite klient"
 
 #: data/indicators-client.desktop.in:5
 msgid "Application for testing the Indicators system"
-msgstr ""
+msgstr "Rakendus, mis on mõeldud indikaatorite süsteemi testimiseks"
 
 #: plugins/LightDM/Greeter.cpp:199
 msgid "Password: "
@@ -383,6 +383,7 @@ msgctxt ""
 "Re-dock means connect the device again to an external screen/mouse/keyboard"
 msgid "Re-dock, save your work and close these apps to continue."
 msgstr ""
+"Jätkamiseks lisa uuesti dokki, salvesta oma tööd ja sulge need rakendused."
 
 #: qml/Components/ModeSwitchWarningDialog.qml:67
 msgid "Or force close now (unsaved data will be lost)."
@@ -409,22 +410,24 @@ msgid ""
 "Your device is now connected to an external display. Use this screen as a "
 "touch pad to interact with the pointer."
 msgstr ""
+"Sinu seade on nüüd ühendatud välise ekraaniga. Seda ekraani saad kursori "
+"juhtimiseks kasutada puuteplaadina."
 
 #: qml/Components/VirtualTouchPad.qml:353
 msgid "Tap left button to click."
-msgstr ""
+msgstr "Klõpsimiseks puuduta vasakut nuppu."
 
 #: qml/Components/VirtualTouchPad.qml:365
 msgid "Tap right button to right click."
-msgstr ""
+msgstr "Parema hiireklõpsu kontekstis puuduta paremat nuppu."
 
 #: qml/Components/VirtualTouchPad.qml:377
 msgid "Swipe with two fingers to scroll."
-msgstr ""
+msgstr "Kerimiseks viipa kahe sõrmega."
 
 #: qml/Components/VirtualTouchPad.qml:422
 msgid "Find more settings in the system settings."
-msgstr ""
+msgstr "Täiendavaid seadistusi leiad süsteemi seadistustest."
 
 #: qml/Greeter/CoverPage.qml:161
 msgid "Fully charged"
@@ -522,11 +525,11 @@ msgstr "Otsi…"
 
 #: qml/Launcher/PullToRefreshScopeStyle.qml:56
 msgid "Pull to refresh…"
-msgstr ""
+msgstr "Värskendamiseks tõmba ülevalt alla…"
 
 #: qml/Launcher/PullToRefreshScopeStyle.qml:61
 msgid "Release to refresh…"
-msgstr ""
+msgstr "Värskendamiseks lase lahti…"
 
 #: qml/Notifications/NotificationMenuItemFactory.qml:124
 msgid "Show password"
@@ -610,7 +613,7 @@ msgstr "Tagasi"
 
 #: qml/Stage/SideStage.qml:81
 msgid "Drag using 3 fingers any application from one window to the other"
-msgstr ""
+msgstr "Kolme sõrmega lohistades saad iga rakendust tõsta ühest ekraanist teise"
 
 #: qml/Stage/Stage.qml:902
 msgid "No running apps"
@@ -618,23 +621,23 @@ msgstr "Töötavaid rakendusi pole"
 
 #: qml/Tutorial/TutorialLeftLong.qml:49
 msgid "Long swipe from the left edge to open the Application Drawer"
-msgstr ""
+msgstr "Rakenduste laeka saad avada pika viipega vasakust äärest"
 
 #: qml/Tutorial/TutorialLeft.qml:47
 msgid "Short swipe from the left edge to open the launcher"
-msgstr ""
+msgstr "Käivitaja saad avada lühikese viipega vasakust äärest"
 
 #: qml/Tutorial/TutorialRight.qml:54
 msgid "Push your mouse against the right edge to view your open apps"
-msgstr ""
+msgstr "Avatud rakendusi näed, kui liigutad hiire parema ääre vastu"
 
 #: qml/Tutorial/TutorialRight.qml:55
 msgid "Swipe from the right edge to view your open apps"
-msgstr ""
+msgstr "Avatud rakendusi näed, kui viipad paremast äärest"
 
 #: qml/Tutorial/TutorialTop.qml:53
 msgid "Swipe from the top edge to access notifications and quick settings"
-msgstr ""
+msgstr "Teavitusi ja kiirseadistusi näed, kui viipad ülevalt äärest allapoole"
 
 #: qml/Wizard/Page.qml:59
 msgctxt "Button: Go back one page in the Wizard"
