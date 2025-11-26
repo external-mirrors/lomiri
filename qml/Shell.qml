@@ -871,8 +871,33 @@ StyledItem {
             itemGrabber: itemGrabber
             panel: panel
             launcher: launcher
-            greeter: greeter
             wizard: wizard
+
+            // Make locking the screen abort the editing session, otherwise we
+            // would show the editor above the lockscreen.
+            Connections {
+                target: greeter
+                function onLockedChanged() {
+                    if (!screenshotEditor.visible)
+                        return;
+
+                    if (greeter.locked)
+                        screenshotEditor.hide()
+                }
+            }
+
+            Connections {
+                target: panel
+
+                // Hide the launcher if the indicator panel has been tapped
+                function onFullyClosedChanged() {
+                    if (!screenshotEditor.visible)
+                        return;
+
+                    if (panel.fullyClosed)
+                        launcher.switchToNextState("");
+                }
+            }
         }
     }
 
