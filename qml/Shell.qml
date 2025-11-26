@@ -214,6 +214,19 @@ StyledItem {
 
     readonly property alias greeter: greeterLoader.item
 
+    readonly property var blurSource: {
+        if (!settings.enableBlur)
+            return null;
+
+        if (screenshotEditor.visible)
+            return screenshotEditor;
+
+        if (greeter.shown)
+            return greeter;
+
+        return stages;
+    }
+
     function activateApplication(appId) {
         topLevelSurfaceList.pendingActivation();
 
@@ -591,10 +604,7 @@ StyledItem {
             id: panel
             objectName: "panel"
             anchors.fill: parent //because this draws indicator menus
-            blurSource: settings.enableBlur
-                            ? (greeter.shown ? greeter
-                                : (screenshotEditor.visible ? screenshotEditor : stages))
-                            : null
+            blurSource: shell.blurSource
             z: screenshotEditor.visible ? screenshotEditor.z + 1 : 0
             lightMode: shell.lightMode
             mode: shell.usageScenario == "desktop" ? "windowed" : "staged"
@@ -669,10 +679,7 @@ StyledItem {
             superTabPressed: physicalKeysMapper.superTabPressed
             panelWidth: units.gu(settings.launcherWidth)
             lockedVisible: (lockedByUser || shell.atDesktop) && lockAllowed
-            blurSource: settings.enableBlur
-                            ? (greeter.shown ? greeter
-                                : (screenshotEditor.visible ? screenshotEditor : stages))
-                            : null
+            blurSource: shell.blurSource
             z: screenshotEditor.visible ? screenshotEditor.z + 1 : 0
             topPanelHeight: panel.panelHeight
             lightMode: shell.lightMode
