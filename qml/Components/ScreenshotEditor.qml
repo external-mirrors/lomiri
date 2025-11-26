@@ -27,7 +27,6 @@ Item {
     property var itemGrabber : null
     property var panel : null
     property var launcher : null
-    property var greeter : null
     property var wizard : null
 
     property string prevLauncherState : ""
@@ -57,32 +56,15 @@ Item {
         }
     }
 
-    // Make locking the screen abort the editing session, otherwise we
-    // would show the editor above the lockscreen.
-    Connections {
-        target: greeter
-        function onLockedChanged() {
-            if (!root.visible)
-                return;
-
-            if (greeter.locked)
-                root.hide()
-        }
+    Extras.PhotoEditor {
+        id: screenshotEditor
+        y: panel.panelHeight + screenshotEditorHeader.height
+        width: parent.width
+        height: parent.height - screenshotEditorHeader.height - panel.panelHeight
     }
 
-    Connections {
-        target: panel
-
-        // Hide the launcher if the indicator panel has been tapped
-        function onFullyClosedChanged() {
-            if (!root.visible)
-                return;
-
-            if (panel.fullyClosed)
-                launcher.switchToNextState("");
-        }
-    }
-
+    // Place the PageHeader below the editor for proper z-level layering,
+    // otherwise pictures would overlay and peek out over the header.
     PageHeader {
         id: screenshotEditorHeader
         anchors.left: parent.left
@@ -122,13 +104,6 @@ Item {
                 }
             ]
         }
-    }
-
-    Extras.PhotoEditor {
-        id: screenshotEditor
-        y: panel.panelHeight + screenshotEditorHeader.height
-        width: parent.width
-        height: parent.height - screenshotEditorHeader.height - panel.panelHeight
     }
 
     ContentPeerPicker {
