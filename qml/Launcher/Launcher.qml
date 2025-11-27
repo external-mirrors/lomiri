@@ -450,7 +450,7 @@ FocusScope {
             bottom: parent.bottom
         }
         x: -width
-        visible: root.x > 0 || x > -width || dragArea.pressed
+        visible: root.x > 0 || x > -width || dragArea.pressed || panel.hasPeekingIcon
         lightMode: root.lightMode
         model: LauncherModel
 

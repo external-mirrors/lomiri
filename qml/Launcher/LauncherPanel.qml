@@ -39,6 +39,7 @@ Rectangle {
                                  || dndArea.containsMouse || dashItem.hovered
     property int highlightIndex: -2
     property bool shortcutHintsShown: false
+    readonly property bool hasPeekingIcon: launcherListView.peekingIndex !== -1
     readonly property bool quickListOpen: quickList.state === "open"
     readonly property bool dragging: launcherListView.dragging || dndArea.dragging
 
@@ -301,7 +302,6 @@ Rectangle {
                             objectName: "peekingAnimation" + index
 
                             // revealing
-                            PropertyAction { target: root; property: "visible"; value: (launcher.visibleWidth === 0) ? 1 : 0 }
                             PropertyAction { target: launcherListViewItem; property: "clip"; value: 0 }
 
                             LomiriNumberAnimation {
@@ -324,7 +324,6 @@ Rectangle {
                             }
 
                             PropertyAction { target: launcherListViewItem; property: "clip"; value: 1 }
-                            PropertyAction { target: root; property: "visible"; value: (launcher.visibleWidth === 0) ? 1 : 0 }
                             PropertyAction { target: launcherListView; property: "peekingIndex"; value: -1 }
                         }
 
