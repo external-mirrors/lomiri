@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-14 20:08+0000\n"
-"PO-Revision-Date: 2025-11-28 07:00+0000\n"
+"PO-Revision-Date: 2025-12-07 11:00+0000\n"
 "Last-Translator: phmqXPD <phmq.xpd@gmail.com>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/lomiri/lomiri/"
 "vi/>\n"
@@ -525,7 +525,7 @@ msgstr "Thả ra để làm mới…"
 
 #: qml/Notifications/NotificationMenuItemFactory.qml:124
 msgid "Show password"
-msgstr "Hiển thị mật khẩu"
+msgstr "Hiện mật khẩu"
 
 #: qml/Notifications/Notification.qml:318
 msgid "New message"
