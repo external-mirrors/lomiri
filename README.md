@@ -18,7 +18,7 @@ Move into this directory: `cd lomiri`
 
 Now you can use the full suite of tools provided by this repository's [clickable.yaml](clickable.yaml). For example:
 
-* `clickable ide qtcreator` will open QtCreator with this repository open as a project. You can edit and build the project this way, but running the tests will be a bit difficult.
+* `clickable ide qtcreator` will open QtCreator with this repository open as a project ( answer "No" when it ask to auto configure ). You can edit and build the project this way, from the embedded terminal in the default build folder, you can run tests: e.g `make tryShell`, run `make help` for the complete list of tests.
 * `clickable build --libs --debug` will build Lomiri in the same environment as it would receive in Ubuntu Touch.
 * `clickable test --libs` will run the entire Lomiri test suite. This test suite includes graphical tests (which are run on a virtual, invisible desktop) and non-graphical unit tests. These tests make sure Lomiri functions as prescribed and prevents new bugs from being added. You should run them before you create a PR on this repository. This command takes about 7 minutes on an Intel i7-8550U, so plan your time accordingly and use the next two options to reduce the number of times you need to run the whole test suite...
 * `clickable ide 'cd build/x86_64-linux-gnu/lomiri/ && make tryShell'` and similar commands that replace the `Shell` with another test target defined in [tests/qmltests/CMakeLists.txt](tests/qmltests/CMakeLists.txt) allow trying out some Lomiri components in a mock environment. You can use this to try out your changes to Lomiri as you develop.

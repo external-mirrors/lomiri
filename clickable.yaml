@@ -40,7 +40,6 @@ libraries:
     - libqtdbusmock1-dev
     - libqtdbustest1-dev
     - liblomirisystemsettings-dev
-    - libubuntu-app-launch3-dev
     - liblomiri-download-manager-common-dev
     - liblomirigestures5-dev
     - liblomirigestures5-private-dev
@@ -50,6 +49,7 @@ libraries:
     - libx11-dev
     - libxcb1-dev
     - libxi-dev
+    - libsystemd-dev
     - pkg-config
     - python3-all:any
     - python3-setuptools:native
@@ -76,12 +76,12 @@ libraries:
     - fonts-ubuntu
     - lomiri-wallpapers
     - xvfb
-    - qtmir
-    - qml-module-qtmir
-    - libqtmirserver-dev
+    - libqt5mir1server-dev
+    - qtmir-qt5-mir1
+    - qml-module-qtmir0.1
     - liblomiri-app-launch-dev
     - libdeviceinfo-dev
-    - mirtest-dev
+    - mir1test-dev
     - qml-module-lomiri-settings-menus
 dependencies_target:
 - android-headers
@@ -115,8 +115,8 @@ dependencies_target:
 - libqt5xmlpatterns5-dev
 - libqtdbusmock1-dev
 - libqtdbustest1-dev
+- libsystemd-dev
 - liblomirisystemsettings-dev
-- libubuntu-app-launch3-dev
 - liblomiri-download-manager-common-dev
 - liblomirigestures5-dev
 - liblomirigestures5-private-dev
@@ -151,11 +151,11 @@ dependencies_target:
 - qtdeclarative5-ubuntu-content1
 - fonts-ubuntu
 - lomiri-wallpapers
+- mir1test-dev
 - xvfb
-- qtmir
-- qml-module-qtmir
-- libqtmirserver-dev
+- libqt5mir1server-dev
+- qml-module-qtmir0.1
+- qtmir-qt5-mir1
 - liblomiri-app-launch-dev
 - libdeviceinfo-dev
-- mirtest-dev
 - qml-module-lomiri-settings-menus
