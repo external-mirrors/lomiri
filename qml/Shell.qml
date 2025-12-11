@@ -874,11 +874,10 @@ StyledItem {
         ScreenshotEditor {
             id: screenshotEditor
             anchors.fill: parent
+            enabled: !wizard.active
             z: itemGrabber.z - 2
-            itemGrabber: itemGrabber
             panel: panel
             launcher: launcher
-            wizard: wizard
 
             // Make locking the screen abort the editing session, otherwise we
             // would show the editor above the lockscreen.
@@ -947,6 +946,9 @@ StyledItem {
             function onItemSnapshotRequested(item) { itemGrabber.capture(item) }
         }
         onSnapshotTaken: {
+            if (!settings.enableScreenshotEditor)
+                return;
+
             screenshotEditor.show(path)
         }
     }
