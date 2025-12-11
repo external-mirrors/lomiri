@@ -24,15 +24,13 @@ Item {
     id: root
     visible: false
 
-    property var itemGrabber : null
     property var panel : null
     property var launcher : null
-    property var wizard : null
 
     property string prevLauncherState : ""
 
     function show(path) {
-        if (wizard.active)
+        if (!root.enabled)
             return;
 
         screenshotSharePicker.filePath = path;
@@ -125,7 +123,7 @@ Item {
         }
 
         onPeerSelected: {
-            let activeTransfer = peer.request();
+            const activeTransfer = peer.request();
             activeTransfer.stateChanged.connect(function() {
                 if (activeTransfer.state === ContentTransfer.InProgress) {
                     const url = "file://" + screenshotSharePicker.filePath
