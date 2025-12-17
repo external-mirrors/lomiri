@@ -1,23 +1,31 @@
 ---
-builder: custom
-build: echo Run \'clickable build-libs --debug\' to build && false
+clickable_minimum_required: 8.7.0
+framework: ubuntu-touch-24.04-1.x
 restrict_arch: amd64
-libraries:
-  lomiri:
-    builder: cmake
-    src_dir: "${ROOT}"
-    test: make xvfballtests -j${NUM_PROCS}
+is_app: false
+
+templates:
+  dep: &dep
     dependencies_host:
-    - android-headers
+    - python3-setuptools:native
     - cmake
     - cmake-extras
     - dbus-test-runner
     - debhelper
     - dh-apparmor
     - doxyqml
-    - g++:native
+    - g++
     - gdb
     - graphviz
+    - pkg-config
+    - python3-all
+    - xvfb
+    - xwayland
+
+    dependencies_target:
+    - libmir1client-dev
+    - libsystemd-dev
+    - android-headers
     - lomiri-schemas
     - libandroid-properties-dev
     - liblomiri-connectivity-qt1-dev
@@ -40,7 +48,6 @@ libraries:
     - libqtdbusmock1-dev
     - libqtdbustest1-dev
     - liblomirisystemsettings-dev
-    - libubuntu-app-launch3-dev
     - liblomiri-download-manager-common-dev
     - liblomirigestures5-dev
     - liblomirigestures5-private-dev
@@ -50,9 +57,6 @@ libraries:
     - libx11-dev
     - libxcb1-dev
     - libxi-dev
-    - pkg-config
-    - python3-all:any
-    - python3-setuptools:native
     - qml-module-qt-labs-folderlistmodel
     - qml-module-qt-labs-settings
     - qml-module-qtmultimedia
@@ -75,87 +79,19 @@ libraries:
     - qtdeclarative5-ubuntu-content1
     - fonts-ubuntu
     - lomiri-wallpapers
-    - xvfb
     - qtmir
     - qml-module-qtmir
-    - libqtmirserver-dev
+    - libqt5mir1server-dev
     - liblomiri-app-launch-dev
     - libdeviceinfo-dev
-    - mirtest-dev
+    - mir1test-dev
     - qml-module-lomiri-settings-menus
-dependencies_target:
-- android-headers
-- cmake
-- cmake-extras
-- dbus-test-runner
-- debhelper
-- dh-apparmor
-- doxyqml
-- g++:native
-- gdb
-- graphviz
-- lomiri-schemas
-- libandroid-properties-dev
-- liblomiri-connectivity-qt1-dev
-- libevdev-dev
-- libgeonames-dev
-- libgl1-mesa-dev
-- libgl1-mesa-dri
-- libgles2-mesa-dev
-- libglib2.0-dev
-- libgnome-desktop-3-dev
-- libgsettings-qt-dev
-- libhardware-dev
-- liblightdm-qt5-3-dev
-- libpam0g-dev
-- libpulse-dev
-- libqmenumodel-dev
-- libqt5sql5-sqlite
-- libqt5svg5-dev
-- libqt5xmlpatterns5-dev
-- libqtdbusmock1-dev
-- libqtdbustest1-dev
-- liblomirisystemsettings-dev
-- libubuntu-app-launch3-dev
-- liblomiri-download-manager-common-dev
-- liblomirigestures5-dev
-- liblomirigestures5-private-dev
-- libudev-dev
-- liblomiri-api-dev
-- libusermetricsoutput1-dev
-- libx11-dev
-- libxcb1-dev
-- libxi-dev
-- pkg-config
-- python3-all:any
-- python3-setuptools:native
-- qml-module-qt-labs-folderlistmodel
-- qml-module-qt-labs-settings
-- qml-module-qtmultimedia
-- qml-module-qtqml-statemachine
-- qml-module-qtquick-layouts
-- qml-module-qtquick-xmllistmodel
-- qml-module-qtquick2
-- qml-module-qttest
-- qml-module-lomiri-components
-- qml-module-lomiri-layouts
-- qml-module-lomiri-settings-components
-- qml-module-lomiri-test
-- qtbase5-dev
-- qtbase5-dev-tools
-- qtbase5-private-dev
-- qtdbustest-runner
-- qtdeclarative5-dev
-- qtdeclarative5-dev-tools
-- qtdeclarative5-private-dev
-- qtdeclarative5-ubuntu-content1
-- fonts-ubuntu
-- lomiri-wallpapers
-- xvfb
-- qtmir
-- qml-module-qtmir
-- libqtmirserver-dev
-- liblomiri-app-launch-dev
-- libdeviceinfo-dev
-- mirtest-dev
-- qml-module-lomiri-settings-menus
+
+<<: *dep
+
+libraries:
+  lomiri:
+    <<: *dep
+    builder: cmake
+    src_dir: ${ROOT}
+    test: make xvfballtests -j${NUM_PROCS}
