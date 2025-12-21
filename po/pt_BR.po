@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-14 20:08+0000\n"
-"PO-Revision-Date: 2024-05-04 06:22+0000\n"
-"Last-Translator: Arthur Araujo <arthur.araujo@tutanota.com>\n"
+"PO-Revision-Date: 2025-12-25 03:39+0000\n"
+"Last-Translator: Vini Moraes <viniciussmoraes40@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
 "lomiri/lomiri/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.5.3\n"
+"X-Generator: Weblate 5.15.1\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:36+0000\n"
 
 #: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
@@ -34,7 +34,7 @@ msgstr "Recepcionista do Lomiri"
 
 #: data/lomiri-greeter.desktop.in:5
 msgid "The converged Lomiri shell's Greeter"
-msgstr ""
+msgstr "As Boas-Vindas do ambiente convergente Lomiri"
 
 #: data/indicators-client.desktop.in:4
 msgid "Indicators Client"
@@ -131,7 +131,7 @@ msgstr "TV"
 
 #: plugins/WindowManager/Screen.cpp:187
 msgid "Virtual"
-msgstr ""
+msgstr "Monitor Virtual"
 
 #: qml/Components/Dialogs.qml:176
 msgctxt "Title: Lock/Log out dialog"
@@ -372,7 +372,7 @@ msgstr "Chamada de emergência"
 
 #: qml/Components/Lockscreen.qml:256
 msgid "OK"
-msgstr "OK"
+msgstr "Ok"
 
 #: qml/Components/ModeSwitchWarningDialog.qml:33
 msgid "Apps may have unsaved data:"
@@ -452,12 +452,12 @@ msgstr[1] "%1 minutos"
 #: qml/Greeter/CoverPage.qml:179
 #, qt-format
 msgid "%1, %2 until full"
-msgstr ""
+msgstr "%1,%2 até carga completa"
 
 #: qml/Greeter/CoverPage.qml:182
 #, qt-format
 msgid "%1 until full"
-msgstr ""
+msgstr "%1 até carga completa"
 
 #: qml/Greeter/CoverPage.qml:198
 #: tests/qmltests/Greeter/tst_GreeterView.qml:1242
@@ -482,8 +482,8 @@ msgstr ""
 #, qt-format
 msgid "Please wait %1 minute and then try again…"
 msgid_plural "Please wait %1 minutes and then try again…"
-msgstr[0] "Por favor espere %1 minuto e tente novamente..."
-msgstr[1] "Por favor espere %1 minutos e tente novamente..."
+msgstr[0] "Por favor espere %1 minuto e tente novamente…"
+msgstr[1] "Por favor espere %1 minutos e tente novamente…"
 
 #: qml/Greeter/Greeter.qml:637 tests/qmltests/Greeter/tst_Greeter.qml:578
 #: tests/qmltests/Greeter/tst_Greeter.qml:597
@@ -519,15 +519,15 @@ msgstr "Selecione o ambiente de trabalho"
 
 #: qml/Launcher/Drawer.qml:240
 msgid "Search…"
-msgstr "Pesquisar..."
+msgstr "Pesquisar…"
 
 #: qml/Launcher/PullToRefreshScopeStyle.qml:56
 msgid "Pull to refresh…"
-msgstr "Puxe para atualizar..."
+msgstr "Puxe para atualizar…"
 
 #: qml/Launcher/PullToRefreshScopeStyle.qml:61
 msgid "Release to refresh…"
-msgstr "Solte para atualizar..."
+msgstr "Solte para atualizar…"
 
 #: qml/Notifications/NotificationMenuItemFactory.qml:124
 msgid "Show password"
@@ -567,7 +567,7 @@ msgstr "%1 restantes"
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1129
 msgid "In queue…"
-msgstr "Em fila..."
+msgstr "Em fila…"
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1133
 msgid "Downloading"
@@ -662,17 +662,17 @@ msgstr "Próximo"
 #: qml/Wizard/Pages/10-welcome-update.qml:92
 #, qt-format
 msgid "Welcome to %1 %2"
-msgstr "Bem-vindo ao"
+msgstr "Bem-vindo ao %1 %2"
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
 #: qml/Wizard/Pages/10-welcome-update.qml:108
 #, qt-format
 msgid "We will make sure your device is ready to use %1 %2"
-msgstr "Vamos garantir que seu dispositivo esteja pronto para o uso"
+msgstr "Vamos garantir que seu dispositivo esteja pronto para o uso %1 %2"
 
 #: qml/Wizard/Pages/11-changelog.qml:28
 msgid "What's new"
-msgstr "Quais as novidades ?"
+msgstr "Quais as novidades?"
 
 #: qml/Wizard/Pages/11-changelog.qml:74
 msgid "Loading..."
@@ -768,7 +768,7 @@ msgstr "Sistema Ubuntu Touch"
 #, qt-format
 msgctxt "version of the system update"
 msgid "Version %1"
-msgstr "Versão"
+msgstr "Versão %1"
 
 #: qml/Wizard/Pages/79-system-update.qml:115
 msgid "This could take a few minutes..."
@@ -786,7 +786,7 @@ msgstr "Bem vindo de volta"
 #: qml/Wizard/Pages/80-finished.qml:95
 #, qt-format
 msgid "Welcome to %1"
-msgstr "Bem-vindo ao"
+msgstr "Bem-vindo ao %1"
 
 #: qml/Wizard/Pages/80-finished.qml:111
 msgid "You are ready to use your device now"
