@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-14 20:08+0000\n"
-"PO-Revision-Date: 2025-11-28 07:00+0000\n"
+"PO-Revision-Date: 2025-12-25 03:39+0000\n"
 "Last-Translator: Priit Jõerüüt <jrthwlate@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/lomiri/lomiri/"
 "et/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 5.15.1\n"
 "X-Launchpad-Export-Date: 2017-04-07 06:30+0000\n"
 
 #: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
@@ -462,7 +462,7 @@ msgstr "%1 täitumiseni"
 #: qml/Greeter/CoverPage.qml:198
 #: tests/qmltests/Greeter/tst_GreeterView.qml:1242
 msgid "Unlock"
-msgstr "Eemalda lukustus"
+msgstr "Ava lukustus"
 
 #: qml/Greeter/DelayedLockscreen.qml:43
 msgid "Device Locked"
