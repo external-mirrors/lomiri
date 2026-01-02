@@ -20,6 +20,7 @@
 #include <QQuickWindow>
 #include <QPointer>
 
+#include "ucunits.h"
 #include "Screen.h"
 
 class ScreenAdapter;
@@ -32,18 +33,23 @@ class ScreenWindow : public QQuickWindow
     Q_OBJECT
     Q_PROPERTY(ConcreteScreen *screen READ screenWrapper WRITE setScreenWrapper NOTIFY screenWrapperChanged)
     Q_PROPERTY(int winId READ winId CONSTANT)
+    Q_PROPERTY(UCUnits* units READ units NOTIFY unitsChanged)
+
 public:
     explicit ScreenWindow(QQuickWindow *parent = 0);
     ~ScreenWindow();
 
     ConcreteScreen *screenWrapper() const;
     void setScreenWrapper(ConcreteScreen *screen);
+    UCUnits* units();
 
 Q_SIGNALS:
     void screenWrapperChanged(ConcreteScreen* screen);
+    void unitsChanged();
 
 private:
     QPointer<ConcreteScreen> m_screen;
+    UCUnits* m_units = nullptr;
 };
 
 #endif // LOMIRI_SCREENWINDOW_H

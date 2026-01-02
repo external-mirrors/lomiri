@@ -26,6 +26,7 @@ set(WINDOWMANAGER_SRC
     WorkspaceManager.cpp
     WorkspaceModel.cpp
     InputMethodManager.cpp
+    ucunits.cpp
     ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/ApplicationInfoInterface.h
     ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/ApplicationManagerInterface.h
     ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/Mir.h

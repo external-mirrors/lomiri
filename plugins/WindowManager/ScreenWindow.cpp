@@ -30,6 +30,16 @@ ScreenWindow::~ScreenWindow()
 {
 }
 
+UCUnits* ScreenWindow::units()
+{
+    if(!m_units) {
+        m_units = new UCUnits(this);
+        QObject::connect(m_units, SIGNAL(gridUnitChanged()),
+                         this, SIGNAL(unitsChanged()));
+    }
+    return m_units;
+}
+
 ConcreteScreen *ScreenWindow::screenWrapper() const
 {
     return m_screen.data();
