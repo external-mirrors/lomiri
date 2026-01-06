@@ -45,6 +45,7 @@ Build-Depends:
  libudev-dev,
  libldm-common-dev,
  liblomiri-api-dev,
+ liblomiri-shell-api-dev,
  libusermetricsoutput1-dev,
  libx11-dev[!arm64 !armhf],
  libxcb1-dev[!arm64 !armhf],
