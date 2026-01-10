@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-14 20:08+0000\n"
-"PO-Revision-Date: 2023-01-04 18:22+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2026-01-10 11:04+0000\n"
+"Last-Translator: BoneNI <bounkirdni@gmail.com>\n"
 "Language-Team: Lao <https://hosted.weblate.org/projects/lomiri/lomiri/lo/>\n"
 "Language: lo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.15.1-dev\n"
+"X-Generator: Weblate 5.15.1\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:35+0000\n"
 
 #: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
@@ -49,7 +49,7 @@ msgstr ""
 
 #: plugins/LightDM/Greeter.cpp:214
 msgid "Username"
-msgstr ""
+msgstr "ຊື່ຜູ້ໃຊ້"
 
 #: plugins/LightDM/Greeter.cpp:258
 msgid "Failed to authenticate"
@@ -90,7 +90,7 @@ msgstr ""
 
 #: plugins/WindowManager/Screen.cpp:160
 msgid "Unknown"
-msgstr ""
+msgstr "ບໍ່ຮູ້ຈັກ"
 
 #: plugins/WindowManager/Screen.cpp:162
 msgid "VGA"
@@ -154,9 +154,8 @@ msgstr ""
 #: qml/Components/Dialogs.qml:199 qml/Components/Dialogs.qml:284
 #: qml/Greeter/GreeterView.qml:452 qml/Wizard/Pages/passcode-confirm.qml:32
 #: qml/Wizard/Pages/passcode-set.qml:32
-#, fuzzy
 msgid "Cancel"
-msgstr "Cancel"
+msgstr "ຍົກເລີກ"
 
 #: qml/Components/Dialogs.qml:211
 msgctxt "Title: Reboot dialog"
@@ -169,11 +168,11 @@ msgstr ""
 
 #: qml/Components/Dialogs.qml:215
 msgid "No"
-msgstr ""
+msgstr "ບໍ່"
 
 #: qml/Components/Dialogs.qml:223
 msgid "Yes"
-msgstr ""
+msgstr "ແມ່ນ"
 
 #: qml/Components/Dialogs.qml:243
 msgctxt "Title: Power off/Restart dialog"
@@ -370,7 +369,7 @@ msgstr ""
 
 #: qml/Components/Lockscreen.qml:256
 msgid "OK"
-msgstr ""
+msgstr "ຕົກລົງ"
 
 #: qml/Components/ModeSwitchWarningDialog.qml:33
 msgid "Apps may have unsaved data:"
@@ -426,23 +425,21 @@ msgstr ""
 
 #: qml/Greeter/CoverPage.qml:161
 msgid "Fully charged"
-msgstr ""
+msgstr "ສາກເຕັມແລ້ວ"
 
 #: qml/Greeter/CoverPage.qml:169
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1104
 #, qt-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 ຊົ່ວໂມງ"
 
 #: qml/Greeter/CoverPage.qml:172
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1108
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 ນາທີ"
 
 #: qml/Greeter/CoverPage.qml:179
 #, qt-format
@@ -457,7 +454,7 @@ msgstr ""
 #: qml/Greeter/CoverPage.qml:198
 #: tests/qmltests/Greeter/tst_GreeterView.qml:1242
 msgid "Unlock"
-msgstr ""
+msgstr "ປົດລັອກ"
 
 #: qml/Greeter/DelayedLockscreen.qml:43
 msgid "Device Locked"
@@ -500,11 +497,11 @@ msgstr ""
 
 #: qml/Greeter/PromptList.qml:143
 msgid "Passphrase"
-msgstr ""
+msgstr "ວະລີຜ່ານ"
 
 #: qml/Greeter/PromptList.qml:143
 msgid "Passcode"
-msgstr ""
+msgstr "ລະຫັດຜ່ານ"
 
 #: qml/Greeter/SessionsList.qml:124
 msgid "Select desktop environment"
@@ -526,7 +523,7 @@ msgstr ""
 
 #: qml/Notifications/NotificationMenuItemFactory.qml:124
 msgid "Show password"
-msgstr ""
+msgstr "ສະແດງລະຫັດຜ່ານ"
 
 #: qml/Notifications/Notification.qml:318
 msgid "New message"
@@ -602,7 +599,7 @@ msgstr ""
 
 #: qml/Panel/PanelMenuPage.qml:93
 msgid "Back"
-msgstr ""
+msgstr "ກັບຄືນ"
 
 #: qml/Stage/SideStage.qml:81
 msgid "Drag using 3 fingers any application from one window to the other"
@@ -688,7 +685,7 @@ msgstr ""
 #: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/79-system-update.qml:164
 #: qml/Wizard/Pages/sim.qml:101
 msgid "Skip"
-msgstr ""
+msgstr "ຂ້າມ"
 
 #: qml/Wizard/Pages/30-wifi.qml:31
 msgid "Connect to Wi‑Fi"
@@ -696,7 +693,7 @@ msgstr ""
 
 #: qml/Wizard/Pages/30-wifi.qml:139
 msgid "Connected"
-msgstr ""
+msgstr "ເຊື່ອມຕໍ່ແລ້ວ"
 
 #: qml/Wizard/Pages/30-wifi.qml:172
 msgid "Available Wi-Fi networks"
@@ -795,7 +792,7 @@ msgstr ""
 #: qml/Wizard/Pages/passcode-confirm.qml:43
 #: qml/Wizard/Pages/passcode-desktop.qml:104
 msgid "Confirm passcode"
-msgstr ""
+msgstr "ຢືນຢັນລະຫັດຜ່ານ"
 
 #: qml/Wizard/Pages/passcode-confirm.qml:45
 msgid "Incorrect passcode."
@@ -817,7 +814,7 @@ msgstr ""
 #: qml/Wizard/Pages/passcode-desktop.qml:84
 #: qml/Wizard/Pages/passcode-set.qml:54
 msgid "Choose passcode"
-msgstr ""
+msgstr "ເລືອກລະຫັດຜ່ານ"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:139
 msgid "Passcode too short"
