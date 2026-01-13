@@ -874,10 +874,21 @@ StyledItem {
         ScreenshotEditor {
             id: screenshotEditor
             anchors.fill: parent
+            anchors.topMargin: panel.panelHeight
             enabled: !wizard.active
             z: itemGrabber.z - 2
-            panel: panel
-            launcher: launcher
+
+            property string prevLauncherState : ""
+
+            // Don't store and restore the wrong state once the editor has been opened already
+            onVisibleChanged: {
+                if (visible) {
+                    prevLauncherState = launcher.state;
+                    launcher.switchToNextState("");
+                } else {
+                    launcher.switchToNextState(prevLauncherState);
+                }
+            }
 
             // Make locking the screen abort the editing session, otherwise we
             // would show the editor above the lockscreen.

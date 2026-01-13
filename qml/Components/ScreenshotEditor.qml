@@ -24,11 +24,6 @@ Item {
     id: root
     visible: false
 
-    property var panel : null
-    property var launcher : null
-
-    property string prevLauncherState : ""
-
     function show(path) {
         if (!root.enabled)
             return;
@@ -44,21 +39,13 @@ Item {
         visible = false;
     }
 
-    // Don't store and restore the wrong state once the editor has been opened already
-    onVisibleChanged: {
-        if (visible) {
-            prevLauncherState = launcher.state;
-            launcher.switchToNextState("");
-        } else {
-            launcher.switchToNextState(root.prevLauncherState);
-        }
-    }
-
     Extras.PhotoEditor {
         id: screenshotEditor
-        y: panel.panelHeight + screenshotEditorHeader.height
-        width: parent.width
-        height: parent.height - screenshotEditorHeader.height - panel.panelHeight
+        y: screenshotEditorHeader.height
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.top: screenshotEditorHeader.bottom
+        anchors.bottom: parent.bottom
     }
 
     // Place the PageHeader below the editor for proper z-level layering,
@@ -68,7 +55,6 @@ Item {
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.top: parent.top
-        anchors.topMargin: panel.panelHeight
         height: implicitHeight
         leadingActionBar {
             actions: [
@@ -108,7 +94,6 @@ Item {
         id: screenshotSharePicker
         anchors {
             fill: parent
-            topMargin: panel.panelHeight
         }
         visible: false
         showTitle: true
