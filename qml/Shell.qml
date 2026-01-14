@@ -218,8 +218,8 @@ StyledItem {
         if (!settings.enableBlur)
             return null;
 
-        if (screenshotEditor.visible)
-            return screenshotEditor;
+        if (screenshotEditorContainer.visible)
+            return screenshotEditorContainer;
 
         if (greeter.shown)
             return greeter;
@@ -605,7 +605,7 @@ StyledItem {
             objectName: "panel"
             anchors.fill: parent //because this draws indicator menus
             blurSource: shell.blurSource
-            z: screenshotEditor.visible ? screenshotEditor.z + 1 : 0
+            z: screenshotEditor.visibility ? screenshotEditorContainer.z + 1 : 0
             lightMode: shell.lightMode
             mode: shell.usageScenario == "desktop" ? "windowed" : "staged"
             minimizedPanelHeight: units.gu(3)
@@ -680,7 +680,7 @@ StyledItem {
             panelWidth: units.gu(settings.launcherWidth)
             lockedVisible: (lockedByUser || shell.atDesktop) && lockAllowed
             blurSource: shell.blurSource
-            z: screenshotEditor.visible ? screenshotEditor.z + 1 : 0
+            z: screenshotEditor.visibility ? screenshotEditorContainer.z + 1 : 0
             topPanelHeight: panel.panelHeight
             lightMode: shell.lightMode
             drawerEnabled: !greeter.active && tutorial.launcherLongSwipeEnabled
@@ -871,48 +871,56 @@ StyledItem {
             }
         }
 
-        ScreenshotEditor {
-            id: screenshotEditor
+        Item {
+            id: screenshotEditorContainer
             anchors.fill: parent
-            anchors.topMargin: panel.panelHeight
-            enabled: !wizard.active
             z: itemGrabber.z - 2
+            visible: screenshotEditor.visibility
 
-            property string prevLauncherState : ""
+            ScreenshotEditor {
+                id: screenshotEditor
+                anchors.fill: parent
+                anchors.topMargin: panel.panelHeight
+                enabled: !wizard.active
 
-            // Don't store and restore the wrong state once the editor has been opened already
-            onVisibleChanged: {
-                if (visible) {
-                    prevLauncherState = launcher.state;
-                    launcher.switchToNextState("");
-                } else {
-                    launcher.switchToNextState(prevLauncherState);
-                }
-            }
+                property string prevLauncherState : ""
 
-            // Make locking the screen abort the editing session, otherwise we
-            // would show the editor above the lockscreen.
-            Connections {
-                target: greeter
-                function onLockedChanged() {
-                    if (!screenshotEditor.visible)
-                        return;
+                // Don't store and restore the wrong state once the editor has been opened already
+                onVisibleChanged: {
+                    console.log("Visible changed: " + visible)
 
-                    if (greeter.locked)
-                        screenshotEditor.hide()
-                }
-            }
-
-            Connections {
-                target: panel
-
-                // Hide the launcher if the indicator panel has been tapped
-                function onFullyClosedChanged() {
-                    if (!screenshotEditor.visible)
-                        return;
-
-                    if (panel.fullyClosed)
+                    if (visible) {
+                        prevLauncherState = launcher.state;
                         launcher.switchToNextState("");
+                    } else {
+                        launcher.switchToNextState(prevLauncherState);
+                    }
+                }
+
+                // Make locking the screen abort the editing session, otherwise we
+                // would show the editor above the lockscreen.
+                Connections {
+                    target: greeter
+                    function onLockedChanged() {
+                        if (!screenshotEditor.visibility)
+                            return;
+
+                        if (greeter.locked)
+                            screenshotEditor.hide()
+                    }
+                }
+
+                Connections {
+                    target: panel
+
+                    // Hide the launcher if the indicator panel has been tapped
+                    function onFullyClosedChanged() {
+                        if (!screenshotEditor.visibility)
+                            return;
+
+                        if (panel.fullyClosed)
+                            launcher.switchToNextState("");
+                    }
                 }
             }
         }

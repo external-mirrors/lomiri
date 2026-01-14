@@ -22,21 +22,21 @@ import Utils 0.1
 
 Item {
     id: root
-    visible: false
+    property bool visibility: false
 
     function show(path) {
         if (!root.enabled)
             return;
 
         screenshotSharePicker.filePath = path;
-        visible = true;
+        visibility = true;
         screenshotEditor.open(path);
     }
 
     function hide() {
         screenshotSharePicker.visible = false;
         screenshotSharePicker.filePath = "";
-        visible = false;
+        visibility = false;
     }
 
     Extras.PhotoEditor {
