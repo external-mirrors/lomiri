@@ -15,7 +15,7 @@ Build-Depends:
  g++:native,
  gdb <!cross>,
  graphviz <!cross>,
- lomiri-schemas (>= 0.1.5~),
+ lomiri-schemas (>= 0.1.10~),
  libdeviceinfo-dev,
  libevdev-dev,
  libgeonames-dev (>= 0.2),
