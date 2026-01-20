@@ -216,6 +216,8 @@ FocusScope {
         closeButtonVisible: true
         objectName: "appWindowDecoration"
 
+        property bool wasDoubleClicked: false
+
         anchors { left: parent.left; top: parent.top; right: parent.right }
         height: units.gu(3) // a default value. overwritten by root.decorationHeight
 
@@ -233,9 +235,13 @@ FocusScope {
         onPressedChangedEx: moveHandler.handlePressedChanged(pressed, pressedButtons, mouseX, mouseY)
         onPositionChanged: moveHandler.handlePositionChanged(mouse)
         onReleased: {
-            root.decorationReleased();
-            moveHandler.handleReleased();
+            if (!wasDoubleClicked) {
+                root.decorationReleased();
+                moveHandler.handleReleased();
+            }
+            wasDoubleClicked = false;
         }
+        onDoubleClicked: wasDoubleClicked = true;
 
         onCloseClicked: root.closeClicked();
         onMaximizeClicked: { root.decorationPressed(); root.maximizeClicked(); }
