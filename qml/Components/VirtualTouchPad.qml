@@ -266,6 +266,7 @@ Item {
             anchors.fill: parent
             anchors.margins: internalGu * 1.5
             name: "input-keyboard-symbolic"
+            color: settings.oskEnabled ? LomiriColors.porcelain : LomiriColors.red
         }
     }
 
