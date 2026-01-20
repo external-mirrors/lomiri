@@ -2372,6 +2372,7 @@ FocusScope {
         width: root.width - units.gu(8)
         background: root.background
         availableDesktopArea: root.availableDesktopArea
+        onWorkspaceSelected: screensAndWorkspaces.activeWorkspace = selectedWorkspace;
         onActiveChanged: {
             if (!active) {
                 appContainer.focus = true;
