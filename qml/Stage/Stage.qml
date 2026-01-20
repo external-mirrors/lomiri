@@ -1474,7 +1474,9 @@ FocusScope {
                     // Now load any saved state. This needs to happen *after* the cascading!
                     windowStateSaver.load();
 
-                    updateQmlFocusFromMirSurfaceFocus();
+                    if (!root.spreadShown) {
+                        updateQmlFocusFromMirSurfaceFocus();
+                    }
 
                     refreshStage();
                     _constructing = false;
