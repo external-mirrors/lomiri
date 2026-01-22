@@ -151,6 +151,7 @@ FocusScope {
         onTriggered: {
             if (root.altTabPressed) {
                 priv.goneToSpread = true;
+                priv.altTabInProgress = true;
             }
         }
     }
@@ -434,7 +435,10 @@ FocusScope {
         property var focusedAppDelegate: null
         property var foregroundMaximizedAppDelegate: null // for stuff like drop shadow and focusing maximized app by clicking panel
 
+        property bool altTabInProgress: false
         property bool goneToSpread: false
+        onGoneToSpreadChanged: if (!goneToSpread) altTabInProgress = false;
+
         property int closingIndex: -1
         property int animationDuration: LomiriAnimation.FastDuration
 
@@ -922,14 +926,16 @@ FocusScope {
                         return;
                     }
 
-                    // Find the hovered item and mark it active
-                    for (var i = appRepeater.count - 1; i >= 0; i--) {
-                        var appDelegate = appRepeater.itemAt(i);
-                        var mapped = mapToItem(appDelegate, hoverMouseArea.mouseX, hoverMouseArea.mouseY)
-                        var itemUnder = appDelegate.childAt(mapped.x, mapped.y);
-                        if (itemUnder && (itemUnder.objectName === "dragArea" || itemUnder.objectName === "windowInfoItem" || itemUnder.objectName == "closeMouseArea")) {
-                            spreadItem.highlightedIndex = i;
-                            break;
+                    // Find the hovered item and mark it active except when alt tabbing is in-progress
+                    if (!priv.altTabInProgress) {
+                        for (var i = appRepeater.count - 1; i >= 0; i--) {
+                            var appDelegate = appRepeater.itemAt(i);
+                            var mapped = mapToItem(appDelegate, hoverMouseArea.mouseX, hoverMouseArea.mouseY)
+                            var itemUnder = appDelegate.childAt(mapped.x, mapped.y);
+                            if (itemUnder && (itemUnder.objectName === "dragArea" || itemUnder.objectName === "windowInfoItem" || itemUnder.objectName == "closeMouseArea")) {
+                                spreadItem.highlightedIndex = i;
+                                break;
+                            }
                         }
                     }
 
