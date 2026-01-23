@@ -170,7 +170,8 @@ Item {
                 horizontalAlignment: Text.AlignHCenter
                 elide: Text.ElideRight
                 color: "white"
-                fontSize: "x-small"
+                //fontSize: "x-small"
+                font.pixelSize: FontUtils.modularScale("x-small") * screenWindow.units.dp(14)
             }
         }
 
@@ -251,6 +252,7 @@ Item {
                 text: (itemIndex + 1) % 10
                 color: "white"
                 font.weight: Font.Light
+                font.pixelSize: FontUtils.modularScale("medium") * screenWindow.units.dp(14)
             }
         }
     }

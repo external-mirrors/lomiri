@@ -898,7 +898,8 @@ Rectangle {
                             anchors.bottomMargin: units.gu(2)
                             verticalAlignment: Label.AlignVCenter
                             text: model.label
-                            fontSize: index == 0 ? "medium" : "small"
+                            font.pixelSize: (index == 0 ? FontUtils.modularScale("medium") : FontUtils.modularScale("small")) * screenWindow.units.dp(14)
+                            //fontSize: index == 0 ? "medium" : "small"
                             font.weight: index == 0 ? Font.Medium : Font.Light
                             color: model.clickable ? theme.palette.normal.backgroundText : theme.palette.disabled.backgroundText
                             elide: Text.ElideRight

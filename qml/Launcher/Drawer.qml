@@ -224,8 +224,8 @@ FocusScope {
 
             Item {
                 id: searchFieldContainer
-                height: units.gu(4)
-                anchors { left: parent.left; top: parent.top; right: parent.right; margins: units.gu(1) }
+                height: screenWindow.units.gu(4)
+                anchors { left: parent.left; top: parent.top; right: parent.right; margins: screenWindow.units.gu(1) }
 
                 TextField {
                     id: searchField
@@ -238,6 +238,9 @@ FocusScope {
                         bottom: parent.bottom
                     }
                     placeholderText: i18n.tr("Search…")
+
+                    font.pixelSize: FontUtils.modularScale("medium") * screenWindow.units.dp(14)
+
                     z: 100
 
                     KeyNavigation.down: appList
@@ -339,7 +342,8 @@ FocusScope {
                         width: parent.width
                         anchors.horizontalCenter: parent.horizontalCenter
                         horizontalAlignment: Text.AlignHCenter
-                        fontSize: "small"
+                        //fontSize: "small"
+                        font.pixelSize: FontUtils.modularScale("small") * screenWindow.units.dp(14)
                         wrapMode: Text.WordWrap
                         maximumLineCount: 2
                         elide: Text.ElideRight
@@ -377,7 +381,8 @@ FocusScope {
                                     elide: Text.ElideRight
                                     anchors.centerIn: parent
                                     text: model.name
-                                    fontSize: "small"
+                                    //fontSize: "small"
+                                    font.pixelSize: FontUtils.modularScale("small") * screenWindow.units.dp(14)
                                 }
                             }
                         }
