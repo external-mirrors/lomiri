@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-14 20:08+0000\n"
-"PO-Revision-Date: 2026-01-25 16:48+0000\n"
+"PO-Revision-Date: 2026-01-25 17:18+0000\n"
 "Last-Translator: BoneNI <bounkirdni@gmail.com>\n"
 "Language-Team: Lao <https://hosted.weblate.org/projects/lomiri/lomiri/lo/>\n"
 "Language: lo\n"
@@ -21,31 +21,31 @@ msgstr ""
 
 #: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
 msgid "Lomiri"
-msgstr ""
+msgstr "Lomiri"
 
 #: data/lomiri.desktop.in:5
 msgid "The converged Lomiri shell"
-msgstr ""
+msgstr "ເປືອກຫຸ້ມລະບົບ Lomiri ແບບເຊື່ອມໂຍງ"
 
 #: data/lomiri-greeter.desktop.in:4
 msgid "Lomiri Greeter"
-msgstr ""
+msgstr "ຕົວຕ້ອນຮັບ Lomiri"
 
 #: data/lomiri-greeter.desktop.in:5
 msgid "The converged Lomiri shell's Greeter"
-msgstr ""
+msgstr "ຕົວຕ້ອນຮັບຂອງເປືອກຫຸ້ມລະບົບ Lomiri ແບບເຊື່ອມໂຍງ"
 
 #: data/indicators-client.desktop.in:4
 msgid "Indicators Client"
-msgstr ""
+msgstr "ຕົວຈັດການຕົວຊີ້ບອກ"
 
 #: data/indicators-client.desktop.in:5
 msgid "Application for testing the Indicators system"
-msgstr ""
+msgstr "ແອັບພລິເຄຊັນສຳລັບທົດສອບລະບົບຕົວຊີ້ບອກ"
 
 #: plugins/LightDM/Greeter.cpp:199
 msgid "Password: "
-msgstr ""
+msgstr "ລະຫັດຜ່ານ: "
 
 #: plugins/LightDM/Greeter.cpp:214
 msgid "Username"
@@ -53,32 +53,32 @@ msgstr "ຊື່ຜູ້ໃຊ້"
 
 #: plugins/LightDM/Greeter.cpp:258
 msgid "Failed to authenticate"
-msgstr ""
+msgstr "ຢືນຢັນຕົວຕົນບໍ່ສຳເລັດ"
 
 #: plugins/LightDM/Greeter.cpp:260
 msgid "Invalid password, please try again"
-msgstr ""
+msgstr "ລະຫັດຜ່ານບໍ່ຖືກຕ້ອງ, ກະລຸນາລອງໃໝ່ອີກຄັ້ງ"
 
 #: plugins/LightDM/Greeter.cpp:270
 msgid "Log In"
-msgstr ""
+msgstr "ເຂົ້າລະບົບ"
 
 #: plugins/LightDM/Greeter.cpp:270
 msgid "Retry"
-msgstr ""
+msgstr "ລອງໃໝ່"
 
 #: plugins/LightDM/UsersModel.cpp:158
 msgid "Login"
-msgstr ""
+msgstr "ເຂົ້າລະບົບ"
 
 #: plugins/LightDM/UsersModel.cpp:166
 msgid "Guest Session"
-msgstr ""
+msgstr "ເຊດຊັນຜູ້ຢ້ຽມຊົມ"
 
 #: plugins/Lomiri/Launcher/launcheritem.cpp:48
 #: plugins/Lomiri/Launcher/launcheritem.cpp:122
 msgid "Pin shortcut"
-msgstr ""
+msgstr "ປັກໝຸດທາງລັດ"
 
 #: plugins/Lomiri/Launcher/launcheritem.cpp:54
 msgid "Quit"
@@ -86,7 +86,7 @@ msgstr "ອອກ"
 
 #: plugins/Lomiri/Launcher/launcheritem.cpp:122
 msgid "Unpin shortcut"
-msgstr ""
+msgstr "ຖອນໝຸດທາງລັດ"
 
 #: plugins/WindowManager/Screen.cpp:160
 msgid "Unknown"
@@ -94,62 +94,62 @@ msgstr "ບໍ່ຮູ້ຈັກ"
 
 #: plugins/WindowManager/Screen.cpp:162
 msgid "VGA"
-msgstr ""
+msgstr "VGA"
 
 #: plugins/WindowManager/Screen.cpp:166
 msgid "DVI"
-msgstr ""
+msgstr "DVI"
 
 #: plugins/WindowManager/Screen.cpp:168
 msgid "Composite"
-msgstr ""
+msgstr "ຄອມໂພສິດ (Composite)"
 
 #: plugins/WindowManager/Screen.cpp:170
 msgid "S-Video"
-msgstr ""
+msgstr "S-Video"
 
 #: plugins/WindowManager/Screen.cpp:176
 msgid "Internal"
-msgstr ""
+msgstr "ພາຍໃນ"
 
 #: plugins/WindowManager/Screen.cpp:178
 msgid "Component"
-msgstr ""
+msgstr "ຄອມໂພເນນ (Component)"
 
 #: plugins/WindowManager/Screen.cpp:180
 msgid "DisplayPort"
-msgstr ""
+msgstr "DisplayPort"
 
 #: plugins/WindowManager/Screen.cpp:183
 msgid "HDMI"
-msgstr ""
+msgstr "HDMI"
 
 #: plugins/WindowManager/Screen.cpp:185
 msgid "TV"
-msgstr ""
+msgstr "TV"
 
 #: plugins/WindowManager/Screen.cpp:187
 msgid "Virtual"
-msgstr ""
+msgstr "ສະເໝືອນ"
 
 #: qml/Components/Dialogs.qml:176
 msgctxt "Title: Lock/Log out dialog"
 msgid "Log out"
-msgstr ""
+msgstr "ອອກຈາກລະບົບ"
 
 #: qml/Components/Dialogs.qml:177
 msgid "Are you sure you want to log out?"
-msgstr ""
+msgstr "ເຈົ້າແນ່ໃຈບໍ່ວ່າຕ້ອງການອອກຈາກລະບົບ?"
 
 #: qml/Components/Dialogs.qml:180
 msgctxt "Button: Lock the system"
 msgid "Lock"
-msgstr ""
+msgstr "ລັອກ"
 
 #: qml/Components/Dialogs.qml:191
 msgctxt "Button: Log out from the system"
 msgid "Log Out"
-msgstr ""
+msgstr "ອອກຈາກລະບົບ"
 
 #: qml/Components/Dialogs.qml:199 qml/Components/Dialogs.qml:284
 #: qml/Greeter/GreeterView.qml:452 qml/Wizard/Pages/passcode-confirm.qml:32
@@ -160,11 +160,11 @@ msgstr "ຍົກເລີກ"
 #: qml/Components/Dialogs.qml:211
 msgctxt "Title: Reboot dialog"
 msgid "Reboot"
-msgstr ""
+msgstr "ເລີ່ມລະບົບໃໝ່"
 
 #: qml/Components/Dialogs.qml:212
 msgid "Are you sure you want to reboot?"
-msgstr ""
+msgstr "ເຈົ້າແນ່ໃຈບໍ່ວ່າຕ້ອງການເລີ່ມລະບົບໃໝ່?"
 
 #: qml/Components/Dialogs.qml:215
 msgid "No"
@@ -177,195 +177,197 @@ msgstr "ແມ່ນ"
 #: qml/Components/Dialogs.qml:243
 msgctxt "Title: Power off/Restart dialog"
 msgid "Power"
-msgstr ""
+msgstr "ພະລັງງານ"
 
 #: qml/Components/Dialogs.qml:244
 msgid ""
 "Are you sure you would like\n"
 "to power off?"
 msgstr ""
+"ເຈົ້າແນ່ໃຈບໍ່ວ່າຕ້ອງການ\n"
+"ປິດເຄື່ອງ?"
 
 #: qml/Components/Dialogs.qml:248
 msgctxt "Button: Power off the system"
 msgid "Power off"
-msgstr ""
+msgstr "ປິດເຄື່ອງ"
 
 #: qml/Components/Dialogs.qml:263
 msgctxt "Button: Restart the system"
 msgid "Restart"
-msgstr ""
+msgstr "ເລີ່ມໃໝ່"
 
 #: qml/Components/Dialogs.qml:276
 msgid "Screenshot"
-msgstr ""
+msgstr "ຖ່າຍຮູບໜ້າຈໍ"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:41
 msgid "Keyboard Shortcuts"
-msgstr ""
+msgstr "ປຸ່ມລັດແປ້ນພິມ"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:62
 msgid "PrtScr"
-msgstr ""
+msgstr "PrtScr"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:67
 msgid "Takes a screenshot."
-msgstr ""
+msgstr "ຖ່າຍຮູບໜ້າຈໍ."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:75
 msgid "Alt + PrtScr"
-msgstr ""
+msgstr "Alt + PrtScr"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:80
 msgid "Takes a screenshot of the current window."
-msgstr ""
+msgstr "ຖ່າຍຮູບໜ້າຈໍຂອງໜ້າຕ່າງປັດຈຸບັນ."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:88
 msgid "Super + Space"
-msgstr ""
+msgstr "Super + Space"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:93
 msgid "Switches to next keyboard layout."
-msgstr ""
+msgstr "ສະຫຼັບໄປຮູບແບບແປ້ນພິມຖັດໄປ."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:101
 msgid "Super + Shift + Space"
-msgstr ""
+msgstr "Super + Shift + Space"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:106
 msgid "Switches to previous keyboard layout."
-msgstr ""
+msgstr "ສະຫຼັບໄປຮູບແບບແປ້ນພິມກ່ອນໜ້າ."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:114
 msgid "Ctrl + Alt + T"
-msgstr ""
+msgstr "Ctrl + Alt + T"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:119
 msgid "Starts the Terminal application."
-msgstr ""
+msgstr "ເລີ່ມຕົ້ນແອັບພລິເຄຊັນ ເທີມິນໍ (Terminal)."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:131
 msgid "Launcher"
-msgstr ""
+msgstr "ຕົວເປີດແອັບ"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:138
 msgid "Super (Hold)"
-msgstr ""
+msgstr "Super (ກົດຄ້າງ)"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:143
 msgid "Opens the launcher, displays shortcuts."
-msgstr ""
+msgstr "ເປີດຕົວເປີດແອັບ ແລະ ສະແດງປຸ່ມລັດ."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:151
 msgid "Alt + F1"
-msgstr ""
+msgstr "Alt + F1"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:156
 msgid "Opens launcher keyboard navigation mode."
-msgstr ""
+msgstr "ເປີດໂໝດການນຳທາງດ້ວຍແປ້ນພິມຂອງຕົວເປີດແອັບ."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:164
 msgid "Super + Tab"
-msgstr ""
+msgstr "Super + Tab"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:169
 msgid "Switches applications via the launcher."
-msgstr ""
+msgstr "ສະຫຼັບແອັບພລິເຄຊັນຜ່ານຕົວເປີດແອັບ."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:177
 msgid "Super + 1 to 0"
-msgstr ""
+msgstr "Super + 1 ຫາ 0"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:182
 msgid "Same as clicking on a launcher icon."
-msgstr ""
+msgstr "ຄືກັນກັບການຄລິກທີ່ໄອຄອນໃນຕົວເປີດແອັບ."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:190
 msgid "Super + A"
-msgstr ""
+msgstr "Super + A"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:195
 msgid "Opens the Application Drawer."
-msgstr ""
+msgstr "ເປີດໜ້າລວມແອັບ."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:211
 msgid "Switching"
-msgstr ""
+msgstr "ການສະຫຼັບ"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:218
 msgid "Alt + Tab"
-msgstr ""
+msgstr "Alt + Tab"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:223
 msgid "Switches between applications."
-msgstr ""
+msgstr "ສະຫຼັບລະຫວ່າງແອັບພລິເຄຊັນ."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:231
 msgid "Super + W"
-msgstr ""
+msgstr "Super + W"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:236
 msgid "Opens the desktop spread."
-msgstr ""
+msgstr "ເປີດໜ້າຈໍລວມແອັບ."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:244
 msgid "Cursor Left or Right"
-msgstr ""
+msgstr "ເລື່ອນຕົວຊີ້ ຊ້າຍ ຫຼື ຂວາ"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:249
 msgid "Moves the focus."
-msgstr ""
+msgstr "ຍ້າຍຈຸດໂຟກັດ."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:261
 msgid "Windows"
-msgstr ""
+msgstr "ໜ້າຕ່າງ"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:268
 msgid "Ctrl + Super + D"
-msgstr ""
+msgstr "Ctrl + Super + D"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:273
 msgid "Minimizes all windows."
-msgstr ""
+msgstr "ຫຍໍ້ໜ້າຕ່າງທັງໝົດລົງ."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:281
 msgid "Ctrl + Super + Up"
-msgstr ""
+msgstr "Ctrl + Super + ຂຶ້ນ"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:286
 msgid "Maximizes the current window."
-msgstr ""
+msgstr "ຂະຫຍາຍໜ້າຕ່າງປັດຈຸບັນໃຫ້ໃຫຍ່ສຸດ."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:294
 msgid "Ctrl + Super + Down"
-msgstr ""
+msgstr "Ctrl + Super + ລົງ"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:299
 msgid "Minimizes or restores the current window."
-msgstr ""
+msgstr "ຫຍໍ້ ຫຼື ຄືນຄ່າໜ້າຕ່າງປັດຈຸບັນ."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:307
 msgid "Ctrl + Super + Left or Right"
-msgstr ""
+msgstr "Ctrl + Super + ຊ້າຍ ຫຼື ຂວາ"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:312
 msgid "Semi-maximizes the current window."
-msgstr ""
+msgstr "ຂະຫຍາຍໜ້າຕ່າງປັດຈຸບັນເປັນເຄິ່ງໜ້າຈໍ."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:320
 msgid "Alt + F4"
-msgstr ""
+msgstr "Alt + F4"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:325
 msgid "Closes the current window."
-msgstr ""
+msgstr "ປິດໜ້າຕ່າງປັດຈຸບັນ."
 
 #: qml/Components/Lockscreen.qml:223 qml/Greeter/GreeterView.qml:472
 msgid "Return to Call"
-msgstr ""
+msgstr "ກັບຄືນສູ່ການໂທ"
 
 #: qml/Components/Lockscreen.qml:223
 msgid "Emergency Call"
-msgstr ""
+msgstr "ໂທສຸກເສີນ"
 
 #: qml/Components/Lockscreen.qml:256
 msgid "OK"
@@ -373,55 +375,57 @@ msgstr "ຕົກລົງ"
 
 #: qml/Components/ModeSwitchWarningDialog.qml:33
 msgid "Apps may have unsaved data:"
-msgstr ""
+msgstr "ແອັບອາດມີຂໍ້ມູນທີ່ຍັງບໍ່ທັນໄດ້ບັນທຶກ:"
 
 #: qml/Components/ModeSwitchWarningDialog.qml:60
 msgctxt ""
 "Re-dock means connect the device again to an external screen/mouse/keyboard"
 msgid "Re-dock, save your work and close these apps to continue."
-msgstr ""
+msgstr "ເຊື່ອມຕໍ່ໃໝ່, ບັນທຶກວຽກຂອງທ່ານ ແລະ ປິດແອັບເຫຼົ່ານີ້ເພື່ອດຳເນີນການຕໍ່."
 
 #: qml/Components/ModeSwitchWarningDialog.qml:67
 msgid "Or force close now (unsaved data will be lost)."
-msgstr ""
+msgstr "ຫຼື ບັງຄັບປິດດຽວນີ້ (ຂໍ້ມູນທີ່ບໍ່ໄດ້ບັນທຶກຈະສູນຫາຍ)."
 
 #: qml/Components/ModeSwitchWarningDialog.qml:80
 msgid "OK, I will reconnect"
-msgstr ""
+msgstr "ຕົກລົງ, ຂ້ອຍຈະເຊື່ອມຕໍ່ໃໝ່"
 
 #: qml/Components/ModeSwitchWarningDialog.qml:81
 msgid "Reconnect now!"
-msgstr ""
+msgstr "ເຊື່ອມຕໍ່ຄືນດຽວນີ້!"
 
 #: qml/Components/ModeSwitchWarningDialog.qml:94
 msgid "Close all"
-msgstr ""
+msgstr "ປິດທັງໝົດ"
 
 #: qml/Components/SharingPicker.qml:54
 msgid "Preview Share Item"
-msgstr ""
+msgstr "ເບິ່ງຕົວຢ່າງລາຍການທີ່ຈະແບ່ງປັນ"
 
 #: qml/Components/VirtualTouchPad.qml:343
 msgid ""
 "Your device is now connected to an external display. Use this screen as a "
 "touch pad to interact with the pointer."
 msgstr ""
+"ຕອນນີ້ອຸປະກອນຂອງທ່ານໄດ້ເຊື່ອມຕໍ່ກັບຈໍສະແດງຜົນພາຍນອກແລ້ວ. ໃຊ້ໜ້າຈໍນີ້ເປັນແຜ່ນສຳຜັດ (touch pad) ເພື່ອຄ"
+"ວບຄຸມຕົວຊີ້."
 
 #: qml/Components/VirtualTouchPad.qml:353
 msgid "Tap left button to click."
-msgstr ""
+msgstr "ແຕະປຸ່ມຊ້າຍເພື່ອຄລິກ."
 
 #: qml/Components/VirtualTouchPad.qml:365
 msgid "Tap right button to right click."
-msgstr ""
+msgstr "ແຕະປຸ່ມຂວາເພື່ອຄລິກຂວາ."
 
 #: qml/Components/VirtualTouchPad.qml:377
 msgid "Swipe with two fingers to scroll."
-msgstr ""
+msgstr "ປັດດ້ວຍສອງນິ້ວເພື່ອເລື່ອນ."
 
 #: qml/Components/VirtualTouchPad.qml:422
 msgid "Find more settings in the system settings."
-msgstr ""
+msgstr "ຊອກຫາການຕັ້ງຄ່າເພີ່ມເຕີມໄດ້ໃນການຕັ້ງຄ່າລະບົບ."
 
 #: qml/Greeter/CoverPage.qml:161
 msgid "Fully charged"
@@ -444,12 +448,12 @@ msgstr[0] "%1 ນາທີ"
 #: qml/Greeter/CoverPage.qml:179
 #, qt-format
 msgid "%1, %2 until full"
-msgstr ""
+msgstr "%1, ອີກ %2 ຈະເຕັມ"
 
 #: qml/Greeter/CoverPage.qml:182
 #, qt-format
 msgid "%1 until full"
-msgstr ""
+msgstr "ອີກ %1 ຈະເຕັມ"
 
 #: qml/Greeter/CoverPage.qml:198
 #: tests/qmltests/Greeter/tst_GreeterView.qml:1242
@@ -458,42 +462,41 @@ msgstr "ປົດລັອກ"
 
 #: qml/Greeter/DelayedLockscreen.qml:43
 msgid "Device Locked"
-msgstr ""
+msgstr "ອຸປະກອນຖືກລັອກ"
 
 #: qml/Greeter/DelayedLockscreen.qml:58
 msgid "You have been locked out due to too many failed passphrase attempts."
-msgstr ""
+msgstr "ທ່ານຖືກລະງັບການເຂົ້າໃຊ້ ເນື່ອງຈາກປ້ອນວະລີຜ່ານຜິດຫຼາຍຄັ້ງເກີນໄປ."
 
 #: qml/Greeter/DelayedLockscreen.qml:59
 msgid "You have been locked out due to too many failed passcode attempts."
-msgstr ""
+msgstr "ທ່ານຖືກລະງັບການເຂົ້າໃຊ້ ເນື່ອງຈາກປ້ອນລະຫັດຜ່ານຜິດຫຼາຍຄັ້ງເກີນໄປ."
 
 #: qml/Greeter/DelayedLockscreen.qml:68
 #, qt-format
 msgid "Please wait %1 minute and then try again…"
 msgid_plural "Please wait %1 minutes and then try again…"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "ກະລຸນາລໍຖ້າ %1 ນາທີ ແລ້ວລອງໃໝ່ອີກຄັ້ງ…"
 
 #: qml/Greeter/Greeter.qml:637 tests/qmltests/Greeter/tst_Greeter.qml:578
 #: tests/qmltests/Greeter/tst_Greeter.qml:597
 #: tests/qmltests/Greeter/tst_Greeter.qml:625
 #: tests/qmltests/Greeter/tst_Greeter.qml:637
 msgid "Try again"
-msgstr ""
+msgstr "ລອງໃໝ່"
 
 #: qml/Greeter/Greeter.qml:638 tests/qmltests/Greeter/tst_Greeter.qml:552
 #: tests/qmltests/Greeter/tst_Greeter.qml:603
 msgid "Enter passphrase to unlock"
-msgstr ""
+msgstr "ປ້ອນວະລີຜ່ານເພື່ອປົດລັອກ"
 
 #: qml/Greeter/Greeter.qml:639
 msgid "Enter passcode to unlock"
-msgstr ""
+msgstr "ປ້ອນລະຫັດຜ່ານເພື່ອປົດລັອກ"
 
 #: qml/Greeter/GreeterView.qml:472
 msgid "Emergency"
-msgstr ""
+msgstr "ສຸກເສີນ"
 
 #: qml/Greeter/PromptList.qml:143
 msgid "Passphrase"
@@ -505,7 +508,7 @@ msgstr "ລະຫັດຜ່ານ"
 
 #: qml/Greeter/SessionsList.qml:124
 msgid "Select desktop environment"
-msgstr ""
+msgstr "ເລືອກສະພາບແວດລ້ອມເດັສທັອບ"
 
 #: qml/Launcher/Drawer.qml:240
 msgid "Search…"
@@ -513,11 +516,11 @@ msgstr "ຄົ້ນຫາ…"
 
 #: qml/Launcher/PullToRefreshScopeStyle.qml:56
 msgid "Pull to refresh…"
-msgstr ""
+msgstr "ດຶງລົງເພື່ອໂຫຼດໃໝ່…"
 
 #: qml/Launcher/PullToRefreshScopeStyle.qml:61
 msgid "Release to refresh…"
-msgstr ""
+msgstr "ປ່ອຍເພື່ອໂຫຼດໃໝ່…"
 
 #: qml/Notifications/NotificationMenuItemFactory.qml:124
 msgid "Show password"
@@ -525,11 +528,11 @@ msgstr "ສະແດງລະຫັດຜ່ານ"
 
 #: qml/Notifications/Notification.qml:318
 msgid "New message"
-msgstr ""
+msgstr "ຂໍ້ຄວາມໃໝ່"
 
 #: qml/Panel/ActiveCallHint.qml:79
 msgid "Tap to return to call..."
-msgstr ""
+msgstr "ແຕະເພື່ອກັບຄືນສູ່ການໂທ..."
 
 #: qml/Panel/ActiveCallHint.qml:93
 msgid "Conference"
@@ -537,63 +540,62 @@ msgstr "ປະຊຸມສາຍ"
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:975
 msgid "Nothing is playing"
-msgstr ""
+msgstr "ບໍ່ມີຫຍັງກຳລັງຫຼິ້ນຢູ່"
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1113
 #, qt-format
 msgid "%1 second"
 msgid_plural "%1 seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 ວິນາທີ"
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1116
 msgid "0 seconds"
-msgstr ""
+msgstr "0 ວິນາທີ"
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1118
 #, qt-format
 msgid "%1 remaining"
-msgstr ""
+msgstr "ເຫຼືອອີກ %1"
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1129
 msgid "In queue…"
-msgstr ""
+msgstr "ຢູ່ໃນຄິວ…"
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1133
 msgid "Downloading"
-msgstr ""
+msgstr "ກຳລັງດາວໂຫຼດ"
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1135
 msgid "Paused, tap to resume"
-msgstr ""
+msgstr "ຢຸດຊົ່ວຄາວ, ແຕະເພື່ອດຳເນີນການຕໍ່"
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1137
 msgid "Canceled"
-msgstr ""
+msgstr "ຍົກເລີກແລ້ວ"
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1139
 msgid "Finished"
-msgstr ""
+msgstr "ສຳເລັດ"
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1141
 msgid "Failed, tap to retry"
-msgstr ""
+msgstr "ບໍ່ສຳເລັດ, ແຕະເພື່ອລອງໃໝ່"
 
 #: qml/Panel/Indicators/MessageMenuItemFactory.qml:151
 #: qml/Panel/Indicators/MessageMenuItemFactory.qml:210
 msgctxt "Button: Send a reply message"
 msgid "Send"
-msgstr ""
+msgstr "ສົ່ງ"
 
 #: qml/Panel/Indicators/MessageMenuItemFactory.qml:152
 msgctxt "Label: Hint in message indicator line edit"
 msgid "Reply"
-msgstr ""
+msgstr "ຕອບກັບ"
 
 #: qml/Panel/Indicators/MessageMenuItemFactory.qml:209
 msgctxt "Button: Call back on phone"
 msgid "Call back"
-msgstr ""
+msgstr "ໂທກັບ"
 
 #: qml/Panel/PanelMenuPage.qml:93
 msgid "Back"
@@ -601,40 +603,40 @@ msgstr "ກັບຄືນ"
 
 #: qml/Stage/SideStage.qml:81
 msgid "Drag using 3 fingers any application from one window to the other"
-msgstr ""
+msgstr "ໃຊ້ 3 ນິ້ວລາກແອັບພລິເຄຊັນຈາກໜ້າຕ່າງໜຶ່ງໄປຫາອີກໜ້າຕ່າງໜຶ່ງ"
 
 #: qml/Stage/Stage.qml:902
 msgid "No running apps"
-msgstr ""
+msgstr "ບໍ່ມີແອັບທີ່ກຳລັງເຮັດວຽກ"
 
 #: qml/Tutorial/TutorialLeftLong.qml:49
 msgid "Long swipe from the left edge to open the Application Drawer"
-msgstr ""
+msgstr "ປັດຄ້າງຈາກຂອບເບື້ອງຊ້າຍເພື່ອເປີດໜ້າລວມແອັບ"
 
 #: qml/Tutorial/TutorialLeft.qml:47
 msgid "Short swipe from the left edge to open the launcher"
-msgstr ""
+msgstr "ປັດສັ້ນໆຈາກຂອບເບື້ອງຊ້າຍເພື່ອເປີດຕົວເປີດແອັບ"
 
 #: qml/Tutorial/TutorialRight.qml:54
 msgid "Push your mouse against the right edge to view your open apps"
-msgstr ""
+msgstr "ດັນຕົວຊີ້ເມົາສ໌ໄປທີ່ຂອບເບື້ອງຂວາເພື່ອເບິ່ງແອັບທີ່ເປີດຢູ່"
 
 #: qml/Tutorial/TutorialRight.qml:55
 msgid "Swipe from the right edge to view your open apps"
-msgstr ""
+msgstr "ປັດຈາກຂອບເບື້ອງຂວາເພື່ອເບິ່ງແອັບທີ່ເປີດຢູ່"
 
 #: qml/Tutorial/TutorialTop.qml:53
 msgid "Swipe from the top edge to access notifications and quick settings"
-msgstr ""
+msgstr "ປັດຈາກຂອບເບື້ອງເທິງເພື່ອເຂົ້າເຖິງການແຈ້ງເຕືອນ ແລະ ການຕັ້ງຄ່າດ່ວນ"
 
 #: qml/Wizard/Page.qml:59
 msgctxt "Button: Go back one page in the Wizard"
 msgid "Back"
-msgstr ""
+msgstr "ກັບຄືນ"
 
 #: qml/Wizard/Pages/10-welcome.qml:29
 msgid "Language"
-msgstr ""
+msgstr "ພາສາ"
 
 #: qml/Wizard/Pages/10-welcome.qml:176
 #: qml/Wizard/Pages/10-welcome-update.qml:128
@@ -650,17 +652,17 @@ msgstr "ຕໍ່ໄປ"
 #: qml/Wizard/Pages/10-welcome-update.qml:92
 #, qt-format
 msgid "Welcome to %1 %2"
-msgstr ""
+msgstr "ຍິນດີຕ້ອນຮັບສູ່ %1 %2"
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
 #: qml/Wizard/Pages/10-welcome-update.qml:108
 #, qt-format
 msgid "We will make sure your device is ready to use %1 %2"
-msgstr ""
+msgstr "ພວກເຮົາຈະກວດສອບໃຫ້ແນ່ໃຈວ່າອຸປະກອນຂອງທ່ານພ້ອມໃຊ້ງານ %1 %2 ແລ້ວ"
 
 #: qml/Wizard/Pages/11-changelog.qml:28
 msgid "What's new"
-msgstr ""
+msgstr "ມີຫຍັງໃໝ່"
 
 #: qml/Wizard/Pages/11-changelog.qml:74
 msgid "Loading..."
@@ -668,15 +670,15 @@ msgstr "ກຳລັງໂຫຼດ..."
 
 #: qml/Wizard/Pages/20-keyboard.qml:31
 msgid "Select Keyboard"
-msgstr ""
+msgstr "ເລືອກແປ້ນພິມ"
 
 #: qml/Wizard/Pages/20-keyboard.qml:71
 msgid "Keyboard language"
-msgstr ""
+msgstr "ພາສາແປ້ນພິມ"
 
 #: qml/Wizard/Pages/20-keyboard.qml:93
 msgid "Keyboard layout"
-msgstr ""
+msgstr "ຮູບແບບແປ້ນພິມ"
 
 #: qml/Wizard/Pages/20-keyboard.qml:152 qml/Wizard/Pages/30-wifi.qml:213
 #: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/79-system-update.qml:164
@@ -686,7 +688,7 @@ msgstr "ຂ້າມ"
 
 #: qml/Wizard/Pages/30-wifi.qml:31
 msgid "Connect to Wi‑Fi"
-msgstr ""
+msgstr "ເຊື່ອມຕໍ່ Wi‑Fi"
 
 #: qml/Wizard/Pages/30-wifi.qml:139
 msgid "Connected"
@@ -694,89 +696,90 @@ msgstr "ເຊື່ອມຕໍ່ແລ້ວ"
 
 #: qml/Wizard/Pages/30-wifi.qml:172
 msgid "Available Wi-Fi networks"
-msgstr ""
+msgstr "ເຄືອຂ່າຍ Wi-Fi ທີ່ມີໃຫ້ໃຊ້"
 
 #: qml/Wizard/Pages/30-wifi.qml:173
 msgid "No available Wi-Fi networks"
-msgstr ""
+msgstr "ບໍ່ມີເຄືອຂ່າຍ Wi-Fi ໃຫ້ໃຊ້"
 
 #: qml/Wizard/Pages/50-timezone.qml:30
 msgid "Time Zone"
-msgstr ""
+msgstr "ເຂດເວລາ"
 
 #: qml/Wizard/Pages/50-timezone.qml:182
 msgid "Enter your city"
-msgstr ""
+msgstr "ປ້ອນຊື່ເມືອງຂອງທ່ານ"
 
 #: qml/Wizard/Pages/60-account.qml:24
 msgid "Personalize Your Device"
-msgstr ""
+msgstr "ປັບແຕ່ງອຸປະກອນຂອງທ່ານ"
 
 #: qml/Wizard/Pages/60-account.qml:54
 msgid "Preferred Name"
-msgstr ""
+msgstr "ຊື່ທີ່ຕ້ອງການ"
 
 #: qml/Wizard/Pages/70-passwd-type.qml:40
 msgid "Lock Screen"
-msgstr ""
+msgstr "ໜ້າຈໍລັອກ"
 
 #: qml/Wizard/Pages/70-passwd-type.qml:103
 msgctxt "Label: Type of security method"
 msgid "Create new password"
-msgstr ""
+msgstr "ສ້າງລະຫັດຜ່ານໃໝ່"
 
 #: qml/Wizard/Pages/70-passwd-type.qml:105
 msgctxt "Label: Type of security method"
 msgid "Create passcode (numbers only)"
-msgstr ""
+msgstr "ສ້າງລະຫັດຜ່ານ (ຕົວເລກເທົ່ານັ້ນ)"
 
 #: qml/Wizard/Pages/70-passwd-type.qml:107
 msgctxt "Label: Type of security method"
 msgid "No lock code"
-msgstr ""
+msgstr "ບໍ່ມີລະຫັດລັອກ"
 
 #: qml/Wizard/Pages/79-system-update.qml:30
 msgid "Update Device"
-msgstr ""
+msgstr "ອັບເດດອຸປະກອນ"
 
 #: qml/Wizard/Pages/79-system-update.qml:57
 msgid ""
 "There is a system update available and ready to install. Afterwards, the "
 "device will automatically restart."
 msgstr ""
+"ມີການອັບເດດລະບົບໃຫ້ໃຊ້ ແລະ ພ້ອມທີ່ຈະຕິດຕັ້ງ. ຫຼັງຈາກນັ້ນ, ອຸປະກອນຈະເລີ່ມລະບົບໃໝ່ໂດຍອັດຕະໂນມັດ."
 
 #: qml/Wizard/Pages/79-system-update.qml:96
 msgctxt "string identifying name of the update"
 msgid "Ubuntu Touch system"
-msgstr ""
+msgstr "ລະບົບ Ubuntu Touch"
 
 #: qml/Wizard/Pages/79-system-update.qml:103
 #, qt-format
 msgctxt "version of the system update"
 msgid "Version %1"
-msgstr ""
+msgstr "ເວີຊັນ %1"
 
 #: qml/Wizard/Pages/79-system-update.qml:115
 msgid "This could take a few minutes..."
-msgstr ""
+msgstr "ອາດໃຊ້ເວລາຄາວໜຶ່ງ..."
 
 #: qml/Wizard/Pages/79-system-update.qml:129
 msgid "Install and restart now"
-msgstr ""
+msgstr "ຕິດຕັ້ງ ແລະ ເລີ່ມລະບົບໃໝ່ດຽວນີ້"
 
 #: qml/Wizard/Pages/80-finished.qml:93
 msgid "Welcome Back"
-msgstr ""
+msgstr "ຍິນດີຕ້ອນຮັບກັບມາ"
 
 #. TRANSLATORS: %1 contains the distro name
 #: qml/Wizard/Pages/80-finished.qml:95
 #, qt-format
 msgid "Welcome to %1"
-msgstr ""
+msgstr "ຍິນດີຕ້ອນຮັບສູ່ %1"
 
 #: qml/Wizard/Pages/80-finished.qml:111
 msgid "You are ready to use your device now"
-msgstr ""
+msgstr "ຕອນນີ້ທ່ານພ້ອມທີ່ຈະໃຊ້ອຸປະກອນຂອງທ່ານແລ້ວ"
 
 #: qml/Wizard/Pages/80-finished.qml:131
 msgid "Continue"
@@ -784,7 +787,7 @@ msgstr "ດຳເນີນການຕໍ່"
 
 #: qml/Wizard/Pages/80-finished.qml:131
 msgid "Get Started"
-msgstr ""
+msgstr "ເລີ່ມຕົ້ນໃຊ້ງານ"
 
 #: qml/Wizard/Pages/passcode-confirm.qml:43
 #: qml/Wizard/Pages/passcode-desktop.qml:104
@@ -793,20 +796,20 @@ msgstr "ຢືນຢັນລະຫັດຜ່ານ"
 
 #: qml/Wizard/Pages/passcode-confirm.qml:45
 msgid "Incorrect passcode."
-msgstr ""
+msgstr "ລະຫັດຜ່ານບໍ່ຖືກຕ້ອງ."
 
 #: qml/Wizard/Pages/passcode-confirm.qml:45
 msgctxt "Enter the passcode again"
 msgid "Please re-enter."
-msgstr ""
+msgstr "ກະລຸນາປ້ອນໃໝ່."
 
 #: qml/Wizard/Pages/passcode-desktop.qml:31
 msgid "Lock Screen Passcode"
-msgstr ""
+msgstr "ລະຫັດຜ່ານໜ້າຈໍລັອກ"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:68
 msgid "Enter at least 4 numbers to setup your passcode"
-msgstr ""
+msgstr "ປ້ອນຕົວເລກຢ່າງໜ້ອຍ 4 ຕົວເພື່ອຕັ້ງລະຫັດຜ່ານຂອງທ່ານ"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:84
 #: qml/Wizard/Pages/passcode-set.qml:54
@@ -815,87 +818,87 @@ msgstr "ເລືອກລະຫັດຜ່ານ"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:139
 msgid "Passcode too short"
-msgstr ""
+msgstr "ລະຫັດຜ່ານສັ້ນເກີນໄປ"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:141
 msgid "Passcodes match"
-msgstr ""
+msgstr "ລະຫັດຜ່ານກົງກັນ"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:143
 msgid "Passcodes do not match"
-msgstr ""
+msgstr "ລະຫັດຜ່ານບໍ່ກົງກັນ"
 
 #: qml/Wizard/Pages/passcode-set.qml:62
 msgid "Passcode must be at least 4 characters long"
-msgstr ""
+msgstr "ລະຫັດຜ່ານຕ້ອງມີຄວາມຍາວຢ່າງໜ້ອຍ 4 ຕົວອັກສອນ"
 
 #: qml/Wizard/Pages/password-set.qml:31
 msgid "Lock Screen Password"
-msgstr ""
+msgstr "ລະຫັດຜ່ານໜ້າຈໍລັອກ"
 
 #: qml/Wizard/Pages/password-set.qml:68
 msgid "Enter at least 8 characters"
-msgstr ""
+msgstr "ປ້ອນຢ່າງໜ້ອຍ 8 ຕົວອັກສອນ"
 
 #: qml/Wizard/Pages/password-set.qml:80
 msgid "Choose password"
-msgstr ""
+msgstr "ເລືອກລະຫັດຜ່ານ"
 
 #: qml/Wizard/Pages/password-set.qml:110
 msgid "Confirm password"
-msgstr ""
+msgstr "ຢືນຢັນລະຫັດຜ່ານ"
 
 #: qml/Wizard/Pages/sim.qml:27
 msgid "No SIM card installed"
-msgstr ""
+msgstr "ບໍ່ໄດ້ຕິດຕັ້ງຊິມກາດ (SIM)"
 
 #: qml/Wizard/Pages/sim.qml:54
 msgid "SIM card added"
-msgstr ""
+msgstr "ເພີ່ມຊິມກາດແລ້ວ"
 
 #: qml/Wizard/Pages/sim.qml:55
 msgid "You must restart the device to access the mobile network."
-msgstr ""
+msgstr "ທ່ານຕ້ອງເລີ່ມອຸປະກອນໃໝ່ເພື່ອເຂົ້າເຖິງເຄືອຂ່າຍມືຖື."
 
 #: qml/Wizard/Pages/sim.qml:59
 msgid "Restart"
-msgstr ""
+msgstr "ເລີ່ມໃໝ່"
 
 #: qml/Wizard/Pages/sim.qml:78
 msgid "You won’t be able to make calls or use text messaging without a SIM."
-msgstr ""
+msgstr "ທ່ານຈະບໍ່ສາມາດໂທອອກ ຫຼື ສົ່ງຂໍ້ຄວາມໄດ້ຖ້າບໍ່ມີຊິມກາດ."
 
 #: qml/Wizard/Pages/sim.qml:90
 msgid "To proceed with no SIM tap Skip."
-msgstr ""
+msgstr "ຫາກຕ້ອງການດຳເນີນການຕໍ່ໂດຍບໍ່ມີຊິມກາດ ໃຫ້ແຕະ ຂ້າມ."
 
 #: qml/Wizard/PasswordMeter.qml:87
 msgid "Password too short"
-msgstr ""
+msgstr "ລະຫັດຜ່ານສັ້ນເກີນໄປ"
 
 #: qml/Wizard/PasswordMeter.qml:89
 msgid "Passwords match"
-msgstr ""
+msgstr "ລະຫັດຜ່ານກົງກັນ"
 
 #: qml/Wizard/PasswordMeter.qml:91
 msgid "Passwords do not match"
-msgstr ""
+msgstr "ລະຫັດຜ່ານບໍ່ກົງກັນ"
 
 #: qml/Wizard/PasswordMeter.qml:95
 msgid "Strong password"
-msgstr ""
+msgstr "ລະຫັດຜ່ານທີ່ແຂງແຮງ"
 
 #: qml/Wizard/PasswordMeter.qml:97
 msgid "Fair password"
-msgstr ""
+msgstr "ລະຫັດຜ່ານລະດັບປານກາງ"
 
 #: qml/Wizard/PasswordMeter.qml:99
 msgid "Weak password"
-msgstr ""
+msgstr "ລະຫັດຜ່ານທີ່ອ່ອນແອ"
 
 #: qml/Wizard/PasswordMeter.qml:101
 msgid "Very weak password"
-msgstr ""
+msgstr "ລະຫັດຜ່ານທີ່ອ່ອນແອຫຼາຍ"
 
 #~ msgid "Send"
 #~ msgstr "ສົ່ງ"
