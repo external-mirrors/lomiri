@@ -2178,6 +2178,13 @@ FocusScope {
                     onDecorationPressed: { appDelegate.activate(); }
                     onDecorationReleased: fakeRectangle.visible ? fakeRectangle.commit() : appDelegate.updateRestoredGeometry()
 
+                    onDragResizePressed: {
+                        appDelegate.activate();
+                        resizeArea.pressedChangedEx(true, mouse);
+                    }
+                    onDragResizeReleased: resizeArea.pressedChangedEx(false, mouse);
+                    onDragResizePositionChanged: resizeArea.positionChangedEx(mouse);
+
                     property real angle: 0
                     Behavior on angle { enabled: priv.closingIndex >= 0; LomiriNumberAnimation {} }
                     property real itemScale: 1

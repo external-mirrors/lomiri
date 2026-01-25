@@ -91,6 +91,9 @@ FocusScope {
     signal minimizeClicked()
     signal decorationPressed()
     signal decorationReleased()
+    signal dragResizePressed(point mouse)
+    signal dragResizeReleased(point mouse)
+    signal dragResizePositionChanged(point mouse)
 
     function cancelDrag() {
         moveHandler.cancelDrag();
@@ -284,8 +287,9 @@ FocusScope {
     MouseArea {
         id: altDragHandler
         anchors.fill: applicationWindow
-        acceptedButtons: Qt.LeftButton
+        acceptedButtons: Qt.LeftButton | Qt.RightButton
         property bool dragging: false
+        property bool draggingForResize: false
         cursorShape: undefined // don't interfere with the cursor shape set by the underlying MirSurfaceItem
         visible: enabled
         onPressed: {
@@ -294,6 +298,10 @@ FocusScope {
                 moveHandler.handlePressedChanged(true, Qt.LeftButton, mouse.x, mouse.y);
                 dragging = true;
                 mouse.accepted = true;
+            } else if (mouse.button == Qt.RightButton && mouse.modifiers & Qt.AltModifier) {
+                root.dragResizePressed(Qt.point(mouse.x, mouse.y))
+                draggingForResize = true;
+                mouse.accepted = true;
             } else {
                 mouse.accepted = false;
             }
@@ -301,6 +309,8 @@ FocusScope {
         onPositionChanged: {
             if (dragging) {
                 moveHandler.handlePositionChanged(mouse);
+            } else if (draggingForResize) {
+                root.dragResizePositionChanged(Qt.point(mouse.x, mouse.y))
             }
         }
         onReleased: {
@@ -309,6 +319,9 @@ FocusScope {
                 root.decorationReleased();  // commits the fake preview max rectangle
                 moveHandler.handleReleased();
                 dragging = false;
+            } else if (draggingForResize) {
+                root.dragResizeReleased(Qt.point(mouse.x, mouse.y))
+                draggingForResize = false;
             }
         }
     }

@@ -161,13 +161,18 @@ FocusScope {
         anchors.fill: parent
         sourceComponent: Component {
             MouseArea {
-                acceptedButtons: Qt.LeftButton
+                acceptedButtons: Qt.LeftButton | Qt.RightButton
                 property bool dragging: false
+                property bool draggingForResize: false
                 cursorShape: undefined // don't interfere with the cursor shape set by the underlying MirSurfaceItem
                 onPressed: {
                     if (mouse.button == Qt.LeftButton && mouse.modifiers == Qt.AltModifier) {
                         d.moveHandler.handlePressedChanged(true, Qt.LeftButton, mouse.x, mouse.y);
                         dragging = true;
+                        mouse.accepted = true;
+                    } else if (mouse.button == Qt.RightButton && mouse.modifiers & Qt.AltModifier && d.resizeable) {
+                        windowResizeArea.pressedChangedEx(true, Qt.point(mouse.x, mouse.y));
+                        draggingForResize = true;
                         mouse.accepted = true;
                     } else {
                         mouse.accepted = false;
@@ -176,6 +181,8 @@ FocusScope {
                 onPositionChanged: {
                     if (dragging) {
                         d.moveHandler.handlePositionChanged(mouse);
+                    } else if (draggingForResize) {
+                        windowResizeArea.positionChangedEx(Qt.point(mouse.x, mouse.y));
                     }
                 }
                 onReleased: {
@@ -183,6 +190,9 @@ FocusScope {
                         d.moveHandler.handlePressedChanged(false, Qt.LeftButton);
                         d.moveHandler.handleReleased();
                         dragging = false;
+                    } else if (draggingForResize) {
+                        windowResizeArea.pressedChangedEx(false, Qt.point(mouse.x, mouse.y));
+                        draggingForResize = false;
                     }
                 }
             }
