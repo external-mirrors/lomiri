@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-14 20:08+0000\n"
-"PO-Revision-Date: 2026-01-10 11:04+0000\n"
+"PO-Revision-Date: 2026-01-25 15:46+0000\n"
 "Last-Translator: BoneNI <bounkirdni@gmail.com>\n"
 "Language-Team: Lao <https://hosted.weblate.org/projects/lomiri/lomiri/lo/>\n"
 "Language: lo\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.15.1\n"
+"X-Generator: Weblate 5.16-dev\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:35+0000\n"
 
 #: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
@@ -82,7 +82,7 @@ msgstr ""
 
 #: plugins/Lomiri/Launcher/launcheritem.cpp:54
 msgid "Quit"
-msgstr ""
+msgstr "ອອກ"
 
 #: plugins/Lomiri/Launcher/launcheritem.cpp:122
 msgid "Unpin shortcut"
@@ -508,10 +508,8 @@ msgid "Select desktop environment"
 msgstr ""
 
 #: qml/Launcher/Drawer.qml:240
-#, fuzzy
-#| msgid "Search"
 msgid "Search…"
-msgstr "ຊອກຫາ"
+msgstr "ຄົ້ນຫາ…"
 
 #: qml/Launcher/PullToRefreshScopeStyle.qml:56
 msgid "Pull to refresh…"
@@ -646,7 +644,7 @@ msgstr ""
 #: qml/Wizard/Pages/passcode-desktop.qml:154
 #: qml/Wizard/Pages/password-set.qml:153
 msgid "Next"
-msgstr ""
+msgstr "ຕໍ່ໄປ"
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
 #: qml/Wizard/Pages/10-welcome-update.qml:92
@@ -665,9 +663,8 @@ msgid "What's new"
 msgstr ""
 
 #: qml/Wizard/Pages/11-changelog.qml:74
-#, fuzzy
 msgid "Loading..."
-msgstr "ກໍາລັງເວົ້າ"
+msgstr "ກຳລັງໂຫຼດ..."
 
 #: qml/Wizard/Pages/20-keyboard.qml:31
 msgid "Select Keyboard"
