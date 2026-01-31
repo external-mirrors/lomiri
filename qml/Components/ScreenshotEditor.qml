@@ -113,9 +113,9 @@ Item {
                 if (activeTransfer.state === ContentTransfer.InProgress) {
                     const url = "file://" + screenshotSharePicker.filePath
                     console.log("File transfer in progress: " + url);
-                    activeTransfer.items = [ resultComponent.createObject(parent,
-                                                                          {"url": url})
-                            ];
+                    activeTransfer.items = [ 
+                        resultComponent.createObject(parent, {"url": url})
+                    ];
                     activeTransfer.state = ContentTransfer.Charged;
                     root.hide();
                 }
