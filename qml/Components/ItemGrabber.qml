@@ -28,7 +28,7 @@ Rectangle {
     color: "white"
     opacity: 0.0
 
-    property var shell : null
+    required property var shell
 
     signal snapshotTaken(string path)
 
