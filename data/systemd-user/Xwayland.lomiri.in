@@ -29,13 +29,21 @@ ARGS=""
 XWAYLAND_SHM=$(device-info get XwaylandShm)
 HAS_XWAYLAND_SHM=$?
 
-# Default to shm mode on for the phone
+# Default to shm mode on for hybris
 if [ "$HAS_XWAYLAND_SHM" = "1" ]; then
     [ -f /system/build.prop ] && ARGS="$ARGS -shm"
 elif [ "$HAS_XWAYLAND_SHM" = "0" ]; then
     if [ "$XWAYLAND_SHM" = "true" ]; then
         ARGS="$ARGS -shm"
     fi
+fi
+
+# Also use shm mode for the PDK
+if [ -e /run/mir_socket ]; then
+    case $(systemd-detect-virt --vm) in
+    qemu|kvm)
+        ARGS="$ARGS -shm"
+    esac
 fi
 
 exec @XWAYLAND_BIN@ $@ $ARGS
