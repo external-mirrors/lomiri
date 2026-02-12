@@ -259,8 +259,19 @@ FocusScope {
                     break;
             }
         }
-        active: (root.state == "windowed" && priv.focusedAppDelegate && priv.focusedAppDelegate.canBeMaximizedLeftRight)
-                    ||  (root.state == "stagedWithSideStage" && priv.focusedAppDelegate.stage == ApplicationInfoInterface.SideStage)
+        active: {
+            switch (root.state) {
+                case "stagedWithSideStage":
+                    return    priv.focusedAppDelegate
+                           && priv.focusedAppDelegate.stage == ApplicationInfoInterface.SideStage
+                           && priv.sideStageEnabled;
+                case "windowed":
+                    return    priv.focusedAppDelegate
+                           && priv.focusedAppDelegate.canBeMaximizedLeftRight;
+                default:
+                    return false;
+            }
+        }
     }
 
     GlobalShortcut {
@@ -281,8 +292,19 @@ FocusScope {
                     break;
             }
         }
-        active: (root.state == "windowed" && priv.focusedAppDelegate && priv.focusedAppDelegate.canBeMaximizedLeftRight)
-                    ||  (root.state == "stagedWithSideStage" && priv.focusedAppDelegate.stage == ApplicationInfoInterface.MainStage)
+        active: {
+            switch (root.state) {
+                case "stagedWithSideStage":
+                    return    priv.focusedAppDelegate
+                           && priv.focusedAppDelegate.stage == ApplicationInfoInterface.MainStage
+                           && priv.sideStageEnabled;
+                case "windowed":
+                    return    priv.focusedAppDelegate
+                           && priv.focusedAppDelegate.canBeMaximizedLeftRight;
+                default:
+                    return false;
+            }
+        }
     }
 
     GlobalShortcut {
