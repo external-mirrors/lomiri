@@ -249,13 +249,17 @@ FocusScope {
         onTriggered: {
             switch (root.mode) {
                 case "stagedWithSideStage":
-                    if (priv.focusedAppDelegate.stage == ApplicationInfoInterface.SideStage) {
+                    if (    priv.focusedAppDelegate
+                         && priv.focusedAppDelegate.stage == ApplicationInfoInterface.SideStage
+                    ) {
                         priv.focusedAppDelegate.saveStage(ApplicationInfoInterface.MainStage);
                         priv.focusedAppDelegate.focus = true;
                     }
                     break;
                 case "windowed":
-                    priv.focusedAppDelegate.requestMaximizeLeft();
+                    if (priv.focusedAppDelegate) {
+                        priv.focusedAppDelegate.requestMaximizeLeft();
+                    }
                     break;
             }
         }
@@ -280,7 +284,9 @@ FocusScope {
         onTriggered: {
             switch (root.mode) {
                 case "stagedWithSideStage":
-                    if (priv.focusedAppDelegate.stage == ApplicationInfoInterface.MainStage) {
+                    if (    priv.focusedAppDelegate
+                         && priv.focusedAppDelegate.stage == ApplicationInfoInterface.MainStage
+                    ) {
                         priv.focusedAppDelegate.saveStage(ApplicationInfoInterface.SideStage);
                         priv.focusedAppDelegate.focus = true;
                         sideStage.show();
@@ -288,7 +294,9 @@ FocusScope {
                     }
                     break;
                 case "windowed":
-                    priv.focusedAppDelegate.requestMaximizeRight();
+                    if (priv.focusedAppDelegate) {
+                        priv.focusedAppDelegate.requestMaximizeRight();
+                    }
                     break;
             }
         }
