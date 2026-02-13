@@ -35,11 +35,22 @@ Dialog {
 
     onVisibleChanged: {
         if (!visible && dialogLoader) {
-            dialogLoader.active = false;
+            delayedDestroyDialog.start();
         }
     }
 
     focus: true
+
+    Timer {
+        id: delayedDestroyDialog
+        interval: 0
+        running: false
+        repeat: false
+        onTriggered: {
+            if (dialogLoader)
+                dialogLoader.active = false;
+        }
+    }
 
     Component.onCompleted: {
         show();
