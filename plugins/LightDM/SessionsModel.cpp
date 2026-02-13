@@ -54,9 +54,9 @@ void SessionsModel::setIconSearchDirectories(const QList<QUrl> searchDirectories
 QUrl SessionsModel::iconUrl(const QString sessionKey) const
 {
     const QStringList imgExtensions { "svg", "png" };
-    for (const QString& imgExt : imgExtensions)
+    for (const QUrl& searchDirectory : m_iconSearchDirectories)
     {
-        for (const QUrl& searchDirectory : m_iconSearchDirectories)
+        for (const QString& imgExt : imgExtensions)
         {
             // This is an established icon naming convention
             QString customIconUrl = searchDirectory.toString(QUrl::StripTrailingSlash) +
