@@ -132,6 +132,7 @@ Item {
             spacing: units.gu(1)
             leftMargin: itemWidth
             rightMargin: itemWidth
+            contentX: anchors.leftMargin
 
             // FIXME: Screen orientation changed event does not trigger properly
             // so we rely on width/height getting changed when rotating hence updating the value as needed
