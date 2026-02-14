@@ -373,6 +373,7 @@ StyledItem {
             onSpreadShownChanged: {
                 panel.indicators.hide();
                 panel.applicationMenus.hide();
+                launcher.hide()
             }
         }
 
