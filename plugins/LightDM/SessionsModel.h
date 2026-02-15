@@ -20,8 +20,11 @@
 #include <lomirisortfilterproxymodelqml.h>
 #include <QLightDM/SessionsModel>
 #include <QtCore/QHash>
+#include <QtCore/QLoggingCategory>
 #include <QtCore/QObject>
 #include <QtCore/QUrl>
+
+Q_DECLARE_LOGGING_CATEGORY(SessionsModelLogger)
 
 class SessionsModel : public LomiriSortFilterProxyModelQML
 {
@@ -59,8 +62,10 @@ private:
     QLightDM::SessionsModel* m_model;
     QHash<int, QByteArray> m_roleNames;
     QList<QUrl> m_iconSearchDirectories{
-        QUrl(SHELL_APP_FULL_DIR "/Greeter/graphics/session_icons"),
         QUrl("/usr/local/share/lomiri-greeter"),
-        QUrl("/usr/share/lomiri-greeter/")};
+        QUrl("/usr/share/lomiri-greeter"),
+        QUrl("/usr/share/ayatana-greeter/badges"),
+        QUrl(SHELL_APP_FULL_DIR "/Greeter/graphics/session_icons"),
+    };
 
 };
