@@ -28,6 +28,9 @@
 // Qt
 #include <QDebug>
 
+// C++
+#include <set>
+
 // local
 #include "Window.h"
 #include "Workspace.h"
@@ -176,6 +179,27 @@ void TopLevelWindowModel::prependPlaceholder(lomiriapi::ApplicationInfoInterface
     prependSurfaceHelper(nullptr, application);
 }
 
+// We do a fuzzy comparison to avoid matching Xwayland windows to the wrong
+// application window, ie: surface appId "xclock" should match "xclock-simosx_xclock",
+// but no other window appId.
+inline bool fuzzyNameCompare(const QString& appId, const QString& surfaceAppId)
+{
+    std::set<QChar> appIdCrumbs;
+    const int minSuccess = std::min<int>(surfaceAppId.length(), 5);
+    int sameLetterFound = 0;
+
+    for (const auto& c : appId) {
+        appIdCrumbs.insert(c);
+    }
+    for (const auto& c : surfaceAppId) {
+        if (appIdCrumbs.find(c) != appIdCrumbs.end()) {
+            ++sameLetterFound;
+        }
+    }
+
+    return sameLetterFound >= minSuccess;
+}
+
 void TopLevelWindowModel::prependSurface(lomiriapi::MirSurfaceInterface *surface, lomiriapi::ApplicationInfoInterface *application)
 {
     Q_ASSERT(surface != nullptr);
@@ -191,6 +215,20 @@ void TopLevelWindowModel::prependSurface(lomiriapi::MirSurfaceInterface *surface
             DEBUG_MSG << " appId=" << application->appId() << " surface=" << surface
                       << ", filling out placeholder. after: " << toString();
             filledPlaceholder = true;
+        }
+    }
+
+    if (!filledPlaceholder && application->appId() == QStringLiteral("xwayland.qtmir")) {
+        for (int i = 0; i < m_windowModel.count() && !filledPlaceholder; ++i) {
+            ModelEntry &entry = m_windowModel[i];
+            if ((!entry.window->surface() || !entry.window->surface()->live()) &&
+                fuzzyNameCompare(entry.application->appId(), surface->appId()))
+            {
+                entry.window->setSurface(surface);
+                DEBUG_MSG << " Xwayland app " << entry.application->appId() << " surface=" << surface->appId()
+                          << ", filling out placeholder. after: " << toString();
+                filledPlaceholder = true;
+            }
         }
     }
 
