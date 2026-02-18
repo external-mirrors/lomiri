@@ -284,6 +284,7 @@ Item {
 
             // Wait for the two items to be there
             tryCompareFunction(function() { return findChild(menu, "menu-item1") !== null; }, true);
+            waitForRendering(menu);
             var longWidth = menu.width;
 
             // Now pop one item and make sure it's smaller
