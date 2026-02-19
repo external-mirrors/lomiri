@@ -219,15 +219,43 @@ void TopLevelWindowModel::prependSurface(lomiriapi::MirSurfaceInterface *surface
     }
 
     if (!filledPlaceholder && application->appId() == QStringLiteral("xwayland.qtmir")) {
+        // First, let's see if there's a window's appId that contains the surface's appId,
+        // ie: window app Id "steam_steam" & surface app Id "steam"
         for (int i = 0; i < m_windowModel.count() && !filledPlaceholder; ++i) {
+            ModelEntry &entry = m_windowModel[i];
+            if ((!entry.window->surface() || !entry.window->surface()->live()) &&
+                entry.application->appId().contains(surface->appId()))
+            {
+                entry.window->setSurface(surface);
+                DEBUG_MSG << " Xwayland app " << entry.application->appId() << " contains surface=" << surface->appId()
+                          << ", filling out placeholder. after: " << toString();
+                filledPlaceholder = true;
+            }
+        }
+
+        // Reduce false positives: Check if there's more than 1 fuzzy match candidate
+        unsigned int candidates = 0;
+        for (int i = 0; i < m_windowModel.count(); ++i) {
             ModelEntry &entry = m_windowModel[i];
             if ((!entry.window->surface() || !entry.window->surface()->live()) &&
                 fuzzyNameCompare(entry.application->appId(), surface->appId()))
             {
-                entry.window->setSurface(surface);
-                DEBUG_MSG << " Xwayland app " << entry.application->appId() << " surface=" << surface->appId()
-                          << ", filling out placeholder. after: " << toString();
-                filledPlaceholder = true;
+                ++candidates;
+            }
+        }
+
+        // Fuzzy match if there's only one
+        if (candidates == 1) {
+            for (int i = 0; i < m_windowModel.count() && !filledPlaceholder; ++i) {
+                ModelEntry &entry = m_windowModel[i];
+                if ((!entry.window->surface() || !entry.window->surface()->live()) &&
+                    fuzzyNameCompare(entry.application->appId(), surface->appId()))
+                {
+                    entry.window->setSurface(surface);
+                    DEBUG_MSG << " Xwayland app " << entry.application->appId() << " fuzzy match surface=" << surface->appId()
+                              << ", filling out placeholder. after: " << toString();
+                    filledPlaceholder = true;
+                }
             }
         }
     }
