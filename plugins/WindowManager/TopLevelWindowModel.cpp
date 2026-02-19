@@ -235,28 +235,24 @@ void TopLevelWindowModel::prependSurface(lomiriapi::MirSurfaceInterface *surface
 
         // Reduce false positives: Check if there's more than 1 fuzzy match candidate
         unsigned int candidates = 0;
+        int selectedCandidate = -1;
         for (int i = 0; i < m_windowModel.count() && !filledPlaceholder; ++i) {
             ModelEntry &entry = m_windowModel[i];
             if ((!entry.window->surface() || !entry.window->surface()->live()) &&
                 fuzzyNameCompare(entry.application->appId(), surface->appId()))
             {
                 ++candidates;
+                selectedCandidate = i;
             }
         }
 
         // Fuzzy match if there's only one
-        if (candidates == 1) {
-            for (int i = 0; i < m_windowModel.count() && !filledPlaceholder; ++i) {
-                ModelEntry &entry = m_windowModel[i];
-                if ((!entry.window->surface() || !entry.window->surface()->live()) &&
-                    fuzzyNameCompare(entry.application->appId(), surface->appId()))
-                {
-                    entry.window->setSurface(surface);
-                    DEBUG_MSG << " Xwayland app " << entry.application->appId() << " fuzzy match surface=" << surface->appId()
-                              << ", filling out placeholder. after: " << toString();
-                    filledPlaceholder = true;
-                }
-            }
+        if (candidates == 1 && !filledPlaceholder) {
+            ModelEntry &entry = m_windowModel[selectedCandidate];
+            entry.window->setSurface(surface);
+            DEBUG_MSG << " Xwayland app " << entry.application->appId() << " fuzzy match surface=" << surface->appId()
+                      << ", filling out placeholder. after: " << toString();
+            filledPlaceholder = true;
         }
     }
 
