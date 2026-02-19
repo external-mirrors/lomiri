@@ -235,7 +235,7 @@ void TopLevelWindowModel::prependSurface(lomiriapi::MirSurfaceInterface *surface
 
         // Reduce false positives: Check if there's more than 1 fuzzy match candidate
         unsigned int candidates = 0;
-        for (int i = 0; i < m_windowModel.count(); ++i) {
+        for (int i = 0; i < m_windowModel.count() && !filledPlaceholder; ++i) {
             ModelEntry &entry = m_windowModel[i];
             if ((!entry.window->surface() || !entry.window->surface()->live()) &&
                 fuzzyNameCompare(entry.application->appId(), surface->appId()))
