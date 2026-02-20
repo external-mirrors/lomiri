@@ -180,8 +180,8 @@ void TopLevelWindowModel::prependPlaceholder(lomiriapi::ApplicationInfoInterface
 }
 
 // We do a fuzzy comparison to avoid matching Xwayland windows to the wrong
-// application window, ie: surface appId "xclock" should match "xclock-simosx_xclock",
-// but no other window appId.
+// application window, ie: surface appId "chromium-browser" should match
+// "chromiumut.shapa_chromelauncher" but no other window appId.
 inline bool fuzzyNameCompare(const QString& appId, const QString& surfaceAppId)
 {
     std::set<QChar> appIdCrumbs;
@@ -218,6 +218,9 @@ void TopLevelWindowModel::prependSurface(lomiriapi::MirSurfaceInterface *surface
         }
     }
 
+    // Mir doesn't give us the pid of Xwayland surfaces but rather of Lomiri since it spawns the X socket
+    // and activates Xwayland in the back. Do extra work to match the surface to the appropriate window.
+    // TODO: Use XCB to get the pid of an Xwayland window? How to distinguish between X windows with the same name?
     if (!filledPlaceholder && application->appId() == QStringLiteral("xwayland.qtmir")) {
         // First, let's see if there's a window's appId that contains the surface's appId,
         // ie: window app Id "steam_steam" & surface app Id "steam"
