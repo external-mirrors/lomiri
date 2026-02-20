@@ -43,7 +43,7 @@ Item {
         height: rotation == 90 || rotation == 270 ? parent.width : parent.height
         width: rotation == 90 || rotation == 270 ? parent.height : parent.width
 
-        readonly property int angleFromPrimary: Screen.angleBetween(Screen.primaryOrientation, Screen.orientation)
+        property int angleFromPrimary: Screen.angleBetween(Screen.primaryOrientation, Screen.orientation)
         readonly property bool rotatedToPhysical: rotation === angleFromPrimary
 
         function matchPhysicalOrientation() {
