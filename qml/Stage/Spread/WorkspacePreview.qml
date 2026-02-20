@@ -157,7 +157,7 @@ Item {
         border.color: LomiriColors.porcelain
         border.width: units.gu(.5)
         color: "transparent"
-        opacity: 0.7
+        opacity: 0.3
         antialiasing: true
         visible: previewSpace.isActive
     }
@@ -167,7 +167,7 @@ Item {
         border.color: LomiriColors.porcelain
         border.width: units.gu(.3)
         color: "transparent"
-        opacity: 0.7
+        opacity: 0.3
         antialiasing: true
         visible: previewSpace.isSelected
     }
