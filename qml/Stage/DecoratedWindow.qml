@@ -151,7 +151,7 @@ FocusScope {
         objectName: "selectionHighlight"
         anchors.fill: parent
         anchors.margins: -root.highlightSize
-        color: "white"
+        color: LomiriColors.porcelain
         opacity: showHighlight ? 0.3 : 0
         visible: opacity > 0
         antialiasing: true
@@ -336,7 +336,7 @@ FocusScope {
 
     Rectangle {
         anchors.fill: parent
-        color: "black"
+        color: LomiriColors.jet
         antialiasing: true
         opacity: root.darkening && !root.showHighlight ? 0.5 : 0
         Behavior on opacity { LomiriNumberAnimation { duration: LomiriAnimation.SnapDuration } }

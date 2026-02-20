@@ -154,7 +154,7 @@ Item {
 
     Rectangle {
         anchors.fill: parent
-        border.color: "white"
+        border.color: LomiriColors.porcelain
         border.width: units.gu(.5)
         color: "transparent"
         opacity: 0.7
@@ -164,7 +164,7 @@ Item {
 
     Rectangle {
         anchors.fill: parent
-        border.color: "white"
+        border.color: LomiriColors.porcelain
         border.width: units.gu(.3)
         color: "transparent"
         opacity: 0.7
@@ -174,7 +174,7 @@ Item {
 
     Rectangle {
         anchors.fill: parent
-        color: "black"
+        color: LomiriColors.jet
         opacity: previewSpace.isSelected || previewSpace.isActive ? 0 : 0.5
         antialiasing: true
         Behavior on opacity { LomiriNumberAnimation { duration: LomiriAnimation.SnapDuration } }
