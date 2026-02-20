@@ -175,7 +175,8 @@ Item {
     Rectangle {
         anchors.fill: parent
         color: LomiriColors.jet
-        opacity: previewSpace.isSelected || previewSpace.isActive ? 0 : 0.5
+        opacity: previewSpace.isSelected || previewSpace.isActive
+                    || previewSpace.containsDragLeft || previewSpace.containsDragRight ? 0 : 0.5
         antialiasing: true
         Behavior on opacity { LomiriNumberAnimation { duration: LomiriAnimation.SnapDuration } }
     }
