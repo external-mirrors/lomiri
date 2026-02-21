@@ -925,6 +925,8 @@ FocusScope {
                 property int scrollAreaWidth: width / 3
                 property bool progressiveScrollingEnabled: false
 
+                onEnabledChanged: if (!enabled) spreadItem.hoveredIndex = -1;
+
                 onMouseXChanged: {
                     mouse.accepted = false
 
@@ -933,15 +935,18 @@ FocusScope {
                     }
 
                     // Find the hovered item and mark it active except when alt tabbing is in-progress
-                    if (!priv.altTabInProgress) {
-                        for (var i = appRepeater.count - 1; i >= 0; i--) {
-                            var appDelegate = appRepeater.itemAt(i);
-                            var mapped = mapToItem(appDelegate, hoverMouseArea.mouseX, hoverMouseArea.mouseY)
-                            var itemUnder = appDelegate.childAt(mapped.x, mapped.y);
-                            if (itemUnder && (itemUnder.objectName === "dragArea" || itemUnder.objectName === "windowInfoItem" || itemUnder.objectName == "closeMouseArea")) {
+                    for (var i = appRepeater.count - 1; i >= 0; i--) {
+                        var appDelegate = appRepeater.itemAt(i);
+                        var mapped = mapToItem(appDelegate, hoverMouseArea.mouseX, hoverMouseArea.mouseY)
+                        var itemUnder = appDelegate.childAt(mapped.x, mapped.y);
+                        if (itemUnder && (itemUnder.objectName === "dragArea" || itemUnder.objectName === "windowInfoItem" || itemUnder.objectName == "closeMouseArea")) {
+                            if (!priv.altTabInProgress) {
                                 spreadItem.highlightedIndex = i;
-                                break;
                             }
+                            spreadItem.hoveredIndex = i;
+                            break;
+                        } else {
+                            spreadItem.hoveredIndex = -1;
                         }
                     }
 
@@ -2244,7 +2249,7 @@ FocusScope {
                     anchors { left: parent.left; top: parent.top; leftMargin: -height / 2; topMargin: -height / 2 + spreadMaths.closeIconOffset }
                     readonly property var mousePos: hoverMouseArea.mapToItem(appDelegate, hoverMouseArea.mouseX, hoverMouseArea.mouseY)
                     readonly property bool shown: dragArea.distance == 0
-                             && index == spreadItem.highlightedIndex
+                             && index == spreadItem.hoveredIndex
                              && mousePos.y < (decoratedWindow.height / 3)
                              && mousePos.y > -units.gu(4)
                              && mousePos.x > -units.gu(4)
