@@ -28,9 +28,6 @@
 // Qt
 #include <QDebug>
 
-// C++
-#include <set>
-
 // local
 #include "Window.h"
 #include "Workspace.h"
@@ -184,16 +181,21 @@ void TopLevelWindowModel::prependPlaceholder(lomiriapi::ApplicationInfoInterface
 // "chromiumut.shapa_chromelauncher" but no other window appId.
 inline bool fuzzyNameCompare(const QString& appId, const QString& surfaceAppId)
 {
-    std::set<QChar> appIdCrumbs;
-    const int minSuccess = std::min<int>(surfaceAppId.length(), 5);
+    QString::const_iterator it = nullptr;
+    const QString appName = appId.mid(appId.indexOf("_") + 1).toLower();
+    const QString surfaceName = surfaceAppId.toLower();
+    const int minSuccess = std::min<int>(surfaceName.length(), 5);
     int sameLetterFound = 0;
 
-    for (const auto& c : appId) {
-        appIdCrumbs.insert(c);
-    }
-    for (const auto& c : surfaceAppId) {
-        if (appIdCrumbs.find(c) != appIdCrumbs.end()) {
+    DEBUG_MSG << "appName: " << appName << " surfaceName: " << surfaceName;
+
+    it = appName.cbegin();
+    for (const auto& c : surfaceName) {
+        QString::const_iterator tmpIt = std::find(it, appName.cend(), c);
+        if (tmpIt != appName.end() && tmpIt >= it) {
+            DEBUG_MSG << "fuzzy match letter: " << c;
             ++sameLetterFound;
+            it = tmpIt;
         }
     }
 
