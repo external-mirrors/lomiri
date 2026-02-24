@@ -95,7 +95,7 @@ pkg_check_modules(GIO REQUIRED gio-2.0>=2.32 gio-unix-2.0)
 pkg_check_modules(GLIB REQUIRED glib-2.0>=2.32)
 pkg_check_modules(LAUNCHER_API REQUIRED lomiri-shell-launcher=13)
 pkg_check_modules(QMENUMODEL REQUIRED qmenumodel)
-pkg_check_modules(GD3 REQUIRED gnome-desktop-3.0)
+pkg_check_modules(GD4 REQUIRED gnome-desktop-4)
 # 0.1.5 adds lal-application-end.target.
 pkg_check_modules(UAL REQUIRED lomiri-app-launch-0>=0.1.5)
 pkg_check_modules(LOMIRIGESTURES REQUIRED LomiriGestures)

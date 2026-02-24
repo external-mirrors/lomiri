@@ -35,7 +35,7 @@ templates:
     - libgl1-mesa-dri
     - libgles2-mesa-dev
     - libglib2.0-dev
-    - libgnome-desktop-3-dev
+    - libgnome-desktop-4-dev
     - libgsettings-qt-dev
     - libhardware-dev
     - liblightdm-qt5-3-dev

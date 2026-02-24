@@ -1,6 +1,6 @@
-pkg_search_module(GD3 REQUIRED gnome-desktop-3.0)
+pkg_search_module(GD4 REQUIRED gnome-desktop-4)
 
-include_directories(SYSTEM ${GD3_INCLUDE_DIRS} ${GLIB_INCLUDE_DIRS} ${GEONAMES_INCLUDE_DIRS})
+include_directories(SYSTEM ${GD4_INCLUDE_DIRS} ${GLIB_INCLUDE_DIRS} ${GEONAMES_INCLUDE_DIRS})
 
 add_library(Wizard-qml MODULE
     plugin.cpp
@@ -15,7 +15,7 @@ add_library(Wizard-qml MODULE
 
 target_link_libraries(Wizard-qml
     Qt5::DBus Qt5::Qml
-    ${GD3_LDFLAGS} ${GLIB_LDFLAGS} ${GEONAMES_LDFLAGS}
+    ${GD4_LDFLAGS} ${GLIB_LDFLAGS} ${GEONAMES_LDFLAGS}
 )
 
 if (NOT "${DISPLAYED_DISTRO_NAME}" STREQUAL "")
