@@ -23,7 +23,7 @@ Build-Depends:
  libgl1-mesa-dri <!nocheck>,
  libgles2-mesa-dev[arm64 armhf],
  libglib2.0-dev,
- libgnome-desktop-3-dev,
+ libgnome-desktop-4-dev,
  libgsettings-qt-dev,
  liblightdm-qt5-3-dev,
  liblomiri-connectivity-qt1-dev,
