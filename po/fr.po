@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-14 20:08+0000\n"
-"PO-Revision-Date: 2025-08-23 20:01+0000\n"
-"Last-Translator: Nausi Llon <Nausill_on@proton.me>\n"
+"PO-Revision-Date: 2026-02-28 04:09+0000\n"
+"Last-Translator: gpatel-fr <gpfr1@k-logic.fr>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/lomiri/lomiri/fr/>"
 "\n"
 "Language: fr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.13\n"
+"X-Generator: Weblate 5.16.1-dev\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:35+0000\n"
 
 #: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
@@ -455,12 +455,12 @@ msgstr[1] "%1 minutes"
 #: qml/Greeter/CoverPage.qml:179
 #, qt-format
 msgid "%1, %2 until full"
-msgstr "%1, %2 jusqu'à ce qu'il soit plein"
+msgstr "%1, %2 jusqu'à charge complète"
 
 #: qml/Greeter/CoverPage.qml:182
 #, qt-format
 msgid "%1 until full"
-msgstr "%1 Jusqu’à ce qu'il soit plein"
+msgstr "%1 Jusqu’à charge complète"
 
 #: qml/Greeter/CoverPage.qml:198
 #: tests/qmltests/Greeter/tst_GreeterView.qml:1242
