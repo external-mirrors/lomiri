@@ -37,7 +37,7 @@ install(FILES
 
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/${GREETER_APP}.desktop
-    DESTINATION ${CMAKE_INSTALL_DATADIR}/lightdm/greeters
+    DESTINATION ${CMAKE_INSTALL_DATADIR}/xgreeters
     )
 
 install(FILES
