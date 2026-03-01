@@ -29,6 +29,9 @@ MousePointer {
     }
 
     Loader {
+        width: 0
+        height: 0
+
         active: mousePointer.visible && imageInfo.frameCount > 1
         sourceComponent: AnimatedSprite {
             x: -imageInfo.hotspot.x
@@ -50,6 +53,9 @@ MousePointer {
     }
 
     Loader {
+        width: 0
+        height: 0
+
         active: mousePointer.visible && imageInfo.frameCount === 1
         sourceComponent: Image {
             x: -imageInfo.hotspot.x
