@@ -129,7 +129,7 @@ Item {
             property var clickedWorkspace: null
 
             orientation: ListView.Horizontal
-            spacing: units.gu(1)
+            spacing: units.gu(2)
             leftMargin: itemWidth
             rightMargin: itemWidth
             contentX: anchors.leftMargin
