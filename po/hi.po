@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-14 20:08+0000\n"
-"PO-Revision-Date: 2026-02-28 04:09+0000\n"
+"PO-Revision-Date: 2026-03-11 04:17+0000\n"
 "Last-Translator: Satyaakam Goswami <satyaakam@gmail.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/lomiri/lomiri/hi/>"
 "\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.16.1-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:35+0000\n"
 
 #: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
@@ -666,12 +666,7 @@ msgstr "स्वागत है %1 %2"
 #: qml/Wizard/Pages/10-welcome-update.qml:108
 #, qt-format
 msgid "We will make sure your device is ready to use %1 %2"
-msgstr ""
-"हम आपके डिवाइस को तैयार करने में सुनिश्चित होंगे कि आपका डिवाइस उपयोग करने योग्य है। \n"
-"\n"
-"Note: '%1' and '%2' are placeholders for text that will be filled by the "
-"system. In this case, we can use 'your device' instead of '%1', and 'ready "
-"to use' is already included in the translation."
+msgstr "हम सुनिश्चित करेंगे कि आपका डिवाइस %1 %2 का उपयोग करने के लिए तैयार है।"
 
 #: qml/Wizard/Pages/11-changelog.qml:28
 msgid "What's new"
