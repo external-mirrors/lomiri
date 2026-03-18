@@ -1269,7 +1269,7 @@ FocusScope {
                                                      maximizedTopLeft || maximizedTopRight || maximizedBottomLeft || maximizedBottomRight
 
                 readonly property bool minimized: windowState & WindowStateStorage.WindowStateMinimized
-                readonly property bool fullscreen: windowState === WindowStateStorage.WindowStateFullscreen
+                readonly property bool fullscreen: windowState & WindowStateStorage.WindowStateFullscreen
 
                 readonly property bool canBeMaximized: canBeMaximizedHorizontally && canBeMaximizedVertically
                 readonly property bool canBeMaximizedLeftRight: (maximumWidth == 0 || maximumWidth >= appContainer.width/2) &&
@@ -1670,7 +1670,7 @@ FocusScope {
                     progress: 0
                     targetHeight: spreadItem.stackHeight
                     targetX: spreadMaths.targetX
-                    startY: appDelegate.fullscreen ? 0 : root.availableDesktopArea.y
+                    startY: root.availableDesktopArea.y
                     targetY: spreadMaths.targetY
                     targetAngle: spreadMaths.targetAngle
                     targetScale: spreadMaths.targetScale

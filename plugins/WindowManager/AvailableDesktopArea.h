@@ -27,12 +27,34 @@
 class AvailableDesktopArea : public QQuickItem
 {
     Q_OBJECT
+
 public:
-    AvailableDesktopArea(QQuickItem *parent = nullptr);
+    explicit AvailableDesktopArea(QQuickItem *parent = nullptr);
+
 protected:
     void itemChange(ItemChange change, const ItemChangeData &value) override;
+
+private:
+    /// Connects to QWindow signals when the item is added to the scene.
+    void bindToWindow(QWindow *window);
+
+    /// Coalesces updates (anti-jitter) before calling updatePlatformWindowProperty().
+    void requestUpdate();
+
 private Q_SLOTS:
+    /// Sends the availableDesktopArea rectangle to the platform window backend.
     void updatePlatformWindowProperty();
+
+private:
+    bool m_updatePending = false;
 };
 
 #endif // AVAILABLEDESKTOPAREA_H
+
+#pragma once
+
+#include <QQuickItem>
+#include <QWindow>
+#include <QTimer>
+
+
