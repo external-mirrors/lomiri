@@ -23,28 +23,99 @@
 AvailableDesktopArea::AvailableDesktopArea(QQuickItem *parent)
     : QQuickItem(parent)
 {
-    connect(this, &QQuickItem::xChanged, this, &AvailableDesktopArea::updatePlatformWindowProperty);
-    connect(this, &QQuickItem::yChanged, this, &AvailableDesktopArea::updatePlatformWindowProperty);
-    connect(this, &QQuickItem::widthChanged, this, &AvailableDesktopArea::updatePlatformWindowProperty);
-    connect(this, &QQuickItem::heightChanged, this, &AvailableDesktopArea::updatePlatformWindowProperty);
+    auto queued = Qt::QueuedConnection;
+
+    connect(this, &QQuickItem::xChanged,
+            this, &AvailableDesktopArea::requestUpdate,
+            queued);
+
+    connect(this, &QQuickItem::yChanged,
+            this, &AvailableDesktopArea::requestUpdate,
+            queued);
+
+    connect(this, &QQuickItem::widthChanged,
+            this, &AvailableDesktopArea::requestUpdate,
+            queued);
+
+    connect(this, &QQuickItem::heightChanged,
+            this, &AvailableDesktopArea::requestUpdate,
+            queued);
+}
+
+void AvailableDesktopArea::bindToWindow(QWindow *w)
+{
+    if (!w)
+        return;
+
+
+    auto queued = Qt::QueuedConnection;
+
+    connect(w, &QWindow::widthChanged,
+            this, &AvailableDesktopArea::requestUpdate, queued);
+    connect(w, &QWindow::heightChanged,
+            this, &AvailableDesktopArea::requestUpdate, queued);
+    connect(w, &QWindow::xChanged,
+            this, &AvailableDesktopArea::requestUpdate, queued);
+    connect(w, &QWindow::yChanged,
+            this, &AvailableDesktopArea::requestUpdate, queued);
+    connect(w, &QWindow::visibilityChanged,
+            this, &AvailableDesktopArea::requestUpdate, queued);
+    connect(w, &QWindow::windowStateChanged,
+            this, &AvailableDesktopArea::requestUpdate, queued);
+
+    connect(w, SIGNAL(afterAnimating()),
+            this, SLOT(requestUpdate()),
+            queued);
+
+
+    // Le signal qui fixe vraiment ton problème fullscreen
+    // connect(w, &QQuickWindow::afterAnimating,
+    //         this, &AvailableDesktopArea::requestUpdate, queued);
+
+}
+
+void AvailableDesktopArea::itemChange(ItemChange change,
+                                      const ItemChangeData &data)
+{
+    QQuickItem::itemChange(change, data);
+
+    if (change == ItemSceneChange) {
+
+        QWindow *w = window();
+
+        if (w) {
+            bindToWindow(w);
+            QMetaObject::invokeMethod(this,
+                                      &AvailableDesktopArea::requestUpdate,
+                                      Qt::QueuedConnection);
+        }
+    }
+}
+
+void AvailableDesktopArea::requestUpdate()
+{
+    // -> Prevent from flooding changes
+    if (!m_updatePending) {
+        m_updatePending = true;
+
+        QTimer::singleShot(0, this, &AvailableDesktopArea::updatePlatformWindowProperty);
+
+    }
 }
 
 void AvailableDesktopArea::updatePlatformWindowProperty()
 {
-    if (!window()) {
-        return;
-    }
 
-    QPlatformNativeInterface *nativeInterface = QGuiApplication::platformNativeInterface();
+    m_updatePending = false;
+
+    if (!window())
+        return;
+
+    auto *nativeInterface = QGuiApplication::platformNativeInterface();
 
     QRect rect(x(), y(), width(), height());
 
-    nativeInterface->setWindowProperty(window()->handle(), "availableDesktopArea", QVariant(rect));
-}
-
-void AvailableDesktopArea::itemChange(ItemChange change, const ItemChangeData &)
-{
-    if (change == ItemSceneChange) {
-        updatePlatformWindowProperty();
-    }
+    nativeInterface->setWindowProperty(window()->handle(),
+                                       "availableDesktopArea",
+                                       QVariant(rect));
 }
