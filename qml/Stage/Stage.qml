@@ -1670,7 +1670,7 @@ FocusScope {
                     progress: 0
                     targetHeight: spreadItem.stackHeight
                     targetX: spreadMaths.targetX
-                    startY: root.availableDesktopArea.y
+                    startY: appDelegate.fullscreen ? 0 : root.availableDesktopArea.y
                     targetY: spreadMaths.targetY
                     targetAngle: spreadMaths.targetAngle
                     targetScale: spreadMaths.targetScale
@@ -1783,14 +1783,14 @@ FocusScope {
                         PropertyChanges {
                             target: appDelegate
                             x: stageMaths.itemX
-                            y: root.availableDesktopArea.y
+                            y: appDelegate.fullscreen ? 0 : root.availableDesktopArea.y
                             visuallyMaximized: true
                             visible: appDelegate.x < root.width
                         }
                         PropertyChanges {
                             target: appDelegate
                             requestedWidth: appContainer.width
-                            requestedHeight: root.availableDesktopArea.height
+                            requestedHeight: appDelegate.fullscreen ? appContainer.height : root.availableDesktopArea.height
                             restoreEntryValues: false
                         }
                         PropertyChanges {
