@@ -43,11 +43,13 @@ LauncherItem::LauncherItem(const QString &appId, const QString &name, const QStr
     nameAction.setHasSeparator(true);
     m_quickList->appendAction(nameAction);
 
-    QuickListEntry pinningAction;
-    pinningAction.setActionId(QStringLiteral("pin_item"));
-    pinningAction.setText(gettext("Pin shortcut"));
-    pinningAction.setIsPrivate(true);
-    m_quickList->appendAction(pinningAction);
+    if (!isTransientItem()) {
+        QuickListEntry pinningAction;
+        pinningAction.setActionId(QStringLiteral("pin_item"));
+        pinningAction.setText(gettext("Pin shortcut"));
+        pinningAction.setIsPrivate(true);
+        m_quickList->appendAction(pinningAction);
+    }
 
     m_quitAction.setActionId(QStringLiteral("stop_item"));
     m_quitAction.setIcon(QStringLiteral("application-exit"));
@@ -110,6 +112,9 @@ bool LauncherItem::pinned() const
 
 void LauncherItem::setPinned(bool pinned)
 {
+    if (isTransientItem())
+        return;
+
     if (m_pinned != pinned) {
         m_pinned = pinned;
         Q_EMIT pinnedChanged(pinned);
@@ -271,4 +276,10 @@ void LauncherItem::setPopularity(uint popularity)
 lomiri::shell::launcher::QuickListModelInterface *LauncherItem::quickList() const
 {
     return m_quickList;
+}
+
+bool LauncherItem::isTransientItem()
+{
+    return (m_appId == QStringLiteral("xwayland.qtmir") ||
+            m_appId == QStringLiteral("unknown.qtmir"));
 }

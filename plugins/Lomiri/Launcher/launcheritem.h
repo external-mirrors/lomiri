@@ -66,6 +66,7 @@ private:
     void setFocused(bool focused);
     void setAlerting(bool alerting);
     void setSurfaces(const QList<QPair<QString, QString >> &surfaces);
+    bool isTransientItem();
 
 private:
     QString m_appId;
