@@ -37,6 +37,7 @@ set(SOURCE_FILES
     UnixSignalHandler.cpp
     DebuggingController.cpp
     WindowManagementPolicy.cpp
+    RootState.cpp
     ${QML_FILES} # This is to make qml and image files appear in the IDE's project tree
 )
 

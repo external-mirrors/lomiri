@@ -23,31 +23,13 @@
 #include <QScopedPointer>
 
 #include "ApplicationArguments.h"
+#include "RootState.h"
 
 #ifdef LOMIRI_ENABLE_TOUCH_EMULATION
 #include "MouseTouchAdaptor.h"
 #endif
 
 #include <qtmir/mirserverapplication.h>
-
-class RootState : public QObject
-{
-    Q_OBJECT
-
-    // Only read in lomiri-full-shell mode
-    Q_PROPERTY(bool skipGreeterAtStart MEMBER m_skipGreeterAtStart NOTIFY skipGreeterAtStartChanged)
-
-public:
-    RootState(QObject* parent = nullptr) : QObject(parent) {
-        m_skipGreeterAtStart = true;
-    }
-
-private:
-    bool m_skipGreeterAtStart;
-
-Q_SIGNALS:
-    void skipGreeterAtStartChanged();
-};
 
 class LomiriApplication : public qtmir::MirServerApplication
 {
