@@ -4,13 +4,14 @@ Requires=dbus.socket
 After=dbus.socket
 Wants=lomiri-indicators.target
 Before=lomiri-indicators.target
+@ONFAILURE@
 
 [Service]
 Type=notify
 SyslogIdentifier=lomiri
 ExecStart=@CMAKE_INSTALL_FULL_LIBEXECDIR@/lomiri-systemd-wrapper --mode=@MODE@
 ExecStopPost=@DUAE_BIN@ --systemd WAYLAND_DISPLAY= MIR_SOCKET=
-Restart=on-failure
+@RESTART@
 TimeoutStartSec=120
 
 # Start this target on stop to ends all applications launched through LAL,
