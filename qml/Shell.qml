@@ -104,8 +104,8 @@ StyledItem {
 
     Connections {
         target: greeter
-        function onActiveChanged() {
-            if (greeter.active) {
+        function onLockedChanged() {
+            if (greeter.locked) {
                 rootState.skipGreeterAtStart = false;
             }
         }
