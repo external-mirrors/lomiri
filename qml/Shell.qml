@@ -102,6 +102,15 @@ StyledItem {
 
     readonly property bool showingGreeter: greeter && greeter.shown
 
+    Connections {
+        target: greeter
+        function onActiveChanged() {
+            if (greeter.active) {
+                rootState.skipGreeterAtStart = false;
+            }
+        }
+    }
+
     property bool startingUp: true
     Timer { id: finishStartUpTimer; interval: 500; onTriggered: startingUp = false }
 
@@ -459,7 +468,7 @@ StyledItem {
             tabletMode: shell.usageScenario != "phone"
             usageMode: shell.usageScenario
             orientation: shell.orientation
-            forcedUnlock: wizard.active || shell.mode === "full-shell"
+            forcedUnlock: wizard.active || (shell.mode === "full-shell" && rootState.skipGreeterAtStart)
             background: wallpaperResolver.resolvedImage
             backgroundSourceSize: shell.largestScreenDimension
             hasCustomBackground: wallpaperResolver.hasCustomBackground

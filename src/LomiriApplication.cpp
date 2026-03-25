@@ -75,7 +75,6 @@ LomiriApplication::LomiriApplication(int & argc, char ** argv)
     QScopedPointer<QGSettings> gSettings(new QGSettings("com.lomiri.Shell"));
     gSettings->reset(QStringLiteral("alwaysShowOsk"));
 
-
     QByteArray pxpguEnv = qgetenv("GRID_UNIT_PX");
     bool ok;
     int pxpgu = pxpguEnv.toInt(&ok);
@@ -85,6 +84,7 @@ LomiriApplication::LomiriApplication(int & argc, char ** argv)
     m_qmlEngine->rootContext()->setContextProperty("internalGu", pxpgu);
     m_qmlEngine->rootContext()->setContextProperty(QStringLiteral("applicationArguments"), &m_qmlArgs);
     m_qmlEngine->rootContext()->setContextProperty("DebuggingController", new DebuggingController(this));
+    m_qmlEngine->rootContext()->setContextProperty("rootState", &m_rootState);
 
     auto component(new QQmlComponent(m_qmlEngine, m_qmlArgs.qmlfie()));
     component->create();
