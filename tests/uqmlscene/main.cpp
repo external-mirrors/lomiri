@@ -64,6 +64,7 @@
 #include <QtCore/QLibraryInfo>
 
 #include "DebuggingController.h"
+#include "RootState.h"
 
 #ifdef QML_RUNTIME_TESTING
 class RenderStatistics
@@ -480,6 +481,7 @@ int main(int argc, char ** argv)
             // listening for connections.  But actually we aren't ready to debug anything.
             QQmlEngine engine;
             engine.rootContext()->setContextProperty("DebuggingController", new DebuggingController(&app));
+            engine.rootContext()->setContextProperty("rootState", new RootState(&app));
 
             QQmlComponent *component = new QQmlComponent(&engine);
             for (int i = 0; i < imports.size(); ++i)
