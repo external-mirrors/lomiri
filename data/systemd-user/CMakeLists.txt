@@ -15,6 +15,10 @@ if (${SYSTEMD_FOUND})
     set(MODES full-greeter full-shell greeter shell)
 
     foreach(MODE ${MODES})
+        # Ubuntu Touch with encryption starts Lomiri as "full-shell" by default.
+        # This skips the PIN entry, but sadly means that crashing the shell leads
+        # to an unlocked device.
+        # To counter that, restart Lomiri as full-greeter when it crashes.
         if("${MODE}" STREQUAL "full-shell")
             set(RESTART "Restart=no")
             set(ONFAILURE "OnFailure=lomiri-full-greeter.service")

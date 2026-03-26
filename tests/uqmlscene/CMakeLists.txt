@@ -2,6 +2,7 @@ add_executable(uqmlscene
     ${shellapplication_MOC_SRCS}
     main.cpp
     ${CMAKE_SOURCE_DIR}/src/DebuggingController.cpp
+    ${CMAKE_SOURCE_DIR}/src/RootState.cpp
     )
 
 pkg_check_modules(XCB REQUIRED xcb)
