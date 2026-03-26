@@ -479,6 +479,13 @@ StyledItem {
                               !panel.indicators.shown
             panelHeight: panel.panelHeight
 
+            Binding {
+                target: parent
+                property: "forcedUnlock"
+                value: wizard.active || (shell.mode === "full-shell" && rootState.skipGreeterAtStart)
+                restoreMode: Binding.RestoreBinding
+            }
+
             // avoid overlapping with Launcher's edge drag area
             // FIXME: Fix TouchRegistry & friends and remove this workaround
             //        Issue involves launcher's DDA getting disabled on a long
