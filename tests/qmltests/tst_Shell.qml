@@ -590,6 +590,7 @@ Rectangle {
             var keyMapper = testCase.findChild(shellContainer, "physicalKeysMapper");
             keyMapper.controlInsteadOfAlt = false;
             keyMapper.controlInsteadOfSuper = false;
+            rootState.reset();
             waitForRendering(shell);
             mouseEmulation.checked = true;
             tryCompare(shell, "waitingOnGreeter", false); // make sure greeter didn't leave us in disabled state

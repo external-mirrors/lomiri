@@ -16,7 +16,16 @@
 
 #include "RootState.h"
 
-RootState::RootState(QObject* parent) : QObject(parent)
+RootState::RootState(QObject* parent) : QObject(parent),
+    m_skipGreeterAtStart(true)
 {
+}
+
+void RootState::reset()
+{
+    const bool oldSkipGreeterAtStart = m_skipGreeterAtStart;
     m_skipGreeterAtStart = true;
+    if (oldSkipGreeterAtStart != m_skipGreeterAtStart) {
+        Q_EMIT skipGreeterAtStartChanged();
+    }
 }

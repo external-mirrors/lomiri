@@ -23,11 +23,14 @@ class RootState : public QObject
 {
     Q_OBJECT
 
-    // Only read in lomiri-full-shell mode
+    // Only read in lomiri-full-shell mode, no-op in other modes
     Q_PROPERTY(bool skipGreeterAtStart MEMBER m_skipGreeterAtStart NOTIFY skipGreeterAtStartChanged)
 
 public:
     RootState(QObject* parent = nullptr);
+
+    // For Shell qmltests
+    Q_INVOKABLE void reset();
 
 private:
     bool m_skipGreeterAtStart;
