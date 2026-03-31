@@ -113,3 +113,18 @@ bool DeviceConfig::supportsMultiColorLed() const
 {
     return m_info->contains("supportsMultiColorLed");
 }
+
+quint8 DeviceConfig::sensorLocationX() const
+{
+    return QString::fromStdString(m_info->get("udfpLocationX", "0")).toUInt();
+}
+
+quint8 DeviceConfig::sensorLocationY() const
+{
+    return QString::fromStdString(m_info->get("udfpLocationY", "0")).toUInt();
+}
+
+quint8 DeviceConfig::sensorRadius() const
+{
+    return QString::fromStdString(m_info->get("udfpSensorRadius", "0")).toUInt();
+}
