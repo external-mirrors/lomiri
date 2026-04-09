@@ -40,7 +40,7 @@ Build-Depends:
  liblomirisystemsettings-dev,
  liblomiri-app-launch-dev (>= 0.1.5),
  liblomiri-download-manager-common-dev,
- liblomirigestures5-dev (>= 1.3.2030),
+ liblomirigestures-dev (>= 1.3.2030),
  liblomirigestures5-private-dev (>= 1.3.2030),
  libudev-dev,
  libldm-common-dev,

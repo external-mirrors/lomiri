@@ -49,7 +49,7 @@ templates:
     - libqtdbustest1-dev
     - liblomirisystemsettings-dev
     - liblomiri-download-manager-common-dev
-    - liblomirigestures5-dev
+    - liblomirigestures-dev
     - liblomirigestures5-private-dev
     - libudev-dev
     - liblomiri-api-dev
