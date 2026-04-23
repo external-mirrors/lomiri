@@ -33,7 +33,7 @@ target_link_libraries(IndicatorsFakeQml
 )
 
 set_target_properties(IndicatorsFakeQml PROPERTIES
-    INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/${SHELL_INSTALL_QML}/mocks/QMenuModel.1"
+    INSTALL_RPATH "${SHELL_INSTALL_QML}/mocks/QMenuModel.1"
 )
 
 add_lomiri_mock(Lomiri.Indicators 0.1 Lomiri/Indicators TARGETS IndicatorsFakeQml)

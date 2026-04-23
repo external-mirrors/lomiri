@@ -134,14 +134,39 @@ add_definitions(-DSHELL_APP_FULL_DIR=\"${SHELL_APP_FULL_DIR}\")
 set(SHELL_PRIVATE_FULL_LIBDIR ${CMAKE_INSTALL_FULL_LIBDIR}/lomiri)
 set(SHELL_PRIVATE_FULL_LIBEXECDIR ${CMAKE_INSTALL_FULL_LIBEXECDIR}/lomiri)
 
+pkg_check_modules(LOMIRI_SHELL_API REQUIRED lomiri-shell-api)
+
+set(SHELL_INSTALL_QMLDIR_PKGCONFIG_ARGS)
+set(SHELL_INSTALL_QMLDIR_PREFIX)
+if(LOMIRI_SHELL_API_VERSION VERSION_GREATER_EQUAL "1.1")
+    list(APPEND SHELL_INSTALL_QMLDIR_PKGCONFIG_ARGS
+        --define-variable=libdir=${CMAKE_INSTALL_FULL_LIBDIR}
+        --variable=plugindir
+    )
+    # Already absolute path
+else()
+    list(APPEND SHELL_INSTALL_QMLDIR_PKGCONFIG_ARGS
+        --variable=plugindir_suffix
+    )
+    set(SHELL_INSTALL_QMLDIR_PREFIX "${CMAKE_INSTALL_PREFIX}/")
+endif()
+
 execute_process(COMMAND ${PKG_CONFIG_EXECUTABLE} --variable=plugin_private_module_dir LomiriSystemSettings OUTPUT_VARIABLE LOMIRI_SYSTEM_SETTINGS_PRIVATE_PLUGINDIR OUTPUT_STRIP_TRAILING_WHITESPACE)
 if(LOMIRI_SYSTEM_SETTINGS_PRIVATE_PLUGINDIR STREQUAL "")
     message(FATAL_ERROR "Could not determine LomiriSystemSettings private plugin installation dir.")
 endif()
 
-execute_process(COMMAND ${PKG_CONFIG_EXECUTABLE} --variable=plugindir_suffix lomiri-shell-api OUTPUT_VARIABLE SHELL_INSTALL_QML OUTPUT_STRIP_TRAILING_WHITESPACE)
-if(SHELL_INSTALL_QML STREQUAL "")
+execute_process(
+    COMMAND
+    ${PKG_CONFIG_EXECUTABLE} ${SHELL_INSTALL_QMLDIR_PKGCONFIG_ARGS} lomiri-shell-api
+    OUTPUT_VARIABLE SHELL_INSTALL_QML_RAW
+    OUTPUT_STRIP_TRAILING_WHITESPACE
+)
+if(SHELL_INSTALL_QML_RAW STREQUAL "")
     message(FATAL_ERROR "Could not determine plugin installation dir.")
+else()
+    set(SHELL_INSTALL_QML "${SHELL_INSTALL_QMLDIR_PREFIX}${SHELL_INSTALL_QML_RAW}")
+    message(STATUS "Lomiri shell plugin installation dir: ${SHELL_INSTALL_QML}")
 endif()
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fvisibility=hidden")
