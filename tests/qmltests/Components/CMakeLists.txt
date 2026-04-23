@@ -26,7 +26,7 @@ install(TARGETS DragHandleTestExec
     DESTINATION "${SHELL_PRIVATE_FULL_LIBEXECDIR}/tests/qmltests/Components"
     )
 set_target_properties(DragHandleTestExec PROPERTIES
-    INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/${SHELL_INSTALL_QML}/Lomiri/Gestures:${SHELL_PRIVATE_FULL_LIBDIR}"
+    INSTALL_RPATH "${SHELL_INSTALL_QML}/Lomiri/Gestures:${SHELL_PRIVATE_FULL_LIBDIR}"
     )
 
 add_lomiri_uitest(DragHandle DragHandleTestExec)
@@ -44,7 +44,7 @@ install(TARGETS EdgeDragEvaluatorTestExec
     DESTINATION "${SHELL_PRIVATE_FULL_LIBEXECDIR}/tests/qmltests/Components"
     )
 set_target_properties(EdgeDragEvaluatorTestExec PROPERTIES
-    INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/${SHELL_INSTALL_QML}/Lomiri/Gestures:${SHELL_PRIVATE_FULL_LIBDIR}"
+    INSTALL_RPATH "${SHELL_INSTALL_QML}/Lomiri/Gestures:${SHELL_PRIVATE_FULL_LIBDIR}"
     )
 
 add_lomiri_uitest(EdgeDragEvaluator EdgeDragEvaluatorTestExec)
