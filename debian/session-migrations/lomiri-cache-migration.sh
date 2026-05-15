@@ -39,7 +39,9 @@ if [ -d "$old_path" ]; then
 fi
 
 # rmdir remove folder only if it's empty. It should be by now, but just in case.
-rmdir --ignore-fail-on-non-empty "${HOME}/.cache/Canonical"
+if [ -d "${HOME}/.cache/Canonical" ]; then
+    rmdir --ignore-fail-on-non-empty "${HOME}/.cache/Canonical"
+fi
 
 # Contains "windowstatestorage.sqlite".
 old_path="${HOME}/.cache/unity8"
