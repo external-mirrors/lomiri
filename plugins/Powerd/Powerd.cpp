@@ -60,6 +60,13 @@ Powerd::Powerd(QObject* parent)
                                       this,
                                       SLOT(handleDisplayPowerStateChange(int, int)));
 
+    lomiriScreen->connection().connect(QStringLiteral("com.canonical.Unity.Screen"),
+                                       QStringLiteral("/com/canonical/Unity/Screen"),
+                                       QStringLiteral("com.canonical.Unity.Screen"),
+                                       QStringLiteral("HighBrightnessModeChange"),
+                                       this,
+                                       SLOT(handleHighBrightnessModeChange(bool)));
+
     systemSettings = g_settings_new("com.lomiri.touch.system");
     g_signal_connect(systemSettings, "changed::auto-brightness", G_CALLBACK(autoBrightnessChanged), lomiriScreen);
     g_signal_connect(systemSettings, "changed::activity-timeout", G_CALLBACK(activityTimeoutChanged), lomiriScreen);
@@ -95,4 +102,18 @@ void Powerd::handleDisplayPowerStateChange(int status, int reason)
         cachedStatus = (Status)status;
         Q_EMIT statusChanged((DisplayStateChangeReason)reason);
     }
+}
+
+void Powerd::handleHighBrightnessModeChange(bool enabled)
+{
+    if (m_highBrightnessModeEnabled == enabled) {
+        return;
+    }
+    m_highBrightnessModeEnabled = enabled;
+    Q_EMIT highBrightnessModeEnabledChanged();
+}
+
+bool Powerd::highBrightnessModeEnabled() const
+{
+    return m_highBrightnessModeEnabled;
 }

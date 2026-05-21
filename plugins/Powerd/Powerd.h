@@ -28,6 +28,7 @@ class Powerd: public QObject
 {
     Q_OBJECT
     Q_PROPERTY(Status status READ status NOTIFY statusChanged)
+    Q_PROPERTY(bool highBrightnessModeEnabled READ highBrightnessModeEnabled NOTIFY highBrightnessModeEnabledChanged FINAL)
 
 public:
     enum DisplayStateChangeReason {
@@ -55,16 +56,21 @@ public:
     // Not exposed via Q_PROPERTY because we need the 'reason' argument too
     Q_INVOKABLE void setStatus(Status status, DisplayStateChangeReason reason);
 
+    bool highBrightnessModeEnabled() const;
+
 Q_SIGNALS:
     void statusChanged(DisplayStateChangeReason reason);
+    void highBrightnessModeEnabledChanged();
 
 private Q_SLOTS:
     void handleDisplayPowerStateChange(int status, int reason);
+    void handleHighBrightnessModeChange(bool enabled);
 
 private:
     QDBusInterface *lomiriScreen;
     GSettings *systemSettings;
     Status cachedStatus;
+    bool m_highBrightnessModeEnabled;
 };
 
 #endif

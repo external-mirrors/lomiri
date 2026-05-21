@@ -264,6 +264,11 @@ StyledItem {
         id: volumeControl
     }
 
+    UDFPSDimmer{
+        anchors.fill: parent
+        z: 9
+    }
+
     PhysicalKeysMapper {
         id: physicalKeysMapper
         objectName: "physicalKeysMapper"

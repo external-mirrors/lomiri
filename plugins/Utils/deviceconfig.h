@@ -35,6 +35,10 @@ class DeviceConfig: public QObject
     Q_PROPERTY(QString category READ category NOTIFY changed)
     Q_PROPERTY(bool supportsMultiColorLed READ supportsMultiColorLed NOTIFY changed)
 
+    Q_PROPERTY(quint8 sensorLocationX READ sensorLocationX FINAL)
+    Q_PROPERTY(quint8 sensorLocationY READ sensorLocationY FINAL)
+    Q_PROPERTY(quint8 sensorRadius READ sensorRadius FINAL)
+
 public:
     DeviceConfig(QObject *parent = nullptr);
     ~DeviceConfig() = 0;
@@ -49,6 +53,10 @@ public:
     Qt::ScreenOrientation invertedPortraitOrientation() const;
     QString category() const;
     bool supportsMultiColorLed() const;
+
+    quint8 sensorLocationX() const;
+    quint8 sensorLocationY() const;
+    quint8 sensorRadius() const;
 
 // for tests
     Q_INVOKABLE void refresh() { Q_EMIT changed(); }
