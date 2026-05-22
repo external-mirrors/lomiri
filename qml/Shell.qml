@@ -267,7 +267,8 @@ StyledItem {
     UDFPSDimmer {
         visible: Powerd.highBrightnessModeEnabled
         anchors.fill: parent
-        z: 9
+        /* Dimmer overlay must cover everything. */
+        z: 100
     }
 
     PhysicalKeysMapper {
