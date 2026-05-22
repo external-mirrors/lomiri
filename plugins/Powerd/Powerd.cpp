@@ -46,7 +46,8 @@ void doubleTapToWakeChanged(GSettings *settings, const gchar *key, QDBusInterfac
 Powerd::Powerd(QObject* parent)
   : QObject(parent),
     lomiriScreen(nullptr),
-    cachedStatus(Status::On)
+    cachedStatus(Status::On),
+    m_highBrightnessModeEnabled(false)
 {
     lomiriScreen = new QDBusInterface(QStringLiteral("com.canonical.Unity.Screen"),
                                      QStringLiteral("/com/canonical/Unity/Screen"),
