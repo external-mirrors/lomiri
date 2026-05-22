@@ -36,3 +36,8 @@ Powerd::Status Powerd::status() const
 {
     return m_status;
 }
+
+bool Powerd::highBrightnessModeEnabled() const
+{
+    return false;
+}

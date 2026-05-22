@@ -25,6 +25,7 @@ class Powerd: public QObject
 {
     Q_OBJECT
     Q_PROPERTY(Status status READ status NOTIFY statusChanged)
+    Q_PROPERTY(bool highBrightnessModeEnabled READ highBrightnessModeEnabled CONSTANT FINAL)
 
 public:
     enum DisplayStateChangeReason {
@@ -44,6 +45,7 @@ public:
     explicit Powerd(QObject *parent = 0);
 
     Status status() const;
+    bool highBrightnessModeEnabled() const;
 
     // Not exposed via Q_PROPERTY because we need the 'reason' argument too
     Q_INVOKABLE void setStatus(Status status, DisplayStateChangeReason reason);
