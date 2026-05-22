@@ -264,7 +264,8 @@ StyledItem {
         id: volumeControl
     }
 
-    UDFPSDimmer{
+    UDFPSDimmer {
+        visible: Powerd.highBrightnessModeEnabled
         anchors.fill: parent
         z: 9
     }

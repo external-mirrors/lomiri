@@ -29,8 +29,6 @@ Item {
         id: deviceConfig
     }
 
-    visible: Powerd.highBrightnessModeEnabled
-
     // TODO: read USFPDS position from biometryd
     property real baseX: deviceConfig.sensorLocationX
     property real baseY: deviceConfig.sensorLocationY
