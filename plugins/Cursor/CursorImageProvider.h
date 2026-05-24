@@ -79,21 +79,21 @@ public:
 
     QImage requestImage(const QString &cursorThemeAndNameAndHeight, QSize *size, const QSize &requestedSize) override;
 
-    CursorImage *fetchCursor(const QString &themeName, const QString &cursorName, int cursorHeight);
+    QSharedPointer<CursorImage> fetchCursor(const QString &themeName, const QString &cursorName, int cursorHeight);
 
     void setCustomCursor(const QCursor &customCursor);
 
 private:
-    CursorImage *fetchCursor(const QString &cursorThemeAndNameAndHeight);
-    CursorImage *fetchCursorHelper(const QString &themeName, const QString &cursorName, int cursorHeight);
+    QSharedPointer<CursorImage> fetchCursor(const QString &cursorThemeAndNameAndHeight);
+    QSharedPointer<CursorImage> fetchCursorHelper(const QString &themeName, const QString &cursorName, int cursorHeight);
 
     // themeName -> (cursorName -> cursorImage)
     // TODO: discard old, unused, cursors
-    QMap<QString, QMap<QString, CursorImage*> > m_cursors;
+    QMap<QString, QMap<QString, QSharedPointer<CursorImage>> > m_cursors;
 
-    QScopedPointer<CursorImage> m_builtInCursorImage;
-    BlankCursorImage m_blankCursorImage;
-    QScopedPointer<CursorImage> m_customCursorImage;
+    QSharedPointer<CursorImage> m_builtInCursorImage;
+    QSharedPointer<BlankCursorImage> m_blankCursorImage;
+    QSharedPointer<CursorImage> m_customCursorImage;
 
     QMap<QString, QStringList> m_fallbackNames;
 
