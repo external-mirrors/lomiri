@@ -218,17 +218,19 @@ CursorImageProvider::CursorImageProvider()
     m_fallbackNames[QStringLiteral("whats_this")].append(QStringLiteral("question_arrow"));
 
     m_fallbackNames[QStringLiteral("xterm")].append(QStringLiteral("ibeam"));
+
+    m_blankCursorImage.reset(new BlankCursorImage());
 }
 
 CursorImageProvider::~CursorImageProvider()
 {
     {
-        QList< QMap<QString, CursorImage*> > cursorList = m_cursors.values();
+        auto cursorList = m_cursors.values();
 
         for (int i = 0; i < cursorList.count(); ++i) {
-            QList<CursorImage*> cursorImageList = cursorList[i].values();
+            QList<QSharedPointer<CursorImage>> cursorImageList = cursorList[i].values();
             for (int j = 0; j < cursorImageList.count(); ++j) {
-                delete cursorImageList[j];
+                cursorImageList[j].reset();
             }
         }
     }
@@ -239,14 +241,14 @@ CursorImageProvider::~CursorImageProvider()
 
 QImage CursorImageProvider::requestImage(const QString &cursorThemeAndNameAndHeight, QSize *size, const QSize & /*requestedSize*/)
 {
-    CursorImage *cursorImage = fetchCursor(cursorThemeAndNameAndHeight);
+    QSharedPointer<CursorImage> cursorImage = fetchCursor(cursorThemeAndNameAndHeight);
     size->setWidth(cursorImage->qimage.width());
     size->setHeight(cursorImage->qimage.height());
 
     return cursorImage->qimage;
 }
 
-CursorImage *CursorImageProvider::fetchCursor(const QString &cursorThemeAndNameAndHeight)
+QSharedPointer<CursorImage> CursorImageProvider::fetchCursor(const QString &cursorThemeAndNameAndHeight)
 {
     QString themeName;
     QString cursorName;
@@ -271,9 +273,9 @@ CursorImage *CursorImageProvider::fetchCursor(const QString &cursorThemeAndNameA
     return fetchCursor(themeName, cursorName, cursorHeight);
 }
 
-CursorImage *CursorImageProvider::fetchCursor(const QString &themeName, const QString &cursorName, int cursorHeight)
+QSharedPointer<CursorImage> CursorImageProvider::fetchCursor(const QString &themeName, const QString &cursorName, int cursorHeight)
 {
-    CursorImage *cursorImage = fetchCursorHelper(themeName, cursorName, cursorHeight);
+    QSharedPointer<CursorImage> cursorImage = fetchCursorHelper(themeName, cursorName, cursorHeight);
 
     // Try some fallbacks
     if (cursorImage->qimage.isNull()) {
@@ -301,26 +303,26 @@ CursorImage *CursorImageProvider::fetchCursor(const QString &themeName, const QS
         if (!m_builtInCursorImage || m_builtInCursorImage->requestedHeight != cursorHeight) {
             m_builtInCursorImage.reset(new BuiltInCursorImage(cursorHeight));
         }
-        cursorImage = m_builtInCursorImage.data();
+        cursorImage = m_builtInCursorImage;
     }
 
     return cursorImage;
 }
 
-CursorImage *CursorImageProvider::fetchCursorHelper(const QString &themeName, const QString &cursorName, int cursorHeight)
+QSharedPointer<CursorImage> CursorImageProvider::fetchCursorHelper(const QString &themeName, const QString &cursorName, int cursorHeight)
 {
     if (cursorName == QLatin1String("blank")) {
-        return &m_blankCursorImage;
+        return m_blankCursorImage;
     } else if (cursorName.startsWith(QLatin1String("custom"))) {
-        return m_customCursorImage.data();
+        return m_customCursorImage;
     } else {
-        QMap<QString, CursorImage*> &themeCursors = m_cursors[themeName];
+        QMap<QString, QSharedPointer<CursorImage>> &themeCursors = m_cursors[themeName];
 
         if (!themeCursors.contains(cursorName)) {
-            themeCursors[cursorName] = new XCursorImage(themeName, cursorName, cursorHeight);
+            themeCursors[cursorName] = QSharedPointer<CursorImage>(new XCursorImage(themeName, cursorName, cursorHeight));
         } else if (themeCursors[cursorName]->requestedHeight != cursorHeight) {
-            delete themeCursors.take(cursorName);
-            themeCursors[cursorName] = new XCursorImage(themeName, cursorName, cursorHeight);
+            themeCursors.take(cursorName).reset();
+            themeCursors[cursorName] = QSharedPointer<CursorImage>(new XCursorImage(themeName, cursorName, cursorHeight));
         }
 
         return themeCursors[cursorName];

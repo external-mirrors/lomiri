@@ -76,7 +76,7 @@ private:
     QString m_cursorName;
     qreal m_cursorHeight{0};
 
-    CursorImage *m_cursorImage{nullptr};
+    QSharedPointer<CursorImage> m_cursorImage{nullptr};
 };
 
 #endif // CURSOR_IMAGE_INFO_H
