@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-05-27 09:58+0000\n"
-"PO-Revision-Date: 2026-05-18 13:11+0000\n"
+"PO-Revision-Date: 2026-05-28 09:51+0000\n"
 "Last-Translator: Priit Jõerüüt <jrthwlate@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/lomiri/lomiri/"
 "et/>\n"
@@ -365,21 +365,19 @@ msgstr "Sulgeb praeguse akna."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:336
 msgid "Stages"
-msgstr ""
+msgstr "Lavad"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:343
-#, fuzzy
-#| msgid "Super + A"
 msgid "Super + S"
-msgstr "Super + A"
+msgstr "Super + S"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:348
 msgid "Shows or hides the side stage."
-msgstr ""
+msgstr "Näitab või peidab külglava."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:362
 msgid "Moves app between main stage and side stage."
-msgstr ""
+msgstr "Tõstab rakenduse põhilavalt külglavale või vastupidi."
 
 #: qml/Components/Lockscreen.qml:223 qml/Greeter/GreeterView.qml:472
 msgid "Return to Call"
