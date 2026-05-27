@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-14 20:08+0000\n"
+"POT-Creation-Date: 2026-05-27 09:58+0000\n"
 "PO-Revision-Date: 2024-10-12 15:31+0000\n"
 "Last-Translator: ikozyris <ioannis.kozyris@outlook.com>\n"
 "Language-Team: Greek <https://hosted.weblate.org/projects/lomiri/lomiri/el/"
@@ -349,6 +349,7 @@ msgid "Minimizes or restores the current window."
 msgstr "Ελαχιστοποιεί ή επαναφέρει το τρέχων παράθυρο."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:307
+#: qml/Components/KeyboardShortcutsOverlay.qml:356
 msgid "Ctrl + Super + Left or Right"
 msgstr "Ctrl + Super + Left or Right"
 
@@ -363,6 +364,24 @@ msgstr "Alt + F4"
 #: qml/Components/KeyboardShortcutsOverlay.qml:325
 msgid "Closes the current window."
 msgstr "Κλείνει το τρέχων παράθυρο."
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:336
+msgid "Stages"
+msgstr ""
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:343
+#, fuzzy
+#| msgid "Super + A"
+msgid "Super + S"
+msgstr "Super + A"
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:348
+msgid "Shows or hides the side stage."
+msgstr ""
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:362
+msgid "Moves app between main stage and side stage."
+msgstr ""
 
 #: qml/Components/Lockscreen.qml:223 qml/Greeter/GreeterView.qml:472
 msgid "Return to Call"
@@ -410,7 +429,7 @@ msgstr "Κλείσιμο όλων"
 msgid "Preview Share Item"
 msgstr "Προεπισκόπηση κοινής χρήσης αντικειμένου"
 
-#: qml/Components/VirtualTouchPad.qml:343
+#: qml/Components/VirtualTouchPad.qml:344
 msgid ""
 "Your device is now connected to an external display. Use this screen as a "
 "touch pad to interact with the pointer."
@@ -418,19 +437,19 @@ msgstr ""
 "Η συσκεύη σας τώρα είναι συνδεδεμένη με μια εξωτερική οθόνη. Χρησιμοποιείστε "
 "αυτήν την οθόνη ως επιφάνεια αφής για να αλληλεπηδράσετε με τον δείκτη."
 
-#: qml/Components/VirtualTouchPad.qml:353
+#: qml/Components/VirtualTouchPad.qml:354
 msgid "Tap left button to click."
 msgstr "Πατήστε το αριστερό κουμπί για να κάνετε κλικ."
 
-#: qml/Components/VirtualTouchPad.qml:365
+#: qml/Components/VirtualTouchPad.qml:366
 msgid "Tap right button to right click."
 msgstr "Πατήστε το δεξί κουμπί για να κάνετε δεξί κλικ."
 
-#: qml/Components/VirtualTouchPad.qml:377
+#: qml/Components/VirtualTouchPad.qml:378
 msgid "Swipe with two fingers to scroll."
 msgstr "Σύρετε με δύο δάχτυλα για κύλιση."
 
-#: qml/Components/VirtualTouchPad.qml:422
+#: qml/Components/VirtualTouchPad.qml:423
 msgid "Find more settings in the system settings."
 msgstr "Βρείτε περισσότερες ρυθμίσεις στις ρυθμίσεις συστήματος."
 
@@ -622,7 +641,7 @@ msgstr ""
 "Σύρετε με την χρήση των 3 δακτύλων οποιαδήποτε εφαρμογή από ένα παράθυρο σε "
 "άλλο"
 
-#: qml/Stage/Stage.qml:902
+#: qml/Stage/Stage.qml:978
 msgid "No running apps"
 msgstr "Καμία εφαρμογή δεν εκτελείται"
 
@@ -660,8 +679,8 @@ msgstr "Πίσω"
 msgid "Language"
 msgstr "Γλώσσα"
 
-#: qml/Wizard/Pages/10-welcome.qml:176
-#: qml/Wizard/Pages/10-welcome-update.qml:128
+#: qml/Wizard/Pages/10-welcome.qml:184
+#: qml/Wizard/Pages/10-welcome-update.qml:136
 #: qml/Wizard/Pages/11-changelog.qml:74 qml/Wizard/Pages/20-keyboard.qml:152
 #: qml/Wizard/Pages/30-wifi.qml:213 qml/Wizard/Pages/50-timezone.qml:270
 #: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/70-passwd-type.qml:146
@@ -671,14 +690,14 @@ msgid "Next"
 msgstr "Επόμενο"
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
-#: qml/Wizard/Pages/10-welcome-update.qml:92
+#: qml/Wizard/Pages/10-welcome-update.qml:98
 #, fuzzy, qt-format
 #| msgid "Welcome to "
 msgid "Welcome to %1 %2"
 msgstr "Καλώς ήρθατε στο "
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
-#: qml/Wizard/Pages/10-welcome-update.qml:108
+#: qml/Wizard/Pages/10-welcome-update.qml:115
 #, fuzzy, qt-format
 #| msgid "We will make sure your device is ready to use "
 msgid "We will make sure your device is ready to use %1 %2"

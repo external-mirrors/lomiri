@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-14 20:08+0000\n"
+"POT-Creation-Date: 2026-05-27 09:58+0000\n"
 "PO-Revision-Date: 2026-04-17 21:00+0000\n"
 "Last-Translator: Alagirisamy Rengaraj <radhaalagirisamy@gmail.com>\n"
-"Language-Team: Tamil <https://hosted.weblate.org/projects/lomiri/lomiri/ta/>"
-"\n"
+"Language-Team: Tamil <https://hosted.weblate.org/projects/lomiri/lomiri/ta/"
+">\n"
 "Language: ta\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -347,6 +347,7 @@ msgid "Minimizes or restores the current window."
 msgstr "தற்போதைய சாளரத்தை குறைக்கிறது அல்லது மீட்டெடுக்கிறது."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:307
+#: qml/Components/KeyboardShortcutsOverlay.qml:356
 msgid "Ctrl + Super + Left or Right"
 msgstr "கட்டுப்பாடு + சூப்பர் + இடது அல்லது வலது"
 
@@ -361,6 +362,24 @@ msgstr "மாற்று + F4"
 #: qml/Components/KeyboardShortcutsOverlay.qml:325
 msgid "Closes the current window."
 msgstr "தற்போதைய சாளரத்தை மூடுகிறது."
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:336
+msgid "Stages"
+msgstr ""
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:343
+#, fuzzy
+#| msgid "Super + A"
+msgid "Super + S"
+msgstr "சூப்பர் + அ"
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:348
+msgid "Shows or hides the side stage."
+msgstr ""
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:362
+msgid "Moves app between main stage and side stage."
+msgstr ""
 
 #: qml/Components/Lockscreen.qml:223 qml/Greeter/GreeterView.qml:472
 msgid "Return to Call"
@@ -404,7 +423,7 @@ msgstr "அனைத்தையும் மூடு"
 msgid "Preview Share Item"
 msgstr "முன்னோட்டம் பகிர்வு உருப்படி"
 
-#: qml/Components/VirtualTouchPad.qml:343
+#: qml/Components/VirtualTouchPad.qml:344
 msgid ""
 "Your device is now connected to an external display. Use this screen as a "
 "touch pad to interact with the pointer."
@@ -412,19 +431,19 @@ msgstr ""
 "உங்கள் சாதனம் இப்போது வெளிப்புற காட்சியுடன் இணைக்கப்பட்டுள்ளது. சுட்டிக்காட்டியுடன் தொடர்பு "
 "கொள்ள இந்தத் திரையை ஒரு டச் திண்டு பயன்படுத்தவும்."
 
-#: qml/Components/VirtualTouchPad.qml:353
+#: qml/Components/VirtualTouchPad.qml:354
 msgid "Tap left button to click."
 msgstr "சொடுக்கு செய்ய இடது பொத்தானைத் தட்டவும்."
 
-#: qml/Components/VirtualTouchPad.qml:365
+#: qml/Components/VirtualTouchPad.qml:366
 msgid "Tap right button to right click."
 msgstr "வலது சொடுக்கு செய்ய வலது பொத்தானைத் தட்டவும்."
 
-#: qml/Components/VirtualTouchPad.qml:377
+#: qml/Components/VirtualTouchPad.qml:378
 msgid "Swipe with two fingers to scroll."
 msgstr "உருட்ட இரண்டு விரல்களால் ச்வைப் செய்யவும்."
 
-#: qml/Components/VirtualTouchPad.qml:422
+#: qml/Components/VirtualTouchPad.qml:423
 msgid "Find more settings in the system settings."
 msgstr "கணினி அமைப்புகளில் மேலும் அமைப்புகளைக் கண்டறியவும்."
 
@@ -610,7 +629,7 @@ msgstr "பின்னே"
 msgid "Drag using 3 fingers any application from one window to the other"
 msgstr "ஒரு சாளரத்திலிருந்து மற்றொன்றுக்கு 3 விரல்களைப் பயன்படுத்தி இழுக்கவும்"
 
-#: qml/Stage/Stage.qml:902
+#: qml/Stage/Stage.qml:978
 msgid "No running apps"
 msgstr "இயங்கும் பயன்பாடுகள் இல்லை"
 
@@ -644,8 +663,8 @@ msgstr "பின்"
 msgid "Language"
 msgstr "மொழி"
 
-#: qml/Wizard/Pages/10-welcome.qml:176
-#: qml/Wizard/Pages/10-welcome-update.qml:128
+#: qml/Wizard/Pages/10-welcome.qml:184
+#: qml/Wizard/Pages/10-welcome-update.qml:136
 #: qml/Wizard/Pages/11-changelog.qml:74 qml/Wizard/Pages/20-keyboard.qml:152
 #: qml/Wizard/Pages/30-wifi.qml:213 qml/Wizard/Pages/50-timezone.qml:270
 #: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/70-passwd-type.qml:146
@@ -655,13 +674,13 @@ msgid "Next"
 msgstr "அடுத்து"
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
-#: qml/Wizard/Pages/10-welcome-update.qml:92
+#: qml/Wizard/Pages/10-welcome-update.qml:98
 #, qt-format
 msgid "Welcome to %1 %2"
 msgstr "%1 %2 க்கு வருக"
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
-#: qml/Wizard/Pages/10-welcome-update.qml:108
+#: qml/Wizard/Pages/10-welcome-update.qml:115
 #, qt-format
 msgid "We will make sure your device is ready to use %1 %2"
 msgstr "உங்கள் சாதனம் %1 %2 ஐப் பயன்படுத்தத் தயாராக இருப்பதை நாங்கள் உறுதி செய்வோம்"

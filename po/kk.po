@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-14 20:08+0000\n"
+"POT-Creation-Date: 2026-05-27 09:58+0000\n"
 "PO-Revision-Date: 2020-12-03 09:42+0000\n"
 "Last-Translator: Seiwer121 <vladimir_seiwer@yahoo.com>\n"
 "Language-Team: Kazakh <https://translate.ubports.com/projects/unity8/unity8/"
@@ -348,6 +348,7 @@ msgid "Minimizes or restores the current window."
 msgstr "Ағымдағы терезені кішірейту немесе қалпына келтіру."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:307
+#: qml/Components/KeyboardShortcutsOverlay.qml:356
 msgid "Ctrl + Super + Left or Right"
 msgstr ""
 
@@ -362,6 +363,24 @@ msgstr ""
 #: qml/Components/KeyboardShortcutsOverlay.qml:325
 msgid "Closes the current window."
 msgstr "Ағымдағы терезені жабады."
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:336
+msgid "Stages"
+msgstr ""
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:343
+#, fuzzy
+#| msgid "Super (Tap)"
+msgid "Super + S"
+msgstr "Super (нұқыңыз)"
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:348
+msgid "Shows or hides the side stage."
+msgstr ""
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:362
+msgid "Moves app between main stage and side stage."
+msgstr ""
 
 #: qml/Components/Lockscreen.qml:223 qml/Greeter/GreeterView.qml:472
 msgid "Return to Call"
@@ -405,7 +424,7 @@ msgstr "Барлығын жабыңыз"
 msgid "Preview Share Item"
 msgstr "Элементті алдын-ала бөлісу"
 
-#: qml/Components/VirtualTouchPad.qml:343
+#: qml/Components/VirtualTouchPad.qml:344
 msgid ""
 "Your device is now connected to an external display. Use this screen as a "
 "touch pad to interact with the pointer."
@@ -413,19 +432,19 @@ msgstr ""
 "Енді сіздің құрылғыңыз сыртқы дисплейге қосылған. Бұл экранды сенсорлық "
 "тақта ретінде меңзермен өзара әрекеттесу үшін пайдаланыңыз."
 
-#: qml/Components/VirtualTouchPad.qml:353
+#: qml/Components/VirtualTouchPad.qml:354
 msgid "Tap left button to click."
 msgstr "Басу үшін сол жақ батырманы басыңыз."
 
-#: qml/Components/VirtualTouchPad.qml:365
+#: qml/Components/VirtualTouchPad.qml:366
 msgid "Tap right button to right click."
 msgstr "Тінтуірдің оң жақ түймешігімен нұқыңыз."
 
-#: qml/Components/VirtualTouchPad.qml:377
+#: qml/Components/VirtualTouchPad.qml:378
 msgid "Swipe with two fingers to scroll."
 msgstr "Жылжу үшін екі саусағыңызбен сырғытыңыз."
 
-#: qml/Components/VirtualTouchPad.qml:422
+#: qml/Components/VirtualTouchPad.qml:423
 msgid "Find more settings in the system settings."
 msgstr "Жүйе параметрлерінен қосымша параметрлерді табыңыз."
 
@@ -612,7 +631,7 @@ msgid "Drag using 3 fingers any application from one window to the other"
 msgstr ""
 "Кез-келген қосымшаны бір саусақтан екінші саусаққа 3 саусақпен сүйреңіз"
 
-#: qml/Stage/Stage.qml:902
+#: qml/Stage/Stage.qml:978
 msgid "No running apps"
 msgstr "Іске қосылған қолданбалар жоқ"
 
@@ -647,8 +666,8 @@ msgstr "Оралу"
 msgid "Language"
 msgstr "Тіл"
 
-#: qml/Wizard/Pages/10-welcome.qml:176
-#: qml/Wizard/Pages/10-welcome-update.qml:128
+#: qml/Wizard/Pages/10-welcome.qml:184
+#: qml/Wizard/Pages/10-welcome-update.qml:136
 #: qml/Wizard/Pages/11-changelog.qml:74 qml/Wizard/Pages/20-keyboard.qml:152
 #: qml/Wizard/Pages/30-wifi.qml:213 qml/Wizard/Pages/50-timezone.qml:270
 #: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/70-passwd-type.qml:146
@@ -658,14 +677,14 @@ msgid "Next"
 msgstr "Әрі қарай"
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
-#: qml/Wizard/Pages/10-welcome-update.qml:92
+#: qml/Wizard/Pages/10-welcome-update.qml:98
 #, fuzzy, qt-format
 #| msgid "Welcome to "
 msgid "Welcome to %1 %2"
 msgstr "Қош келдіңіз "
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
-#: qml/Wizard/Pages/10-welcome-update.qml:108
+#: qml/Wizard/Pages/10-welcome-update.qml:115
 #, fuzzy, qt-format
 #| msgid "We will make sure your device is ready to use "
 msgid "We will make sure your device is ready to use %1 %2"
@@ -935,9 +954,6 @@ msgstr "Құпия сөз өте әлсіз"
 
 #~ msgid "Scopes"
 #~ msgstr "Қолдану саласы"
-
-#~ msgid "Super (Tap)"
-#~ msgstr "Super (нұқыңыз)"
 
 #~ msgid "Opens the Scopes home."
 #~ msgstr "Іске қосқышты ашыңыз Scopes."

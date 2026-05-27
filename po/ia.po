@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-14 20:08+0000\n"
+"POT-Creation-Date: 2026-05-27 09:58+0000\n"
 "PO-Revision-Date: 2015-08-25 19:31+0000\n"
 "Last-Translator: karm <melo@carmu.com>\n"
 "Language-Team: Interlingua <ia@li.org>\n"
@@ -360,6 +360,7 @@ msgid "Minimizes or restores the current window."
 msgstr "Maximisa o restaura le fenestra actual."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:307
+#: qml/Components/KeyboardShortcutsOverlay.qml:356
 msgid "Ctrl + Super + Left or Right"
 msgstr "Ctrl + Super + Left o Right"
 
@@ -374,6 +375,24 @@ msgstr "Alt + F4"
 #: qml/Components/KeyboardShortcutsOverlay.qml:325
 msgid "Closes the current window."
 msgstr "Claude le fenestra actual"
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:336
+msgid "Stages"
+msgstr ""
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:343
+#, fuzzy
+#| msgid "Super + W"
+msgid "Super + S"
+msgstr "Super + W"
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:348
+msgid "Shows or hides the side stage."
+msgstr ""
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:362
+msgid "Moves app between main stage and side stage."
+msgstr ""
 
 #: qml/Components/Lockscreen.qml:223 qml/Greeter/GreeterView.qml:472
 msgid "Return to Call"
@@ -417,7 +436,7 @@ msgstr "Clauder toto"
 msgid "Preview Share Item"
 msgstr "Elemento compartite de vista preliminar"
 
-#: qml/Components/VirtualTouchPad.qml:343
+#: qml/Components/VirtualTouchPad.qml:344
 msgid ""
 "Your device is now connected to an external display. Use this screen as a "
 "touch pad to interact with the pointer."
@@ -425,21 +444,21 @@ msgstr ""
 "Tu dispositivo es nunc connexe a un schermo externe. Usa iste schermo como "
 "pannello tactile pro interager con le punctator."
 
-#: qml/Components/VirtualTouchPad.qml:353
+#: qml/Components/VirtualTouchPad.qml:354
 #, fuzzy
 #| msgid "Tap to return to call..."
 msgid "Tap left button to click."
 msgstr "Colpar pro retornar al appello..."
 
-#: qml/Components/VirtualTouchPad.qml:365
+#: qml/Components/VirtualTouchPad.qml:366
 msgid "Tap right button to right click."
 msgstr ""
 
-#: qml/Components/VirtualTouchPad.qml:377
+#: qml/Components/VirtualTouchPad.qml:378
 msgid "Swipe with two fingers to scroll."
 msgstr ""
 
-#: qml/Components/VirtualTouchPad.qml:422
+#: qml/Components/VirtualTouchPad.qml:423
 msgid "Find more settings in the system settings."
 msgstr ""
 
@@ -636,7 +655,7 @@ msgstr "Retro"
 msgid "Drag using 3 fingers any application from one window to the other"
 msgstr "Tirar per 3 digitos qualcunque application ab un fenestra al altere"
 
-#: qml/Stage/Stage.qml:902
+#: qml/Stage/Stage.qml:978
 msgid "No running apps"
 msgstr ""
 
@@ -674,8 +693,8 @@ msgstr "Retro"
 msgid "Language"
 msgstr "Lingua"
 
-#: qml/Wizard/Pages/10-welcome.qml:176
-#: qml/Wizard/Pages/10-welcome-update.qml:128
+#: qml/Wizard/Pages/10-welcome.qml:184
+#: qml/Wizard/Pages/10-welcome-update.qml:136
 #: qml/Wizard/Pages/11-changelog.qml:74 qml/Wizard/Pages/20-keyboard.qml:152
 #: qml/Wizard/Pages/30-wifi.qml:213 qml/Wizard/Pages/50-timezone.qml:270
 #: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/70-passwd-type.qml:146
@@ -685,13 +704,13 @@ msgid "Next"
 msgstr "Sequente"
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
-#: qml/Wizard/Pages/10-welcome-update.qml:92
+#: qml/Wizard/Pages/10-welcome-update.qml:98
 #, fuzzy, qt-format
 msgid "Welcome to %1 %2"
 msgstr "Benvenite a Ubuntu."
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
-#: qml/Wizard/Pages/10-welcome-update.qml:108
+#: qml/Wizard/Pages/10-welcome-update.qml:115
 #, qt-format
 msgid "We will make sure your device is ready to use %1 %2"
 msgstr ""

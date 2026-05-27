@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-14 20:08+0000\n"
+"POT-Creation-Date: 2026-05-27 09:58+0000\n"
 "PO-Revision-Date: 2021-02-01 21:06+0000\n"
 "Last-Translator: imrufbd <imrufbd@gmail.com>\n"
 "Language-Team: Bengali <https://translate.ubports.com/projects/ubports/"
@@ -349,6 +349,7 @@ msgid "Minimizes or restores the current window."
 msgstr "বর্তমান উইন্ডোটিকে লঘু করে অথবা পূ্র্বাবস্থায় ফিরিয়ে নিয়ে যায়।"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:307
+#: qml/Components/KeyboardShortcutsOverlay.qml:356
 msgid "Ctrl + Super + Left or Right"
 msgstr "কন্ট্রোল কী + সুপার কী + বাম এ্যরো কী"
 
@@ -363,6 +364,24 @@ msgstr "অল্টার কী + F4 কী"
 #: qml/Components/KeyboardShortcutsOverlay.qml:325
 msgid "Closes the current window."
 msgstr "বর্তমান উইন্ডোটি বন্ধ করে।"
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:336
+msgid "Stages"
+msgstr ""
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:343
+#, fuzzy
+#| msgid "Super + A"
+msgid "Super + S"
+msgstr "সুপার কী + A"
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:348
+msgid "Shows or hides the side stage."
+msgstr ""
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:362
+msgid "Moves app between main stage and side stage."
+msgstr ""
 
 #: qml/Components/Lockscreen.qml:223 qml/Greeter/GreeterView.qml:472
 msgid "Return to Call"
@@ -407,7 +426,7 @@ msgstr "সবগুলো বন্ধ করুন"
 msgid "Preview Share Item"
 msgstr "বিনিময় তালিকা অবলোকন"
 
-#: qml/Components/VirtualTouchPad.qml:343
+#: qml/Components/VirtualTouchPad.qml:344
 msgid ""
 "Your device is now connected to an external display. Use this screen as a "
 "touch pad to interact with the pointer."
@@ -415,19 +434,19 @@ msgstr ""
 "আপনার ডিভাইস অন্য পর্দার সাথে সংযুক্ত হয়েছে। মাউসের জন্য এই পর্দাটি টাচপ্যাড হিসেবে "
 "ব্যবহার করুন।"
 
-#: qml/Components/VirtualTouchPad.qml:353
+#: qml/Components/VirtualTouchPad.qml:354
 msgid "Tap left button to click."
 msgstr "ক্লিক করার জন্য বাম বোতাম চাপুন..."
 
-#: qml/Components/VirtualTouchPad.qml:365
+#: qml/Components/VirtualTouchPad.qml:366
 msgid "Tap right button to right click."
 msgstr "ডান ক্লিকের জন্য ডান বোতাম চাপুন।"
 
-#: qml/Components/VirtualTouchPad.qml:377
+#: qml/Components/VirtualTouchPad.qml:378
 msgid "Swipe with two fingers to scroll."
 msgstr "স্ক্রলের জন্য আঙুল চালান।"
 
-#: qml/Components/VirtualTouchPad.qml:422
+#: qml/Components/VirtualTouchPad.qml:423
 msgid "Find more settings in the system settings."
 msgstr "সিস্টেম সেটিংসে আরও সেটিংস খুজুন।"
 
@@ -613,7 +632,7 @@ msgstr "পূর্বপাতা"
 msgid "Drag using 3 fingers any application from one window to the other"
 msgstr "তিন আঙুল দিয়ে ধরে যেকোন অ্যাপ্লিকেেশন এক উইন্ডো থেকে অন্যটিতে নিয়ে আসুন"
 
-#: qml/Stage/Stage.qml:902
+#: qml/Stage/Stage.qml:978
 msgid "No running apps"
 msgstr "কোন অ্যাপ চলমান নেই"
 
@@ -646,8 +665,8 @@ msgstr "পূর্বপাতা"
 msgid "Language"
 msgstr "ভাষা"
 
-#: qml/Wizard/Pages/10-welcome.qml:176
-#: qml/Wizard/Pages/10-welcome-update.qml:128
+#: qml/Wizard/Pages/10-welcome.qml:184
+#: qml/Wizard/Pages/10-welcome-update.qml:136
 #: qml/Wizard/Pages/11-changelog.qml:74 qml/Wizard/Pages/20-keyboard.qml:152
 #: qml/Wizard/Pages/30-wifi.qml:213 qml/Wizard/Pages/50-timezone.qml:270
 #: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/70-passwd-type.qml:146
@@ -657,14 +676,14 @@ msgid "Next"
 msgstr "পরবর্তী"
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
-#: qml/Wizard/Pages/10-welcome-update.qml:92
+#: qml/Wizard/Pages/10-welcome-update.qml:98
 #, fuzzy, qt-format
 #| msgid "Welcome to "
 msgid "Welcome to %1 %2"
 msgstr "স্বাগতম "
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
-#: qml/Wizard/Pages/10-welcome-update.qml:108
+#: qml/Wizard/Pages/10-welcome-update.qml:115
 #, fuzzy, qt-format
 #| msgid "We will make sure your device is ready to use "
 msgid "We will make sure your device is ready to use %1 %2"
