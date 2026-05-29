@@ -8,17 +8,17 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-05-27 09:58+0000\n"
-"PO-Revision-Date: 2025-03-04 21:04+0000\n"
-"Last-Translator: Viral <zahannsr@outlook.com>\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/lomiri/lomiri/ru/"
-">\n"
+"PO-Revision-Date: 2026-05-29 20:43+0000\n"
+"Last-Translator: \"Roker2 (Dmitry Minko)\" <dimaminko2000@gmail.com>\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/lomiri/lomiri/"
+"ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 2026.6.dev0\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:35+0000\n"
 
 #: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
@@ -687,7 +687,7 @@ msgstr "Язык"
 #: qml/Wizard/Pages/passcode-desktop.qml:154
 #: qml/Wizard/Pages/password-set.qml:153
 msgid "Next"
-msgstr "Далее"
+msgstr "Продолжить"
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
 #: qml/Wizard/Pages/10-welcome-update.qml:98
@@ -825,7 +825,7 @@ msgstr "Теперь устройство готово к использован
 
 #: qml/Wizard/Pages/80-finished.qml:131
 msgid "Continue"
-msgstr "Далее"
+msgstr "Продолжить"
 
 #: qml/Wizard/Pages/80-finished.qml:131
 msgid "Get Started"
