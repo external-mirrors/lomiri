@@ -196,6 +196,11 @@ void Window::setSurface(lomiriapi::MirSurfaceInterface *surface)
         }
         if (m_positionRequested) {
             m_surface->setRequestedPosition(m_requestedPosition);
+
+            if (m_requestedPosition != m_position) {
+                m_position = m_requestedPosition;
+                Q_EMIT positionChanged(m_position);
+            }
         }
         if (m_stateRequested && m_surface->state() == Mir::RestoredState) {
             m_surface->requestState(m_state);
@@ -203,7 +208,9 @@ void Window::setSurface(lomiriapi::MirSurfaceInterface *surface)
         m_surface->setAllowClientResize(m_allowClientResize);
 
         // and sync with surface
-        updatePosition();
+        if (!m_positionRequested)
+            updatePosition();
+
         updateState();
         updateFocused();
     }
