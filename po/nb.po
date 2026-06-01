@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-05-27 09:58+0000\n"
-"PO-Revision-Date: 2025-05-19 10:38+0000\n"
+"PO-Revision-Date: 2026-06-08 05:01+0000\n"
 "Last-Translator: Ida Brenna <ida@larald.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/lomiri/"
 "lomiri/nb_NO/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 2026.6\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:35+0000\n"
 
 #: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
@@ -365,21 +365,19 @@ msgstr "Lukker gjeldende vindu."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:336
 msgid "Stages"
-msgstr ""
+msgstr "Visningsområder"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:343
-#, fuzzy
-#| msgid "Super + A"
 msgid "Super + S"
-msgstr "Super + A"
+msgstr "Super + S"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:348
 msgid "Shows or hides the side stage."
-msgstr ""
+msgstr "Viser eller skjuler sidevisningsområdet."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:362
 msgid "Moves app between main stage and side stage."
-msgstr ""
+msgstr "Flytter appen mellom hovedvisningsområdet og sidevisningsområdet."
 
 #: qml/Components/Lockscreen.qml:223 qml/Greeter/GreeterView.qml:472
 msgid "Return to Call"
