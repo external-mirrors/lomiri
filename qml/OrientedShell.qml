@@ -124,6 +124,13 @@ Item {
         if (lomiriSettings.usageMode === undefined)
             return; // gsettings isn't loaded yet, we'll try again in Component.onCompleted
 
+        if (screen.formFactor === Screen.Tablet) {
+            lomiriSettings.usageMode = "Staged";
+            return;
+        } else {
+            lomiriSettings.usageMode = "Windowed";
+        }
+
         console.log("Calculating new usage mode. Pointer devices:", pointerInputDevices, "current mode:", lomiriSettings.usageMode, "old device count", miceModel.oldCount + touchPadModel.oldCount, "root width:", root.width, "height:", root.height)
         if (lomiriSettings.usageMode === "Windowed") {
             if (Math.min(root.width, root.height) > units.gu(60)) {
