@@ -627,6 +627,7 @@ StyledItem {
                         && (!greeter || !greeter.hasLockedApp)
                         && !shell.waitingOnGreeter
                         && settings.enableIndicatorMenu
+                        && !screenshotEditor.visible
 
                 model: Indicators.IndicatorsModel {
                     id: indicatorsModel
@@ -654,6 +655,7 @@ StyledItem {
                 available: (!greeter || !greeter.shown)
                         && !shell.waitingOnGreeter
                         && !stage.spreadShown
+                        && !screenshotEditor.visible
             }
 
             readonly property bool focusedSurfaceIsFullscreen: shell.topLevelSurfaceList.focusedWindow
@@ -683,6 +685,7 @@ StyledItem {
                     && shell.mode !== "greeter"
                     && !screenshotEditor.visible
             visible: shell.mode !== "greeter"
+                    && !screenshotEditor.visible
             inverted: shell.usageScenario !== "desktop"
             superPressed: physicalKeysMapper.superPressed
             superTabPressed: physicalKeysMapper.superTabPressed
@@ -892,19 +895,13 @@ StyledItem {
                 anchors.topMargin: panel.panelHeight
                 enabled: !wizard.active
 
-                property string prevLauncherState : ""
-
                 // Always hide the Launcher & restore state when done
                 onShown: {
                     console.log("Showing screenshot editor.");
-
-                    prevLauncherState = launcher.state;
-                    launcher.switchToNextState("");
                     screenshotEditorContainer.visible = true;
                 }
 
                 onHidden: {
-                    launcher.switchToNextState(prevLauncherState);
                     screenshotEditorContainer.visible = false;
                 }
 
@@ -918,19 +915,6 @@ StyledItem {
 
                         if (greeter.locked)
                             screenshotEditor.hide()
-                    }
-                }
-
-                Connections {
-                    target: panel
-
-                    // Hide the launcher if the indicator panel has been tapped
-                    function onFullyClosedChanged() {
-                        if (!screenshotEditor.visible)
-                            return;
-
-                        if (panel.fullyClosed)
-                            launcher.switchToNextState("");
                     }
                 }
             }
