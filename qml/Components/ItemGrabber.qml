@@ -28,8 +28,6 @@ Rectangle {
     color: "white"
     opacity: 0.0
 
-    required property var shell
-
     signal snapshotTaken(string path)
 
     ScreenshotDirectory {
@@ -44,9 +42,11 @@ Rectangle {
 
     function capture(item) {
         // Disallow spamming the lightdm home directory with screenshots
-        // without access for removal to them
-        if (shell.mode === "greeter")
+        // without access to remove them easily.
+        if (!root.enabled) {
+            console.log("Taking screenshots is blocked.");
             return;
+        }
 
         d.target = item;
         visible = true;

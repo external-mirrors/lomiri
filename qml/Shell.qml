@@ -613,7 +613,7 @@ StyledItem {
             objectName: "panel"
             anchors.fill: parent //because this draws indicator menus
             blurSource: shell.blurSource
-            z: screenshotEditor.visibility ? screenshotEditorContainer.z + 1 : 0
+            z: screenshotEditor.visible ? screenshotEditorContainer.z + 1 : 0
             lightMode: shell.lightMode
             mode: shell.usageScenario == "desktop" ? "windowed" : "staged"
             minimizedPanelHeight: units.gu(3)
@@ -681,6 +681,7 @@ StyledItem {
                     && !greeter.hasLockedApp
                     && !shell.waitingOnGreeter
                     && shell.mode !== "greeter"
+                    && !screenshotEditor.visible
             visible: shell.mode !== "greeter"
             inverted: shell.usageScenario !== "desktop"
             superPressed: physicalKeysMapper.superPressed
@@ -688,7 +689,7 @@ StyledItem {
             panelWidth: units.gu(settings.launcherWidth)
             lockedVisible: (lockedByUser || shell.atDesktop) && lockAllowed
             blurSource: shell.blurSource
-            z: screenshotEditor.visibility ? screenshotEditorContainer.z + 1 : 0
+            z: screenshotEditor.visible ? screenshotEditorContainer.z + 1 : 0
             topPanelHeight: panel.panelHeight
             lightMode: shell.lightMode
             drawerEnabled: !greeter.active && tutorial.launcherLongSwipeEnabled
@@ -883,7 +884,7 @@ StyledItem {
             id: screenshotEditorContainer
             anchors.fill: parent
             z: itemGrabber.z - 2
-            visible: screenshotEditor.visibility
+            visible: false
 
             ScreenshotEditor {
                 id: screenshotEditor
@@ -893,16 +894,18 @@ StyledItem {
 
                 property string prevLauncherState : ""
 
-                // Don't store and restore the wrong state once the editor has been opened already
-                onVisibleChanged: {
-                    console.log("Visible changed: " + visible)
+                // Always hide the Launcher & restore state when done
+                onShown: {
+                    console.log("Showing screenshot editor.");
 
-                    if (visible) {
-                        prevLauncherState = launcher.state;
-                        launcher.switchToNextState("");
-                    } else {
-                        launcher.switchToNextState(prevLauncherState);
-                    }
+                    prevLauncherState = launcher.state;
+                    launcher.switchToNextState("");
+                    screenshotEditorContainer.visible = true;
+                }
+
+                onHidden: {
+                    launcher.switchToNextState(prevLauncherState);
+                    screenshotEditorContainer.visible = false;
                 }
 
                 // Make locking the screen abort the editing session, otherwise we
@@ -910,7 +913,7 @@ StyledItem {
                 Connections {
                     target: greeter
                     function onLockedChanged() {
-                        if (!screenshotEditor.visibility)
+                        if (!screenshotEditor.visible)
                             return;
 
                         if (greeter.locked)
@@ -923,7 +926,7 @@ StyledItem {
 
                     // Hide the launcher if the indicator panel has been tapped
                     function onFullyClosedChanged() {
-                        if (!screenshotEditor.visibility)
+                        if (!screenshotEditor.visible)
                             return;
 
                         if (panel.fullyClosed)
@@ -964,8 +967,8 @@ StyledItem {
     ItemGrabber {
         id: itemGrabber
         anchors.fill: parent
-        shell: shell
         z: dialogs.z + 10
+        enabled: shell.mode !== "greeter"
         GlobalShortcut { shortcut: Qt.Key_Print; onTriggered: itemGrabber.capture(shell) }
         Connections {
             target: stage
