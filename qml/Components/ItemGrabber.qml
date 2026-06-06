@@ -79,14 +79,20 @@ Rectangle {
             if (visible) {
                 d.target.grabToImage(function(result)
                     {
-                        var fileName = screenshotDirectory.makeFileName();
+                        const fileName = screenshotDirectory.makeFileName();
                         if (fileName.length === 0) {
                             console.warn("ItemGrabber: No fileName to save image to");
-                        } else {
-                            console.log("ItemGrabber: Saving image to " + fileName);
-                            result.saveToFile(fileName);
-                            root.snapshotTaken(fileName);
+                            return;
                         }
+
+                        console.log("ItemGrabber: Saving image to " + fileName);
+                        const success = result.saveToFile(fileName);
+                        if (!success) {
+                            console.log("Failed to save image.");
+                            return;
+                        }
+
+                        root.snapshotTaken(fileName);
                     });
 
                 visible = false;
