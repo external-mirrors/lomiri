@@ -47,9 +47,11 @@ PanelTest {
             PanelItemRow {
                 id: indicatorsRow
                 height: expanded ? units.gu(7) : units.gu(3)
-                anchors.centerIn: parent
+                align: Qt.AlignLeft
                 model: root.indicatorsModel
+                interactive: false
                 enableLateralChanges: ma.pressed
+                finishedExpanding: !heightAnimation.running
 
                 Behavior on height {
                     NumberAnimation {
@@ -74,18 +76,18 @@ PanelTest {
                         Label { anchors.centerIn: parent; text: ownIndex }
                     }
                 }
+            }
 
-                MouseArea {
-                    id: ma
-                    anchors.fill: parent
-                    onPositionChanged: {
+            MouseArea {
+                id: ma
+                anchors.fill: parent
+                onPositionChanged: {
+                    indicatorsRow.lateralPosition = mouse.x;
+                }
+                onPressed: {
+                    if (pressed) {
                         indicatorsRow.lateralPosition = mouse.x;
-                    }
-                    onPressed: {
-                        if (pressed) {
-                            indicatorsRow.lateralPosition = mouse.x;
-                            indicatorsRow.selectItemAt(mouse.x);
-                        }
+                        indicatorsRow.selectItemAt(mouse.x);
                     }
                 }
             }
@@ -230,7 +232,7 @@ PanelTest {
         function test_invalidCurrentItem() {
             indicatorsRow.selectItemAt(-100);
             var item = findChild(indicatorsRow, root.originalModelData[0]["identifier"] + "-panelItem");
-            compare(indicatorsRow.currentItem, item);
+            tryCompare(indicatorsRow, "currentItem", item);
         }
 
         // testing that changing the lateral position offset of the row changes the current item.
@@ -260,7 +262,7 @@ PanelTest {
             // this uses the MouseArea above to change the indicatorRow lateralPosition
             mouseFlick(indicatorsRow, fromPosition.x, fromPosition.y, toPosition.x, toPosition.y, false, false, units.gu(5), 30);
 
-            mouseRelease(indicatorsRow, fromPosition.x, fromPosition.y);
+            mouseRelease(indicatorsRow, toPosition.x, toPosition.y);
             tryCompare(indicatorsRow, "currentItem", toItem, 5000, "Current item did not change to expected item");
         }
 

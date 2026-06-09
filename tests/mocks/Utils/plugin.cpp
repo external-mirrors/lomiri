@@ -26,6 +26,7 @@
 #include "windowstatestorage.h"
 #include "constants.h"
 #include "URLDispatcher.h"
+#include "displaycutoutsmodel.h"
 
 // plugin
 #include <activefocuslogger.h>
@@ -100,4 +101,5 @@ void FakeUtilsPlugin::registerTypes(const char *uri)
     qmlRegisterType<TabFocusFenceItem>(uri, 0, 1, "TabFocusFence");
     qmlRegisterType<ExpressionFilterModel>(uri, 0, 1, "ExpressionFilterModel");
     qmlRegisterType<QuickListProxyModel>(uri, 0, 1, "QuickListProxyModel");
+    qmlRegisterType<DisplayCutoutsModel>(uri, 0, 1, "DisplayCutoutsModel");
 }

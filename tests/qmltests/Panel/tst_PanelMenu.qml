@@ -171,7 +171,7 @@ PanelTest {
         // Test that closing the indicators ends up in the correct position.
         function test_hideEndsInCorrectPosition() {
             var indicatorsBar = findChild(indicatorsMenu, "indicatorsBar");
-            var flickable = findChild(indicatorsBar, "flickable");
+            const flickable = findChild(indicatorsBar, "panelItemRow");
 
             var originalContentX = flickable.contentX;
 
@@ -248,11 +248,11 @@ PanelTest {
         {
             var panelItemRow = findChild(indicatorsMenu, "panelItemRow");
             verify(panelItemRow !== null);
+            panelItemRow.resetCurrentItem();
 
             var indicatorItem = get_indicator_item(data.item);
 
             var mappedPosition = indicatorsMenu.mapFromItem(indicatorItem, indicatorItem.width/2, indicatorItem.height/2);
-
             touchFlick(indicatorsMenu,
                         mappedPosition.x, mappedPosition.y,
                         mappedPosition.x, indicatorsMenu.openedHeight / 2,
@@ -279,6 +279,7 @@ PanelTest {
 
             var panelItemRow = findChild(indicatorsMenu, "panelItemRow");
             verify(panelItemRow !== null);
+            panelItemRow.resetCurrentItem();
 
             // Get the first indicator
             var firstItem = get_indicator_item(0);
