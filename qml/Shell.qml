@@ -45,10 +45,14 @@ import Lomiri.Session 0.1
 import Lomiri.Indicators 0.1 as Indicators
 import Cursor 1.1
 import WindowManager 1.0
-
+import LomiriPanel 1.0
 
 StyledItem {
     id: shell
+
+    DeviceConfiguration {
+        id: deviceConfig
+    }
 
     readonly property bool lightMode: settings.lightMode
     theme.name: lightMode ? "Lomiri.Components.Themes.Ambiance" :
@@ -616,7 +620,7 @@ StyledItem {
             z: screenshotEditor.visible ? screenshotEditorContainer.z + 1 : 0
             lightMode: shell.lightMode
             mode: shell.usageScenario == "desktop" ? "windowed" : "staged"
-            minimizedPanelHeight: units.gu(3)
+            minimizedPanelHeight: deviceConfig.collapsedPanelHeight || units.gu(3)
             expandedPanelHeight: units.gu(7)
             applicationMenuContentX: launcher.lockedVisible ? launcher.panelWidth : 0
 

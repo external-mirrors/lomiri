@@ -38,6 +38,7 @@ set(QMLPLUGIN_SRC
     expressionfiltermodel.cpp
     quicklistproxymodel.cpp
     fileio.cpp
+    displaycutoutsmodel.cpp
     plugin.cpp
     )
 

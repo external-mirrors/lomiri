@@ -39,6 +39,8 @@ class DeviceConfig: public QObject
     Q_PROPERTY(quint8 sensorLocationY READ sensorLocationY FINAL)
     Q_PROPERTY(quint8 sensorRadius READ sensorRadius FINAL)
 
+    Q_PROPERTY(quint16 collapsedPanelHeight READ collapsedPanelHeight NOTIFY changed)
+
 public:
     DeviceConfig(QObject *parent = nullptr);
     ~DeviceConfig() = 0;
@@ -57,6 +59,8 @@ public:
     quint8 sensorLocationX() const;
     quint8 sensorLocationY() const;
     quint8 sensorRadius() const;
+
+    quint16 collapsedPanelHeight() const;
 
 // for tests
     Q_INVOKABLE void refresh() { Q_EMIT changed(); }

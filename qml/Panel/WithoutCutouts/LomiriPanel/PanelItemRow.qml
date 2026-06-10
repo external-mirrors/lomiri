@@ -17,7 +17,8 @@
 
 import QtQuick 2.15
 import Lomiri.Components 1.3
-import "../Components"
+import "../../.."
+import "../../../Components"
 
 Item {
     id: root

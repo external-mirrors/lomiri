@@ -118,7 +118,7 @@ function(add_qml_unittest PATH COMPONENT_NAME)
 
     add_executable_test(${COMPONENT_NAME} qmltestrunner
         ${ARGN}
-        ARGS -input ${CMAKE_CURRENT_SOURCE_DIR}/${PATH}/tst_${COMPONENT_NAME}.qml ${QMLTEST_ARGS}
+        ARGS -input ${CMAKE_CURRENT_SOURCE_DIR}/${PATH}/tst_${COMPONENT_NAME}.qml ${QMLTEST_ARGS} -import ${CMAKE_SOURCE_DIR}/qml/Panel/WithCutouts
     )
 
     if (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/${PATH}/tst_${COMPONENT_NAME}.qml")

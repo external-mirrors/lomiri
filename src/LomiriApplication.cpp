@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2015 Canonical Ltd.
+ * Copyright (C) 2026 UBports Foundation
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,6 +27,7 @@
 #include <QGSettings>
 
 #include <libintl.h>
+#include <deviceinfo.h>
 
 // qtmir
 #include <qtmir/displayconfigurationstorage.h>
@@ -39,7 +41,6 @@
 #include "DisplayConfigurationStorage.h"
 
 #include <QDebug>
-
 
 
 LomiriApplication::LomiriApplication(int & argc, char ** argv)
@@ -136,6 +137,10 @@ void LomiriApplication::setupQmlEngine()
 
     prependImportPaths(m_qmlEngine, ::overrideImportPaths());
     appendImportPaths(m_qmlEngine, ::fallbackImportPaths());
+
+    DeviceInfo info;
+    auto panelPath = info.contains("DisplayCutouts") ? "Panel/WithCutouts" : "Panel/WithoutCutouts";
+    prependImportPaths(m_qmlEngine, {QDir(::qmlDirectory() + panelPath).canonicalPath()});
 
     m_qmlEngine->setNetworkAccessManagerFactory(new CachingNetworkManagerFactory);
 

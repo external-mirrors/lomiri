@@ -42,6 +42,7 @@ set(QMLPLUGIN_SRC
     windowstatestorage.cpp
     URLDispatcher.cpp
     deviceinfo.cpp
+    displaycutoutsmodel.cpp
     )
 
 add_library(FakeUtils-qml SHARED

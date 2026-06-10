@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2014-2016 Canonical Ltd.
- * Copyright (C) 2020 UBports Foundation
+ * Copyright (C) 2020-2026 UBports Foundation
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,8 +18,9 @@
 import QtQuick 2.15
 import Lomiri.Components 1.3
 import Lomiri.Gestures 0.1
-import "../Components"
-import "Indicators"
+import "../../../Components"
+import "../../Indicators"
+import "../.."
 
 Showable {
     id: root
@@ -190,12 +191,18 @@ Showable {
         }
         expanded: false
         enableLateralChanges: false
+        finishedExpanding: !indicatorsBarHeightAnimation.running
         lateralPosition: -1
-        lightMode: root.lightMode
         unitProgress: root.unitProgress
 
         height: expanded ? expandedPanelHeight : minimizedPanelHeight
-        Behavior on height { NumberAnimation { duration: LomiriAnimation.SnapDuration; easing: LomiriAnimation.StandardEasing } }
+        Behavior on height {
+            NumberAnimation {
+                id: indicatorsBarHeightAnimation
+                duration: LomiriAnimation.SnapDuration
+                easing: LomiriAnimation.StandardEasing
+            }
+        }
     }
 
     ScrollCalculator {

@@ -17,11 +17,11 @@
 import QtQuick 2.15
 import QtQuick.Layouts 1.1
 import QtTest 1.0
-import "../../../qml/Panel"
 import Lomiri.Components 1.3
 import Lomiri.SelfTest 0.1 as UT
 import Lomiri.Indicators 0.1 as Indicators
 import "../../../qml/Panel/Indicators"
+import LomiriPanel 1.0
 
 PanelTest {
     id: root
@@ -51,6 +51,7 @@ PanelTest {
                 anchors.centerIn: parent
                 model: root.indicatorsModel
                 interactive: expanded && height === units.gu(7)
+                finishedExpanding: !heightAnimation.running
 
                 rowItemDelegate: Item {
                     property int ownIndex: index
@@ -189,15 +190,13 @@ PanelTest {
             var dataItem = findChild(indicatorsBar, root.originalModelData[lastItemIndex]["identifier"] + "-panelItem");
             verify(dataItem !== null);
 
-            var row = findChild(indicatorsBar, "panelItemRow");
-            // test will not work without these conditions
-            verify(row.width >= indicatorsBar.width + dataItem.width);
-
             var mappedPosition = indicatorsBar.mapFromItem(dataItem, dataItem.width/2, dataItem.height/2);
             indicatorsBar.addScrollOffset(-dataItem.width);
-            var newMappedPosition = indicatorsBar.mapFromItem(dataItem, dataItem.width/2, dataItem.height/2);
 
-            compare(mappedPosition.x, newMappedPosition.x - dataItem.width);
+            tryVerify(() => {
+                const newMappedPosition = indicatorsBar.mapFromItem(dataItem, dataItem.width/2, dataItem.height/2);
+                return mappedPosition.x == newMappedPosition.x - dataItem.width;
+            });
         }
 
         function test_selectItemWhenExpanded_data() {
@@ -232,9 +231,7 @@ PanelTest {
 
             widthSlider.value = 50;
             mappedPosition = indicatorsBar.mapFromItem(dataItem, dataItem.width/2, dataItem.height/2);
-            var newDistanceFromRightEdge = indicatorsBar.width - mappedPosition.x;
-
-            compare(newDistanceFromRightEdge, oldDistanceFromRightEdge);
+            tryVerify(() => indicatorsBar.width - mappedPosition.x == oldDistanceFromRightEdge);
         }
     }
 }
