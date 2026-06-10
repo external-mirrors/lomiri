@@ -28,6 +28,8 @@ Rectangle {
     color: "white"
     opacity: 0.0
 
+    signal snapshotTaken(string path)
+
     ScreenshotDirectory {
         id: screenshotDirectory
         objectName: "screenGrabber"
@@ -39,6 +41,13 @@ Rectangle {
     }
 
     function capture(item) {
+        // Disallow spamming the lightdm home directory with screenshots
+        // without access to remove them easily.
+        if (!root.enabled) {
+            console.log("Taking screenshots is blocked.");
+            return;
+        }
+
         d.target = item;
         visible = true;
         shutterSound.stop();
@@ -70,13 +79,20 @@ Rectangle {
             if (visible) {
                 d.target.grabToImage(function(result)
                     {
-                        var fileName = screenshotDirectory.makeFileName();
+                        const fileName = screenshotDirectory.makeFileName();
                         if (fileName.length === 0) {
                             console.warn("ItemGrabber: No fileName to save image to");
-                        } else {
-                            console.log("ItemGrabber: Saving image to " + fileName);
-                            result.saveToFile(fileName);
+                            return;
                         }
+
+                        console.log("ItemGrabber: Saving image to " + fileName);
+                        const success = result.saveToFile(fileName);
+                        if (!success) {
+                            console.log("Failed to save image.");
+                            return;
+                        }
+
+                        root.snapshotTaken(fileName);
                     });
 
                 visible = false;

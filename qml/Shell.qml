@@ -214,6 +214,19 @@ StyledItem {
 
     readonly property alias greeter: greeterLoader.item
 
+    readonly property var blurSource: {
+        if (!settings.enableBlur)
+            return null;
+
+        if (screenshotEditorContainer.visible)
+            return screenshotEditorContainer;
+
+        if (greeter.shown)
+            return greeter;
+
+        return stages;
+    }
+
     function activateApplication(appId) {
         topLevelSurfaceList.pendingActivation();
 
@@ -599,9 +612,9 @@ StyledItem {
             id: panel
             objectName: "panel"
             anchors.fill: parent //because this draws indicator menus
-            blurSource: settings.enableBlur ? (greeter.shown ? greeter : stages) : null
+            blurSource: shell.blurSource
+            z: screenshotEditor.visible ? screenshotEditorContainer.z + 1 : 0
             lightMode: shell.lightMode
-
             mode: shell.usageScenario == "desktop" ? "windowed" : "staged"
             minimizedPanelHeight: units.gu(3)
             expandedPanelHeight: units.gu(7)
@@ -614,6 +627,7 @@ StyledItem {
                         && (!greeter || !greeter.hasLockedApp)
                         && !shell.waitingOnGreeter
                         && settings.enableIndicatorMenu
+                        && !screenshotEditor.visible
 
                 model: Indicators.IndicatorsModel {
                     id: indicatorsModel
@@ -641,6 +655,7 @@ StyledItem {
                 available: (!greeter || !greeter.shown)
                         && !shell.waitingOnGreeter
                         && !stage.spreadShown
+                        && !screenshotEditor.visible
             }
 
             readonly property bool focusedSurfaceIsFullscreen: shell.topLevelSurfaceList.focusedWindow
@@ -668,13 +683,16 @@ StyledItem {
                     && !greeter.hasLockedApp
                     && !shell.waitingOnGreeter
                     && shell.mode !== "greeter"
+                    && !screenshotEditor.visible
             visible: shell.mode !== "greeter"
+                    && !screenshotEditor.visible
             inverted: shell.usageScenario !== "desktop"
             superPressed: physicalKeysMapper.superPressed
             superTabPressed: physicalKeysMapper.superTabPressed
             panelWidth: units.gu(settings.launcherWidth)
             lockedVisible: (lockedByUser || shell.atDesktop) && lockAllowed
-            blurSource: settings.enableBlur ? (greeter.shown ? greeter : stages) : null
+            blurSource: shell.blurSource
+            z: screenshotEditor.visible ? screenshotEditorContainer.z + 1 : 0
             topPanelHeight: panel.panelHeight
             lightMode: shell.lightMode
             drawerEnabled: !greeter.active && tutorial.launcherLongSwipeEnabled
@@ -864,6 +882,43 @@ StyledItem {
                 }
             }
         }
+
+        Item {
+            id: screenshotEditorContainer
+            anchors.fill: parent
+            z: itemGrabber.z - 2
+            visible: false
+
+            ScreenshotEditor {
+                id: screenshotEditor
+                anchors.fill: parent
+                anchors.topMargin: panel.panelHeight
+                enabled: !wizard.active
+
+                // Always hide the Launcher & restore state when done
+                onShown: {
+                    console.log("Showing screenshot editor.");
+                    screenshotEditorContainer.visible = true;
+                }
+
+                onHidden: {
+                    screenshotEditorContainer.visible = false;
+                }
+
+                // Make locking the screen abort the editing session, otherwise we
+                // would show the editor above the lockscreen.
+                Connections {
+                    target: greeter
+                    function onLockedChanged() {
+                        if (!screenshotEditor.visible)
+                            return;
+
+                        if (greeter.locked)
+                            screenshotEditor.hide()
+                    }
+                }
+            }
+        }
     }
 
     Dialogs {
@@ -897,11 +952,18 @@ StyledItem {
         id: itemGrabber
         anchors.fill: parent
         z: dialogs.z + 10
+        enabled: shell.mode !== "greeter"
         GlobalShortcut { shortcut: Qt.Key_Print; onTriggered: itemGrabber.capture(shell) }
         Connections {
             target: stage
             ignoreUnknownSignals: true
             function onItemSnapshotRequested(item) { itemGrabber.capture(item) }
+        }
+        onSnapshotTaken: {
+            if (!settings.enableScreenshotEditor)
+                return;
+
+            screenshotEditor.show(path)
         }
     }
 

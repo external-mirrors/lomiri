@@ -23,6 +23,7 @@ import QtQuick 2.15
 Item {
     property int handler
     property int contentType
+    property bool showTitle
 
     signal peerSelected(var peer)
     signal cancelPressed()
