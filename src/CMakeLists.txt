@@ -11,6 +11,7 @@ include_directories(
     ${CONNECTIVITY_INCLUDE_DIRS}
     ${QTMIRSERVER_INCLUDE_DIRS}
     ${MIROIL_INCLUDE_DIRS}
+    ${DEVICEINFO_INCLUDE_DIRS}
 )
 
 include_directories(
@@ -59,6 +60,7 @@ target_link_libraries(${SHELL_APP}
     ${SYSTEMD_LDFLAGS}
     ${Intl_LIBRARIES}
     ${MIROIL_LDFLAGS}
+    ${DEVICEINFO_LDFLAGS}
     LomiriGestures
     lomiri-connectivity-qt1
     lomiri-private

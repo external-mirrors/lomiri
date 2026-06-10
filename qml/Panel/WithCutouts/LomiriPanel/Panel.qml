@@ -26,11 +26,12 @@ import Lomiri.ApplicationMenu 0.1
 
 import QtQuick.Window 2.2
 
-import "../ApplicationMenus"
-import "../Components"
-import "../Components/PanelState"
-import ".."
-import "Indicators"
+import "../../../ApplicationMenus"
+import "../../../Components"
+import "../../../Components/PanelState"
+import "../../.."
+import "../../Indicators"
+import "../.."
 
 Item {
     id: root

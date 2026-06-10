@@ -18,7 +18,7 @@
 import QtQuick 2.15
 import QtQuick.Layouts 1.1
 import QtTest 1.0
-import "../../../qml/Panel"
+import LomiriPanel 1.0
 import Lomiri.Components 1.3
 import Lomiri.SelfTest 0.1 as UT
 

@@ -21,7 +21,7 @@ import Lomiri.Components 1.3
 import Lomiri.SelfTest 0.1 as UT
 import AccountsService 0.1
 import Lomiri.InputInfo 0.1
-import "../../../qml/Panel"
+import LomiriPanel 1.0
 
 PanelTest {
     id: root

@@ -1,0 +1,5 @@
+module LomiriPanel
+Panel 1.0 Panel.qml
+PanelBar 1.0 PanelBar.qml
+PanelItemRow 1.0 PanelItemRow.qml
+PanelMenu 1.0 PanelMenu.qml

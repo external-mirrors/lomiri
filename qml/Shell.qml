@@ -45,7 +45,7 @@ import Lomiri.Session 0.1
 import Lomiri.Indicators 0.1 as Indicators
 import Cursor 1.1
 import WindowManager 1.0
-
+import LomiriPanel 1.0
 
 StyledItem {
     id: shell

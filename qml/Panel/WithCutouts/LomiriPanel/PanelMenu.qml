@@ -18,8 +18,9 @@
 import QtQuick 2.15
 import Lomiri.Components 1.3
 import Lomiri.Gestures 0.1
-import "../Components"
-import "Indicators"
+import "../../../Components"
+import "../../Indicators"
+import "../.."
 
 Showable {
     id: root

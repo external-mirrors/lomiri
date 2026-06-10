@@ -20,8 +20,8 @@ import QtQuick.Window 2.15 as QtQuickWindow
 import Lomiri.Components 1.3
 import Lomiri.Session 0.1
 import Utils 0.1
-import ".."
-import "../Components"
+import "../../.."
+import "../../../Components"
 
 Item {
     id: root
