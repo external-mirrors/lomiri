@@ -1,4 +1,5 @@
 add_subdirectory(ApplicationMenu)
+add_subdirectory(Content)
 add_subdirectory(Connectivity)
 add_subdirectory(ModemConnectivity)
 add_subdirectory(Indicators)
