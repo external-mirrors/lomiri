@@ -52,11 +52,13 @@ Item {
     property alias contentWidth: flickable.contentWidth
 
     property real lateralPosition: -1
+    property int screenIndex: -1
 
     DisplayCutoutsModel {
         id: cutoutsModel
         expanded: root.expanded
         orientation: OrientationLock.enabled ? OrientationLock.savedOrientation : QtQuickWindow.Screen.orientation
+        enabled: screenIndex === 0
 
         onModelReset: {
             d.recalculateItems();

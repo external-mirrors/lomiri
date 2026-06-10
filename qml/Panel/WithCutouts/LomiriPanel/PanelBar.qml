@@ -32,6 +32,7 @@ Item {
     property real lateralPosition: -1
     property int alignment: Qt.AlignRight
     readonly property int rowContentX: row.contentX
+    property alias screenIndex: row.screenIndex
 
     property alias hideRow: row.hideRow
     property alias rowItemDelegate: row.delegate

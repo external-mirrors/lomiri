@@ -43,6 +43,7 @@ Item {
     property real expandedPanelHeight: units.gu(7)
     property real menuWidth: partialWidth ? units.gu(40) : width
     property alias applicationMenuContentX: __applicationMenus.menuContentX
+    property int screenIndex: -1
 
     property alias applicationMenus: __applicationMenus
     property alias indicators: __indicators

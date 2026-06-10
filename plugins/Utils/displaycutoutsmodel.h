@@ -25,6 +25,7 @@ class DisplayCutoutsModel: public QAbstractListModel
     Q_OBJECT
     Q_PROPERTY(bool expanded WRITE setExpanded)
     Q_PROPERTY(Qt::ScreenOrientation orientation WRITE setOrientation)
+    Q_PROPERTY(bool enabled WRITE setEnabled)
 
 public:
     DisplayCutoutsModel(QObject *parent = nullptr);
@@ -32,12 +33,14 @@ public:
 
     void setExpanded(bool value);
     void setOrientation(Qt::ScreenOrientation value);
+    void setEnabled(bool value);
 
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
 
 private:
     bool m_expanded{false};
+    bool m_enabled{true};
     QList<QRect> m_expandedCutouts;
     QList<QRect> m_collapsedCutouts;
     Qt::ScreenOrientation m_orientation;

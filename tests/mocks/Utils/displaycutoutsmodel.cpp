@@ -38,11 +38,21 @@ void DisplayCutoutsModel::setOrientation(Qt::ScreenOrientation value)
     }
 }
 
+void DisplayCutoutsModel::setEnabled(bool value)
+{
+    if (m_enabled != value) {
+        beginResetModel();
+        m_enabled = value;
+        endResetModel();
+    }
+}
+
+
 int DisplayCutoutsModel::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
 
-    if (m_orientation != Qt::PortraitOrientation) {
+    if (m_orientation != Qt::PortraitOrientation || !m_enabled) {
         return 0;
     }
     return m_expanded ? m_expandedCutouts.count() : m_collapsedCutouts.count();
