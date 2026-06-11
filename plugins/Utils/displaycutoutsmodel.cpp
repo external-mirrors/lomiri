@@ -21,7 +21,7 @@
 
 QRect parseRect(QString rect)
 {
-    auto parts = rect.split(",");
+    auto parts = rect.split(" ");
     if (parts.size() != 4) {
         return QRect();
     }
@@ -35,21 +35,17 @@ DisplayCutoutsModel::DisplayCutoutsModel(QObject *parent)
     : QAbstractListModel(parent)
 {
     DeviceInfo info;
-    if (!info.contains("DisplayCutouts")) {
+    if (!info.contains("DisplayCutoutsCollapsed")) {
         qWarning() << "DisplayCutouts not configured, not enabling";
         return;
     }
 
-    auto cutouts = QString::fromStdString(info.get("DisplayCutouts", ""));
-    auto parts = cutouts.split(";");
-    if (parts.size() != 3) {
-        qWarning() << "invalid DisplayCutouts config" << cutouts;
-        return;
-    }
-    for (auto cutout : parts[1].split("/")) {
+    auto collapsedCutouts = QString::fromStdString(info.get("DisplayCutoutsCollapsed", ""));
+    for (auto cutout : collapsedCutouts.split(",")) {
         m_collapsedCutouts.append(parseRect(cutout));
     }
-    for (auto cutout : parts[2].split("/")) {
+    auto expandedCutouts = QString::fromStdString(info.get("DisplayCutoutsExpanded", ""));
+    for (auto cutout : expandedCutouts.split(",")) {
         m_expandedCutouts.append(parseRect(cutout));
     }
 }
