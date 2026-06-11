@@ -131,5 +131,5 @@ quint8 DeviceConfig::sensorRadius() const
 
 quint16 DeviceConfig::collapsedPanelHeight() const
 {
-    return QString::fromStdString(m_info->get("DisplayCutouts", "0;")).split(";")[0].toUInt();
+    return QString::fromStdString(m_info->get("CollapsedPanelHeight", "0")).toUInt();
 }

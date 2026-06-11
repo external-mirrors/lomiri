@@ -139,7 +139,7 @@ void LomiriApplication::setupQmlEngine()
     appendImportPaths(m_qmlEngine, ::fallbackImportPaths());
 
     DeviceInfo info;
-    auto panelPath = info.contains("DisplayCutouts") ? "Panel/WithCutouts" : "Panel/WithoutCutouts";
+    auto panelPath = info.contains("DisplayCutoutsCollapsed") ? "Panel/WithCutouts" : "Panel/WithoutCutouts";
     prependImportPaths(m_qmlEngine, {QDir(::qmlDirectory() + panelPath).canonicalPath()});
 
     m_qmlEngine->setNetworkAccessManagerFactory(new CachingNetworkManagerFactory);
