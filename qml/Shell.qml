@@ -621,7 +621,7 @@ StyledItem {
             z: screenshotEditor.visible ? screenshotEditorContainer.z + 1 : 0
             lightMode: shell.lightMode
             mode: shell.usageScenario == "desktop" ? "windowed" : "staged"
-            minimizedPanelHeight: shell.screenIndex == 0 ? (deviceConfig.collapsedPanelHeight || units.gu(3)) : units.gu(3)
+            minimizedPanelHeight: shell.screenIndex === 0 && deviceConfig.collapsedPanelHeight || units.gu(3)
             expandedPanelHeight: units.gu(7)
             applicationMenuContentX: launcher.lockedVisible ? launcher.panelWidth : 0
             screenIndex: shell.screenIndex
