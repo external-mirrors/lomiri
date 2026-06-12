@@ -67,6 +67,7 @@ StyledItem {
     property alias panelAreaShowProgress: panel.panelAreaShowProgress
     property string usageScenario: "phone" // supported values: "phone", "tablet" or "desktop"
     property string mode: "full-greeter"
+    property int screenIndex: -1
     property alias oskEnabled: inputMethod.enabled
     function updateFocusedAppOrientation() {
         stage.updateFocusedAppOrientation();
@@ -620,9 +621,10 @@ StyledItem {
             z: screenshotEditor.visible ? screenshotEditorContainer.z + 1 : 0
             lightMode: shell.lightMode
             mode: shell.usageScenario == "desktop" ? "windowed" : "staged"
-            minimizedPanelHeight: deviceConfig.collapsedPanelHeight || units.gu(3)
+            minimizedPanelHeight: shell.screenIndex === 0 && deviceConfig.collapsedPanelHeight || units.gu(3)
             expandedPanelHeight: units.gu(7)
             applicationMenuContentX: launcher.lockedVisible ? launcher.panelWidth : 0
+            screenIndex: shell.screenIndex
 
             indicators {
                 hides: [launcher]

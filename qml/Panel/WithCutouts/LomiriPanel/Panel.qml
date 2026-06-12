@@ -43,6 +43,7 @@ Item {
     property real expandedPanelHeight: units.gu(7)
     property real menuWidth: partialWidth ? units.gu(40) : width
     property alias applicationMenuContentX: __applicationMenus.menuContentX
+    property int screenIndex: -1
 
     property alias applicationMenus: __applicationMenus
     property alias indicators: __indicators
@@ -304,6 +305,7 @@ Item {
                               root.width,
                               root.height)
             lightMode: root.lightMode
+            screenIndex: root.screenIndex
 
             onShowTapped: {
                 if (callHint.active) {
@@ -422,6 +424,7 @@ Item {
             minimizedPanelHeight: root.minimizedPanelHeight
             expandedPanelHeight: root.expandedPanelHeight
             openedHeight: root.height
+            screenIndex: root.screenIndex
 
             overFlowWidth: width - appMenuClear
             enableHint: !callHint.active && !fullscreenMode
