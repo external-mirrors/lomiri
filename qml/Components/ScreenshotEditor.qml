@@ -23,12 +23,25 @@ import Utils 0.1
 Item {
     id: root
 
+    property var screenshotEditor : null
+
     signal shown();
     signal hidden();
+
+    Component {
+        id: editorComponent
+        Extras.PhotoEditor {
+            anchors.fill: parent
+        }
+    }
 
     function show(path) {
         if (!root.enabled)
             return;
+
+        screenshotEditor =
+          editorComponent.createObject(
+            screenshotEditorRoot);
 
         screenshotSharePicker.filePath = path;
         root.shown();
@@ -39,10 +52,12 @@ Item {
         screenshotSharePicker.visible = false;
         screenshotSharePicker.filePath = "";
         root.hidden();
+        screenshotEditor.destroy();
+        screenshotEditor = null;
     }
 
-    Extras.PhotoEditor {
-        id: screenshotEditor
+    Item {
+        id: screenshotEditorRoot
         y: screenshotEditorHeader.height
         anchors.left: parent.left
         anchors.right: parent.right
