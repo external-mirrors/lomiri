@@ -691,14 +691,12 @@ StyledItem {
                     && shell.mode !== "greeter"
                     && !screenshotEditor.visible
             visible: shell.mode !== "greeter"
-                    && !screenshotEditor.visible
             inverted: shell.usageScenario !== "desktop"
             superPressed: physicalKeysMapper.superPressed
             superTabPressed: physicalKeysMapper.superTabPressed
             panelWidth: units.gu(settings.launcherWidth)
             lockedVisible: (lockedByUser || shell.atDesktop) && lockAllowed
             blurSource: shell.blurSource
-            z: screenshotEditor.visible ? screenshotEditorContainer.z + 1 : 0
             topPanelHeight: panel.panelHeight
             lightMode: shell.lightMode
             drawerEnabled: !greeter.active && tutorial.launcherLongSwipeEnabled
@@ -901,9 +899,14 @@ StyledItem {
                 anchors.topMargin: panel.panelHeight
                 enabled: !wizard.active
 
-                // Always hide the Launcher & restore state when done
+                // Always hide the Launcher and Panel
                 onShown: {
                     console.log("Showing screenshot editor.");
+
+                    launcher.hide();
+                    panel.indicators.hide();
+                    panel.applicationMenus.hide();
+
                     screenshotEditorContainer.visible = true;
                 }
 
