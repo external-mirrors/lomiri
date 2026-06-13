@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-05-27 09:58+0000\n"
-"PO-Revision-Date: 2026-05-28 09:51+0000\n"
+"PO-Revision-Date: 2026-06-13 15:42+0000\n"
 "Last-Translator: Adam Havelka <adam@uxes.cz>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/lomiri/lomiri/cs/>"
 "\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.6.dev0\n"
+"X-Generator: Weblate 2026.7.dev0\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:35+0000\n"
 
 #: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
@@ -364,8 +364,9 @@ msgid "Closes the current window."
 msgstr "Zavře právě zaměřené okno."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:336
+#, fuzzy
 msgid "Stages"
-msgstr ""
+msgstr "Oblasti zobrazení"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:343
 msgid "Super + S"
