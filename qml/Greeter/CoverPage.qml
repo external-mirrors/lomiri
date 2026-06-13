@@ -187,6 +187,11 @@ Showable {
         visible: gsettings.showChargingInformationWhileLocked && (BatteryMonitor.charging || BatteryMonitor.fullyCharged)
     }
 
+    UDFPSensorIcon{
+        id: ufdPosition
+    }
+
+
     Label {
         id: swipeHint
         objectName: "swipeHint"
