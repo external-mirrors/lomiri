@@ -33,6 +33,7 @@ Showable {
     id: root
     created: loader.status == Loader.Ready
 
+    property Item shellRoot
     property real dragHandleLeftMargin: 0
 
     property url background
@@ -393,6 +394,20 @@ Showable {
 
         Binding {
             target: loader.item
+            property: "shellRoot"
+            value: root.shellRoot
+            restoreMode: Binding.RestoreBinding
+        }
+
+        Binding {
+            target: loader.item
+            property: "biometryd"
+            value: biometryd
+            restoreMode: Binding.RestoreBinding
+        }
+
+        Binding {
+            target: loader.item
             property: "panelHeight"
             value: root.panelHeight
             restoreMode: Binding.RestoreBinding
@@ -606,6 +621,8 @@ Showable {
                                           Powerd.status === Powerd.On &&
                                           Biometryd.available &&
                                           AccountsService.enableFingerprintIdentification
+        /* idEnabled stays true after too many failed attempts. */
+        readonly property bool canUnlock: idEnabled && d.secureFingerprint
 
         function startOperation() {
             if (idEnabled) {
@@ -633,7 +650,13 @@ Showable {
 
         function failOperation(reason) {
             console.log("Failed to identify user by fingerprint:", reason);
-            restartOperation();
+            // A locked reader fails at once, so retrying would spin and keep
+            // resetting the passcode prompt.
+            if (d.secureFingerprint) {
+                restartOperation();
+            } else {
+                cancelOperation();
+            }
             var msg = d.secureFingerprint ? i18n.tr("Try again") :
                       d.alphanumeric ? i18n.tr("Enter passphrase to unlock") :
                                        i18n.tr("Enter passcode to unlock");
@@ -660,6 +683,8 @@ Showable {
             }
             if (root.active)
                 root.forcedUnlock = true;
+
+            Powerd.setHighBrightnessMode(false)
         }
         onFailed: {
             if (!d.secureFingerprint) {
@@ -668,6 +693,8 @@ Showable {
                 AccountsService.failedFingerprintLogins++;
                 failOperation(reason);
             }
+
+            Powerd.setHighBrightnessMode(false)
         }
     }
 }

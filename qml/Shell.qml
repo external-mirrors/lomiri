@@ -267,6 +267,27 @@ StyledItem {
         startApp(app); // locked apps are always in our same session
     }
 
+    function enableUDFPSDimmer(enable) {
+        /* Where HBM covers the whole screen the dimmer has to be up before
+           it is enabled, and stay until it is back off. */
+        if (enable) {
+            udfpsDimmer.visible = true;
+            Powerd.setHighBrightnessMode(true);
+        } else {
+            Powerd.setHighBrightnessMode(false);
+            udfpsDimmer.visible = false;
+        }
+    }
+
+    Connections{
+        target: Powerd
+        /* The signal has no arguments. It also fires when repowerd disables
+           HBM on timeout, so don't call setHighBrightnessMode() from here. */
+        function onHighBrightnessModeEnabledChanged() {
+            udfpsDimmer.visible = Powerd.highBrightnessModeEnabled
+        }
+    }
+
     Binding {
         target: LauncherModel
         restoreMode: Binding.RestoreBinding
@@ -283,7 +304,7 @@ StyledItem {
     }
 
     UDFPSDimmer {
-        visible: Powerd.highBrightnessModeEnabled
+        id: udfpsDimmer
         anchors.fill: parent
         /* Dimmer overlay must cover everything. */
         z: 100
@@ -478,6 +499,7 @@ StyledItem {
         id: integratedGreeter
         Greeter {
 
+            shellRoot: shell
             enabled: panel.indicators.fullyClosed // hides OSK when panel is open
             hides: [launcher, panel.indicators, panel.applicationMenus]
             tabletMode: shell.usageScenario != "phone"
