@@ -18,6 +18,8 @@
 
 #include "Powerd.h"
 #include <QDBusPendingCall>
+#include <QDBusReply>
+#include <QDebug>
 
 void autoBrightnessChanged(GSettings *settings, const gchar *key, QDBusInterface *lomiriScreen)
 {
@@ -102,6 +104,31 @@ void Powerd::handleDisplayPowerStateChange(int status, int reason)
     if (cachedStatus != (Status)status) {
         cachedStatus = (Status)status;
         Q_EMIT statusChanged((DisplayStateChangeReason)reason);
+    }
+}
+
+void Powerd::setHighBrightnessMode(bool newHighBrightnessMode)
+{
+
+    QDBusInterface iface(
+        "com.canonical.Unity.Screen",
+        "/com/canonical/Unity/Screen",
+        "com.canonical.Unity.Screen",
+        QDBusConnection::systemBus()
+        );
+
+    if (!iface.isValid()) {
+        qWarning().nospace().noquote() << "DBus interface not valid:" << iface.lastError().message();
+        return;
+    }
+
+    QDBusReply<void> reply = iface.call(
+        "setHighBrightnessModeEnabled",
+        newHighBrightnessMode
+        );
+
+    if (!reply.isValid()) {
+        qWarning().nospace().noquote() << "DBus call failed:" << reply.error().message();
     }
 }
 
