@@ -28,6 +28,8 @@ FocusScope {
 
     focus: true
 
+    property Item shellRoot
+    property QtObject biometryd
     property url background
     property real backgroundSourceSize
     property real panelHeight
@@ -344,6 +346,8 @@ FocusScope {
     CoverPage {
         id: coverPage
         objectName: "coverPage"
+        shellRoot: root.shellRoot
+        biometryd: root.biometryd
         height: parent.height
         width: parent.width
         background: root.background
