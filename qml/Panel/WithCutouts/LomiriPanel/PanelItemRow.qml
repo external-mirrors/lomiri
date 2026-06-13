@@ -59,6 +59,7 @@ Item {
         expanded: root.expanded
         orientation: OrientationLock.enabled ? OrientationLock.savedOrientation : QtQuickWindow.Screen.orientation
         enabled: screenIndex === 0
+        lightMode: theme.palette.normal.background.hslLightness >= 0.5
 
         onModelReset: {
             d.recalculateItems();

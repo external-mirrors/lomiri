@@ -34,19 +34,35 @@ QRect parseRect(QString rect)
 DisplayCutoutsModel::DisplayCutoutsModel(QObject *parent)
     : QAbstractListModel(parent)
 {
+    loadConfig();
+}
+
+void DisplayCutoutsModel::loadConfig()
+{
     DeviceInfo info;
     if (!info.contains("DisplayCutoutsCollapsed")) {
         qWarning() << "DisplayCutouts not configured, not enabling";
         return;
     }
 
+    m_collapsedCutouts.clear();
+    m_collapsedLightCutouts.clear();
+    m_expandedCutouts.clear();
     auto collapsedCutouts = QString::fromStdString(info.get("DisplayCutoutsCollapsed", ""));
     for (auto cutout : collapsedCutouts.split(",")) {
         m_collapsedCutouts.append(parseRect(cutout));
     }
-    auto expandedCutouts = QString::fromStdString(info.get("DisplayCutoutsExpanded", ""));
-    for (auto cutout : expandedCutouts.split(",")) {
-        m_expandedCutouts.append(parseRect(cutout));
+    if (info.contains("DisplayCutoutsCollapsedLight")) {
+        auto collapsedLightCutouts = QString::fromStdString(info.get("DisplayCutoutsCollapsedLight", ""));
+        for (auto cutout : collapsedLightCutouts.split(",")) {
+            m_collapsedLightCutouts.append(parseRect(cutout));
+        }
+    }
+    if (info.contains("DisplayCutoutsExpanded")) {
+        auto expandedCutouts = QString::fromStdString(info.get("DisplayCutoutsExpanded", ""));
+        for (auto cutout : expandedCutouts.split(",")) {
+            m_expandedCutouts.append(parseRect(cutout));
+        }
     }
 }
 
@@ -77,6 +93,15 @@ void DisplayCutoutsModel::setEnabled(bool value)
     }
 }
 
+void DisplayCutoutsModel::setLightMode(bool value)
+{
+    if (m_lightMode != value) {
+        beginResetModel();
+        m_lightMode = value;
+        endResetModel();
+    }
+}
+
 int DisplayCutoutsModel::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
@@ -84,14 +109,18 @@ int DisplayCutoutsModel::rowCount(const QModelIndex &parent) const
     if (m_orientation != Qt::PortraitOrientation || !m_enabled) {
         return 0;
     }
-    return m_expanded ? m_expandedCutouts.count() : m_collapsedCutouts.count();
+    auto collapsed = m_lightMode && !m_collapsedLightCutouts.empty()
+        ? &m_collapsedLightCutouts : &m_collapsedCutouts;
+    return m_expanded ? m_expandedCutouts.count() : collapsed->count();
 }
 
 QVariant DisplayCutoutsModel::data(const QModelIndex &index, int role) const
 {
     Q_UNUSED(role);
 
-    auto data = m_expanded ? &m_expandedCutouts : &m_collapsedCutouts;
+    auto collapsed = m_lightMode && !m_collapsedLightCutouts.empty()
+        ? &m_collapsedLightCutouts : &m_collapsedCutouts;
+    auto data = m_expanded ? &m_expandedCutouts : collapsed;
     if (!index.isValid() || index.row() >= data->count()) {
         return {};
     }
