@@ -41,3 +41,8 @@ bool Powerd::highBrightnessModeEnabled() const
 {
     return false;
 }
+
+void Powerd::setHighBrightnessMode(bool newHighBrightnessMode)
+{
+    Q_UNUSED(newHighBrightnessMode)
+}
