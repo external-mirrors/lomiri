@@ -56,6 +56,7 @@ public:
     // Not exposed via Q_PROPERTY because we need the 'reason' argument too
     Q_INVOKABLE void setStatus(Status status, DisplayStateChangeReason reason);
 
+    Q_INVOKABLE void setHighBrightnessMode(bool newHighBrightnessMode);
     bool highBrightnessModeEnabled() const;
 
 Q_SIGNALS:
