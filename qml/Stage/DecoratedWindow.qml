@@ -51,7 +51,6 @@ FocusScope {
     property int highlightSize: units.gu(1)
     property real shadowOpacity: 0
     property bool darkening: false
-    property bool lightMode: false
 
     property real requestedWidth
     property real requestedHeight
@@ -228,7 +227,6 @@ FocusScope {
         title: applicationWindow.title
         windowMoving: moveHandler.moving && !altDragHandler.dragging
         panelState: root.panelState
-        lightMode: root.lightMode
 
         opacity: root.hasDecoration ? Math.min(1, root.showDecoration) : 0
         Behavior on opacity { LomiriNumberAnimation { } }

@@ -26,8 +26,7 @@ import "../Components"
 Rectangle {
     id: root
 
-    property bool lightMode : false
-    color: lightMode ? "#F2FEFEFE" : "#F2111111"
+    color: theme.palette.normal.background.hslLightness >= 0.5 ? "#F2FEFEFE" : "#F2111111"
 
     rotation: inverted ? 180 : 0
 

@@ -49,7 +49,6 @@ FocusScope {
     property bool spreadEnabled: true // If false, animations and right edge will be disabled
     property bool suspended
     property bool oskEnabled: false
-    property bool lightMode: false
     property rect inputMethodRect
     property real rightEdgePushProgress: 0
     property Item availableDesktopArea
@@ -2153,7 +2152,6 @@ FocusScope {
                     boundsItem: root.availableDesktopArea
                     panelState: root.panelState
                     altDragEnabled: root.mode == "windowed"
-                    lightMode: root.lightMode
 
                     requestedWidth: appDelegate.requestedWidth
                     requestedHeight: appDelegate.requestedHeight
