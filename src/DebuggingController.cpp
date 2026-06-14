@@ -90,3 +90,8 @@ void DebuggingController::SetLoggingFilterRules(const QString &filterRules)
 {
     QLoggingCategory::setFilterRules(filterRules);
 }
+
+void DebuggingController::ReloadDeviceInfo()
+{
+    Q_EMIT deviceInfoReloadRequested();
+}

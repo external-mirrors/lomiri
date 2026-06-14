@@ -77,3 +77,7 @@ QVariant DisplayCutoutsModel::data(const QModelIndex &index, int role) const
 
     return QVariant(data->at(index.row()));
 }
+
+void DisplayCutoutsModel::reloadConfig()
+{
+}

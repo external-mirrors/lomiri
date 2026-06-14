@@ -66,6 +66,14 @@ Item {
         }
     }
 
+    Connections {
+        target: DebuggingController
+
+        function onDeviceInfoReloadRequested() {
+            cutoutsModel.reloadConfig();
+        }
+    }
+
     onCurrentItemIndexChanged: {
         currentItem = repeater.itemAt(currentItemIndex);
         d.recalculateItems();

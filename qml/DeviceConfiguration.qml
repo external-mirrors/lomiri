@@ -175,4 +175,12 @@ QtObject {
             }
         ]
     }
+
+    readonly property var debugConnections: Connections {
+        target: DebuggingController
+
+        function onDeviceInfoReloadRequested() {
+            deviceConfig.reload();
+        }
+    }
 }
