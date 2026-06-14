@@ -28,8 +28,6 @@ LomiriShape {
     // This property holds the text shown on the tool tip.
     property alias text: label.text
 
-    readonly property bool lightMode: true
-
     aspect: LomiriShape.Flat
     color: theme.palette.normal.background
     width: label.implicitWidth + units.gu(4)
@@ -45,7 +43,7 @@ LomiriShape {
         }
         source: "graphics/quicklist_tooltip.png"
         rotation: 90
-        visible: !root.lightMode
+        visible: theme.palette.normal.background.hslLightness < 0.5
     }
 
     ColorOverlay {
@@ -53,7 +51,7 @@ LomiriShape {
         source: arrow
         color: root.color
         rotation: arrow.rotation
-        visible: root.lightMode
+        visible: theme.palette.normal.background.hslLightness >= 0.5
     }
 
     Label {

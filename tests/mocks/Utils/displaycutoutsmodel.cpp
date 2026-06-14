@@ -47,6 +47,14 @@ void DisplayCutoutsModel::setEnabled(bool value)
     }
 }
 
+void DisplayCutoutsModel::setLightMode(bool value)
+{
+    if (m_lightMode != value) {
+        beginResetModel();
+        m_lightMode = value;
+        endResetModel();
+    }
+}
 
 int DisplayCutoutsModel::rowCount(const QModelIndex &parent) const
 {
@@ -68,4 +76,8 @@ QVariant DisplayCutoutsModel::data(const QModelIndex &index, int role) const
     }
 
     return QVariant(data->at(index.row()));
+}
+
+void DisplayCutoutsModel::reloadConfig()
+{
 }

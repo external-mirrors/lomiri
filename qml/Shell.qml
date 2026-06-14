@@ -357,7 +357,6 @@ StyledItem {
             objectName: "stage"
             anchors.fill: parent
             focus: true
-            lightMode: shell.lightMode
 
             dragAreaWidth: shell.edgeSize
             background: wallpaperResolver.resolvedImage
@@ -619,7 +618,6 @@ StyledItem {
             anchors.fill: parent //because this draws indicator menus
             blurSource: shell.blurSource
             z: screenshotEditor.visible ? screenshotEditorContainer.z + 1 : 0
-            lightMode: shell.lightMode
             mode: shell.usageScenario == "desktop" ? "windowed" : "staged"
             minimizedPanelHeight: shell.screenIndex === 0 && deviceConfig.collapsedPanelHeight || units.gu(3)
             expandedPanelHeight: units.gu(7)
@@ -698,7 +696,6 @@ StyledItem {
             lockedVisible: (lockedByUser || shell.atDesktop) && lockAllowed
             blurSource: shell.blurSource
             topPanelHeight: panel.panelHeight
-            lightMode: shell.lightMode
             drawerEnabled: !greeter.active && tutorial.launcherLongSwipeEnabled
             privateMode: greeter.active
             background: wallpaperResolver.resolvedImage

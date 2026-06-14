@@ -36,6 +36,9 @@ public:
     DebuggingController(QObject *parent = nullptr);
     ~DebuggingController() = default;
 
+Q_SIGNALS:
+    void deviceInfoReloadRequested();
+
 public Q_SLOTS:
     /**
       * Set the QSG_VISUALIZE mode. This follows the vlues supported by Qt in
@@ -52,6 +55,8 @@ public Q_SLOTS:
       * Set the QLoggingCategory filter rules.
       */
     Q_SCRIPTABLE void SetLoggingFilterRules(const QString &filterRules);
+
+    Q_SCRIPTABLE void ReloadDeviceInfo();
 
 };
 #endif // DEBUGGINGCONTROLLER_H

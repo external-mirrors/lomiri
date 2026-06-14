@@ -35,9 +35,9 @@ class DeviceConfig: public QObject
     Q_PROPERTY(QString category READ category NOTIFY changed)
     Q_PROPERTY(bool supportsMultiColorLed READ supportsMultiColorLed NOTIFY changed)
 
-    Q_PROPERTY(quint8 sensorLocationX READ sensorLocationX FINAL)
-    Q_PROPERTY(quint8 sensorLocationY READ sensorLocationY FINAL)
-    Q_PROPERTY(quint8 sensorRadius READ sensorRadius FINAL)
+    Q_PROPERTY(quint8 sensorLocationX READ sensorLocationX NOTIFY changed FINAL)
+    Q_PROPERTY(quint8 sensorLocationY READ sensorLocationY NOTIFY changed FINAL)
+    Q_PROPERTY(quint8 sensorRadius READ sensorRadius NOTIFY changed FINAL)
 
     Q_PROPERTY(quint16 collapsedPanelHeight READ collapsedPanelHeight NOTIFY changed)
 
@@ -67,6 +67,9 @@ public:
 
 Q_SIGNALS:
     void changed();
+
+public Q_SLOTS:
+    void reload();
 
 private:
     std::unique_ptr<DeviceInfo> m_info;

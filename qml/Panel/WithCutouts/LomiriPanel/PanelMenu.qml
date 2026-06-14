@@ -34,7 +34,7 @@ Showable {
     property real openedHeight: units.gu(71)
     property bool enableHint: true
     property bool showOnClick: true
-    property color panelColor: lightMode ? "#FFFFFF" : "#000000"
+    property color panelColor: Qt.hsla(0, 0, Math.round(theme.palette.normal.background.hslLightness), 1)
     property real menuContentX: 0
 
     property alias alignment: bar.alignment
@@ -44,7 +44,6 @@ Showable {
 
     property var blurSource : null
     property rect blurRect : Qt.rect(0, 0, 0, 0)
-    property bool lightMode : false
     property alias screenIndex: bar.screenIndex
 
     readonly property real unitProgress: Math.max(0, (height - minimizedPanelHeight) / (openedHeight - minimizedPanelHeight))

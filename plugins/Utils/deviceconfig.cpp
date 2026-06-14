@@ -133,3 +133,9 @@ quint16 DeviceConfig::collapsedPanelHeight() const
 {
     return QString::fromStdString(m_info->get("CollapsedPanelHeight", "0")).toUInt();
 }
+
+void DeviceConfig::reload()
+{
+    m_info = std::make_unique<DeviceInfo>();
+    Q_EMIT changed();
+}
