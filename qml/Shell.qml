@@ -619,7 +619,10 @@ StyledItem {
             blurSource: shell.blurSource
             z: screenshotEditor.visible ? screenshotEditorContainer.z + 1 : 0
             mode: shell.usageScenario == "desktop" ? "windowed" : "staged"
-            minimizedPanelHeight: shell.screenIndex === 0 && deviceConfig.collapsedPanelHeight || units.gu(3)
+            minimizedPanelHeight: shell.screenIndex === 0
+                               && shell.orientation === Qt.PortraitOrientation
+                               && deviceConfig.collapsedPanelHeight
+                               || units.gu(3)
             expandedPanelHeight: units.gu(7)
             applicationMenuContentX: launcher.lockedVisible ? launcher.panelWidth : 0
             screenIndex: shell.screenIndex
