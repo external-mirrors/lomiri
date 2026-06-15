@@ -44,6 +44,7 @@ Item {
     property real menuWidth: partialWidth ? units.gu(40) : width
     property alias applicationMenuContentX: __applicationMenus.menuContentX
     property int screenIndex: -1
+    property var orientation: Qt.PrimaryOrientation
 
     property alias applicationMenus: __applicationMenus
     property alias indicators: __indicators
@@ -423,6 +424,7 @@ Item {
             expandedPanelHeight: root.expandedPanelHeight
             openedHeight: root.height
             screenIndex: root.screenIndex
+            orientation: root.orientation
 
             overFlowWidth: width - appMenuClear
             enableHint: !callHint.active && !fullscreenMode
