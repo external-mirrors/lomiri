@@ -36,11 +36,10 @@ class DeviceConfig: public QObject
     Q_PROPERTY(bool supportsMultiColorLed READ supportsMultiColorLed NOTIFY changed)
     Q_PROPERTY(bool supportsRebootToRecovery READ supportsRebootToRecovery NOTIFY changed)
 
-    Q_PROPERTY(quint8 sensorLocationX READ sensorLocationX NOTIFY changed FINAL)
-    Q_PROPERTY(quint8 sensorLocationY READ sensorLocationY NOTIFY changed FINAL)
-    Q_PROPERTY(quint8 sensorRadius READ sensorRadius NOTIFY changed FINAL)
-
     Q_PROPERTY(quint16 collapsedPanelHeight READ collapsedPanelHeight NOTIFY changed)
+    Q_PROPERTY(quint16 sensorLocationX READ sensorLocationX FINAL)
+    Q_PROPERTY(quint16 sensorLocationY READ sensorLocationY FINAL)
+    Q_PROPERTY(quint16 sensorRadius READ sensorRadius FINAL)
 
 public:
     DeviceConfig(QObject *parent = nullptr);
@@ -58,9 +57,9 @@ public:
     bool supportsMultiColorLed() const;
     bool supportsRebootToRecovery() const;
 
-    quint8 sensorLocationX() const;
-    quint8 sensorLocationY() const;
-    quint8 sensorRadius() const;
+    quint16 sensorLocationX() const;
+    quint16 sensorLocationY() const;
+    quint16 sensorRadius() const;
 
     quint16 collapsedPanelHeight() const;
 
