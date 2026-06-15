@@ -612,6 +612,16 @@ StyledItem {
             }
         }
 
+        // TODO: remove when we no longer have With/WithoutCutouts split, this just prevents warnings
+        // about assigning to a property that doesn't exist if the WithoutCutouts variant is loaded
+        // FIXME: use attached properties instead of huge blocks of passthrough properties
+        Binding {
+            target: panel
+            property: "orientation"
+            value: shell.orientation
+            when: panel.hasOwnProperty("orientation")
+        }
+
         Panel {
             id: panel
             objectName: "panel"

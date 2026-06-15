@@ -16,9 +16,7 @@
  */
 
 import QtQuick 2.15
-import QtQuick.Window 2.15 as QtQuickWindow
 import Lomiri.Components 1.3
-import Lomiri.Session 0.1
 import Utils 0.1
 import "../../.."
 import "../../../Components"
@@ -39,6 +37,7 @@ Item {
     property real overFlowWidth: width
     property bool expanded: false
     property bool finishedExpanding: false
+    property var screenOrientation: Qt.PrimaryOrientation
 
     property var currentItem: null
     property int currentItemIndex: 0
@@ -57,7 +56,7 @@ Item {
     DisplayCutoutsModel {
         id: cutoutsModel
         expanded: root.expanded
-        orientation: OrientationLock.enabled ? OrientationLock.savedOrientation : QtQuickWindow.Screen.orientation
+        orientation: screenOrientation
         enabled: screenIndex === 0
         lightMode: theme.palette.normal.background.hslLightness >= 0.5
 
