@@ -612,6 +612,16 @@ StyledItem {
             }
         }
 
+        // TODO: remove when we no longer have With/WithoutCutouts split, this just prevents warnings
+        // about assigning to a property that doesn't exist if the WithoutCutouts variant is loaded
+        // FIXME: use attached properties instead of huge blocks of passthrough properties
+        Binding {
+            target: panel
+            property: "orientation"
+            value: shell.orientation
+            when: panel.hasOwnProperty("orientation")
+        }
+
         Panel {
             id: panel
             objectName: "panel"
@@ -619,7 +629,10 @@ StyledItem {
             blurSource: shell.blurSource
             z: screenshotEditor.visible ? screenshotEditorContainer.z + 1 : 0
             mode: shell.usageScenario == "desktop" ? "windowed" : "staged"
-            minimizedPanelHeight: shell.screenIndex === 0 && deviceConfig.collapsedPanelHeight || units.gu(3)
+            minimizedPanelHeight: shell.screenIndex === 0
+                               && shell.orientation === Qt.PortraitOrientation
+                               && deviceConfig.collapsedPanelHeight
+                               || units.gu(3)
             expandedPanelHeight: units.gu(7)
             applicationMenuContentX: launcher.lockedVisible ? launcher.panelWidth : 0
             screenIndex: shell.screenIndex

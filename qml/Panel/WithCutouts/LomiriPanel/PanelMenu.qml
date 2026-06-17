@@ -45,6 +45,7 @@ Showable {
     property var blurSource : null
     property rect blurRect : Qt.rect(0, 0, 0, 0)
     property alias screenIndex: bar.screenIndex
+    property alias orientation: bar.orientation
 
     readonly property real unitProgress: Math.max(0, (height - minimizedPanelHeight) / (openedHeight - minimizedPanelHeight))
     readonly property bool fullyOpened: unitProgress >= 1
