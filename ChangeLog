@@ -1,6 +1,1122 @@
+2026-06-19 Mike Gabriel
+
+        * Release 0.6.0 (HEAD -> main, tag: 0.6.0)
+
+2026-06-18 Ratchanan Srirattanamet
+
+        * Merge branch 'personal/klhio/fix-cutout-landscape-panel-height'
+          into 'main' (35abcd3b0)
+
+2026-06-15 Maciej Sopyło
+
+        * panel: use shell orientation instead of screen (eb9cbd114)
+        * shell: use constant panel height outside portrait (ee3690ced)
+
+2026-06-15 Ratchanan Srirattanamet
+
+        * Merge branch 'personal/klhio/notch-light-mode' into 'main'
+          (03c7b0656)
+
+2026-06-14 Maciej Sopyło
+
+        * DebuggingController: allow reloading DeviceInfo configuration
+          (f7c4a9661)
+
+2026-06-13 Maciej Sopyło
+
+        * panel: support separate cutouts for light mode (6d1404b89)
+        * qml: base light mode on theme background color (0a1ee2b7b)
+
+2026-06-14 Ratchanan Srirattanamet
+
+        * Merge branch 'personal/klhio/cutouts-clock-yeet' into 'main'
+          (b821b5c0d)
+
+2026-06-14 Maciej Sopyło
+
+        * panel: don't hide indicators based on their position (01114a9d9)
+
+2026-06-13 Adam Havelka
+
+        * Translated using Weblate (Czech) (6b48517aa)
+        * Translated using Weblate (Czech) (6a19682bd)
+
+2026-06-12 Priit Jõerüüt
+
+        * Translated using Weblate (Estonian) (a638fa421)
+
+2026-06-12 Marius Gripsgard
+
+        * Merge branch
+          'personal/fredldotme/screenshoteditor-dynamically-recreate'
+          into 'main' (da5376d0e)
+
+2026-06-12 Alfred Neumayer
+
+        * qml: ScreenshotEditor fixups (1c9646e48)
+
+2026-06-12 Marius Gripsgard
+
+        * Merge branch 'personal/mariogrip/disablescreenpanel' into 'main'
+          (821bc79a9)
+        * Apply 1 suggestion(s) to 1 file(s) (ebf56a74a)
+
+2026-06-10 Marius Gripsgard
+
+        * panel: Disable cutout on all other screens than primary (8b3bab866)
+
+2026-06-11 Alfred Neumayer
+
+        * Merge branch 'personal/klhio/notch' into 'main' (d0152978b)
+
+2026-06-11 Maciej Sopyło
+
+        * plugins: make display cutouts config more readable (93bd9b7ad)
+
+2026-06-10 Marius Gripsgard
+
+        * Merge branch 'personal/klhio/notch' into 'main' (31edd0632)
+
+2026-06-10 Maciej Sopyło
+
+        * Panel: load cutout-supporting code only when enabled (888c06087)
+
+2026-06-09 Maciej Sopyło
+
+        * tests: fix a few Lomiri rename leftovers (57ef4f9bc)
+        * Greeter: fix null property access (f70795c03)
+        * tests: fixes for panels with cutout support (77f7f431b)
+
+2025-07-15 Maciej Sopyło
+
+        * Panel: support display cutouts/rounded corners (80735536a)
+
+2026-06-11 Ratchanan Srirattanamet
+
+        * Merge branch 'personal/fredldotme/screenshots-plus' into 'main'
+          (0cd8ddf46)
+
+2026-06-10 Alfred Neumayer
+
+        * tests/mocks: Add 'showTitle' bool propery to ContentPeerPicker
+          (bd0edd2b9)
+        * debian: Adjust Build-Depends and Depends (b3fa81b6d)
+
+2026-06-07 Alfred Neumayer
+
+        * qml: Make ItemGrabber more resilient to issues saving an image
+          (5a26ded12)
+        * qml: Hide Launcher with open ScreenshotEditor without mangling
+          state (502b291ce)
+        * qml: Address review comments (c029d7be9)
+
+2026-02-02 Alfred Neumayer
+
+        * qml: Make ItemGrabber's shell reference required (47ac412cb)
+        * qml: Fix bad whitespace in ScreenshotEditor.qml (eb8d7c3e7)
+
+2026-01-31 Alfred Neumayer
+
+        * Apply 1 suggestion(s) to 1 file(s) (e11724852)
+
+2026-01-14 Alfred Neumayer
+
+        * qml: Wrap ScreenshotEditor in an Item (10a528bbf)
+        * debian: CMakeLists: Depend on lomiri-schemas 0.1.10 (cb4856b1b)
+
+2026-01-13 Alfred Neumayer
+
+        * qml: Address review comments (be4b6e8a6)
+
+2025-12-11 Alfred Neumayer
+
+        * qml: Address review comments (10d25c5e8)
+
+2025-11-26 Alfred Neumayer
+
+        * qml: Commonalize blurSource handling into a single property
+          (ec17d852b)
+        * qml: Fixups for ScreenshotEditor (531e4f899)
+
+2025-11-13 Alfred Neumayer
+
+        * qml: Prettify ScreenshotEditor and fix launcher state restoration
+          (213bda047)
+        * qml: Move ScreenshotEditor into it's own file (69942a64a)
+        * qml: Correction on screenshotEditorContainer's onLockedChanged
+          handler (35ff78775)
+        * qml: Hide the launcher if the indicator panel has been tapped in
+          between (f85ee44ba)
+        * qml: Hide and show Launcher when showing & hiding screenshot editor
+          (e6fa81ca3)
+        * qml & plugins: Add trash button to screenshot editor (ec6565740)
+        * qml: Allow screenshot editing from a locked shell again (a56fd12ad)
+        * qml: Allow Launcher & Panel to be dragged while PhotoEditor is open
+          (1ef754bb8)
+        * qml: Some precautions about screenshot functionality (214372da2)
+        * qml: Unify screenshot editor & share picker under
+          screenshotEditorContainer (fb14a8513)
+        * qml: Use fullscreenMode instead of disabling Panel with PhotoEditor
+          (5de4538ca)
+        * debian: Build-depend on qml-module-lomiri-content (d328851b9)
+        * qml: Add share button to screenshot editor (35287a4a1)
+
+2025-10-28 Alfred Neumayer
+
+        * debian: Require qml-module-lomiri-components-extras (cc2ca832b)
+        * qml: Add screenshot editor (1fb54f1b9)
+
+2026-06-10 Maciej Sopyło
+
+        * Merge branch 'personal/mariogrip/contentmock' into 'main'
+          (d7438da98)
+
+2026-06-10 Marius Gripsgard
+
+        * tests: add mock for Lomiri.Content (60066f391)
+
+2026-06-01 Ida Brenna
+
+        * Translated using Weblate (Norwegian Bokmål) (612c8e4a0)
+
+2026-05-28 Walter Garcia-Fontes
+
+        * Translated using Weblate (Catalan) (5a7be998e)
+
+2026-05-29 Daniel Frost
+
+        * Translated using Weblate (German) (7387869f6)
+
+2026-05-29 Roker2 (Dmitry Minko)
+
+        * Translated using Weblate (Russian) (949a92d20)
+
+2026-05-27 Adam Havelka
+
+        * Translated using Weblate (Czech) (30cb44f5c)
+
+2026-05-27 libermax
+
+        * Translated using Weblate (French) (6f6dd1ad9)
+
+2026-05-28 Heimen Stoffels
+
+        * Translated using Weblate (Dutch) (629e7d1a3)
+
+2026-05-27 Priit Jõerüüt
+
+        * Translated using Weblate (Estonian) (731f0216c)
+
+2026-05-27 Hosted Weblate
+
+        * Update translation files (0951905b5)
+
+2026-05-27 Ratchanan Srirattanamet
+
+        * po/: update .pot file (eccec0b7a)
+
+2026-05-24 Alfred Neumayer
+
+        * Merge branch 'personal/muhammad/cursor-fix' into 'main' (4c656f3aa)
+
+2026-05-24 Muhammad Asif
+
+        * plugins/Cursor: Use shared pointers for storing CursorImage
+          (a945e2ccd)
+
+2026-05-22 Alfred Neumayer
+
+        * Merge branch
+          'personal/peat-psuwit/udfpsdimmer-powerd-uninitialized'
+          into 'main' (4cbeed819)
+
+2026-05-22 Ratchanan Srirattanamet
+
+        * tests/mocks/Powerd: add missing mock highBrightnessModeEnabled
+          property (76e249167)
+          Fixes: 463493b237a0 ("Shell: Add USFPS
+          dimmer")
+
+        * plugins/Powerd: fix missing HBM mode variable initialization
+          (0f0e824c6)
+          Fixes: 463493b237a0 ("Shell: Add USFPS dimmer")
+
+        * qml/Shell: make sure UDFPSDimmer covers everything
+          (6aeef279c)
+          Fixes: 463493b237a0 ("Shell: Add USFPS dimmer")
+
+        * qml/UDFPSDimmer: determine visibility outside, not inside,
+          component (893b88fb6)
+          Fixes: 463493b237a0 ("Shell: Add
+          USFPS dimmer")
+
+2026-05-21 Maciej Sopyło
+
+        * Merge branch 'usfp' into 'main' (937819b97)
+
+2026-03-31 Sergey Chupligin
+
+        * Shell: Add USFPS dimmer (463493b23)
+
+2026-05-11 Walter Garcia-Fontes
+
+        * Translated using Weblate (Catalan) (884e30cb6)
+
+2026-05-11 Priit Jõerüüt
+
+        * Translated using Weblate (Estonian) (7d2f4053b)
+
+2026-05-15 Mike Gabriel
+
+        * Merge branch 'personal/peat-psuwit/cache-migration-no-dir' into
+          'main' (2689e2909)
+
+2026-05-15 Ratchanan Srirattanamet
+
+        * d/session-migrations: `rmdir` only if such directory exists
+          (0bf144949)
+
+2026-05-07 Walter Garcia-Fontes
+
+        * Translated using Weblate (Catalan) (0c28d6ccf)
+
+2026-05-05 Alyaksandr Koshal
+
+        * Translated using Weblate (Belarusian) (43153736e)
+
+2026-04-27 libermax
+
+        * Translated using Weblate (French) (d8aa731c3)
+
+2026-04-29 Mike Gabriel
+
+        * Merge branch 'mariogrip-main-patch-55981' into 'main' (95da87721)
+
+2026-04-28 Marius Gripsgard
+
+        * debian: Use renamed qml-module-lomiri-thumbnailer (ff8cd8912)
+
+2026-04-23 Mike Gabriel
+
+        * Merge branch 'personal/OPNA2608/future-lomiri-api-pc-bump' into
+          'main' (26cbfa458)
+
+2026-04-23 OPNA2608
+
+        * treewide: Adjust to future lomiri-shell-api version bump
+          (0acb454e3)
+
+2026-04-15 Alagirisamy Rengaraj
+
+        * Translated using Weblate (Tamil) (bd698f08d)
+
+2026-04-09 Mike Gabriel
+
+        * Merge branch 'personal/sunweaver/luitk-transition' into 'main'
+          (effb8f7ac)
+
+2026-04-08 Mike Gabriel
+
+        * {d/control,clickable.yaml}: Transition from liblomirigestures5-dev
+          to liblomirigestures-dev. (06c4bb7c9)
+
+2026-03-24 ern1243423423
+
+        * Translated using Weblate (Turkish) (494efaadb)
+
+2026-03-20 ButterflyOfFire
+
+        * Translated using Weblate (Kabyle) (915e9ed98)
+
+2026-03-15 Andi Chandler
+
+        * Translated using Weblate (English (United Kingdom)) (6cc21a756)
+
+2026-03-15 Satyaakam Goswami
+
+        * Translated using Weblate (Hindi) (c5c6ec6a6)
+
+2026-03-11 Satyaakam Goswami
+
+        * Translated using Weblate (Hindi) (5bbb2bcf4)
+
+2026-03-02 Jarlaxle Baenre
+
+        * Translated using Weblate (Spanish) (c87b4e555)
+
+2026-03-06 Łukasz Pawłowski
+
+        * Translated using Weblate (Kashubian) (c13408fef)
+
+2026-03-06 Mike Gabriel
+
+        * Merge branch 'main_-_spreadHighlightUI' into 'main' (ad7a3b450)
+
+2026-02-20 Kugi Eusebio
+
+        * Remove dim while dragging a window over the preview is active
+          (5cd3e39ba)
+        * Reduced opacity of the workspace preview highlight border
+          (87c7ed661)
+
+2026-02-20 kugiigi
+
+        * Changed pure white & black to Lomiri colors (521293631)
+
+2026-01-25 kugiigi
+
+        * Redesigned the highlight UI of the apps and workspaces in the
+          Spread (49deca2a4)
+
+2026-02-28 Mike Gabriel
+
+        * Merge branch 'main_-_OSKtouchpadhint' into 'main' (3d0b2ffdd)
+
+2026-01-20 kugiigi
+
+        * Added hint in the button when OSK is enabled or disabled
+          (983a9c86d)
+
+2026-02-21 Satyaakam Goswami
+
+        * Translated using Weblate (Hindi) (f9105ac17)
+
+2026-02-26 gpatel-fr
+
+        * Translated using Weblate (French) (fad6c48c8)
+
+2026-02-23 தமிழ்நேரம்
+
+        * Translated using Weblate (Tamil) (31e87c70e)
+
+2026-02-26 Steve
+
+        * Translated using Weblate (French (Switzerland)) (7b0c7c521)
+
+2026-02-27 Ratchanan Srirattanamet
+
+        * Merge branch 'personal/sunweaver/greeter-always-show-osk' into
+          'main' (56d1620f5)
+
+2025-01-30 Mike Gabriel
+
+        * qml/Greeter/PinPrompt.qml: Provide pathway for disabling the OSK
+          again after having enabled it (by hitting ESC on the real
+          keyboard). (b8cf69a23)
+        * qml/Greeter/TextPrompt.qml: Provide pathway for disabling the OSK
+          again after having enabled it (by hitting ESC on the real
+          keyboard). (eea3dfc77)
+
+2026-02-27 Mike Gabriel
+
+        * Merge branch 'main_-_altResize' into 'main' (3db9e13a6)
+
+2026-01-25 kugiigi
+
+        * Implement resizing window with Alt + Right-click drag (e6dbf8596)
+
+2026-02-25 Mike Gabriel
+
+        * Merge branch 'personal/fredldotme/x-matching-reduction' into 'main'
+          (4fba889dd)
+
+2026-02-24 Alfred Neumayer
+
+        * plugins/WindowManager: Make fuzzy Xwayland matching order-dependent
+          (1532e7add)
+
+2026-02-24 Mike Gabriel
+
+        * Merge branch 'gnome-desktop4' into 'main' (535eb7a15)
+
+2026-02-24 Jeremy Bícha
+
+        * debian: Update Build-Depends: libgnome-desktop-3-dev ->
+          libgnome-desktop-4-dev (672ea9b58)
+        * Wizard: switch from gnome-desktop-3 to gnome-desktop-4 (0b6441eef)
+
+2026-02-23 Mike Gabriel
+
+        * Merge branch 'personal/fredldotme/xwayland-placeholder-matching'
+          into 'main' (e92e47d9f)
+
+2026-02-20 Alfred Neumayer
+
+        * plugins/WindowManager: Add comments about Xwayland window matching
+          (13cc92140)
+
+2026-02-19 Alfred Neumayer
+
+        * plugins/WindowManager: Save a for-loop for Xwayland window matching
+          (900434059)
+        * plugins/WindowManager: Optimization for Xwayland window matching
+          (7e94fdfc2)
+        * plugins/WindowManager: False-positive reduction when matching
+          Xwayland window and surface (6aaf7d5c8)
+
+2026-02-17 Alfred Neumayer
+
+        * plugins/WindowManager: Match Xwayland surfaces to their
+          placeholders (5a60f6de3)
+
+2026-02-18 Satyaakam Goswami
+
+        * Translated using Weblate (Hindi) (50ccfed22)
+
+2026-02-18 Mike Gabriel
+
+        * Merge branch 'personal/henrikschnor/fix-flaky-test' into 'main'
+          (4e579c037)
+
+2026-02-16 Henrik Schnor
+
+        * Fix flaky test tst_MenuPopup.qml (7f33fb9e3)
+
+2026-02-14 Satyaakam Goswami
+
+        * Translated using Weblate (Hindi) (0480214df)
+
+2026-02-15 Mike Gabriel
+
+        * Merge branch 'personal/sunweaver/ayatana-greeter-badges' into
+          'main' (6efb2a95b)
+
+2026-02-13 Mike Gabriel
+
+        * plugins/LightDM/SessionsModel.cpp: Iterate over
+          m_iconSearchDirectories first, then over imgExtensions
+          when trying to find a suitable session badge icon.
+          (2b6bd829a)
+
+2025-01-23 Mike Gabriel
+
+        * plugins/LightDM/SessionsModel.h: Drop trailing slash from one of
+          the provided iconSearchDirectories. (a5274cf2f)
+        * plugins/LightDM/SessionsModel.h: Prefer session badge icons found
+          in /usr/local/share/lomiri-greeter and
+          /usr/share/lomiri-greeter/ over icons shipped in Ayatana
+          Greeter Badges and bundled-in. (f2641dc77)
+        * plugins/LightDM/SessionsModel.(cpp|h): Support using session badge
+          icon from (new project) ayatana-greeter-badges.
+          (c541629f5)
+
+2026-02-15 Mike Gabriel
+
+        * Merge branch 'main_-_fixed#150' into 'main' (49851a0e1)
+
+2026-01-20 kugiigi
+
+        * Fixed #150 (ca792d8a8)
+
+2026-02-14 Mike Gabriel
+
+        * Merge branch 'personal/lduboeuf/fix_screenshot' into 'main'
+          (27b5d6ae3)
+
+2026-02-13 Lionel Duboeuf
+
+        * Screen capture: delay dialogLoader destruction (6b776fc19)
+
+2026-02-14 Mike Gabriel
+
+        * Merge branch 'main_-_fixed#151' into 'main' (8aba11269)
+
+2026-01-20 kugiigi
+
+        * Fixed #151 (894432bc6)
+
+2026-02-14 Mike Gabriel
+
+        * Merge branch 'main_-_fixed#152' into 'main' (8b2653a35)
+
+2026-01-20 Kugi Eusebio
+
+        * Fixed #152 (d081b406c)
+
+2026-02-14 Mike Gabriel
+
+        * Merge branch 'main_-_fixed#155' into 'main' (1cb475eab)
+
+2026-01-20 Kugi Eusebio
+
+        * Fixed #155 (44ffde2dc)
+
+2026-02-14 Mike Gabriel
+
+        * Merge branch 'main_-_closeDrawerWhenSpread' into 'main' (abbabeb86)
+
+2026-01-20 Kugi Eusebio
+
+        * Close the Drawer when opening the Spread (df44a6e40)
+
+2026-02-14 Mike Gabriel
+
+        * Merge branch 'main_-_fixed#157' into 'main' (27492c11d)
+
+2026-01-20 Kugi Eusebio
+
+        * Fixed #157 (e0f5738ba)
+
+2026-02-13 Mike Gabriel
+
+        * Merge branch 'personal/sunweaver/side-stage-shortcuts' into 'main'
+          (b4d88e2ef)
+        * qml/Stage/Stage.qml: Check that priv.focusedAppDelegate is not
+          nulled. (79676d73c)
+
+2026-02-12 Mike Gabriel
+
+        * qml/Stage/Stage.qml: Convert complex boolean expression to function
+          form. As suggested by Ratchanan Srirattanamet. (3f1c39797)
+
+2025-07-15 Alfred Neumayer
+
+        * tests: Add test case for Tablet Stage Shortcuts (fa6b61ed1)
+
+2025-07-11 kugiigi
+
+        * Add shortcut for moving apps between stages. (4fccde33d)
+        * Add shortcut to toggle side stage. (a297b9cce)
+
+2026-02-13 Mike Gabriel
+
+        * Merge branch 'personal/fredldotme/pdk-rendering' into 'main'
+          (10346e168)
+
+2026-02-10 Alfred Neumayer
+
+        * data: Fix rendering in the PDK (2950fc2f3)
+
+2026-02-12 Mike Gabriel
+
+        * Merge branch 'main_-_moveworkspacefix' into 'main' (93bb95c55)
+
+2026-01-25 kugiigi
+
+        * Fix move app between workspace shortcuts (fac36cfd4)
+
+2026-02-12 Mike Gabriel
+
+        * Merge branch 'main_-_touchpadClick' into 'main' (9e18d2de0)
+
+2026-01-25 kugiigi
+
+        * Reduced click threshold in the virtual touchpad (da4c703c7)
+
+2026-02-10 Satyaakam Goswami
+
+        * Translated using Weblate (Hindi) (20527037b)
+
+2026-02-03 Midrielen
+
+        * Translated using Weblate (Finnish) (a78585eb7)
+
+2026-01-31 Daniel Wiik
+
+        * Translated using Weblate (Swedish) (d572bc19a)
+
+2026-01-29 mahmucan nahmudo
+
+        * Translated using Weblate (Turkish) (973609ef2)
+
+2026-01-25 BoneNI
+
+        * Translated using Weblate (Lao) (88646deeb)
+        * Translated using Weblate (Lao) (8910c5ee9)
+        * Translated using Weblate (Lao) (7455d65bf)
+        * Translated using Weblate (Lao) (930739567)
+        * Translated using Weblate (Lao) (70e422a89)
+
+2026-01-15 Mike Gabriel
+
+        * Merge branch 'personal/fredldotme/peeking-visibile-fixup' into
+          'main' (9bded0884)
+
+2025-11-27 Alfred Neumayer
+
+        * qml: Avoid breaking bindings of the LauncherPanel's "visible"
+          property (c5d8a00f5)
+
+2026-01-10 BoneNI
+
+        * Translated using Weblate (Lao) (8aeb16456)
+
+2026-01-08 Mike Gabriel
+
+        * Merge branch 'clickable-24.04' into 'main' (cbcd781be)
+
+2025-12-17 Jonatan Hatakeyama Zeidler
+
+        * Make clickable config 24.04 compatible (44a1e4e3f)
+
+2026-01-06 Guido Berhörster
+
+        * Merge branch 'personal/peat-psuwit/lomiri-shell-api-split' into
+          'main' (bcc908426)
+
+2026-01-06 Ratchanan Srirattanamet
+
+        * d/control: B-Ds on liblomiri-shell-api-dev (6558fceea)
+
+2025-12-31 Purushotham N
+
+        * Translated using Weblate (Tamil) (a5ebe0229)
+
+2025-12-21 Priit Jõerüüt
+
+        * Translated using Weblate (Estonian) (4187241ec)
+
+2025-12-20 Joana R
+
+        * Translated using Weblate (Basque) (83e55d2b9)
+
+2025-12-21 Vini Moraes
+
+        * Translated using Weblate (Portuguese (Brazil)) (aa7d2a87a)
+
+2025-12-19 Temuri Doghonadze
+
+        * Translated using Weblate (Georgian) (66a712f22)
+
+2025-11-30 phmqXPD
+
+        * Translated using Weblate (Vietnamese) (68c3d53c1)
+
+2025-11-26 phmqXPD
+
+        * Translated using Weblate (Vietnamese) (2d1566666)
+
+2025-11-21 Priit Jõerüüt
+
+        * Translated using Weblate (Estonian) (34dc29f7d)
+
+2025-11-17 Wenwen Luo
+
+        * Translated using Weblate (Chinese (Simplified) (zh_LATN@pinyin))
+          (fac335ade)
+
+2025-11-14 Priit Jõerüüt
+
+        * Translated using Weblate (Estonian) (f7df64891)
+
+2025-11-14 Mike Gabriel
+
+        * Merge branch 'personal/fredldotme/phone-greeter' into 'main'
+          (1f6a466d5)
+
+2025-11-13 Alfred Neumayer
+
+        * qml: Use "phone_greeter" indicator profile when using encryption
+          (d04809b92)
+        * data: Set desktop session variables lightdm-session-wide
+          (aab8c335d)
+
+2025-11-10 Wenwen Luo
+
+        * Translated using Weblate (Chinese (Simplified) (zh_LATN@pinyin))
+          (993864ff9)
+
+2025-10-30 Хмеляускас Александр (JasonWalt Bab@)
+
+        * Translated using Weblate (Tajik) (efb43f245)
+
+2025-10-30 Omer I.S.
+
+        * Translated using Weblate (Hebrew) (f382bc23b)
+
+2025-10-28 Priit Jõerüüt
+
+        * Translated using Weblate (Estonian) (89c990776)
+
+2025-10-29 Mike Gabriel
+
+        * Merge branch 'lduboeuf-main-patch-17772' into 'main' (e9ef5898d)
+
+2025-10-28 Lionel Duboeuf
+
+        * sync-monitor->lomiri-sync-monitor (ba3fbfa1e)
+
+2025-10-28 Ratchanan Srirattanamet
+
+        * Merge branch 'personal/fredldotme/launcher-panel-overlay' into
+          'main' (7a7774235)
+
+2025-10-28 Alfred Neumayer
+
+        * qml: Don't have panel and launcher overlap (4e46a065d)
+          Fixes:
+          https://gitlab.com/ubports/development/core/lomiri/-/issues/148
+
+2025-10-27 Mike Gabriel
+
+        * Merge branch 'personal/peat-psuwit/wizard-skip-language-on-upgrade'
+          into 'main' (9a05023f0)
+
+2025-10-23 Ratchanan Srirattanamet
+
+        * Wizard/10-welcome: skip SIM-based language detection on upgrade
+          (14e3e1054)
+
+2025-10-17 Joana R
+
+        * Translated using Weblate (Basque) (2508b74a2)
+
+2025-10-06 Joana R
+
+        * Translated using Weblate (Basque) (8dca180b1)
+
+2025-09-21 Libre Fox
+
+        * Translated using Weblate (Ukrainian) (7afb108c1)
+
+2025-09-14 Milo Ivir
+
+        * Translated using Weblate (Croatian) (772691b86)
+
+2025-09-18 Priit Jõerüüt
+
+        * Translated using Weblate (Estonian) (345a4ac0e)
+
+2025-09-03 ButterflyOfFire
+
+        * Translated using Weblate (Kabyle) (8d91cc7a4)
+
+2025-09-03 Milo Ivir
+
+        * Translated using Weblate (Croatian) (f27e18c61)
+
+2025-08-31 Niko
+
+        * Translated using Weblate (Serbian) (4f3a48ac9)
+
+2025-08-24 Priit Jõerüüt
+
+        * Translated using Weblate (Estonian) (d13c58059)
+
+2025-08-25 Mike Gabriel
+
+        * Merge branch 'personal/peat-psuwit/wizard-version-from-systemimage'
+          into 'main' (fe78f5f1a)
+
+2025-08-25 Ratchanan Srirattanamet
+
+        * Wizard/10-welcome-update: show version from system-image tag
+          (f8b56030e)
+          Fixes:
+          https://gitlab.com/ubports/development/core/lomiri/-/issues/135
+
+2025-08-22 Nausi Llon
+
+        * Translated using Weblate (French) (aa8a9ad22)
+
+2025-08-16 Priit Jõerüüt
+
+        * Translated using Weblate (Estonian) (0e26938df)
+
+2025-08-18 Valery Levanchuk
+
+        * Translated using Weblate (Belarusian) (c977d7a9b)
+
+2025-08-22 Mike Gabriel
+
+        * Merge branch 'personal/fredldotme/live-blur' into 'main'
+          (3a6d66c65)
+
+2025-08-21 Alfred Neumayer
+
+        * qml: Re-enable live BackgroundBlur (acb93e8e0)
+
+2025-08-20 Alfred Neumayer
+
+        * Merge branch 'fix-icon-not-appearing' into 'main' (0df3d8373)
+
+2025-08-18 Capsia
+
+        * Improve code formatting (93e71f480)
+        * Adds test for icon cache change (eb880d14a)
+        * Adds a mock icon cache watcher for testing (76b554ed4)
+        * Defers launcher refresh during install (b2532f2f6)
+
+2025-08-17 Capsia
+
+        * Expands icon monitoring (511390cf5)
+        * Respects NoDisplay=true in desktop files (c3c5479f7)
+
+2025-08-16 Capsia
+
+        * Refreshes app icons on icon cache changes (d1f6c6088)
+
+2025-08-15 Hosted Weblate
+
+        * Update translation files (fa3d67b53)
+
+2025-08-15 Mike Gabriel
+
+        * Merge branch 'personal/peat-psuwit/update-potfiles-202508' into
+          'main' (f7b224910)
+
+2025-08-15 Ratchanan Srirattanamet
+
+        * po/: update .pot file (08a265435)
+        * po/: update POTFILES.in (6b8cdb10e)
+
+2025-08-10 Steve
+
+        * Translated using Weblate (French (Switzerland)) (46a188e4c)
+
+2025-08-11 Bảo Nam (Namm)
+
+        * Translated using Weblate (Vietnamese) (1ecc28967)
+
+2025-08-11 phmqXPD
+
+        * Translated using Weblate (Vietnamese) (9d99b5bf6)
+
+2025-08-11 Bảo Nam (Namm)
+
+        * Translated using Weblate (Vietnamese) (2e327f237)
+
+2025-08-07 Priit Jõerüüt
+
+        * Translated using Weblate (Estonian) (678f91fc7)
+
+2025-08-06 Ratchanan Srirattanamet
+
+        * Merge branch
+          'personal/sunweaver/gsettings-com-lomiri-Shell-namespace'
+          into 'main' (f4aca24f1)
+
+2025-08-01 Mike Gabriel
+
+        * tests/mocks/{GSettings.1.0/**,qmltests/tst_Shell.qml}: Support+test
+          different backgroundPictureUri settings for greeter and
+          shell, mock backgroundPictureUri gsettings from
+          'com.lomiri.Shell' and 'com.lomiri.Shell.Greeter' schemas.
+          (9503c2c12)
+
+2025-07-31 Mike Gabriel
+
+        * qml/Shell.qml: Dynamically switch gsettings context for
+          backgroundPictureUri retrieval between com.lomiri.Shell
+          and com.lomiri.Shell.Greeter. (acc25222b)
+
+2024-07-12 Mike Gabriel
+
+        * d/control: Bump versioned B-D/D on lomiri-schemas to >=0.1.5.
+          (38d8a37e8)
+        * CMakeLists.txt: Bump versioned dependency on lomiri-schemas to
+          >=0.1.5. (0f32c9e68)
+
+2024-03-09 Mike Gabriel
+
+        * qml/Shell.qml: Stop using org.gnome.desktop.background gsettings
+          namespace for obtaining a background picture URI. Use our
+          own namespace instead. (1d837d9a5)
+
+2025-08-06 Ratchanan Srirattanamet
+
+        * Merge branch 'personal/fredldotme/aethercast-disconnect-button'
+          into 'main' (c624abfca)
+
+2025-08-05 Alfred Neumayer
+
+        * plugins/Aethercast: Put OrgAethercastManagerInterface in a
+          QScopedPointer (c6df55faa)
+        * plugins/Aethercast: Set IPC timeouts to 1 second (2a36fda53)
+
+2025-08-04 Alfred Neumayer
+
+        * plugins/Aethercast: Autogenerate DBus interface from xml
+          (a7c1cd29b)
+        * plugins & qml: Reduce Aethercast code to bare minimum (98d54a127)
+
+2025-07-26 Alfred Neumayer
+
+        * plugins & qml: Disconnect-from-Aethercast button (c6133bf3c)
+
+2025-08-04 Alfred Neumayer
+
+        * Merge branch 'personal/peat-psuwit/desynced-app-surface-list' into
+          'main' (fb1dc8c4b)
+
+2025-08-02 Ratchanan Srirattanamet
+
+        * plugins/WindowManager: fix multi-process app having phantom window
+          (c830c2bd8)
+
+2025-08-01 Alfred Neumayer
+
+        * Merge branch 'patch-1' into 'main' (e99cf5b76)
+
+2025-08-01 Michał Sawicz
+
+        * DisplayConfigurationStorage: drop use of descriptors (7e3001f35)
+
+2025-07-25 ButterflyOfFire
+
+        * Translated using Weblate (Kabyle) (9516822a9)
+
+2025-08-01 Ettore Atalan
+
+        * Translated using Weblate (German) (59abdfc60)
+
+2025-07-31 Ratchanan Srirattanamet
+
+        * Merge branch 'personal/sunweaver/drop-CODING-file' into 'main'
+          (f932ff4d2)
+
+2025-07-31 Mike Gabriel
+
+        * CODING: drop file, totally outdated and misleading, this needs a
+          rewrite at some later point of time, possibly. (0c8496a78)
+
+2025-07-28 Ratchanan Srirattanamet
+
+        * Merge branch 'personal/fredldotme/fix-quit' into 'main' (8078461b0)
+
+2025-07-22 Alfred Neumayer
+
+        * src: Fix Quits & Exits from QML (e45437266)
+
+2025-07-28 Ratchanan Srirattanamet
+
+        * Merge branch 'fix-mis-positioning-pointer' into 'main' (0ec65cd16)
+
+2025-07-03 Cedric CHEDALEUX
+
+        * cursor: fix scroll issues (dfabbffcc)
+
+2025-07-24 Mike Gabriel
+
+        * Merge branch 'personal/peat-psuwit/cleanup-qml-module-gsettings1.0'
+          into 'main' (ffdfc9835)
+
+2025-07-24 Ratchanan Srirattanamet
+
+        * d/control: follow rename qml-module-gsettings{1.0 => } (8527dc7bc)
+
+2025-07-11 Alioc
+
+        * Translated using Weblate (Chinese (Simplified Han script))
+          (c560c52d5)
+
+2025-07-16 phmqXPD
+
+        * Translated using Weblate (Vietnamese) (84f5cc941)
+
+2025-07-16 Ratchanan Srirattanamet
+
+        * Merge branch 'personal/fredldotme/tablet-virtual-touchpad' into
+          'main' (1a99862e8)
+
+2025-07-12 Alfred Neumayer
+
+        * qml: Allow virtual touchpads on tablets again (75cfe5799)
+
+2025-07-11 Mike Gabriel
+
+        * Merge branch 'main_-_rotateButton' into 'main' (e985e38c5)
+
+2025-01-31 Kugi Eusebio
+
+        * Move the rotate button into a separate QML file (8112875f9)
+
+2024-08-12 Kugi Eusebio
+
+        * Adds a rotate button when orientation is locked (5d67eddef)
+
+2025-07-10 Ratchanan Srirattanamet
+
+        * Merge branch 'personal/fredldotme/xwayland-shm-default' into 'main'
+          (88d061945)
+
+2025-07-10 Alfred Neumayer
+
+        * data/systemd-user: Default to Xwayland shm mode on libhybris
+          devices (a0f24671e)
+
+2025-07-09 Alfred Neumayer
+
+        * Merge branch 'personal/peat-psuwit/122-lomiri-stutters' into 'main'
+          (50db6d6c5)
+
+2025-01-07 Ratchanan Srirattanamet
+
+        * WorkspacePreview: reduce lag when app enters/exit fullscreen
+          (6a5542404)
+
+2025-06-27 phmqXPD
+
+        * Translated using Weblate (Vietnamese) (94b67bbdb)
+
+2025-06-27 தமிழ்நேரம்
+
+        * Translated using Weblate (Tamil) (8831b71f1)
+
+2025-06-21 phmqXPD
+
+        * Translated using Weblate (Vietnamese) (f3fd1a1c9)
+
+2025-06-19 Øjvind Fritjof Arnfred
+
+        * Translated using Weblate (Danish) (e0a2c0ab0)
+
+2025-06-17 Ratchanan Srirattanamet
+
+        * Merge branch 'personal/fredldotme/encryption-fixup' into 'main'
+          (82225a975)
+
+2025-06-17 Alfred Neumayer
+
+        * qml: Don't ask for SIM PIN in greeter mode (5bc8ad64c)
+
+2025-05-26 Priit Jõerüüt
+
+        * Translated using Weblate (Estonian) (d2f5ef163)
+
+2025-05-22 Priit Jõerüüt
+
+        * Translated using Weblate (Estonian) (cde6ea291)
+
+2025-05-20 Priit Jõerüüt
+
+        * Translated using Weblate (Estonian) (bb2f18a98)
+
+2025-05-19 Priit Jõerüüt
+
+        * Translated using Weblate (Estonian) (e4dc33c39)
+
+2025-05-19 Ida Brenna
+
+        * Translated using Weblate (Norwegian Bokmål) (eda96ee2d)
+
+2025-05-12 Priit Jõerüüt
+
+        * Translated using Weblate (Estonian) (91b483d73)
+
+2025-05-11 Ratchanan Srirattanamet
+
+        * Merge branch
+          'personal/sunweaver/home-button-styling-upstream-lomiri'
+          into 'main' (c26a2c77d)
+
+2025-05-10 Mike Gabriel
+
+        * qml/Launcher/LauncherPanel.qml: Add inline documentation on how to
+          override the default home logo and home logo bgcolor.
+          (cd9277934)
+        * qml/Launcher/graphics/home.svg: Use Lomiri logo rather than
+          Ubuntu's circle-of-friends. (051e08613)
+        * qml/Launcher/LauncherPanel.qml: Use Lomiri upstream home logo and
+          home background color. (defaabfaf)
+
+2025-05-07 Priit Jõerüüt
+
+        * Translated using Weblate (Estonian) (c10521277)
+
 2025-05-05 Mike Gabriel
 
-        * Release 0.5.0 (HEAD -> main, tag: 0.5.0)
+        * Release 0.5.0 (39840a775) (tag: 0.5.0)
 
 2025-05-04 Priit Jõerüüt
 
