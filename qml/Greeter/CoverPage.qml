@@ -189,6 +189,7 @@ Showable {
 
     UDFPSensorIcon{
         id: ufdPosition
+        visible: parent.x == 0 && biometryd.idEnabled && root.showInfographic
     }
 
 

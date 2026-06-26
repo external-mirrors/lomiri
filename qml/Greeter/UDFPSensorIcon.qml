@@ -29,8 +29,6 @@ Item {
         id: deviceConfig
     }
 
-    visible: parent.x == 0
-
     // TODO: read USFPDS position from biometryd
     x: deviceConfig.sensorLocationX - deviceConfig.sensorRadius
     y: deviceConfig.sensorLocationY - deviceConfig.sensorRadius
@@ -38,36 +36,6 @@ Item {
 
     width: deviceConfig.sensorRadius * 2
     height: width
-
-    property real sensorLocationX : {
-        switch (Screen.orientation) {
-        case Qt.PortraitOrientation:
-            return baseX
-        case Qt.LandscapeOrientation:
-            return baseY
-        case Qt.InvertedPortraitOrientation:
-            return udfpsensor.width - baseX
-        case Qt.InvertedLandscapeOrientation:
-            return udfpsensor.height - baseY
-        default:
-            return baseX
-        }
-    }
-
-    property real sensorLocationY: {
-        switch (Screen.orientation) {
-        case Qt.PortraitOrientation:
-            return baseY
-        case Qt.LandscapeOrientation:
-            return udfpsensor.width - baseX
-        case Qt.InvertedPortraitOrientation:
-            return udfpsensor.height - baseY
-        case Qt.InvertedLandscapeOrientation:
-            return baseX
-        default:
-            return baseY
-        }
-    }
 
     Image {
         id: fpimage
@@ -99,7 +67,7 @@ Item {
                     try {
                         Powerd.setHighBrightnessMode(true)
                         Biometryd.defaultDevice.sendFingerDown(absoluteX, absoluteY, minor, major);
-                        console.log("UDFPS finger down at:", absoluteX, absoluteY);
+                        biometryd.startOperation()
                     } catch (e) {
                         console.warn("Failed to call Biometryd.sendFingerDown:", e);
                     }
@@ -114,7 +82,7 @@ Item {
                     try {
                         Powerd.setHighBrightnessMode(false)
                         Biometryd.defaultDevice.sendFingerUp();
-                        console.log("UDFPS finger up");
+                        biometryd.cancelOperation()
                     } catch (e) {
                         console.warn("Failed to call Biometryd.sendFingerUp:", e);
                     }

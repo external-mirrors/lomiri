@@ -660,6 +660,8 @@ Showable {
             }
             if (root.active)
                 root.forcedUnlock = true;
+
+            Powerd.setHighBrightnessMode(false)
         }
         onFailed: {
             if (!d.secureFingerprint) {
@@ -668,6 +670,8 @@ Showable {
                 AccountsService.failedFingerprintLogins++;
                 failOperation(reason);
             }
+
+            Powerd.setHighBrightnessMode(false)
         }
     }
 }
