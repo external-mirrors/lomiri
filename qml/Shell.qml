@@ -845,6 +845,7 @@ StyledItem {
             privacyMode: greeter.locked && AccountsService.hideNotificationContentWhileLocked
 
             y: topmostIsFullscreen ? 0 : panel.panelHeight
+            z: screenshotEditor.visible ? screenshotEditorContainer.z + 1 : 0
             height: parent.height - (topmostIsFullscreen ? 0 : panel.panelHeight)
 
             states: [
