@@ -104,6 +104,11 @@ bool Window::confinesMousePointer() const
     }
 }
 
+bool Window::constrained() const
+{
+    return m_constrained;
+}
+
 int Window::id() const
 {
     return m_id;
@@ -243,6 +248,15 @@ void Window::setFocused(bool value)
         Q_EMIT focusedChanged(m_focused);
         // when we have a surface we get focus changes from updateFocused() instead
         Q_ASSERT(!m_surface);
+    }
+}
+
+void Window::setConstrained(bool value)
+{
+    if (value != m_constrained) {
+        DEBUG_MSG << "(" << value << ")";
+        m_constrained = value;
+        Q_EMIT constrainedChanged(m_constrained);
     }
 }
 

@@ -15,6 +15,7 @@
  */
 
 import QtQuick 2.15
+import QtMir.Application 0.1
 import Lomiri.Components 1.3
 import Utils 0.1
 
@@ -30,18 +31,25 @@ QtObject {
 
     property int loadedState
 
-    function load() {
+    function load(constrain) {
         var defaultWidth = units.gu(60);
         var defaultHeight = units.gu(50);
         var windowGeometry = WindowStateStorage.getGeometry(target.appId,
                                                             Qt.rect(target.windowedX, target.windowedY, defaultWidth, defaultHeight));
 
-        target.windowedWidth = Qt.binding(function() { return Math.min(Math.max(windowGeometry.width, target.minimumWidth), screenWidth - root.leftMargin); });
-        target.windowedHeight = Qt.binding(function() { return Math.min(Math.max(windowGeometry.height, target.minimumHeight),
-                                                                        screenHeight - (target.fullscreen ? 0 : minimumY)); });
-        target.windowedX = Qt.binding(function() { return Math.max(Math.min(windowGeometry.x, screenWidth - root.leftMargin - target.windowedWidth),
-                                                           (target.fullscreen ? 0 : root.leftMargin)); });
-        target.windowedY = Qt.binding(function() { return Math.max(Math.min(windowGeometry.y, screenHeight - target.windowedHeight), minimumY); });
+        if (constrain) {
+            target.windowedWidth = Qt.binding(function() { return Math.min(Math.max(windowGeometry.width, target.minimumWidth), screenWidth - root.leftMargin); });
+            target.windowedHeight = Qt.binding(function() { return Math.min(Math.max(windowGeometry.height, target.minimumHeight),
+                                                                            screenHeight - (target.fullscreen ? 0 : minimumY)); });
+            target.windowedX = Qt.binding(function() { return Math.max(Math.min(windowGeometry.x, screenWidth - root.leftMargin - target.windowedWidth),
+                                                            (target.fullscreen ? 0 : root.leftMargin)); });
+            target.windowedY = Qt.binding(function() { return Math.max(Math.min(windowGeometry.y, screenHeight - target.windowedHeight), minimumY); });
+        } else {
+            target.windowedWidth = windowGeometry.width;
+            target.windowedHeight = windowGeometry.height;
+            target.windowedX = windowGeometry.x;
+            target.windowedY = windowGeometry.y;
+        }
 
         target.normalWidth = target.windowedWidth;
         target.normalHeight = target.windowedHeight;
@@ -52,16 +60,15 @@ QtObject {
         target.restoredX = target.normalX;
         target.restoredY = target.normalY;
 
-        loadedState = WindowStateStorage.getState(target.appId, WindowStateStorage.WindowStateNormal);
+        loadedState = WindowStateStorage.getState(target.appId, Mir.RestoredState);
     }
 
     function save() {
         var state = target.windowState;
-        if (state === WindowStateStorage.WindowStateRestored) {
-            state = WindowStateStorage.WindowStateNormal;
-        }
+        if (state === Mir.MinimizedState)
+            state = target.prevWindowState;
 
-        WindowStateStorage.saveState(target.appId, state & ~WindowStateStorage.WindowStateMinimized); // clear the minimized bit when saving
+        WindowStateStorage.saveState(target.appId, state);
         WindowStateStorage.saveGeometry(target.appId, Qt.rect(target.normalX, target.normalY, target.normalWidth, target.normalHeight));
     }
 }

@@ -193,7 +193,7 @@ public:
 
 public Q_SLOTS:
 
-    void saveState(const QString &windowId, WindowStateStorage::WindowState state)
+    void saveState(const QString &windowId, Mir::State state)
     {
         if (!m_ok) {
             return;
@@ -273,7 +273,6 @@ WindowStateStorage::WindowStateStorage(const QString &dbName, QObject *parent):
     QObject(parent),
     m_thread()
 {
-    qRegisterMetaType<WindowStateStorage::WindowState>("WindowStateStorage::WindowState");
     QString dbFile;
     if (dbName.isEmpty()) {
         const QString dbPath = QStandardPaths::writableLocation(QStandardPaths::GenericCacheLocation) + QStringLiteral("/lomiri/");
@@ -303,7 +302,7 @@ WindowStateStorage::~WindowStateStorage()
     m_thread.wait();
 }
 
-WindowStateStorage::WindowState WindowStateStorage::getState(const QString &windowId, WindowStateStorage::WindowState defaultValue) const
+Mir::State WindowStateStorage::getState(const QString &windowId, Mir::State defaultValue) const
 {
     int state;
 
@@ -316,7 +315,7 @@ WindowStateStorage::WindowState WindowStateStorage::getState(const QString &wind
         return defaultValue;
     }
 
-    return (WindowState)state;
+    return (Mir::State)state;
 }
 
 int WindowStateStorage::getStage(const QString &appId, int defaultValue) const
@@ -355,29 +354,6 @@ const QString WindowStateStorage::getDbName()
                               Q_RETURN_ARG(QString, dbName)
                               );
     return QString(dbName);
-}
-
-Mir::State WindowStateStorage::toMirState(WindowState state) const
-{
-    // assumes a single state (not an OR of several)
-    switch (state) {
-        case WindowStateMaximized:             return Mir::MaximizedState;
-        case WindowStateMinimized:             return Mir::MinimizedState;
-        case WindowStateFullscreen:            return Mir::FullscreenState;
-        case WindowStateMaximizedLeft:         return Mir::MaximizedLeftState;
-        case WindowStateMaximizedRight:        return Mir::MaximizedRightState;
-        case WindowStateMaximizedHorizontally: return Mir::HorizMaximizedState;
-        case WindowStateMaximizedVertically:   return Mir::VertMaximizedState;
-        case WindowStateMaximizedTopLeft:      return Mir::MaximizedTopLeftState;
-        case WindowStateMaximizedTopRight:     return Mir::MaximizedTopRightState;
-        case WindowStateMaximizedBottomLeft:   return Mir::MaximizedBottomLeftState;
-        case WindowStateMaximizedBottomRight:  return Mir::MaximizedBottomRightState;
-
-        case WindowStateNormal:
-        case WindowStateRestored:
-        default:
-            return Mir::RestoredState;
-    }
 }
 
 #include "windowstatestorage.moc"

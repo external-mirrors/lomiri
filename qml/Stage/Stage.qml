@@ -1255,20 +1255,20 @@ FocusScope {
                 readonly property alias widthIncrement: decoratedWindow.widthIncrement
                 readonly property alias heightIncrement: decoratedWindow.heightIncrement
 
-                readonly property bool maximized: windowState === WindowStateStorage.WindowStateMaximized
-                readonly property bool maximizedLeft: windowState === WindowStateStorage.WindowStateMaximizedLeft
-                readonly property bool maximizedRight: windowState === WindowStateStorage.WindowStateMaximizedRight
-                readonly property bool maximizedHorizontally: windowState === WindowStateStorage.WindowStateMaximizedHorizontally
-                readonly property bool maximizedVertically: windowState === WindowStateStorage.WindowStateMaximizedVertically
-                readonly property bool maximizedTopLeft: windowState === WindowStateStorage.WindowStateMaximizedTopLeft
-                readonly property bool maximizedTopRight: windowState === WindowStateStorage.WindowStateMaximizedTopRight
-                readonly property bool maximizedBottomLeft: windowState === WindowStateStorage.WindowStateMaximizedBottomLeft
-                readonly property bool maximizedBottomRight: windowState === WindowStateStorage.WindowStateMaximizedBottomRight
+                readonly property bool maximized: windowState === Mir.MaximizedState
+                readonly property bool maximizedLeft: windowState === Mir.MaximizedLeftState
+                readonly property bool maximizedRight: windowState === Mir.MaximizedRightState
+                readonly property bool maximizedHorizontally: windowState === Mir.HorizMaximizedState
+                readonly property bool maximizedVertically: windowState === Mir.VertMaximizedState
+                readonly property bool maximizedTopLeft: windowState === Mir.MaximizedTopLeftState
+                readonly property bool maximizedTopRight: windowState === Mir.MaximizedTopRightState
+                readonly property bool maximizedBottomLeft: windowState === Mir.MaximizedBottomLeftState
+                readonly property bool maximizedBottomRight: windowState === Mir.MaximizedBottomRightState
                 readonly property bool anyMaximized: maximized || maximizedLeft || maximizedRight || maximizedHorizontally || maximizedVertically ||
                                                      maximizedTopLeft || maximizedTopRight || maximizedBottomLeft || maximizedBottomRight
 
-                readonly property bool minimized: windowState & WindowStateStorage.WindowStateMinimized
-                readonly property bool fullscreen: windowState === WindowStateStorage.WindowStateFullscreen
+                readonly property bool minimized: windowState === Mir.MinimizedState
+                readonly property bool fullscreen: windowState === Mir.FullscreenState
 
                 readonly property bool canBeMaximized: canBeMaximizedHorizontally && canBeMaximizedVertically
                 readonly property bool canBeMaximizedLeftRight: (maximumWidth == 0 || maximumWidth >= appContainer.width/2) &&
@@ -1279,9 +1279,8 @@ FocusScope {
                 readonly property bool canBeMaximizedVertically: maximumHeight == 0 || maximumHeight >= appContainer.height
                 readonly property alias orientationChangesEnabled: decoratedWindow.orientationChangesEnabled
 
-                // TODO drop our own windowType once Mir/Miral/Qtmir gets in sync with ours
-                property int windowState: WindowStateStorage.WindowStateNormal
-                property int prevWindowState: WindowStateStorage.WindowStateRestored
+                property int windowState: model.window.state
+                property int prevWindowState: Mir.RestoredState
 
                 property bool animationsEnabled: true
                 property alias title: decoratedWindow.title
@@ -1382,6 +1381,8 @@ FocusScope {
 
                 Connections {
                     target: model.window
+                    property int lastWindowState: Mir.RestoredState
+
                     function onFocusedChanged() {
                         updateQmlFocusFromMirSurfaceFocus();
                         if (!model.window.focused) {
@@ -1392,44 +1393,28 @@ FocusScope {
                         appDelegate.activate();
                     }
                     function onStateChanged(value) {
-                        if (value == Mir.MinimizedState) {
-                            appDelegate.minimize();
-                        } else if (value == Mir.MaximizedState) {
-                            appDelegate.maximize();
-                        } else if (value == Mir.VertMaximizedState) {
-                            appDelegate.maximizeVertically();
-                        } else if (value == Mir.HorizMaximizedState) {
-                            appDelegate.maximizeHorizontally();
-                        } else if (value == Mir.MaximizedLeftState) {
-                            appDelegate.maximizeLeft();
-                        } else if (value == Mir.MaximizedRightState) {
-                            appDelegate.maximizeRight();
-                        } else if (value == Mir.MaximizedTopLeftState) {
-                            appDelegate.maximizeTopLeft();
-                        } else if (value == Mir.MaximizedTopRightState) {
-                            appDelegate.maximizeTopRight();
-                        } else if (value == Mir.MaximizedBottomLeftState) {
-                            appDelegate.maximizeBottomLeft();
-                        } else if (value == Mir.MaximizedBottomRightState) {
-                            appDelegate.maximizeBottomRight();
-                        } else if (value == Mir.RestoredState) {
-                            if (appDelegate.fullscreen && appDelegate.prevWindowState != WindowStateStorage.WindowStateRestored
-                                    && appDelegate.prevWindowState != WindowStateStorage.WindowStateNormal) {
-                                model.window.requestState(WindowStateStorage.toMirState(appDelegate.prevWindowState));
+                        if (value == Mir.FullscreenState || value == Mir.MinimizedState) {
+                            if (lastWindowState == Mir.MinimizedState) {
+                                appDelegate.prevWindowState = Mir.RestoredState;
                             } else {
-                                appDelegate.restore();
+                                appDelegate.prevWindowState = lastWindowState;
                             }
-                        } else if (value == Mir.FullscreenState) {
-                            appDelegate.prevWindowState = appDelegate.windowState;
-                            appDelegate.windowState = WindowStateStorage.WindowStateFullscreen;
+                        } else if (value == Mir.RestoredState) {
+                            if ((lastWindowState == Mir.FullscreenState || lastWindowState == Mir.MinimizedState) &&
+                                appDelegate.prevWindowState != Mir.RestoredState) {
+                                model.window.requestState(appDelegate.prevWindowState);
+                            }
+                            return;
                         }
+
+                        lastWindowState = value;
                     }
                 }
 
                 readonly property bool windowReady: clientAreaItem.surfaceInitialized
                 onWindowReadyChanged: {
                     if (windowReady) {
-                        var loadedMirState = WindowStateStorage.toMirState(windowStateSaver.loadedState);
+                        var loadedMirState = windowStateSaver.loadedState;
                         var state = loadedMirState;
 
                         if (window.state == Mir.FullscreenState) {
@@ -1471,7 +1456,11 @@ FocusScope {
                     windowedX = priv.focusedAppDelegate ? priv.focusedAppDelegate.windowedX + units.gu(3) : (normalZ - 1) * units.gu(3)
                     windowedY = priv.focusedAppDelegate ? priv.focusedAppDelegate.windowedY + units.gu(3) : normalZ * units.gu(3)
                     // Now load any saved state. This needs to happen *after* the cascading!
-                    windowStateSaver.load();
+                    windowStateSaver.load(!model.window.constrained);
+                    if (!model.window.constrained) {
+                        // By this point windowStateSaver has loaded the state, and constrained it on screen. Set this to true
+                        model.window.constrained = true;
+                    }
 
                     if (!root.spreadShown) {
                         updateQmlFocusFromMirSurfaceFocus();
@@ -1512,53 +1501,6 @@ FocusScope {
 
                 function close() {
                     model.window.close();
-                }
-
-                function maximize(animated) {
-                    animationsEnabled = (animated === undefined) || animated;
-                    windowState = WindowStateStorage.WindowStateMaximized;
-                }
-                function maximizeLeft(animated) {
-                    animationsEnabled = (animated === undefined) || animated;
-                    windowState = WindowStateStorage.WindowStateMaximizedLeft;
-                }
-                function maximizeRight(animated) {
-                    animationsEnabled = (animated === undefined) || animated;
-                    windowState = WindowStateStorage.WindowStateMaximizedRight;
-                }
-                function maximizeHorizontally(animated) {
-                    animationsEnabled = (animated === undefined) || animated;
-                    windowState = WindowStateStorage.WindowStateMaximizedHorizontally;
-                }
-                function maximizeVertically(animated) {
-                    animationsEnabled = (animated === undefined) || animated;
-                    windowState = WindowStateStorage.WindowStateMaximizedVertically;
-                }
-                function maximizeTopLeft(animated) {
-                    animationsEnabled = (animated === undefined) || animated;
-                    windowState = WindowStateStorage.WindowStateMaximizedTopLeft;
-                }
-                function maximizeTopRight(animated) {
-                    animationsEnabled = (animated === undefined) || animated;
-                    windowState = WindowStateStorage.WindowStateMaximizedTopRight;
-                }
-                function maximizeBottomLeft(animated) {
-                    animationsEnabled = (animated === undefined) || animated;
-                    windowState = WindowStateStorage.WindowStateMaximizedBottomLeft;
-                }
-                function maximizeBottomRight(animated) {
-                    animationsEnabled = (animated === undefined) || animated;
-                    windowState = WindowStateStorage.WindowStateMaximizedBottomRight;
-                }
-                function minimize(animated) {
-                    animationsEnabled = (animated === undefined) || animated;
-                    windowState |= WindowStateStorage.WindowStateMinimized; // add the minimized bit
-                }
-                function restore(animated,state) {
-                    animationsEnabled = (animated === undefined) || animated;
-                    windowState = state || WindowStateStorage.WindowStateRestored;
-                    windowState &= ~WindowStateStorage.WindowStateMinimized; // clear the minimized bit
-                    prevWindowState = windowState;
                 }
 
                 function playFocusAnimation() {
@@ -1875,9 +1817,9 @@ FocusScope {
                         }
                         PropertyChanges { target: decoratedWindow; hasDecoration: false }
                     },
+                    // TODO: merge normal and restored together, there's no point in normal being a distinct state
                     State {
                         name: "normal";
-                        when: appDelegate.windowState == WindowStateStorage.WindowStateNormal
                         PropertyChanges {
                             target: appDelegate
                             visuallyMinimized: false
@@ -1894,7 +1836,7 @@ FocusScope {
                     },
                     State {
                         name: "restored";
-                        when: appDelegate.windowState == WindowStateStorage.WindowStateRestored
+                        when: appDelegate.windowState == Mir.RestoredState
                         extend: "normal"
                         PropertyChanges {
                             restoreEntryValues: false
