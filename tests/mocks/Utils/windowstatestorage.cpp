@@ -65,36 +65,13 @@ void WindowStateStorage::clear()
     m_stage.clear();
 }
 
-void WindowStateStorage::saveState(const QString &windowId, WindowState state)
+void WindowStateStorage::saveState(const QString &windowId, Mir::State state)
 {
     m_state[windowId] = state;
 }
 
-WindowStateStorage::WindowState WindowStateStorage::getState(const QString &windowId, WindowStateStorage::WindowState defaultValue) const
+Mir::State WindowStateStorage::getState(const QString &windowId, Mir::State defaultValue) const
 {
     if (!m_state.contains(windowId)) return defaultValue;
     return m_state.value(windowId);
-}
-
-Mir::State WindowStateStorage::toMirState(WindowState state) const
-{
-    // assumes a single state (not an OR of several)
-    switch (state) {
-        case WindowStateMaximized:             return Mir::MaximizedState;
-        case WindowStateMinimized:             return Mir::MinimizedState;
-        case WindowStateFullscreen:            return Mir::FullscreenState;
-        case WindowStateMaximizedLeft:         return Mir::MaximizedLeftState;
-        case WindowStateMaximizedRight:        return Mir::MaximizedRightState;
-        case WindowStateMaximizedHorizontally: return Mir::HorizMaximizedState;
-        case WindowStateMaximizedVertically:   return Mir::VertMaximizedState;
-        case WindowStateMaximizedTopLeft:      return Mir::MaximizedTopLeftState;
-        case WindowStateMaximizedTopRight:     return Mir::MaximizedTopRightState;
-        case WindowStateMaximizedBottomLeft:   return Mir::MaximizedBottomLeftState;
-        case WindowStateMaximizedBottomRight:  return Mir::MaximizedBottomRightState;
-
-        case WindowStateNormal:
-        case WindowStateRestored:
-        default:
-            return Mir::RestoredState;
-    }
 }

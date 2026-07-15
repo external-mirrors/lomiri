@@ -471,11 +471,11 @@ Item {
 
             // RMB to maximize horizontally
             mouseClick(dialerMaximizeButton, dialerMaximizeButton.width/2, dialerMaximizeButton.height/2, Qt.RightButton);
-            tryCompare(dialerDelegate, "windowState", WindowStateStorage.WindowStateMaximizedHorizontally);
+            tryCompare(dialerDelegate, "windowState", Mir.HorizMaximizedState);
 
             // click again to restore
             mouseClick(dialerMaximizeButton);
-            tryCompare(dialerDelegate, "windowState", WindowStateStorage.WindowStateRestored);
+            tryCompare(dialerDelegate, "windowState", Mir.RestoredState);
         }
 
         function test_windowMaximizeVertically() {
@@ -486,11 +486,11 @@ Item {
 
             // MMB to maximize vertically
             mouseClick(dialerMaximizeButton, dialerMaximizeButton.width/2, dialerMaximizeButton.height/2, Qt.MiddleButton);
-            tryCompare(dialerDelegate, "windowState", WindowStateStorage.WindowStateMaximizedVertically);
+            tryCompare(dialerDelegate, "windowState", Mir.VertMaximizedState);
 
             // click again to restore
             mouseClick(dialerMaximizeButton);
-            tryCompare(dialerDelegate, "windowState", WindowStateStorage.WindowStateRestored);
+            tryCompare(dialerDelegate, "windowState", Mir.RestoredState);
         }
 
         function test_smashCursorKeys() {
@@ -1061,21 +1061,21 @@ Item {
         }
 
         function test_ignoreSavedStateIfInitialIsFullscreenAndLowChrome() {
-            WindowStateStorage.saveState("camera-app", WindowStateStorage.WindowStateNormal);
+            WindowStateStorage.saveState("camera-app", Mir.RestoredState);
             var appDelegate = startApplication("camera-app");
             tryCompare(appDelegate, "state", "restored");
         }
 
         function test_ignoreSavedStateIfInitialIsFullscreen() {
-            WindowStateStorage.saveState("camera-app3", WindowStateStorage.WindowStateNormal);
+            WindowStateStorage.saveState("camera-app3", Mir.RestoredState);
             var appDelegate = startApplication("camera-app3");
             tryCompare(appDelegate, "state", "fullscreen");
         }
 
         function test_ignoreSavedFullscreen() {
-            WindowStateStorage.saveState("lomiri-dialer-app", WindowStateStorage.WindowStateFullscreen);
+            WindowStateStorage.saveState("lomiri-dialer-app", Mir.FullscreenState);
             var appDelegate = startApplication("lomiri-dialer-app");
-            tryCompare(appDelegate, "state", "normal");
+            tryCompare(appDelegate, "state", "restored");
         }
     }
 }
