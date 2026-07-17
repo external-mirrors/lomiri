@@ -53,6 +53,7 @@ FocusScope {
     property real rightEdgePushProgress: 0
     property Item availableDesktopArea
     property PanelState panelState
+    property var formFactor
 
     // Whether outside forces say that the Stage may have focus
     property bool allowInteractivity
@@ -639,13 +640,15 @@ FocusScope {
             // TODO: If the device has a dozen suspended apps because it was running
             //       in staged mode, when it switches to Windowed mode it will suddenly
             //       resume all those apps at once. We might want to avoid that.
-            property var requestedState: root.mode === "windowed"
-                   || (!root.suspended && model.application && priv.focusedAppDelegate &&
-                       (priv.focusedAppDelegate.appId === model.application.appId ||
-                        priv.mainStageAppId === model.application.appId ||
-                        priv.sideStageAppId === model.application.appId))
-                   ? ApplicationInfoInterface.RequestedRunning
-                   : ApplicationInfoInterface.RequestedSuspended
+            property var requestedState: {
+                return (root.mode === "windowed" && root.formFactor === Screen.Desktop)
+                    || (!root.suspended && model.application && priv.focusedAppDelegate &&
+                        (priv.focusedAppDelegate.appId === model.application.appId ||
+                         priv.mainStageAppId === model.application.appId ||
+                         priv.sideStageAppId === model.application.appId))
+                    ? ApplicationInfoInterface.RequestedRunning
+                    : ApplicationInfoInterface.RequestedSuspended
+            }
             property bool temporaryAwaken: ProcessControl.awakenProcesses.indexOf(model.application.appId) >= 0
 
             property var stateBinding: Binding {
@@ -659,11 +662,14 @@ FocusScope {
                 target: model.application
                 property: "exemptFromLifecycle"
                 restoreMode: Binding.RestoreBinding
-                value: model.application
-                            ? (!model.application.isTouchApp ||
-                               isExemptFromLifecycle(model.application.appId) ||
-                               applicationDelegate.temporaryAwaken)
-                            : false
+                value: {
+                    return model.application ?
+                               (!model.application.isTouchApp ||
+                                 isExemptFromLifecycle(model.application.appId) ||
+                                 applicationDelegate.temporaryAwaken ||
+                                 root.mode === "windowed")
+                           : false
+                }
 
             }
 

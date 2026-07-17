@@ -128,6 +128,8 @@ StyledItem {
         return stage.temporarySelectedWorkspace ? stage.temporarySelectedWorkspace.windowModel : WMScreen.currentWorkspace.windowModel
     }
 
+    property alias formFactor: stage.formFactor
+
     onMainAppChanged: {
         _onMainAppChanged((mainApp ? mainApp.appId : ""));
     }

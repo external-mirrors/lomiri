@@ -335,6 +335,7 @@ Item {
                 }
             }
         }
+        formFactor: screen.formFactor
 
         property real transformRotationAngle
         property real transformOriginX
