@@ -1,0 +1,2 @@
+# later... filed an upstream issue for now: https://gitlab.com/ubports/development/core/lomiri/-/issues/38
+lomiri-greeter: no-manual-page [usr/bin/lomiri-greeter-wrapper]
