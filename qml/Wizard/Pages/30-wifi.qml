@@ -20,7 +20,6 @@ import QMenuModel 1.0 as QMenuModel
 import Lomiri.Components 1.3
 import Wizard 0.1
 import Lomiri.Connectivity 1.0
-import Lomiri.SystemSettings.Update 1.0
 import ".." as LocalComponents
 import "../../Components"
 
