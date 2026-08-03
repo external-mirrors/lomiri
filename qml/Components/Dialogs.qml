@@ -22,6 +22,7 @@ import GlobalShortcut 1.0
 import Lomiri.Components 1.3
 import Lomiri.Platform 1.0
 import Utils 0.1
+import GSettings 1.0
 import ".."
 
 MouseArea {
@@ -47,6 +48,11 @@ MouseArea {
 
     DeviceConfiguration {
         id: _deviceConfiguration
+    }
+
+    GSettings {
+        id: lomiriSettings
+        schema.id: "com.lomiri.Shell"
     }
 
     property var doOnClosedAllWindows: function() {}
@@ -280,7 +286,7 @@ MouseArea {
             Button {
                 width: parent.width
                 text: i18n.ctr("Button: Restart the system to Recovery", "Restart to Recovery")
-                visible: deviceConfiguration.supportsRebootToRecovery
+                visible: deviceConfiguration.supportsRebootToRecovery && lomiriSettings.enableRebootToRecovery === true
                 onClicked: {
                     doOnClosedAllWindows = function(lomiriSessionService, powerDialog) {
                         return function() {
