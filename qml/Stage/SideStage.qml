@@ -31,6 +31,13 @@ Showable {
     width: 0
     shown: false
 
+    // track panelWidth changes (e.g. from System Settings) while shown
+    onPanelWidthChanged: {
+        if (shown && !showAnimation.running && !dragging) {
+            width = panelWidth;
+        }
+    }
+
     Handle {
         id: sideStageDragHandle
 

@@ -1005,6 +1005,8 @@ FocusScope {
             id: sideStage
             objectName: "sideStage"
             shown: false
+            panelWidth: Math.min(units.gu(40) * settings.sideStageWidth,
+                                 appContainer.width - units.gu(8))
             height: appContainer.height
             x: appContainer.width - width
             visible: false
