@@ -595,6 +595,7 @@ StyledItem {
             lightMode: shell.lightMode
 
             mode: shell.usageScenario == "desktop" ? "windowed" : "staged"
+            expandedMenuWidth: units.gu(settings.indicatorMenuWidth)
             minimizedPanelHeight: units.gu(3)
             expandedPanelHeight: units.gu(7)
             applicationMenuContentX: launcher.lockedVisible ? launcher.panelWidth : 0

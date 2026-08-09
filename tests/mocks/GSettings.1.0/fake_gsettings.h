@@ -56,6 +56,8 @@ class GSettingsQml: public QObject, public QQmlParserStatus
     Q_PROPERTY(QVariant lifecycleExemptAppids READ lifecycleExemptAppids WRITE setLifecycleExemptAppids NOTIFY lifecycleExemptAppidsChanged)
     Q_PROPERTY(QVariant autohideLauncher READ autohideLauncher WRITE setAutohideLauncher NOTIFY autohideLauncherChanged)
     Q_PROPERTY(QVariant launcherWidth READ launcherWidth WRITE setLauncherWidth NOTIFY launcherWidthChanged)
+    Q_PROPERTY(QVariant sideStageWidth READ sideStageWidth WRITE setSideStageWidth NOTIFY sideStageWidthChanged)
+    Q_PROPERTY(QVariant indicatorMenuWidth READ indicatorMenuWidth WRITE setIndicatorMenuWidth NOTIFY indicatorMenuWidthChanged)
     Q_PROPERTY(QVariant edgeDragWidth READ edgeDragWidth WRITE setEdgeDragWidth NOTIFY edgeDragWidthChanged)
     Q_PROPERTY(QVariant enableIndicatorMenu READ enableIndicatorMenu WRITE setEnableIndicatorMenu NOTIFY enableIndicatorMenuChanged)
     Q_PROPERTY(QVariant oskSwitchVisible READ oskSwitchVisible WRITE setOskSwitchVisible NOTIFY oskSwitchVisibleChanged)
@@ -74,6 +76,8 @@ public:
     QVariant lifecycleExemptAppids() const;
     QVariant autohideLauncher() const;
     QVariant launcherWidth() const;
+    QVariant sideStageWidth() const;
+    QVariant indicatorMenuWidth() const;
     QVariant edgeDragWidth() const;
     QVariant enableIndicatorMenu() const;
     QVariant oskSwitchVisible() const;
@@ -85,6 +89,8 @@ public:
     void setLifecycleExemptAppids(const QVariant &appIds);
     void setAutohideLauncher(const QVariant &autohideLauncher);
     void setLauncherWidth(const QVariant &launcherWidth);
+    void setSideStageWidth(const QVariant &sideStageWidth);
+    void setIndicatorMenuWidth(const QVariant &indicatorMenuWidth);
     void setEdgeDragWidth(const QVariant &edgeDragWidth);
     void setEnableIndicatorMenu(const QVariant &enableIndicatorMenu);
     void setOskSwitchVisible(const QVariant &oskSwitchVisible);
@@ -98,6 +104,8 @@ Q_SIGNALS:
     void lifecycleExemptAppidsChanged();
     void autohideLauncherChanged();
     void launcherWidthChanged();
+    void sideStageWidthChanged();
+    void indicatorMenuWidthChanged();
     void edgeDragWidthChanged();
     void enableIndicatorMenuChanged();
     void oskSwitchVisibleChanged();
@@ -141,6 +149,12 @@ public:
     int launcherWidth() const;
     Q_INVOKABLE void setLauncherWidth(int launcherWidth);
 
+    uint sideStageWidth() const;
+    Q_INVOKABLE void setSideStageWidth(uint sideStageWidth);
+
+    uint indicatorMenuWidth() const;
+    Q_INVOKABLE void setIndicatorMenuWidth(uint indicatorMenuWidth);
+
     uint edgeDragWidth() const;
     Q_INVOKABLE void setEdgeDragWidth(uint edgeDragWidth);
 
@@ -159,6 +173,8 @@ Q_SIGNALS:
     void lifecycleExemptAppidsChanged(const QStringList&);
     void autohideLauncherChanged(bool autohideLauncher);
     void launcherWidthChanged(int launcherWidth);
+    void sideStageWidthChanged(uint sideStageWidth);
+    void indicatorMenuWidthChanged(uint indicatorMenuWidth);
     void edgeDragWidthChanged(uint edgeDragWidth);
     void enableIndicatorMenuChanged(bool enableIndicatorMenu);
     void oskSwitchVisibleChanged(bool oskSwitchVisible);
@@ -174,6 +190,8 @@ private:
     QStringList m_lifecycleExemptAppids;
     bool m_autohideLauncher;
     int m_launcherWidth;
+    uint m_sideStageWidth;
+    uint m_indicatorMenuWidth;
     uint m_edgeDragWidth;
     bool m_enableIndicatorMenu;
     bool m_oskSwitchVisible;

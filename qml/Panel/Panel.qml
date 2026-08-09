@@ -40,7 +40,8 @@ Item {
 
     property real minimizedPanelHeight: units.gu(3)
     property real expandedPanelHeight: units.gu(7)
-    property real menuWidth: partialWidth ? units.gu(40) : width
+    property real expandedMenuWidth: units.gu(40)
+    property real menuWidth: partialWidth ? Math.min(expandedMenuWidth, width) : width
     property alias applicationMenuContentX: __applicationMenus.menuContentX
 
     property alias applicationMenus: __applicationMenus

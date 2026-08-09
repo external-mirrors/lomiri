@@ -26,6 +26,8 @@ GSettingsControllerQml::GSettingsControllerQml()
     , m_lockedOutTime(0)
     , m_autohideLauncher(false)
     , m_launcherWidth(8)
+    , m_sideStageWidth(40)
+    , m_indicatorMenuWidth(40)
     , m_edgeDragWidth(2)
     , m_enableIndicatorMenu(true)
     , m_oskSwitchVisible(false)
@@ -147,6 +149,32 @@ void GSettingsControllerQml::setLauncherWidth(int launcherWidth)
     }
 }
 
+uint GSettingsControllerQml::sideStageWidth() const
+{
+    return m_sideStageWidth;
+}
+
+void GSettingsControllerQml::setSideStageWidth(uint sideStageWidth)
+{
+    if (m_sideStageWidth != sideStageWidth) {
+        m_sideStageWidth = sideStageWidth;
+        Q_EMIT sideStageWidthChanged(sideStageWidth);
+    }
+}
+
+uint GSettingsControllerQml::indicatorMenuWidth() const
+{
+    return m_indicatorMenuWidth;
+}
+
+void GSettingsControllerQml::setIndicatorMenuWidth(uint indicatorMenuWidth)
+{
+    if (m_indicatorMenuWidth != indicatorMenuWidth) {
+        m_indicatorMenuWidth = indicatorMenuWidth;
+        Q_EMIT indicatorMenuWidthChanged(indicatorMenuWidth);
+    }
+}
+
 uint GSettingsControllerQml::edgeDragWidth() const
 {
     return m_edgeDragWidth;
@@ -250,6 +278,10 @@ void GSettingsQml::componentComplete()
             this, &GSettingsQml::autohideLauncherChanged);
     connect(GSettingsControllerQml::instance(), &GSettingsControllerQml::launcherWidthChanged,
             this, &GSettingsQml::launcherWidthChanged);
+    connect(GSettingsControllerQml::instance(), &GSettingsControllerQml::sideStageWidthChanged,
+            this, &GSettingsQml::sideStageWidthChanged);
+    connect(GSettingsControllerQml::instance(), &GSettingsControllerQml::indicatorMenuWidthChanged,
+            this, &GSettingsQml::indicatorMenuWidthChanged);
     connect(GSettingsControllerQml::instance(), &GSettingsControllerQml::edgeDragWidthChanged,
             this, &GSettingsQml::edgeDragWidthChanged);
     connect(GSettingsControllerQml::instance(), &GSettingsControllerQml::enableIndicatorMenuChanged,
@@ -264,6 +296,8 @@ void GSettingsQml::componentComplete()
     Q_EMIT lifecycleExemptAppidsChanged();
     Q_EMIT autohideLauncherChanged();
     Q_EMIT launcherWidthChanged();
+    Q_EMIT sideStageWidthChanged();
+    Q_EMIT indicatorMenuWidthChanged();
     Q_EMIT edgeDragWidthChanged();
     Q_EMIT enableIndicatorMenuChanged();
 }
@@ -370,6 +404,24 @@ QVariant GSettingsQml::launcherWidth() const
     }
 }
 
+QVariant GSettingsQml::sideStageWidth() const
+{
+    if (m_valid && m_schema->id() == "com.lomiri.Shell") {
+        return GSettingsControllerQml::instance()->sideStageWidth();
+    } else {
+        return QVariant();
+    }
+}
+
+QVariant GSettingsQml::indicatorMenuWidth() const
+{
+    if (m_valid && m_schema->id() == "com.lomiri.Shell") {
+        return GSettingsControllerQml::instance()->indicatorMenuWidth();
+    } else {
+        return QVariant();
+    }
+}
+
 QVariant GSettingsQml::edgeDragWidth() const
 {
     if (m_valid && m_schema->id() == "com.lomiri.Shell") {
@@ -414,6 +466,20 @@ void GSettingsQml::setLauncherWidth(const QVariant &launcherWidth)
 {
     if (m_valid && m_schema->id() == "com.lomiri.Shell") {
         GSettingsControllerQml::instance()->setLauncherWidth(launcherWidth.toInt());
+    }
+}
+
+void GSettingsQml::setSideStageWidth(const QVariant &sideStageWidth)
+{
+    if (m_valid && m_schema->id() == "com.lomiri.Shell") {
+        GSettingsControllerQml::instance()->setSideStageWidth(sideStageWidth.toUInt());
+    }
+}
+
+void GSettingsQml::setIndicatorMenuWidth(const QVariant &indicatorMenuWidth)
+{
+    if (m_valid && m_schema->id() == "com.lomiri.Shell") {
+        GSettingsControllerQml::instance()->setIndicatorMenuWidth(indicatorMenuWidth.toUInt());
     }
 }
 
