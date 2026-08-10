@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-05-27 09:58+0000\n"
-"PO-Revision-Date: 2026-07-10 09:01+0000\n"
+"PO-Revision-Date: 2026-08-14 11:03+0000\n"
 "Last-Translator: Satyaakam Goswami <satyaakam@gmail.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/lomiri/lomiri/hi/>"
 "\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.7.1.dev0\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:35+0000\n"
 
 #: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
@@ -533,7 +533,7 @@ msgstr "डेस्कटॉप वातावरण चुनें"
 
 #: qml/Launcher/Drawer.qml:240
 msgid "Search…"
-msgstr "खोज"
+msgstr "खोज…"
 
 #: qml/Launcher/PullToRefreshScopeStyle.qml:56
 msgid "Pull to refresh…"
@@ -597,7 +597,7 @@ msgstr "रद्द"
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1139
 msgid "Finished"
-msgstr "पूरा हो गया।"
+msgstr "पूरा हो गया"
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1141
 msgid "Failed, tap to retry"
@@ -680,7 +680,7 @@ msgstr "स्वागत है %1 %2"
 #: qml/Wizard/Pages/10-welcome-update.qml:115
 #, qt-format
 msgid "We will make sure your device is ready to use %1 %2"
-msgstr "हम सुनिश्चित करेंगे कि आपका डिवाइस %1 %2 का उपयोग करने के लिए तैयार है।"
+msgstr "हम सुनिश्चित करेंगे कि आपका डिवाइस %1 %2 का उपयोग करने के लिए तैयार है"
 
 #: qml/Wizard/Pages/11-changelog.qml:28
 msgid "What's new"
@@ -877,7 +877,7 @@ msgstr "न है सिम कार्ड इंस्टॉल किया 
 
 #: qml/Wizard/Pages/sim.qml:54
 msgid "SIM card added"
-msgstr "सिम कार्ड जोड़ा गया है।"
+msgstr "सिम कार्ड जोड़ा गया है"
 
 #: qml/Wizard/Pages/sim.qml:55
 msgid "You must restart the device to access the mobile network."
