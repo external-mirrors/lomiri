@@ -1,6 +1,55 @@
+2026-08-13 Mike Gabriel
+
+        * Release 0.6.1 (HEAD -> main, tag: 0.6.1)
+
+2026-08-13 Maciej Sopyło
+
+        * Merge branch 'personal/muhammad/window-states' into 'main'
+          (c3568b8fc)
+
+2026-07-15 Muhammad Asif
+
+        * tests: fix compilation and adapt to new window states (3219f6527)
+        * Stage & WindowManager: use QtMir's window states rather than our
+          own (0d41aebc7)
+
+2026-07-29 Ratchanan Srirattanamet
+
+        * Merge branch 'personal/sunweaver/unnecessary-lss-update-qml-import'
+          into 'main' (96ee34ab1)
+
+2026-07-02 Oren Klopfer
+
+        * qml/Wizard/Pages/30-wifi.qml: Drop unnecessary import of
+          Lomiri.SystemSettings.Update (8b18a717f)
+
+2026-07-03 Satyaakam Goswami
+
+        * Translated using Weblate (Hindi) (5a636fe4b)
+
+2026-06-30 Ratchanan Srirattanamet
+
+        * Merge branch 'personal/fredldotme/screenshot-editor-notifs-z' into
+          'main' (ac8b2d320)
+
+2026-06-29 Alfred Neumayer
+
+        * qml: Set Notifications z-level above ScreenshotEditor when visible
+          (4fa072128)
+          Fixes:
+          https://gitlab.com/ubports/development/core/lomiri/-/work_items/192
+
+2026-06-16 Serhii Horichenko
+
+        * Translated using Weblate (Ukrainian) (a9423815a)
+
+2026-06-21 bittin1ddc447d824349b2
+
+        * Translated using Weblate (Swedish) (f1fc1090c)
+
 2026-06-19 Mike Gabriel
 
-        * Release 0.6.0 (HEAD -> main, tag: 0.6.0)
+        * Release 0.6.0 (d1bd01080) (tag: 0.6.0)
 
 2026-06-18 Ratchanan Srirattanamet
 
