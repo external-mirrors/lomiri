@@ -1939,7 +1939,7 @@ Rectangle {
             var appDelegate = appRepeater.itemAt(0);
             var maximizeButton = findChild(appDelegate, "maximizeWindowButton");
 
-            tryCompare(appDelegate, "state", "normal");
+            tryCompare(appDelegate, "state", "restored");
             tryCompare(panelState, "decorationsVisible", false)
 
             mouseClick(maximizeButton, maximizeButton.width / 2, maximizeButton.height / 2);
@@ -1977,10 +1977,10 @@ Rectangle {
             var panelButtons = findChild(shell, "panelWindowControlButtons")
             verify(panelButtons)
 
-            tryCompare(appDelegate, "state", "normal");
+            tryCompare(appDelegate, "state", "restored");
             tryCompare(panelButtons, "visible", false);
 
-            appDelegate.maximize(false);
+            appDelegate.windowState = Mir.MaximizedState;
 
             shell.usageScenario = "phone";
             waitForRendering(shell);
@@ -1993,10 +1993,10 @@ Rectangle {
             var appDelegate = appRepeater.itemAt(0);
             var panelButtons = findChild(shell, "panelWindowControlButtons")
 
-            tryCompare(appDelegate, "state", "normal");
+            tryCompare(appDelegate, "state", "restored");
             tryCompare(panelButtons, "visible", false);
 
-            appDelegate.maximize(false);
+            appDelegate.windowState = Mir.MaximizedState;
 
             LightDM.Greeter.showGreeter();
             waitForRendering(shell);
@@ -2314,7 +2314,7 @@ Rectangle {
             var app = ApplicationManager.startApplication("music-app");
             waitUntilAppWindowIsFullyLoaded(appSurfaceId);
             var appDelegate = findChild(appContainer, "appDelegate_" + appSurfaceId);
-            appDelegate.maximize();
+            appDelegate.windowState = Mir.MaximizedState;
             tryCompare(appDelegate, "visuallyMaximized", true);
             waitForRendering(shell);
 
@@ -3006,7 +3006,7 @@ Rectangle {
             var appContainer = findChild(shell, "appContainer");
             var appDelegate = findChild(appContainer, "appDelegate_" + appSurfaceId);
             verify(appDelegate);
-            tryCompare(appDelegate, "state", "normal");
+            tryCompare(appDelegate, "state", "restored");
 
             // now maximize to right
             appDelegate.requestMaximizeRight();
@@ -3107,7 +3107,7 @@ Rectangle {
             var appContainer = findChild(shell, "appContainer");
             var appDelegate = findChild(appContainer, "appDelegate_" + appSurfaceId);
             verify(appDelegate);
-            tryCompare(appDelegate, "state", "normal");
+            tryCompare(appDelegate, "state", "restored");
 
             // minimize dialer
             appDelegate.requestMinimize();
@@ -3176,7 +3176,7 @@ Rectangle {
             // start dialer
             var appDelegate = startApplication("lomiri-dialer-app")
             verify(appDelegate);
-            tryCompare(appDelegate, "state", "normal");
+            tryCompare(appDelegate, "state", "restored");
 
             // maximize dialer
             var decoration = findChild(appDelegate, "appWindowDecoration");

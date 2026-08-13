@@ -78,6 +78,13 @@ class WINDOWMANAGERQML_EXPORT Window : public QObject
     Q_PROPERTY(bool confinesMousePointer READ confinesMousePointer NOTIFY confinesMousePointerChanged)
 
     /**
+     * @brief Whether the surface has been constrained in screen bounds already
+     *
+     * If false, the window state saver will constrain the window in bounds, and then set this property to true.
+     */
+    Q_PROPERTY(bool constrained READ constrained WRITE setConstrained NOTIFY constrainedChanged)
+
+    /**
      * @brief A unique identifier for this window.
      * Useful for telling windows apart in a list model as they get moved around
      */
@@ -107,11 +114,13 @@ public:
     Mir::State state() const;
     bool focused() const;
     bool confinesMousePointer() const;
+    bool constrained() const;
     int id() const;
     lomiri::shell::application::MirSurfaceInterface* surface() const;
 
     void setSurface(lomiri::shell::application::MirSurfaceInterface *surface);
     void setFocused(bool value);
+    void setConstrained(bool value);
 
     bool allowClientResize() const;
     void setAllowClientResize(bool);
@@ -144,6 +153,7 @@ Q_SIGNALS:
     void stateChanged(Mir::State value);
     void focusedChanged(bool value);
     void confinesMousePointerChanged(bool value);
+    void constrainedChanged(bool value);
     void surfaceChanged(lomiri::shell::application::MirSurfaceInterface *surface);
     void allowClientResizeChanged(bool value);
     void liveChanged(bool value);
@@ -162,6 +172,7 @@ private:
     QPoint m_requestedPosition;
     bool m_positionRequested{false};
     bool m_focused{false};
+    bool m_constrained{false};
     int m_id;
     Mir::State m_state{Mir::RestoredState};
     bool m_stateRequested{false};

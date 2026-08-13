@@ -56,27 +56,26 @@ Item {
             property real widthIncrement: 0
             property real heightIncrement: 0
 
-            property int windowState: WindowStateStorage.WindowStateNormal
+            property int windowState: Mir.RestoredState
             property real restoredX
             property real restoredY
 
             states: [
-                State { name: "normal"; when: windowState == WindowStateStorage.WindowStateNormal },
-                State { name: "restored"; when: windowState == WindowStateStorage.WindowStateRestored },
-                State { name: "maximized"; when: windowState == WindowStateStorage.WindowStateMaximized }
+                State { name: "normal" },
+                State { name: "restored"; when: windowState == Mir.RestoredState },
+                State { name: "maximized"; when: windowState == Mir.MaximizedState }
             ]
 
             function maximize() {
-                windowState = WindowStateStorage.WindowStateMaximized
+                windowState = Mir.MaximizedState
             }
 
             function restoreFromMaximized() {
-                windowState = WindowStateStorage.WindowStateRestored
+                windowState = Mir.RestoredState
             }
 
             function restore(animated,state) {
-                windowState = state || WindowStateStorage.WindowStateRestored;
-                windowState &= ~WindowStateStorage.WindowStateMinimized; // clear the minimized bit
+                windowState = state || Mir.RestoredState;
             }
 
             WindowResizeArea {

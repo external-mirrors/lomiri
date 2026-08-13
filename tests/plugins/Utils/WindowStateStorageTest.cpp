@@ -25,6 +25,7 @@ class WindowStateStorageTest : public QObject
 
 private Q_SLOTS:
     void initTestCase() {
+        qRegisterMetaType<Mir::State>("Mir::State");
         QStandardPaths::setTestModeEnabled(true);
     }
 
@@ -55,8 +56,8 @@ private Q_SLOTS:
     void testErrorBehavior() {
         QString id{QTest::currentTestFunction()};
         QRect defaultValue{1, 1, 1, 1};
-        WindowStateStorage::WindowState state{WindowStateStorage::WindowState::WindowStateMaximizedTopLeft};
-        WindowStateStorage::WindowState defaultState{WindowStateStorage::WindowState::WindowStateMaximizedBottomRight};
+        Mir::State state{Mir::MaximizedTopLeftState};
+        Mir::State defaultState{Mir::MaximizedBottomRightState};
 
         delete storage;
         QTest::ignoreMessage(QtWarningMsg, "AsyncQuery::initdb: Error opening state database. Window positions will not be saved or restored. \"/nonexistent/there/is/no/way/this/exists/\" \"Error opening database\" \"unable to open database file\"");
@@ -72,9 +73,9 @@ private Q_SLOTS:
     }
 
     void testSaveRestoreState() {
-        const WindowStateStorage::WindowState state{WindowStateStorage::WindowState::WindowStateMaximizedTopLeft};
+        const Mir::State state{Mir::MaximizedTopLeftState};
         storage->saveState(QTest::currentTestFunction(), state);
-        QTRY_COMPARE(storage->getState(QTest::currentTestFunction(), WindowStateStorage::WindowState::WindowStateNormal), state);
+        QTRY_COMPARE(storage->getState(QTest::currentTestFunction(), Mir::MaximizedBottomRightState), state);
     }
 
     void testSaveRestoreGeometry() {
