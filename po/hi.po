@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-27 09:58+0000\n"
+"POT-Creation-Date: 2026-08-15 21:12+0000\n"
 "PO-Revision-Date: 2026-08-14 11:03+0000\n"
 "Last-Translator: Satyaakam Goswami <satyaakam@gmail.com>\n"
-"Language-Team: Hindi <https://hosted.weblate.org/projects/lomiri/lomiri/hi/>"
-"\n"
+"Language-Team: Hindi <https://hosted.weblate.org/projects/lomiri/lomiri/hi/"
+">\n"
 "Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -132,6 +132,12 @@ msgstr "टीवी"
 #: plugins/WindowManager/Screen.cpp:187
 msgid "Virtual"
 msgstr "विर्टुअल"
+
+#: plugins/Wizard/System.cpp:217
+#, fuzzy, qt-format
+#| msgid "Lomiri"
+msgid "Lomiri on %1"
+msgstr "लोमिरी"
 
 #: qml/Components/Dialogs.qml:176
 msgctxt "Title: Lock/Log out dialog"
@@ -531,7 +537,7 @@ msgstr "पासकोड"
 msgid "Select desktop environment"
 msgstr "डेस्कटॉप वातावरण चुनें"
 
-#: qml/Launcher/Drawer.qml:240
+#: qml/Launcher/Drawer.qml:239
 msgid "Search…"
 msgstr "खोज…"
 
@@ -627,7 +633,7 @@ msgstr "पीछे"
 msgid "Drag using 3 fingers any application from one window to the other"
 msgstr "3 उंगलियों का इस्तेमाल करके किसी भी एप्लिकेशन को एक विंडो से दूसरी विंडो में ड्रैग करें"
 
-#: qml/Stage/Stage.qml:978
+#: qml/Stage/Stage.qml:977
 msgid "No running apps"
 msgstr "कोई भी अनुपस्थित नहीं है"
 
@@ -663,7 +669,7 @@ msgstr "भाषा"
 #: qml/Wizard/Pages/10-welcome.qml:184
 #: qml/Wizard/Pages/10-welcome-update.qml:136
 #: qml/Wizard/Pages/11-changelog.qml:74 qml/Wizard/Pages/20-keyboard.qml:152
-#: qml/Wizard/Pages/30-wifi.qml:213 qml/Wizard/Pages/50-timezone.qml:270
+#: qml/Wizard/Pages/30-wifi.qml:212 qml/Wizard/Pages/50-timezone.qml:270
 #: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/70-passwd-type.qml:146
 #: qml/Wizard/Pages/passcode-desktop.qml:154
 #: qml/Wizard/Pages/password-set.qml:153
@@ -702,25 +708,25 @@ msgstr "कीबोर्ड भाषा"
 msgid "Keyboard layout"
 msgstr "कीबोर्ड लेआउट"
 
-#: qml/Wizard/Pages/20-keyboard.qml:152 qml/Wizard/Pages/30-wifi.qml:213
+#: qml/Wizard/Pages/20-keyboard.qml:152 qml/Wizard/Pages/30-wifi.qml:212
 #: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/79-system-update.qml:164
 #: qml/Wizard/Pages/sim.qml:101
 msgid "Skip"
 msgstr "नीचे देखें"
 
-#: qml/Wizard/Pages/30-wifi.qml:31
+#: qml/Wizard/Pages/30-wifi.qml:30
 msgid "Connect to Wi‑Fi"
 msgstr "जोड़ें वाई-फ़ा"
 
-#: qml/Wizard/Pages/30-wifi.qml:139
+#: qml/Wizard/Pages/30-wifi.qml:138
 msgid "Connected"
 msgstr "Jodha"
 
-#: qml/Wizard/Pages/30-wifi.qml:172
+#: qml/Wizard/Pages/30-wifi.qml:171
 msgid "Available Wi-Fi networks"
 msgstr "मौजूदा वाई-फ़ाई नेटवर्क"
 
-#: qml/Wizard/Pages/30-wifi.qml:173
+#: qml/Wizard/Pages/30-wifi.qml:172
 msgid "No available Wi-Fi networks"
 msgstr "कोई वाई-फाई नेटवर्क उपलब्ध नहीं है"
 

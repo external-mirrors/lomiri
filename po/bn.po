@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-27 09:58+0000\n"
+"POT-Creation-Date: 2026-08-15 21:12+0000\n"
 "PO-Revision-Date: 2021-02-01 21:06+0000\n"
 "Last-Translator: imrufbd <imrufbd@gmail.com>\n"
 "Language-Team: Bengali <https://translate.ubports.com/projects/ubports/"
@@ -132,6 +132,13 @@ msgstr ""
 #: plugins/WindowManager/Screen.cpp:187
 msgid "Virtual"
 msgstr ""
+
+#: plugins/Wizard/System.cpp:217
+#, fuzzy, qt-format
+#| msgctxt "version of the system update"
+#| msgid "Version %1"
+msgid "Lomiri on %1"
+msgstr "সংস্করণ %1"
 
 #: qml/Components/Dialogs.qml:176
 msgctxt "Title: Lock/Log out dialog"
@@ -536,7 +543,7 @@ msgstr "পাসকোড"
 msgid "Select desktop environment"
 msgstr "ডেস্কটপ বাতাবরণ নির্বাচন করুন"
 
-#: qml/Launcher/Drawer.qml:240
+#: qml/Launcher/Drawer.qml:239
 msgid "Search…"
 msgstr "অনুসন্ধান …"
 
@@ -632,7 +639,7 @@ msgstr "পূর্বপাতা"
 msgid "Drag using 3 fingers any application from one window to the other"
 msgstr "তিন আঙুল দিয়ে ধরে যেকোন অ্যাপ্লিকেেশন এক উইন্ডো থেকে অন্যটিতে নিয়ে আসুন"
 
-#: qml/Stage/Stage.qml:978
+#: qml/Stage/Stage.qml:977
 msgid "No running apps"
 msgstr "কোন অ্যাপ চলমান নেই"
 
@@ -668,7 +675,7 @@ msgstr "ভাষা"
 #: qml/Wizard/Pages/10-welcome.qml:184
 #: qml/Wizard/Pages/10-welcome-update.qml:136
 #: qml/Wizard/Pages/11-changelog.qml:74 qml/Wizard/Pages/20-keyboard.qml:152
-#: qml/Wizard/Pages/30-wifi.qml:213 qml/Wizard/Pages/50-timezone.qml:270
+#: qml/Wizard/Pages/30-wifi.qml:212 qml/Wizard/Pages/50-timezone.qml:270
 #: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/70-passwd-type.qml:146
 #: qml/Wizard/Pages/passcode-desktop.qml:154
 #: qml/Wizard/Pages/password-set.qml:153
@@ -709,25 +716,25 @@ msgstr "কিবোর্ডের ভাষা"
 msgid "Keyboard layout"
 msgstr "কিবোর্ডের নকশা"
 
-#: qml/Wizard/Pages/20-keyboard.qml:152 qml/Wizard/Pages/30-wifi.qml:213
+#: qml/Wizard/Pages/20-keyboard.qml:152 qml/Wizard/Pages/30-wifi.qml:212
 #: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/79-system-update.qml:164
 #: qml/Wizard/Pages/sim.qml:101
 msgid "Skip"
 msgstr "এড়িয়ে যান"
 
-#: qml/Wizard/Pages/30-wifi.qml:31
+#: qml/Wizard/Pages/30-wifi.qml:30
 msgid "Connect to Wi‑Fi"
 msgstr "ওযাই-ফাইতে সংযুক্ত হোন"
 
-#: qml/Wizard/Pages/30-wifi.qml:139
+#: qml/Wizard/Pages/30-wifi.qml:138
 msgid "Connected"
 msgstr "সংযুক্ত"
 
-#: qml/Wizard/Pages/30-wifi.qml:172
+#: qml/Wizard/Pages/30-wifi.qml:171
 msgid "Available Wi-Fi networks"
 msgstr "লব্দ ওয়াই-ফাই নেটওয়ার্ক"
 
-#: qml/Wizard/Pages/30-wifi.qml:173
+#: qml/Wizard/Pages/30-wifi.qml:172
 msgid "No available Wi-Fi networks"
 msgstr "কোন ওয়াই-ফাই নেটওয়ার্ক পাওয়া যায়নি"
 

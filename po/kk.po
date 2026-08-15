@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-27 09:58+0000\n"
+"POT-Creation-Date: 2026-08-15 21:12+0000\n"
 "PO-Revision-Date: 2020-12-03 09:42+0000\n"
 "Last-Translator: Seiwer121 <vladimir_seiwer@yahoo.com>\n"
 "Language-Team: Kazakh <https://translate.ubports.com/projects/unity8/unity8/"
@@ -131,6 +131,13 @@ msgstr ""
 #: plugins/WindowManager/Screen.cpp:187
 msgid "Virtual"
 msgstr ""
+
+#: plugins/Wizard/System.cpp:217
+#, fuzzy, qt-format
+#| msgctxt "version of the system update"
+#| msgid "Version %1"
+msgid "Lomiri on %1"
+msgstr "Нұсқа %1"
 
 #: qml/Components/Dialogs.qml:176
 msgctxt "Title: Lock/Log out dialog"
@@ -534,7 +541,7 @@ msgstr "Пароль"
 msgid "Select desktop environment"
 msgstr "Жұмыс үстелінің ортасын таңдаңыз"
 
-#: qml/Launcher/Drawer.qml:240
+#: qml/Launcher/Drawer.qml:239
 msgid "Search…"
 msgstr "Іздеу…"
 
@@ -631,7 +638,7 @@ msgid "Drag using 3 fingers any application from one window to the other"
 msgstr ""
 "Кез-келген қосымшаны бір саусақтан екінші саусаққа 3 саусақпен сүйреңіз"
 
-#: qml/Stage/Stage.qml:978
+#: qml/Stage/Stage.qml:977
 msgid "No running apps"
 msgstr "Іске қосылған қолданбалар жоқ"
 
@@ -669,7 +676,7 @@ msgstr "Тіл"
 #: qml/Wizard/Pages/10-welcome.qml:184
 #: qml/Wizard/Pages/10-welcome-update.qml:136
 #: qml/Wizard/Pages/11-changelog.qml:74 qml/Wizard/Pages/20-keyboard.qml:152
-#: qml/Wizard/Pages/30-wifi.qml:213 qml/Wizard/Pages/50-timezone.qml:270
+#: qml/Wizard/Pages/30-wifi.qml:212 qml/Wizard/Pages/50-timezone.qml:270
 #: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/70-passwd-type.qml:146
 #: qml/Wizard/Pages/passcode-desktop.qml:154
 #: qml/Wizard/Pages/password-set.qml:153
@@ -710,25 +717,25 @@ msgstr "Пернетақта тілі"
 msgid "Keyboard layout"
 msgstr "Пернетақтаның орналасуы"
 
-#: qml/Wizard/Pages/20-keyboard.qml:152 qml/Wizard/Pages/30-wifi.qml:213
+#: qml/Wizard/Pages/20-keyboard.qml:152 qml/Wizard/Pages/30-wifi.qml:212
 #: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/79-system-update.qml:164
 #: qml/Wizard/Pages/sim.qml:101
 msgid "Skip"
 msgstr "Өткізіп жіберу"
 
-#: qml/Wizard/Pages/30-wifi.qml:31
+#: qml/Wizard/Pages/30-wifi.qml:30
 msgid "Connect to Wi‑Fi"
 msgstr "Wi-Fi желісіне қосылыңыз"
 
-#: qml/Wizard/Pages/30-wifi.qml:139
+#: qml/Wizard/Pages/30-wifi.qml:138
 msgid "Connected"
 msgstr "Қосылды"
 
-#: qml/Wizard/Pages/30-wifi.qml:172
+#: qml/Wizard/Pages/30-wifi.qml:171
 msgid "Available Wi-Fi networks"
 msgstr "Қол жетімді Wi-Fi желілері"
 
-#: qml/Wizard/Pages/30-wifi.qml:173
+#: qml/Wizard/Pages/30-wifi.qml:172
 msgid "No available Wi-Fi networks"
 msgstr "Wi-Fi желілері жоқ"
 

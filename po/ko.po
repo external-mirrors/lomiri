@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-27 09:58+0000\n"
+"POT-Creation-Date: 2026-08-15 21:12+0000\n"
 "PO-Revision-Date: 2024-05-16 17:56+0000\n"
 "Last-Translator: Daniel Soohan Park <soobak0313@outlook.com>\n"
 "Language-Team: Korean <https://hosted.weblate.org/projects/lomiri/lomiri/ko/"
@@ -132,6 +132,12 @@ msgstr "TV"
 #: plugins/WindowManager/Screen.cpp:187
 msgid "Virtual"
 msgstr "가상"
+
+#: plugins/Wizard/System.cpp:217
+#, fuzzy, qt-format
+#| msgid "Lomiri"
+msgid "Lomiri on %1"
+msgstr "로미리"
 
 #: qml/Components/Dialogs.qml:176
 msgctxt "Title: Lock/Log out dialog"
@@ -529,7 +535,7 @@ msgstr "비밀번호"
 msgid "Select desktop environment"
 msgstr "데스크탑 환경 선택하기"
 
-#: qml/Launcher/Drawer.qml:240
+#: qml/Launcher/Drawer.qml:239
 msgid "Search…"
 msgstr "검색…"
 
@@ -625,7 +631,7 @@ msgid "Drag using 3 fingers any application from one window to the other"
 msgstr ""
 "어떤 어플리케이션이든 한 창에서 다른 창으로 세 손가락을 사용해 끌어놓으세요"
 
-#: qml/Stage/Stage.qml:978
+#: qml/Stage/Stage.qml:977
 msgid "No running apps"
 msgstr "실행 중인 앱 없음"
 
@@ -661,7 +667,7 @@ msgstr "언어"
 #: qml/Wizard/Pages/10-welcome.qml:184
 #: qml/Wizard/Pages/10-welcome-update.qml:136
 #: qml/Wizard/Pages/11-changelog.qml:74 qml/Wizard/Pages/20-keyboard.qml:152
-#: qml/Wizard/Pages/30-wifi.qml:213 qml/Wizard/Pages/50-timezone.qml:270
+#: qml/Wizard/Pages/30-wifi.qml:212 qml/Wizard/Pages/50-timezone.qml:270
 #: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/70-passwd-type.qml:146
 #: qml/Wizard/Pages/passcode-desktop.qml:154
 #: qml/Wizard/Pages/password-set.qml:153
@@ -700,25 +706,25 @@ msgstr "키보드 언어"
 msgid "Keyboard layout"
 msgstr "키보드 배열"
 
-#: qml/Wizard/Pages/20-keyboard.qml:152 qml/Wizard/Pages/30-wifi.qml:213
+#: qml/Wizard/Pages/20-keyboard.qml:152 qml/Wizard/Pages/30-wifi.qml:212
 #: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/79-system-update.qml:164
 #: qml/Wizard/Pages/sim.qml:101
 msgid "Skip"
 msgstr "건너뛰기"
 
-#: qml/Wizard/Pages/30-wifi.qml:31
+#: qml/Wizard/Pages/30-wifi.qml:30
 msgid "Connect to Wi‑Fi"
 msgstr "와이파이에 연결"
 
-#: qml/Wizard/Pages/30-wifi.qml:139
+#: qml/Wizard/Pages/30-wifi.qml:138
 msgid "Connected"
 msgstr "연결됨"
 
-#: qml/Wizard/Pages/30-wifi.qml:172
+#: qml/Wizard/Pages/30-wifi.qml:171
 msgid "Available Wi-Fi networks"
 msgstr "연결할 수 있는 와이파이 네트워크"
 
-#: qml/Wizard/Pages/30-wifi.qml:173
+#: qml/Wizard/Pages/30-wifi.qml:172
 msgid "No available Wi-Fi networks"
 msgstr "연결할 수 있는 와이파이 네트워크 없음"
 

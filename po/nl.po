@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-27 09:58+0000\n"
+"POT-Creation-Date: 2026-08-15 21:12+0000\n"
 "PO-Revision-Date: 2026-05-28 09:51+0000\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
-"Language-Team: Dutch <https://hosted.weblate.org/projects/lomiri/lomiri/nl/>"
-"\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/lomiri/lomiri/nl/"
+">\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -132,6 +132,12 @@ msgstr "Tv"
 #: plugins/WindowManager/Screen.cpp:187
 msgid "Virtual"
 msgstr "Virtueel"
+
+#: plugins/Wizard/System.cpp:217
+#, fuzzy, qt-format
+#| msgid "Lomiri"
+msgid "Lomiri on %1"
+msgstr "Lomiri"
 
 #: qml/Components/Dialogs.qml:176
 msgctxt "Title: Lock/Log out dialog"
@@ -536,7 +542,7 @@ msgstr "Toegangscode"
 msgid "Select desktop environment"
 msgstr "Werkomgeving kiezen"
 
-#: qml/Launcher/Drawer.qml:240
+#: qml/Launcher/Drawer.qml:239
 msgid "Search…"
 msgstr "Zoeken…"
 
@@ -632,7 +638,7 @@ msgstr "Terug"
 msgid "Drag using 3 fingers any application from one window to the other"
 msgstr "Versleep een app met 3 vingers van het ene venster naar het andere"
 
-#: qml/Stage/Stage.qml:978
+#: qml/Stage/Stage.qml:977
 msgid "No running apps"
 msgstr "Er zijn geen geopende apps"
 
@@ -668,7 +674,7 @@ msgstr "Taal"
 #: qml/Wizard/Pages/10-welcome.qml:184
 #: qml/Wizard/Pages/10-welcome-update.qml:136
 #: qml/Wizard/Pages/11-changelog.qml:74 qml/Wizard/Pages/20-keyboard.qml:152
-#: qml/Wizard/Pages/30-wifi.qml:213 qml/Wizard/Pages/50-timezone.qml:270
+#: qml/Wizard/Pages/30-wifi.qml:212 qml/Wizard/Pages/50-timezone.qml:270
 #: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/70-passwd-type.qml:146
 #: qml/Wizard/Pages/passcode-desktop.qml:154
 #: qml/Wizard/Pages/password-set.qml:153
@@ -707,25 +713,25 @@ msgstr "Toetsenbordtaal"
 msgid "Keyboard layout"
 msgstr "Toetsenbordindeling"
 
-#: qml/Wizard/Pages/20-keyboard.qml:152 qml/Wizard/Pages/30-wifi.qml:213
+#: qml/Wizard/Pages/20-keyboard.qml:152 qml/Wizard/Pages/30-wifi.qml:212
 #: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/79-system-update.qml:164
 #: qml/Wizard/Pages/sim.qml:101
 msgid "Skip"
 msgstr "Overslaan"
 
-#: qml/Wizard/Pages/30-wifi.qml:31
+#: qml/Wizard/Pages/30-wifi.qml:30
 msgid "Connect to Wi‑Fi"
 msgstr "Verbinden met wifi"
 
-#: qml/Wizard/Pages/30-wifi.qml:139
+#: qml/Wizard/Pages/30-wifi.qml:138
 msgid "Connected"
 msgstr "Verbonden"
 
-#: qml/Wizard/Pages/30-wifi.qml:172
+#: qml/Wizard/Pages/30-wifi.qml:171
 msgid "Available Wi-Fi networks"
 msgstr "Beschikbare wifinetwerken"
 
-#: qml/Wizard/Pages/30-wifi.qml:173
+#: qml/Wizard/Pages/30-wifi.qml:172
 msgid "No available Wi-Fi networks"
 msgstr "Er zijn geen wifi-netwerken beschikbaar"
 

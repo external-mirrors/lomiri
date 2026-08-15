@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-27 09:58+0000\n"
+"POT-Creation-Date: 2026-08-15 21:12+0000\n"
 "PO-Revision-Date: 2024-10-12 15:31+0000\n"
 "Last-Translator: ikozyris <ioannis.kozyris@outlook.com>\n"
 "Language-Team: Greek <https://hosted.weblate.org/projects/lomiri/lomiri/el/"
@@ -134,6 +134,12 @@ msgstr ""
 #: plugins/WindowManager/Screen.cpp:187
 msgid "Virtual"
 msgstr ""
+
+#: plugins/Wizard/System.cpp:217
+#, fuzzy, qt-format
+#| msgid "Lomiri"
+msgid "Lomiri on %1"
+msgstr "Lomiri"
 
 #: qml/Components/Dialogs.qml:176
 msgctxt "Title: Lock/Log out dialog"
@@ -543,7 +549,7 @@ msgstr "Κωδικός πρόσβασης"
 msgid "Select desktop environment"
 msgstr "Επιλογή περιβάλλοντος εργασίας"
 
-#: qml/Launcher/Drawer.qml:240
+#: qml/Launcher/Drawer.qml:239
 msgid "Search…"
 msgstr "Αναζήτηση…"
 
@@ -641,7 +647,7 @@ msgstr ""
 "Σύρετε με την χρήση των 3 δακτύλων οποιαδήποτε εφαρμογή από ένα παράθυρο σε "
 "άλλο"
 
-#: qml/Stage/Stage.qml:978
+#: qml/Stage/Stage.qml:977
 msgid "No running apps"
 msgstr "Καμία εφαρμογή δεν εκτελείται"
 
@@ -682,7 +688,7 @@ msgstr "Γλώσσα"
 #: qml/Wizard/Pages/10-welcome.qml:184
 #: qml/Wizard/Pages/10-welcome-update.qml:136
 #: qml/Wizard/Pages/11-changelog.qml:74 qml/Wizard/Pages/20-keyboard.qml:152
-#: qml/Wizard/Pages/30-wifi.qml:213 qml/Wizard/Pages/50-timezone.qml:270
+#: qml/Wizard/Pages/30-wifi.qml:212 qml/Wizard/Pages/50-timezone.qml:270
 #: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/70-passwd-type.qml:146
 #: qml/Wizard/Pages/passcode-desktop.qml:154
 #: qml/Wizard/Pages/password-set.qml:153
@@ -723,25 +729,25 @@ msgstr "Γλώσσα πληκτρολογίου"
 msgid "Keyboard layout"
 msgstr "Διάταξη πληκτρολογίου"
 
-#: qml/Wizard/Pages/20-keyboard.qml:152 qml/Wizard/Pages/30-wifi.qml:213
+#: qml/Wizard/Pages/20-keyboard.qml:152 qml/Wizard/Pages/30-wifi.qml:212
 #: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/79-system-update.qml:164
 #: qml/Wizard/Pages/sim.qml:101
 msgid "Skip"
 msgstr "Παράβλεψη"
 
-#: qml/Wizard/Pages/30-wifi.qml:31
+#: qml/Wizard/Pages/30-wifi.qml:30
 msgid "Connect to Wi‑Fi"
 msgstr "Σύνδεση σε δίκτυο Wi-Fi"
 
-#: qml/Wizard/Pages/30-wifi.qml:139
+#: qml/Wizard/Pages/30-wifi.qml:138
 msgid "Connected"
 msgstr "Συνδεδεμένο"
 
-#: qml/Wizard/Pages/30-wifi.qml:172
+#: qml/Wizard/Pages/30-wifi.qml:171
 msgid "Available Wi-Fi networks"
 msgstr "Διαθέσιμα δίκτυα Wi-Fi"
 
-#: qml/Wizard/Pages/30-wifi.qml:173
+#: qml/Wizard/Pages/30-wifi.qml:172
 msgid "No available Wi-Fi networks"
 msgstr "Κανένα διαθέσιμο δίκτυο Wi-Fi"
 
