@@ -31,6 +31,7 @@
 #include <QStringBuilder>
 
 #include <glib.h>
+#include <libintl.h>
 
 System::System()
     : QObject()
@@ -213,7 +214,8 @@ QString System::distroName() const
 #else
     g_autofree gchar * name = g_get_os_info(G_OS_INFO_KEY_NAME);
     if (name)
-        return QString::fromLocal8Bit(name);
+        return QString::fromUtf8(gettext("Lomiri on %1"))
+            .arg(QString::fromLocal8Bit(name));
 
     return QStringLiteral("Lomiri");
 #endif
