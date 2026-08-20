@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-15 21:12+0000\n"
-"PO-Revision-Date: 2026-06-08 05:01+0000\n"
+"PO-Revision-Date: 2026-08-21 09:42+0000\n"
 "Last-Translator: Ida Brenna <ida@larald.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/lomiri/"
 "lomiri/nb_NO/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.6\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:35+0000\n"
 
 #: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
@@ -134,10 +134,9 @@ msgid "Virtual"
 msgstr "Virtuell"
 
 #: plugins/Wizard/System.cpp:217
-#, fuzzy, qt-format
-#| msgid "Lomiri"
+#, qt-format
 msgid "Lomiri on %1"
-msgstr "Lomiri"
+msgstr "Lomiri på %1"
 
 #: qml/Components/Dialogs.qml:176
 msgctxt "Title: Lock/Log out dialog"
