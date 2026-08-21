@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-15 21:12+0000\n"
-"PO-Revision-Date: 2026-08-21 11:10+0000\n"
+"PO-Revision-Date: 2026-08-22 15:24+0000\n"
 "Last-Translator: Alagirisamy Rengaraj <radhaalagirisamy@gmail.com>\n"
 "Language-Team: Tamil <https://hosted.weblate.org/projects/lomiri/lomiri/ta/>"
 "\n"
@@ -590,7 +590,7 @@ msgstr "வரிசையில்…"
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1133
 msgid "Downloading"
-msgstr "பதிவிறக்குகிறது"
+msgstr "பதிவிறங்குகிறது"
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1135
 msgid "Paused, tap to resume"
@@ -812,7 +812,7 @@ msgstr "இப்போது உங்கள் சாதனத்தைப் 
 
 #: qml/Wizard/Pages/80-finished.qml:131
 msgid "Continue"
-msgstr "தொடரவும்"
+msgstr "தொடர்க"
 
 #: qml/Wizard/Pages/80-finished.qml:131
 msgid "Get Started"
