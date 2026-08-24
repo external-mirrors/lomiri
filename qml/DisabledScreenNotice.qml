@@ -43,32 +43,13 @@ Item {
         height: rotation == 90 || rotation == 270 ? parent.width : parent.height
         width: rotation == 90 || rotation == 270 ? parent.height : parent.width
 
-        property int savedOrientation: deviceConfiguration.primaryOrientation == deviceConfiguration.useNativeOrientation
-                                       ? (root.width > root.height ? Qt.LandscapeOrientation : Qt.PortraitOrientation)
-                                       : deviceConfiguration.primaryOrientation
+        property int angleFromPrimary: Screen.angleBetween(Screen.primaryOrientation, Screen.orientation)
+        readonly property bool rotatedToPhysical: rotation === angleFromPrimary
 
-        rotation: {
-            var usedOrientation = root.screen.orientation;
-
-            if (root.orientationLock.enabled) {
-                usedOrientation = savedOrientation;
-            }
-
-            savedOrientation = usedOrientation;
-
-            switch (usedOrientation) {
-            case Qt.PortraitOrientation:
-                return 0;
-            case Qt.LandscapeOrientation:
-                return 270;
-            case Qt.InvertedPortraitOrientation:
-                return 180;
-            case Qt.InvertedLandscapeOrientation:
-                return 90;
-            }
-
-            return 0;
+        function matchPhysicalOrientation() {
+            rotation = angleFromPrimary;
         }
+
         transformOrigin: Item.Center
 
         Rectangle {
@@ -80,6 +61,9 @@ Item {
             objectName: "virtualTouchPad"
             anchors.fill: parent
             oskEnabled: root.oskEnabled
+            showRotateButton: !contentContainer.rotatedToPhysical
+
+            onRotate: contentContainer.matchPhysicalOrientation();
         }
     }
 }

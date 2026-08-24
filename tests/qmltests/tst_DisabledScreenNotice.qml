@@ -16,6 +16,7 @@
 
 import QtQuick 2.15
 import QtQuick.Layouts 1.1
+import QtQuick.Window 2.2
 import QtTest 1.0
 import Lomiri.SelfTest 0.1
 import Lomiri.Components 1.3
@@ -48,9 +49,23 @@ Item {
                     return Qt.InvertedLandscapeOrientation;
                 }
             }
+            property int primaryOrientation: {
+                switch (primaryOrientationSelector.selectedIndex) {
+                case 0:
+                    return Qt.PortraitOrientation;
+                case 1:
+                    return Qt.LandscapeOrientation;
+                case 2:
+                    return Qt.InvertedPortraitOrientation;
+                case 3:
+                    return Qt.InvertedLandscapeOrientation;
+                }
+            }
         }
-        orientationLock: QtObject {
-            property bool enabled: orientationLockCheckBox.checked
+
+        Component.onCompleted: {
+            var container = testCase.findChild(touchScreenPad, "contentContainer")
+            container.angleFromPrimary = Qt.binding( function() { return Screen.angleBetween(screen.primaryOrientation, screen.orientation) })
         }
     }
 
@@ -60,21 +75,18 @@ Item {
         spacing: units.gu(1)
 
         ItemSelector {
+            id: primaryOrientationSelector
+            text: "Primary Orientation"
+            model: ["Portrait", "Landscape", "InvertedPortrait", "InvertedLandscape"]
+            selectedIndex: 0
+        }
+        ItemSelector {
             id: orientationSelector
+            text: "Physical orientation"
             model: ["Portrait", "Landscape", "InvertedPortrait", "InvertedLandscape"]
             selectedIndex: 0
         }
 
-        RowLayout {
-            CheckBox {
-                id: orientationLockCheckBox
-                checked: false
-            }
-            Label {
-                text: "Rotation lock"
-                Layout.fillWidth: true
-            }
-        }
         Button {
             text: "Reset first run settings"
             onClicked: {
@@ -96,32 +108,78 @@ Item {
         name: "DisabledScreenNotice"
         when: windowShown
 
+        function test_rotation_button_visibility_data() {
+            return [
+                {tag: "portrait-portrait", primaryOrientation: 0, selectedOrientation: 0, expectedVisible: false},
+                {tag: "portrait-landscape", primaryOrientation: 0, selectedOrientation: 1, expectedVisible: true},
+                {tag: "portrait-invertedportrait", primaryOrientation: 0, selectedOrientation: 2, expectedVisible: true},
+                {tag: "portrait-invertetlandscape", primaryOrientation: 0, selectedOrientation: 3, expectedVisible: true},
+                {tag: "landscape-portrait", primaryOrientation: 1, selectedOrientation: 0, expectedVisible: true},
+                {tag: "landscape-landscape", primaryOrientation: 1, selectedOrientation: 1, expectedVisible: false},
+                {tag: "landscape-invertedportrait", primaryOrientation: 1, selectedOrientation: 2, expectedVisible: true},
+                {tag: "landscape-invertetlandscape", primaryOrientation: 1, selectedOrientation: 3, expectedVisible: true},
+                {tag: "invertedportrait-portrait", primaryOrientation: 2, selectedOrientation: 0, expectedVisible: true},
+                {tag: "invertedportrait-landscape", primaryOrientation: 2, selectedOrientation: 1, expectedVisible: true},
+                {tag: "invertedportrait-invertedportrait", primaryOrientation: 2, selectedOrientation: 2, expectedVisible: false},
+                {tag: "invertedportrait-invertetlandscape", primaryOrientation: 2, selectedOrientation: 3, expectedVisible: true},
+                {tag: "invertetlandscape-portrait", primaryOrientation: 3, selectedOrientation: 0, expectedVisible: true},
+                {tag: "invertetlandscape-landscape", primaryOrientation: 3, selectedOrientation: 1, expectedVisible: true},
+                {tag: "invertetlandscape-invertedportrait", primaryOrientation: 3, selectedOrientation: 2, expectedVisible: true},
+                {tag: "invertetlandscape-invertetlandscape", primaryOrientation: 3, selectedOrientation: 3, expectedVisible: false}
+            ]
+        }
+
+        function test_rotation_button_visibility(data) {
+            // simulate the primary orientation
+            primaryOrientationSelector.selectedIndex = data.primaryOrientation;
+
+            // simulate the physical orientation
+            orientationSelector.selectedIndex = data.selectedOrientation;
+
+            // test visibility of the rotate button
+            // rotation angle is always 0 in this test
+            var rotateButton = testCase.findChild(touchScreenPad, "rotateButton")
+            compare(rotateButton.visible, data.expectedVisible, "Rotate button should be hidden if the current rotation and physical orientation matches and shown if not")
+        }
+
         function test_rotation_data() {
             return [
-                {tag: "portrait", selectedOrientation: 0, expectedAngle: 0},
-                {tag: "landscape", selectedOrientation: 1, expectedAngle: 270},
-                {tag: "invertedportrait", selectedOrientation: 2, expectedAngle: 180},
-                {tag: "invertetlandscape", selectedOrientation: 3, expectedAngle: 90}
+                {tag: "portrait-portrait", primaryOrientation: 0, selectedOrientation: 0, expectedAngle: 0},
+                {tag: "portrait-landscape", primaryOrientation: 0, selectedOrientation: 1, expectedAngle: 270},
+                {tag: "portrait-invertedportrait", primaryOrientation: 0, selectedOrientation: 2, expectedAngle: 180},
+                {tag: "portrait-invertetlandscape", primaryOrientation: 0, selectedOrientation: 3, expectedAngle: 90},
+                {tag: "reset-portrait-portrait", primaryOrientation: 0, selectedOrientation: 0, expectedAngle: 0},
+                {tag: "landscape-portrait", primaryOrientation: 1, selectedOrientation: 0, expectedAngle: 90},
+                {tag: "landscape-landscape", primaryOrientation: 1, selectedOrientation: 1, expectedAngle: 0},
+                {tag: "landscape-invertedportrait", primaryOrientation: 1, selectedOrientation: 2, expectedAngle: 270},
+                {tag: "landscape-invertetlandscape", primaryOrientation: 1, selectedOrientation: 3, expectedAngle: 180},
+                {tag: "reset-landscape-landscape", primaryOrientation: 1, selectedOrientation: 1, expectedAngle: 0},
+                {tag: "invertedportrait-portrait", primaryOrientation: 2, selectedOrientation: 0, expectedAngle: 180},
+                {tag: "invertedportrait-landscape", primaryOrientation: 2, selectedOrientation: 1, expectedAngle: 90},
+                {tag: "invertedportrait-invertedportrait", primaryOrientation: 2, selectedOrientation: 2, expectedAngle: 0},
+                {tag: "invertedportrait-invertetlandscape", primaryOrientation: 2, selectedOrientation: 3, expectedAngle: 270},
+                {tag: "reset-invertedportrait-invertedportrait", primaryOrientation: 2, selectedOrientation: 2, expectedAngle: 0},
+                {tag: "invertetlandscape-portrait", primaryOrientation: 3, selectedOrientation: 0, expectedAngle: 270},
+                {tag: "invertetlandscape-landscape", primaryOrientation: 3, selectedOrientation: 1, expectedAngle: 180},
+                {tag: "invertetlandscape-invertedportrait", primaryOrientation: 3, selectedOrientation: 2, expectedAngle: 90},
+                {tag: "invertetlandscape-invertetlandscape", primaryOrientation: 3, selectedOrientation: 3, expectedAngle: 0}
             ];
         }
 
         function test_rotation(data) {
             var content = findChild(touchScreenPad, "contentContainer");
 
-            var oldRotation = content.rotation;
+            // simulate the primary orientation
+            primaryOrientationSelector.selectedIndex = data.primaryOrientation;
 
-            // Turn on orientation lock
-            orientationLockCheckBox.checked = true;
-
-            // simulate the rotation
+            // simulate the physical orientation
             orientationSelector.selectedIndex = data.selectedOrientation;
 
-            // Make sure it is still in the old rotation (as we have the lock turned on)
-            expectFailContinue("", "Rotation lock set. Expecting automatic rotation to fail.");
-            tryCompareFunction(function() { return content.rotation != oldRotation; }, true, 300);
-
-            // Now uncheck the rotation lock
-            orientationLockCheckBox.checked = false;
+            // click on the rotate button if visible
+            var rotateButton = testCase.findChild(touchScreenPad, "rotateButton")
+            if (rotateButton.visible) {
+                rotateButton.clicked();
+            }
 
             // And make sure it catches up to the expected angle
             tryCompare(content, "rotation", data.expectedAngle);
