@@ -17,6 +17,7 @@
 #include "InputDispatcherFilter.h"
 #include "MousePointer.h"
 
+#include <QDebug>
 #include <QEvent>
 #include <QGuiApplication>
 #include <QQuickWindow>
@@ -53,6 +54,11 @@ void InputDispatcherFilter::unregisterPointer(MousePointer *pointer)
     m_pointers.remove(pointer);
 }
 
+static bool usesMapToGlobalCursorMapping() {
+    static bool ret = qEnvironmentVariableIsSet("LOMIRI_USES_MAP_TO_GLOBAL_CURSOR_MAPPING");
+    return ret;
+}
+
 bool InputDispatcherFilter::eventFilter(QObject *o, QEvent *e)
 {
     if (o != m_inputDispatcher) return false;
@@ -66,14 +72,34 @@ bool InputDispatcherFilter::eventFilter(QObject *o, QEvent *e)
             auto pointer = currentPointer();
             if (!pointer || !pointer->window()) return true;
 
+            if (!pointer->parentItem()) {
+                qDebug() << "Huh? a MousePointer without a parent?";
+                return true;
+            }
+
             QMouseEvent* me = static_cast<QMouseEvent*>(e);
 
             // Local position gives relative change of mouse pointer.
             QPointF movement = me->localPos();
 
+            QPointF oldPos, newPos;
+
+            // "Feature-flag" the use of mapToGlobal() because apparently this
+            // causes problem on some devices.
+            // XXX: flag must matches between us and QtMir, or things will break.
+            if (usesMapToGlobalCursorMapping()) {
+                // Because the movement is relative to the visual display, run both old and new
+                // pointer position through mapToGlobal() to take Shell's rotation into account,
+                // then recalculate the movement as a difference between them.
+                oldPos = pointer->parentItem()->mapToGlobal(pointer->position());
+                newPos = pointer->parentItem()->mapToGlobal(pointer->position() + movement);
+                movement = newPos - oldPos;
+            } else {
+                oldPos = pointer->window()->geometry().topLeft() + pointer->position();
+            }
+
             // Adjust the position
-            QPointF oldPos = pointer->window()->geometry().topLeft() + pointer->position();
-            QPointF newPos = adjustedPositionForMovement(oldPos, movement);
+            newPos = adjustedPositionForMovement(oldPos, movement);
 
             QScreen* currentScreen = screenAt(newPos);
             if (currentScreen) {
@@ -132,9 +158,22 @@ bool InputDispatcherFilter::eventFilter(QObject *o, QEvent *e)
             // Local position gives relative change of mouse pointer.
             QPointF movement = we->position();
 
+            QPointF oldPos, newPos;
+
+            // XXX: see above
+            if (usesMapToGlobalCursorMapping()) {
+                // Because the movement is relative to the visual display, run both old and new
+                // pointer position through mapToGlobal() to take Shell's rotation into account,
+                // then recalculate the movement as a difference between them.
+                oldPos = pointer->parentItem()->mapToGlobal(pointer->position());
+                newPos = pointer->parentItem()->mapToGlobal(pointer->position() + movement);
+                movement = newPos - oldPos;
+            } else {
+                oldPos = pointer->window()->geometry().topLeft() + pointer->position();
+            }
+
             // Adjust the position
-            QPointF oldPos = pointer->window()->geometry().topLeft() + pointer->position();
-            QPointF newPos = adjustedPositionForMovement(oldPos, movement);
+            newPos = adjustedPositionForMovement(oldPos, movement);
 
             // Send the event
             QWheelEvent eCopy(we->position(), newPos, we->pixelDelta(), we->angleDelta(), we->buttons(), we->modifiers(), we->phase(), we->inverted());
