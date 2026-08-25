@@ -274,6 +274,15 @@ Item {
                 compare(bodyLabel.visible, data.bodyVisible, "body-text visibility is incorrect")
                 compare(buttonRow.visible, data.buttonRowVisible, "button visibility is incorrect")
 
+                // cannot be swiped to dismiss
+                waitForRendering(notification)
+                var dragStart = notification.width * 0.25;
+                var dragEnd = notification.width;
+                var dragY = notification.height / 2;
+                touchFlick(notification, dragStart, dragY, dragEnd, dragY);
+                waitForRendering(notification);
+                tryCompare(notification, "x", 0);
+
                 if(data.buttonRowVisible) {
                     var swipeButton = findChild(buttonRow, "notify_swipe_button")
 
