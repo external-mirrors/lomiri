@@ -17,11 +17,11 @@ add_executable(launchermodelastestExec
     ${CMAKE_SOURCE_DIR}/plugins/Greeter/Lomiri/Launcher/launcheritem.cpp
     ${CMAKE_SOURCE_DIR}/plugins/Greeter/Lomiri/Launcher/quicklistmodel.cpp
     ${CMAKE_SOURCE_DIR}/plugins/Greeter/Lomiri/Launcher/quicklistentry.cpp
-    ${LAUNCHER_API_INCLUDEDIR}/lomiri/shell/launcher/LauncherItemInterface.h
-    ${LAUNCHER_API_INCLUDEDIR}/lomiri/shell/launcher/LauncherModelInterface.h
-    ${LAUNCHER_API_INCLUDEDIR}/lomiri/shell/launcher/QuickListModelInterface.h
+    ${CMAKE_SOURCE_DIR}/include/lomiri/shell/launcher/LauncherItemInterface.h
+    ${CMAKE_SOURCE_DIR}/include/lomiri/shell/launcher/LauncherModelInterface.h
+    ${CMAKE_SOURCE_DIR}/include/lomiri/shell/launcher/QuickListModelInterface.h
     ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/ApplicationManagerInterface.h
-    ${LAUNCHER_API_INCLUDEDIR}/lomiri/shell/application/ApplicationInfoInterface.h
+    ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/ApplicationInfoInterface.h
     )
 target_link_libraries(launchermodelastestExec
     lomiri-private
