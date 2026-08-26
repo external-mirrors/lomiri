@@ -5,10 +5,10 @@ include_directories(
 
 set(MockLauncherModel_SOURCES
     ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/ApplicationManagerInterface.h
-    ${LAUNCHER_API_INCLUDEDIR}/lomiri/shell/launcher/LauncherItemInterface.h
-    ${LAUNCHER_API_INCLUDEDIR}/lomiri/shell/launcher/LauncherModelInterface.h
-    ${LAUNCHER_API_INCLUDEDIR}/lomiri/shell/launcher/QuickListModelInterface.h
-    ${LAUNCHER_API_INCLUDEDIR}/lomiri/shell/launcher/AppDrawerModelInterface.h
+    ${CMAKE_SOURCE_DIR}/include/lomiri/shell/launcher/LauncherItemInterface.h
+    ${CMAKE_SOURCE_DIR}/include/lomiri/shell/launcher/LauncherModelInterface.h
+    ${CMAKE_SOURCE_DIR}/include/lomiri/shell/launcher/QuickListModelInterface.h
+    ${CMAKE_SOURCE_DIR}/include/lomiri/shell/launcher/AppDrawerModelInterface.h
     plugin.cpp
     MockLauncherModel.cpp
     MockLauncherItem.cpp
