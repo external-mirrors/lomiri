@@ -30,14 +30,14 @@ add_executable(launchermodeltestExec
     ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Launcher/dbusinterface.cpp
     ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Launcher/quicklistentry.cpp
     ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Launcher/ualwrapper.cpp
-    ${LAUNCHER_API_INCLUDEDIR}/lomiri/shell/launcher/LauncherItemInterface.h
-    ${LAUNCHER_API_INCLUDEDIR}/lomiri/shell/launcher/LauncherModelInterface.h
-    ${LAUNCHER_API_INCLUDEDIR}/lomiri/shell/launcher/QuickListModelInterface.h
+    ${CMAKE_SOURCE_DIR}/include/lomiri/shell/launcher/LauncherItemInterface.h
+    ${CMAKE_SOURCE_DIR}/include/lomiri/shell/launcher/LauncherModelInterface.h
+    ${CMAKE_SOURCE_DIR}/include/lomiri/shell/launcher/QuickListModelInterface.h
     ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/ApplicationManagerInterface.h
     ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/MirSurfaceListInterface.h
     ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/MirSurfaceInterface.h
     ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/Mir.h
-    ${LAUNCHER_API_INCLUDEDIR}/lomiri/shell/application/ApplicationInfoInterface.h
+    ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/ApplicationInfoInterface.h
     )
 target_link_libraries(launchermodeltestExec
     lomiri-private
@@ -68,12 +68,12 @@ add_executable(appdrawermodeltestExec
     xdgwatcher.cpp
     iconcachewatcher.cpp
     ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Launcher/appdrawermodel.cpp
-    ${LAUNCHER_API_INCLUDEDIR}/lomiri/shell/launcher/AppDrawerModelInterface.h
+    ${CMAKE_SOURCE_DIR}/include/lomiri/shell/launcher/AppDrawerModelInterface.h
     ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Launcher/launcheritem.cpp
     ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Launcher/quicklistmodel.cpp
     ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Launcher/quicklistentry.cpp
-    ${LAUNCHER_API_INCLUDEDIR}/lomiri/shell/launcher/LauncherItemInterface.h
-    ${LAUNCHER_API_INCLUDEDIR}/lomiri/shell/launcher/QuickListModelInterface.h
+    ${CMAKE_SOURCE_DIR}/include/lomiri/shell/launcher/LauncherItemInterface.h
+    ${CMAKE_SOURCE_DIR}/include/lomiri/shell/launcher/QuickListModelInterface.h
     )
 target_link_libraries(appdrawermodeltestExec
     lomiri-private

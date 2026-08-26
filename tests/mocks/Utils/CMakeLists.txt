@@ -33,10 +33,10 @@ set(QMLPLUGIN_SRC
     ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/MirSurfaceInterface.h
     ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/MirSurfaceListInterface.h
     ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/Mir.h
-    ${LAUNCHER_API_INCLUDEDIR}/lomiri/shell/launcher/AppDrawerModelInterface.h
-    ${LAUNCHER_API_INCLUDEDIR}/lomiri/shell/launcher/LauncherModelInterface.h
-    ${LAUNCHER_API_INCLUDEDIR}/lomiri/shell/launcher/LauncherItemInterface.h
-    ${LAUNCHER_API_INCLUDEDIR}/lomiri/shell/launcher/QuickListModelInterface.h
+    ${CMAKE_SOURCE_DIR}/include/lomiri/shell/launcher/AppDrawerModelInterface.h
+    ${CMAKE_SOURCE_DIR}/include/lomiri/shell/launcher/LauncherModelInterface.h
+    ${CMAKE_SOURCE_DIR}/include/lomiri/shell/launcher/LauncherItemInterface.h
+    ${CMAKE_SOURCE_DIR}/include/lomiri/shell/launcher/QuickListModelInterface.h
     constants.cpp
     plugin.cpp
     windowstatestorage.cpp
