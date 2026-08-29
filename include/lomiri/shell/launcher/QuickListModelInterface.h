@@ -20,8 +20,6 @@
 #ifndef LOMIRI_SHELL_LAUNCHER_QUICKLISTMODELINTERFACE_H
 #define LOMIRI_SHELL_LAUNCHER_QUICKLISTMODELINTERFACE_H
 
-#include <lomiri/SymbolExport.h>
-
 #include <QtCore/QAbstractListModel>
 
 namespace lomiri
@@ -41,7 +39,7 @@ namespace launcher
   * - RoleHasSeparator (hasSeparator): Determines if the entry has a separator (boolean)
   * - RoleIsPrivate (isPrivate): Determines whether the entry should be shown or not in locked mode (e.g. greeter is locked)
   */
-class LOMIRI_API QuickListModelInterface: public QAbstractListModel
+class QuickListModelInterface: public QAbstractListModel
 {
     Q_OBJECT
 
