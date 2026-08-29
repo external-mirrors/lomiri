@@ -20,8 +20,6 @@
 #ifndef LOMIRI_SHELL_LAUNCHER_LAUNCHERMODELINTERFACE_H
 #define LOMIRI_SHELL_LAUNCHER_LAUNCHERMODELINTERFACE_H
 
-#include <lomiri/SymbolExport.h>
-
 #include <lomiri/shell/application/ApplicationManagerInterface.h>
 
 #include <QtCore/QAbstractListModel>
@@ -40,7 +38,7 @@ class LauncherItemInterface;
  *
  * This model exposes all the launcher items that should be shown in the launcher.
  */
-class LOMIRI_API LauncherModelInterface: public QAbstractListModel
+class LauncherModelInterface: public QAbstractListModel
 {
     Q_OBJECT
 
