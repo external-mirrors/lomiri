@@ -16,8 +16,6 @@
 
 #pragma once
 
-#include <lomiri/SymbolExport.h>
-
 #include <QAbstractListModel>
 
 namespace lomiri {
@@ -29,7 +27,7 @@ namespace launcher {
  *
  * This model exposes all the items that should be shown in the app drawer.
  */
-class LOMIRI_API AppDrawerModelInterface: public QAbstractListModel
+class AppDrawerModelInterface: public QAbstractListModel
 {
     Q_OBJECT
 public:

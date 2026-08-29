@@ -17,8 +17,6 @@
 #ifndef LOMIRI_SHELL_LAUNCHER_LAUNCHERITEM_H
 #define LOMIRI_SHELL_LAUNCHER_LAUNCHERITEM_H
 
-#include <lomiri/SymbolExport.h>
-
 #include <QtCore/QObject>
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
@@ -41,7 +39,7 @@ class QuickListModelInterface;
  * in the launcher.
  */
 
-class LOMIRI_API LauncherItemInterface: public QObject
+class LauncherItemInterface: public QObject
 {
     Q_OBJECT
 
