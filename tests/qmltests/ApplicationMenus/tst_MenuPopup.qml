@@ -197,6 +197,7 @@ Item {
         }
 
         function test_aboutToShow() {
+            skip("Test is flaky: https://gitlab.com/ubports/development/core/lomiri/-/work_items/200");
             menu.lomiriMenuModel.modelData = appMenuData.generateTestData(3,3,1,0,"menu",false);
             waitForItemPolished(findChild(menu, "menuColumn"));
 

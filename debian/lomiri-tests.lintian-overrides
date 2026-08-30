@@ -1,2 +1,10 @@
 # ignore unusual interpreter, the shebang is as wanted...
-lomiri-tests: unusual-interpreter usr/libexec/lomiri/tests/scripts/*.sh #!/usr/bin/parallel
+lomiri-tests: unusual-interpreter /usr/bin/parallel [usr/libexec/lomiri/tests/scripts/*.sh]
+
+# let's ignore these, they are part of the QML test
+#lomiri-tests: package-contains-documentation-outside-usr-share-doc [usr/share/lomiri/tests/qmltests/Wizard/licenses/en_US.html]
+#lomiri-tests: package-contains-documentation-outside-usr-share-doc [usr/share/lomiri/tests/qmltests/Wizard/licenses/fr_CA.html]
+#lomiri-tests: package-contains-documentation-outside-usr-share-doc [usr/share/lomiri/tests/qmltests/Wizard/licenses/fr_FR.html]
+
+# later... filed an upstream issue for now: https://gitlab.com/ubports/development/core/lomiri/-/issues/38
+lomiri-tests: no-manual-page [usr/bin/lomiri-mock-indicator-service]

@@ -1,11 +1,13 @@
 Tests: qmluitests.sh
-Restrictions: allow-stderr
 Depends:
  dpkg-dev,
  lomiri-tests,
+Restrictions:
+ allow-stderr,
 
 Tests: autopilot.sh
-Restrictions: allow-stderr,
-              isolation-machine,
 Depends:
  lomiri-autopilot,
+Restrictions:
+ allow-stderr,
+ isolation-machine,

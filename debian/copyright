@@ -1,10 +1,1612 @@
-Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: lomiri
-Source: http://launchpad.net/lomiri
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Source: https://gitlab.com/ubports/development/core/lomiri/
+Upstream-Name: Lomiri Shell
+Files-Excluded: tests/autopilot
 
-Files: *
-Copyright: 2011-2013 Canonical Ltd.
+Files: build.sh
+ data/lomiri-greeter-wrapper
+ include/paths.h.in
+ plugins/AccountsService/AccountsService.cpp
+ plugins/AccountsService/AccountsService.h
+ plugins/AccountsService/AccountsServiceDBusAdaptor.cpp
+ plugins/AccountsService/AccountsServiceDBusAdaptor.h
+ plugins/AccountsService/plugin.cpp
+ plugins/AccountsService/plugin.h
+ plugins/Cursor/Cursor.qml
+ plugins/Cursor/CursorImageInfo.cpp
+ plugins/Cursor/CursorImageInfo.h
+ plugins/Cursor/plugin.cpp
+ plugins/Cursor/plugin.h
+ plugins/GlobalShortcut/globalshortcut.cpp
+ plugins/GlobalShortcut/globalshortcut.h
+ plugins/GlobalShortcut/globalshortcutregistry.cpp
+ plugins/GlobalShortcut/globalshortcutregistry.h
+ plugins/GlobalShortcut/plugin.cpp
+ plugins/GlobalShortcut/plugin.h
+ plugins/Greeter/Lomiri/Launcher/plugin.h
+ plugins/Greeter/Lomiri/Launcher/quicklistentry.cpp
+ plugins/Greeter/Lomiri/Launcher/quicklistentry.h
+ plugins/LightDM/DBusGreeter.cpp
+ plugins/LightDM/DBusGreeter.h
+ plugins/LightDM/DBusGreeterList.cpp
+ plugins/LightDM/DBusGreeterList.h
+ plugins/LightDM/Greeter.cpp
+ plugins/LightDM/Greeter.h
+ plugins/LightDM/GreeterPrivate.h
+ plugins/LightDM/IntegratedLightDM/QLightDM/Greeter
+ plugins/LightDM/IntegratedLightDM/QLightDM/SessionsModel
+ plugins/LightDM/IntegratedLightDM/QLightDM/UsersModel
+ plugins/LightDM/IntegratedLightDM/liblightdm/Greeter.cpp
+ plugins/LightDM/IntegratedLightDM/liblightdm/GreeterPrivate.cpp
+ plugins/LightDM/IntegratedLightDM/liblightdm/GreeterPrivate.h
+ plugins/LightDM/IntegratedLightDM/liblightdm/SessionsModel.cpp
+ plugins/LightDM/IntegratedLightDM/liblightdm/SessionsModel.h
+ plugins/LightDM/IntegratedLightDM/liblightdm/SessionsModelPrivate.cpp
+ plugins/LightDM/IntegratedLightDM/liblightdm/SessionsModelPrivate.h
+ plugins/LightDM/IntegratedLightDM/liblightdm/UsersModel.cpp
+ plugins/LightDM/IntegratedLightDM/liblightdm/UsersModelPrivate.cpp
+ plugins/LightDM/IntegratedLightDM/liblightdm/UsersModelPrivate.h
+ plugins/LightDM/PromptsModel.cpp
+ plugins/LightDM/PromptsModel.h
+ plugins/LightDM/SessionsModel.cpp
+ plugins/LightDM/SessionsModel.h
+ plugins/LightDM/UsersModel.cpp
+ plugins/LightDM/UsersModel.h
+ plugins/LightDM/plugin.cpp
+ plugins/LightDM/plugin.h
+ plugins/Lomiri/ApplicationMenu/applicationmenuregistry.cpp
+ plugins/Lomiri/ApplicationMenu/applicationmenuregistry.h
+ plugins/Lomiri/ApplicationMenu/dbusapplicationmenuregistry.cpp
+ plugins/Lomiri/ApplicationMenu/dbusapplicationmenuregistry.h
+ plugins/Lomiri/ApplicationMenu/plugin.cpp
+ plugins/Lomiri/ApplicationMenu/plugin.h
+ plugins/Lomiri/Gestures/Direction.cpp
+ plugins/Lomiri/Gestures/Direction.h
+ plugins/Lomiri/Gestures/LomiriGesturesQmlGlobal.h
+ plugins/Lomiri/Gestures/MouseEventGenerator.cpp
+ plugins/Lomiri/Gestures/MouseEventGenerator.h
+ plugins/Lomiri/Gestures/PressedOutsideNotifier.cpp
+ plugins/Lomiri/Gestures/PressedOutsideNotifier.h
+ plugins/Lomiri/Gestures/TouchDispatcher.h
+ plugins/Lomiri/Gestures/TouchGate.cpp
+ plugins/Lomiri/Gestures/TouchGate.h
+ plugins/Lomiri/Gestures/TouchGestureArea.cpp
+ plugins/Lomiri/Gestures/TouchGestureArea.h
+ plugins/Lomiri/Gestures/plugin.cpp
+ plugins/Lomiri/Gestures/plugin.h
+ plugins/Lomiri/Indicators/indicators.h
+ plugins/Lomiri/Indicators/indicatorsmanager.cpp
+ plugins/Lomiri/Indicators/indicatorsmanager.h
+ plugins/Lomiri/Indicators/lomiriindicatorsglobal.h
+ plugins/Lomiri/Indicators/menucontentactivator.cpp
+ plugins/Lomiri/Indicators/menucontentactivator.h
+ plugins/Lomiri/Launcher/plugin.h
+ plugins/Lomiri/Launcher/quicklistentry.cpp
+ plugins/Lomiri/Launcher/quicklistentry.h
+ plugins/Lomiri/Launcher/ualwrapper.cpp
+ plugins/Lomiri/Launcher/ualwrapper.h
+ plugins/Lomiri/ModemConnectivity/ModemConnectivity.cpp
+ plugins/Lomiri/ModemConnectivity/ModemConnectivity.h
+ plugins/Lomiri/ModemConnectivity/plugin.cpp
+ plugins/Lomiri/ModemConnectivity/plugin.h
+ plugins/Lomiri/Platform/platform.cpp
+ plugins/Lomiri/Platform/platform.h
+ plugins/Lomiri/Platform/plugin.cpp
+ plugins/Lomiri/Platform/plugin.h
+ plugins/Lomiri/Session/plugin.cpp
+ plugins/Lomiri/Session/plugin.h
+ plugins/Powerd/Powerd.cpp
+ plugins/Powerd/Powerd.h
+ plugins/Powerd/plugin.cpp
+ plugins/Powerd/plugin.h
+ plugins/ScreenshotDirectory/ScreenshotDirectory.cpp
+ plugins/ScreenshotDirectory/ScreenshotDirectory.h
+ plugins/ScreenshotDirectory/plugin.cpp
+ plugins/ScreenshotDirectory/plugin.h
+ plugins/SessionBroadcast/SessionBroadcast.cpp
+ plugins/SessionBroadcast/SessionBroadcast.h
+ plugins/SessionBroadcast/plugin.cpp
+ plugins/SessionBroadcast/plugin.h
+ plugins/UInput/plugin.cpp
+ plugins/UInput/plugin.h
+ plugins/UInput/uinput.cpp
+ plugins/UInput/uinput.h
+ plugins/Utils/EdgeBarrierSettings.qml
+ plugins/Utils/Style.js
+ plugins/Utils/Timer.cpp
+ plugins/Utils/Timer.h
+ plugins/Utils/URLDispatcher.cpp
+ plugins/Utils/URLDispatcher.h
+ plugins/Utils/WindowInputMonitor.cpp
+ plugins/Utils/WindowInputMonitor.h
+ plugins/Utils/activefocuslogger.cpp
+ plugins/Utils/activefocuslogger.h
+ plugins/Utils/appdrawerproxymodel.cpp
+ plugins/Utils/appdrawerproxymodel.h
+ plugins/Utils/applicationsfiltermodel.cpp
+ plugins/Utils/applicationsfiltermodel.h
+ plugins/Utils/expressionfiltermodel.cpp
+ plugins/Utils/expressionfiltermodel.h
+ plugins/Utils/inputeventgenerator.cpp
+ plugins/Utils/inputeventgenerator.h
+ plugins/Utils/inputwatcher.cpp
+ plugins/Utils/inputwatcher.h
+ plugins/Utils/lomirimenumodelpaths.cpp
+ plugins/Utils/lomirimenumodelpaths.h
+ plugins/Utils/lomirisortfilterproxymodelqml.cpp
+ plugins/Utils/lomirisortfilterproxymodelqml.h
+ plugins/Utils/plugin.cpp
+ plugins/Utils/plugin.h
+ plugins/Utils/qlimitproxymodelqml.cpp
+ plugins/Utils/qlimitproxymodelqml.h
+ plugins/Utils/quicklistproxymodel.cpp
+ plugins/Utils/quicklistproxymodel.h
+ plugins/Utils/timezoneFormatter.cpp
+ plugins/Utils/timezoneFormatter.h
+ plugins/Utils/windowinputfilter.cpp
+ plugins/Utils/windowinputfilter.h
+ plugins/WindowManager/ScreensConfiguration.cpp
+ plugins/WindowManager/ScreensConfiguration.h
+ plugins/WindowManager/Window.cpp
+ plugins/WindowManager/Window.h
+ plugins/WindowManager/WindowManagerGlobal.h
+ plugins/WindowManager/WindowManagerObjects.cpp
+ plugins/WindowManager/WindowManagerObjects.h
+ plugins/WindowManager/WindowManagerPlugin.cpp
+ plugins/WindowManager/WindowManagerPlugin.h
+ plugins/WindowManager/Workspace.cpp
+ plugins/WindowManager/Workspace.h
+ plugins/WindowManager/WorkspaceManager.cpp
+ plugins/WindowManager/WorkspaceManager.h
+ plugins/WindowManager/WorkspaceModel.cpp
+ plugins/WindowManager/WorkspaceModel.h
+ plugins/Wizard/LocalePlugin.cpp
+ plugins/Wizard/LocalePlugin.h
+ plugins/Wizard/PageList.cpp
+ plugins/Wizard/PageList.h
+ plugins/Wizard/QtMir/Application/OSKController.qml
+ plugins/Wizard/Status.cpp
+ plugins/Wizard/Status.h
+ plugins/Wizard/Utils/plugin.cpp
+ plugins/Wizard/Utils/plugin.h
+ plugins/Wizard/Utils/qsortfilterproxymodelqml.cpp
+ plugins/Wizard/Utils/qsortfilterproxymodelqml.h
+ plugins/Wizard/keyboardLayoutsModel.cpp
+ plugins/Wizard/keyboardLayoutsModel.h
+ plugins/Wizard/plugin.cpp
+ plugins/Wizard/plugin.h
+ plugins/Wizard/timezonemodel.cpp
+ plugins/Wizard/timezonemodel.h
+ qml/ApplicationMenus/ApplicationMenusLimits.qml
+ qml/Components/Background.qml
+ qml/Components/BlurLayer.qml
+ qml/Components/BrightnessControl.qml
+ qml/Components/Dialogs.qml
+ qml/Components/DragHandle.qml
+ qml/Components/DraggingArea.qml
+ qml/Components/EdgeBarrier.qml
+ qml/Components/EdgeBarrierController.qml
+ qml/Components/EdgeDragEvaluator.qml
+ qml/Components/FadingLabel.qml
+ qml/Components/Flickable.qml
+ qml/Components/FloatingFlickable.qml
+ qml/Components/GridView.qml
+ qml/Components/Handle.qml
+ qml/Components/InputMethod.qml
+ qml/Components/ItemGrabber.qml
+ qml/Components/ItemSnapshot.qml
+ qml/Components/KeyboardShortcutsOverlay.qml
+ qml/Components/KeymapSwitcher.qml
+ qml/Components/LazyImage.qml
+ qml/Components/ListView.qml
+ qml/Components/ListViewOSKScroller.qml
+ qml/Components/ModeSwitchWarningDialog.qml
+ qml/Components/NotificationAudio.qml
+ qml/Components/Orientations.qml
+ qml/Components/PanelState/PanelState.qml
+ qml/Components/PassphraseLockscreen.qml
+ qml/Components/PhysicalKeysMapper.qml
+ qml/Components/PinLockscreen.qml
+ qml/Components/PinPadButton.qml
+ qml/Components/Rating.qml
+ qml/Components/RatingStyle.qml
+ qml/Components/ScrollCalculator.qml
+ qml/Components/SearchHistoryModel/SearchHistoryModel.qml
+ qml/Components/SharingPicker.qml
+ qml/Components/ShellDialog.qml
+ qml/Components/StandardAnimation.qml
+ qml/Components/VirtualTouchPad.qml
+ qml/Components/VolumeControl.qml
+ qml/Components/WindowControlButtons.qml
+ qml/Components/WrongPasswordAnimation.qml
+ qml/Components/ZoomableImage.qml
+ qml/Components/carousel.js
+ qml/Components/flickableUtils.js
+ qml/DeviceConfiguration.qml
+ qml/DisabledScreenNotice.qml
+ qml/ErrorApplication.qml
+ qml/Greeter/Circle.qml
+ qml/Greeter/Clock.qml
+ qml/Greeter/DelayedLockscreen.qml
+ qml/Greeter/Dot.qml
+ qml/Greeter/FullLightDMImpl.qml
+ qml/Greeter/Gradient.js
+ qml/Greeter/GreeterPrompt.qml
+ qml/Greeter/Infographics.qml
+ qml/Greeter/IntegratedLightDMImpl.qml
+ qml/Greeter/LightDMService.qml
+ qml/Greeter/LoginAreaContainer.qml
+ qml/Greeter/LoginList.qml
+ qml/Greeter/ObjectPositioner.qml
+ qml/Greeter/PromptList.qml
+ qml/Greeter/SecondaryGreeter.qml
+ qml/Greeter/SessionIcon.qml
+ qml/Greeter/SessionsList.qml
+ qml/Launcher/FoldingLauncherDelegate.qml
+ qml/Launcher/LauncherDelegate.qml
+ qml/Launcher/LauncherPanel.qml
+ qml/Launcher/PullToRefreshScopeStyle.qml
+ qml/Launcher/Tooltip.qml
+ qml/Notifications/Notification.qml
+ qml/Notifications/Notifications.qml
+ qml/Notifications/OptionToggle.qml
+ qml/Notifications/ShapedIcon.qml
+ qml/Notifications/SwipeToAct.qml
+ qml/OrientedShell.qml
+ qml/Panel/ActiveCallHint.qml
+ qml/Panel/FakePanelMenu.qml
+ qml/Panel/MenuContent.qml
+ qml/Panel/PanelVelocityCalculator.qml
+ qml/Rotation/HalfLoopRotationAnimation.qml
+ qml/Rotation/ImmediateRotationAction.qml
+ qml/Rotation/NinetyRotationAnimation.qml
+ qml/Rotation/RotationStates.qml
+ qml/Rotation/UpdateShellTransformations.qml
+ qml/ShellApplication.qml
+ qml/ShellNotifier.qml
+ qml/ShellScreen.qml
+ qml/Stage/ChildWindow.qml
+ qml/Stage/ChildWindowRepeater.qml
+ qml/Stage/ChildWindowTree.qml
+ qml/Stage/DecoratedWindow.qml
+ qml/Stage/FakeMaximizeDelegate.qml
+ qml/Stage/MoveHandler.qml
+ qml/Stage/ResizeGrip.qml
+ qml/Stage/SideStage.qml
+ qml/Stage/Spread/BezierCurve.qml
+ qml/Stage/Spread/MathUtils.js
+ qml/Stage/Spread/OpacityMask.qml
+ qml/Stage/Spread/ScreensAndWorkspaces.qml
+ qml/Stage/Spread/Spread.qml
+ qml/Stage/Spread/SpreadDelegateInputArea.qml
+ qml/Stage/Spread/SpreadMaths.qml
+ qml/Stage/Spread/StagedRightEdgeMaths.qml
+ qml/Stage/Spread/WindowedRightEdgeMaths.qml
+ qml/Stage/Spread/WorkspacePreview.qml
+ qml/Stage/Spread/Workspaces.qml
+ qml/Stage/Spread/cubic-bezier.js
+ qml/Stage/StageMaths.qml
+ qml/Stage/StagedFullscreenPolicy.qml
+ qml/Stage/TabletSideStageTouchGesture.qml
+ qml/Stage/WindowControlsOverlay.qml
+ qml/Stage/WindowDecoration.qml
+ qml/Stage/WindowInfoItem.qml
+ qml/Stage/WindowResizeArea.qml
+ qml/Stage/WindowStateSaver.qml
+ qml/Stage/WindowedFullscreenPolicy.qml
+ qml/Stage/WorkspaceSwitcher.qml
+ qml/Tutorial/InactivityTimer.qml
+ qml/Tutorial/Tutorial.qml
+ qml/Tutorial/TutorialContent.qml
+ qml/Tutorial/TutorialLeft.qml
+ qml/Tutorial/TutorialLeftLong.qml
+ qml/Tutorial/TutorialPage.qml
+ qml/Tutorial/TutorialRight.qml
+ qml/Tutorial/TutorialTop.qml
+ qml/Wizard/CheckableSetting.qml
+ qml/Wizard/Components/InputMethod.qml
+ qml/Wizard/Pages/20-keyboard.qml
+ qml/Wizard/Pages/30-wifi.qml
+ qml/Wizard/Pages/50-timezone.qml
+ qml/Wizard/Pages/60-account.qml
+ qml/Wizard/Pages/70-passwd-type.qml
+ qml/Wizard/Pages/79-system-update.qml
+ qml/Wizard/Pages/passcode-confirm.qml
+ qml/Wizard/Pages/passcode-desktop.qml
+ qml/Wizard/Pages/passcode-set.qml
+ qml/Wizard/Pages/password-set.qml
+ qml/Wizard/Pages/sim.qml
+ qml/Wizard/PasswordMeter.qml
+ qml/Wizard/StackButton.qml
+ qml/Wizard/WizardItemSelector.qml
+ qml/Wizard/WizardTextField.qml
+ runtests.sh
+ src/ApplicationArguments.cpp
+ src/ApplicationArguments.h
+ src/CachingNetworkManagerFactory.cpp
+ src/CachingNetworkManagerFactory.h
+ src/DisplayConfigurationStorage.cpp
+ src/DisplayConfigurationStorage.h
+ src/LomiriApplication.cpp
+ src/LomiriApplication.h
+ src/LomiriCommandLineParser.cpp
+ src/LomiriCommandLineParser.h
+ src/MouseTouchAdaptor.h
+ src/UnixSignalHandler.cpp
+ src/UnixSignalHandler.h
+ src/WindowManagementPolicy.cpp
+ src/WindowManagementPolicy.h
+ src/liblomiri-private/abstractdbusservicemonitor.cpp
+ src/liblomiri-private/abstractdbusservicemonitor.h
+ src/liblomiri-private/lomiridbusobject.cpp
+ src/liblomiri-private/lomiridbusobject.h
+ src/liblomiri-private/lomiridbusvirtualobject.cpp
+ src/liblomiri-private/lomiridbusvirtualobject.h
+ src/liblomiri-private/wmpolicyinterface.cpp
+ src/liblomiri-private/wmpolicyinterface.h
+ src/main.cpp
+ src/qmldebuggerutils.h
+ tests/copyright/check_copyright.sh
+ tests/imports/check_imports.py
+ tests/mocks/AccountsService/AccountsService.cpp
+ tests/mocks/AccountsService/AccountsService.h
+ tests/mocks/AccountsService/plugin.cpp
+ tests/mocks/AccountsService/plugin.h
+ tests/mocks/Biometryd/MockBiometryd.cpp
+ tests/mocks/Biometryd/MockBiometryd.h
+ tests/mocks/Biometryd/MockDevice.cpp
+ tests/mocks/Biometryd/MockDevice.h
+ tests/mocks/Biometryd/MockIdentifier.cpp
+ tests/mocks/Biometryd/MockIdentifier.h
+ tests/mocks/Biometryd/MockObserver.cpp
+ tests/mocks/Biometryd/MockObserver.h
+ tests/mocks/Biometryd/MockOperation.cpp
+ tests/mocks/Biometryd/MockOperation.h
+ tests/mocks/Biometryd/plugin.cpp
+ tests/mocks/Biometryd/plugin.h
+ tests/mocks/Cursor/Cursor.qml
+ tests/mocks/GSettings.1.0/plugin.cpp
+ tests/mocks/GSettings.1.0/plugin.h
+ tests/mocks/Hfd/Leds.cpp
+ tests/mocks/Hfd/Leds.h
+ tests/mocks/Hfd/plugin.cpp
+ tests/mocks/Hfd/plugin.h
+ tests/mocks/LightDMController/plugin.cpp
+ tests/mocks/LightDMController/plugin.h
+ tests/mocks/Lomiri/ApplicationMenu/mockapplicationmenuregistry.cpp
+ tests/mocks/Lomiri/ApplicationMenu/mockapplicationmenuregistry.h
+ tests/mocks/Lomiri/ApplicationMenu/plugin.cpp
+ tests/mocks/Lomiri/ApplicationMenu/plugin.h
+ tests/mocks/Lomiri/DownloadDaemonListener/plugin.cpp
+ tests/mocks/Lomiri/DownloadDaemonListener/plugin.h
+ tests/mocks/Lomiri/Indicators/IndicatorsModel.qml
+ tests/mocks/Lomiri/Indicators/fakeplugin.cpp
+ tests/mocks/Lomiri/Indicators/fakeplugin.h
+ tests/mocks/Lomiri/ModemConnectivity/MockModemConnectivity.cpp
+ tests/mocks/Lomiri/ModemConnectivity/MockModemConnectivity.h
+ tests/mocks/Lomiri/ModemConnectivity/plugin.cpp
+ tests/mocks/Lomiri/ModemConnectivity/plugin.h
+ tests/mocks/Lomiri/Platform/MockPlatform.qml
+ tests/mocks/Lomiri/SystemSettings/Diagnostics/MockDiagnostics.qml
+ tests/mocks/Lomiri/SystemSettings/LanguagePlugin/MockKeyboardPlugin.qml
+ tests/mocks/Lomiri/SystemSettings/LanguagePlugin/MockLanguagePlugin.qml
+ tests/mocks/Lomiri/SystemSettings/SecurityPrivacy/MockSecurityPrivacy.cpp
+ tests/mocks/Lomiri/SystemSettings/SecurityPrivacy/MockSecurityPrivacy.h
+ tests/mocks/Lomiri/SystemSettings/SecurityPrivacy/plugin.cpp
+ tests/mocks/Lomiri/SystemSettings/SecurityPrivacy/plugin.h
+ tests/mocks/Lomiri/SystemSettings/TimeDate/MockTimeDate.qml
+ tests/mocks/Lomiri/Telephony/ContactWatcherData.cpp
+ tests/mocks/Lomiri/Telephony/ContactWatcherData.h
+ tests/mocks/Lomiri/Telephony/MockCallEntry.cpp
+ tests/mocks/Lomiri/Telephony/MockCallEntry.h
+ tests/mocks/Lomiri/Telephony/MockCallManager.cpp
+ tests/mocks/Lomiri/Telephony/MockCallManager.h
+ tests/mocks/Lomiri/Telephony/MockContactWatcher.cpp
+ tests/mocks/Lomiri/Telephony/MockContactWatcher.h
+ tests/mocks/Lomiri/Telephony/MockTelepathyHelper.cpp
+ tests/mocks/Lomiri/Telephony/MockTelepathyHelper.h
+ tests/mocks/Lomiri/Telephony/plugin.cpp
+ tests/mocks/Lomiri/Telephony/plugin.h
+ tests/mocks/Lomiri/Web/WebView.qml
+ tests/mocks/Powerd/Powerd.cpp
+ tests/mocks/Powerd/Powerd.h
+ tests/mocks/Powerd/plugin.cpp
+ tests/mocks/Powerd/plugin.h
+ tests/mocks/QMenuModel.1/AyatanaMenuAction.qml
+ tests/mocks/QMenuModel.1/QDBusActionGroup.qml
+ tests/mocks/QMenuModel.1/actiondata.h
+ tests/mocks/QMenuModel.1/actionstateparser.cpp
+ tests/mocks/QMenuModel.1/actionstateparser.h
+ tests/mocks/QMenuModel.1/ayatanamenumodel.cpp
+ tests/mocks/QMenuModel.1/ayatanamenumodel.h
+ tests/mocks/QMenuModel.1/plugin.cpp
+ tests/mocks/QMenuModel.1/plugin.h
+ tests/mocks/QOfono/MockOfonoSimManager.qml
+ tests/mocks/QOfono/MockQOfono.cpp
+ tests/mocks/QOfono/MockQOfono.h
+ tests/mocks/QOfono/MockQOfonoManager.cpp
+ tests/mocks/QOfono/MockQOfonoManager.h
+ tests/mocks/QOfono/plugin.cpp
+ tests/mocks/QOfono/plugin.h
+ tests/mocks/QtMir/Application/ApplicationInfo.cpp
+ tests/mocks/QtMir/Application/ApplicationInfo.h
+ tests/mocks/QtMir/Application/ApplicationListModel.cpp
+ tests/mocks/QtMir/Application/ApplicationListModel.h
+ tests/mocks/QtMir/Application/ApplicationManager.cpp
+ tests/mocks/QtMir/Application/ApplicationManager.h
+ tests/mocks/QtMir/Application/MirMock.cpp
+ tests/mocks/QtMir/Application/MirMock.h
+ tests/mocks/QtMir/Application/MirSurface.cpp
+ tests/mocks/QtMir/Application/MirSurface.h
+ tests/mocks/QtMir/Application/MirSurfaceItem.cpp
+ tests/mocks/QtMir/Application/MirSurfaceItem.h
+ tests/mocks/QtMir/Application/MirSurfaceListModel.cpp
+ tests/mocks/QtMir/Application/MirSurfaceListModel.h
+ tests/mocks/QtMir/Application/SurfaceManager.cpp
+ tests/mocks/QtMir/Application/SurfaceManager.h
+ tests/mocks/QtMir/Application/VirtualKeyboard.cpp
+ tests/mocks/QtMir/Application/VirtualKeyboard.h
+ tests/mocks/QtMir/Application/plugin.cpp
+ tests/mocks/QtMir/Application/plugin.h
+ tests/mocks/QtMir/Application/resources/Kate.qml
+ tests/mocks/QtMir/Application/resources/KateDialog.qml
+ tests/mocks/QtMir/Application/resources/KateMenu.qml
+ tests/mocks/QtMultimedia/VideoSurface.qml
+ tests/mocks/QtMultimedia/declarativeplaylist.cpp
+ tests/mocks/QtMultimedia/declarativeplaylist.h
+ tests/mocks/QtMultimedia/mediaplayer.cpp
+ tests/mocks/QtMultimedia/mediaplayer.h
+ tests/mocks/QtMultimedia/plugin.cpp
+ tests/mocks/QtMultimedia/plugin.h
+ tests/mocks/QtMultimedia/videooutput.cpp
+ tests/mocks/QtMultimedia/videooutput.h
+ tests/mocks/SessionBroadcast/SessionBroadcast.cpp
+ tests/mocks/SessionBroadcast/SessionBroadcast.h
+ tests/mocks/SessionBroadcast/plugin.cpp
+ tests/mocks/SessionBroadcast/plugin.h
+ tests/mocks/UInput/mockuinput.cpp
+ tests/mocks/UInput/mockuinput.h
+ tests/mocks/UInput/plugin.cpp
+ tests/mocks/UInput/plugin.h
+ tests/mocks/Utils/EdgeBarrierSettings.qml
+ tests/mocks/Utils/Style.js
+ tests/mocks/Utils/URLDispatcher.cpp
+ tests/mocks/Utils/URLDispatcher.h
+ tests/mocks/Utils/WindowInputMonitor.qml
+ tests/mocks/Utils/plugin.cpp
+ tests/mocks/Utils/plugin.h
+ tests/mocks/WindowManager/MockScreensConfiguration.cpp
+ tests/mocks/WindowManager/WindowManagementPolicy.cpp
+ tests/mocks/WindowManager/WindowManagementPolicy.h
+ tests/mocks/WindowManager/WindowManagerPlugin.cpp
+ tests/mocks/WindowManager/WindowManagerPlugin.h
+ tests/mocks/Wizard/MockSystem.cpp
+ tests/mocks/Wizard/MockSystem.h
+ tests/mocks/Wizard/mockplugin.cpp
+ tests/mocks/Wizard/mockplugin.h
+ tests/mocks/indicator-service/mock-indicator-service.c
+ tests/mocks/liblightdm/GreeterPrivate.cpp
+ tests/mocks/liblightdm/GreeterPrivate.h
+ tests/mocks/liblightdm/MockController.cpp
+ tests/mocks/liblightdm/MockController.h
+ tests/mocks/liblightdm/MockGreeter.cpp
+ tests/mocks/liblightdm/MockSessionsModel.cpp
+ tests/mocks/liblightdm/MockSessionsModel.h
+ tests/mocks/liblightdm/MockUsersModel.cpp
+ tests/mocks/liblightdm/QLightDM/Greeter
+ tests/mocks/liblightdm/QLightDM/SessionsModel
+ tests/mocks/liblightdm/QLightDM/UsersModel
+ tests/mocks/liblightdm/SessionsModelPrivate.cpp
+ tests/mocks/liblightdm/SessionsModelPrivate.h
+ tests/mocks/liblightdm/UsersModelPrivate.cpp
+ tests/mocks/liblightdm/UsersModelPrivate.h
+ tests/mocks/libusermetrics/ColorTheme.cpp
+ tests/mocks/libusermetrics/ColorTheme.h
+ tests/mocks/libusermetrics/UserMetrics.cpp
+ tests/mocks/libusermetrics/UserMetrics.h
+ tests/plugins/AccountsService/AccountsServer.cpp
+ tests/plugins/AccountsService/AccountsServer.h
+ tests/plugins/AccountsService/LscServer.cpp
+ tests/plugins/AccountsService/LscServer.h
+ tests/plugins/AccountsService/PropertiesServer.cpp
+ tests/plugins/AccountsService/PropertiesServer.h
+ tests/plugins/AccountsService/client.cpp
+ tests/plugins/AccountsService/server.cpp
+ tests/plugins/AccountsService/types.h
+ tests/plugins/GlobalShortcut/GlobalShortcutTest.cpp
+ tests/plugins/GlobalShortcut/shortcut.qml
+ tests/plugins/LightDM/IntegratedLightDM/dbus.cpp
+ tests/plugins/LightDM/IntegratedLightDM/greeter.qml
+ tests/plugins/LightDM/IntegratedLightDM/integrated.cpp
+ tests/plugins/LightDM/IntegratedLightDM/pam.cpp
+ tests/plugins/LightDM/IntegratedLightDM/promptsmodel.cpp
+ tests/plugins/LightDM/IntegratedLightDM/sessionsmodel.cpp
+ tests/plugins/LightDM/IntegratedLightDM/usersmodel.cpp
+ tests/plugins/Lomiri/Gestures/GestureTest.cpp
+ tests/plugins/Lomiri/Gestures/GestureTest.h
+ tests/plugins/Lomiri/Gestures/TestItem.cpp
+ tests/plugins/Lomiri/Gestures/TestItem.h
+ tests/plugins/Lomiri/Gestures/empty.qml
+ tests/plugins/Lomiri/Gestures/touchGateExample.qml
+ tests/plugins/Lomiri/Gestures/tst_AxisVelocityCalculator.cpp
+ tests/plugins/Lomiri/Gestures/tst_FloatingFlickable.cpp
+ tests/plugins/Lomiri/Gestures/tst_FloatingFlickable.qml
+ tests/plugins/Lomiri/Gestures/tst_PressedOutsideNotifier.cpp
+ tests/plugins/Lomiri/Gestures/tst_PressedOutsideNotifier.qml
+ tests/plugins/Lomiri/Gestures/tst_TouchDispatcher.cpp
+ tests/plugins/Lomiri/Gestures/tst_TouchGate.cpp
+ tests/plugins/Lomiri/Gestures/tst_TouchGestureArea.cpp
+ tests/plugins/Lomiri/Gestures/tst_TouchGestureArea.qml
+ tests/plugins/Lomiri/Indicators/LomiriMenuModelStackTest.cpp
+ tests/plugins/Lomiri/Launcher/ualwrapper.cpp
+ tests/plugins/Lomiri/Launcher/ualwrapper.h
+ tests/plugins/Lomiri/Platform/platformtest.cpp
+ tests/plugins/Lomiri/Session/LightDMServer.cpp
+ tests/plugins/Lomiri/Session/LightDMServer.h
+ tests/plugins/Lomiri/Session/LogindServer.cpp
+ tests/plugins/Lomiri/Session/LogindServer.h
+ tests/plugins/Lomiri/Session/preload.c
+ tests/plugins/Lomiri/Session/server.cpp
+ tests/plugins/SessionBroadcast/BroadcastServer.cpp
+ tests/plugins/SessionBroadcast/BroadcastServer.h
+ tests/plugins/SessionBroadcast/server.cpp
+ tests/plugins/Utils/LomiriSortFilterProxyModelTest.cpp
+ tests/plugins/Utils/QLimitProxyModelTest.cpp
+ tests/plugins/Utils/URLDispatcherTest.cpp
+ tests/plugins/Utils/WindowInputMonitorTest.cpp
+ tests/plugins/Utils/WindowStateStorageTest.cpp
+ tests/plugins/Utils/tst_UtilsStyle.qml
+ tests/plugins/WindowManager/QtMirApplicationMocks.h
+ tests/plugins/Wizard/tst_pagelist.cpp
+ tests/plugins/Wizard/tst_system.cpp
+ tests/qmltests/ApplicationMenuDataLoader.qml
+ tests/qmltests/ApplicationMenus/tst_MenuBar.qml
+ tests/qmltests/ApplicationMenus/tst_MenuPopup.qml
+ tests/qmltests/Components/tst_Background.qml
+ tests/qmltests/Components/tst_Dialogs.qml
+ tests/qmltests/Components/tst_DragHandle.cpp
+ tests/qmltests/Components/tst_DragHandle.qml
+ tests/qmltests/Components/tst_DragHandle/BidirectionalShowable.qml
+ tests/qmltests/Components/tst_DragHandle/BottomEdgeShowable.qml
+ tests/qmltests/Components/tst_DragHandle/LeftEdgeShowable.qml
+ tests/qmltests/Components/tst_DragHandle/RightEdgeShowable.qml
+ tests/qmltests/Components/tst_DragHandle/SimpleButton.qml
+ tests/qmltests/Components/tst_DragHandle/TopEdgeShowable.qml
+ tests/qmltests/Components/tst_DraggingArea.qml
+ tests/qmltests/Components/tst_EdgeDragEvaluator.cpp
+ tests/qmltests/Components/tst_EdgeDragEvaluator.qml
+ tests/qmltests/Components/tst_LazyImage.qml
+ tests/qmltests/Components/tst_LazyImage/ImageControls.qml
+ tests/qmltests/Components/tst_Lockscreen.qml
+ tests/qmltests/Components/tst_ModeSwitchWarningDialog.qml
+ tests/qmltests/Components/tst_PhysicalKeysMapper.qml
+ tests/qmltests/Components/tst_Rating.qml
+ tests/qmltests/Components/tst_SharingPicker.qml
+ tests/qmltests/Components/tst_Showable.qml
+ tests/qmltests/Components/tst_VirtualTouchPad.qml
+ tests/qmltests/Components/tst_ZoomableImage.qml
+ tests/qmltests/EdgeBarrierControls.qml
+ tests/qmltests/Greeter/tst_Clock.qml
+ tests/qmltests/Greeter/tst_Greeter.qml
+ tests/qmltests/Greeter/tst_Infographics.qml
+ tests/qmltests/Launcher/tst_Launcher.qml
+ tests/qmltests/Notifications/tst_SwipeToAct.qml
+ tests/qmltests/Notifications/tst_VisualSnapDecisionsQueue.qml
+ tests/qmltests/Panel/Indicators/tst_IndicatorItem.qml
+ tests/qmltests/Panel/Indicators/tst_IndicatorMenuItemFactory.qml
+ tests/qmltests/Panel/Indicators/tst_IndicatorsLight.qml
+ tests/qmltests/Panel/Indicators/tst_MessageMenuItemFactory.qml
+ tests/qmltests/Panel/PanelTest.qml
+ tests/qmltests/Panel/tst_ActiveCallHint.qml
+ tests/qmltests/Panel/tst_MenuContent.qml
+ tests/qmltests/Panel/tst_PanelBar.qml
+ tests/qmltests/Panel/tst_PanelItemRow.qml
+ tests/qmltests/Panel/tst_PanelMenuPage.qml
+ tests/qmltests/Stage/ApplicationCheckBox.qml
+ tests/qmltests/Stage/SizeHintField.qml
+ tests/qmltests/Stage/SurfaceManagerControls.qml
+ tests/qmltests/Stage/SurfaceManagerField.qml
+ tests/qmltests/Stage/tst_ApplicationWindow.qml
+ tests/qmltests/Stage/tst_DecoratedWindow.qml
+ tests/qmltests/Stage/tst_DesktopStage.qml
+ tests/qmltests/Stage/tst_Splash.qml
+ tests/qmltests/Stage/tst_SurfaceContainer.qml
+ tests/qmltests/Stage/tst_TabletStage.qml
+ tests/qmltests/Stage/tst_WindowDecoration.qml
+ tests/qmltests/Stage/tst_WindowResizeArea.qml
+ tests/qmltests/Tutorial/tst_Tutorial.qml
+ tests/qmltests/Wizard/tst_Wizard.qml
+ tests/qmltests/tst_DeviceConfiguration.qml
+ tests/qmltests/tst_DisabledScreenNotice.qml
+ tests/qmltests/tst_OrientedShell.qml
+ tests/qmltests/tst_ShellApplication.qml
+ tests/qmltests/utils/Lomiri/Test/MockObjectForInstanceOfTest.qml
+ tests/qmltests/utils/Lomiri/Test/MockObjectForInstanceOfTestChild.qml
+ tests/qmltests/utils/Lomiri/Test/tst_LomiriTest.qml
+ tests/scripts/alert-launcher-icon.sh
+ tests/scripts/get-progress.sh
+ tests/scripts/list-launcher-icons.sh
+ tests/scripts/set-count-visible.sh
+ tests/scripts/set-count.sh
+ tests/scripts/set-progress.sh
+ tests/utils/modules/Lomiri/SelfTest/LomiriTestCase.qml
+ tests/utils/modules/Lomiri/SelfTest/MouseTouchEmulationCheckbox.qml
+ tests/utils/modules/Lomiri/SelfTest/StageTestCase.qml
+ tests/utils/modules/Lomiri/SelfTest/TouchEventSequenceWrapper.cpp
+ tests/utils/modules/Lomiri/SelfTest/TouchEventSequenceWrapper.h
+ tests/utils/modules/Lomiri/SelfTest/plugin.cpp
+ tests/utils/modules/Lomiri/SelfTest/plugin.h
+ tests/utils/modules/Lomiri/SelfTest/testutil.cpp
+ tests/utils/modules/Lomiri/SelfTest/testutil.h
+ tests/whitespace/check_whitespace.py
+ tools/menutool/menutool.cpp
+ tools/menutool/menutool.qml
+ tools/unlock-device
+Copyright: 2011, 2013, 2016, Canonical Ltd.
+  2011, 2013, Canonical Ltd.
+  2011, Canonical Ltd.
+  2011-2014, Canonical Ltd.
+  2012, Canonical Ltd.
+  2012-2013, 2015, Canonical Ltd.
+  2012-2013, 2015-2016, Canonical Ltd.
+  2012-2013, Canonical Ltd.
+  2012-2014, Canonical Ltd.
+  2012-2016, Canonical Ltd.
+  2012-2017, Canonical Ltd.
+  2013, 2015, Canonical Ltd.
+  2013, 2015-2016, Canonical Ltd.
+  2013, 2016, Canonical Ltd.
+  2013, Canonical Ltd.
+  2013-2014, 2016, Canonical Ltd.
+  2013-2014, Canonical Ltd.
+  2013-2015, Canonical Ltd.
+  2013-2016, Canonical Ltd.
+  2013-2017, Canonical Ltd.
+  2014, 2016, Canonical Ltd.
+  2014, Canonical Ltd.
+  2014-2015, Canonical Ltd.
+  2014-2016, Canonical Ltd.
+  2014-2017, Canonical Ltd.
+  2015, Canonical Ltd.
+  2015-2016, Canonical Ltd.
+  2015-2017, Canonical Ltd.
+  2016, Canonical Ltd.
+  2016-2017, Canonical Ltd.
+  2017, Canonical Ltd.
 License: GPL-3
+
+Files: plugins/Cursor/CursorImageProvider.cpp
+ plugins/Cursor/CursorImageProvider.h
+ plugins/Cursor/InputDispatcherFilter.cpp
+ plugins/Cursor/InputDispatcherFilter.h
+ plugins/Cursor/MousePointer.cpp
+ plugins/Cursor/MousePointer.h
+ plugins/Greeter/Lomiri/Launcher/launcheritem.cpp
+ plugins/Greeter/Lomiri/Launcher/launcheritem.h
+ plugins/Greeter/Lomiri/Launcher/launchermodelas.cpp
+ plugins/Greeter/Lomiri/Launcher/launchermodelas.h
+ plugins/Greeter/Lomiri/Launcher/plugin.cpp
+ plugins/Greeter/Lomiri/Launcher/quicklistmodel.cpp
+ plugins/Greeter/Lomiri/Launcher/quicklistmodel.h
+ plugins/Lomiri/DownloadDaemonListener/interface/metatypes.h
+ plugins/Lomiri/Indicators/Messaging/qml/ActionButton.qml
+ plugins/Lomiri/Indicators/actionrootstate.cpp
+ plugins/Lomiri/Indicators/actionrootstate.h
+ plugins/Lomiri/Indicators/indicator.cpp
+ plugins/Lomiri/Indicators/indicator.h
+ plugins/Lomiri/Indicators/indicatorsmodel.cpp
+ plugins/Lomiri/Indicators/indicatorsmodel.h
+ plugins/Lomiri/Indicators/lomirimenumodelcache.cpp
+ plugins/Lomiri/Indicators/lomirimenumodelcache.h
+ plugins/Lomiri/Indicators/lomirimenumodelstack.cpp
+ plugins/Lomiri/Indicators/lomirimenumodelstack.h
+ plugins/Lomiri/Indicators/modelactionrootstate.cpp
+ plugins/Lomiri/Indicators/modelactionrootstate.h
+ plugins/Lomiri/Indicators/modelprinter.cpp
+ plugins/Lomiri/Indicators/modelprinter.h
+ plugins/Lomiri/Indicators/plugin.cpp
+ plugins/Lomiri/Indicators/plugin.h
+ plugins/Lomiri/Indicators/rootstateparser.cpp
+ plugins/Lomiri/Indicators/rootstateparser.h
+ plugins/Lomiri/Indicators/sharedlomirimenumodel.cpp
+ plugins/Lomiri/Indicators/sharedlomirimenumodel.h
+ plugins/Lomiri/InputInfo/plugin.cpp
+ plugins/Lomiri/InputInfo/plugin.h
+ plugins/Lomiri/Launcher/asadapter.cpp
+ plugins/Lomiri/Launcher/asadapter.h
+ plugins/Lomiri/Launcher/dbusinterface.cpp
+ plugins/Lomiri/Launcher/dbusinterface.h
+ plugins/Lomiri/Launcher/gsettings.cpp
+ plugins/Lomiri/Launcher/gsettings.h
+ plugins/Lomiri/Launcher/launcheritem.cpp
+ plugins/Lomiri/Launcher/launcheritem.h
+ plugins/Lomiri/Launcher/launchermodel.cpp
+ plugins/Lomiri/Launcher/launchermodel.h
+ plugins/Lomiri/Launcher/plugin.cpp
+ plugins/Lomiri/Launcher/quicklistmodel.cpp
+ plugins/Lomiri/Session/dbuslomirisessionservice.cpp
+ plugins/Lomiri/Session/dbuslomirisessionservice.h
+ plugins/Lomiri/Session/orientationlock.cpp
+ plugins/Lomiri/Session/orientationlock.h
+ plugins/Utils/constants.cpp
+ plugins/Utils/constants.h
+ plugins/Utils/deviceconfig.h
+ plugins/Utils/easingcurve.cpp
+ plugins/Utils/easingcurve.h
+ plugins/Utils/globalfunctions.cpp
+ plugins/Utils/globalfunctions.h
+ plugins/Utils/tabfocusfence.cpp
+ plugins/Utils/tabfocusfence.h
+ plugins/WindowManager/AvailableDesktopArea.cpp
+ plugins/WindowManager/AvailableDesktopArea.h
+ plugins/WindowManager/Screen.cpp
+ plugins/WindowManager/Screen.h
+ plugins/WindowManager/ScreenAttached.cpp
+ plugins/WindowManager/ScreenAttached.h
+ plugins/WindowManager/ScreenWindow.cpp
+ plugins/WindowManager/ScreenWindow.h
+ plugins/WindowManager/Screens.cpp
+ plugins/WindowManager/Screens.h
+ plugins/WindowManager/WindowMargins.cpp
+ plugins/WindowManager/WindowMargins.h
+ qml/ApplicationMenus/ApplicationMenuItemFactory.qml
+ qml/ApplicationMenus/MenuBar.qml
+ qml/ApplicationMenus/MenuItem.qml
+ qml/ApplicationMenus/MenuNavigator.qml
+ qml/ApplicationMenus/MenuPopup.qml
+ qml/ApplicationMenus/RegisteredApplicationMenuModel.qml
+ qml/Notifications/NotificationButton.qml
+ qml/Notifications/NotificationMenuItemFactory.qml
+ qml/Panel/Indicators/IndicatorBase.qml
+ qml/Panel/Indicators/IndicatorDelegate.qml
+ qml/Panel/Indicators/IndicatorItem.qml
+ qml/Panel/Indicators/IndicatorMenuItemFactory.qml
+ qml/Panel/Indicators/MessageMenuItemFactory.qml
+ qml/Panel/Indicators/client/IndicatorRepresentation.qml
+ qml/Panel/Indicators/client/IndicatorsClient.qml
+ qml/Panel/Indicators/client/IndicatorsList.qml
+ qml/Panel/Indicators/client/IndicatorsTree.qml
+ qml/Panel/PanelMenuPage.qml
+ qml/Stage/ApplicationWindow.qml
+ qml/Stage/MainViewStyle.qml
+ qml/Stage/OrientationChangeAnimation.qml
+ qml/Stage/PromptSurfaceAnimations.qml
+ qml/Stage/Splash.qml
+ qml/Stage/SurfaceContainer.qml
+ tests/mocks/GSettings.1.0/fake_gsettings.cpp
+ tests/mocks/GSettings.1.0/fake_gsettings.h
+ tests/mocks/Lomiri/Connectivity/networking-status.cpp
+ tests/mocks/Lomiri/Connectivity/networking-status.h
+ tests/mocks/Lomiri/Connectivity/plugin.cpp
+ tests/mocks/Lomiri/Connectivity/plugin.h
+ tests/mocks/Lomiri/Indicators/ActionRootState.qml
+ tests/mocks/Lomiri/Indicators/ModelActionRootState.qml
+ tests/mocks/Lomiri/Indicators/fakeindicatorsmodel.cpp
+ tests/mocks/Lomiri/Indicators/fakeindicatorsmodel.h
+ tests/mocks/Lomiri/Indicators/fakelomirimenumodelcache.cpp
+ tests/mocks/Lomiri/Indicators/fakelomirimenumodelcache.h
+ tests/mocks/Lomiri/InputInfo/mockcontroller.cpp
+ tests/mocks/Lomiri/InputInfo/mockcontroller.h
+ tests/mocks/Lomiri/InputInfo/plugin.cpp
+ tests/mocks/Lomiri/InputInfo/plugin.h
+ tests/mocks/Lomiri/InputInfo/qinputdeviceinfo_mock.cpp
+ tests/mocks/Lomiri/InputInfo/qinputdeviceinfo_mock_p.h
+ tests/mocks/Lomiri/Launcher/MockLauncherItem.cpp
+ tests/mocks/Lomiri/Launcher/MockLauncherItem.h
+ tests/mocks/Lomiri/Launcher/MockLauncherModel.cpp
+ tests/mocks/Lomiri/Launcher/MockLauncherModel.h
+ tests/mocks/Lomiri/Launcher/MockQuickListModel.cpp
+ tests/mocks/Lomiri/Launcher/MockQuickListModel.h
+ tests/mocks/Lomiri/Launcher/plugin.cpp
+ tests/mocks/Lomiri/Launcher/plugin.h
+ tests/mocks/Lomiri/Notifications/MockActionModel.cpp
+ tests/mocks/Lomiri/Notifications/MockActionModel.h
+ tests/mocks/Lomiri/Notifications/MockNotification.cpp
+ tests/mocks/Lomiri/Notifications/MockNotification.h
+ tests/mocks/Lomiri/Notifications/MockNotificationModel.cpp
+ tests/mocks/Lomiri/Notifications/MockNotificationModel.h
+ tests/mocks/Lomiri/Notifications/plugin.cpp
+ tests/mocks/Lomiri/Notifications/plugin.h
+ tests/mocks/QMenuModel.1/dbus-enums.h
+ tests/mocks/QtMir/Application/ObjectListModel.h
+ tests/mocks/QtMir/Application/resources/MirSurfaceItem.qml
+ tests/mocks/QtMir/Application/resources/VirtualKeyboard.qml
+ tests/mocks/Utils/constants.cpp
+ tests/mocks/Utils/constants.h
+ tests/mocks/Utils/windowstatestorage.cpp
+ tests/mocks/Utils/windowstatestorage.h
+ tests/mocks/WindowManager/MockScreenWindow.cpp
+ tests/mocks/WindowManager/MockScreenWindow.h
+ tests/mocks/WindowManager/MockScreens.cpp
+ tests/mocks/WindowManager/MockScreens.h
+ tests/plugins/Cursor/TextEntry.qml
+ tests/plugins/Cursor/tst_Cursor.qml
+ tests/plugins/Greeter/Lomiri/Launcher/launchermodelastest.cpp
+ tests/plugins/Lomiri/Indicators/IndicatorsManagerTest.cpp
+ tests/plugins/Lomiri/Indicators/IndicatorsModelTest.cpp
+ tests/plugins/Lomiri/Indicators/MenuContentActivatorTest.cpp
+ tests/plugins/Lomiri/Indicators/RootActionStateTest.cpp
+ tests/plugins/Lomiri/Indicators/SharedLomiriMenuModelTest.cpp
+ tests/plugins/Lomiri/Launcher/appdrawermodeltest.cpp
+ tests/plugins/Lomiri/Launcher/gsettings.cpp
+ tests/plugins/Lomiri/Launcher/gsettings.h
+ tests/plugins/Lomiri/Launcher/launchermodeltest.cpp
+ tests/plugins/Lomiri/Session/sessionbackendtest.cpp
+ tests/plugins/SessionBroadcast/sessionbroadcasttest.cpp
+ tests/qmltests/Notifications/Notification.qml
+ tests/qmltests/Notifications/tst_Notifications.qml
+ tests/qmltests/Notifications/tst_OptionToggle.qml
+ tools/indicatorsclient/indicatorsclient.cpp
+ tools/indicatorsclient/indicatorsclient.h
+ tools/indicatorsclient/main.cpp
+Copyright: 2012, Canonical Ltd.
+  2013, 2015, Canonical Ltd.
+  2013, Canonical Ltd.
+  2013-2015, Canonical Ltd.
+  2013-2016, Canonical Ltd.
+  2013-2017, Canonical Ltd.
+  2014, Canonical Ltd.
+  2014-2015, Canonical Ltd.
+  2014-2016, Canonical Ltd.
+  2015, Canonical Ltd.
+  2016, Canonical Ltd.
+  2016-2017, Canonical Ltd.
+  2017, Canonical Ltd.
+License: LGPL-3
+
+Files: plugins/Lomiri/Launcher/appdrawermodel.cpp
+ plugins/Lomiri/Launcher/appdrawermodel.h
+ qml/Components/BackgroundBlur.qml
+ qml/Components/Lockscreen.qml
+ qml/Components/Showable.qml
+ qml/Components/Wallpaper.qml
+ qml/Components/ImageResolver.qml
+ qml/Greeter/CoverPage.qml
+ qml/Greeter/Greeter.qml
+ qml/Greeter/GreeterView.qml
+ qml/Greeter/ShimGreeter.qml
+ qml/Launcher/Drawer.qml
+ qml/Launcher/DrawerGridView.qml
+ qml/Launcher/Launcher.qml
+ qml/Panel/Panel.qml
+ qml/Panel/PanelBar.qml
+ qml/Panel/PanelItemRow.qml
+ qml/Panel/PanelMenu.qml
+ qml/Shell.qml
+ qml/Stage/Stage.qml
+ tests/mocks/Lomiri/Indicators/fakeindicatorsmodeldata.js
+ tests/mocks/Lomiri/Launcher/MockAppDrawerModel.cpp
+ tests/mocks/Lomiri/Launcher/MockAppDrawerModel.h
+ tests/plugins/WindowManager/tst_TopLevelWindowModel.cpp
+ tests/qmltests/Components/tst_ImageResolver.qml
+ tests/qmltests/Greeter/TestView.qml
+ tests/qmltests/Greeter/tst_GreeterView.qml
+ tests/qmltests/Launcher/tst_Drawer.qml
+ tests/qmltests/Panel/PanelUI.qml
+ tests/qmltests/Panel/tst_Panel.qml
+ tests/qmltests/Panel/tst_PanelMenu.qml
+ tests/qmltests/Panel/tst_PanelSmallScreen.qml
+ tests/qmltests/Stage/tst_PhoneStage.qml
+ tests/qmltests/Stage/tst_QMLTopLevelWindowModel.qml
+ tests/qmltests/tst_Shell.qml
+ tests/qmltests/tst_ShellWithPin.qml
+Copyright: 2013, Canonical Ltd.
+  2013-2014, Canonical Ltd.
+  2013-2015, Canonical Ltd.
+  2013-2016, Canonical Ltd.
+  2013-2017, Canonical Ltd.
+  2014, Canonical Ltd.
+  2014-2016, Canonical Ltd.
+  2014-2017, Canonical Ltd.
+  2015, Canonical Ltd.
+  2015-2016, Canonical Ltd.
+  2016, Canonical Ltd.
+  2017, Canonical Ltd.
+  2019, UBports Foundation
+  2019-2021, UBports Foundation
+  2020, UBports Foundation
+  2020-2021, UBports Foundation
+  2021, UBports Foundation
+License: GPL-3
+
+Files: tests/autopilot/lomiri/__init__.py
+ tests/autopilot/lomiri/application_lifecycle/__init__.py
+ tests/autopilot/lomiri/application_lifecycle/tests/__init__.py
+ tests/autopilot/lomiri/application_lifecycle/tests/test_application_lifecycle.py
+ tests/autopilot/lomiri/application_lifecycle/tests/test_url_dispatcher.py
+ tests/autopilot/lomiri/fixture_setup.py
+ tests/autopilot/lomiri/greeter/__init__.py
+ tests/autopilot/lomiri/greeter/tests/__init__.py
+ tests/autopilot/lomiri/greeter/tests/test_args.py
+ tests/autopilot/lomiri/indicators/__init__.py
+ tests/autopilot/lomiri/indicators/tests/__init__.py
+ tests/autopilot/lomiri/indicators/tests/test_action_latency.py
+ tests/autopilot/lomiri/indicators/tests/test_display_indicator.py
+ tests/autopilot/lomiri/indicators/tests/test_indicators.py
+ tests/autopilot/lomiri/launcher.py
+ tests/autopilot/lomiri/process_helpers.py
+ tests/autopilot/lomiri/sensors.py
+ tests/autopilot/lomiri/shell/__init__.py
+ tests/autopilot/lomiri/shell/create_interactive_notification.py
+ tests/autopilot/lomiri/shell/emulators.py
+ tests/autopilot/lomiri/shell/fixture_setup.py
+ tests/autopilot/lomiri/shell/tests/__init__.py
+ tests/autopilot/lomiri/shell/tests/test_helpers.py
+ tests/autopilot/lomiri/shell/tests/test_lock_screen.py
+ tests/autopilot/lomiri/shell/tests/test_notifications.py
+ tests/autopilot/lomiri/shell/tests/test_rotation.py
+ tests/autopilot/lomiri/shell/tests/test_system_integration.py
+ tests/autopilot/lomiri/shell/tests/test_upstart.py
+ tests/autopilot/setup.py
+Copyright: 2012-2013, 2015, Canonical Ltd.
+  2012-2015, Canonical Ltd.
+  2013, Canonical Ltd.
+  2013-2015, Canonical Ltd.
+  2014-2015, Canonical Ltd.
+  2015, Canonical Ltd.
+License: GPL-3+
+
+Files: plugins/Lomiri/DownloadDaemonListener/DownloadTracker.cpp
+ plugins/Lomiri/DownloadDaemonListener/DownloadTracker.h
+ plugins/Lomiri/DownloadDaemonListener/plugin.cpp
+ plugins/Lomiri/DownloadDaemonListener/plugin.h
+ plugins/Lomiri/Gestures/AxisVelocityCalculator.cpp
+ plugins/Lomiri/Gestures/AxisVelocityCalculator.h
+ plugins/Utils/ElapsedTimer.h
+ src/DebuggingController.cpp
+ src/DebuggingController.h
+ tests/mocks/Lomiri/DownloadDaemonListener/MockDownloadTracker.cpp
+ tests/mocks/Lomiri/DownloadDaemonListener/MockDownloadTracker.h
+Copyright: 2013, Canonical Ltd.
+  2013-2016, Canonical Ltd.
+  2015, Canonical Ltd.
+  2016, Canonical Ltd.
+License: LGPL-2.1
+
+Files: plugins/Lomiri/Launcher/xdgwatcher.cpp
+ plugins/Lomiri/Launcher/xdgwatcher.h
+ plugins/ProcessControl/CMakeLists.txt
+ plugins/ProcessControl/LocationWatcher.cpp
+ plugins/ProcessControl/LocationWatcher.h
+ plugins/ProcessControl/ProcessControl.cpp
+ plugins/ProcessControl/ProcessControl.h
+ plugins/ProcessControl/com.lomiri.ProcessControl.xml
+ plugins/ProcessControl/plugin.cpp
+ plugins/ProcessControl/plugin.h
+ plugins/ProcessControl/qmldir
+ qml/Components/GestureAreaSizeHint.qml
+ qml/Greeter/ClockPinPrompt.qml
+ tests/mocks/Lomiri/SystemSettings/Update/MockSystemImage.qml
+ tests/mocks/Utils/deviceinfo.cpp
+ tests/mocks/Utils/deviceinfo.h
+ tests/plugins/Lomiri/Launcher/xdgwatcher.cpp
+ tests/plugins/Lomiri/Launcher/xdgwatcher.h
+ tests/qmltests/Components/tst_Wallpaper.qml
+ tests/qmltests/Greeter/tst_PinCodeClock.qml
+ tests/qmltests/tst_ShellWithPinClock.qml
+Copyright: 2019, UBports Foundation.
+  2021, UBports Foundation
+  2022, UBports Foundation
+  2025, UBports Foundation
+License: GPL-3
+
+Files: plugins/Wizard/System.cpp
+ plugins/Wizard/System.h
+ qml/Wizard/Page.qml
+ qml/Wizard/Pages.qml
+ qml/Wizard/Pages/10-welcome.qml
+ qml/Wizard/Pages/80-finished.qml
+ qml/Wizard/Wizard.qml
+Copyright: 2013, 2015, Canonical Ltd.
+  2013-2016, Canonical Ltd.
+  2014-2016, Canonical Ltd.
+  2018, The UBports Project
+License: GPL-3
+
+Files: plugins/Utils/deviceconfig.cpp
+ plugins/Utils/windowstatestorage.cpp
+ plugins/Utils/windowstatestorage.h
+ plugins/WindowManager/TopLevelWindowModel.cpp
+ plugins/WindowManager/TopLevelWindowModel.h
+ qml/Panel/Indicators/IndicatorsLight.qml
+Copyright: 2014, Canonical Ltd.
+  2015-2016, Canonical Ltd.
+  2016, Canonical Ltd.
+  2016-2017, Canonical Ltd.
+  2019, UBports Foundation
+  2019-2022, UBports Foundation
+  2021, UBports Foundation
+License: LGPL-3
+
+Files: plugins/Utils/qvariantlistmodel.cpp
+ plugins/Utils/qvariantlistmodel.h
+ tests/plugins/Utils/ModelTest.cpp
+ tests/plugins/Utils/ModelTest.h
+ tests/uqmlscene/main.cpp
+Copyright: 2013, Digia Plc and/or its subsidiary(-ies).
+License: LGPL-2.1~Digia-Qt-LGPL-Exception or GPL-3
+Comment:
+ More relaxed permissions are granted via the LGPL_EXCEPTIONS.txt file
+ shipped in the upstream code.
+
+Files: plugins/Wizard/Changelog.cpp
+ plugins/Wizard/Changelog.h
+ qml/Wizard/Pages/10-welcome-update.qml
+ qml/Wizard/Pages/11-changelog.qml
+ qml/Wizard/Pages/78-firmware-update.qml.disabled
+Copyright: 2018, The UBports Project
+License: GPL-3
+
+Files: plugins/Lomiri/InputInfo/linux/qinputdeviceinfo_linux.cpp
+ plugins/Lomiri/InputInfo/linux/qinputdeviceinfo_linux_p.h
+ plugins/Lomiri/InputInfo/qinputinfo.cpp
+ plugins/Lomiri/InputInfo/qinputinfo.h
+Copyright: 2014, Canonical Ltd. and/or its subsidiary(-ies).
+License: LGPL-2.1~Digia-Qt-LGPL-Exception or GPL-3
+Comment:
+ There may be a copy+paste flaw in these files upstream-side and the real
+ copyright holder may in fact be "Digia Plc and/or its subsidiary(-ies)."
+ .
+ When applying LGPL-2.1, more relaxed permissions are granted via the
+ LGPL_EXCEPTIONS.txt file shipped in the upstream code.
+
+Files: plugins/BatteryMonitor/BatteryMonitor.cpp
+ plugins/BatteryMonitor/BatteryMonitor.h
+ plugins/BatteryMonitor/plugin.cpp
+ plugins/BatteryMonitor/plugin.h
+Copyright: 2023, Muhammad <muhammad23012009@hotmail.com>
+License: GPL-3
+
+Files: cmake/modules/EnableCoverageReport.cmake
+ cmake/modules/FindLcov.cmake
+ cmake/modules/Findgcovr.cmake
+Copyright: 2010, Johannes Wienke <jwienke at techfak dot uni-bielefeld dot de>
+  2011, Johannes Wienke <jwienke at techfak dot uni-bielefeld dot de>
+License: GPL-2+
+
+Files: qml/Greeter/ButtonPrompt.qml
+ qml/Greeter/PinPrompt.qml
+ qml/Greeter/TextPrompt.qml
+Copyright: 2016, Canonical, Ltd.
+  2021, Capsia
+License: GPL-3
+
+Files: plugins/LightDM/IntegratedLightDM/liblightdm/UsersModel.h
+ tests/mocks/liblightdm/MockUsersModel.h
+Copyright: 2010-2011, David Edmundson
+  2013, Canonical Ltd.
+  2013-2016, Canonical Ltd.
+License: GPL-3
+
+Files: plugins/LightDM/IntegratedLightDM/liblightdm/Greeter.h
+ tests/mocks/liblightdm/MockGreeter.h
+Copyright: 2010-2011, David Edmundson
+  2010-2011, Robert Ancell
+  2013, Canonical Ltd.
+  2013-2016, Canonical Ltd.
+License: GPL-3
+
+Files: plugins/Lomiri/InputInfo/qdeclarativeinputdevicemodel.cpp
+ plugins/Lomiri/InputInfo/qdeclarativeinputdevicemodel_p.h
+Copyright: 2015, Jolla.
+License: LGPL-2.1~Digia-Qt-LGPL-Exception or GPL-3
+Comment:
+ When applying LGPL-2.1, more relaxed permissions are granted via the
+ LGPL_EXCEPTIONS.txt file shipped in the upstream code.
+
+Files: plugins/WindowManager/InputMethodManager.cpp
+ plugins/WindowManager/InputMethodManager.h
+Copyright: 2019, UBports Foundation
+License: LGPL-3
+
+Files: plugins/Lomiri/DownloadDaemonListener/interface/downloadtrackeradaptor.cpp
+ plugins/Lomiri/DownloadDaemonListener/interface/downloadtrackeradaptor.h
+Copyright: 2013-2016, Canonical Ltd.
+License: LGPL-2.1 or LGPL-3
+Comment:
+ These file were generated by qdbusxml2cpp version 0.8.
+ .
+ qdbusxml2cpp is Copyright (C) 2015 The Qt Company Ltd.
+ .
+ For the resulting files, we assume the same license and copyright holder
+ as the for rest of the DownloadDaemonListener code.
+
+Files: src/MouseTouchAdaptor.cpp
+Copyright: 2013, 2015, Canonical Ltd.
+License: GPL-3
+Comment:
+ Some parts of the code were copied from the XCB platform plugin
+ of the Qt Toolkit:
+ .
+ Copyright (C) 2015, The Qt Company Ltd.
+ Licensed under LGPL-2.1 or LGPL-3 (with exceptions).
+ .
+ Exceptions are listed in LGPL_EXCEPTION.txt.
+
+Files: plugins/Lomiri/Gestures/TouchDispatcher.cpp
+Copyright: 2013, Digia Plc and/or its subsidiary(-ies)
+  2014-2015, Canonical Ltd.
+License: GPL-3
+
+Files: plugins/Cursor/3rd_party/xcursor/xcursor.c
+ plugins/Cursor/3rd_party/xcursor/xcursor.h
+Copyright: 2002, Keith Packard
+License: NTP
+
+Files: qml/Stage/Spread/KeySpline.js
+Copyright: 2012, Gaetan Renaudeau <renaudeau.gaetan@gmail.com>
+License: Expat
+
+Files: plugins/Lomiri/Launcher/quicklistmodel.h
+Copyright: 201, 2015 Canonical Ltd.
+License: LGPL-3
+Comment:
+ YEAR_1 in copyright line very very likely a typo.
+
+Files: data/systemd-user/Xwayland.lomiri.in
+Copyright: 2023, Alfred Neumayer <dev.beidl@gmail.com>
+License: GPL-3
+
+Files: data/systemd-user/lomiri-systemd-wrapper.in
+Copyright: 2021, UBports Foundation
+License: GPL-3
+Comment:
+ Assuming license from COPYING file.
+
+Files:
+ .crossbuilder/post_deploy
+ .gitignore
+ .project
+ .pydevproject
+ .settings/Autopilot?List.launch
+ .settings/Autopilot?Run.launch
+ AUTHORS
+ CMakeLists.txt
+ CODING
+ ChangeLog
+ LGPL_EXCEPTION.txt
+ README.md
+ clickable.yaml
+ cmake/modules/ParseArguments.cmake
+ cmake/modules/QmlTest.cmake
+ cmake/modules/autopilot.cmake
+ data/51-lomiri-greeter.conf
+ data/CMakeLists.txt
+ data/devices.conf
+ data/indicators-client.desktop.in.in
+ data/lomiri-greeter.desktop.in.in
+ data/lomiri-greeter.rules
+ data/lomiri.desktop.in.in
+ data/systemd-user/CMakeLists.txt
+ data/systemd-user/lomiri-MODE.service.in
+ data/systemd-user/lomiri-indicators.target
+ data/test.sensors
+ doc/CMakeLists.txt
+ doc/DirectionalDragArea.svg
+ doc/Doxyfile.in
+ doc/devices.conf
+ include/CMakeLists.txt
+ plugins/AccountsService/CMakeLists.txt
+ plugins/BatteryMonitor/CMakeLists.txt
+ plugins/BatteryMonitor/qmldir
+ plugins/AccountsService/com.lomiri.shell.AccountsService.xml
+ plugins/AccountsService/qmldir
+ plugins/CMakeLists.txt
+ plugins/Cursor/3rd_party/CMakeLists.txt
+ plugins/Cursor/3rd_party/xcursor/CMakeLists.txt
+ plugins/Cursor/CMakeLists.txt
+ plugins/Cursor/qmldir
+ plugins/GlobalShortcut/CMakeLists.txt
+ plugins/GlobalShortcut/qmldir
+ plugins/Greeter/CMakeLists.txt
+ plugins/Greeter/Lomiri/CMakeLists.txt
+ plugins/Greeter/Lomiri/Launcher/CMakeLists.txt
+ plugins/Greeter/Lomiri/Launcher/qmldir
+ plugins/LightDM/CMakeLists.txt
+ plugins/LightDM/FullLightDM/CMakeLists.txt
+ plugins/LightDM/FullLightDM/qmldir
+ plugins/LightDM/IntegratedLightDM/CMakeLists.txt
+ plugins/LightDM/IntegratedLightDM/liblightdm/CMakeLists.txt
+ plugins/LightDM/IntegratedLightDM/qmldir
+ plugins/LightDM/qmldir
+ plugins/Lomiri/ApplicationMenu/CMakeLists.txt
+ plugins/Lomiri/ApplicationMenu/com.lomiri.MenuRegistrar.xml
+ plugins/Lomiri/ApplicationMenu/qmldir
+ plugins/Lomiri/CMakeLists.txt
+ plugins/Lomiri/DownloadDaemonListener/CMakeLists.txt
+ plugins/Lomiri/DownloadDaemonListener/qmldir
+ plugins/Lomiri/Gestures/CMakeLists.txt
+ plugins/Lomiri/Gestures/qmldir
+ plugins/Lomiri/Indicators/CMakeLists.txt
+ plugins/Lomiri/Indicators/qmldir
+ plugins/Lomiri/InputInfo/CMakeLists.txt
+ plugins/Lomiri/InputInfo/qmldir
+ plugins/Lomiri/Launcher/CMakeLists.txt
+ plugins/Lomiri/Launcher/qmldir
+ plugins/Lomiri/ModemConnectivity/CMakeLists.txt
+ plugins/Lomiri/ModemConnectivity/qmldir
+ plugins/Lomiri/Platform/CMakeLists.txt
+ plugins/Lomiri/Platform/qmldir
+ plugins/Lomiri/Session/CMakeLists.txt
+ plugins/Lomiri/Session/qmldir
+ plugins/Powerd/CMakeLists.txt
+ plugins/Powerd/qmldir
+ plugins/ScreenshotDirectory/CMakeLists.txt
+ plugins/ScreenshotDirectory/ScreenGrabber.qmltypes
+ plugins/ScreenshotDirectory/qmldir
+ plugins/SessionBroadcast/CMakeLists.txt
+ plugins/SessionBroadcast/qmldir
+ plugins/UInput/CMakeLists.txt
+ plugins/UInput/qmldir
+ plugins/Utils/CMakeLists.txt
+ plugins/Utils/qmldir
+ plugins/WindowManager/CMakeLists.txt
+ plugins/WindowManager/qmldir
+ plugins/Wizard/50-com.lomiri.wizard.rules
+ plugins/Wizard/CMakeLists.txt
+ plugins/Wizard/QtMir/Application/CMakeLists.txt
+ plugins/Wizard/QtMir/Application/qmldir
+ plugins/Wizard/QtMir/CMakeLists.txt
+ plugins/Wizard/Utils/CMakeLists.txt
+ plugins/Wizard/Utils/qmldir
+ plugins/Wizard/qmldir
+ po/CMakeLists.txt
+ po/LINGUAS
+ po/POTFILES.in
+ qml/ApplicationMenus/qmldir
+ qml/CMakeLists.txt
+ qml/Components/PanelState/qmldir
+ qml/Components/SearchHistoryModel/qmldir
+ qml/Components/graphics/close@20.png
+ qml/Components/graphics/icon_star_empty@20.png
+ qml/Components/graphics/icon_star_full@20.png
+ qml/Components/graphics/icon_star_half@20.png
+ qml/Components/graphics/icon_star_off@20.png
+ qml/Components/graphics/icon_star_on@20.png
+ qml/Components/graphics/non-selected@18.png
+ qml/Components/graphics/non-selected@18.sci
+ qml/Components/graphics/window-close.svg
+ qml/Components/graphics/window-maximize.svg
+ qml/Components/graphics/window-minimize.svg
+ qml/Components/graphics/window-window.svg
+ qml/Greeter/graphics/dot_empty.png
+ qml/Greeter/graphics/dot_filled.png
+ qml/Greeter/graphics/dot_pointer.png
+ qml/Greeter/graphics/icon_arrow.png
+ qml/Greeter/graphics/session_icons/gnome_badge.png
+ qml/Greeter/graphics/session_icons/kde_badge.png
+ qml/Greeter/graphics/session_icons/recovery_console_badge.png
+ qml/Greeter/graphics/session_icons/ubuntu_badge.png
+ qml/Greeter/graphics/session_icons/unknown_badge.png
+ qml/Greeter/qmldir
+ qml/Launcher/graphics/divider-line.png
+ qml/Launcher/graphics/focused_app_arrow@30.png
+ qml/Launcher/graphics/home.svg
+ qml/Launcher/graphics/quicklist_tooltip@30.png
+ qml/Panel/graphics/rectangular_dropshadow@30.png
+ qml/Panel/graphics/rectangular_dropshadow@30.sci
+ qml/Stage/graphics/PageHeaderBaseDividerBottom@18.png
+ qml/Stage/graphics/PageHeaderBaseDividerLight@18.png
+ qml/Stage/graphics/PageHeaderBaseDividerLight@18.sci
+ qml/Stage/graphics/arrows-centre.png
+ qml/Stage/graphics/arrows.png
+ qml/Stage/graphics/multi-monitor_drop-here.png
+ qml/Stage/graphics/multi-monitor_leave.png
+ qml/Stage/graphics/sidestage_drag.svg
+ qml/Stage/graphics/sidestage_handle@20.png
+ qml/Stage/graphics/sidestage_handle@20.sci
+ qml/Stage/graphics/sidestage_open.svg
+ qml/Stage/graphics/window-close.svg
+ qml/Tutorial/graphics/arrow.svg
+ qml/Tutorial/graphics/background1.png
+ qml/Tutorial/graphics/background2.png
+ qml/Wizard/Pages/data/Desktop_header_bkg.png
+ qml/Wizard/Pages/data/Desktop_splash_screen_bkg.png
+ qml/Wizard/Pages/data/Phone_header_bkg.png
+ qml/Wizard/Pages/data/Phone_splash_screen_bkg.png
+ qml/Wizard/Pages/data/Tick@30.png
+ qml/Wizard/Pages/data/timezonemap/map.png
+ qml/Wizard/Pages/data/timezonemap/pin.png
+ qml/Wizard/Pages/data/timezonemap/timezone_-1.png
+ qml/Wizard/Pages/data/timezonemap/timezone_-10.png
+ qml/Wizard/Pages/data/timezonemap/timezone_-11.png
+ qml/Wizard/Pages/data/timezonemap/timezone_-2.png
+ qml/Wizard/Pages/data/timezonemap/timezone_-3.5.png
+ qml/Wizard/Pages/data/timezonemap/timezone_-3.png
+ qml/Wizard/Pages/data/timezonemap/timezone_-4.5.png
+ qml/Wizard/Pages/data/timezonemap/timezone_-4.png
+ qml/Wizard/Pages/data/timezonemap/timezone_-5.png
+ qml/Wizard/Pages/data/timezonemap/timezone_-6.png
+ qml/Wizard/Pages/data/timezonemap/timezone_-7.png
+ qml/Wizard/Pages/data/timezonemap/timezone_-8.png
+ qml/Wizard/Pages/data/timezonemap/timezone_-9.5.png
+ qml/Wizard/Pages/data/timezonemap/timezone_-9.png
+ qml/Wizard/Pages/data/timezonemap/timezone_0.png
+ qml/Wizard/Pages/data/timezonemap/timezone_1.png
+ qml/Wizard/Pages/data/timezonemap/timezone_10.5.png
+ qml/Wizard/Pages/data/timezonemap/timezone_10.png
+ qml/Wizard/Pages/data/timezonemap/timezone_11.png
+ qml/Wizard/Pages/data/timezonemap/timezone_12.75.png
+ qml/Wizard/Pages/data/timezonemap/timezone_12.png
+ qml/Wizard/Pages/data/timezonemap/timezone_13.png
+ qml/Wizard/Pages/data/timezonemap/timezone_2.png
+ qml/Wizard/Pages/data/timezonemap/timezone_3.5.png
+ qml/Wizard/Pages/data/timezonemap/timezone_3.png
+ qml/Wizard/Pages/data/timezonemap/timezone_4.5.png
+ qml/Wizard/Pages/data/timezonemap/timezone_4.png
+ qml/Wizard/Pages/data/timezonemap/timezone_5.5.png
+ qml/Wizard/Pages/data/timezonemap/timezone_5.75.png
+ qml/Wizard/Pages/data/timezonemap/timezone_5.png
+ qml/Wizard/Pages/data/timezonemap/timezone_6.5.png
+ qml/Wizard/Pages/data/timezonemap/timezone_6.png
+ qml/Wizard/Pages/data/timezonemap/timezone_7.png
+ qml/Wizard/Pages/data/timezonemap/timezone_8.5.png
+ qml/Wizard/Pages/data/timezonemap/timezone_8.png
+ qml/Wizard/Pages/data/timezonemap/timezone_9.5.png
+ qml/Wizard/Pages/data/timezonemap/timezone_9.png
+ qml/graphics/dropshadow2gu@30.png
+ qml/graphics/dropshadow2gu@30.sci
+ qml/graphics/dropshadow_left@20.png
+ qml/graphics/dropshadow_right@20.png
+ qml/qmldir
+ src/CMakeLists.txt
+ src/liblomiri-private/CMakeLists.txt
+ tests/CMakeLists.txt
+ tests/copyright/CMakeLists.txt
+ tests/data/unity/indicators/com.canonical.indicator.fake1
+ tests/data/unity/indicators/com.canonical.indicator.fake2
+ tests/data/unity/indicators/com.canonical.indicator.fake3
+ tests/data/unity/indicators/com.canonical.indicator.fake4
+ tests/data/lomiri/backgrounds/20x30.png
+ tests/data/lomiri/backgrounds/black.png
+ tests/data/lomiri/backgrounds/blue.png
+ tests/data/lomiri/backgrounds/red.png
+ tests/graphics/applicationIcons/browser@18.png
+ tests/graphics/applicationIcons/calendar@18.png
+ tests/graphics/applicationIcons/camera@18.png
+ tests/graphics/applicationIcons/contacts-app@18.png
+ tests/graphics/applicationIcons/dash@18.png
+ tests/graphics/applicationIcons/dialer-app@18.png
+ tests/graphics/applicationIcons/evernote@18.png
+ tests/graphics/applicationIcons/facebook@18.png
+ tests/graphics/applicationIcons/gallery@18.png
+ tests/graphics/applicationIcons/gmail@18.png
+ tests/graphics/applicationIcons/libreoffice@18.png
+ tests/graphics/applicationIcons/map@18.png
+ tests/graphics/applicationIcons/messages-app@18.png
+ tests/graphics/applicationIcons/notepad@18.png
+ tests/graphics/applicationIcons/pinterest@18.png
+ tests/graphics/applicationIcons/soundcloud@18.png
+ tests/graphics/applicationIcons/system-settings@18.png
+ tests/graphics/applicationIcons/twitter@18.png
+ tests/graphics/applicationIcons/weather@18.png
+ tests/graphics/applicationIcons/wikipedia@18.png
+ tests/graphics/applicationIcons/youtube@18.png
+ tests/graphics/avatars/amanda@12.png
+ tests/graphics/avatars/anna_olsson@12.png
+ tests/graphics/avatars/funky@12.png
+ tests/graphics/clock@18.png
+ tests/graphics/screenshots/gallery@12.png
+ tests/imports/CMakeLists.txt
+ tests/mocks/AccountsService/CMakeLists.txt
+ tests/mocks/AccountsService/qmldir
+ tests/mocks/Biometryd/CMakeLists.txt
+ tests/mocks/Biometryd/qmldir
+ tests/mocks/CMakeLists.txt
+ tests/mocks/Cursor/CMakeLists.txt
+ tests/mocks/Cursor/qmldir
+ tests/mocks/GSettings.1.0/CMakeLists.txt
+ tests/mocks/GSettings.1.0/qmldir
+ tests/mocks/Hfd/CMakeLists.txt
+ tests/mocks/Hfd/qmldir
+ tests/mocks/LightDMController/CMakeLists.txt
+ tests/mocks/LightDMController/qmldir
+ tests/mocks/Lomiri/ApplicationMenu/CMakeLists.txt
+ tests/mocks/Lomiri/ApplicationMenu/qmldir
+ tests/mocks/Lomiri/CMakeLists.txt
+ tests/mocks/Lomiri/Connectivity/CMakeLists.txt
+ tests/mocks/Lomiri/Connectivity/qmldir
+ tests/mocks/Lomiri/DownloadDaemonListener/CMakeLists.txt
+ tests/mocks/Lomiri/DownloadDaemonListener/qmldir
+ tests/mocks/Lomiri/Indicators/CMakeLists.txt
+ tests/mocks/Lomiri/Indicators/qmldir
+ tests/mocks/Lomiri/InputInfo/CMakeLists.txt
+ tests/mocks/Lomiri/InputInfo/qmldir
+ tests/mocks/Lomiri/Launcher/CMakeLists.txt
+ tests/mocks/Lomiri/Launcher/qmldir
+ tests/mocks/Lomiri/ModemConnectivity/CMakeLists.txt
+ tests/mocks/Lomiri/ModemConnectivity/qmldir
+ tests/mocks/Lomiri/Notifications/CMakeLists.txt
+ tests/mocks/Lomiri/Notifications/qmldir
+ tests/mocks/Lomiri/Platform/CMakeLists.txt
+ tests/mocks/Lomiri/Platform/qmldir
+ tests/mocks/Lomiri/SystemSettings/CMakeLists.txt
+ tests/mocks/Lomiri/SystemSettings/Diagnostics/CMakeLists.txt
+ tests/mocks/Lomiri/SystemSettings/Diagnostics/qmldir
+ tests/mocks/Lomiri/SystemSettings/LanguagePlugin/CMakeLists.txt
+ tests/mocks/Lomiri/SystemSettings/LanguagePlugin/qmldir
+ tests/mocks/Lomiri/SystemSettings/SecurityPrivacy/CMakeLists.txt
+ tests/mocks/Lomiri/SystemSettings/SecurityPrivacy/qmldir
+ tests/mocks/Lomiri/SystemSettings/TimeDate/CMakeLists.txt
+ tests/mocks/Lomiri/SystemSettings/TimeDate/qmldir
+ tests/mocks/Lomiri/SystemSettings/Update/CMakeLists.txt
+ tests/mocks/Lomiri/SystemSettings/Update/qmldir
+ tests/mocks/Lomiri/Telephony/CMakeLists.txt
+ tests/mocks/Lomiri/Telephony/qmldir
+ tests/mocks/Lomiri/Thumbnailer/CMakeLists.txt
+ tests/mocks/Lomiri/Thumbnailer/qmldir
+ tests/mocks/Lomiri/Web/CMakeLists.txt
+ tests/mocks/Lomiri/Web/qmldir
+ tests/mocks/Powerd/CMakeLists.txt
+ tests/mocks/Powerd/qmldir
+ tests/mocks/QMenuModel.1/CMakeLists.txt
+ tests/mocks/QMenuModel.1/qmldir
+ tests/mocks/QOfono/CMakeLists.txt
+ tests/mocks/QOfono/qmldir
+ tests/mocks/QtMir/Application/CMakeLists.txt
+ tests/mocks/QtMir/Application/qmldir
+ tests/mocks/QtMir/Application/resources/screenshots/browser@12.png
+ tests/mocks/QtMir/Application/resources/screenshots/camera@12.png
+ tests/mocks/QtMir/Application/resources/screenshots/dialer@12.png
+ tests/mocks/QtMir/Application/resources/screenshots/facebook@12.png
+ tests/mocks/QtMir/Application/resources/screenshots/gallery@12.png
+ tests/mocks/QtMir/Application/resources/screenshots/gmail-webapp.svg
+ tests/mocks/QtMir/Application/resources/screenshots/libreoffice@12.png
+ tests/mocks/QtMir/Application/resources/screenshots/lomiri-dash@12.png
+ tests/mocks/QtMir/Application/resources/screenshots/lomiri-weather-app.svg
+ tests/mocks/QtMir/Application/resources/screenshots/map@12.png
+ tests/mocks/QtMir/Application/resources/screenshots/music@12.png
+ tests/mocks/QtMir/Application/resources/screenshots/twitter@12.png
+ tests/mocks/QtMir/Application/resources/screenshots/vkb_portrait.png
+ tests/mocks/QtMir/Application/resources/surfaces.qrc
+ tests/mocks/QtMir/Application/resources/vkb_portrait.png
+ tests/mocks/QtMultimedia/CMakeLists.txt
+ tests/mocks/QtMultimedia/qmldir
+ tests/mocks/SessionBroadcast/CMakeLists.txt
+ tests/mocks/SessionBroadcast/qmldir
+ tests/mocks/UInput/CMakeLists.txt
+ tests/mocks/UInput/qmldir
+ tests/mocks/Utils/CMakeLists.txt
+ tests/mocks/Utils/qmldir
+ tests/mocks/WindowManager/CMakeLists.txt
+ tests/mocks/WindowManager/qmldir
+ tests/mocks/Wizard/CMakeLists.txt
+ tests/mocks/Wizard/qmldir
+ tests/mocks/data/applications/webbrowser-app.desktop
+ tests/mocks/data/unity/indicators/com.canonical.indicator.mock
+ tests/mocks/indicator-service/CMakeLists.txt
+ tests/mocks/liblightdm/CMakeLists.txt
+ tests/mocks/libusermetrics/CMakeLists.txt
+ tests/plugins/AccountsService/CMakeLists.txt
+ tests/plugins/AccountsService/interfaces.xml
+ tests/plugins/CMakeLists.txt
+ tests/plugins/Cursor/CMakeLists.txt
+ tests/plugins/GlobalShortcut/CMakeLists.txt
+ tests/plugins/Greeter/CMakeLists.txt
+ tests/plugins/Greeter/Lomiri/CMakeLists.txt
+ tests/plugins/Greeter/Lomiri/Launcher/CMakeLists.txt
+ tests/plugins/LightDM/CMakeLists.txt
+ tests/plugins/LightDM/IntegratedLightDM/CMakeLists.txt
+ tests/plugins/Lomiri/CMakeLists.txt
+ tests/plugins/Lomiri/Gestures/CMakeLists.txt
+ tests/plugins/Lomiri/Indicators/CMakeLists.txt
+ tests/plugins/Lomiri/Launcher/CMakeLists.txt
+ tests/plugins/Lomiri/Launcher/applications/abs-icon.desktop
+ tests/plugins/Lomiri/Launcher/applications/click-icon.desktop
+ tests/plugins/Lomiri/Launcher/applications/click-icon.svg
+ tests/plugins/Lomiri/Launcher/applications/no-name.desktop
+ tests/plugins/Lomiri/Launcher/applications/rel-icon.desktop
+ tests/plugins/Lomiri/Launcher/applications/rel-icon.svg
+ tests/plugins/Lomiri/Platform/CMakeLists.txt
+ tests/plugins/Lomiri/Session/CMakeLists.txt
+ tests/plugins/Lomiri/Session/interfaces.xml
+ tests/plugins/SessionBroadcast/CMakeLists.txt
+ tests/plugins/SessionBroadcast/interfaces.xml
+ tests/plugins/Utils/CMakeLists.txt
+ tests/plugins/WindowManager/CMakeLists.txt
+ tests/plugins/Wizard/CMakeLists.txt
+ tests/qmltests/CMakeLists.txt
+ tests/qmltests/Components/CMakeLists.txt
+ tests/qmltests/README
+ tests/qmltests/Components/tst_LazyImage/portrait.png
+ tests/qmltests/Components/tst_LazyImage/square.png
+ tests/qmltests/Components/tst_LazyImage/wide.png
+ tests/qmltests/UnityLogo.png
+ tests/qmltests/Wizard/licenses/en_US.html
+ tests/qmltests/Wizard/licenses/fr_CA.html
+ tests/qmltests/Wizard/licenses/fr_FR.html
+ tests/qmltests/modules/CMakeLists.txt
+ tests/qmltests/modules/Lomiri/CMakeLists.txt
+ tests/scripts/README
+ tests/uqmlscene/CMakeLists.txt
+ tests/uqmlscene/README
+ tests/utils/CMakeLists.txt
+ tests/utils/modules/CMakeLists.txt
+ tests/utils/modules/Lomiri/CMakeLists.txt
+ tests/utils/modules/Lomiri/SelfTest/CMakeLists.txt
+ tests/utils/modules/Lomiri/SelfTest/qmldir
+ tests/whitespace/CMakeLists.txt
+ tools/CMakeLists.txt
+ tools/indicatorsclient/CMakeLists.txt
+ tools/menutool/CMakeLists.txt
+ tools/menutool/README
+Copyright: 2012-2017, Canonical Ltd.
+  2018, UBports Project
+  2019-2022, UBports Foundation
+License: GPL-3 or LGPL-3
+Comment:
+ Assuming GPL-3 or LGPL-3 for the files listed above. There are no
+ license headers provided in the files.
+ .
+ If a better differentiation is required for documenting the above files'
+ licenses and copyright holderships, we encourage upstream to add license
+ headers.
+
+Files: po/*.po
+ po/lomiri.pot
+Copyright: 2013, Rosetta Contributors and Canonical Ltd.
+  2013-2014, Rosetta Contributors and Canonical Ltd.
+  2014, Rosetta Contributors and Canonical Ltd.
+  2015, Rosetta Contributors and Canonical Ltd.
+  2016, Rosetta Contributors and Canonical Ltd.
+  YEAR, Canonical Ltd.
+License: GPL-3 or LGPL-3
+Comment:
+ Assuming GPL-3 or LGPL-3 for the files listed above. The files require
+ being license under the same license as the unity8 package. This
+ 'lomiri' package is the successor of 'unity8' and here, we notice a mix
+ GPL-3 and LGPL-3 across the whole project.
+
+Files: debian/*
+Copyright: 2012-2017, Canonical Ltd.
+  2018, UBports Project
+  2019-2022, UBports Foundation
+  2022, Marius Gripsgard <marius@ubports.com>
+  2022-2025, Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+License: GPL-3
+Comment:
+ Patch snippets provided via debian/patches/ are to be considered
+ published under the same license as the target code file(s) of the patch
+ parts.
+
+License: Expat
+ Permission is hereby granted, free of charge, to any person obtaining
+ a copy of this software and associated documentation files (the
+ "Software"), to deal in the Software without restriction, including
+ without limitation the rights to use, copy, modify, merge, publish,
+ distribute, sublicense, and/or sell copies of the Software, and to
+ permit persons to whom the Software is furnished to do so, subject to
+ the following conditions:
+ .
+ The above copyright notice and this permission notice shall be
+ included in all copies or substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+ LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+ OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+License: GPL-2+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the
+ Free Software Foundation, Inc.,
+ 31 Milk Street, # 960789, Boston, MA 02196, USA.
+ .
+ On Debian systems, the complete text of the GNU General Public License
+ version 2 can be found in `/usr/share/common-licenses/GPL-2'.
 
 License: GPL-3
  This program is free software: you can redistribute it and/or modify
@@ -22,24 +1624,43 @@ License: GPL-3
  On Debian systems, the full text of the GNU General Public License
  version 3 can be found in the file /usr/share/common-licenses/GPL-3.
 
-Files: tests/mocks/LightDM/UsersModel.h tests/mocks/LightDM/Greeter.h
-Copyright: 2013 Canonical Ltd.
-           2010-2011 David Edmundson
-           2010-2011 Robert Ancell
-License: GPL-3
+License: GPL-3+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 3 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the
+ Free Software Foundation, Inc.,
+ 31 Milk Street, # 960789, Boston, MA 02196, USA.
+ .
+ On Debian systems, the complete text of the GNU General Public License
+ version 3 can be found in `/usr/share/common-licenses/GPL-3'.
 
-Files: plugins/Utils/qvariantlistmodel.*
-       tests/unittests/plugins/Utils/modeltest.*
-       tests/plugins/Utils/modeltest.*
-Copyright: 2013 Digia Plc and/or its subsidiary(-ies).
-License: LGPL-2.1 with Digia Qt LGPL Exception 1.1 or GPL-3
- Commercial License Usage
- Licensees holding valid commercial Qt licenses may use this file in
- accordance with the commercial license agreement provided with the
- Software or, alternatively, in accordance with the terms contained in
- a written agreement between you and Digia.  For licensing terms and
- conditions see http://qt.digia.com/licensing.  For further information
- use the contact form at http://qt.digia.com/contact-us.
+License: LGPL-2.1
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU Lesser General Public License as published by
+ the Free Software Foundation, version 2.1 of the License.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU Lesser General Public License for more details.
+ .
+ You should have received a copy of the GNU Lesser General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ .
+ On Debian systems, the full text of the GNU Lesser General Public License
+ version 2.1 can be found in the file /usr/share/common-licenses/LGPL-2.1.
+
+License: LGPL-2.1~Digia-Qt-LGPL-Exception
+ [... commercial usage ...]
  .
  GNU Lesser General Public License Usage
  Alternatively, this file may be used under the terms of the GNU Lesser
@@ -53,17 +1674,51 @@ License: LGPL-2.1 with Digia Qt LGPL Exception 1.1 or GPL-3
  rights.  These rights are described in the Digia Qt LGPL Exception
  version 1.1, included in the file LGPL_EXCEPTION.txt in this package.
  .
- GNU General Public License Usage
- Alternatively, this file may be used under the terms of the GNU
- General Public License version 3.0 as published by the Free Software
- Foundation and appearing in the file LICENSE.GPL included in the
- packaging of this file.  Please review the following information to
- ensure the GNU General Public License version 3.0 requirements will be
- met: http://www.gnu.org/copyleft/gpl.html.
+ [... GPL-3 ...]
+ .
+ .
+ From LGPL_EXCEPTION.txt:
+ .
+ Digia Qt LGPL Exception version 1.1
+ .
+ As an additional permission to the GNU Lesser General Public License version
+ 2.1, the object code form of a "work that uses the Library" may incorporate
+ material from a header file that is part of the Library.  You may distribute
+ such object code under terms of your choice, provided that:
+     (i)   the header files of the Library have not been modified; and
+     (ii)  the incorporated material is limited to numerical parameters, data
+           structure layouts, accessors, macros, inline functions and
+           templates; and
+     (iii) you comply with the terms of Section 6 of the GNU Lesser General
+           Public License version 2.1.
+ .
+ Moreover, you may apply this exception to a modified version of the Library,
+ provided that such modification does not involve copying material from the
+ Library into the modified Library's header files unless such material is
+ limited to (i) numerical parameters; (ii) data structure layouts;
+ (iii) accessors; and (iv) small macros, templates and inline functions of
+ five lines or less in length.
+ .
+ Furthermore, you are not required to apply this additional permission to a
+ modified version of the Library.
 
-Files: plugins/Cursor/3rd_party/xcursor/xcursor.*
-Copyright: 2002 Keith Packard
-License: Keith Packard
+License: LGPL-3
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU Lesser General Public License as published by
+ the Free Software Foundation, version 3 of the License.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU Lesser General Public License for more details.
+ .
+ You should have received a copy of the GNU Lesser General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ .
+ On Debian systems, the full text of the GNU Lesser General Public License
+ version 3 can be found in the file /usr/share/common-licenses/LGPL-3.
+
+License: NTP
  Permission to use, copy, modify, distribute, and sell this software and its
  documentation for any purpose is hereby granted without fee, provided that
  the above copyright notice appear in all copies and that both that

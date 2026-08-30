@@ -1,0 +1,9 @@
+Document: lomiri-doc
+Title: Lomiri API Documentation
+Author: UBports.com
+Abstract: This document describes the Lomiri Shell API
+Section: Programming/C++
+
+Format: HTML
+Index: /usr/share/doc/lomiri/html/index.html
+Files: /usr/share/doc/lomiri/html/*
