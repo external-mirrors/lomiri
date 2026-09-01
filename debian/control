@@ -17,6 +17,7 @@ Build-Depends:
  fonts-ubuntu <!nocheck>,
  gdb,
  graphviz,
+ lomiri-schemas (>= 0.1.13~),
  libdeviceinfo-dev,
  libevdev-dev,
  libgeonames-dev,
@@ -186,7 +187,7 @@ Architecture: all
 Depends:
  lomiri-application-impl-28,
  lomiri-notifications-impl-3,
- lomiri-schemas (>= 0.1.10),
+ lomiri-schemas (>= 0.1.13~),
  lomiri-tests | lomiri-application-impl,
  qml-module-lomiri-components | qml-module-lomiri-components-gles (>= 1.3.2030),
  qml-module-lomiri-settings-components,
@@ -266,7 +267,7 @@ Multi-Arch: same
 Section: libs
 Depends:
  accountsservice-ubuntu-schemas (>= 0.0.7),
- lomiri-schemas (>= 0.1.10),
+ lomiri-schemas (>= 0.1.13~),
  qml-module-gsettings,
  qml-module-qtmultimedia,
  ${misc:Depends},
