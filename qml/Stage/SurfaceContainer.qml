@@ -69,7 +69,7 @@ FocusScope {
 
         focus: true
 
-        fillMode: MirSurfaceItem.PadOrCrop
+        fillMode: MirSurfaceItem.Stretch
         consumesInput: true
 
         surfaceWidth: root.requestedWidth
