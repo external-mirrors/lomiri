@@ -267,6 +267,18 @@ StyledItem {
         startApp(app); // locked apps are always in our same session
     }
 
+    function enableUDFPSDimmer(enable){
+        udfpsDimmer.visible = enable;
+        Powerd.setHighBrightnessMode(enable)
+    }
+
+    Connections{
+        target: Powerd
+        function onHighBrightnessModeEnabledChanged(enabled) {
+            enableUDFPSDimmer(enabled)
+        }
+    }
+
     Binding {
         target: LauncherModel
         restoreMode: Binding.RestoreBinding
@@ -283,7 +295,7 @@ StyledItem {
     }
 
     UDFPSDimmer {
-        visible: Powerd.highBrightnessModeEnabled
+        id: udfpsDimmer
         anchors.fill: parent
         /* Dimmer overlay must cover everything. */
         z: 100

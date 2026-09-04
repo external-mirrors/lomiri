@@ -65,7 +65,7 @@ Item {
 
                 if (Biometryd.available && Biometryd.defaultDevice) {
                     try {
-                        Powerd.setHighBrightnessMode(true)
+                        shell.enableUDFPSDimmer(true)
                         Biometryd.defaultDevice.sendFingerDown(absoluteX, absoluteY, minor, major);
                         biometryd.startOperation()
                     } catch (e) {
@@ -80,7 +80,7 @@ Item {
 
                 if (Biometryd.available && Biometryd.defaultDevice) {
                     try {
-                        Powerd.setHighBrightnessMode(false)
+                        shell.enableUDFPSDimmer(false)
                         Biometryd.defaultDevice.sendFingerUp();
                         biometryd.cancelOperation()
                     } catch (e) {
