@@ -7,11 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-15 21:12+0000\n"
+"POT-Creation-Date: 2026-09-08 18:13+0200\n"
 "PO-Revision-Date: 2026-09-06 12:16+0000\n"
 "Last-Translator: Alagirisamy Rengaraj <radhaalagirisamy@gmail.com>\n"
-"Language-Team: Tamil <https://hosted.weblate.org/projects/lomiri/lomiri/ta/>"
-"\n"
+"Language-Team: Tamil <https://hosted.weblate.org/projects/lomiri/lomiri/ta/"
+">\n"
 "Language: ta\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,27 +20,27 @@ msgstr ""
 "X-Generator: Weblate 2026.9.1.dev0\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:36+0000\n"
 
-#: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
+#: data/lomiri.desktop.in:3 qml/Components/KeyboardShortcutsOverlay.qml:55
 msgid "Lomiri"
 msgstr "லோமிரி"
 
-#: data/lomiri.desktop.in:5
+#: data/lomiri.desktop.in:4
 msgid "The converged Lomiri shell"
 msgstr "ஒருங்கிணைந்த லோமிரி செல்"
 
-#: data/lomiri-greeter.desktop.in:4
+#: data/lomiri-greeter.desktop.in:3
 msgid "Lomiri Greeter"
 msgstr "லோமிரி வாழ்த்து"
 
-#: data/lomiri-greeter.desktop.in:5
+#: data/lomiri-greeter.desktop.in:4
 msgid "The converged Lomiri shell's Greeter"
 msgstr "ஒன்றிணைந்த லோமிரி செல்லின் வாழ்த்து"
 
-#: data/indicators-client.desktop.in:4
+#: data/indicators-client.desktop.in:3
 msgid "Indicators Client"
 msgstr "குறிகாட்டிகள் கிளையன்ட்"
 
-#: data/indicators-client.desktop.in:5
+#: data/indicators-client.desktop.in:4
 msgid "Application for testing the Indicators system"
 msgstr "குறிகாட்டிகள் அமைப்பைச் சோதிப்பதற்கான பயன்பாடு"
 
@@ -295,92 +295,140 @@ msgstr "சூப்பர் + அ"
 msgid "Opens the Application Drawer."
 msgstr "பயன்பாட்டு டிராயரைத் திறக்கிறது."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:211
+#: qml/Components/KeyboardShortcutsOverlay.qml:206
 msgid "Switching"
 msgstr "மாறுதல்"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:218
+#: qml/Components/KeyboardShortcutsOverlay.qml:213
 msgid "Alt + Tab"
 msgstr "மாற்று + இழப்பு"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:223
+#: qml/Components/KeyboardShortcutsOverlay.qml:218
 msgid "Switches between applications."
 msgstr "பயன்பாடுகளுக்கு இடையில் சுவிட்சுகள்."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:231
+#: qml/Components/KeyboardShortcutsOverlay.qml:226
 msgid "Super + W"
 msgstr "பெரிய + w"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:236
+#: qml/Components/KeyboardShortcutsOverlay.qml:231
 msgid "Opens the desktop spread."
 msgstr "டெச்க்டாப் பரவலைத் திறக்கிறது."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:244
+#: qml/Components/KeyboardShortcutsOverlay.qml:239
 msgid "Cursor Left or Right"
 msgstr "கர்சர் இடது அல்லது வலது"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:249
+#: qml/Components/KeyboardShortcutsOverlay.qml:244
 msgid "Moves the focus."
 msgstr "கவனம் செலுத்துகிறது."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:261
+#: qml/Components/KeyboardShortcutsOverlay.qml:260
 msgid "Windows"
 msgstr "சாளரங்கள்"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:268
+#: qml/Components/KeyboardShortcutsOverlay.qml:267
 msgid "Ctrl + Super + D"
 msgstr "கட்டுப்பாடு + சூப்பர் + டி"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:273
+#: qml/Components/KeyboardShortcutsOverlay.qml:272
 msgid "Minimizes all windows."
 msgstr "அனைத்து சாளரங்களையும் குறைக்கிறது."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:281
+#: qml/Components/KeyboardShortcutsOverlay.qml:280
 msgid "Ctrl + Super + Up"
 msgstr "கட்டுப்பாடு + சூப்பர் + அப்"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:286
+#: qml/Components/KeyboardShortcutsOverlay.qml:285
 msgid "Maximizes the current window."
 msgstr "தற்போதைய சாளரத்தை அதிகரிக்கிறது."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:294
+#: qml/Components/KeyboardShortcutsOverlay.qml:293
 msgid "Ctrl + Super + Down"
 msgstr "கட்டுப்பாடு + சூப்பர் + பேரூர்"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:299
+#: qml/Components/KeyboardShortcutsOverlay.qml:298
 msgid "Minimizes or restores the current window."
 msgstr "தற்போதைய சாளரத்தை குறைக்கிறது அல்லது மீட்டெடுக்கிறது."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:307
-#: qml/Components/KeyboardShortcutsOverlay.qml:356
+#: qml/Components/KeyboardShortcutsOverlay.qml:306
+#: qml/Components/KeyboardShortcutsOverlay.qml:417
 msgid "Ctrl + Super + Left or Right"
 msgstr "கட்டுப்பாடு + சூப்பர் + இடது அல்லது வலது"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:312
+#: qml/Components/KeyboardShortcutsOverlay.qml:311
 msgid "Semi-maximizes the current window."
 msgstr "தற்போதைய சாளரத்தை அரை-அதிகபட்சம்."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:320
+#: qml/Components/KeyboardShortcutsOverlay.qml:319
 msgid "Alt + F4"
 msgstr "மாற்று + F4"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:325
+#: qml/Components/KeyboardShortcutsOverlay.qml:324
 msgid "Closes the current window."
 msgstr "தற்போதைய சாளரத்தை மூடுகிறது."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:336
+#: qml/Components/KeyboardShortcutsOverlay.qml:335
+msgid "Screens and Workspaces"
+msgstr ""
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:342
+#, fuzzy
+#| msgid "Ctrl + Super + Left or Right"
+msgid "Ctrl + Alt + Left or Right"
+msgstr "கட்டுப்பாடு + சூப்பர் + இடது அல்லது வலது"
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:347
+#, fuzzy
+#| msgid "Switches between applications."
+msgid "Switches between workspaces."
+msgstr "பயன்பாடுகளுக்கு இடையில் சுவிட்சுகள்."
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:355
+#, fuzzy
+#| msgid "Ctrl + Alt + T"
+msgid "Ctrl + Alt + Up or Down"
+msgstr "கட்டுப்பாடு + மாற்று + t"
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:360
+#, fuzzy
+#| msgid "Switches between applications."
+msgid "Switches between screens."
+msgstr "பயன்பாடுகளுக்கு இடையில் சுவிட்சுகள்."
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:368
+#, fuzzy
+#| msgid "Ctrl + Super + Left or Right"
+msgid "Ctrl + Alt + Shift + Left or Right"
+msgstr "கட்டுப்பாடு + சூப்பர் + இடது அல்லது வலது"
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:373
+msgid "Moves current app between workspaces."
+msgstr ""
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:381
+#, fuzzy
+#| msgid "Ctrl + Super + Down"
+msgid "Ctrl + Alt + Shift + Up or Down"
+msgstr "கட்டுப்பாடு + சூப்பர் + பேரூர்"
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:386
+msgid "Moves current app between screens."
+msgstr ""
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:397
 msgid "Stages"
 msgstr "நிலைகள்"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:343
+#: qml/Components/KeyboardShortcutsOverlay.qml:404
 msgid "Super + S"
 msgstr "சிறப்பு + S"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:348
+#: qml/Components/KeyboardShortcutsOverlay.qml:409
 msgid "Shows or hides the side stage."
 msgstr "பக்க நிலையை காட்டுகிறது அல்லது மறைக்கிறது."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:362
+#: qml/Components/KeyboardShortcutsOverlay.qml:423
 msgid "Moves app between main stage and side stage."
 msgstr "முதன்மை மற்றும் பக்க நிலைகளுக்கிடையே செயலியை நகர்த்துகிறது."
 
@@ -426,7 +474,7 @@ msgstr "அனைத்தையும் மூடு"
 msgid "Preview Share Item"
 msgstr "முன்னோட்டம் பகிர்வு உருப்படி"
 
-#: qml/Components/VirtualTouchPad.qml:344
+#: qml/Components/VirtualTouchPad.qml:371
 msgid ""
 "Your device is now connected to an external display. Use this screen as a "
 "touch pad to interact with the pointer."
@@ -434,19 +482,19 @@ msgstr ""
 "உங்கள் சாதனம் இப்போது வெளிப்புற காட்சியுடன் இணைக்கப்பட்டுள்ளது. சுட்டிக்காட்டியுடன் தொடர்பு "
 "கொள்ள இந்தத் திரையை ஒரு டச் திண்டு பயன்படுத்தவும்."
 
-#: qml/Components/VirtualTouchPad.qml:354
+#: qml/Components/VirtualTouchPad.qml:381
 msgid "Tap left button to click."
 msgstr "சொடுக்கு செய்ய இடது பொத்தானைத் தட்டவும்."
 
-#: qml/Components/VirtualTouchPad.qml:366
+#: qml/Components/VirtualTouchPad.qml:393
 msgid "Tap right button to right click."
 msgstr "வலது சொடுக்கு செய்ய வலது பொத்தானைத் தட்டவும்."
 
-#: qml/Components/VirtualTouchPad.qml:378
+#: qml/Components/VirtualTouchPad.qml:405
 msgid "Swipe with two fingers to scroll."
 msgstr "உருட்ட இரண்டு விரல்களால் ச்வைப் செய்யவும்."
 
-#: qml/Components/VirtualTouchPad.qml:423
+#: qml/Components/VirtualTouchPad.qml:450
 msgid "Find more settings in the system settings."
 msgstr "கணினி அமைப்புகளில் மேலும் அமைப்புகளைக் கண்டறியவும்."
 

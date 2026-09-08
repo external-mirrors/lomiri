@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-15 21:12+0000\n"
+"POT-Creation-Date: 2026-09-08 18:13+0200\n"
 "PO-Revision-Date: 2025-12-07 11:00+0000\n"
 "Last-Translator: phmqXPD <phmq.xpd@gmail.com>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/lomiri/lomiri/"
@@ -20,27 +20,27 @@ msgstr ""
 "X-Generator: Weblate 5.15-dev\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:36+0000\n"
 
-#: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
+#: data/lomiri.desktop.in:3 qml/Components/KeyboardShortcutsOverlay.qml:55
 msgid "Lomiri"
 msgstr "Lomiri"
 
-#: data/lomiri.desktop.in:5
+#: data/lomiri.desktop.in:4
 msgid "The converged Lomiri shell"
 msgstr "Giao diện Lomiri hợp nhất"
 
-#: data/lomiri-greeter.desktop.in:4
+#: data/lomiri-greeter.desktop.in:3
 msgid "Lomiri Greeter"
 msgstr "Màn hình đăng nhập Lomiri"
 
-#: data/lomiri-greeter.desktop.in:5
+#: data/lomiri-greeter.desktop.in:4
 msgid "The converged Lomiri shell's Greeter"
 msgstr "Màn hình đăng nhập của giao diện Lomiri hợp nhất"
 
-#: data/indicators-client.desktop.in:4
+#: data/indicators-client.desktop.in:3
 msgid "Indicators Client"
 msgstr "Máy khách Hiển thị Trạng thái"
 
-#: data/indicators-client.desktop.in:5
+#: data/indicators-client.desktop.in:4
 msgid "Application for testing the Indicators system"
 msgstr "Ứng dụng kiểm thử hệ thống Hiển thị Trạng thái"
 
@@ -296,94 +296,142 @@ msgstr "Tổ hợp Super + A"
 msgid "Opens the Application Drawer."
 msgstr "Mở ngăn kéo ứng dụng."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:211
+#: qml/Components/KeyboardShortcutsOverlay.qml:206
 msgid "Switching"
 msgstr "Chuyển đổi"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:218
+#: qml/Components/KeyboardShortcutsOverlay.qml:213
 msgid "Alt + Tab"
 msgstr "Tổ hợp Alt + Tab"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:223
+#: qml/Components/KeyboardShortcutsOverlay.qml:218
 msgid "Switches between applications."
 msgstr "Chuyển đổi giữa các ứng dụng."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:231
+#: qml/Components/KeyboardShortcutsOverlay.qml:226
 msgid "Super + W"
 msgstr "Tổ hợp Super + W"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:236
+#: qml/Components/KeyboardShortcutsOverlay.qml:231
 msgid "Opens the desktop spread."
 msgstr "Mở chế độ xem tổng quan màn hình nền."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:244
+#: qml/Components/KeyboardShortcutsOverlay.qml:239
 msgid "Cursor Left or Right"
 msgstr "Con trỏ sang trái hoặc sang phải"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:249
+#: qml/Components/KeyboardShortcutsOverlay.qml:244
 msgid "Moves the focus."
 msgstr "Di chuyển tiêu điểm."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:261
+#: qml/Components/KeyboardShortcutsOverlay.qml:260
 msgid "Windows"
 msgstr "Các cửa sổ"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:268
+#: qml/Components/KeyboardShortcutsOverlay.qml:267
 msgid "Ctrl + Super + D"
 msgstr "Tổ hợp Ctrl + Super + D"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:273
+#: qml/Components/KeyboardShortcutsOverlay.qml:272
 msgid "Minimizes all windows."
 msgstr "Thu nhỏ tất cả cửa sổ."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:281
+#: qml/Components/KeyboardShortcutsOverlay.qml:280
 msgid "Ctrl + Super + Up"
 msgstr "Tổ hợp Ctrl + Super + Up"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:286
+#: qml/Components/KeyboardShortcutsOverlay.qml:285
 msgid "Maximizes the current window."
 msgstr "Phóng to cửa sổ hiện tại."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:294
+#: qml/Components/KeyboardShortcutsOverlay.qml:293
 msgid "Ctrl + Super + Down"
 msgstr "Tổ hợp Ctrl + Super + Down"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:299
+#: qml/Components/KeyboardShortcutsOverlay.qml:298
 msgid "Minimizes or restores the current window."
 msgstr "Thu nhỏ hoặc khôi phục cửa sổ hiện tại."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:307
-#: qml/Components/KeyboardShortcutsOverlay.qml:356
+#: qml/Components/KeyboardShortcutsOverlay.qml:306
+#: qml/Components/KeyboardShortcutsOverlay.qml:417
 msgid "Ctrl + Super + Left or Right"
 msgstr "Ctrl + Super + \"Left\" hoặc \"Right\""
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:312
+#: qml/Components/KeyboardShortcutsOverlay.qml:311
 msgid "Semi-maximizes the current window."
 msgstr "Phóng to một nửa cửa sổ hiện tại."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:320
+#: qml/Components/KeyboardShortcutsOverlay.qml:319
 msgid "Alt + F4"
 msgstr "Tổ hợp Alt + F4"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:325
+#: qml/Components/KeyboardShortcutsOverlay.qml:324
 msgid "Closes the current window."
 msgstr "Đóng cửa sổ hiện tại."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:336
+#: qml/Components/KeyboardShortcutsOverlay.qml:335
+msgid "Screens and Workspaces"
+msgstr ""
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:342
+#, fuzzy
+#| msgid "Ctrl + Super + Left or Right"
+msgid "Ctrl + Alt + Left or Right"
+msgstr "Ctrl + Super + \"Left\" hoặc \"Right\""
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:347
+#, fuzzy
+#| msgid "Switches between applications."
+msgid "Switches between workspaces."
+msgstr "Chuyển đổi giữa các ứng dụng."
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:355
+#, fuzzy
+#| msgid "Ctrl + Alt + T"
+msgid "Ctrl + Alt + Up or Down"
+msgstr "Tổ hợp Ctrl + Alt + T"
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:360
+#, fuzzy
+#| msgid "Switches between applications."
+msgid "Switches between screens."
+msgstr "Chuyển đổi giữa các ứng dụng."
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:368
+#, fuzzy
+#| msgid "Ctrl + Super + Left or Right"
+msgid "Ctrl + Alt + Shift + Left or Right"
+msgstr "Ctrl + Super + \"Left\" hoặc \"Right\""
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:373
+msgid "Moves current app between workspaces."
+msgstr ""
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:381
+#, fuzzy
+#| msgid "Ctrl + Super + Down"
+msgid "Ctrl + Alt + Shift + Up or Down"
+msgstr "Tổ hợp Ctrl + Super + Down"
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:386
+msgid "Moves current app between screens."
+msgstr ""
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:397
 msgid "Stages"
 msgstr ""
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:343
+#: qml/Components/KeyboardShortcutsOverlay.qml:404
 #, fuzzy
 #| msgid "Super + A"
 msgid "Super + S"
 msgstr "Tổ hợp Super + A"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:348
+#: qml/Components/KeyboardShortcutsOverlay.qml:409
 msgid "Shows or hides the side stage."
 msgstr ""
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:362
+#: qml/Components/KeyboardShortcutsOverlay.qml:423
 msgid "Moves app between main stage and side stage."
 msgstr ""
 
@@ -429,7 +477,7 @@ msgstr "Đóng tất cả"
 msgid "Preview Share Item"
 msgstr "Xem trước Mục chia sẻ"
 
-#: qml/Components/VirtualTouchPad.qml:344
+#: qml/Components/VirtualTouchPad.qml:371
 msgid ""
 "Your device is now connected to an external display. Use this screen as a "
 "touch pad to interact with the pointer."
@@ -437,19 +485,19 @@ msgstr ""
 "Thiết bị của bạn hiện đã kết nối với màn hình ngoài. Hãy sử dụng màn hình "
 "điện thoại này làm bàn di chuột để tương tác với con trỏ."
 
-#: qml/Components/VirtualTouchPad.qml:354
+#: qml/Components/VirtualTouchPad.qml:381
 msgid "Tap left button to click."
 msgstr "Chạm nút trái để nhấp."
 
-#: qml/Components/VirtualTouchPad.qml:366
+#: qml/Components/VirtualTouchPad.qml:393
 msgid "Tap right button to right click."
 msgstr "Chạm nút phải để nhấp chuột phải."
 
-#: qml/Components/VirtualTouchPad.qml:378
+#: qml/Components/VirtualTouchPad.qml:405
 msgid "Swipe with two fingers to scroll."
 msgstr "Vuốt bằng hai ngón tay để cuộn."
 
-#: qml/Components/VirtualTouchPad.qml:423
+#: qml/Components/VirtualTouchPad.qml:450
 msgid "Find more settings in the system settings."
 msgstr "Tìm thêm cài đặt trong cài đặt hệ thống."
 

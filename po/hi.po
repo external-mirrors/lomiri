@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-15 21:12+0000\n"
+"POT-Creation-Date: 2026-09-08 18:13+0200\n"
 "PO-Revision-Date: 2026-08-14 11:03+0000\n"
 "Last-Translator: Satyaakam Goswami <satyaakam@gmail.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/lomiri/lomiri/hi/"
@@ -20,27 +20,27 @@ msgstr ""
 "X-Generator: Weblate 2026.9.dev0\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:35+0000\n"
 
-#: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
+#: data/lomiri.desktop.in:3 qml/Components/KeyboardShortcutsOverlay.qml:55
 msgid "Lomiri"
 msgstr "लोमिरी"
 
-#: data/lomiri.desktop.in:5
+#: data/lomiri.desktop.in:4
 msgid "The converged Lomiri shell"
 msgstr "अभिसरित लोमिरी खोल"
 
-#: data/lomiri-greeter.desktop.in:4
+#: data/lomiri-greeter.desktop.in:3
 msgid "Lomiri Greeter"
 msgstr "लोमिरी ग्रीटर"
 
-#: data/lomiri-greeter.desktop.in:5
+#: data/lomiri-greeter.desktop.in:4
 msgid "The converged Lomiri shell's Greeter"
 msgstr "अभिसरित लोमिरी शैल का अभिवादक"
 
-#: data/indicators-client.desktop.in:4
+#: data/indicators-client.desktop.in:3
 msgid "Indicators Client"
 msgstr "संकेतक क्लाइंट"
 
-#: data/indicators-client.desktop.in:5
+#: data/indicators-client.desktop.in:4
 msgid "Application for testing the Indicators system"
 msgstr "इंडिकेटर्स सिस्टम की टेस्टिंग के लिए एप्लीकेशन"
 
@@ -296,92 +296,140 @@ msgstr "सुपर + ए"
 msgid "Opens the Application Drawer."
 msgstr "एप्लीकेशन ड्रॉअर खोलता है।"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:211
+#: qml/Components/KeyboardShortcutsOverlay.qml:206
 msgid "Switching"
 msgstr "परिवर्तन"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:218
+#: qml/Components/KeyboardShortcutsOverlay.qml:213
 msgid "Alt + Tab"
 msgstr "अल्ट + टैब"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:223
+#: qml/Components/KeyboardShortcutsOverlay.qml:218
 msgid "Switches between applications."
 msgstr "एप्लिकेशन के बीच स्विच करता है।"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:231
+#: qml/Components/KeyboardShortcutsOverlay.qml:226
 msgid "Super + W"
 msgstr "सुपर + वी"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:236
+#: qml/Components/KeyboardShortcutsOverlay.qml:231
 msgid "Opens the desktop spread."
 msgstr "डेस्कटॉप स्प्रेड खोलता है।"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:244
+#: qml/Components/KeyboardShortcutsOverlay.qml:239
 msgid "Cursor Left or Right"
 msgstr "कर्सर बाएँ या दाएँ"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:249
+#: qml/Components/KeyboardShortcutsOverlay.qml:244
 msgid "Moves the focus."
 msgstr "फोकस को मूव करता है।"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:261
+#: qml/Components/KeyboardShortcutsOverlay.qml:260
 msgid "Windows"
 msgstr "जालीवर"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:268
+#: qml/Components/KeyboardShortcutsOverlay.qml:267
 msgid "Ctrl + Super + D"
 msgstr "नियंत्रण + चौकोर + डी"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:273
+#: qml/Components/KeyboardShortcutsOverlay.qml:272
 msgid "Minimizes all windows."
 msgstr "मिनिमाइज़ करता है सभी खोलें।"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:281
+#: qml/Components/KeyboardShortcutsOverlay.qml:280
 msgid "Ctrl + Super + Up"
 msgstr "Ctrl + सुपर + ऊपर"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:286
+#: qml/Components/KeyboardShortcutsOverlay.qml:285
 msgid "Maximizes the current window."
 msgstr "मौजूदा विंडो को मैक्सिमाइज़ करता है।"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:294
+#: qml/Components/KeyboardShortcutsOverlay.qml:293
 msgid "Ctrl + Super + Down"
 msgstr "नियंत्रण + सुपर + नीचे"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:299
+#: qml/Components/KeyboardShortcutsOverlay.qml:298
 msgid "Minimizes or restores the current window."
 msgstr "विंडो को संकरता या वापसी करता है।"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:307
-#: qml/Components/KeyboardShortcutsOverlay.qml:356
+#: qml/Components/KeyboardShortcutsOverlay.qml:306
+#: qml/Components/KeyboardShortcutsOverlay.qml:417
 msgid "Ctrl + Super + Left or Right"
 msgstr "नियंत्रण + शीर्ष + बाएं या दाएं"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:312
+#: qml/Components/KeyboardShortcutsOverlay.qml:311
 msgid "Semi-maximizes the current window."
 msgstr "मौजूदा विंडो को सेमी-मैक्सिमाइज़ करता है।"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:320
+#: qml/Components/KeyboardShortcutsOverlay.qml:319
 msgid "Alt + F4"
 msgstr "અલ્ટ આંડ એફ 4 = કોમ્પ્યુટરને બંધ કરવાની જગ્યા"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:325
+#: qml/Components/KeyboardShortcutsOverlay.qml:324
 msgid "Closes the current window."
 msgstr "मौजूदा विंडो बंद करता है।"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:336
+#: qml/Components/KeyboardShortcutsOverlay.qml:335
+msgid "Screens and Workspaces"
+msgstr ""
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:342
+#, fuzzy
+#| msgid "Ctrl + Super + Left or Right"
+msgid "Ctrl + Alt + Left or Right"
+msgstr "नियंत्रण + शीर्ष + बाएं या दाएं"
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:347
+#, fuzzy
+#| msgid "Switches between applications."
+msgid "Switches between workspaces."
+msgstr "एप्लिकेशन के बीच स्विच करता है।"
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:355
+#, fuzzy
+#| msgid "Ctrl + Alt + T"
+msgid "Ctrl + Alt + Up or Down"
+msgstr "নियंत्रण + अल्ट + टी"
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:360
+#, fuzzy
+#| msgid "Switches between applications."
+msgid "Switches between screens."
+msgstr "एप्लिकेशन के बीच स्विच करता है।"
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:368
+#, fuzzy
+#| msgid "Ctrl + Super + Left or Right"
+msgid "Ctrl + Alt + Shift + Left or Right"
+msgstr "नियंत्रण + शीर्ष + बाएं या दाएं"
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:373
+msgid "Moves current app between workspaces."
+msgstr ""
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:381
+#, fuzzy
+#| msgid "Ctrl + Super + Down"
+msgid "Ctrl + Alt + Shift + Up or Down"
+msgstr "नियंत्रण + सुपर + नीचे"
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:386
+msgid "Moves current app between screens."
+msgstr ""
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:397
 msgid "Stages"
 msgstr "चरणों"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:343
+#: qml/Components/KeyboardShortcutsOverlay.qml:404
 msgid "Super + S"
 msgstr "सुपर + S"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:348
+#: qml/Components/KeyboardShortcutsOverlay.qml:409
 msgid "Shows or hides the side stage."
 msgstr "साइड स्टेज को दिखाता या छिपाता है।"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:362
+#: qml/Components/KeyboardShortcutsOverlay.qml:423
 msgid "Moves app between main stage and side stage."
 msgstr "ऐप को मेन स्टेज और साइड स्टेज के बीच ले जाता है।"
 
@@ -427,7 +475,7 @@ msgstr "Bandishan bandishon ka aasan karein"
 msgid "Preview Share Item"
 msgstr "प्रीव्यू साझा.item"
 
-#: qml/Components/VirtualTouchPad.qml:344
+#: qml/Components/VirtualTouchPad.qml:371
 msgid ""
 "Your device is now connected to an external display. Use this screen as a "
 "touch pad to interact with the pointer."
@@ -435,19 +483,19 @@ msgstr ""
 "आपका डिवाइस अब एक प externalsecreen से कनेक्ट हो गया है। इस स्क्रीन को टचपैड के रूप में "
 "उपयोग करें और पॉइंटर को इंटरएक्शन करने के लिए उपयोग करें।"
 
-#: qml/Components/VirtualTouchPad.qml:354
+#: qml/Components/VirtualTouchPad.qml:381
 msgid "Tap left button to click."
 msgstr "चाँद लगाएँ क्लिक करने के लिए दाएं बटन पर टैप करें।"
 
-#: qml/Components/VirtualTouchPad.qml:366
+#: qml/Components/VirtualTouchPad.qml:393
 msgid "Tap right button to right click."
 msgstr "नीचे दिए गए बटन को दाएं क्लिक करने के लिए दबाएं।"
 
-#: qml/Components/VirtualTouchPad.qml:378
+#: qml/Components/VirtualTouchPad.qml:405
 msgid "Swipe with two fingers to scroll."
 msgstr "स्वाइप करें तीन अंगूठों से या दो अंगूठों के साथ।"
 
-#: qml/Components/VirtualTouchPad.qml:423
+#: qml/Components/VirtualTouchPad.qml:450
 msgid "Find more settings in the system settings."
 msgstr "सिस्टम सेटिंग्स में और अधिक सेटिंग्स खोजें।"
 

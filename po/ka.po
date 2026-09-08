@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lomiri\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-15 21:12+0000\n"
+"POT-Creation-Date: 2026-09-08 18:13+0200\n"
 "PO-Revision-Date: 2025-12-25 03:39+0000\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://hosted.weblate.org/projects/lomiri/lomiri/"
@@ -19,27 +19,27 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.15.1\n"
 
-#: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
+#: data/lomiri.desktop.in:3 qml/Components/KeyboardShortcutsOverlay.qml:55
 msgid "Lomiri"
 msgstr "Lomiri"
 
-#: data/lomiri.desktop.in:5
+#: data/lomiri.desktop.in:4
 msgid "The converged Lomiri shell"
 msgstr ""
 
-#: data/lomiri-greeter.desktop.in:4
+#: data/lomiri-greeter.desktop.in:3
 msgid "Lomiri Greeter"
 msgstr ""
 
-#: data/lomiri-greeter.desktop.in:5
+#: data/lomiri-greeter.desktop.in:4
 msgid "The converged Lomiri shell's Greeter"
 msgstr ""
 
-#: data/indicators-client.desktop.in:4
+#: data/indicators-client.desktop.in:3
 msgid "Indicators Client"
 msgstr ""
 
-#: data/indicators-client.desktop.in:5
+#: data/indicators-client.desktop.in:4
 msgid "Application for testing the Indicators system"
 msgstr ""
 
@@ -293,94 +293,138 @@ msgstr "Super + A"
 msgid "Opens the Application Drawer."
 msgstr ""
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:211
+#: qml/Components/KeyboardShortcutsOverlay.qml:206
 msgid "Switching"
 msgstr "გადართვა"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:218
+#: qml/Components/KeyboardShortcutsOverlay.qml:213
 msgid "Alt + Tab"
 msgstr "Alt + Tab"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:223
+#: qml/Components/KeyboardShortcutsOverlay.qml:218
 msgid "Switches between applications."
 msgstr ""
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:231
+#: qml/Components/KeyboardShortcutsOverlay.qml:226
 msgid "Super + W"
 msgstr "Super + W"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:236
+#: qml/Components/KeyboardShortcutsOverlay.qml:231
 msgid "Opens the desktop spread."
 msgstr ""
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:244
+#: qml/Components/KeyboardShortcutsOverlay.qml:239
 msgid "Cursor Left or Right"
 msgstr ""
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:249
+#: qml/Components/KeyboardShortcutsOverlay.qml:244
 msgid "Moves the focus."
 msgstr ""
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:261
+#: qml/Components/KeyboardShortcutsOverlay.qml:260
 msgid "Windows"
 msgstr "ფანჯრები"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:268
+#: qml/Components/KeyboardShortcutsOverlay.qml:267
 msgid "Ctrl + Super + D"
 msgstr "Ctrl + Super + D"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:273
+#: qml/Components/KeyboardShortcutsOverlay.qml:272
 msgid "Minimizes all windows."
 msgstr ""
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:281
+#: qml/Components/KeyboardShortcutsOverlay.qml:280
 msgid "Ctrl + Super + Up"
 msgstr "Ctrl + Super + Up"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:286
+#: qml/Components/KeyboardShortcutsOverlay.qml:285
 msgid "Maximizes the current window."
 msgstr ""
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:294
+#: qml/Components/KeyboardShortcutsOverlay.qml:293
 msgid "Ctrl + Super + Down"
 msgstr "Ctrl + Super + Down"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:299
+#: qml/Components/KeyboardShortcutsOverlay.qml:298
 msgid "Minimizes or restores the current window."
 msgstr ""
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:307
-#: qml/Components/KeyboardShortcutsOverlay.qml:356
+#: qml/Components/KeyboardShortcutsOverlay.qml:306
+#: qml/Components/KeyboardShortcutsOverlay.qml:417
 msgid "Ctrl + Super + Left or Right"
 msgstr "Ctrl + Super + Left or Right"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:312
+#: qml/Components/KeyboardShortcutsOverlay.qml:311
 msgid "Semi-maximizes the current window."
 msgstr ""
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:320
+#: qml/Components/KeyboardShortcutsOverlay.qml:319
 msgid "Alt + F4"
 msgstr "Alt + F4"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:325
+#: qml/Components/KeyboardShortcutsOverlay.qml:324
 msgid "Closes the current window."
 msgstr ""
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:336
+#: qml/Components/KeyboardShortcutsOverlay.qml:335
+msgid "Screens and Workspaces"
+msgstr ""
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:342
+#, fuzzy
+#| msgid "Ctrl + Super + Left or Right"
+msgid "Ctrl + Alt + Left or Right"
+msgstr "Ctrl + Super + Left or Right"
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:347
+msgid "Switches between workspaces."
+msgstr ""
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:355
+#, fuzzy
+#| msgid "Ctrl + Alt + T"
+msgid "Ctrl + Alt + Up or Down"
+msgstr "Ctrl + Alt + T"
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:360
+msgid "Switches between screens."
+msgstr ""
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:368
+#, fuzzy
+#| msgid "Ctrl + Super + Left or Right"
+msgid "Ctrl + Alt + Shift + Left or Right"
+msgstr "Ctrl + Super + Left or Right"
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:373
+msgid "Moves current app between workspaces."
+msgstr ""
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:381
+#, fuzzy
+#| msgid "Ctrl + Super + Down"
+msgid "Ctrl + Alt + Shift + Up or Down"
+msgstr "Ctrl + Super + Down"
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:386
+msgid "Moves current app between screens."
+msgstr ""
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:397
 msgid "Stages"
 msgstr ""
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:343
+#: qml/Components/KeyboardShortcutsOverlay.qml:404
 #, fuzzy
 #| msgid "Super + A"
 msgid "Super + S"
 msgstr "Super + A"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:348
+#: qml/Components/KeyboardShortcutsOverlay.qml:409
 msgid "Shows or hides the side stage."
 msgstr ""
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:362
+#: qml/Components/KeyboardShortcutsOverlay.qml:423
 msgid "Moves app between main stage and side stage."
 msgstr ""
 
@@ -426,25 +470,25 @@ msgstr "ყველას დახურვა"
 msgid "Preview Share Item"
 msgstr ""
 
-#: qml/Components/VirtualTouchPad.qml:344
+#: qml/Components/VirtualTouchPad.qml:371
 msgid ""
 "Your device is now connected to an external display. Use this screen as a "
 "touch pad to interact with the pointer."
 msgstr ""
 
-#: qml/Components/VirtualTouchPad.qml:354
+#: qml/Components/VirtualTouchPad.qml:381
 msgid "Tap left button to click."
 msgstr ""
 
-#: qml/Components/VirtualTouchPad.qml:366
+#: qml/Components/VirtualTouchPad.qml:393
 msgid "Tap right button to right click."
 msgstr ""
 
-#: qml/Components/VirtualTouchPad.qml:378
+#: qml/Components/VirtualTouchPad.qml:405
 msgid "Swipe with two fingers to scroll."
 msgstr ""
 
-#: qml/Components/VirtualTouchPad.qml:423
+#: qml/Components/VirtualTouchPad.qml:450
 msgid "Find more settings in the system settings."
 msgstr ""
 

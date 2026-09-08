@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-15 21:12+0000\n"
+"POT-Creation-Date: 2026-09-08 18:13+0200\n"
 "PO-Revision-Date: 2025-09-21 15:02+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/lomiri/lomiri/"
@@ -21,27 +21,27 @@ msgstr ""
 "X-Generator: Weblate 5.14-dev\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:35+0000\n"
 
-#: data/lomiri.desktop.in:4 qml/Components/KeyboardShortcutsOverlay.qml:55
+#: data/lomiri.desktop.in:3 qml/Components/KeyboardShortcutsOverlay.qml:55
 msgid "Lomiri"
 msgstr "Lomiri"
 
-#: data/lomiri.desktop.in:5
+#: data/lomiri.desktop.in:4
 msgid "The converged Lomiri shell"
 msgstr "Ujedinjena Lomiri ljuska"
 
-#: data/lomiri-greeter.desktop.in:4
+#: data/lomiri-greeter.desktop.in:3
 msgid "Lomiri Greeter"
 msgstr "Lomiri ekran prijave"
 
-#: data/lomiri-greeter.desktop.in:5
+#: data/lomiri-greeter.desktop.in:4
 msgid "The converged Lomiri shell's Greeter"
 msgstr "Ekran prijave ujedinjene Lomiri ljuske"
 
-#: data/indicators-client.desktop.in:4
+#: data/indicators-client.desktop.in:3
 msgid "Indicators Client"
 msgstr "Klijent indikatora"
 
-#: data/indicators-client.desktop.in:5
+#: data/indicators-client.desktop.in:4
 msgid "Application for testing the Indicators system"
 msgstr "Aplikacija za testiranje sustava indikatora"
 
@@ -297,94 +297,142 @@ msgstr "Super + A"
 msgid "Opens the Application Drawer."
 msgstr "Otvara ladicu programa."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:211
+#: qml/Components/KeyboardShortcutsOverlay.qml:206
 msgid "Switching"
 msgstr "Prebacivanje"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:218
+#: qml/Components/KeyboardShortcutsOverlay.qml:213
 msgid "Alt + Tab"
 msgstr "Alt + Tab"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:223
+#: qml/Components/KeyboardShortcutsOverlay.qml:218
 msgid "Switches between applications."
 msgstr "Prebacuje između aplikacija."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:231
+#: qml/Components/KeyboardShortcutsOverlay.qml:226
 msgid "Super + W"
 msgstr "Super + W"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:236
+#: qml/Components/KeyboardShortcutsOverlay.qml:231
 msgid "Opens the desktop spread."
 msgstr "Otvara rasprostiranje radne površine."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:244
+#: qml/Components/KeyboardShortcutsOverlay.qml:239
 msgid "Cursor Left or Right"
 msgstr "Lijeva ili desna tipka strelice"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:249
+#: qml/Components/KeyboardShortcutsOverlay.qml:244
 msgid "Moves the focus."
 msgstr "Pomiče fokus."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:261
+#: qml/Components/KeyboardShortcutsOverlay.qml:260
 msgid "Windows"
 msgstr "Prozori"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:268
+#: qml/Components/KeyboardShortcutsOverlay.qml:267
 msgid "Ctrl + Super + D"
 msgstr "Ctrl + Super + D"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:273
+#: qml/Components/KeyboardShortcutsOverlay.qml:272
 msgid "Minimizes all windows."
 msgstr "Smanjuje sve prozore."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:281
+#: qml/Components/KeyboardShortcutsOverlay.qml:280
 msgid "Ctrl + Super + Up"
 msgstr "Ctrl + Super + Gore"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:286
+#: qml/Components/KeyboardShortcutsOverlay.qml:285
 msgid "Maximizes the current window."
 msgstr "Povećava trenutni prozor."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:294
+#: qml/Components/KeyboardShortcutsOverlay.qml:293
 msgid "Ctrl + Super + Down"
 msgstr "Ctrl + Super + Dolje"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:299
+#: qml/Components/KeyboardShortcutsOverlay.qml:298
 msgid "Minimizes or restores the current window."
 msgstr "Smanjuje trenutni prozor."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:307
-#: qml/Components/KeyboardShortcutsOverlay.qml:356
+#: qml/Components/KeyboardShortcutsOverlay.qml:306
+#: qml/Components/KeyboardShortcutsOverlay.qml:417
 msgid "Ctrl + Super + Left or Right"
 msgstr "Ctrl + Super + Lijevo ili desno"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:312
+#: qml/Components/KeyboardShortcutsOverlay.qml:311
 msgid "Semi-maximizes the current window."
 msgstr "Polovično povećava trenutni prozor."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:320
+#: qml/Components/KeyboardShortcutsOverlay.qml:319
 msgid "Alt + F4"
 msgstr "Alt + F4"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:325
+#: qml/Components/KeyboardShortcutsOverlay.qml:324
 msgid "Closes the current window."
 msgstr "Zatvara trenutni prozor."
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:336
+#: qml/Components/KeyboardShortcutsOverlay.qml:335
+msgid "Screens and Workspaces"
+msgstr ""
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:342
+#, fuzzy
+#| msgid "Ctrl + Super + Left or Right"
+msgid "Ctrl + Alt + Left or Right"
+msgstr "Ctrl + Super + Lijevo ili desno"
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:347
+#, fuzzy
+#| msgid "Switches between applications."
+msgid "Switches between workspaces."
+msgstr "Prebacuje između aplikacija."
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:355
+#, fuzzy
+#| msgid "Ctrl + Alt + T"
+msgid "Ctrl + Alt + Up or Down"
+msgstr "Ctrl + Alt + T"
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:360
+#, fuzzy
+#| msgid "Switches between applications."
+msgid "Switches between screens."
+msgstr "Prebacuje između aplikacija."
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:368
+#, fuzzy
+#| msgid "Ctrl + Super + Left or Right"
+msgid "Ctrl + Alt + Shift + Left or Right"
+msgstr "Ctrl + Super + Lijevo ili desno"
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:373
+msgid "Moves current app between workspaces."
+msgstr ""
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:381
+#, fuzzy
+#| msgid "Ctrl + Super + Down"
+msgid "Ctrl + Alt + Shift + Up or Down"
+msgstr "Ctrl + Super + Dolje"
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:386
+msgid "Moves current app between screens."
+msgstr ""
+
+#: qml/Components/KeyboardShortcutsOverlay.qml:397
 msgid "Stages"
 msgstr ""
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:343
+#: qml/Components/KeyboardShortcutsOverlay.qml:404
 #, fuzzy
 #| msgid "Super + A"
 msgid "Super + S"
 msgstr "Super + A"
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:348
+#: qml/Components/KeyboardShortcutsOverlay.qml:409
 msgid "Shows or hides the side stage."
 msgstr ""
 
-#: qml/Components/KeyboardShortcutsOverlay.qml:362
+#: qml/Components/KeyboardShortcutsOverlay.qml:423
 msgid "Moves app between main stage and side stage."
 msgstr ""
 
@@ -432,7 +480,7 @@ msgstr "Zatvori sve"
 msgid "Preview Share Item"
 msgstr "Pregled stavki dijeljenja"
 
-#: qml/Components/VirtualTouchPad.qml:344
+#: qml/Components/VirtualTouchPad.qml:371
 msgid ""
 "Your device is now connected to an external display. Use this screen as a "
 "touch pad to interact with the pointer."
@@ -440,19 +488,19 @@ msgstr ""
 "Vaš uređaj je sada povezan s vanjskim uređajem. Koristite ovaj zaslon kao "
 "dodirnik za interakciju s pokazivačem."
 
-#: qml/Components/VirtualTouchPad.qml:354
+#: qml/Components/VirtualTouchPad.qml:381
 msgid "Tap left button to click."
 msgstr "Dodirni lijevi gumb za pritiskanje."
 
-#: qml/Components/VirtualTouchPad.qml:366
+#: qml/Components/VirtualTouchPad.qml:393
 msgid "Tap right button to right click."
 msgstr "Dodirni desni gumb za desno-pritiskanje."
 
-#: qml/Components/VirtualTouchPad.qml:378
+#: qml/Components/VirtualTouchPad.qml:405
 msgid "Swipe with two fingers to scroll."
 msgstr "Povuci s dva prsta za klizanje."
 
-#: qml/Components/VirtualTouchPad.qml:423
+#: qml/Components/VirtualTouchPad.qml:450
 msgid "Find more settings in the system settings."
 msgstr "Pronađi daljnje postavke u postavkama sustava."
 
