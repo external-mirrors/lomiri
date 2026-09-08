@@ -8,20 +8,20 @@ msgstr ""
 "Project-Id-Version: lomiri\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-08 18:13+0200\n"
-"PO-Revision-Date: 2026-03-27 15:09+0000\n"
+"PO-Revision-Date: 2026-09-10 04:22+0000\n"
 "Last-Translator: ButterflyOfFire <boffire@users.noreply.hosted.weblate.org>\n"
-"Language-Team: Kabyle <https://hosted.weblate.org/projects/lomiri/lomiri/kab/"
-">\n"
+"Language-Team: Kabyle <https://hosted.weblate.org/projects/lomiri/lomiri/"
+"kab/>\n"
 "Language: kab\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 2026.9.1\n"
 
 #: data/lomiri.desktop.in:3 qml/Components/KeyboardShortcutsOverlay.qml:55
 msgid "Lomiri"
-msgstr ""
+msgstr "Lomiri"
 
 #: data/lomiri.desktop.in:4
 msgid "The converged Lomiri shell"
@@ -45,11 +45,11 @@ msgstr ""
 
 #: plugins/LightDM/Greeter.cpp:199
 msgid "Password: "
-msgstr ""
+msgstr "Awal n uɛeddi: "
 
 #: plugins/LightDM/Greeter.cpp:214
 msgid "Username"
-msgstr ""
+msgstr "Isem n useqdac"
 
 #: plugins/LightDM/Greeter.cpp:258
 msgid "Failed to authenticate"
@@ -69,7 +69,7 @@ msgstr "Ɛreḍ tikkelt niḍen"
 
 #: plugins/LightDM/UsersModel.cpp:158
 msgid "Login"
-msgstr ""
+msgstr "Tuqqna"
 
 #: plugins/LightDM/UsersModel.cpp:166
 msgid "Guest Session"
@@ -82,7 +82,7 @@ msgstr ""
 
 #: plugins/Lomiri/Launcher/launcheritem.cpp:54
 msgid "Quit"
-msgstr ""
+msgstr "Tuffɣa"
 
 #: plugins/Lomiri/Launcher/launcheritem.cpp:122
 msgid "Unpin shortcut"
@@ -94,11 +94,11 @@ msgstr "Arussin"
 
 #: plugins/WindowManager/Screen.cpp:162
 msgid "VGA"
-msgstr ""
+msgstr "VGA"
 
 #: plugins/WindowManager/Screen.cpp:166
 msgid "DVI"
-msgstr ""
+msgstr "DVI"
 
 #: plugins/WindowManager/Screen.cpp:168
 msgid "Composite"
@@ -106,11 +106,11 @@ msgstr ""
 
 #: plugins/WindowManager/Screen.cpp:170
 msgid "S-Video"
-msgstr ""
+msgstr "S-Video"
 
 #: plugins/WindowManager/Screen.cpp:176
 msgid "Internal"
-msgstr ""
+msgstr "Adigan"
 
 #: plugins/WindowManager/Screen.cpp:178
 msgid "Component"
@@ -118,11 +118,11 @@ msgstr ""
 
 #: plugins/WindowManager/Screen.cpp:180
 msgid "DisplayPort"
-msgstr ""
+msgstr "DisplayPort"
 
 #: plugins/WindowManager/Screen.cpp:183
 msgid "HDMI"
-msgstr ""
+msgstr "HDMI"
 
 #: plugins/WindowManager/Screen.cpp:185
 msgid "TV"
@@ -130,12 +130,12 @@ msgstr ""
 
 #: plugins/WindowManager/Screen.cpp:187
 msgid "Virtual"
-msgstr ""
+msgstr "Uhlis"
 
 #: plugins/Wizard/System.cpp:217
 #, qt-format
 msgid "Lomiri on %1"
-msgstr ""
+msgstr "Lomiri ɣef %1"
 
 #: qml/Components/Dialogs.qml:176
 msgctxt "Title: Lock/Log out dialog"
@@ -165,7 +165,7 @@ msgstr "Semmet"
 #: qml/Components/Dialogs.qml:211
 msgctxt "Title: Reboot dialog"
 msgid "Reboot"
-msgstr ""
+msgstr "Ales asekker"
 
 #: qml/Components/Dialogs.qml:212
 msgid "Are you sure you want to reboot?"
@@ -182,7 +182,7 @@ msgstr "Ih"
 #: qml/Components/Dialogs.qml:243
 msgctxt "Title: Power off/Restart dialog"
 msgid "Power"
-msgstr ""
+msgstr "Asexsi"
 
 #: qml/Components/Dialogs.qml:244
 msgid ""
@@ -193,20 +193,20 @@ msgstr ""
 #: qml/Components/Dialogs.qml:248
 msgctxt "Button: Power off the system"
 msgid "Power off"
-msgstr ""
+msgstr "Sexsi"
 
 #: qml/Components/Dialogs.qml:263
 msgctxt "Button: Restart the system"
 msgid "Restart"
-msgstr ""
+msgstr "Allus n usekker"
 
 #: qml/Components/Dialogs.qml:276
 msgid "Screenshot"
-msgstr ""
+msgstr "Tuṭṭfa n ugdil"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:41
 msgid "Keyboard Shortcuts"
-msgstr ""
+msgstr "Inegzumen n unasiw"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:62
 msgid "PrtScr"
@@ -262,7 +262,7 @@ msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:151
 msgid "Alt + F1"
-msgstr ""
+msgstr "Alt + F1"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:156
 msgid "Opens launcher keyboard navigation mode."
@@ -322,7 +322,7 @@ msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:260
 msgid "Windows"
-msgstr ""
+msgstr "Isfuyla"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:267
 msgid "Ctrl + Super + D"
@@ -363,7 +363,7 @@ msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:324
 msgid "Closes the current window."
-msgstr ""
+msgstr "Mdel asfaylu amiran."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:335
 msgid "Screens and Workspaces"
@@ -453,7 +453,7 @@ msgstr ""
 
 #: qml/Components/ModeSwitchWarningDialog.qml:94
 msgid "Close all"
-msgstr ""
+msgstr "Mdel-iten akk"
 
 #: qml/Components/SharingPicker.qml:54
 msgid "Preview Share Item"
@@ -540,7 +540,7 @@ msgstr[1] ""
 #: tests/qmltests/Greeter/tst_Greeter.qml:625
 #: tests/qmltests/Greeter/tst_Greeter.qml:637
 msgid "Try again"
-msgstr ""
+msgstr "Ɛreḍ tikkelt nniḍen"
 
 #: qml/Greeter/Greeter.qml:638 tests/qmltests/Greeter/tst_Greeter.qml:552
 #: tests/qmltests/Greeter/tst_Greeter.qml:603
@@ -557,11 +557,11 @@ msgstr ""
 
 #: qml/Greeter/PromptList.qml:143
 msgid "Passphrase"
-msgstr ""
+msgstr "Tafyirt n uɛeddi"
 
 #: qml/Greeter/PromptList.qml:143
 msgid "Passcode"
-msgstr ""
+msgstr "Angal n wadduf"
 
 #: qml/Greeter/SessionsList.qml:124
 msgid "Select desktop environment"
@@ -569,7 +569,7 @@ msgstr ""
 
 #: qml/Launcher/Drawer.qml:239
 msgid "Search…"
-msgstr ""
+msgstr "Nadi…"
 
 #: qml/Launcher/PullToRefreshScopeStyle.qml:56
 msgid "Pull to refresh…"
@@ -581,11 +581,11 @@ msgstr ""
 
 #: qml/Notifications/NotificationMenuItemFactory.qml:124
 msgid "Show password"
-msgstr ""
+msgstr "Beqqeḍ awal n uɛeddi"
 
 #: qml/Notifications/Notification.qml:318
 msgid "New message"
-msgstr ""
+msgstr "Izen amaynut"
 
 #: qml/Panel/ActiveCallHint.qml:79
 msgid "Tap to return to call..."
@@ -593,7 +593,7 @@ msgstr ""
 
 #: qml/Panel/ActiveCallHint.qml:93
 msgid "Conference"
-msgstr ""
+msgstr "Asarag"
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:975
 msgid "Nothing is playing"
@@ -613,7 +613,7 @@ msgstr ""
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1118
 #, qt-format
 msgid "%1 remaining"
-msgstr ""
+msgstr "%1 i d-yeqqimen"
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1129
 msgid "In queue…"
@@ -633,7 +633,7 @@ msgstr ""
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1139
 msgid "Finished"
-msgstr ""
+msgstr "Immed"
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1141
 msgid "Failed, tap to retry"
@@ -643,12 +643,12 @@ msgstr ""
 #: qml/Panel/Indicators/MessageMenuItemFactory.qml:210
 msgctxt "Button: Send a reply message"
 msgid "Send"
-msgstr ""
+msgstr "Azen"
 
 #: qml/Panel/Indicators/MessageMenuItemFactory.qml:152
 msgctxt "Label: Hint in message indicator line edit"
 msgid "Reply"
-msgstr ""
+msgstr "Tiririt"
 
 #: qml/Panel/Indicators/MessageMenuItemFactory.qml:209
 msgctxt "Button: Call back on phone"
@@ -710,7 +710,7 @@ msgstr ""
 #: qml/Wizard/Pages/10-welcome-update.qml:98
 #, qt-format
 msgid "Welcome to %1 %2"
-msgstr ""
+msgstr "Ansuf ɣer %1 %2"
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
 #: qml/Wizard/Pages/10-welcome-update.qml:115
@@ -720,7 +720,7 @@ msgstr ""
 
 #: qml/Wizard/Pages/11-changelog.qml:28
 msgid "What's new"
-msgstr ""
+msgstr "Dacu i d amaynut"
 
 #: qml/Wizard/Pages/11-changelog.qml:74
 msgid "Loading..."
@@ -728,7 +728,7 @@ msgstr ""
 
 #: qml/Wizard/Pages/20-keyboard.qml:31
 msgid "Select Keyboard"
-msgstr ""
+msgstr "Fren anasiw"
 
 #: qml/Wizard/Pages/20-keyboard.qml:71
 msgid "Keyboard language"
@@ -736,17 +736,17 @@ msgstr "Tutlayt n unasiw"
 
 #: qml/Wizard/Pages/20-keyboard.qml:93
 msgid "Keyboard layout"
-msgstr ""
+msgstr "Taneɣruft n unasiw"
 
 #: qml/Wizard/Pages/20-keyboard.qml:152 qml/Wizard/Pages/30-wifi.qml:212
 #: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/79-system-update.qml:164
 #: qml/Wizard/Pages/sim.qml:101
 msgid "Skip"
-msgstr ""
+msgstr "Zgel"
 
 #: qml/Wizard/Pages/30-wifi.qml:30
 msgid "Connect to Wi‑Fi"
-msgstr ""
+msgstr "Qqen ar Wi-Fi"
 
 #: qml/Wizard/Pages/30-wifi.qml:138
 msgid "Connected"
@@ -762,7 +762,7 @@ msgstr ""
 
 #: qml/Wizard/Pages/50-timezone.qml:30
 msgid "Time Zone"
-msgstr ""
+msgstr "Tamnaḍt tasragant"
 
 #: qml/Wizard/Pages/50-timezone.qml:182
 msgid "Enter your city"
@@ -770,7 +770,7 @@ msgstr ""
 
 #: qml/Wizard/Pages/60-account.qml:24
 msgid "Personalize Your Device"
-msgstr ""
+msgstr "Sagen ibenk-ik"
 
 #: qml/Wizard/Pages/60-account.qml:54
 msgid "Preferred Name"
@@ -783,7 +783,7 @@ msgstr ""
 #: qml/Wizard/Pages/70-passwd-type.qml:103
 msgctxt "Label: Type of security method"
 msgid "Create new password"
-msgstr ""
+msgstr "Snulfu-d awal n uɛeddi"
 
 #: qml/Wizard/Pages/70-passwd-type.qml:105
 msgctxt "Label: Type of security method"
@@ -808,13 +808,13 @@ msgstr ""
 #: qml/Wizard/Pages/79-system-update.qml:96
 msgctxt "string identifying name of the update"
 msgid "Ubuntu Touch system"
-msgstr ""
+msgstr "Anagraw n Ubuntu Touch"
 
 #: qml/Wizard/Pages/79-system-update.qml:103
 #, qt-format
 msgctxt "version of the system update"
 msgid "Version %1"
-msgstr ""
+msgstr "Lqem wis %1"
 
 #: qml/Wizard/Pages/79-system-update.qml:115
 msgid "This could take a few minutes..."
@@ -826,25 +826,25 @@ msgstr ""
 
 #: qml/Wizard/Pages/80-finished.qml:93
 msgid "Welcome Back"
-msgstr ""
+msgstr "Ansuf yes-k·m tikkelt nniḍen"
 
 #. TRANSLATORS: %1 contains the distro name
 #: qml/Wizard/Pages/80-finished.qml:95
 #, qt-format
 msgid "Welcome to %1"
-msgstr ""
+msgstr "Ansuf ɣer %1"
 
 #: qml/Wizard/Pages/80-finished.qml:111
 msgid "You are ready to use your device now"
-msgstr ""
+msgstr "Twejdeḍ ad tesqedceḍ ibenk-ik tura"
 
 #: qml/Wizard/Pages/80-finished.qml:131
 msgid "Continue"
-msgstr ""
+msgstr "Kemmel"
 
 #: qml/Wizard/Pages/80-finished.qml:131
 msgid "Get Started"
-msgstr ""
+msgstr "Akken ad nebdu"
 
 #: qml/Wizard/Pages/passcode-confirm.qml:43
 #: qml/Wizard/Pages/passcode-desktop.qml:104
@@ -895,15 +895,15 @@ msgstr ""
 
 #: qml/Wizard/Pages/password-set.qml:68
 msgid "Enter at least 8 characters"
-msgstr ""
+msgstr "Sekcem-d ma drus 8 n yisekkilen"
 
 #: qml/Wizard/Pages/password-set.qml:80
 msgid "Choose password"
-msgstr ""
+msgstr "Fren awal n uɛeddi"
 
 #: qml/Wizard/Pages/password-set.qml:110
 msgid "Confirm password"
-msgstr ""
+msgstr "Sentem awal n uɛeddi"
 
 #: qml/Wizard/Pages/sim.qml:27
 msgid "No SIM card installed"
@@ -919,7 +919,7 @@ msgstr ""
 
 #: qml/Wizard/Pages/sim.qml:59
 msgid "Restart"
-msgstr ""
+msgstr "Alles asekker"
 
 #: qml/Wizard/Pages/sim.qml:78
 msgid "You won’t be able to make calls or use text messaging without a SIM."
@@ -935,15 +935,15 @@ msgstr ""
 
 #: qml/Wizard/PasswordMeter.qml:89
 msgid "Passwords match"
-msgstr ""
+msgstr "Awalen n uɛeddi ur mṣdan ara"
 
 #: qml/Wizard/PasswordMeter.qml:91
 msgid "Passwords do not match"
-msgstr ""
+msgstr "Awalen n uɛeddi ur mṣdan ara"
 
 #: qml/Wizard/PasswordMeter.qml:95
 msgid "Strong password"
-msgstr ""
+msgstr "Awal n uɛeddi i iǧehden"
 
 #: qml/Wizard/PasswordMeter.qml:97
 msgid "Fair password"
