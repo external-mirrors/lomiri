@@ -1,6 +1,158 @@
+2026-09-08 Mike Gabriel
+
+        * Release 0.6.2 (HEAD -> main, tag: 0.6.2)
+        * po/lomiri.pot: Update translation template (176ac92cc)
+        * Merge branch 'personal/muhammad/fractional-scaling' into 'main'
+          (a62f8084a)
+
+2026-09-05 Muhammad Asif
+
+        * SurfaceContainer: stretch surfaces (ac0b5dcad)
+
+2026-09-05 Alagirisamy Rengaraj
+
+        * Translated using Weblate (Tamil) (1f3250120)
+
+2026-08-31 M.Sugahara
+
+        * Translated using Weblate (Japanese) (e12b69c84)
+
+2026-08-30 Mike Gabriel
+
+        * Merge branch 'personal/jbicha/debian-sync-20260717' into 'main'
+          (6d4876e2c)
+
+2026-08-26 Jeremy Bícha
+
+        * tests: Skip flaky aboutToShow MenuPopup test (491b5c422)
+
+2026-07-17 Jeremy Bícha
+
+        * debian: Partially sync with Debian (30ff07243)
+
+2026-08-29 bittin1ddc447d824349b2
+
+        * Translated using Weblate (Swedish) (99249f55b)
+
+2026-08-30 vlerm
+
+        * Translated using Weblate (Portuguese (Brazil)) (cbe2c36b2)
+
+2026-08-28 Lars Christensen
+
+        * Translated using Weblate (Danish) (d4eddf600)
+
+2026-08-25 Mike Gabriel
+
+        * Merge branch 'main_-_updateShortcutOverlay' into 'main' (b20bb0039)
+
+2024-08-11 Kugi Eusebio
+
+        * Updates keyboard shortcut list with new ones (9a06a7c61)
+
+2026-08-25 Mike Gabriel
+
+        * Merge branch
+          'personal/peat-psuwit/inputdispatcherfilter-map-to-global'
+          into 'main' (665efabc2)
+
+2025-05-12 Ratchanan Srirattanamet
+
+        * InputDispatchFilter: take Shell's rotation into account (20502ac12)
+
+2026-08-25 Alfred Neumayer
+
+        * Merge branch 'main_-_swipecallbubble' into 'main' (69a55245d)
+
+2026-08-25 kugiigi
+
+        * Added swipe to dismiss test (84a9d2348)
+
+2025-01-02 Kugi Eusebio
+
+        * Disable swipe to dismiss when the swipe buttons are displayed
+          (37f25cb80)
+
+2026-08-24 Walter Garcia-Fontes
+
+        * Translated using Weblate (Catalan) (cf0838d49)
+
+2026-08-24 Mike Gabriel
+
+        * Merge branch 'main_-_touchpadrotatebutton' into 'main' (334d88212)
+
+2026-02-21 kugiigi
+
+        * Adjusted tests for the new rotate button (906773e1d)
+
+2026-01-20 kugiigi
+
+        * Added rotate button in the touchpad (f9d6eea52)
+
+2026-08-21 Alagirisamy Rengaraj
+
+        * Translated using Weblate (Tamil) (8d57928e6)
+
+2026-08-21 Roker2 (Dmitry Minko)
+
+        * Translated using Weblate (Russian) (3004c389c)
+
+2026-08-22 Heimen Stoffels
+
+        * Translated using Weblate (Dutch) (d278b9e97)
+
+2026-08-21 Alagirisamy Rengaraj
+
+        * Translated using Weblate (Tamil) (7eb006934)
+
+2026-08-20 Ida Brenna
+
+        * Translated using Weblate (Norwegian Bokmål) (aea3c2537)
+
+2026-08-19 libermax
+
+        * Translated using Weblate (French) (263330a13)
+
+2026-08-17 Priit Jõerüüt
+
+        * Translated using Weblate (Estonian) (2cba5ebb0)
+
+2026-08-16 Ettore Atalan
+
+        * Translated using Weblate (German) (54e89b893)
+
+2026-08-19 Milan Korecky
+
+        * Translated using Weblate (Czech) (a629bd370)
+
+2026-08-15 Hosted Weblate
+
+        * Update translation files (9d311f8cd)
+
+2026-08-15 Mike Gabriel
+
+        * po/lomiri.pot (4316c30fa)
+
+2026-08-16 Ratchanan Srirattanamet
+
+        * Merge branch 'personal/sunweaver/lomiri-on-distro-in-wizard' into
+          'main' (872cc353c)
+
+2026-06-23 Oren Klopfer
+
+        * plugins: prepend 'Lomiri on' to distro name in wizard (ec0d9b5d9)
+
+2026-08-14 Alagirisamy Rengaraj
+
+        * Translated using Weblate (Tamil) (7dee8b6d7)
+
+2026-08-10 Satyaakam Goswami
+
+        * Translated using Weblate (Hindi) (d265ff2ed)
+
 2026-08-13 Mike Gabriel
 
-        * Release 0.6.1 (HEAD -> main, tag: 0.6.1)
+        * Release 0.6.1 (417290b8e) (tag: 0.6.1)
 
 2026-08-13 Maciej Sopyło
 
