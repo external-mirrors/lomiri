@@ -49,6 +49,12 @@ if [ -x "$(command -v device-info)" ]; then
     set_greeter_var QT_WAYLAND_FORCE_DPI $((12 * ${GRID_UNIT_PX}))
 fi
 
+GSETTINGS_GRID_UNIT_PX=$( gsettings get com.lomiri.touch.system global-scaling-factor | LC_ALL=C awk '{printf("%.f\n", ENVIRON["GRID_UNIT_PX"]*$1)}' )
+if (( GSETTINGS_GRID_UNIT_PX >= 4 )); then
+    set_greeter_var GRID_UNIT_PX $GSETTINGS_GRID_UNIT_PX
+    set_greeter_var QT_WAYLAND_FORCE_DPI $((12 * ${GRID_UNIT_PX}))
+fi
+
 # Hack for virtual machines that fails to probe modeset
 if ([ -x "$(command -v hostnamectl)" ] && [ "$(hostnamectl status | grep 'Chassis: vm')" ]) \
    || grep -wq hypervisor /proc/cpuinfo; then
