@@ -42,12 +42,27 @@ if which lomiri-touch-session >/dev/null; then
     TOUCH_WRAPPER=lomiri-touch-session
 fi
 
-# Advertise as a lomiri session, so that indicator-network will start.
-set_greeter_var XDG_SESSION_DESKTOP lomiri
-set_greeter_var DESKTOP_SESSION $XDG_SESSION_DESKTOP
+if [ -x "$(command -v device-info)" ]; then
+    set_greeter_var GRID_UNIT_PX $(device-info get GridUnit)
+    set_greeter_var QTWEBKIT_DPR $(device-info get WebkitDpr)
+    set_greeter_var NATIVE_ORIENTATION $(device-info get PrimaryOrientation)
+    set_greeter_var QT_WAYLAND_FORCE_DPI $((12 * ${GRID_UNIT_PX}))
+fi
+
+# Hack for virtual machines that fails to probe modeset
+if ([ -x "$(command -v hostnamectl)" ] && [ "$(hostnamectl status | grep 'Chassis: vm')" ]) \
+   || grep -wq hypervisor /proc/cpuinfo; then
+    set_greeter_var MIR_MESA_KMS_DISABLE_MODESET_PROBE 1
+fi
 
 set_greeter_var QT_IM_MODULE Maliit
 set_greeter_var QT_QPA_PLATFORM ubuntumirclient
+set_greeter_var MALIIT_FORCE_DBUS_CONNECTION 1
+set_greeter_var UITK_ICON_THEME suru
+set_greeter_var QT_WAYLAND_DISABLE_WINDOWDECORATION 1
+set_greeter_var QT_ACCESSIBILITY 1
+set_greeter_var QT_AUTO_SCREEN_SCALE_FACTOR 0
+set_greeter_var GTK_CSD 0
 
 # We disable ofono using pulse.  It causes problems with racing with the user's
 # pulse.  We need to come up with a better long-term fix for this, because we
@@ -75,17 +90,16 @@ if [ "$(id -u phablet 2>/dev/null)" = "32011" ]; then
     fi
 fi
 
-# And finally actually start the greeter
-if [ -n "$(command -v device-info)" ]; then
-    GRID_UNIT_PX="$(device-info get GridUnit)"
-fi
-
-export GRID_UNIT_PX="${GRID_UNIT_PX:-18}"
 export MIR_SERVER_ENABLE_MIRCLIENT=1
 
 rm "$XDG_RUNTIME_DIR/mir_socket"
 exec env MIR_SERVER_FILE=$SUB_SOCKET $TOUCH_WRAPPER $@ &
 CMD_PID=$!
+
+# Advertise as a lomiri session, so that lomiri-indicator-network will start
+# and also all other indicators will recognize being run in Lomiri
+set_greeter_var XDG_CURRENT_DESKTOP Lomiri
+set_greeter_var DESKTOP_SESSION lomiri
 
 count=0
 limit=60
@@ -104,4 +118,3 @@ CMD_PID=
 
 systemctl --user stop maliit-server.service
 systemctl --user stop lomiri-indicators.target
-
