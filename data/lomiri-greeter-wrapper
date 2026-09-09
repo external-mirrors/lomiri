@@ -63,6 +63,7 @@ set_greeter_var QT_WAYLAND_DISABLE_WINDOWDECORATION 1
 set_greeter_var QT_ACCESSIBILITY 1
 set_greeter_var QT_AUTO_SCREEN_SCALE_FACTOR 0
 set_greeter_var GTK_CSD 0
+set-greeter_var QT_ENABLE_HIGHDPI_SCALING=0
 
 # We disable ofono using pulse.  It causes problems with racing with the user's
 # pulse.  We need to come up with a better long-term fix for this, because we
