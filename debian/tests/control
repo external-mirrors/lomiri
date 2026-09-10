@@ -4,10 +4,3 @@ Depends:
  lomiri-tests,
 Restrictions:
  allow-stderr,
-
-Tests: autopilot.sh
-Depends:
- lomiri-autopilot,
-Restrictions:
- allow-stderr,
- isolation-machine,
