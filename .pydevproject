@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?eclipse-pydev version="1.0"?><pydev_project>
 <pydev_pathproperty name="org.python.pydev.PROJECT_SOURCE_PATH">
-<path>/Lomiri/tests/autopilot</path>
 <path>/Lomiri/.bazaar</path>
 <path>/Lomiri/tests/whitespace</path>
 </pydev_pathproperty>
