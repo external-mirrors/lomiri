@@ -901,8 +901,5 @@ tests/utils/modules/Lomiri/SelfTest/testutil.cpp
 tests/utils/modules/Lomiri/SelfTest/testutil.h
 tests/utils/modules/Lomiri/SelfTest/TouchEventSequenceWrapper.cpp
 tests/utils/modules/Lomiri/SelfTest/TouchEventSequenceWrapper.h
-tools/indicatorsclient/indicatorsclient.cpp
-tools/indicatorsclient/indicatorsclient.h
-tools/indicatorsclient/main.cpp
 tools/menutool/menutool.cpp
 tools/menutool/menutool.qml

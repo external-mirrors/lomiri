@@ -19,13 +19,10 @@ else()
         ${CMAKE_SOURCE_DIR}/plugins/*.js
         ${CMAKE_SOURCE_DIR}/qml/*.qml
         ${CMAKE_SOURCE_DIR}/qml/*.js
-        ${CMAKE_SOURCE_DIR}/tests/autopilot/*.py
         ${CMAKE_SOURCE_DIR}/tests/utils/*.h
         ${CMAKE_SOURCE_DIR}/tests/utils/*.cpp
         ${CMAKE_SOURCE_DIR}/tests/utils/*.qml
-        ${CMAKE_SOURCE_DIR}/tests/utils/*.js
-        ${CMAKE_SOURCE_DIR}/tests/autopilot/lomiri/shell/emulators/*.py
-        ${CMAKE_SOURCE_DIR}/tests/autopilot/lomiri/process_helpers.py)
+        ${CMAKE_SOURCE_DIR}/tests/utils/*.js)
 
     string(REPLACE ";" " " DOXYGEN_INPUT "${DOC_FILES}")
 

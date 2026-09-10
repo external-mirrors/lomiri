@@ -33,14 +33,6 @@ add_custom_target(${POT_FILE} ALL
                           -D ${CMAKE_BINARY_DIR}
                           data/${DESKTOP_FILE_GREETER}.in
                   COMMAND ${GETTEXT_XGETTEXT_EXECUTABLE} -o ${POT_FILE}
-                          --from-code=UTF-8
-                          --language=Desktop
-                          --package-name='${PROJECT_NAME}'
-                          --copyright-holder='Canonical Ltd.'
-                          --join-existing
-                          -D ${CMAKE_BINARY_DIR}
-                          data/${DESKTOP_FILE_INDICATORSCLIENT}.in
-                  COMMAND ${GETTEXT_XGETTEXT_EXECUTABLE} -o ${POT_FILE}
                           -D ${CMAKE_SOURCE_DIR}
                           -D ${CMAKE_CURRENT_SOURCE_DIR}
                           -D ${CMAKE_CURRENT_BINARY_DIR}
