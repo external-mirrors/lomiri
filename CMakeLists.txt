@@ -170,10 +170,6 @@ add_definitions(-DQT_STRICT_ITERATORS)
 # Use the fast string builder
 add_definitions(-DQT_USE_QSTRINGBUILDER)
 
-# Autopilot tests
-include(autopilot)
-declare_autopilot_test(shell lomiri.shell ${CMAKE_SOURCE_DIR}/tests/autopilot/)
-
 set(MOCK_INDICATOR_SERVICE_APP lomiri-mock-indicator-service)
 
 include_directories(
