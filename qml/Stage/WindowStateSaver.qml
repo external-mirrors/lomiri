@@ -61,7 +61,7 @@ QtObject {
         target.restoredY = target.normalY;
 
         loadedState = WindowStateStorage.getState(target.appId, Mir.RestoredState);
-        if (!isRestorable(loadedState)) {
+        if (state !== Mir.HiddenState && state !== Mir.UnknownState) {
             // Sanitize any transient state left over in the database by a previous
             // buggy save (e.g. Hidden/Unknown), so a bad row can't keep suppressing
             // this app's surfaces forever.
@@ -69,20 +69,10 @@ QtObject {
         }
     }
 
-    function isRestorable(state) {
-        return state !== Mir.MinimizedState && state !== Mir.HiddenState && state !== Mir.UnknownState;
-    }
-
     function save() {
         var state = target.windowState;
-        if (!isRestorable(state)) {
+        if (state === Mir.MinimizedState)
             state = target.prevWindowState;
-        }
-        if (!isRestorable(state)) {
-            // prevWindowState can itself be stale/transient in edge cases; never
-            // persist a state that would suppress the window on next launch.
-            state = Mir.RestoredState;
-        }
 
         WindowStateStorage.saveState(target.appId, state);
         WindowStateStorage.saveGeometry(target.appId, Qt.rect(target.normalX, target.normalY, target.normalWidth, target.normalHeight));
