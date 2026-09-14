@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-08 18:13+0200\n"
-"PO-Revision-Date: 2026-08-21 09:42+0000\n"
+"PO-Revision-Date: 2026-09-15 09:59+0000\n"
 "Last-Translator: Priit Jõerüüt <jrthwlate@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/lomiri/lomiri/"
 "et/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.9.dev0\n"
+"X-Generator: Weblate 2026.10.dev0\n"
 "X-Launchpad-Export-Date: 2017-04-07 06:30+0000\n"
 
 #: data/lomiri.desktop.in:3 qml/Components/KeyboardShortcutsOverlay.qml:55
@@ -370,51 +370,39 @@ msgstr "Sulgeb praeguse akna."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:335
 msgid "Screens and Workspaces"
-msgstr ""
+msgstr "Ekraanid ja tööalad"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:342
-#, fuzzy
-#| msgid "Ctrl + Super + Left or Right"
 msgid "Ctrl + Alt + Left or Right"
-msgstr "Ctrl + Super + Nool vasakule või paremale"
+msgstr "Ctrl + Alt + Nool vasakule või paremale"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:347
-#, fuzzy
-#| msgid "Switches between applications."
 msgid "Switches between workspaces."
-msgstr "Liigub avatud rakenduste vahel."
+msgstr "Liigub avatud tööalade vahel."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:355
-#, fuzzy
-#| msgid "Ctrl + Alt + T"
 msgid "Ctrl + Alt + Up or Down"
-msgstr "Ctrl + Alt + T"
+msgstr "Ctrl + Alt + nool üles või alla"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:360
-#, fuzzy
-#| msgid "Switches between applications."
 msgid "Switches between screens."
-msgstr "Liigub avatud rakenduste vahel."
+msgstr "Liigub ekraanide vahel."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:368
-#, fuzzy
-#| msgid "Ctrl + Super + Left or Right"
 msgid "Ctrl + Alt + Shift + Left or Right"
-msgstr "Ctrl + Super + Nool vasakule või paremale"
+msgstr "Ctrl + Alt + Shift + Nool vasakule või paremale"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:373
 msgid "Moves current app between workspaces."
-msgstr ""
+msgstr "Tõstab praegust rakendust tööalade vahet."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:381
-#, fuzzy
-#| msgid "Ctrl + Super + Down"
 msgid "Ctrl + Alt + Shift + Up or Down"
-msgstr "Ctrl + Super + Nool alla"
+msgstr "Ctrl + Alt + Shift + Nool üles või alla"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:386
 msgid "Moves current app between screens."
-msgstr ""
+msgstr "Tõstab praegust rakendust ekraanide vahel."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:397
 msgid "Stages"
