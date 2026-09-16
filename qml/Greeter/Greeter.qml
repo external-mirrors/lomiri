@@ -606,6 +606,8 @@ Showable {
                                           Powerd.status === Powerd.On &&
                                           Biometryd.available &&
                                           AccountsService.enableFingerprintIdentification
+        /* idEnabled stays true after too many failed attempts. */
+        readonly property bool canUnlock: idEnabled && d.secureFingerprint
 
         function startOperation() {
             if (idEnabled) {
