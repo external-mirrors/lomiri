@@ -129,6 +129,12 @@ quint16 DeviceConfig::sensorRadius() const
     return QString::fromStdString(m_info->get("udfpSensorRadius", "0")).toUInt();
 }
 
+bool DeviceConfig::sensorLocalHBM() const
+{
+    // Such panels light the sensor area themselves.
+    return QString::fromStdString(m_info->get("udfpLocalHBM", "false")).toLower() == "true";
+}
+
 quint16 DeviceConfig::collapsedPanelHeight() const
 {
     return QString::fromStdString(m_info->get("CollapsedPanelHeight", "0")).toUInt();

@@ -40,6 +40,7 @@ class DeviceConfig: public QObject
     Q_PROPERTY(quint16 sensorLocationX READ sensorLocationX FINAL)
     Q_PROPERTY(quint16 sensorLocationY READ sensorLocationY FINAL)
     Q_PROPERTY(quint16 sensorRadius READ sensorRadius FINAL)
+    Q_PROPERTY(bool sensorLocalHBM READ sensorLocalHBM FINAL)
 
 public:
     DeviceConfig(QObject *parent = nullptr);
@@ -60,6 +61,7 @@ public:
     quint16 sensorLocationX() const;
     quint16 sensorLocationY() const;
     quint16 sensorRadius() const;
+    bool sensorLocalHBM() const;
 
     quint16 collapsedPanelHeight() const;
 
