@@ -274,8 +274,10 @@ StyledItem {
 
     Connections{
         target: Powerd
-        function onHighBrightnessModeEnabledChanged(enabled) {
-            enableUDFPSDimmer(enabled)
+        /* The signal has no arguments. It also fires when repowerd disables
+           HBM on timeout, so don't call setHighBrightnessMode() from here. */
+        function onHighBrightnessModeEnabledChanged() {
+            udfpsDimmer.visible = Powerd.highBrightnessModeEnabled
         }
     }
 
