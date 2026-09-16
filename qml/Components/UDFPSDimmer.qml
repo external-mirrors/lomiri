@@ -25,6 +25,9 @@ import Utils 0.1
 Item {
     id: udfps
 
+    /* Only shown while HBM is on; QML Items default to visible. */
+    visible: false
+
     DeviceConfig {
         id: deviceConfig
     }
