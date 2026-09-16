@@ -33,6 +33,7 @@ Showable {
     id: root
     created: loader.status == Loader.Ready
 
+    property Item shellRoot
     property real dragHandleLeftMargin: 0
 
     property url background
@@ -389,6 +390,20 @@ Showable {
                     ShellNotifier.greeter.hide(false);
                 }
             }
+        }
+
+        Binding {
+            target: loader.item
+            property: "shellRoot"
+            value: root.shellRoot
+            restoreMode: Binding.RestoreBinding
+        }
+
+        Binding {
+            target: loader.item
+            property: "biometryd"
+            value: biometryd
+            restoreMode: Binding.RestoreBinding
         }
 
         Binding {

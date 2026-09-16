@@ -25,11 +25,17 @@ import Powerd 0.1
 
 Item {
     id: udfpsensor
+
+    // Shell and Greeter ids are out of scope in this file, so both are passed in.
+    property Item shellRoot
+    property QtObject biometryd
+
     DeviceConfig {
         id: deviceConfig
     }
 
     property bool fingerDown: false
+    readonly property bool sensorConfigured: deviceConfig.sensorRadius > 0
 
     /* Greeter is destroyed as soon as the fingerprint is accepted, so the
        release may never arrive. */
@@ -39,7 +45,7 @@ Item {
         }
         fingerDown = false;
 
-        shell.enableUDFPSDimmer(false)
+        shellRoot.enableUDFPSDimmer(false);
         if (Biometryd.available && Biometryd.defaultDevice) {
             try {
                 Biometryd.defaultDevice.sendFingerUp();
@@ -77,7 +83,7 @@ Item {
         MouseArea {
             anchors.fill: parent
             onPressed: {
-                if (!udfpsensor.visible) {
+                if (!udfpsensor.visible || !udfpsensor.shellRoot || !udfpsensor.biometryd) {
                     return;
                 }
 
@@ -89,9 +95,9 @@ Item {
                 if (Biometryd.available && Biometryd.defaultDevice) {
                     try {
                         udfpsensor.fingerDown = true;
-                        shell.enableUDFPSDimmer(true)
+                        udfpsensor.shellRoot.enableUDFPSDimmer(true);
                         Biometryd.defaultDevice.sendFingerDown(absoluteX, absoluteY, minor, major);
-                        biometryd.startOperation()
+                        udfpsensor.biometryd.startOperation();
                     } catch (e) {
                         console.warn("Failed to call Biometryd.sendFingerDown:", e);
                     }
@@ -100,8 +106,8 @@ Item {
             onReleased: {
                 udfpsensor.fingerUp();
 
-                if (udfpsensor.visible) {
-                    biometryd.cancelOperation()
+                if (udfpsensor.visible && udfpsensor.biometryd) {
+                    udfpsensor.biometryd.cancelOperation();
                 }
             }
             onCanceled: udfpsensor.fingerUp()

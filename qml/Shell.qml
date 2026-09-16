@@ -492,6 +492,7 @@ StyledItem {
         id: integratedGreeter
         Greeter {
 
+            shellRoot: shell
             enabled: panel.indicators.fullyClosed // hides OSK when panel is open
             hides: [launcher, panel.indicators, panel.applicationMenus]
             tabletMode: shell.usageScenario != "phone"

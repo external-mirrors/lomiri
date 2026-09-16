@@ -28,6 +28,8 @@ import GSettings 1.0
 Showable {
     id: root
 
+    property Item shellRoot
+    property QtObject biometryd
     property real dragHandleLeftMargin
     property real launcherOffset
     property alias background: greeterBackground.source
@@ -187,11 +189,13 @@ Showable {
         visible: gsettings.showChargingInformationWhileLocked && (BatteryMonitor.charging || BatteryMonitor.fullyCharged)
     }
 
-    UDFPSensorIcon{
-        id: ufdPosition
-        visible: parent.x == 0 && biometryd.canUnlock && root.showInfographic
+    UDFPSensorIcon {
+        id: udfpSensorIcon
+        shellRoot: root.shellRoot
+        biometryd: root.biometryd
+        visible: sensorConfigured && root.x === 0 && root.showInfographic
+                 && !!root.shellRoot && !!root.biometryd && root.biometryd.canUnlock
     }
-
 
     Label {
         id: swipeHint
