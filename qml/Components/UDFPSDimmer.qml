@@ -67,19 +67,24 @@ Item {
         }
     }
 
-    Rectangle {
+    Item {
         anchors.fill: parent
-        color: "black"
-        opacity: 0.9
-    }
+        visible: !deviceConfig.sensorLocalHBM
 
-    Rectangle {
-        id: indicator
-        width: udfps.sensorRadius * 2
-        height: width
-        radius: width / 2
-        color: "white"
-        x: udfps.sensorLocationX - udfps.sensorRadius
-        y: udfps.sensorLocationY - udfps.sensorRadius
+        Rectangle {
+            anchors.fill: parent
+            color: "black"
+            opacity: 0.9
+        }
+
+        Rectangle {
+            id: indicator
+            width: udfps.sensorRadius * 2
+            height: width
+            radius: width / 2
+            color: "white"
+            x: udfps.sensorLocationX - udfps.sensorRadius
+            y: udfps.sensorLocationY - udfps.sensorRadius
+        }
     }
 }
