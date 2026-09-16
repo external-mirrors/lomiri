@@ -29,6 +29,29 @@ Item {
         id: deviceConfig
     }
 
+    property bool fingerDown: false
+
+    /* Greeter is destroyed as soon as the fingerprint is accepted, so the
+       release may never arrive. */
+    function fingerUp() {
+        if (!fingerDown) {
+            return;
+        }
+        fingerDown = false;
+
+        shell.enableUDFPSDimmer(false)
+        if (Biometryd.available && Biometryd.defaultDevice) {
+            try {
+                Biometryd.defaultDevice.sendFingerUp();
+            } catch (e) {
+                console.warn("Failed to call Biometryd.sendFingerUp:", e);
+            }
+        }
+    }
+
+    onVisibleChanged: if (!visible) fingerUp()
+    Component.onDestruction: fingerUp()
+
     // TODO: read USFPDS position from biometryd
     x: deviceConfig.sensorLocationX - deviceConfig.sensorRadius
     y: deviceConfig.sensorLocationY - deviceConfig.sensorRadius
@@ -65,6 +88,7 @@ Item {
 
                 if (Biometryd.available && Biometryd.defaultDevice) {
                     try {
+                        udfpsensor.fingerDown = true;
                         shell.enableUDFPSDimmer(true)
                         Biometryd.defaultDevice.sendFingerDown(absoluteX, absoluteY, minor, major);
                         biometryd.startOperation()
@@ -74,20 +98,13 @@ Item {
                 }
             }
             onReleased: {
-                if (!udfpsensor.visible) {
-                    return;
-                }
+                udfpsensor.fingerUp();
 
-                if (Biometryd.available && Biometryd.defaultDevice) {
-                    try {
-                        shell.enableUDFPSDimmer(false)
-                        Biometryd.defaultDevice.sendFingerUp();
-                        biometryd.cancelOperation()
-                    } catch (e) {
-                        console.warn("Failed to call Biometryd.sendFingerUp:", e);
-                    }
+                if (udfpsensor.visible) {
+                    biometryd.cancelOperation()
                 }
             }
+            onCanceled: udfpsensor.fingerUp()
         }
     }
 }
