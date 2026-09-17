@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-08 18:13+0200\n"
-"PO-Revision-Date: 2026-09-15 09:59+0000\n"
+"PO-Revision-Date: 2026-09-18 00:52+0000\n"
 "Last-Translator: Alagirisamy Rengaraj <radhaalagirisamy@gmail.com>\n"
 "Language-Team: Tamil <https://hosted.weblate.org/projects/lomiri/lomiri/ta/>"
 "\n"
@@ -91,7 +91,7 @@ msgstr "குறுக்குவழி அவிழ்த்து விட�
 
 #: plugins/WindowManager/Screen.cpp:160
 msgid "Unknown"
-msgstr "தெரியவில்லை"
+msgstr "அறியாதவை"
 
 #: plugins/WindowManager/Screen.cpp:162
 msgid "VGA"
@@ -531,7 +531,7 @@ msgstr "%1 வரை"
 #: qml/Greeter/CoverPage.qml:198
 #: tests/qmltests/Greeter/tst_GreeterView.qml:1242
 msgid "Unlock"
-msgstr "பூட்டைத் திறக்க"
+msgstr "பூட்டைத் திற"
 
 #: qml/Greeter/DelayedLockscreen.qml:43
 msgid "Device Locked"
@@ -674,7 +674,7 @@ msgstr "மீண்டும் அழைக்கவும்"
 
 #: qml/Panel/PanelMenuPage.qml:93
 msgid "Back"
-msgstr "பின்"
+msgstr "பின்செல்"
 
 #: qml/Stage/SideStage.qml:81
 msgid "Drag using 3 fingers any application from one window to the other"
