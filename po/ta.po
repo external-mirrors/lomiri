@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-08 18:13+0200\n"
-"PO-Revision-Date: 2026-09-18 00:52+0000\n"
+"PO-Revision-Date: 2026-09-18 10:16+0000\n"
 "Last-Translator: Alagirisamy Rengaraj <radhaalagirisamy@gmail.com>\n"
 "Language-Team: Tamil <https://hosted.weblate.org/projects/lomiri/lomiri/ta/>"
 "\n"
@@ -161,7 +161,7 @@ msgstr "விடுபதிகை"
 #: qml/Greeter/GreeterView.qml:452 qml/Wizard/Pages/passcode-confirm.qml:32
 #: qml/Wizard/Pages/passcode-set.qml:32
 msgid "Cancel"
-msgstr "தவிர்க்க"
+msgstr "தவிர்"
 
 #: qml/Components/Dialogs.qml:211
 msgctxt "Title: Reboot dialog"
@@ -650,7 +650,7 @@ msgstr "ரத்து செய்யப்பட்டது"
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1139
 msgid "Finished"
-msgstr "முடிந்தது"
+msgstr "முடிவுற்றது"
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1141
 msgid "Failed, tap to retry"
