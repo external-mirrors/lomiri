@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: lomiri\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-08 18:13+0200\n"
-"PO-Revision-Date: 2025-12-25 03:39+0000\n"
+"PO-Revision-Date: 2026-09-21 16:29+0000\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://hosted.weblate.org/projects/lomiri/lomiri/"
 "ka/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.15.1\n"
+"X-Generator: Weblate 2026.10.dev0\n"
 
 #: data/lomiri.desktop.in:3 qml/Components/KeyboardShortcutsOverlay.qml:55
 msgid "Lomiri"
@@ -133,10 +133,9 @@ msgid "Virtual"
 msgstr ""
 
 #: plugins/Wizard/System.cpp:217
-#, fuzzy, qt-format
-#| msgid "Lomiri"
+#, qt-format
 msgid "Lomiri on %1"
-msgstr "Lomiri"
+msgstr "Lomiri %1-ზე"
 
 #: qml/Components/Dialogs.qml:176
 msgctxt "Title: Lock/Log out dialog"
@@ -371,40 +370,32 @@ msgid "Screens and Workspaces"
 msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:342
-#, fuzzy
-#| msgid "Ctrl + Super + Left or Right"
 msgid "Ctrl + Alt + Left or Right"
-msgstr "Ctrl + Super + Left or Right"
+msgstr "Ctrl + Alt + მარცხნივ, ან მარჯვნივ"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:347
 msgid "Switches between workspaces."
 msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:355
-#, fuzzy
-#| msgid "Ctrl + Alt + T"
 msgid "Ctrl + Alt + Up or Down"
-msgstr "Ctrl + Alt + T"
+msgstr "Ctrl + Alt + ზემოთ, ან ქვემოთ"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:360
 msgid "Switches between screens."
 msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:368
-#, fuzzy
-#| msgid "Ctrl + Super + Left or Right"
 msgid "Ctrl + Alt + Shift + Left or Right"
-msgstr "Ctrl + Super + Left or Right"
+msgstr "Ctrl + Alt + Shift + მარცხნივ, ან მარჯვნივ"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:373
 msgid "Moves current app between workspaces."
 msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:381
-#, fuzzy
-#| msgid "Ctrl + Super + Down"
 msgid "Ctrl + Alt + Shift + Up or Down"
-msgstr "Ctrl + Super + Down"
+msgstr "Ctrl + Alt + Shift + ზემოთ, ან ქვემოთ"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:386
 msgid "Moves current app between screens."
@@ -415,10 +406,8 @@ msgid "Stages"
 msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:404
-#, fuzzy
-#| msgid "Super + A"
 msgid "Super + S"
-msgstr "Super + A"
+msgstr "Super + S"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:409
 msgid "Shows or hides the side stage."
@@ -596,7 +585,7 @@ msgstr "პაროლის ჩვენება"
 
 #: qml/Notifications/Notification.qml:318
 msgid "New message"
-msgstr ""
+msgstr "ახალი შეტყობინება"
 
 #: qml/Panel/ActiveCallHint.qml:79
 msgid "Tap to return to call..."
