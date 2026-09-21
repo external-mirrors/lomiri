@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-08 18:13+0200\n"
-"PO-Revision-Date: 2026-09-18 10:16+0000\n"
+"PO-Revision-Date: 2026-09-21 16:29+0000\n"
 "Last-Translator: Alagirisamy Rengaraj <radhaalagirisamy@gmail.com>\n"
 "Language-Team: Tamil <https://hosted.weblate.org/projects/lomiri/lomiri/ta/>"
 "\n"
@@ -91,7 +91,7 @@ msgstr "குறுக்குவழி அவிழ்த்து விட�
 
 #: plugins/WindowManager/Screen.cpp:160
 msgid "Unknown"
-msgstr "அறியாதவை"
+msgstr "அறியாதது"
 
 #: plugins/WindowManager/Screen.cpp:162
 msgid "VGA"
@@ -161,7 +161,7 @@ msgstr "விடுபதிகை"
 #: qml/Greeter/GreeterView.qml:452 qml/Wizard/Pages/passcode-confirm.qml:32
 #: qml/Wizard/Pages/passcode-set.qml:32
 msgid "Cancel"
-msgstr "தவிர்"
+msgstr "தவிர்க்க"
 
 #: qml/Components/Dialogs.qml:211
 msgctxt "Title: Reboot dialog"
@@ -370,51 +370,39 @@ msgstr "தற்போதைய சாளரத்தை மூடுகிற�
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:335
 msgid "Screens and Workspaces"
-msgstr ""
+msgstr "திரைகள் மற்றும் பணிவெளிகள்"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:342
-#, fuzzy
-#| msgid "Ctrl + Super + Left or Right"
 msgid "Ctrl + Alt + Left or Right"
-msgstr "கட்டுப்பாடு + சூப்பர் + இடது அல்லது வலது"
+msgstr "கட்டுப்பாடு + மாற்று+ இடது அல்லது வலது"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:347
-#, fuzzy
-#| msgid "Switches between applications."
 msgid "Switches between workspaces."
-msgstr "பயன்பாடுகளுக்கு இடையில் சுவிட்சுகள்."
+msgstr "பணிவெளிகளுக்கு இடையில் மாறுகிறது."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:355
-#, fuzzy
-#| msgid "Ctrl + Alt + T"
 msgid "Ctrl + Alt + Up or Down"
-msgstr "கட்டுப்பாடு + மாற்று + t"
+msgstr "கட்டுப்பாடு + மாற்று +மேல் அல்லது கீழ்"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:360
-#, fuzzy
-#| msgid "Switches between applications."
 msgid "Switches between screens."
-msgstr "பயன்பாடுகளுக்கு இடையில் சுவிட்சுகள்."
+msgstr "திரைகளுக்கு இடையில் மாறுகிறது."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:368
-#, fuzzy
-#| msgid "Ctrl + Super + Left or Right"
 msgid "Ctrl + Alt + Shift + Left or Right"
-msgstr "கட்டுப்பாடு + சூப்பர் + இடது அல்லது வலது"
+msgstr "கட்டுப்பாடு + மாற்று+நகர்த்து+ இடது அல்லது வலது"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:373
 msgid "Moves current app between workspaces."
-msgstr ""
+msgstr "நடப்பு செயலியை பணிவெளிக்கிடையில் நகர்த்துகிறது."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:381
-#, fuzzy
-#| msgid "Ctrl + Super + Down"
 msgid "Ctrl + Alt + Shift + Up or Down"
-msgstr "கட்டுப்பாடு + சூப்பர் + பேரூர்"
+msgstr "கட்டுப்பாடு + மாற்று+நகர்த்து+மேல் அல்லது கீழ்"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:386
 msgid "Moves current app between screens."
-msgstr ""
+msgstr "நடப்பு செயலியை திரைகளுக்கிடையில் நகர்த்துகிறது."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:397
 msgid "Stages"
@@ -842,7 +830,7 @@ msgstr "இதற்கு சில நிமிடங்கள் ஆகலா
 
 #: qml/Wizard/Pages/79-system-update.qml:129
 msgid "Install and restart now"
-msgstr "இப்போது நிறுவி மறுதொடக்கம் செய்"
+msgstr "நிறுவு மற்றும் மறுதொடக்கம் செய் இப்போது"
 
 #: qml/Wizard/Pages/80-finished.qml:93
 msgid "Welcome Back"
