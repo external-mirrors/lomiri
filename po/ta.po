@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-08 18:13+0200\n"
-"PO-Revision-Date: 2026-09-21 16:29+0000\n"
+"PO-Revision-Date: 2026-09-22 20:18+0000\n"
 "Last-Translator: Alagirisamy Rengaraj <radhaalagirisamy@gmail.com>\n"
 "Language-Team: Tamil <https://hosted.weblate.org/projects/lomiri/lomiri/ta/>"
 "\n"
@@ -91,7 +91,7 @@ msgstr "குறுக்குவழி அவிழ்த்து விட�
 
 #: plugins/WindowManager/Screen.cpp:160
 msgid "Unknown"
-msgstr "அறியாதது"
+msgstr "தெரியாதவை"
 
 #: plugins/WindowManager/Screen.cpp:162
 msgid "VGA"
@@ -730,7 +730,7 @@ msgstr "புதியது என்ன"
 
 #: qml/Wizard/Pages/11-changelog.qml:74
 msgid "Loading..."
-msgstr "ஏற்றுகிறது ..."
+msgstr "ஏற்றுகிறது…"
 
 #: qml/Wizard/Pages/20-keyboard.qml:31
 msgid "Select Keyboard"
