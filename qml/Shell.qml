@@ -629,6 +629,7 @@ StyledItem {
             blurSource: shell.blurSource
             z: screenshotEditor.visible ? screenshotEditorContainer.z + 1 : 0
             mode: shell.usageScenario == "desktop" ? "windowed" : "staged"
+            maxMenuWidth: units.gu(40) * settings.indicatorMenuWidth
             minimizedPanelHeight: shell.screenIndex === 0
                                && shell.orientation === Qt.PortraitOrientation
                                && deviceConfig.collapsedPanelHeight
