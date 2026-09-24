@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-08 18:13+0200\n"
-"PO-Revision-Date: 2026-09-22 20:18+0000\n"
+"PO-Revision-Date: 2026-09-24 18:24+0000\n"
 "Last-Translator: Alagirisamy Rengaraj <radhaalagirisamy@gmail.com>\n"
 "Language-Team: Tamil <https://hosted.weblate.org/projects/lomiri/lomiri/ta/>"
 "\n"
@@ -50,7 +50,7 @@ msgstr "கடவுச்சொல்: "
 
 #: plugins/LightDM/Greeter.cpp:214
 msgid "Username"
-msgstr "பயனர் பெயர்"
+msgstr "பயனர்பெயர்"
 
 #: plugins/LightDM/Greeter.cpp:258
 msgid "Failed to authenticate"
@@ -91,7 +91,7 @@ msgstr "குறுக்குவழி அவிழ்த்து விட�
 
 #: plugins/WindowManager/Screen.cpp:160
 msgid "Unknown"
-msgstr "தெரியாதவை"
+msgstr "தெரியவில்லை"
 
 #: plugins/WindowManager/Screen.cpp:162
 msgid "VGA"
@@ -161,7 +161,7 @@ msgstr "விடுபதிகை"
 #: qml/Greeter/GreeterView.qml:452 qml/Wizard/Pages/passcode-confirm.qml:32
 #: qml/Wizard/Pages/passcode-set.qml:32
 msgid "Cancel"
-msgstr "தவிர்க்க"
+msgstr "நீக்கு"
 
 #: qml/Components/Dialogs.qml:211
 msgctxt "Title: Reboot dialog"
