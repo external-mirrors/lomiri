@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-08 18:13+0200\n"
+"POT-Creation-Date: 2026-09-24 18:23+0000\n"
 "PO-Revision-Date: 2021-02-01 21:06+0000\n"
 "Last-Translator: imrufbd <imrufbd@gmail.com>\n"
 "Language-Team: Bengali <https://translate.ubports.com/projects/ubports/"
@@ -133,61 +133,61 @@ msgstr ""
 msgid "Virtual"
 msgstr ""
 
-#: plugins/Wizard/System.cpp:217
+#: plugins/Wizard/System.cpp:216
 #, fuzzy, qt-format
 #| msgctxt "version of the system update"
 #| msgid "Version %1"
 msgid "Lomiri on %1"
 msgstr "সংস্করণ %1"
 
-#: qml/Components/Dialogs.qml:176
+#: qml/Components/Dialogs.qml:188
 msgctxt "Title: Lock/Log out dialog"
 msgid "Log out"
 msgstr "লগআউট করুন"
 
-#: qml/Components/Dialogs.qml:177
+#: qml/Components/Dialogs.qml:189
 msgid "Are you sure you want to log out?"
 msgstr "আপনি কি লগ আউট করতে চান?"
 
-#: qml/Components/Dialogs.qml:180
+#: qml/Components/Dialogs.qml:192
 msgctxt "Button: Lock the system"
 msgid "Lock"
 msgstr "লক করুন"
 
-#: qml/Components/Dialogs.qml:191
+#: qml/Components/Dialogs.qml:203
 msgctxt "Button: Log out from the system"
 msgid "Log Out"
 msgstr "লগআউট করুন"
 
-#: qml/Components/Dialogs.qml:199 qml/Components/Dialogs.qml:284
+#: qml/Components/Dialogs.qml:211 qml/Components/Dialogs.qml:310
 #: qml/Greeter/GreeterView.qml:452 qml/Wizard/Pages/passcode-confirm.qml:32
 #: qml/Wizard/Pages/passcode-set.qml:32
 msgid "Cancel"
 msgstr "বাতিল"
 
-#: qml/Components/Dialogs.qml:211
+#: qml/Components/Dialogs.qml:223
 msgctxt "Title: Reboot dialog"
 msgid "Reboot"
 msgstr "পুনরায় চালু"
 
-#: qml/Components/Dialogs.qml:212
+#: qml/Components/Dialogs.qml:224
 msgid "Are you sure you want to reboot?"
 msgstr "আপনি কি পুনরায় চালু করতে চান?"
 
-#: qml/Components/Dialogs.qml:215
+#: qml/Components/Dialogs.qml:227
 msgid "No"
 msgstr "না"
 
-#: qml/Components/Dialogs.qml:223
+#: qml/Components/Dialogs.qml:235
 msgid "Yes"
 msgstr "হ্যাঁ"
 
-#: qml/Components/Dialogs.qml:243
+#: qml/Components/Dialogs.qml:255
 msgctxt "Title: Power off/Restart dialog"
 msgid "Power"
 msgstr "বন্ধ/চালু"
 
-#: qml/Components/Dialogs.qml:244
+#: qml/Components/Dialogs.qml:256
 msgid ""
 "Are you sure you would like\n"
 "to power off?"
@@ -195,17 +195,22 @@ msgstr ""
 "আপনি নিশ্চিত যে আপনি\n"
 "বন্ধ করতে চান?"
 
-#: qml/Components/Dialogs.qml:248
+#: qml/Components/Dialogs.qml:260
 msgctxt "Button: Power off the system"
 msgid "Power off"
 msgstr "বন্ধ করুন"
 
-#: qml/Components/Dialogs.qml:263
+#: qml/Components/Dialogs.qml:275
 msgctxt "Button: Restart the system"
 msgid "Restart"
 msgstr "পুনরায় চালু"
 
-#: qml/Components/Dialogs.qml:276
+#: qml/Components/Dialogs.qml:288
+msgctxt "Button: Restart the system to Recovery"
+msgid "Restart to Recovery"
+msgstr ""
+
+#: qml/Components/Dialogs.qml:302
 #, fuzzy
 #| msgid "Takes a screenshot."
 msgid "Screenshot"
@@ -683,11 +688,11 @@ msgstr "কল ব্যাক"
 msgid "Back"
 msgstr "পূর্বপাতা"
 
-#: qml/Stage/SideStage.qml:81
+#: qml/Stage/SideStage.qml:88
 msgid "Drag using 3 fingers any application from one window to the other"
 msgstr "তিন আঙুল দিয়ে ধরে যেকোন অ্যাপ্লিকেেশন এক উইন্ডো থেকে অন্যটিতে নিয়ে আসুন"
 
-#: qml/Stage/Stage.qml:977
+#: qml/Stage/Stage.qml:994
 msgid "No running apps"
 msgstr "কোন অ্যাপ চলমান নেই"
 

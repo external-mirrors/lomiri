@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-08 18:13+0200\n"
+"POT-Creation-Date: 2026-09-24 18:23+0000\n"
 "PO-Revision-Date: 2024-05-16 17:56+0000\n"
 "Last-Translator: Daniel Soohan Park <soobak0313@outlook.com>\n"
 "Language-Team: Korean <https://hosted.weblate.org/projects/lomiri/lomiri/ko/"
@@ -133,76 +133,81 @@ msgstr "TV"
 msgid "Virtual"
 msgstr "가상"
 
-#: plugins/Wizard/System.cpp:217
+#: plugins/Wizard/System.cpp:216
 #, fuzzy, qt-format
 #| msgid "Lomiri"
 msgid "Lomiri on %1"
 msgstr "로미리"
 
-#: qml/Components/Dialogs.qml:176
+#: qml/Components/Dialogs.qml:188
 msgctxt "Title: Lock/Log out dialog"
 msgid "Log out"
 msgstr "로그아웃"
 
-#: qml/Components/Dialogs.qml:177
+#: qml/Components/Dialogs.qml:189
 msgid "Are you sure you want to log out?"
 msgstr "정말 로그아웃하시겠습니까?"
 
-#: qml/Components/Dialogs.qml:180
+#: qml/Components/Dialogs.qml:192
 msgctxt "Button: Lock the system"
 msgid "Lock"
 msgstr "잠그기"
 
-#: qml/Components/Dialogs.qml:191
+#: qml/Components/Dialogs.qml:203
 msgctxt "Button: Log out from the system"
 msgid "Log Out"
 msgstr "로그아웃"
 
-#: qml/Components/Dialogs.qml:199 qml/Components/Dialogs.qml:284
+#: qml/Components/Dialogs.qml:211 qml/Components/Dialogs.qml:310
 #: qml/Greeter/GreeterView.qml:452 qml/Wizard/Pages/passcode-confirm.qml:32
 #: qml/Wizard/Pages/passcode-set.qml:32
 msgid "Cancel"
 msgstr "취소"
 
-#: qml/Components/Dialogs.qml:211
+#: qml/Components/Dialogs.qml:223
 msgctxt "Title: Reboot dialog"
 msgid "Reboot"
 msgstr "다시 시작"
 
-#: qml/Components/Dialogs.qml:212
+#: qml/Components/Dialogs.qml:224
 msgid "Are you sure you want to reboot?"
 msgstr "정말 기기를 다시 시작하시겠습니까?"
 
-#: qml/Components/Dialogs.qml:215
+#: qml/Components/Dialogs.qml:227
 msgid "No"
 msgstr "아니오"
 
-#: qml/Components/Dialogs.qml:223
+#: qml/Components/Dialogs.qml:235
 msgid "Yes"
 msgstr "예"
 
-#: qml/Components/Dialogs.qml:243
+#: qml/Components/Dialogs.qml:255
 msgctxt "Title: Power off/Restart dialog"
 msgid "Power"
 msgstr "전원"
 
-#: qml/Components/Dialogs.qml:244
+#: qml/Components/Dialogs.qml:256
 msgid ""
 "Are you sure you would like\n"
 "to power off?"
 msgstr "정말 기기를 끄시겠습니까?"
 
-#: qml/Components/Dialogs.qml:248
+#: qml/Components/Dialogs.qml:260
 msgctxt "Button: Power off the system"
 msgid "Power off"
 msgstr "전원 끄기"
 
-#: qml/Components/Dialogs.qml:263
+#: qml/Components/Dialogs.qml:275
 msgctxt "Button: Restart the system"
 msgid "Restart"
 msgstr "다시 시작"
 
-#: qml/Components/Dialogs.qml:276
+#: qml/Components/Dialogs.qml:288
+msgctxt "Button: Restart the system to Recovery"
+msgid "Restart to Recovery"
+msgstr ""
+
+#: qml/Components/Dialogs.qml:302
 msgid "Screenshot"
 msgstr "스크린샷"
 
@@ -674,12 +679,12 @@ msgstr "부재중 번호로 전화"
 msgid "Back"
 msgstr "뒤로"
 
-#: qml/Stage/SideStage.qml:81
+#: qml/Stage/SideStage.qml:88
 msgid "Drag using 3 fingers any application from one window to the other"
 msgstr ""
 "어떤 어플리케이션이든 한 창에서 다른 창으로 세 손가락을 사용해 끌어놓으세요"
 
-#: qml/Stage/Stage.qml:977
+#: qml/Stage/Stage.qml:994
 msgid "No running apps"
 msgstr "실행 중인 앱 없음"
 

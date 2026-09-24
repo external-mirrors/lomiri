@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-08 18:13+0200\n"
+"POT-Creation-Date: 2026-09-24 18:23+0000\n"
 "PO-Revision-Date: 2026-06-23 10:01+0000\n"
 "Last-Translator: Serhii Horichenko <serhii@horichenko.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/lomiri/lomiri/"
@@ -134,60 +134,60 @@ msgstr "TV"
 msgid "Virtual"
 msgstr "Віртуальний"
 
-#: plugins/Wizard/System.cpp:217
+#: plugins/Wizard/System.cpp:216
 #, fuzzy, qt-format
 #| msgid "Lomiri"
 msgid "Lomiri on %1"
 msgstr "Lomiri"
 
-#: qml/Components/Dialogs.qml:176
+#: qml/Components/Dialogs.qml:188
 msgctxt "Title: Lock/Log out dialog"
 msgid "Log out"
 msgstr "Вийти"
 
-#: qml/Components/Dialogs.qml:177
+#: qml/Components/Dialogs.qml:189
 msgid "Are you sure you want to log out?"
 msgstr "Ви справді хочете вийти?"
 
-#: qml/Components/Dialogs.qml:180
+#: qml/Components/Dialogs.qml:192
 msgctxt "Button: Lock the system"
 msgid "Lock"
 msgstr "Заблокувати"
 
-#: qml/Components/Dialogs.qml:191
+#: qml/Components/Dialogs.qml:203
 msgctxt "Button: Log out from the system"
 msgid "Log Out"
 msgstr "Вийти"
 
-#: qml/Components/Dialogs.qml:199 qml/Components/Dialogs.qml:284
+#: qml/Components/Dialogs.qml:211 qml/Components/Dialogs.qml:310
 #: qml/Greeter/GreeterView.qml:452 qml/Wizard/Pages/passcode-confirm.qml:32
 #: qml/Wizard/Pages/passcode-set.qml:32
 msgid "Cancel"
 msgstr "Скасувати"
 
-#: qml/Components/Dialogs.qml:211
+#: qml/Components/Dialogs.qml:223
 msgctxt "Title: Reboot dialog"
 msgid "Reboot"
 msgstr "Перезавантажити"
 
-#: qml/Components/Dialogs.qml:212
+#: qml/Components/Dialogs.qml:224
 msgid "Are you sure you want to reboot?"
 msgstr "Ви справді хочете перезавантажити пристрій?"
 
-#: qml/Components/Dialogs.qml:215
+#: qml/Components/Dialogs.qml:227
 msgid "No"
 msgstr "Ні"
 
-#: qml/Components/Dialogs.qml:223
+#: qml/Components/Dialogs.qml:235
 msgid "Yes"
 msgstr "Так"
 
-#: qml/Components/Dialogs.qml:243
+#: qml/Components/Dialogs.qml:255
 msgctxt "Title: Power off/Restart dialog"
 msgid "Power"
 msgstr "Живлення"
 
-#: qml/Components/Dialogs.qml:244
+#: qml/Components/Dialogs.qml:256
 msgid ""
 "Are you sure you would like\n"
 "to power off?"
@@ -195,17 +195,22 @@ msgstr ""
 "Ви справді хочете вимкнути\n"
 "живлення?"
 
-#: qml/Components/Dialogs.qml:248
+#: qml/Components/Dialogs.qml:260
 msgctxt "Button: Power off the system"
 msgid "Power off"
 msgstr "Вимкнути"
 
-#: qml/Components/Dialogs.qml:263
+#: qml/Components/Dialogs.qml:275
 msgctxt "Button: Restart the system"
 msgid "Restart"
 msgstr "Перезапустити"
 
-#: qml/Components/Dialogs.qml:276
+#: qml/Components/Dialogs.qml:288
+msgctxt "Button: Restart the system to Recovery"
+msgid "Restart to Recovery"
+msgstr ""
+
+#: qml/Components/Dialogs.qml:302
 msgid "Screenshot"
 msgstr "Скріншот"
 
@@ -688,13 +693,13 @@ msgstr "Зворотний виклик"
 msgid "Back"
 msgstr "Назад"
 
-#: qml/Stage/SideStage.qml:81
+#: qml/Stage/SideStage.qml:88
 msgid "Drag using 3 fingers any application from one window to the other"
 msgstr ""
 "Перетягніть будь-яку програму за допомогою трьох пальців з одного вікна в "
 "інше"
 
-#: qml/Stage/Stage.qml:977
+#: qml/Stage/Stage.qml:994
 msgid "No running apps"
 msgstr "Немає запущених програм"
 

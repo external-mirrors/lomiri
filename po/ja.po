@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-08 18:13+0200\n"
+"POT-Creation-Date: 2026-09-24 18:23+0000\n"
 "PO-Revision-Date: 2026-09-01 18:03+0000\n"
 "Last-Translator: \"M.Sugahara\" <equaaqua@hotmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/lomiri/lomiri/"
@@ -133,76 +133,81 @@ msgstr "テレビ"
 msgid "Virtual"
 msgstr "バーチャル"
 
-#: plugins/Wizard/System.cpp:217
+#: plugins/Wizard/System.cpp:216
 #, fuzzy, qt-format
 #| msgid "Lomiri"
 msgid "Lomiri on %1"
 msgstr "Lomiri"
 
-#: qml/Components/Dialogs.qml:176
+#: qml/Components/Dialogs.qml:188
 msgctxt "Title: Lock/Log out dialog"
 msgid "Log out"
 msgstr "ログアウト"
 
-#: qml/Components/Dialogs.qml:177
+#: qml/Components/Dialogs.qml:189
 msgid "Are you sure you want to log out?"
 msgstr "本当にログアウトしますか？"
 
-#: qml/Components/Dialogs.qml:180
+#: qml/Components/Dialogs.qml:192
 msgctxt "Button: Lock the system"
 msgid "Lock"
 msgstr "ロック"
 
-#: qml/Components/Dialogs.qml:191
+#: qml/Components/Dialogs.qml:203
 msgctxt "Button: Log out from the system"
 msgid "Log Out"
 msgstr "ログアウト"
 
-#: qml/Components/Dialogs.qml:199 qml/Components/Dialogs.qml:284
+#: qml/Components/Dialogs.qml:211 qml/Components/Dialogs.qml:310
 #: qml/Greeter/GreeterView.qml:452 qml/Wizard/Pages/passcode-confirm.qml:32
 #: qml/Wizard/Pages/passcode-set.qml:32
 msgid "Cancel"
 msgstr "キャンセル"
 
-#: qml/Components/Dialogs.qml:211
+#: qml/Components/Dialogs.qml:223
 msgctxt "Title: Reboot dialog"
 msgid "Reboot"
 msgstr "再起動"
 
-#: qml/Components/Dialogs.qml:212
+#: qml/Components/Dialogs.qml:224
 msgid "Are you sure you want to reboot?"
 msgstr "本当に再起動しますか？"
 
-#: qml/Components/Dialogs.qml:215
+#: qml/Components/Dialogs.qml:227
 msgid "No"
 msgstr "いいえ"
 
-#: qml/Components/Dialogs.qml:223
+#: qml/Components/Dialogs.qml:235
 msgid "Yes"
 msgstr "はい"
 
-#: qml/Components/Dialogs.qml:243
+#: qml/Components/Dialogs.qml:255
 msgctxt "Title: Power off/Restart dialog"
 msgid "Power"
 msgstr "電源"
 
-#: qml/Components/Dialogs.qml:244
+#: qml/Components/Dialogs.qml:256
 msgid ""
 "Are you sure you would like\n"
 "to power off?"
 msgstr "本当に電源を切りますか？"
 
-#: qml/Components/Dialogs.qml:248
+#: qml/Components/Dialogs.qml:260
 msgctxt "Button: Power off the system"
 msgid "Power off"
 msgstr "電源を切る"
 
-#: qml/Components/Dialogs.qml:263
+#: qml/Components/Dialogs.qml:275
 msgctxt "Button: Restart the system"
 msgid "Restart"
 msgstr "再起動"
 
-#: qml/Components/Dialogs.qml:276
+#: qml/Components/Dialogs.qml:288
+msgctxt "Button: Restart the system to Recovery"
+msgid "Restart to Recovery"
+msgstr ""
+
+#: qml/Components/Dialogs.qml:302
 msgid "Screenshot"
 msgstr "スクリーンショット"
 
@@ -673,13 +678,13 @@ msgstr "折り返し連絡"
 msgid "Back"
 msgstr "戻る"
 
-#: qml/Stage/SideStage.qml:81
+#: qml/Stage/SideStage.qml:88
 msgid "Drag using 3 fingers any application from one window to the other"
 msgstr ""
 "3本指でアプリケーションを一方のウィンドウからもう一方のウィンドウにドラッグす"
 "る"
 
-#: qml/Stage/Stage.qml:977
+#: qml/Stage/Stage.qml:994
 msgid "No running apps"
 msgstr "実行中のアプリはありません"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-08 18:13+0200\n"
+"POT-Creation-Date: 2026-09-24 18:23+0000\n"
 "PO-Revision-Date: 2026-08-14 11:03+0000\n"
 "Last-Translator: Satyaakam Goswami <satyaakam@gmail.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/lomiri/lomiri/hi/"
@@ -133,60 +133,60 @@ msgstr "टीवी"
 msgid "Virtual"
 msgstr "विर्टुअल"
 
-#: plugins/Wizard/System.cpp:217
+#: plugins/Wizard/System.cpp:216
 #, fuzzy, qt-format
 #| msgid "Lomiri"
 msgid "Lomiri on %1"
 msgstr "लोमिरी"
 
-#: qml/Components/Dialogs.qml:176
+#: qml/Components/Dialogs.qml:188
 msgctxt "Title: Lock/Log out dialog"
 msgid "Log out"
 msgstr "प्रगति"
 
-#: qml/Components/Dialogs.qml:177
+#: qml/Components/Dialogs.qml:189
 msgid "Are you sure you want to log out?"
 msgstr "आप निश्चित हैं कि आप लॉग आउट करना चाहेंगे?"
 
-#: qml/Components/Dialogs.qml:180
+#: qml/Components/Dialogs.qml:192
 msgctxt "Button: Lock the system"
 msgid "Lock"
 msgstr "बंद करें"
 
-#: qml/Components/Dialogs.qml:191
+#: qml/Components/Dialogs.qml:203
 msgctxt "Button: Log out from the system"
 msgid "Log Out"
 msgstr "निकल जाना"
 
-#: qml/Components/Dialogs.qml:199 qml/Components/Dialogs.qml:284
+#: qml/Components/Dialogs.qml:211 qml/Components/Dialogs.qml:310
 #: qml/Greeter/GreeterView.qml:452 qml/Wizard/Pages/passcode-confirm.qml:32
 #: qml/Wizard/Pages/passcode-set.qml:32
 msgid "Cancel"
 msgstr "રद्द"
 
-#: qml/Components/Dialogs.qml:211
+#: qml/Components/Dialogs.qml:223
 msgctxt "Title: Reboot dialog"
 msgid "Reboot"
 msgstr "पुनर्निर्माण"
 
-#: qml/Components/Dialogs.qml:212
+#: qml/Components/Dialogs.qml:224
 msgid "Are you sure you want to reboot?"
 msgstr "क्या आप सुनिश्चित हैं कि आप फिर से शुरू करना चाहते हैं?"
 
-#: qml/Components/Dialogs.qml:215
+#: qml/Components/Dialogs.qml:227
 msgid "No"
 msgstr "नहीं"
 
-#: qml/Components/Dialogs.qml:223
+#: qml/Components/Dialogs.qml:235
 msgid "Yes"
 msgstr "जी हां"
 
-#: qml/Components/Dialogs.qml:243
+#: qml/Components/Dialogs.qml:255
 msgctxt "Title: Power off/Restart dialog"
 msgid "Power"
 msgstr "सशक्ति"
 
-#: qml/Components/Dialogs.qml:244
+#: qml/Components/Dialogs.qml:256
 msgid ""
 "Are you sure you would like\n"
 "to power off?"
@@ -194,17 +194,22 @@ msgstr ""
 "क्या आप सुनिश्चित हैं कि आप \n"
 "बिजली बंद करना चाहते हैं?"
 
-#: qml/Components/Dialogs.qml:248
+#: qml/Components/Dialogs.qml:260
 msgctxt "Button: Power off the system"
 msgid "Power off"
 msgstr "बंद करो"
 
-#: qml/Components/Dialogs.qml:263
+#: qml/Components/Dialogs.qml:275
 msgctxt "Button: Restart the system"
 msgid "Restart"
 msgstr "पुनर्निर्माण करें"
 
-#: qml/Components/Dialogs.qml:276
+#: qml/Components/Dialogs.qml:288
+msgctxt "Button: Restart the system to Recovery"
+msgid "Restart to Recovery"
+msgstr ""
+
+#: qml/Components/Dialogs.qml:302
 msgid "Screenshot"
 msgstr "स्क्रीनशॉट"
 
@@ -677,11 +682,11 @@ msgstr "पुनः संपर्क"
 msgid "Back"
 msgstr "पीछे"
 
-#: qml/Stage/SideStage.qml:81
+#: qml/Stage/SideStage.qml:88
 msgid "Drag using 3 fingers any application from one window to the other"
 msgstr "3 उंगलियों का इस्तेमाल करके किसी भी एप्लिकेशन को एक विंडो से दूसरी विंडो में ड्रैग करें"
 
-#: qml/Stage/Stage.qml:977
+#: qml/Stage/Stage.qml:994
 msgid "No running apps"
 msgstr "कोई भी अनुपस्थित नहीं है"
 
