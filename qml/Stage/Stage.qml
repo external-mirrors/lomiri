@@ -133,7 +133,9 @@ FocusScope {
             // Alt Tab has been released, did we already go to spread?
             if (priv.goneToSpread) {
                 priv.goneToSpread = false;
-            } else {
+
+            // Don't do anything if we already went to the spread and it was closed outside of alt tabbing i.e. clicking an item from the spread
+            } else if (!priv.altTabWentToSpread) {
                 // No we didn't, do a quick alt-tab
                 if (appRepeater.count > 1) {
                     appRepeater.itemAt(1).activate();
@@ -141,6 +143,8 @@ FocusScope {
                     appRepeater.itemAt(0).activate(); // quick alt-tab to the only (minimized) window should still activate it
                 }
             }
+
+            priv.altTabWentToSpread = false;
         }
     }
 
@@ -151,6 +155,8 @@ FocusScope {
         onTriggered: {
             if (root.altTabPressed) {
                 priv.goneToSpread = true;
+                priv.altTabWentToSpread = true;
+                priv.altTabInProgress = true;
             }
         }
     }
@@ -434,7 +440,11 @@ FocusScope {
         property var focusedAppDelegate: null
         property var foregroundMaximizedAppDelegate: null // for stuff like drop shadow and focusing maximized app by clicking panel
 
+        property bool altTabInProgress: false
+        property bool altTabWentToSpread: false
         property bool goneToSpread: false
+        onGoneToSpreadChanged: if (!goneToSpread) altTabInProgress = false;
+
         property int closingIndex: -1
         property int animationDuration: LomiriAnimation.FastDuration
 
@@ -915,6 +925,8 @@ FocusScope {
                 property int scrollAreaWidth: width / 3
                 property bool progressiveScrollingEnabled: false
 
+                onEnabledChanged: if (!enabled) spreadItem.hoveredIndex = -1;
+
                 onMouseXChanged: {
                     mouse.accepted = false
 
@@ -922,14 +934,19 @@ FocusScope {
                         return;
                     }
 
-                    // Find the hovered item and mark it active
+                    // Find the hovered item and mark it active except when alt tabbing is in-progress
                     for (var i = appRepeater.count - 1; i >= 0; i--) {
                         var appDelegate = appRepeater.itemAt(i);
                         var mapped = mapToItem(appDelegate, hoverMouseArea.mouseX, hoverMouseArea.mouseY)
                         var itemUnder = appDelegate.childAt(mapped.x, mapped.y);
                         if (itemUnder && (itemUnder.objectName === "dragArea" || itemUnder.objectName === "windowInfoItem" || itemUnder.objectName == "closeMouseArea")) {
-                            spreadItem.highlightedIndex = i;
+                            if (!priv.altTabInProgress) {
+                                spreadItem.highlightedIndex = i;
+                            }
+                            spreadItem.hoveredIndex = i;
                             break;
+                        } else {
+                            spreadItem.hoveredIndex = -1;
                         }
                     }
 
@@ -2232,7 +2249,7 @@ FocusScope {
                     anchors { left: parent.left; top: parent.top; leftMargin: -height / 2; topMargin: -height / 2 + spreadMaths.closeIconOffset }
                     readonly property var mousePos: hoverMouseArea.mapToItem(appDelegate, hoverMouseArea.mouseX, hoverMouseArea.mouseY)
                     readonly property bool shown: dragArea.distance == 0
-                             && index == spreadItem.highlightedIndex
+                             && index == spreadItem.hoveredIndex
                              && mousePos.y < (decoratedWindow.height / 3)
                              && mousePos.y > -units.gu(4)
                              && mousePos.x > -units.gu(4)

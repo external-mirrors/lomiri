@@ -223,6 +223,18 @@ Rectangle {
                         }
                     }
                     Button {
+                        id: toggleSpreadButton
+                        text: "Toggle Spread"
+                        activeFocusOnPress: false
+                        onClicked: {
+                            if (shell === null)
+                                return;
+
+                            var priv = testCase.findInvisibleChild(shell, "DesktopStagePrivate");
+                            priv.goneToSpread = !priv.goneToSpread;
+                        }
+                    }
+                    Button {
                         text: "Print focused"
                         activeFocusOnPress: false
                         onClicked: {
@@ -1717,6 +1729,38 @@ Rectangle {
             loadShell("desktop", 7);
 
             var spreadItem = findChild(shell, "spreadItem");
+            var priv = testCase.findInvisibleChild(shell, "DesktopStagePrivate");
+            verify(spreadItem !== null);
+
+            // FIXME: Simulating keyboard shortcut (Super + W) to open the Spread
+            // doesn't work for some reason even in GUI mode
+            // Open the Spread
+            priv.goneToSpread = true;
+
+            tryCompare(spreadItem, "highlightedIndex", 1);
+
+            var x = 0;
+            var y = shell.height * .75;
+            mouseMove(shell, x, y)
+
+            for (var i = 0; i < 7; i++) {
+                while (spreadItem.highlightedIndex != i && x <= 4000) {
+                    x+=10;
+                    mouseMove(shell, x, y)
+                    wait(10); // spin the loop so bindings get evaluated
+                }
+            }
+
+            verify(x < 4000);
+
+            // Close the Spread
+            priv.goneToSpread = false;
+        }
+
+        function test_highlightNotFollowMouseWhenAltTabbing() {
+            loadShell("desktop", 7);
+
+            var spreadItem = findChild(shell, "spreadItem");
             verify(spreadItem !== null);
 
             keyPress(Qt.Key_Alt)
@@ -1736,7 +1780,7 @@ Rectangle {
                 }
             }
 
-            verify(x < 4000);
+            verify(x >= 4000);
 
             keyRelease(Qt.Key_Alt);
         }
@@ -1785,6 +1829,51 @@ Rectangle {
             keyRelease(Qt.Key_Alt);
         }
 
+        function test_selectFromSpreadWithMouseWhenAltTabbing_data() {
+            return [
+                {tag: "click on tileInfo", tileInfo: true },
+                {tag: "click on surface", tileInfo: false },
+            ]
+        }
+
+        function test_selectFromSpreadWithMouseWhenAltTabbing(data) {
+            loadShell("desktop", 4);
+
+            var stage = findChild(shell, "stage");
+            var spreadItem = findChild(stage, "spreadItem");
+
+            var appRepeater = findInvisibleChild(shell, "appRepeater");
+            verify(appRepeater !== null);
+
+            keyPress(Qt.Key_Alt)
+            keyClick(Qt.Key_Tab);
+
+            var surface = topLevelSurfaceList.surfaceAt(2);
+            var spreadDelegate2 = appRepeater.itemAt(2);
+            var decoratedWindow = findChild(spreadDelegate2, "decoratedWindow");
+
+            tryCompare(stage, "state", "spread");
+
+            // Move the mouse over tile 2
+            var x = 0;
+            var y = shell.height * (data.tileInfo ? .9 : 0.7)
+            mouseMove(shell, x, y)
+            while (spreadItem.hoveredIndex !== 2 && x <= 4000) {
+                x+=10;
+                mouseMove(shell, x, y)
+                wait(10); // spin the loop so bindings get evaluated
+            }
+
+            // Click the tile
+            mouseClick(decoratedWindow, units.gu(2), decoratedWindow.height / 2)
+
+            // Verify that we left the spread and app2 is the focused one now
+            tryCompare(stage, "state", "windowed");
+            tryCompare(surface, "focused", true);
+
+            keyRelease(Qt.Key_Alt);
+        }
+
         function test_selectFromSpreadWithMouse_data() {
             return [
                 {tag: "click on tileInfo", tileInfo: true },
@@ -1797,12 +1886,13 @@ Rectangle {
 
             var stage = findChild(shell, "stage");
             var spreadItem = findChild(stage, "spreadItem");
+            var priv = testCase.findInvisibleChild(shell, "DesktopStagePrivate");
 
             var appRepeater = findInvisibleChild(shell, "appRepeater");
             verify(appRepeater !== null);
 
-            keyPress(Qt.Key_Alt)
-            keyClick(Qt.Key_Tab);
+            // Open the Spread
+            priv.goneToSpread = true;
 
             var surface = topLevelSurfaceList.surfaceAt(2);
             var spreadDelegate2 = appRepeater.itemAt(2);
@@ -1828,7 +1918,8 @@ Rectangle {
             tryCompare(stage, "state", "windowed");
             tryCompare(surface, "focused", true);
 
-            keyRelease(Qt.Key_Alt);
+            // Close the Spread
+            priv.goneToSpread = false;
         }
 
         function test_progressiveAutoScrolling() {

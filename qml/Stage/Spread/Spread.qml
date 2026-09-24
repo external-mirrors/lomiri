@@ -23,6 +23,7 @@ Item {
 
     // Information about the environment
     property int highlightedIndex: -1
+    property int hoveredIndex: -1
     property var model: null
     property int leftMargin: 0
     property var spreadFlickable
