@@ -38,6 +38,8 @@ QtObject {
 
     readonly property alias category: priv.category
 
+    readonly property alias supportsRebootToRecovery: priv.supportsRebootToRecovery
+
     readonly property alias collapsedPanelHeight: priv.collapsedPanelHeight
 
     readonly property var deviceConfig: DeviceConfig {}
@@ -64,6 +66,7 @@ QtObject {
         property string category: deviceConfig.category
         property string name: deviceConfig.name
         property bool supportsMultiColorLed: deviceConfig.supportsMultiColorLed
+        property bool supportsRebootToRecovery: deviceConfig.supportsRebootToRecovery
 
         property int collapsedPanelHeight: deviceConfig.collapsedPanelHeight
 

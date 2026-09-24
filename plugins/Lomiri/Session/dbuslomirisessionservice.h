@@ -43,6 +43,7 @@ public:
     // For use in QML. Javascript doesn't accept functions beginning with capital letters
     Q_INVOKABLE void logout() { Logout(); }
     Q_INVOKABLE void reboot() { Reboot(); }
+    Q_INVOKABLE void rebootToRecovery() { RebootToRecovery(); }
     Q_INVOKABLE void shutdown() { Shutdown(); }
     Q_INVOKABLE void endSession() { EndSession(); }
 
@@ -126,6 +127,15 @@ public Q_SLOTS:
      * RequestReboot() to ask the user to decide reboot or not.
      */
     Q_SCRIPTABLE void Reboot();
+
+    /**
+     * Reboot the system to recovery.
+     *
+     * This method directly reboots the system to recovery without user's confirmation.
+     * Ordinary applications should avoid calling this method. Please call
+     * RequestReboot() to ask the user to decide reboot or not.
+     */
+    Q_SCRIPTABLE void RebootToRecovery();
 
     /**
      * Shutdown the system.

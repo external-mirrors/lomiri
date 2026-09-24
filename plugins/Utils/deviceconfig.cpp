@@ -139,3 +139,8 @@ void DeviceConfig::reload()
     m_info = std::make_unique<DeviceInfo>();
     Q_EMIT changed();
 }
+
+bool DeviceConfig::supportsRebootToRecovery() const
+{
+    return m_info->get("supportsRebootToRecovery", "false") == "true";
+}

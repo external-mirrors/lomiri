@@ -503,6 +503,12 @@ void DBusLomiriSessionService::Reboot()
     d->makeLogin1Call(QStringLiteral("Reboot"), {false});
 }
 
+void DBusLomiriSessionService::RebootToRecovery()
+{
+    d->makeLogin1Call(QStringLiteral("SetRebootParameter"), {"recovery"});
+    d->makeLogin1Call(QStringLiteral("Reboot"), {false});
+}
+
 void DBusLomiriSessionService::RequestReboot()
 {
     Q_EMIT RebootRequested(false);

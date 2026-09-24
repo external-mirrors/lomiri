@@ -38,6 +38,7 @@ Rectangle {
         function logout() {}
         function shutdown() {}
         function reboot() {}
+        function rebootToRecovery() {}
     }
 
     Rectangle {

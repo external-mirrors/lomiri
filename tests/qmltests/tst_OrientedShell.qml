@@ -1643,7 +1643,7 @@ Rectangle {
             testCase.showPowerDialog(orientedShell);
 
             var dialogs = findChild(orientedShell, "dialogs");
-            var buttons = findChildsByType(dialogs, "Button");
+            var buttons = findChildsByType(dialogs, "Button").filter(function(button) { return button.visible; });
 
             tryCompare(buttons[0], "activeFocus", true);
 
