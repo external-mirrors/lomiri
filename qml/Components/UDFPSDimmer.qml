@@ -18,6 +18,7 @@ import QtQuick 2.4
 import QtQuick.Window 2.2
 import Lomiri.Components 1.3
 import Biometryd 0.0
+import GSettings 1.0
 import Utils 0.1
 
 /* Necessary when using high brightness mode (HBM) to avoid blinding the user */
@@ -32,10 +33,19 @@ Item {
         id: deviceConfig
     }
 
+    GSettings {
+        id: systemSettings
+        schema.id: "com.lomiri.touch.system"
+    }
+
     // TODO: read USFPDS position from biometryd
     property real baseX: deviceConfig.sensorLocationX
     property real baseY: deviceConfig.sensorLocationY
     property real sensorRadius: deviceConfig.sensorRadius
+
+    /* The dimming has to take back exactly as much as HBM adds, which
+       depends on the current brightness. The table lives in deviceinfo. */
+    readonly property real dimOpacity: deviceConfig.sensorDimOpacity(systemSettings.brightness)
 
     property real sensorLocationX : {
         switch (Screen.orientation) {
@@ -74,7 +84,7 @@ Item {
         Rectangle {
             anchors.fill: parent
             color: "black"
-            opacity: 0.9
+            opacity: udfps.dimOpacity
         }
 
         Rectangle {

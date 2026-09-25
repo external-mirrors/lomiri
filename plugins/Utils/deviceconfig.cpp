@@ -19,6 +19,7 @@
 
 #include <deviceinfo.h>
 #include <QDebug>
+#include <QRegularExpression>
 
 DeviceConfig::DeviceConfig(QObject *parent):
     QObject(parent),
@@ -133,6 +134,48 @@ bool DeviceConfig::sensorLocalHBM() const
 {
     // Such panels light the sensor area themselves.
     return QString::fromStdString(m_info->get("udfpLocalHBM", "false")).toLower() == "true";
+}
+
+qreal DeviceConfig::sensorDimOpacity(int brightness) const
+{
+    // How much dimming cancels high brightness mode depends on the brightness
+    // setting, and the relation is a property of the panel: pairs of
+    // "<brightness>,<alpha out of 255>", interpolated in between.
+    const QString table = QString::fromStdString(
+        m_info->get("udfpDimmingBrightnessAlphaArray", ""));
+
+    qreal previousBrightness = 0;
+    qreal previousAlpha = -1;
+
+    const auto entries = table.split(QRegularExpression(QStringLiteral("\\s+")),
+                                     Qt::SkipEmptyParts);
+    for (const QString &entry : entries) {
+        const auto pair = entry.split(QLatin1Char(','));
+        if (pair.size() != 2) {
+            qWarning().nospace().noquote()
+                << "Ignoring malformed udfpDimmingBrightnessAlphaArray entry \""
+                << entry << "\". Expected <brightness>,<alpha>.";
+            continue;
+        }
+
+        const qreal entryBrightness = pair[0].toDouble();
+        const qreal entryAlpha = pair[1].toDouble();
+
+        if (entryBrightness >= brightness) {
+            if (previousAlpha < 0 || entryBrightness <= previousBrightness)
+                return entryAlpha / 255;
+
+            const qreal position = (brightness - previousBrightness)
+                                 / (entryBrightness - previousBrightness);
+            return (previousAlpha + position * (entryAlpha - previousAlpha)) / 255;
+        }
+
+        previousBrightness = entryBrightness;
+        previousAlpha = entryAlpha;
+    }
+
+    // Brighter than the table goes, or no table at all.
+    return previousAlpha < 0 ? 0.9 : previousAlpha / 255;
 }
 
 quint16 DeviceConfig::collapsedPanelHeight() const
