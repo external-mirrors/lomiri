@@ -60,6 +60,7 @@ public:
     quint16 sensorLocationY() const;
     quint16 sensorRadius() const;
     bool sensorLocalHBM() const;
+    Q_INVOKABLE qreal sensorDimOpacity(int brightness) const;
 
     quint16 collapsedPanelHeight() const;
 
