@@ -17,12 +17,7 @@
 #ifndef LOMIRI_DISPLAYCONFIGURATIONSTORAGE_H
 #define LOMIRI_DISPLAYCONFIGURATIONSTORAGE_H
 
-#ifndef WITH_MIR2
-#include <qtmir/miral/display_configuration_storage.h>
-namespace miroil = miral;
-#else
 #include <miroil/display_configuration_storage.h>
-#endif
 
 class DisplayConfigurationStorage : public miroil::DisplayConfigurationStorage
 {
