@@ -29,6 +29,7 @@ cleanup()
     if [ -n "$CMD_PID" ]; then
         kill "$CMD_PID"
     fi
+    systemctl --user start exit.target --wait
     exit 0
 }
 
@@ -90,25 +91,33 @@ fi
 export GRID_UNIT_PX="${GRID_UNIT_PX:-18}"
 export MIR_SERVER_ENABLE_MIRCLIENT=1
 
-rm "$XDG_RUNTIME_DIR/mir_socket"
+# Latch onto the lightdm user's slice that logind created, we want all related
+# services to end and launch the exit.target if the slice goes offline.
+SESSION_UNIT="user-$(id -u).slice"
+
+# Launch the greeter
 exec env MIR_SERVER_FILE=$SUB_SOCKET $TOUCH_WRAPPER $@ &
 CMD_PID=$!
 
-count=0
-limit=60
-while [ true ]; do
-    count=$((count + 1))
-    [ $count -gt $limit ] && break
-    [ -e "$XDG_RUNTIME_DIR/mir_socket" ] && break
-    sleep 1s
-done
-
-systemctl --user restart maliit-server.service &
-systemctl --user restart lomiri-indicators.target &
+# Launch session services aiding the greeter
+systemd-run --user \
+    --collect \
+    --unit=greeter-environment-setup.service \
+    --service-type=notify \
+    --property=Requires=$SESSION_UNIT \
+    --property=After=$SESSION_UNIT \
+    --property=Requires=dbus.socket \
+    --property=After=dbus.socket \
+    --property=Wants=maliit-server.service \
+    --property=Before=maliit-server.service \
+    --property=Wants=lomiri-indicators.target \
+    --property=Before=lomiri-indicators.target \
+    --property=Conflicts=exit.target \
+    --property=WorkingDirectory=$PWD \
+    --property=TimeoutStartSec=60 \
+    /bin/sh -c "while [ ! -e $SUB_SOCKET ]; do sleep 0.5; done && systemd-notify --ready"
 
 wait $CMD_PID
 CMD_PID=
 
-systemctl --user stop maliit-server.service
-systemctl --user stop lomiri-indicators.target
-
+systemctl --user start --wait exit.target
