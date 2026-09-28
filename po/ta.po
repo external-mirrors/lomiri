@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-24 18:23+0000\n"
-"PO-Revision-Date: 2026-09-24 18:24+0000\n"
+"PO-Revision-Date: 2026-10-01 17:51+0000\n"
 "Last-Translator: Alagirisamy Rengaraj <radhaalagirisamy@gmail.com>\n"
-"Language-Team: Tamil <https://hosted.weblate.org/projects/lomiri/lomiri/ta/"
-">\n"
+"Language-Team: Tamil <https://hosted.weblate.org/projects/lomiri/lomiri/ta/>"
+"\n"
 "Language: ta\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.10.dev0\n"
+"X-Generator: Weblate 2026.10\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:36+0000\n"
 
 #: data/lomiri.desktop.in:3 qml/Components/KeyboardShortcutsOverlay.qml:55
@@ -26,7 +26,7 @@ msgstr "லோமிரி"
 
 #: data/lomiri.desktop.in:4
 msgid "The converged Lomiri shell"
-msgstr "ஒருங்கிணைந்த லோமிரி செல்"
+msgstr "ஒருங்கிணைந்த லோமிரி கூடு"
 
 #: data/lomiri-greeter.desktop.in:3
 msgid "Lomiri Greeter"
@@ -34,15 +34,15 @@ msgstr "லோமிரி வாழ்த்து"
 
 #: data/lomiri-greeter.desktop.in:4
 msgid "The converged Lomiri shell's Greeter"
-msgstr "ஒன்றிணைந்த லோமிரி செல்லின் வாழ்த்து"
+msgstr "ஒன்றிணைந்த லோமிரி கூட்டின் வாழ்த்து"
 
 #: data/indicators-client.desktop.in:3
 msgid "Indicators Client"
-msgstr "குறிகாட்டிகள் கிளையன்ட்"
+msgstr "குறிகாட்டிகள் வாடிகையாளர்"
 
 #: data/indicators-client.desktop.in:4
 msgid "Application for testing the Indicators system"
-msgstr "குறிகாட்டிகள் அமைப்பைச் சோதிப்பதற்கான பயன்பாடு"
+msgstr "குறிகாட்டிகள் அமைப்பைச் சோதிப்பதற்கான செயலி"
 
 #: plugins/LightDM/Greeter.cpp:199
 msgid "Password: "
@@ -54,7 +54,7 @@ msgstr "பயனர்பெயர்"
 
 #: plugins/LightDM/Greeter.cpp:258
 msgid "Failed to authenticate"
-msgstr "அங்கீகரிக்கத் தவறிவிட்டது"
+msgstr "உறுதிப்படுத்த தோல்வியுற்றது"
 
 #: plugins/LightDM/Greeter.cpp:260
 msgid "Invalid password, please try again"
@@ -62,7 +62,7 @@ msgstr "தவறான கடவுச்சொல், தயவுசெய்
 
 #: plugins/LightDM/Greeter.cpp:270
 msgid "Log In"
-msgstr "புகுபதிகை"
+msgstr "உள் நுழையவும்"
 
 #: plugins/LightDM/Greeter.cpp:270
 msgid "Retry"
@@ -70,7 +70,7 @@ msgstr "மீண்டும் முயற்சிக்கவும்"
 
 #: plugins/LightDM/UsersModel.cpp:158
 msgid "Login"
-msgstr "புகுபதிவு"
+msgstr "உள் நுழையவும்"
 
 #: plugins/LightDM/UsersModel.cpp:166
 msgid "Guest Session"
@@ -79,7 +79,7 @@ msgstr "விருந்தினர் அமர்வு"
 #: plugins/Lomiri/Launcher/launcheritem.cpp:48
 #: plugins/Lomiri/Launcher/launcheritem.cpp:122
 msgid "Pin shortcut"
-msgstr "எளியவழியை குறித்துவைக்கவும்"
+msgstr "குறுக்குவழியை குத்திவை"
 
 #: plugins/Lomiri/Launcher/launcheritem.cpp:54
 msgid "Quit"
@@ -87,7 +87,7 @@ msgstr "கைவிடு"
 
 #: plugins/Lomiri/Launcher/launcheritem.cpp:122
 msgid "Unpin shortcut"
-msgstr "குறுக்குவழி அவிழ்த்து விடுங்கள்"
+msgstr "குறுக்குவழியை நீக்கி விடவும்"
 
 #: plugins/WindowManager/Screen.cpp:160
 msgid "Unknown"
@@ -155,7 +155,7 @@ msgstr "பூட்டு"
 #: qml/Components/Dialogs.qml:203
 msgctxt "Button: Log out from the system"
 msgid "Log Out"
-msgstr "விடுபதிகை"
+msgstr "வெளியேறு"
 
 #: qml/Components/Dialogs.qml:211 qml/Components/Dialogs.qml:310
 #: qml/Greeter/GreeterView.qml:452 qml/Wizard/Pages/passcode-confirm.qml:32
@@ -183,20 +183,20 @@ msgstr "ஆம்"
 #: qml/Components/Dialogs.qml:255
 msgctxt "Title: Power off/Restart dialog"
 msgid "Power"
-msgstr "விசை"
+msgstr "ஆற்றல்"
 
 #: qml/Components/Dialogs.qml:256
 msgid ""
 "Are you sure you would like\n"
 "to power off?"
 msgstr ""
-"நீங்கள் நிச்சயமாக விரும்புகிறீர்கள்\n"
-" சக்தியை அணைக்க?"
+"நீங்கள் நிச்சயமாக விரும்புகிறீர்களா\n"
+",ஆற்றலை அணைக்க?"
 
 #: qml/Components/Dialogs.qml:260
 msgctxt "Button: Power off the system"
 msgid "Power off"
-msgstr "ஆற்றல் முடக்குகிறது"
+msgstr "ஆற்றல் அணைக்கிறது"
 
 #: qml/Components/Dialogs.qml:275
 msgctxt "Button: Restart the system"
@@ -206,7 +206,7 @@ msgstr "மறுதொடக்கம்"
 #: qml/Components/Dialogs.qml:288
 msgctxt "Button: Restart the system to Recovery"
 msgid "Restart to Recovery"
-msgstr ""
+msgstr "மீட்புக்கு மீண்ண்டும் துவக்கு"
 
 #: qml/Components/Dialogs.qml:302
 msgid "Screenshot"
@@ -218,7 +218,7 @@ msgstr "விசைப்பலகை குறுக்குவழிகள�
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:62
 msgid "PrtScr"
-msgstr "Prtscr"
+msgstr "திரையை அச்சிடு"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:67
 msgid "Takes a screenshot."
@@ -226,15 +226,15 @@ msgstr "திரை காட்சி எடுக்கிறது."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:75
 msgid "Alt + PrtScr"
-msgstr "மாற்று + prtscr"
+msgstr "மாற்று +அச்சிடு திரையை"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:80
 msgid "Takes a screenshot of the current window."
-msgstr "தற்போதைய சாளரத்தின் திரை சாட்டை எடுக்கிறது."
+msgstr "தற்போதைய சாளரத்தின் திரைபிடிப்பை எடுக்கிறது."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:88
 msgid "Super + Space"
-msgstr "சூப்பர் + விண்வெளி"
+msgstr "சூப்பர் + இடைவெளி"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:93
 msgid "Switches to next keyboard layout."
@@ -242,7 +242,7 @@ msgstr "அடுத்த விசைப்பலகை தளவமைப்�
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:101
 msgid "Super + Shift + Space"
-msgstr "சூப்பர் + சிப்ட் + விண்வெளி"
+msgstr "சூப்பர் + நகர்த்து + இடைவெளி"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:106
 msgid "Switches to previous keyboard layout."
@@ -493,7 +493,7 @@ msgstr "கணினி அமைப்புகளில் மேலும் 
 
 #: qml/Greeter/CoverPage.qml:161
 msgid "Fully charged"
-msgstr "முழு மின்கலமும் மின்னேற்றப்பட்டது"
+msgstr "முழுவதும் மின்னேற்றப்பட்டது"
 
 #: qml/Greeter/CoverPage.qml:169
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1104
@@ -567,7 +567,7 @@ msgstr "அவசரநிலை"
 
 #: qml/Greeter/PromptList.qml:143
 msgid "Passphrase"
-msgstr "கடவுச்சொல்"
+msgstr "கடவுச்சொல்தொடர்"
 
 #: qml/Greeter/PromptList.qml:143
 msgid "Passcode"
@@ -591,7 +591,7 @@ msgstr "புதுப்பிக்க வெளியீடு…"
 
 #: qml/Notifications/NotificationMenuItemFactory.qml:124
 msgid "Show password"
-msgstr "கடவுச்சொல் காண்க"
+msgstr "கடவுச்சொல் காட்டு"
 
 #: qml/Notifications/Notification.qml:318
 msgid "New message"
