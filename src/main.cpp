@@ -43,6 +43,10 @@ int main(int argc, const char *argv[])
         setenv("MIR_SERVER_CURSOR", "null", 1);
     }
 
+    // Workaround to disable internal Mir decorations until an API for that is implemented.
+    // See: https://gitlab.com/ubports/development/core/packaging/mir2/-/merge_requests/4
+    setenv("MIR_DISABLE_SSD_DRAWING", "1", 1);
+
     if (enableQmlDebugger(argc, argv)) {
         QQmlDebuggingEnabler qQmlEnableDebuggingHelper(true);
     }
