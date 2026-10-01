@@ -48,7 +48,8 @@ Instantiator {
             value: applicationArguments.windowGeometry.height
         }
 
-        Component.onCompleted: screen.active = true
+        Component.onCompleted: if (primary) screen.active = true
+        onPrimaryChanged: if (primary) screen.active = true
     }
 
     property var windowManagerSurfaceManagerBinding: Binding {
