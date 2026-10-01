@@ -90,6 +90,7 @@ Rectangle {
     QtObject {
         id: _screen
         property int formFactor: Screen.Phone
+        property bool active: true
         property var workspaces : QtObject {
             property int count : 0
         }

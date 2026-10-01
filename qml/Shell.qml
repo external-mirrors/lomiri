@@ -1073,12 +1073,24 @@ StyledItem {
             }
         }
 
+        onScreenEntered: screenWindow.screen.active = true
+
         onMouseMoved: {
             mouseNeverMoved = false;
             cursor.opacity = 1;
         }
 
         Behavior on opacity { LomiriNumberAnimation {} }
+    }
+
+    Item {
+        anchors.fill: parent
+        z: cursor.z + 1
+
+        PointHandler {
+            acceptedDevices: PointerDevice.TouchScreen
+            onActiveChanged: if (active) screenWindow.screen.active = true
+        }
     }
 
     // non-visual objects

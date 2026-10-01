@@ -42,6 +42,9 @@ Item {
     QtObject {
         id: _screenWindow
         property bool primary: true
+        property var screen: QtObject {
+            property bool active: true
+        }
     }
     property alias screenWindow: _screenWindow
 
