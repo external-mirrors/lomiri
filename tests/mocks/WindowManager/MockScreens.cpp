@@ -26,10 +26,6 @@
 
 namespace {
 
-#ifndef WITH_MIR2
-namespace miroil = miral;
-#endif
-
 QWeakPointer<MockScreens> m_screens;
 
 class MockScreen : public qtmir::Screen

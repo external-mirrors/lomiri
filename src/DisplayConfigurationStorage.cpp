@@ -23,10 +23,6 @@
 
 namespace {
 
-#ifndef WITH_MIR2
-namespace miroil = miral;
-#endif
-
 inline QString stringFromEdid(const miroil::Edid& edid)
 {
     QString str;
