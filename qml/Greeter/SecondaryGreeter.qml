@@ -31,6 +31,8 @@ Showable {
     readonly property bool fullyShown: shown
 
     property string lockedApp: ""
+    property alias background: wallpaper.source
+    property alias backgroundSourceSize: wallpaper.sourceSize
 
     function forceShow() { show(); }
     property var notifyAppFocusRequested: (function(appId) { return; })
@@ -47,6 +49,11 @@ Showable {
     Rectangle {
         anchors.fill: parent
         color: LomiriColors.purple
+    }
+
+    Wallpaper {
+        id: wallpaper
+        anchors.fill: parent
     }
 
     MouseArea {
