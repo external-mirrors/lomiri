@@ -61,6 +61,7 @@ Q_SIGNALS:
     void pushedBottomLeftCorner(qreal amount, Qt::MouseButtons buttons);
     void pushedBottomRightCorner(qreal amount, Qt::MouseButtons buttons);
     void pushStopped();
+    void screenEntered();
     void mouseMoved();
     void confiningItemChanged();
 

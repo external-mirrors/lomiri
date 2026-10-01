@@ -42,6 +42,7 @@ Q_SIGNALS:
     void pushedBottomLeftCorner(QScreen* screen, qreal amount, Qt::MouseButtons buttons);
     void pushedBottomRightCorner(QScreen* screen, qreal amount, Qt::MouseButtons buttons);
     void pushStopped(QScreen* screen);
+    void screenEntered(QScreen* screen);
 
 protected:
     InputDispatcherFilter(QObject* parent = nullptr);
