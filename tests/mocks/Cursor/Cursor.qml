@@ -31,6 +31,7 @@ Canvas {
     signal pushedBottomLeftCorner(real amount, int buttons)
     signal pushedBottomRightCorner(real amount, int buttons)
     signal pushStopped()
+    signal screenEntered()
     signal mouseMoved()
 
     width: units.gu(2)

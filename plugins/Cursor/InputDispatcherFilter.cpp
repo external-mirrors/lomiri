@@ -107,6 +107,10 @@ bool InputDispatcherFilter::eventFilter(QObject *o, QEvent *e)
                 qreal newX = (oldPos + movement).x();
                 qreal newY = (oldPos + movement).y();
 
+                if (currentScreen != pointer->screen()) {
+                    Q_EMIT screenEntered(currentScreen);
+                }
+
                 if (newX <= screenRect.left() && newY < screenRect.top() + pointer->topBoundaryOffset()) { // top left corner
                     const auto distance = qSqrt(qPow(newX, 2) + qPow(newY- screenRect.top() - pointer->topBoundaryOffset(), 2));
                     Q_EMIT pushedTopLeftCorner(currentScreen, qAbs(distance), me->buttons());
@@ -217,8 +221,6 @@ QPointF InputDispatcherFilter::adjustedPositionForMovement(const QPointF &pt, co
 QScreen *InputDispatcherFilter::screenAt(const QPointF &pt) const
 {
     Q_FOREACH(MousePointer* pointer, m_pointers) {
-        if (!pointer->isEnabled()) continue;
-
         QScreen* screen = pointer->screen();
         if (screen && screen->geometry().contains(pt.toPoint()))
             return screen;

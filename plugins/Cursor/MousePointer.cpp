@@ -76,6 +76,12 @@ MousePointer::MousePointer(QQuickItem *parent)
             Q_EMIT pushStopped();
         }
     });
+    connect(InputDispatcherFilter::instance(), &InputDispatcherFilter::screenEntered,
+            this, [this](QScreen* screen) {
+        if (window() && window()->screen() == screen) {
+            Q_EMIT screenEntered();
+        }
+    });
 
     InputDispatcherFilter::instance()->registerPointer(this);
 }
