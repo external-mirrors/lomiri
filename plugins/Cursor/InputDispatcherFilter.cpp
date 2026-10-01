@@ -102,6 +102,9 @@ bool InputDispatcherFilter::eventFilter(QObject *o, QEvent *e)
             newPos = adjustedPositionForMovement(oldPos, movement);
 
             QScreen* currentScreen = screenAt(newPos);
+            if (currentScreen && currentScreen != pointer->screen()) {
+                Q_EMIT screenEntered(currentScreen);
+            }
             if (currentScreen) {
                 QRect screenRect = currentScreen->geometry();
                 qreal newX = (oldPos + movement).x();
@@ -217,8 +220,6 @@ QPointF InputDispatcherFilter::adjustedPositionForMovement(const QPointF &pt, co
 QScreen *InputDispatcherFilter::screenAt(const QPointF &pt) const
 {
     Q_FOREACH(MousePointer* pointer, m_pointers) {
-        if (!pointer->isEnabled()) continue;
-
         QScreen* screen = pointer->screen();
         if (screen && screen->geometry().contains(pt.toPoint()))
             return screen;

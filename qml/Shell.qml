@@ -1073,6 +1073,8 @@ StyledItem {
             }
         }
 
+        onScreenEntered: screenWindow.screen.active = true
+
         onMouseMoved: {
             mouseNeverMoved = false;
             cursor.opacity = 1;
