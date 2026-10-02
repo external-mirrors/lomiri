@@ -137,6 +137,7 @@ Item {
                 }
                 if (presentCircleCounter > infographic.model.currentDay && pastCircleCounter >= pastCircles.count) {
                     stop()
+                    dotShowAnimTimer.startFromBeginning()
                 }
             }
 
