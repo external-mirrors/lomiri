@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-24 18:23+0000\n"
-"PO-Revision-Date: 2026-10-01 17:51+0000\n"
+"PO-Revision-Date: 2026-10-02 22:00+0000\n"
 "Last-Translator: aimar orbe <aimar.orbe@ehu.eus>\n"
 "Language-Team: Basque <https://hosted.weblate.org/projects/lomiri/lomiri/eu/>"
 "\n"
@@ -95,7 +95,7 @@ msgstr "Ezezaguna"
 
 #: plugins/WindowManager/Screen.cpp:162
 msgid "VGA"
-msgstr ""
+msgstr "VGA"
 
 #: plugins/WindowManager/Screen.cpp:166
 msgid "DVI"
@@ -103,35 +103,35 @@ msgstr "DVI"
 
 #: plugins/WindowManager/Screen.cpp:168
 msgid "Composite"
-msgstr ""
+msgstr "Konposatua"
 
 #: plugins/WindowManager/Screen.cpp:170
 msgid "S-Video"
-msgstr ""
+msgstr "S-Video"
 
 #: plugins/WindowManager/Screen.cpp:176
 msgid "Internal"
-msgstr ""
+msgstr "Barnekoa"
 
 #: plugins/WindowManager/Screen.cpp:178
 msgid "Component"
-msgstr ""
+msgstr "Osagaia"
 
 #: plugins/WindowManager/Screen.cpp:180
 msgid "DisplayPort"
-msgstr ""
+msgstr "DisplayPort"
 
 #: plugins/WindowManager/Screen.cpp:183
 msgid "HDMI"
-msgstr ""
+msgstr "HDMI"
 
 #: plugins/WindowManager/Screen.cpp:185
 msgid "TV"
-msgstr ""
+msgstr "TV"
 
 #: plugins/WindowManager/Screen.cpp:187
 msgid "Virtual"
-msgstr ""
+msgstr "Birtuala"
 
 #: plugins/Wizard/System.cpp:216
 #, qt-format
@@ -206,95 +206,95 @@ msgstr "Berrabiarazi"
 #: qml/Components/Dialogs.qml:288
 msgctxt "Button: Restart the system to Recovery"
 msgid "Restart to Recovery"
-msgstr ""
+msgstr "Berreskuratzera berrabiarazi"
 
 #: qml/Components/Dialogs.qml:302
 msgid "Screenshot"
-msgstr ""
+msgstr "Pantaila-argazkia"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:41
 msgid "Keyboard Shortcuts"
-msgstr ""
+msgstr "Teklatu-lasterbideak"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:62
 msgid "PrtScr"
-msgstr ""
+msgstr "Inpr Pant"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:67
 msgid "Takes a screenshot."
-msgstr ""
+msgstr "Pantaila-argazkia egiten du."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:75
 msgid "Alt + PrtScr"
-msgstr ""
+msgstr "Alt + Inpr Pant"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:80
 msgid "Takes a screenshot of the current window."
-msgstr ""
+msgstr "Uneko leihoaren pantaila-argazkia egiten du."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:88
 msgid "Super + Space"
-msgstr ""
+msgstr "Super + Zuriune-barra"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:93
 msgid "Switches to next keyboard layout."
-msgstr ""
+msgstr "Teklatuaren hurrengo diseinura aldatzen da."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:101
 msgid "Super + Shift + Space"
-msgstr ""
+msgstr "Super + Mayus + Zuriune-barra"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:106
 msgid "Switches to previous keyboard layout."
-msgstr ""
+msgstr "Teklatuaren aurreko diseinura aldatzen da."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:114
 msgid "Ctrl + Alt + T"
-msgstr ""
+msgstr "Ctrl + Alt + T"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:119
 msgid "Starts the Terminal application."
-msgstr ""
+msgstr "Terminala aplikazioa abiarazten du."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:131
 msgid "Launcher"
-msgstr ""
+msgstr "Abiarazalea"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:138
 msgid "Super (Hold)"
-msgstr ""
+msgstr "Super (Mantendu)"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:143
 msgid "Opens the launcher, displays shortcuts."
-msgstr ""
+msgstr "Abiarazlea irekitzen du, lasterbideak bistaratzen ditu."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:151
 msgid "Alt + F1"
-msgstr ""
+msgstr "Alt + F1"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:156
 msgid "Opens launcher keyboard navigation mode."
-msgstr ""
+msgstr "Abiarazlea teklatu nabigazio-moduan irekitzen du."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:164
 msgid "Super + Tab"
-msgstr ""
+msgstr "Super + Tab"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:169
 msgid "Switches applications via the launcher."
-msgstr ""
+msgstr "Aplikazioak abiarazlearen bidez aldatzen ditu."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:177
 msgid "Super + 1 to 0"
-msgstr ""
+msgstr "Super + 1etik 0ra"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:182
 msgid "Same as clicking on a launcher icon."
-msgstr ""
+msgstr "Abiarazpen-ikonoan klik egitea bezala."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:190
 msgid "Super + A"
-msgstr ""
+msgstr "Super + A"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:195
 msgid "Opens the Application Drawer."
@@ -302,19 +302,19 @@ msgstr "Ireki abiarazlea."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:206
 msgid "Switching"
-msgstr ""
+msgstr "Aldatzen"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:213
 msgid "Alt + Tab"
-msgstr ""
+msgstr "Alt + Tab"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:218
 msgid "Switches between applications."
-msgstr ""
+msgstr "Aplikazioen artean aldatzen du."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:226
 msgid "Super + W"
-msgstr ""
+msgstr "Super + W"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:231
 msgid "Opens the desktop spread."
@@ -330,84 +330,84 @@ msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:260
 msgid "Windows"
-msgstr ""
+msgstr "Leihoak"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:267
 msgid "Ctrl + Super + D"
-msgstr ""
+msgstr "Ctrl + Super + D"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:272
 msgid "Minimizes all windows."
-msgstr ""
+msgstr "Leiho guztiak minimizatzen ditu."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:280
 msgid "Ctrl + Super + Up"
-msgstr ""
+msgstr "Ctrl + Super + Gora"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:285
 msgid "Maximizes the current window."
-msgstr ""
+msgstr "Uneko leihoa maximizatzen du."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:293
 msgid "Ctrl + Super + Down"
-msgstr ""
+msgstr "Ctrl + Super + Behera"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:298
 msgid "Minimizes or restores the current window."
-msgstr ""
+msgstr "Uneko leihoa minimizatzen edo leheneratzen du."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:306
 #: qml/Components/KeyboardShortcutsOverlay.qml:417
 msgid "Ctrl + Super + Left or Right"
-msgstr ""
+msgstr "Ctrl + Super + Ezkerra edo Eskuina"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:311
 msgid "Semi-maximizes the current window."
-msgstr ""
+msgstr "Uneko leihoa erdimaximizatzen du."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:319
 msgid "Alt + F4"
-msgstr ""
+msgstr "Alt + F4"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:324
 msgid "Closes the current window."
-msgstr ""
+msgstr "Uneko leihoa ixten du."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:335
 msgid "Screens and Workspaces"
-msgstr ""
+msgstr "Pantailak eta Lan-eremuak"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:342
 msgid "Ctrl + Alt + Left or Right"
-msgstr ""
+msgstr "Ctrl + Alt + Ezkerra edo Eskuina"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:347
 msgid "Switches between workspaces."
-msgstr ""
+msgstr "Lan-eremuen artean aldatzen du."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:355
 msgid "Ctrl + Alt + Up or Down"
-msgstr ""
+msgstr "Ctrl + Alt + Gora edo Behera"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:360
 msgid "Switches between screens."
-msgstr ""
+msgstr "Leihoen artean aldatzen du."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:368
 msgid "Ctrl + Alt + Shift + Left or Right"
-msgstr ""
+msgstr "Ctrl + Alt + Shift + Ezkerra edo Eskuina"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:373
 msgid "Moves current app between workspaces."
-msgstr ""
+msgstr "Uneko aplikazioa lan-eremuen artean mugitzen du."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:381
 msgid "Ctrl + Alt + Shift + Up or Down"
-msgstr ""
+msgstr "Ctrl + Alt + Shift + Gora edo Behera"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:386
 msgid "Moves current app between screens."
-msgstr ""
+msgstr "Uneko aplikazioa pantailen artean mugitzen du."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:397
 msgid "Stages"
@@ -415,7 +415,7 @@ msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:404
 msgid "Super + S"
-msgstr ""
+msgstr "Super + S"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:409
 msgid "Shows or hides the side stage."
@@ -427,7 +427,7 @@ msgstr ""
 
 #: qml/Components/Lockscreen.qml:223 qml/Greeter/GreeterView.qml:472
 msgid "Return to Call"
-msgstr "Itzuli deira"
+msgstr "Deira itzuli"
 
 #: qml/Components/Lockscreen.qml:223
 msgid "Emergency Call"
@@ -439,61 +439,63 @@ msgstr "Ados"
 
 #: qml/Components/ModeSwitchWarningDialog.qml:33
 msgid "Apps may have unsaved data:"
-msgstr ""
+msgstr "Baliteke aplikazioek gorde gabeko datuak izatea:"
 
 #: qml/Components/ModeSwitchWarningDialog.qml:60
 msgctxt ""
 "Re-dock means connect the device again to an external screen/mouse/keyboard"
 msgid "Re-dock, save your work and close these apps to continue."
 msgstr ""
+"Berriro atrakatu, gorde zure lana eta itxi aplikazio hauek aurrera "
+"jarraitzeko."
 
 #: qml/Components/ModeSwitchWarningDialog.qml:67
 msgid "Or force close now (unsaved data will be lost)."
-msgstr ""
+msgstr "Edo behartu ixtera orain (gorde gabeko datuak galdu egingo dira)."
 
 #: qml/Components/ModeSwitchWarningDialog.qml:80
 msgid "OK, I will reconnect"
-msgstr ""
+msgstr "Ondo da, berriro konektatuko naiz"
 
 #: qml/Components/ModeSwitchWarningDialog.qml:81
 msgid "Reconnect now!"
-msgstr ""
+msgstr "Konektatu berriro orain!"
 
 #: qml/Components/ModeSwitchWarningDialog.qml:94
 msgid "Close all"
-msgstr ""
+msgstr "Dena itxi"
 
 #: qml/Components/SharingPicker.qml:54
 msgid "Preview Share Item"
-msgstr ""
+msgstr "Elementu Partekatua Aurreikusi"
 
 #: qml/Components/VirtualTouchPad.qml:371
 msgid ""
 "Your device is now connected to an external display. Use this screen as a "
 "touch pad to interact with the pointer."
 msgstr ""
+"Zure gailua kanpoko pantaila batera konektatuta dago orain. Erabili pantaila "
+"hau ukipen-teklatu gisa erakuslearekin elkarreragiteko."
 
 #: qml/Components/VirtualTouchPad.qml:381
-#, fuzzy
-#| msgid "Tap to return to call..."
 msgid "Tap left button to click."
-msgstr "Sakatu deira itzultzeko..."
+msgstr "Sakatu ezkerreko botoia klik egiteko."
 
 #: qml/Components/VirtualTouchPad.qml:393
 msgid "Tap right button to right click."
-msgstr ""
+msgstr "Sakatu eskuineko botoia eskuineko klika egiteko."
 
 #: qml/Components/VirtualTouchPad.qml:405
 msgid "Swipe with two fingers to scroll."
-msgstr ""
+msgstr "Lerratu bi hatzekin, mugitzeko."
 
 #: qml/Components/VirtualTouchPad.qml:450
 msgid "Find more settings in the system settings."
-msgstr ""
+msgstr "Bilatu ezarpen gehiago sistemaren ezarpenetan."
 
 #: qml/Greeter/CoverPage.qml:161
 msgid "Fully charged"
-msgstr ""
+msgstr "Erabat kargatuta"
 
 #: qml/Greeter/CoverPage.qml:169
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1104
@@ -514,12 +516,12 @@ msgstr[1] "%1 minutu"
 #: qml/Greeter/CoverPage.qml:179
 #, qt-format
 msgid "%1, %2 until full"
-msgstr ""
+msgstr "%1, %2 bete arte"
 
 #: qml/Greeter/CoverPage.qml:182
 #, qt-format
 msgid "%1 until full"
-msgstr ""
+msgstr "%1 bete arte"
 
 #: qml/Greeter/CoverPage.qml:198
 #: tests/qmltests/Greeter/tst_GreeterView.qml:1242
