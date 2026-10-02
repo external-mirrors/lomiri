@@ -135,6 +135,7 @@ Item {
         objectName: "panelArea"
 
         anchors.fill: parent
+        visible: opacity > 0
 
         transform: Translate {
             y: indicators.state === "initial"
