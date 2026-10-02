@@ -333,6 +333,12 @@ PanelUI {
             // (switches between normal and fullscreen modes are animated)
             tryCompareFunction(function() { return panelArea.y }, data.fullscreen ? -panel.minimizedPanelHeight : 0);
 
+            // Panel is hidden when fullscreen so show it first
+            // Normally done by swiping from the top in the Shell
+            if (data.fullscreen) {
+                panel.temporarilyShow();
+            }
+
             touchFlick(panel,
                        units.gu(1), 0,
                        units.gu(1), panel.height,
