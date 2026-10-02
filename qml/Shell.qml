@@ -437,7 +437,7 @@ StyledItem {
         anchors {
             fill: parent
             topMargin: panel.panelHeight
-            leftMargin: (launcher.lockedByUser && launcher.lockAllowed) ? launcher.panelWidth : 0
+            leftMargin: (launcher.visible && launcher.lockedByUser && launcher.lockAllowed) ? launcher.panelWidth : 0
         }
         z: notifications.useModal || panel.indicators.shown || wizard.active || tutorial.running || launcher.drawerShown ? overlay.z + 1 : overlay.z - 1
     }
