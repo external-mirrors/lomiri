@@ -2659,6 +2659,22 @@ Rectangle {
             tryCompare(coverPage, "showProgress", 0);
         }
 
+        function test_greeterModeDesktopInputMethodMargin() {
+            shellRect.mode = "greeter";
+            GSettingsController.setAutohideLauncher(false);
+            loadShell("desktop");
+            ensureInputMethodSurface();
+            waitForRendering(shell);
+
+            var launcher = findChild(shell, "launcher");
+            var inputMethod = findChild(shell, "inputMethod");
+
+            compare(shell.mode, "greeter");
+            compare(launcher.lockedByUser, true);
+            compare(launcher.visible, false);
+            compare(inputMethod.anchors.leftMargin, 0);
+        }
+
         function test_switchKeymap() {
             // start with phone shell
             loadShell("phone");
