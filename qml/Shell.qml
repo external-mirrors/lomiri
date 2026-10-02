@@ -520,6 +520,8 @@ StyledItem {
         id: secondaryGreeter
         SecondaryGreeter {
             hides: [launcher, panel.indicators]
+            background: wallpaperResolver.resolvedImage
+            backgroundSourceSize: shell.largestScreenDimension
         }
     }
 
