@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-24 18:23+0000\n"
-"PO-Revision-Date: 2026-10-03 14:26+0000\n"
+"PO-Revision-Date: 2026-10-04 07:19+0000\n"
 "Last-Translator: aimar orbe <aimar.orbe@ehu.eus>\n"
 "Language-Team: Basque <https://hosted.weblate.org/projects/lomiri/lomiri/eu/>"
 "\n"
@@ -318,15 +318,15 @@ msgstr "Super + W"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:231
 msgid "Opens the desktop spread."
-msgstr ""
+msgstr "Mahaigaineko leihoak erakutsi."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:239
 msgid "Cursor Left or Right"
-msgstr ""
+msgstr "Ezker edo eskuineko kurtsorea"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:244
 msgid "Moves the focus."
-msgstr ""
+msgstr "Fokua aldatzen du."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:260
 msgid "Windows"
@@ -555,36 +555,32 @@ msgstr[1] "Itxaron %1 minutuz eta saiatu berriro…"
 #: tests/qmltests/Greeter/tst_Greeter.qml:625
 #: tests/qmltests/Greeter/tst_Greeter.qml:637
 msgid "Try again"
-msgstr ""
+msgstr "Saiatu berriro"
 
 #: qml/Greeter/Greeter.qml:638 tests/qmltests/Greeter/tst_Greeter.qml:552
 #: tests/qmltests/Greeter/tst_Greeter.qml:603
-#, fuzzy
-#| msgid "Enter passphrase"
 msgid "Enter passphrase to unlock"
-msgstr "Sartu pasaesaldia"
+msgstr "Desblokeatzeko pasaesaldia sartu"
 
 #: qml/Greeter/Greeter.qml:639
-#, fuzzy
-#| msgid "Enter passcode"
 msgid "Enter passcode to unlock"
-msgstr "Sartu pasakodea"
+msgstr "Desblokearzeko pasakodea sartu"
 
 #: qml/Greeter/GreeterView.qml:472
 msgid "Emergency"
-msgstr ""
+msgstr "Larrialdia"
 
 #: qml/Greeter/PromptList.qml:143
 msgid "Passphrase"
-msgstr ""
+msgstr "Pasaesaldia"
 
 #: qml/Greeter/PromptList.qml:143
 msgid "Passcode"
-msgstr ""
+msgstr "Pasakodea"
 
 #: qml/Greeter/SessionsList.qml:124
 msgid "Select desktop environment"
-msgstr ""
+msgstr "Mahaigaineko ingurunea aukeratu"
 
 #: qml/Launcher/Drawer.qml:239
 msgid "Search…"
@@ -604,7 +600,7 @@ msgstr "Erakutsi pasahitza"
 
 #: qml/Notifications/Notification.qml:318
 msgid "New message"
-msgstr ""
+msgstr "Mezu berria"
 
 #: qml/Panel/ActiveCallHint.qml:79
 msgid "Tap to return to call..."
@@ -662,7 +658,7 @@ msgstr "Huts egin du, sakatu berriro saiatzeko"
 #: qml/Panel/Indicators/MessageMenuItemFactory.qml:210
 msgctxt "Button: Send a reply message"
 msgid "Send"
-msgstr ""
+msgstr "Erantzun"
 
 #: qml/Panel/Indicators/MessageMenuItemFactory.qml:152
 msgctxt "Label: Hint in message indicator line edit"
@@ -672,7 +668,7 @@ msgstr "Erantzun"
 #: qml/Panel/Indicators/MessageMenuItemFactory.qml:209
 msgctxt "Button: Call back on phone"
 msgid "Call back"
-msgstr ""
+msgstr "Deia erantzun"
 
 #: qml/Panel/PanelMenuPage.qml:93
 msgid "Back"
@@ -684,7 +680,7 @@ msgstr ""
 
 #: qml/Stage/Stage.qml:994
 msgid "No running apps"
-msgstr ""
+msgstr "Ez dago aplikaziorik martxan"
 
 #: qml/Tutorial/TutorialLeftLong.qml:49
 #, fuzzy
@@ -715,7 +711,7 @@ msgstr "Atzera"
 
 #: qml/Wizard/Pages/10-welcome.qml:29
 msgid "Language"
-msgstr ""
+msgstr "Hizkuntza"
 
 #: qml/Wizard/Pages/10-welcome.qml:184
 #: qml/Wizard/Pages/10-welcome-update.qml:136
@@ -731,17 +727,17 @@ msgstr "Urr."
 #: qml/Wizard/Pages/10-welcome-update.qml:98
 #, qt-format
 msgid "Welcome to %1 %2"
-msgstr ""
+msgstr "Ongietorri %1 %2ra"
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
 #: qml/Wizard/Pages/10-welcome-update.qml:115
 #, qt-format
 msgid "We will make sure your device is ready to use %1 %2"
-msgstr ""
+msgstr "Zure gailua %1 %2 erabiltzeko prest dagoela ziurtatuko dugu"
 
 #: qml/Wizard/Pages/11-changelog.qml:28
 msgid "What's new"
-msgstr ""
+msgstr "Zer berri"
 
 #: qml/Wizard/Pages/11-changelog.qml:74
 #, fuzzy
@@ -750,15 +746,15 @@ msgstr "Hitz egiten..."
 
 #: qml/Wizard/Pages/20-keyboard.qml:31
 msgid "Select Keyboard"
-msgstr ""
+msgstr "Teklatua aukeratu"
 
 #: qml/Wizard/Pages/20-keyboard.qml:71
 msgid "Keyboard language"
-msgstr ""
+msgstr "Teklatuaren hizkuntza"
 
 #: qml/Wizard/Pages/20-keyboard.qml:93
 msgid "Keyboard layout"
-msgstr ""
+msgstr "Teklatuaren diseinua"
 
 #: qml/Wizard/Pages/20-keyboard.qml:152 qml/Wizard/Pages/30-wifi.qml:212
 #: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/79-system-update.qml:164
@@ -776,50 +772,50 @@ msgstr "Konektatuta"
 
 #: qml/Wizard/Pages/30-wifi.qml:171
 msgid "Available Wi-Fi networks"
-msgstr ""
+msgstr "Wi-Fi sareak eskuragarri"
 
 #: qml/Wizard/Pages/30-wifi.qml:172
 msgid "No available Wi-Fi networks"
-msgstr ""
+msgstr "Ez dago Wi-Fi sarerik eskuragarri"
 
 #: qml/Wizard/Pages/50-timezone.qml:30
 msgid "Time Zone"
-msgstr ""
+msgstr "Ordu-eremua"
 
 #: qml/Wizard/Pages/50-timezone.qml:182
 msgid "Enter your city"
-msgstr ""
+msgstr "Zure hiria sartu"
 
 #: qml/Wizard/Pages/60-account.qml:24
 msgid "Personalize Your Device"
-msgstr ""
+msgstr "Zure gailua pertsonalizatu"
 
 #: qml/Wizard/Pages/60-account.qml:54
 msgid "Preferred Name"
-msgstr ""
+msgstr "Gogoko Izena"
 
 #: qml/Wizard/Pages/70-passwd-type.qml:40
 msgid "Lock Screen"
-msgstr ""
+msgstr "Pantaila blokeatu"
 
 #: qml/Wizard/Pages/70-passwd-type.qml:103
 msgctxt "Label: Type of security method"
 msgid "Create new password"
-msgstr ""
+msgstr "Pasahitz berria sortu"
 
 #: qml/Wizard/Pages/70-passwd-type.qml:105
 msgctxt "Label: Type of security method"
 msgid "Create passcode (numbers only)"
-msgstr ""
+msgstr "Pasakodea sortu (zenbakiak bakarrik)"
 
 #: qml/Wizard/Pages/70-passwd-type.qml:107
 msgctxt "Label: Type of security method"
 msgid "No lock code"
-msgstr ""
+msgstr "Bloketzeko koderik gabe"
 
 #: qml/Wizard/Pages/79-system-update.qml:30
 msgid "Update Device"
-msgstr ""
+msgstr "Gailua eguneratu"
 
 #: qml/Wizard/Pages/79-system-update.qml:57
 msgid ""
@@ -830,17 +826,17 @@ msgstr ""
 #: qml/Wizard/Pages/79-system-update.qml:96
 msgctxt "string identifying name of the update"
 msgid "Ubuntu Touch system"
-msgstr ""
+msgstr "Ubuntu Touch sistema"
 
 #: qml/Wizard/Pages/79-system-update.qml:103
 #, qt-format
 msgctxt "version of the system update"
 msgid "Version %1"
-msgstr ""
+msgstr "%1 bertsioa"
 
 #: qml/Wizard/Pages/79-system-update.qml:115
 msgid "This could take a few minutes..."
-msgstr ""
+msgstr "Honek zenbait minutu irain ditzake…"
 
 #: qml/Wizard/Pages/79-system-update.qml:129
 msgid "Install and restart now"
@@ -848,17 +844,17 @@ msgstr "Instalatu eta berrabiarazi orain"
 
 #: qml/Wizard/Pages/80-finished.qml:93
 msgid "Welcome Back"
-msgstr ""
+msgstr "Ongietorri berriro"
 
 #. TRANSLATORS: %1 contains the distro name
 #: qml/Wizard/Pages/80-finished.qml:95
 #, qt-format
 msgid "Welcome to %1"
-msgstr ""
+msgstr "Ongietorri %1era"
 
 #: qml/Wizard/Pages/80-finished.qml:111
 msgid "You are ready to use your device now"
-msgstr ""
+msgstr "Zure gailua erabiltzeko prest zaude"
 
 #: qml/Wizard/Pages/80-finished.qml:131
 msgid "Continue"
@@ -866,7 +862,7 @@ msgstr "Jarraitu"
 
 #: qml/Wizard/Pages/80-finished.qml:131
 msgid "Get Started"
-msgstr ""
+msgstr "Has zaitez"
 
 #: qml/Wizard/Pages/passcode-confirm.qml:43
 #: qml/Wizard/Pages/passcode-desktop.qml:104
@@ -875,37 +871,37 @@ msgstr "Berretsi pasakodea"
 
 #: qml/Wizard/Pages/passcode-confirm.qml:45
 msgid "Incorrect passcode."
-msgstr ""
+msgstr "Pasakode okerra."
 
 #: qml/Wizard/Pages/passcode-confirm.qml:45
 msgctxt "Enter the passcode again"
 msgid "Please re-enter."
-msgstr ""
+msgstr "Mesedez, saiatu berriro."
 
 #: qml/Wizard/Pages/passcode-desktop.qml:31
 msgid "Lock Screen Passcode"
-msgstr ""
+msgstr "Pantaila blokeatzeko Pasakodea"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:68
 msgid "Enter at least 4 numbers to setup your passcode"
-msgstr ""
+msgstr "Gutxienez 4 zenbaki sartu zure pasakodea ezartzeko"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:84
 #: qml/Wizard/Pages/passcode-set.qml:54
 msgid "Choose passcode"
-msgstr ""
+msgstr "Pasakodea aukeratu"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:139
 msgid "Passcode too short"
-msgstr ""
+msgstr "Pasakode laburregia"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:141
 msgid "Passcodes match"
-msgstr ""
+msgstr "Pasakodeak bat datoz"
 
 #: qml/Wizard/Pages/passcode-desktop.qml:143
 msgid "Passcodes do not match"
-msgstr ""
+msgstr "Pasakodeak ez datoz bat"
 
 #: qml/Wizard/Pages/passcode-set.qml:62
 #, fuzzy
@@ -915,11 +911,11 @@ msgstr "Pasaesaldiak 4 karaktereko luzera izan behar du"
 
 #: qml/Wizard/Pages/password-set.qml:31
 msgid "Lock Screen Password"
-msgstr ""
+msgstr "Pantaila blokeatzeko pasahitza"
 
 #: qml/Wizard/Pages/password-set.qml:68
 msgid "Enter at least 8 characters"
-msgstr ""
+msgstr "Gutxienez 8 karaktere sartu"
 
 #: qml/Wizard/Pages/password-set.qml:80
 msgid "Choose password"
