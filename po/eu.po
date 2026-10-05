@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-24 18:23+0000\n"
-"PO-Revision-Date: 2026-10-04 07:19+0000\n"
+"PO-Revision-Date: 2026-10-05 09:55+0000\n"
 "Last-Translator: aimar orbe <aimar.orbe@ehu.eus>\n"
 "Language-Team: Basque <https://hosted.weblate.org/projects/lomiri/lomiri/eu/>"
 "\n"
@@ -676,33 +676,33 @@ msgstr "Atzera"
 
 #: qml/Stage/SideStage.qml:88
 msgid "Drag using 3 fingers any application from one window to the other"
-msgstr ""
+msgstr "3 hatz erabiliz edozein aplikazio leiho batetik bestera arrastatu"
 
 #: qml/Stage/Stage.qml:994
 msgid "No running apps"
 msgstr "Ez dago aplikaziorik martxan"
 
 #: qml/Tutorial/TutorialLeftLong.qml:49
-#, fuzzy
-#| msgid "Try swiping from the top edge to access the indicators"
 msgid "Long swipe from the left edge to open the Application Drawer"
-msgstr "Pasatu hatza goiko ertzetik beherantz adierazleak ikusteko"
+msgstr "Lerratu luze ezkerreko ertzetik aplikazio-tiradera irekitzeko"
 
 #: qml/Tutorial/TutorialLeft.qml:47
 msgid "Short swipe from the left edge to open the launcher"
-msgstr ""
+msgstr "Lerratu laburra ezkerreko ertzetik abiarazlea irekitzeko"
 
 #: qml/Tutorial/TutorialRight.qml:54
 msgid "Push your mouse against the right edge to view your open apps"
 msgstr ""
+"Sakatu sagua eskuineko ertzaren kontra, irekita dituzun aplikazioak ikusteko"
 
 #: qml/Tutorial/TutorialRight.qml:55
 msgid "Swipe from the right edge to view your open apps"
-msgstr ""
+msgstr "Lerratu eskuineko ertzetik irekita dituzun aplikazioak ikusteko"
 
 #: qml/Tutorial/TutorialTop.qml:53
 msgid "Swipe from the top edge to access notifications and quick settings"
 msgstr ""
+"Lerratu goiko ertzetik jakinarazpenetara eta ezarpen azkarretara sartzeko"
 
 #: qml/Wizard/Page.qml:59
 msgctxt "Button: Go back one page in the Wizard"
@@ -740,9 +740,8 @@ msgid "What's new"
 msgstr "Zer berri"
 
 #: qml/Wizard/Pages/11-changelog.qml:74
-#, fuzzy
 msgid "Loading..."
-msgstr "Hitz egiten..."
+msgstr "Kargatzen…"
 
 #: qml/Wizard/Pages/20-keyboard.qml:31
 msgid "Select Keyboard"
@@ -822,6 +821,8 @@ msgid ""
 "There is a system update available and ready to install. Afterwards, the "
 "device will automatically restart."
 msgstr ""
+"Sistemaren eguneraketa bat eskuragarri eta instalatzeko prest dago. Ondoren, "
+"gailua automatikoki berrabiaraziko da."
 
 #: qml/Wizard/Pages/79-system-update.qml:96
 msgctxt "string identifying name of the update"
@@ -904,10 +905,8 @@ msgid "Passcodes do not match"
 msgstr "Pasakodeak ez datoz bat"
 
 #: qml/Wizard/Pages/passcode-set.qml:62
-#, fuzzy
-#| msgid "Passphrase must be 4 characters long"
 msgid "Passcode must be at least 4 characters long"
-msgstr "Pasaesaldiak 4 karaktereko luzera izan behar du"
+msgstr "Pasakodeak gutxienez 4 karaktereko luzera izan behar du"
 
 #: qml/Wizard/Pages/password-set.qml:31
 msgid "Lock Screen Password"
@@ -919,23 +918,23 @@ msgstr "Gutxienez 8 karaktere sartu"
 
 #: qml/Wizard/Pages/password-set.qml:80
 msgid "Choose password"
-msgstr ""
+msgstr "Pasahitza aukeratu"
 
 #: qml/Wizard/Pages/password-set.qml:110
 msgid "Confirm password"
-msgstr ""
+msgstr "Pasahitza baieztatu"
 
 #: qml/Wizard/Pages/sim.qml:27
 msgid "No SIM card installed"
-msgstr ""
+msgstr "Ez dago SIM txartelik instalatuta"
 
 #: qml/Wizard/Pages/sim.qml:54
 msgid "SIM card added"
-msgstr ""
+msgstr "SIM txartela gehituta"
 
 #: qml/Wizard/Pages/sim.qml:55
 msgid "You must restart the device to access the mobile network."
-msgstr ""
+msgstr "Gailua berrabiarazi behar duzu sare mugikorrera sartzeko."
 
 #: qml/Wizard/Pages/sim.qml:59
 msgid "Restart"
@@ -943,39 +942,39 @@ msgstr "Berrabiarazi"
 
 #: qml/Wizard/Pages/sim.qml:78
 msgid "You won’t be able to make calls or use text messaging without a SIM."
-msgstr ""
+msgstr "SIMik gabe ezingo duzu deirik egin, ez eta testu-mezurik bidali ere."
 
 #: qml/Wizard/Pages/sim.qml:90
 msgid "To proceed with no SIM tap Skip."
-msgstr ""
+msgstr "SIM txartelik gabe jarraitzeko, Saltatu sakatu."
 
 #: qml/Wizard/PasswordMeter.qml:87
 msgid "Password too short"
-msgstr ""
+msgstr "Pasahitza laburregia da"
 
 #: qml/Wizard/PasswordMeter.qml:89
 msgid "Passwords match"
-msgstr ""
+msgstr "Pasahitzek bat egiten dute"
 
 #: qml/Wizard/PasswordMeter.qml:91
 msgid "Passwords do not match"
-msgstr ""
+msgstr "Pasahitzek ez dute bat egiten"
 
 #: qml/Wizard/PasswordMeter.qml:95
 msgid "Strong password"
-msgstr ""
+msgstr "Pasahitz indartsua"
 
 #: qml/Wizard/PasswordMeter.qml:97
 msgid "Fair password"
-msgstr ""
+msgstr "Pasahitz onargarria"
 
 #: qml/Wizard/PasswordMeter.qml:99
 msgid "Weak password"
-msgstr ""
+msgstr "Pasahitz ahula"
 
 #: qml/Wizard/PasswordMeter.qml:101
 msgid "Very weak password"
-msgstr ""
+msgstr "Pasahitz oso ahula"
 
 #~ msgctxt "Button: Open the Ubuntu Store"
 #~ msgid "Store"
