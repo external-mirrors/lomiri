@@ -28,7 +28,6 @@ import QtQuick.Window 2.2
 
 import "../../../ApplicationMenus"
 import "../../../Components"
-import "../../../Components/PanelState"
 import "../../.."
 import "../../Indicators"
 import "../.."
@@ -59,7 +58,7 @@ Item {
     property bool partialWidth: width >= units.gu(60)
 
     property string mode: "staged"
-    property PanelState panelState
+    property var panelState
 
     property bool temporarilyShown: false
 
