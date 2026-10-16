@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-24 18:23+0000\n"
-"PO-Revision-Date: 2026-10-05 09:55+0000\n"
-"Last-Translator: aimar orbe <aimar.orbe@ehu.eus>\n"
+"PO-Revision-Date: 2026-10-19 21:26+0000\n"
+"Last-Translator: aimar orbe <aimar@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Basque <https://hosted.weblate.org/projects/lomiri/lomiri/eu/>"
 "\n"
 "Language: eu\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.10.1.dev0\n"
+"X-Generator: Weblate 2026.11.dev0\n"
 "X-Launchpad-Export-Date: 2016-11-23 06:34+0000\n"
 
 #: data/lomiri.desktop.in:3 qml/Components/KeyboardShortcutsOverlay.qml:55
@@ -411,7 +411,7 @@ msgstr "Uneko aplikazioa pantailen artean mugitzen du."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:397
 msgid "Stages"
-msgstr ""
+msgstr "Eragin-eremuak"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:404
 msgid "Super + S"
@@ -419,11 +419,11 @@ msgstr "Super + S"
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:409
 msgid "Shows or hides the side stage."
-msgstr ""
+msgstr "Alboko eragin-eremua erakutsi edo ezkutatu."
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:423
 msgid "Moves app between main stage and side stage."
-msgstr ""
+msgstr "Aplikazioak eremu nagusi ets alboko eremuaren artean mugitu."
 
 #: qml/Components/Lockscreen.qml:223 qml/Greeter/GreeterView.qml:472
 msgid "Return to Call"
