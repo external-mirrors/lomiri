@@ -64,6 +64,7 @@ Rectangle {
     QtObject {
         id: _screenWindow
         property bool primary: true
+        property bool active: true
     }
     property alias screenWindow: _screenWindow
 
@@ -592,6 +593,8 @@ Rectangle {
         }
 
         function init() {
+            screenWindow.primary = true;
+            screenWindow.active = true;
             mouseMove(root, 0, 0);
             keyRelease(Qt.Key_Alt);
             keyRelease(Qt.Key_Control);
@@ -2641,7 +2644,15 @@ Rectangle {
         }
 */
 
-        function test_greeterModeDispatchesURL() {
+        function test_greeterModeDispatchesURL_data() {
+            return [
+                {tag: "primary", primary: true},
+                {tag: "secondary", primary: false}
+            ]
+        }
+
+        function test_greeterModeDispatchesURL(data) {
+            screenWindow.primary = data.primary;
             shellRect.mode = "greeter";
             setLightDMMockMode("single-pin");
             loadShell("phone");
@@ -2656,6 +2667,7 @@ Rectangle {
             compare(ApplicationManager.count, 0); // confirm no app is open, we didn't start new app
 
             var coverPage = findChild(shell, "coverPage");
+            verify(!!coverPage);
             tryCompare(coverPage, "showProgress", 0);
         }
 
