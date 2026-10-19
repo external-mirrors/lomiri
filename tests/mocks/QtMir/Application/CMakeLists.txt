@@ -1,12 +1,5 @@
-if (WITH_MIR2)
-    pkg_check_modules(MIRTEST REQUIRED mirtest>=2.0)
-else ()
-    pkg_search_module(MIRTEST REQUIRED mir1test mirtest<2.0)
-endif ()
-
 include_directories(
     SYSTEM
-    ${MIRTEST_INCLUDE_DIRS}
     ${MIRAL_INCLUDE_DIRS}
     ${liblomiri-private_SOURCE_DIR}
 )
@@ -39,7 +32,6 @@ add_library(FakeQtMirApplicationQml MODULE
 #add_dependencies(FakeQtMirApplicationQml windowmanagementpolicy)
 
 target_link_libraries(FakeQtMirApplicationQml
-    ${MIRTEST_LDFLAGS}
     ${MIRAL_LDFLAGS}
     mockwindowmanagmentpolicy
 )
@@ -48,7 +40,6 @@ add_library(NonMirQtMirApplicationQml MODULE ${FakeQtMirApplicationQml_SOURCES})
 set_target_properties(NonMirQtMirApplicationQml PROPERTIES OUTPUT_NAME FakeQtMirApplicationQml)
 
 target_link_libraries(NonMirQtMirApplicationQml
-    ${MIRTEST_LDFLAGS}
     ${MIRAL_LDFLAGS}
     mockwindowmanagmentpolicy
     Qt5::Core Qt5::Quick Qt5::DBus

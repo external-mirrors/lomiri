@@ -61,68 +61,68 @@ void WindowManagementPolicy::setActiveWorkspace(const std::shared_ptr<miral::Wor
     m_activeWorkspace = workspace ? workspace : m_dummyWorkspace;
 }
 
-void WindowManagementPolicy::addWindow(const miral::Window &window)
+void WindowManagementPolicy::addSurface(Surface *surface)
 {
-    Q_EMIT windowAdded(window);
+    Q_EMIT surfaceAdded(surface);
 
     auto activeWorkspace = m_activeWorkspace.lock();
     if (activeWorkspace) {
-        m_windows.insert(activeWorkspace, window);
+        m_surfaces.insert(activeWorkspace, surface);
 
-        Q_EMIT windowsAddedToWorkspace(activeWorkspace, {window});
+        Q_EMIT surfacesAddedToWorkspace(activeWorkspace, {surface});
     }
 }
 
-void WindowManagementPolicy::removeWindow(const miral::Window &window)
+void WindowManagementPolicy::removeSurface(Surface *surface)
 {
-    WorkspaceWindows::iterator i = m_windows.begin();
-    while (i != m_windows.end()) {
-        if (i.value() == window) {
-            Q_EMIT windowsAboutToBeRemovedFromWorkspace(i.key(), { window });
-            i = m_windows.erase(i);
+    WorkspaceSurfaces::iterator i = m_surfaces.begin();
+    while (i != m_surfaces.end()) {
+        if (i.value() == surface) {
+            Q_EMIT surfacesAboutToBeRemovedFromWorkspace(i.key(), { surface });
+            i = m_surfaces.erase(i);
         } else {
             ++i;
         }
     }
-    Q_EMIT windowRemoved(window);
+    Q_EMIT surfaceRemoved(surface);
 }
 
-void WindowManagementPolicy::forEachWindowInWorkspace(const std::shared_ptr<miral::Workspace> &workspace, const std::function<void(const miral::Window &)> &callback)
+void WindowManagementPolicy::forEachSurfaceInWorkspace(const std::shared_ptr<miral::Workspace> &workspace, const std::function<void(Surface*)> &callback)
 {
-    WorkspaceWindows::iterator i = m_windows.find(workspace);
-    while (i != m_windows.end() && i.key() == workspace) {
+    WorkspaceSurfaces::iterator i = m_surfaces.find(workspace);
+    while (i != m_surfaces.end() && i.key() == workspace) {
         callback(i.value());
         ++i;
     }
 }
 
-void WindowManagementPolicy::moveWindowToWorkspace(const miral::Window &window, const std::shared_ptr<miral::Workspace> &workspace)
+void WindowManagementPolicy::moveSurfaceToWorkspace(Surface *surface, const std::shared_ptr<miral::Workspace> &workspace)
 {
-    auto from = m_windows.key(window);
+    auto from = m_surfaces.key(surface);
     if (from) {
-        auto iter = m_windows.find(from, window);
-        Q_EMIT windowsAboutToBeRemovedFromWorkspace(from, { window });
-        m_windows.erase(iter);
+        auto iter = m_surfaces.find(from, surface);
+        Q_EMIT surfacesAboutToBeRemovedFromWorkspace(from, { surface });
+        m_surfaces.erase(iter);
     }
 
-    m_windows.insert(workspace, window);
-    Q_EMIT windowsAddedToWorkspace(workspace, { window });
+    m_surfaces.insert(workspace, surface);
+    Q_EMIT surfacesAddedToWorkspace(workspace, { surface });
 }
 
 void WindowManagementPolicy::moveWorkspaceContentToWorkspace(const std::shared_ptr<miral::Workspace> &to, const std::shared_ptr<miral::Workspace> &from)
 {
-    std::vector<miral::Window> windows;
+    QVector<Surface*> surfaces;
 
-    WorkspaceWindows::iterator i = m_windows.find(from);
-    while (i != m_windows.end() && i.key() == from) {
-        windows.push_back(i.value());
+    WorkspaceSurfaces::iterator i = m_surfaces.find(from);
+    while (i != m_surfaces.end() && i.key() == from) {
+        surfaces.push_back(i.value());
         ++i;
     }
-    Q_EMIT windowsAboutToBeRemovedFromWorkspace(from, windows);
-    m_windows.remove(from);
+    Q_EMIT surfacesAboutToBeRemovedFromWorkspace(from, surfaces);
+    m_surfaces.remove(from);
 
-    Q_FOREACH(miral::Window window, windows) {
-        m_windows.insert(to, window);
+    Q_FOREACH(Surface *surface, surfaces) {
+        m_surfaces.insert(to, surface);
     }
-    Q_EMIT windowsAddedToWorkspace(to, windows);
+    Q_EMIT surfacesAddedToWorkspace(to, surfaces);
 }
