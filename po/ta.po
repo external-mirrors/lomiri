@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-24 18:23+0000\n"
-"PO-Revision-Date: 2026-10-12 20:09+0000\n"
+"PO-Revision-Date: 2026-10-19 21:26+0000\n"
 "Last-Translator: Alagirisamy Rengaraj "
 "<ahalyachinnasamy1967@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Tamil <https://hosted.weblate.org/projects/lomiri/lomiri/ta/>"
@@ -84,7 +84,7 @@ msgstr "குறுக்குவழியை குத்திவை"
 
 #: plugins/Lomiri/Launcher/launcheritem.cpp:54
 msgid "Quit"
-msgstr "கைவிடு"
+msgstr "வெளியேறு"
 
 #: plugins/Lomiri/Launcher/launcheritem.cpp:122
 msgid "Unpin shortcut"
@@ -162,7 +162,7 @@ msgstr "வெளியேறு"
 #: qml/Greeter/GreeterView.qml:452 qml/Wizard/Pages/passcode-confirm.qml:32
 #: qml/Wizard/Pages/passcode-set.qml:32
 msgid "Cancel"
-msgstr "தவிர்க்க"
+msgstr "நீக்கு"
 
 #: qml/Components/Dialogs.qml:223
 msgctxt "Title: Reboot dialog"
@@ -592,7 +592,7 @@ msgstr "புதுப்பிக்க வெளியீடு…"
 
 #: qml/Notifications/NotificationMenuItemFactory.qml:124
 msgid "Show password"
-msgstr "கடவுச்சொல் காட்டு"
+msgstr "கடவுச்சொல் காட்டவும்"
 
 #: qml/Notifications/Notification.qml:318
 msgid "New message"
@@ -754,7 +754,7 @@ msgstr "விசைப்பலகை தளவமைப்பு"
 #: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/79-system-update.qml:164
 #: qml/Wizard/Pages/sim.qml:101
 msgid "Skip"
-msgstr "தவிர்"
+msgstr "விட்டுத்தாவு"
 
 #: qml/Wizard/Pages/30-wifi.qml:30
 msgid "Connect to Wi‑Fi"
@@ -854,7 +854,7 @@ msgstr "இப்போது உங்கள் சாதனத்தைப் 
 
 #: qml/Wizard/Pages/80-finished.qml:131
 msgid "Continue"
-msgstr "தொடர்க"
+msgstr "தொடரவும்"
 
 #: qml/Wizard/Pages/80-finished.qml:131
 msgid "Get Started"
