@@ -9,9 +9,13 @@
 # must be fed by the raw input event stream from Unity8).
 export QML_NO_TOUCH_COMPRESSION=1
 
-# TODO: maybe allow this to be configurable somehow?
-export MIR_SERVER_ENABLE_MIRCLIENT=1
-export MIR_SERVER_PROMPT_FILE=1
+# Detect whether we're running on Mir 1 or Mir 2
+# TODO: phase out
+LEGACY_MIR=0
+LEGACY_PKG=qtmir-qt5-mir1
+if [ $(dpkg -s $LEGACY_PKG 1>&2 2>/dev/null) ]; then
+    LEGACY_MIR=$(dpkg -s $LEGACY_PKG | grep "^Status: " | grep -q " installed" && echo 1)
+fi
 
 # Unlikely under systemd, but just in case.
 if [ -z "$XDG_RUNTIME_DIR" ]; then
@@ -19,16 +23,22 @@ if [ -z "$XDG_RUNTIME_DIR" ]; then
     export XDG_RUNTIME_DIR
 fi
 
-export MIR_SERVER_FILE="${XDG_RUNTIME_DIR}/mir_socket"
+# TODO: phase out
+if [ "$LEGACY_MIR" = "1" ]; then
+    export MIR_SERVER_ENABLE_MIRCLIENT=1
+    export MIR_SERVER_PROMPT_FILE=1
+    export MIR_SERVER_FILE="${XDG_RUNTIME_DIR}/mir_socket"
 
-rm -f "$MIR_SERVER_FILE"
-rm -f "${MIR_SERVER_FILE}_trusted"
+    rm -f "$MIR_SERVER_FILE"
+    rm -f "${MIR_SERVER_FILE}_trusted"
+
+    dbus-update-activation-environment --systemd MIR_SOCKET="${MIR_SERVER_FILE}"
+fi
 
 # TODO: maybe handle some kind of collision?
 export WAYLAND_DISPLAY=wayland-0
 
 # Propegate our socket path for launching applications
-dbus-update-activation-environment --systemd MIR_SOCKET="${MIR_SERVER_FILE}"
 dbus-update-activation-environment --systemd WAYLAND_DISPLAY
 
 # Ensure that Lomiri uses the correct QPA.
