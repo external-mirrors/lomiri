@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-24 18:23+0000\n"
-"PO-Revision-Date: 2026-10-19 21:26+0000\n"
+"PO-Revision-Date: 2026-10-22 21:53+0000\n"
 "Last-Translator: Alagirisamy Rengaraj "
 "<ahalyachinnasamy1967@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Tamil <https://hosted.weblate.org/projects/lomiri/lomiri/ta/>"
@@ -162,7 +162,7 @@ msgstr "வெளியேறு"
 #: qml/Greeter/GreeterView.qml:452 qml/Wizard/Pages/passcode-confirm.qml:32
 #: qml/Wizard/Pages/passcode-set.qml:32
 msgid "Cancel"
-msgstr "நீக்கு"
+msgstr "தவிர்க்கவும்"
 
 #: qml/Components/Dialogs.qml:223
 msgctxt "Title: Reboot dialog"
@@ -854,7 +854,7 @@ msgstr "இப்போது உங்கள் சாதனத்தைப் 
 
 #: qml/Wizard/Pages/80-finished.qml:131
 msgid "Continue"
-msgstr "தொடரவும்"
+msgstr "தொடரவும்"
 
 #: qml/Wizard/Pages/80-finished.qml:131
 msgid "Get Started"
