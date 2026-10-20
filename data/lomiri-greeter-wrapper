@@ -38,8 +38,29 @@ set_greeter_var()
     dbus-update-activation-environment --systemd "$1=$2"
 }
 
-SUB_SOCKET=$XDG_RUNTIME_DIR/mir_socket
-rm -f $SUB_SOCKET # clear socket in case we were hard shut down
+# Sanity fallback for our own Wayland socket
+[ -z "$WAYLAND_DISPLAY" ] && export WAYLAND_DISPLAY=wayland-0
+
+# Detect whether we're running on Mir 1 or Mir 2
+# TODO: phase out
+LEGACY_MIR=0
+LEGACY_PKG=qtmir-qt5-mir1
+if [ $(dpkg -s $LEGACY_PKG 1>&2 2>/dev/null) ]; then
+    LEGACY_MIR=$(dpkg -s $LEGACY_PKG | grep "^Status: " | grep -q " installed" && echo 1)
+fi
+
+MIR_SOCKET_ARG=""
+if [ "$LEGACY_MIR" = "1" ]; then
+    # clear socket in case we were hard shut down, and provide
+    # the right path to the user's Mirclient socket to the greeter
+    # invocation.
+    SUB_SOCKET=$XDG_RUNTIME_DIR/mir_socket
+    rm -f $SUB_SOCKET
+    MIR_SOCKET_ARG="MIR_SERVER_FILE=$SUB_SOCKET"
+else
+    # Connect to the system compositor's Wayland socket for nesting
+    MIR_SOCKET_ARG="MIR_SERVER_WAYLAND_HOST=/run/wayland-syscomp"
+fi
 
 echo "DBUS_SESSION_BUS_ADDRESS=${DBUS_SESSION_BUS_ADDRESS}" >"$XDG_RUNTIME_DIR/dbus-session"
 
@@ -88,10 +109,15 @@ if [ -n "$(command -v device-info)" ]; then
 fi
 
 export GRID_UNIT_PX="${GRID_UNIT_PX:-18}"
-export MIR_SERVER_ENABLE_MIRCLIENT=1
 
-rm "$XDG_RUNTIME_DIR/mir_socket"
-exec env MIR_SERVER_FILE=$SUB_SOCKET $TOUCH_WRAPPER $@ &
+if [ "$LEGACY_MIR" = "1" ]; then
+    export MIR_SERVER_ENABLE_MIRCLIENT=1
+    rm "$XDG_RUNTIME_DIR/mir_socket"
+else
+    rm "$XDG_RUNTIME_DIR/$WAYLAND_DISPLAY"
+fi
+
+exec env $MIR_SOCKET_ARG $TOUCH_WRAPPER $@ &
 CMD_PID=$!
 
 count=0
@@ -99,7 +125,8 @@ limit=60
 while [ true ]; do
     count=$((count + 1))
     [ $count -gt $limit ] && break
-    [ -e "$XDG_RUNTIME_DIR/mir_socket" ] && break
+    [ "$LEGACY_MIR" = "1" ] && [ -e "$XDG_RUNTIME_DIR/mir_socket" ] && break
+    [ "$LEGACY_MIR" != "1" ] && [ -e "$XDG_RUNTIME_DIR/$WAYLAND_DISPLAY" ] && break
     sleep 1s
 done
 
