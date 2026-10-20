@@ -33,6 +33,14 @@ if [ "$LEGACY_MIR" = "1" ]; then
     rm -f "${MIR_SERVER_FILE}_trusted"
 
     dbus-update-activation-environment --systemd MIR_SOCKET="${MIR_SERVER_FILE}"
+else
+    # TODO: Keep this once we phase out Mirclient support completely
+    # We want Mir2's Wayland graphics platform to be used, so that
+    # we can connect to the system compositor via Wayland also.
+    # This turns the user session's shell into a Wayland client
+    # to lomiri-system-compositor, using libhybris' "wayland" EGL
+    # platform as compared to the "null" one with Mirclient.
+    export MIR_SERVER_WAYLAND_HOST="/run/wayland-syscomp"
 fi
 
 # TODO: maybe handle some kind of collision?
