@@ -1,5 +1,9 @@
+etc/lomiri/devices.conf
+usr/lib/systemd/user/*
+usr/libexec/Xwayland.lomiri
+usr/libexec/lomiri-systemd-wrapper
+usr/share/accountsservice/interfaces
+usr/share/dbus-1/interfaces
 usr/share/locale
-usr/share/lomiri/Components
-usr/share/lomiri/Notifications
-usr/share/lomiri/graphics
 usr/share/polkit-1/rules.d/50-com.lomiri.wizard.rules
+var/lib/lomiri/version

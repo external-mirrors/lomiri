@@ -1180,7 +1180,6 @@ Files:
  data/systemd-user/CMakeLists.txt
  data/systemd-user/lomiri-MODE.service.in
  data/systemd-user/lomiri-indicators.target
- data/test.sensors
  doc/CMakeLists.txt
  doc/DirectionalDragArea.svg
  doc/Doxyfile.in
