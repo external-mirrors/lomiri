@@ -19,22 +19,7 @@ add_custom_target(${DESKTOP_FILE_GREETER} ALL
             -d ${CMAKE_SOURCE_DIR}/po
 )
 
-configure_file(${DESKTOP_FILE_INDICATORSCLIENT}.in.in ${DESKTOP_FILE_INDICATORSCLIENT}.in)
-add_custom_target(${DESKTOP_FILE_INDICATORSCLIENT} ALL
-    COMMENT "Merging translations into ${DESKTOP_FILE_INDICATORSCLIENT}..."
-    COMMAND ${GETTEXT_MSGFMT_EXECUTABLE}
-            --desktop --template=${CMAKE_CURRENT_BINARY_DIR}/${DESKTOP_FILE_INDICATORSCLIENT}.in
-            -o ${DESKTOP_FILE_INDICATORSCLIENT}
-            -d ${CMAKE_SOURCE_DIR}/po
-)
-
 # install desktop files
-install(FILES
-    ${CMAKE_CURRENT_BINARY_DIR}/${SHELL_APP}.desktop
-    ${CMAKE_CURRENT_BINARY_DIR}/${INDICATORS_CLIENT_APP}.desktop
-    DESTINATION ${CMAKE_INSTALL_DATADIR}/applications
-    )
-
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/${GREETER_APP}.desktop
     DESTINATION ${CMAKE_INSTALL_DATADIR}/lightdm/greeters

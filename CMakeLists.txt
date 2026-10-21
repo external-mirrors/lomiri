@@ -14,12 +14,10 @@ if (ENABLE_UBUNTU_ACCOUNTSSERVICE)
 endif ()
 
 set(SHELL_APP lomiri)
-set(INDICATORS_CLIENT_APP indicators-client)
 set(GREETER_APP lomiri-greeter)
 
 set (DESKTOP_FILE_SHELL "${SHELL_APP}.desktop")
 set (DESKTOP_FILE_GREETER "${GREETER_APP}.desktop")
-set (DESKTOP_FILE_INDICATORSCLIENT "${INDICATORS_CLIENT_APP}.desktop")
 set(QML_DEBUG OFF CACHE BOOL "Enable Qml Debugging")
 
 if(${PROJECT_BINARY_DIR} STREQUAL ${PROJECT_SOURCE_DIR})
@@ -169,10 +167,6 @@ add_definitions(-DQT_STRICT_ITERATORS)
 
 # Use the fast string builder
 add_definitions(-DQT_USE_QSTRINGBUILDER)
-
-# Autopilot tests
-include(autopilot)
-declare_autopilot_test(shell lomiri.shell ${CMAKE_SOURCE_DIR}/tests/autopilot/)
 
 set(MOCK_INDICATOR_SERVICE_APP lomiri-mock-indicator-service)
 
