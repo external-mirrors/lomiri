@@ -70,7 +70,7 @@ ignore_pat="$ignore_pat|/doc/devices\\.conf$"
 # Jenkins configuration
 ignore_pat="$ignore_pat|/Jenkinsfile"
 # Ignore common build directories
-ignore_pat="$ignore_pat|/build/|/build-*/"
+ignore_pat="$ignore_pat|/build[^/]*/|/\\.cache/"
 # i18n files
 ignore_pat="$ignore_pat|/po/.*$"
 

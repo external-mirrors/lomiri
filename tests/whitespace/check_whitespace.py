@@ -34,6 +34,7 @@
 from __future__ import print_function
 
 import argparse
+import glob
 import os
 import re
 import sys
@@ -103,16 +104,22 @@ pat = re.compile(file_pat)
 # directory and check them for trailing whitespace.
 
 directory = os.path.abspath(args.dir[0])
-ignore = args.ignore_prefix and os.path.abspath(args.ignore_prefix) or None
-ignore_debian = os.path.abspath(os.path.join(directory, 'debian'))
+ignore_dirs = [
+    os.path.join(directory, 'debian'),
+    os.path.join(directory, '.cache')
+] + glob.glob(os.path.join(directory, 'build*'))
+if args.ignore_prefix:
+    ignore_dirs.append(os.path.abspath(args.ignore_prefix))
 
 found_whitespace = False
 try:
     for root, dirs, files in os.walk(directory, onerror=raise_error):
+        if root in ignore_dirs:
+            dirs[:] = []
+            continue
         for file in files:
             path = os.path.join(root, file)
-            if not (ignore and (path.startswith(ignore) or path.startswith(ignore_debian))) and pat.match(file):
-                if scan_for_bad_whitespace(path):
+            if pat.match(file) and scan_for_bad_whitespace(path):
                     found_whitespace = True
 
 except OSError as e:
