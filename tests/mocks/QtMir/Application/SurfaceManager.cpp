@@ -21,7 +21,6 @@
 #include "../../WindowManager/WindowManagementPolicy.h"
 
 #include <paths.h>
-#include <mir/test/doubles/stub_surface.h>
 
 #define SURFACEMANAGER_DEBUG 1
 
@@ -32,12 +31,6 @@
 #endif
 
 namespace lomiriapi = lomiri::shell::application;
-
-uint qHash(const WindowWrapper &key, uint)
-{
-    std::shared_ptr<mir::scene::Surface> surface = key.window;
-    return (quintptr)surface.get();
-}
 
 SurfaceManager *SurfaceManager::m_instance = nullptr;
 
@@ -53,20 +46,14 @@ SurfaceManager::SurfaceManager(QObject *)
     Q_ASSERT(m_instance == nullptr);
     m_instance = this;
 
-    connect(WindowManagementPolicy::instance(), &WindowManagementPolicy::windowAdded,
-            this, [this](const miral::Window& window) {
-        Q_EMIT surfaceCreated(surfaceFor(window));
-    });
+    connect(WindowManagementPolicy::instance(), &WindowManagementPolicy::surfaceAdded,
+            this, &SurfaceManager::surfaceCreated);
 
-    connect(WindowManagementPolicy::instance(), &WindowManagementPolicy::windowsAddedToWorkspace,
-            this, [this](const std::shared_ptr<miral::Workspace> &workspace, const std::vector<miral::Window> &windows) {
-        Q_EMIT surfacesAddedToWorkspace(workspace, surfacesFor(windows));
-    });
+    connect(WindowManagementPolicy::instance(), &WindowManagementPolicy::surfacesAddedToWorkspace,
+            this, &SurfaceManager::surfacesAddedToWorkspace);
 
-    connect(WindowManagementPolicy::instance(), &WindowManagementPolicy::windowsAboutToBeRemovedFromWorkspace,
-            this, [this](const std::shared_ptr<miral::Workspace> &workspace, const std::vector<miral::Window> &windows) {
-        Q_EMIT surfacesAboutToBeRemovedFromWorkspace(workspace, surfacesFor(windows));
-    });
+    connect(WindowManagementPolicy::instance(), &WindowManagementPolicy::surfacesAboutToBeRemovedFromWorkspace,
+            this, &SurfaceManager::surfacesAboutToBeRemovedFromWorkspace);
 }
 
 SurfaceManager::~SurfaceManager()
@@ -79,34 +66,9 @@ SurfaceManager::~SurfaceManager()
     m_instance = nullptr;
 }
 
-MirSurfaceInterface *SurfaceManager::surfaceFor(const miral::Window& window) const
+bool SurfaceManager::isRegistered(MirSurfaceInterface *surface) const
 {
-    auto iter = m_windowToSurface.find({window});
-    if (iter != m_windowToSurface.end()) {
-        return *iter;
-    }
-    return nullptr;
-}
-
-QVector<MirSurfaceInterface*> SurfaceManager::surfacesFor(const std::vector<miral::Window> &windows) const
-{
-    QVector<lomiriapi::MirSurfaceInterface*> surfaces;
-    for (size_t i = 0; i < windows.size(); i++) {
-        auto mirSurface = surfaceFor(windows[i]);
-        if (mirSurface) {
-            surfaces.push_back(mirSurface);
-        }
-    }
-    return surfaces;
-}
-
-miral::Window SurfaceManager::windowFor(MirSurfaceInterface *surface) const
-{
-    auto iter = m_surfaceToWindow.find(surface);
-    if (iter != m_surfaceToWindow.end()) {
-        return iter->window;
-    }
-    return miral::Window();
+    return std::find(m_surfaces.begin(), m_surfaces.end(), surface) != m_surfaces.end();
 }
 
 MirSurface *SurfaceManager::createSurface(const QString& name,
@@ -126,12 +88,7 @@ MirSurface *SurfaceManager::createSurface(const QString& name,
 
 void SurfaceManager::registerSurface(MirSurface *surface)
 {
-    auto fakeSurface = std::make_shared<mir::test::doubles::StubSurface>();
-    WindowWrapper window{miral::Window(nullptr, fakeSurface), fakeSurface};
-
     m_surfaces.prepend(surface);
-    m_windowToSurface.insert(window, surface);
-    m_surfaceToWindow.insert(surface, window);
 
     if (!surface->parentSurface()) {
         surface->setMinimumWidth(m_newSurfaceMinimumWidth);
@@ -147,10 +104,8 @@ void SurfaceManager::registerSurface(MirSurface *surface)
     });
 
     connect(surface, &QObject::destroyed, this, [=]() {
-        auto iter = m_surfaceToWindow.find(surface);
-        if (iter != m_surfaceToWindow.end()) {
-            WindowWrapper key = m_surfaceToWindow.value(surface);
-            WindowManagementPolicy::instance()->removeWindow(key.window);
+        if (isRegistered(surface)) {
+            WindowManagementPolicy::instance()->removeSurface(surface);
             this->onSurfaceDestroyed(surface);
         }
     });
@@ -158,12 +113,12 @@ void SurfaceManager::registerSurface(MirSurface *surface)
 
 void SurfaceManager::notifySurfaceCreated(lomiriapi::MirSurfaceInterface *surface)
 {
-    if (Q_UNLIKELY(!m_surfaceToWindow.contains(surface))) {
+    if (Q_UNLIKELY(!isRegistered(surface))) {
         Q_EMIT surfaceCreated(surface);
         return;
     }
 
-    WindowManagementPolicy::instance()->addWindow(m_surfaceToWindow[surface].window);
+    WindowManagementPolicy::instance()->addSurface(surface);
 }
 
 void SurfaceManager::setNewSurfaceMinimumWidth(int value)
@@ -276,20 +231,14 @@ void SurfaceManager::activate(lomiriapi::MirSurfaceInterface *apiSurface)
 void SurfaceManager::forEachSurfaceInWorkspace(const std::shared_ptr<miral::Workspace> &workspace,
                                                const std::function<void(lomiri::shell::application::MirSurfaceInterface*)> &callback)
 {
-    WindowManagementPolicy::instance()->forEachWindowInWorkspace(workspace, [&](const miral::Window &window) {
-        auto surface = surfaceFor(window);
-        if (surface) {
-            callback(surface);
-        }
-    });
+    WindowManagementPolicy::instance()->forEachSurfaceInWorkspace(workspace, callback);
 }
 
 void SurfaceManager::moveSurfaceToWorkspace(lomiri::shell::application::MirSurfaceInterface* surface,
                                             const std::shared_ptr<miral::Workspace> &workspace)
 {
-    auto window = windowFor(surface);
-    if (window) {
-        WindowManagementPolicy::instance()->moveWindowToWorkspace(window, workspace);
+    if (isRegistered(surface)) {
+        WindowManagementPolicy::instance()->moveSurfaceToWorkspace(surface, workspace);
     }
 }
 
@@ -323,13 +272,6 @@ void SurfaceManager::onStateRequested(MirSurface *surface, Mir::State state)
 void SurfaceManager::onSurfaceDestroyed(MirSurface *surface)
 {
     m_surfaces.removeAll(surface);
-
-    auto iter = m_surfaceToWindow.find(surface);
-    if (iter != m_surfaceToWindow.end()) {
-        WindowWrapper key = iter.value();
-        m_windowToSurface.remove(key);
-        m_surfaceToWindow.erase(iter);
-    }
 
     if (m_focusedSurface == surface) {
         m_focusedSurface = nullptr;
@@ -375,7 +317,7 @@ void SurfaceManager::createInputMethodSurface()
         m_virtualKeyboard = new VirtualKeyboard;
         registerSurface(m_virtualKeyboard);
 
-        WindowManagementPolicy::instance()->addWindow(m_surfaceToWindow[m_virtualKeyboard].window);
+        WindowManagementPolicy::instance()->addSurface(m_virtualKeyboard);
     }
 }
 

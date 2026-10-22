@@ -23,13 +23,11 @@
 #include <QMultiMap>
 #include <QVector>
 
-#include <miral/window.h>
 #include <memory>
 #include <unordered_set>
 
-namespace miral {
-class Workspace {};
-}
+namespace miral { class Workspace {}; }
+namespace lomiri::shell::application { class MirSurfaceInterface; }
 
 // A Fake window management policy for the mock.
 class Q_DECL_EXPORT WindowManagementPolicy : public QObject,
@@ -37,6 +35,8 @@ class Q_DECL_EXPORT WindowManagementPolicy : public QObject,
 {
     Q_OBJECT
 public:
+    typedef lomiri::shell::application::MirSurfaceInterface Surface;
+
     WindowManagementPolicy();
 
     // for use in mocks
@@ -47,29 +47,30 @@ public:
     void releaseWorkspace(const std::shared_ptr<miral::Workspace> &workspace) override;
     void setActiveWorkspace(const std::shared_ptr<miral::Workspace> &workspace) override;
 
-    void addWindow(const miral::Window& window);
-    void removeWindow(const miral::Window& window);
+    void addSurface(Surface *surface);
+    void removeSurface(Surface *surface);
 
-    void forEachWindowInWorkspace(std::shared_ptr<miral::Workspace> const &workspace,
-                                  std::function<void(miral::Window const&)> const &callback);
+    void forEachSurfaceInWorkspace(std::shared_ptr<miral::Workspace> const &workspace,
+                                   std::function<void(Surface*)> const &callback);
 
-    void moveWindowToWorkspace(const miral::Window &window, const std::shared_ptr<miral::Workspace> &workspace);
+    void moveSurfaceToWorkspace(Surface *surface, const std::shared_ptr<miral::Workspace> &workspace);
 
     void moveWorkspaceContentToWorkspace(const std::shared_ptr<miral::Workspace> &to,
                                          const std::shared_ptr<miral::Workspace> &from);
 
 Q_SIGNALS:
-    void windowAdded(const miral::Window& window);
-    void windowRemoved(const miral::Window& window);
-    void windowsAddedToWorkspace(const std::shared_ptr<miral::Workspace> &workspace, const std::vector<miral::Window> &windows);
-    void windowsAboutToBeRemovedFromWorkspace(const std::shared_ptr<miral::Workspace> &workspace, const std::vector<miral::Window> &windows);
+    void surfaceAdded(Surface *surface);
+    void surfaceRemoved(Surface *surface);
+    void surfacesAddedToWorkspace(const std::shared_ptr<miral::Workspace> &workspace, const QVector<Surface*> &surfaces);
+    void surfacesAboutToBeRemovedFromWorkspace(const std::shared_ptr<miral::Workspace> &workspace, const QVector<Surface*> &surfaces);
 
 private:
     std::weak_ptr<miral::Workspace> m_activeWorkspace;
     std::shared_ptr<miral::Workspace> m_dummyWorkspace;
     std::unordered_set<std::shared_ptr<miral::Workspace>> m_workspaces;
 
-    typedef QMultiMap<std::shared_ptr<miral::Workspace>, miral::Window> WorkspaceWindows;
-    WorkspaceWindows m_windows;
+    // Pointers are automatically removed when destroyed (see SurfaceManager::registerSurface)
+    typedef QMultiMap<std::shared_ptr<miral::Workspace>, Surface*> WorkspaceSurfaces;
+    WorkspaceSurfaces m_surfaces;
 };
 #endif // LOMIRI_WINDOWMANAGEMENTPOLICY_H

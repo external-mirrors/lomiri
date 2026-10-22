@@ -54,7 +54,6 @@ Build-Depends:
  licensecheck <!nocheck>,
  lomiri-schemas (>= 0.1.10),
  lomiri-wallpapers <!nocheck>,
- mir1test-dev,
  pkgconf,
  python3-all:any <!nocheck>,
  python3-setuptools <!nocheck>,

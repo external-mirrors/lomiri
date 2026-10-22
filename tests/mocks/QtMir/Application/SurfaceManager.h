@@ -19,21 +19,14 @@
 
 #include <QObject>
 #include <functional>
+#include <memory>
 
 #include <lomiri/shell/application/SurfaceManagerInterface.h>
-#include <miral/window.h>
 
 #include "MirSurface.h"
 #include "VirtualKeyboard.h"
 
 class ApplicationInfo;
-
-struct WindowWrapper {
-    miral::Window window;
-    std::shared_ptr<mir::scene::Surface> session{nullptr}; // Keeps the window surface alive.
-    bool operator==(const WindowWrapper& other) const {  return window==other.window; }
-};
-uint qHash(const WindowWrapper &key, uint seed = 0);
 
 class SurfaceManager : public lomiri::shell::application::SurfaceManagerInterface
 {
@@ -110,9 +103,7 @@ private:
     void doRaise(lomiri::shell::application::MirSurfaceInterface *surface);
     void focusFirstAvailableSurface();
     void registerSurface(MirSurface *surface);
-    lomiri::shell::application::MirSurfaceInterface* surfaceFor(const miral::Window &window) const;
-    QVector<lomiri::shell::application::MirSurfaceInterface*> surfacesFor(const std::vector<miral::Window> &windows) const;
-    miral::Window windowFor(lomiri::shell::application::MirSurfaceInterface* surface) const;
+    bool isRegistered(lomiri::shell::application::MirSurfaceInterface *surface) const;
 
     static SurfaceManager *m_instance;
 
@@ -127,9 +118,6 @@ private:
     bool m_underModification{false};
 
     QList<MirSurface*> m_surfaces;
-
-    QHash<WindowWrapper, lomiri::shell::application::MirSurfaceInterface*> m_windowToSurface;
-    QHash<lomiri::shell::application::MirSurfaceInterface*, WindowWrapper> m_surfaceToWindow;
 
     VirtualKeyboard *m_virtualKeyboard{nullptr};
 };
