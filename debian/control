@@ -16,7 +16,6 @@ Build-Depends:
  fonts-ubuntu <!nocheck>,
  gdb,
  graphviz,
- lomiri-schemas (>= 0.1.13~),
  libdeviceinfo-dev,
  libevdev-dev,
  libgeonames-dev,
@@ -36,10 +35,13 @@ Build-Depends:
  liblomirigestures-dev,
  liblomirigestures5-private-dev,
  liblomirisystemsettings-dev,
+ libmiral-dev,
+ libmiroil-dev,
  libpam0g-dev,
  libpulse-dev,
  libqmenumodel-dev,
  libqt5mir1server-dev (>= 0.6.0),
+ libqt5mir2server-dev,
  libqt5sql5-sqlite <!nocheck>,
  libqt5svg5-dev,
  libqt5xmlpatterns5-dev,
@@ -52,7 +54,7 @@ Build-Depends:
  libxcb1-dev [!arm64 !armhf],
  libxi-dev [!arm64 !armhf],
  licensecheck <!nocheck>,
- lomiri-schemas (>= 0.1.10),
+ lomiri-schemas (>= 0.1.13~),
  lomiri-wallpapers <!nocheck>,
  pkgconf,
  python3-all:any <!nocheck>,
@@ -115,32 +117,51 @@ Description: LightDM Greeter for the Lomiri Operating Environment
  This package provides the Lomiri Greeter.
 
 Package: lomiri
+Architecture: all
+Depends:
+ lomiri-qt5-mir1 | lomiri-qt5-mir2,
+ ${misc:Depends},
+Description: Shell of the Lomiri Operating Environment
+ Shell of the Lomiri Operating environment optimized for touch based
+ human-machine interaction, but also supporting convergence (i.e.
+ switching between tablet/phone and desktop mode). Lomiri is the user
+ shell driving Ubuntu Touch based mobile devices.
+ .
+ Metapackage for the currently stable version of the Lomiri shell.
+
+Package: lomiri-qt5-mir1
 Architecture: any
 Depends:
+ accountsservice-ubuntu-schemas (>= 0.0.7),
  dmz-cursor-theme,
  gsettings-desktop-schemas,
  libcap2-bin,
  libglib2.0-bin,
+ lomiri-application-impl-28,
  lomiri-common (= ${source:Version}),
- lomiri-launcher-impl-13,
- lomiri-private (= ${binary:Version}),
- lomiri-private | lomiri-launcher-impl,
+ lomiri-notifications-impl-3,
  lomiri-system-settings,
  python3:any,
  qml-module-biometryd,
+ qml-module-gsettings,
  qml-module-hfd,
- qml-module-lomiri-components,
+ qml-module-lomiri-components | qml-module-lomiri-components-gles (>= 1.3.2030),
  qml-module-lomiri-components-extras,
  qml-module-lomiri-content,
  qml-module-lomiri-layouts,
+ qml-module-lomiri-settings-components,
  qml-module-lomiri-settings-menus,
  qml-module-lomiri-telephony,
+ qml-module-lomiri-thumbnailer,
  qml-module-qmenumodel1 (>= 0.9.1-1ubports2~),
  qml-module-qt-labs-folderlistmodel,
  qml-module-qt-labs-settings,
  qml-module-qtmir0.1 (>= 0.4.8),
+ qml-module-qtmultimedia,
  qml-module-qtqml-statemachine,
+ qml-module-qtquick-layouts,
  qml-module-qtquick-xmllistmodel,
+ qtdeclarative5-lomiri-notifications-plugin (>= 0.1.2) | lomiri-notifications-impl,
  qtmir-qt5-mir1,
  ${misc:Depends},
  ${shlibs:Depends},
@@ -151,53 +172,125 @@ Recommends:
  lomiri-greeter-session-broadcast,
 Breaks:
  indicator-network (<< 0.5.1+14.10.20141014),
+ lomiri (<< ${source:Version}),
+ lomiri-common (<< ${source:Version}),
+ lomiri-private (<< ${source:Version}),
  lomiri-scope-tool,
  lomiri-touch-session (<< 0.107),
 Conflicts:
+ lomiri-qt5-mir2,
  lomiri-system-settings-wizard,
 Provides:
  indicator-renderer,
  notification-daemon,
 Replaces:
+ lomiri (<< ${source:Version}),
+ lomiri-common (<< ${source:Version}),
+ lomiri-private (<< ${source:Version}),
  lomiri-scope-tool,
  lomiri-touch-session (<< 0.82~),
-Description: Shell of the Lomiri Operating Environment
+Description: Shell of the Lomiri Operating Environment (Mir 1)
  Shell of the Lomiri Operating environment optimized for touch based
  human-machine interaction, but also supporting convergence (i.e.
  switching between tablet/phone and desktop mode). Lomiri is the user
  shell driving Ubuntu Touch based mobile devices.
  .
- This package provides the Lomiri shell.
+ This package provides the Lomiri shell built against Mir 1.
+
+Package: lomiri-qt5-mir2
+Architecture: any
+Depends:
+ accountsservice-ubuntu-schemas (>= 0.0.7),
+ dmz-cursor-theme,
+ gsettings-desktop-schemas,
+ libcap2-bin,
+ libglib2.0-bin,
+ lomiri-application-impl-28,
+ lomiri-common (= ${source:Version}),
+ lomiri-notifications-impl-3,
+ lomiri-system-settings,
+ python3:any,
+ qml-module-biometryd,
+ qml-module-gsettings,
+ qml-module-hfd,
+ qml-module-lomiri-components | qml-module-lomiri-components-gles (>= 1.3.2030),
+ qml-module-lomiri-components-extras,
+ qml-module-lomiri-content,
+ qml-module-lomiri-layouts,
+ qml-module-lomiri-settings-components,
+ qml-module-lomiri-settings-menus,
+ qml-module-lomiri-telephony,
+ qml-module-lomiri-thumbnailer,
+ qml-module-qmenumodel1 (>= 0.9.1-1ubports2~),
+ qml-module-qt-labs-folderlistmodel,
+ qml-module-qt-labs-settings,
+ qml-module-qtmir,
+ qml-module-qtmultimedia,
+ qml-module-qtqml-statemachine,
+ qml-module-qtquick-layouts,
+ qml-module-qtquick-xmllistmodel,
+ qtdeclarative5-lomiri-notifications-plugin (>= 0.1.2) | lomiri-notifications-impl,
+ qtmir-qt5-mir2,
+ ${misc:Depends},
+ ${shlibs:Depends},
+Recommends:
+ ayatana-indicator-keyboard,
+ ayatana-indicator-session,
+ lomiri-app-launch,
+ lomiri-greeter-session-broadcast,
+Breaks:
+ indicator-network (<< 0.5.1+14.10.20141014),
+ lomiri (<< ${source:Version}),
+ lomiri-common (<< ${source:Version}),
+ lomiri-private (<< ${source:Version}),
+ lomiri-scope-tool,
+ lomiri-touch-session (<< 0.107),
+Conflicts:
+ lomiri-qt5-mir1,
+ lomiri-system-settings-wizard,
+Provides:
+ indicator-renderer,
+ notification-daemon,
+Replaces:
+ lomiri (<< ${source:Version}),
+ lomiri-common (<< ${source:Version}),
+ lomiri-private (<< ${source:Version}),
+ lomiri-scope-tool,
+ lomiri-touch-session (<< 0.82~),
+Description: Shell of the Lomiri Operating Environment (Mir 2)
+ Shell of the Lomiri Operating environment optimized for touch based
+ human-machine interaction, but also supporting convergence (i.e.
+ switching between tablet/phone and desktop mode). Lomiri is the user
+ shell driving Ubuntu Touch based mobile devices.
+ .
+ This package provides the Lomiri shell built against Mir 2.
 
 Package: lomiri-common
 Architecture: all
 Depends:
- lomiri-application-impl-28,
- lomiri-notifications-impl-3,
  lomiri-schemas (>= 0.1.13~),
- lomiri-tests | lomiri-application-impl,
- qml-module-lomiri-components | qml-module-lomiri-components-gles (>= 1.3.2030),
- qml-module-lomiri-settings-components,
- qml-module-lomiri-thumbnailer,
- qml-module-qtquick-layouts,
- qtdeclarative5-lomiri-notifications-plugin (>= 0.1.2) | lomiri-notifications-impl,
  qttranslations5-l10n,
  ${misc:Depends},
+Breaks:
+ lomiri (<< ${source:Version}),
+ lomiri-private (<< ${source:Version}),
+Replaces:
+ lomiri (<< ${source:Version}),
+ lomiri-private (<< ${source:Version}),
 Description: Shell of the Lomiri Operating Environment (common files)
  Shell of the Lomiri Operating environment optimized for touch based
  human-machine interaction, but also supporting convergence (i.e.
  switching between tablet/phone and desktop mode). Lomiri is the user
  shell driving Ubuntu Touch based mobile devices.
  .
- This package contains the QML, graphics and locale files for lomiri.
+ This package contains the architecture independent files for lomiri.
 
 Package: lomiri-tests
 Architecture: any
-Build-Profiles: <!noinsttest>
 Multi-Arch: foreign
 Depends:
  dbus-test-runner,
- lomiri (= ${binary:Version}),
+ lomiri-qt5-mir2 (= ${binary:Version}),
  parallel,
  qtdbustest-runner,
  qtdeclarative5-dev-tools,
@@ -208,8 +301,6 @@ Depends:
 Conflicts:
  lomiri-fake-env,
 Provides:
- lomiri-application-impl,
- lomiri-application-impl-28,
  lomiri-fake-env,
 Replaces:
  lomiri-autopilot (<< 8.02+15.04.20150422-0lomiri1),
@@ -223,29 +314,6 @@ Description: Scripts and mocks for running Lomiri Shell tests
  This package provides fake implementations of some QML modules used by
  the Lomiri Shell (e.g. Lomiri.Application) so that you can run it in a
  sandboxed environment; it also provides scripts to run its test suite.
-
-Package: lomiri-private
-Architecture: any
-Multi-Arch: same
-Section: libs
-Depends:
- accountsservice-ubuntu-schemas (>= 0.0.7),
- lomiri-schemas (>= 0.1.13~),
- qml-module-gsettings,
- qml-module-qtmultimedia,
- ${misc:Depends},
- ${shlibs:Depends},
-Provides:
- lomiri-launcher-impl,
- lomiri-launcher-impl-13,
-Description: Lomiri Operating Environment's Shell (private libs)
- Lomiri is an operating environment optimized for touch based
- human-machine interaction, but also supporting convergence (i.e.
- switching between tablet/phone and desktop mode). Lomiri is the user
- shell driving Ubuntu Touch based mobile devices.
- .
- This package contains the private libraries for QML and other components
- only used by the Lomiri Shell.
 
 Package: lomiri-doc
 Architecture: all

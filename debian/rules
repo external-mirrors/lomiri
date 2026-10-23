@@ -8,25 +8,46 @@ export DEB_BUILD_MAINT_OPTIONS=hardening=+all
 %:
 	dh $@
 
+FLAGS := -DDISPLAYED_DISTRO_NAME="Ubuntu Touch" \
+	-DENABLE_UBUNTU_ACCOUNTSSERVICE=$(if $(shell dpkg-vendor --derives-from Ubuntu && echo y),ON,OFF)
+
 override_dh_auto_configure:
-	dh_auto_configure -- \
-		-DDISPLAYED_DISTRO_NAME="Ubuntu Touch" \
-		-DENABLE_UBUNTU_ACCOUNTSSERVICE=$(if $(shell dpkg-vendor --derives-from Ubuntu && echo y),ON,OFF) \
-		-DNO_TESTS=$(if $(filter %-tests,$(shell dh_listpackages)),OFF,ON)
+	dh_auto_configure --builddirectory=build-mir1-qt5 -- $(FLAGS)
+	dh_auto_configure --builddirectory=build-mir2-qt5 -- $(FLAGS) -DWITH_MIR2=ON
 
 override_dh_auto_build:
 	# doc is not a default target
-	dh_auto_build -- -O all doc
+	dh_auto_build --builddirectory=build-mir1-qt5 -- -O all
+	dh_auto_build --builddirectory=build-mir2-qt5 -- -O all doc
 
 override_dh_auto_test:
 	# Run the entire test battery
 	# Parallel tests have a risk of starting xvfb on the same DISPLAY multiple times,
 	# causing the whole battery to fail.
-	dh_auto_test --no-parallel -- -O -k xvfballtests
+	dh_auto_test --builddirectory=build-mir1-qt5 --no-parallel -- -O -k xvfballtests
+	dh_auto_test --builddirectory=build-mir2-qt5 --no-parallel -- -O -k xvfballtests
+
+override_dh_auto_install:
+	dh_auto_install --builddirectory=build-mir1-qt5 --destdir=debian/tmp-mir1-qt5
+	dh_auto_install --builddirectory=build-mir2-qt5 --destdir=debian/tmp-mir2-qt5
+
+override_dh_auto_clean:
+	dh_auto_clean --builddirectory=build-mir1-qt5
+	dh_auto_clean --builddirectory=build-mir2-qt5
+	rm -rf debian/tmp-mir1-qt5 debian/tmp-mir2-qt5
 
 execute_before_dh_install:
-	cd debian/tmp/usr/share/doc/lomiri/html/ && rdfind -makesymlinks true .
-	cd debian/tmp/usr/share/doc/lomiri/html/ && symlinks -rc .
+	cd debian/tmp-mir2-qt5/usr/share/doc/lomiri/html/ && rdfind -makesymlinks true .
+	cd debian/tmp-mir2-qt5/usr/share/doc/lomiri/html/ && symlinks -rc .
+
+override_dh_install:
+	dh_install --sourcedir=debian/tmp-mir1-qt5 -plomiri-qt5-mir1
+	dh_install --sourcedir=debian/tmp-mir2-qt5 -Nlomiri-qt5-mir1
+	install -Dm644 debian/session-migrations/com.canonical.unity.AccountsService.xml \
+		debian/lomiri-common/usr/share/dbus-1/interfaces/com.canonical.unity.AccountsService.xml
+
+override_dh_missing:
+	dh_missing --sourcedir=debian/tmp-mir2-qt5
 
 execute_after_dh_installdocs:
 	# Remove results.txt for reproducible builds
@@ -41,14 +62,14 @@ execute_after_dh_fixperms:
 	[ -d debian/lomiri-tests ] && chmod a-x debian/lomiri-tests/usr/libexec/lomiri/tests/plugins/Lomiri/Launcher/applications/rel-icon.desktop || true
 	[ -d debian/lomiri-tests ] && chmod a-x debian/lomiri-tests/usr/libexec/lomiri/tests/plugins/Lomiri/Launcher/applications/rel-icon.svg || true
 
-# use private lib directories
+# don't advertise the mock libraries
 override_dh_makeshlibs:
-	dh_makeshlibs -Nlomiri-private -Nlomiri-tests
+	dh_makeshlibs -Nlomiri-tests
 
 override_dh_shlibdeps:
 	# Some mock libraries link against liblightdm-qt5-3.so which we want to
 	# avoid, since we only really link against our mock one, not the system one.
-	dh_shlibdeps -XlibMockAccountsService-qml.so -Llomiri-private
+	dh_shlibdeps -XlibMockAccountsService-qml.so -Llomiri-qt5-mir2
 
 get-orig-source:
 	uscan --noconf --force-download --rename --download-current-version --destdir=..
