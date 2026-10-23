@@ -34,4 +34,6 @@ else()
     install(DIRECTORY ${PROJECT_BINARY_DIR}/doc/html
             DESTINATION ${CMAKE_INSTALL_PREFIX}/share/doc/${PROJECT_NAME}
             OPTIONAL)
+    install(FILES devices.conf
+            DESTINATION ${CMAKE_INSTALL_PREFIX}/share/doc/${PROJECT_NAME})
 endif()

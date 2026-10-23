@@ -19,19 +19,15 @@ add_custom_target(${DESKTOP_FILE_GREETER} ALL
             -d ${CMAKE_SOURCE_DIR}/po
 )
 
-# install desktop files
-install(FILES
-    ${CMAKE_CURRENT_BINARY_DIR}/${GREETER_APP}.desktop
-    DESTINATION ${CMAKE_INSTALL_DATADIR}/lightdm/greeters
-    )
+add_custom_target(pkgversion ALL
+    COMMAND echo ${PROJECT_VERSION} | head -n1 > ${CMAKE_CURRENT_BINARY_DIR}/version
+)
 
-install(FILES
-    51-lomiri-greeter.conf
-    DESTINATION ${CMAKE_INSTALL_DATADIR}/lightdm/lightdm.conf.d
-    )
-
-add_custom_target(pkgversion ALL COMMAND echo ${PROJECT_VERSION} | head -n1 > ${CMAKE_CURRENT_BINARY_DIR}/version)
-
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/version DESTINATION ${CMAKE_INSTALL_LOCALSTATEDIR}/lib/lomiri)
+install(PROGRAMS lomiri-greeter-wrapper DESTINATION ${CMAKE_INSTALL_BINDIR})
+install(FILES 51-lomiri-greeter.conf    DESTINATION ${CMAKE_INSTALL_DATADIR}/lightdm/lightdm.conf.d)
+install(FILES lomiri-greeter.rules      DESTINATION ${CMAKE_INSTALL_DATADIR}/polkit-1/rules.d)
+install(FILES devices.conf              DESTINATION ${CMAKE_INSTALL_FULL_SYSCONFDIR}/lomiri)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${GREETER_APP}.desktop  DESTINATION ${CMAKE_INSTALL_DATADIR}/lightdm/greeters)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/version                 DESTINATION ${CMAKE_INSTALL_LOCALSTATEDIR}/lib/lomiri)
 
 add_subdirectory(systemd-user)
