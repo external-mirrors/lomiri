@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-24 18:23+0000\n"
-"PO-Revision-Date: 2026-10-19 21:26+0000\n"
+"PO-Revision-Date: 2026-10-26 20:03+0000\n"
 "Last-Translator: aimar orbe <aimar@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Basque <https://hosted.weblate.org/projects/lomiri/lomiri/eu/>"
 "\n"
@@ -721,7 +721,7 @@ msgstr "Hizkuntza"
 #: qml/Wizard/Pages/passcode-desktop.qml:154
 #: qml/Wizard/Pages/password-set.qml:153
 msgid "Next"
-msgstr "Urr."
+msgstr "Hurrengoa"
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
 #: qml/Wizard/Pages/10-welcome-update.qml:98
