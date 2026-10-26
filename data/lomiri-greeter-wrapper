@@ -44,10 +44,7 @@ set_greeter_var()
 # Detect whether we're running on Mir 1 or Mir 2
 # TODO: phase out
 LEGACY_MIR=0
-LEGACY_PKG=qtmir-qt5-mir1
-if [ $(dpkg -s $LEGACY_PKG 1>&2 2>/dev/null) ]; then
-    LEGACY_MIR=$(dpkg -s $LEGACY_PKG | grep "^Status: " | grep -q " installed" && echo 1)
-fi
+ldd $(which lomiri) 2>/dev/null | grep -q "libmir1.*\.so\..*" && LEGACY_MIR=1
 
 MIR_SOCKET_ARG=""
 if [ "$LEGACY_MIR" = "1" ]; then
