@@ -40,15 +40,15 @@ set_greeter_var()
 }
 
 # Sanity fallback for our own Wayland socket
-[ -z "$WAYLAND_DISPLAY" ] && export WAYLAND_DISPLAY=wayland-0
+[ -z "${WAYLAND_DISPLAY}" ] && export WAYLAND_DISPLAY=wayland-0
 
 # Detect whether we're running on Mir 1 or Mir 2
 # TODO: phase out
-LEGACY_MIR=0
-ldd $(which lomiri) 2>/dev/null | grep -q "libmir1.*\.so\..*" && LEGACY_MIR=1
+LEGACY_MIR=true
+ldd $(which lomiri) 2>/dev/null | grep -q "libmir1.*\.so\..*" && LEGACY_MIR=false
 
 MIR_SOCKET_ARG=""
-if [ "$LEGACY_MIR" = "1" ]; then
+if [ "$LEGACY_MIR" = "true" ]; then
     # clear socket in case we were hard shut down, and provide
     # the right path to the user's Mirclient socket to the greeter
     # invocation.
@@ -108,11 +108,11 @@ fi
 
 export GRID_UNIT_PX="${GRID_UNIT_PX:-18}"
 
-if [ "$LEGACY_MIR" = "1" ]; then
+if [ "$LEGACY_MIR" = "true" ]; then
     export MIR_SERVER_ENABLE_MIRCLIENT=1
-    rm "$XDG_RUNTIME_DIR/mir_socket"
+    rm "${XDG_RUNTIME_DIR}/mir_socket"
 else
-    rm "$XDG_RUNTIME_DIR/$WAYLAND_DISPLAY"
+    rm "${XDG_RUNTIME_DIR}/${WAYLAND_DISPLAY}"
 fi
 
 exec env $MIR_SOCKET_ARG $TOUCH_WRAPPER $@ &
@@ -123,8 +123,8 @@ limit=60
 while [ true ]; do
     count=$((count + 1))
     [ $count -gt $limit ] && break
-    [ "$LEGACY_MIR" = "1" ] && [ -e "$XDG_RUNTIME_DIR/mir_socket" ] && break
-    [ "$LEGACY_MIR" != "1" ] && [ -e "$XDG_RUNTIME_DIR/$WAYLAND_DISPLAY" ] && break
+    [ "$LEGACY_MIR" = "true" ] && [ -e "${XDG_RUNTIME_DIR}/mir_socket" ] && break
+    [ "$LEGACY_MIR" != "true" ] && [ -e "${XDG_RUNTIME_DIR}/${WAYLAND_DISPLAY}" ] && break
     sleep 1s
 done
 

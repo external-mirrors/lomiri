@@ -11,8 +11,8 @@ export QML_NO_TOUCH_COMPRESSION=1
 
 # Detect whether we're running on Mir 1 or Mir 2
 # TODO: phase out
-LEGACY_MIR=0
-ldd $(which lomiri) 2>/dev/null | grep -q "libmir1.*\.so\..*" && LEGACY_MIR=1
+LEGACY_MIR=false
+ldd $(which lomiri) 2>/dev/null | grep -q "libmir1.*\.so\..*" && LEGACY_MIR=true
 
 # Unlikely under systemd, but just in case.
 if [ -z "$XDG_RUNTIME_DIR" ]; then
@@ -21,7 +21,7 @@ if [ -z "$XDG_RUNTIME_DIR" ]; then
 fi
 
 # TODO: phase out
-if [ "$LEGACY_MIR" = "1" ]; then
+if [ "${LEGACY_MIR}" = "true" ]; then
     export MIR_SERVER_ENABLE_MIRCLIENT=1
     export MIR_SERVER_PROMPT_FILE=1
     export MIR_SERVER_FILE="${XDG_RUNTIME_DIR}/mir_socket"
