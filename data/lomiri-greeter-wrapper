@@ -29,6 +29,7 @@ cleanup()
     if [ -n "$CMD_PID" ]; then
         kill "$CMD_PID"
     fi
+
     exit 0
 }
 
@@ -127,12 +128,10 @@ while [ true ]; do
     sleep 1s
 done
 
-systemctl --user restart maliit-server.service &
-systemctl --user restart lomiri-indicators.target &
+systemctl --user restart maliit-server.service --no-block
+systemctl --user restart lomiri-indicators.target --no-block
 
 wait $CMD_PID
 CMD_PID=
 
-systemctl --user stop maliit-server.service
-systemctl --user stop lomiri-indicators.target
-
+systemctl --user start exit.target --no-block
