@@ -61,7 +61,7 @@ QtObject {
         target.restoredY = target.normalY;
 
         loadedState = WindowStateStorage.getState(target.appId, Mir.RestoredState);
-        if (state !== Mir.HiddenState && state !== Mir.UnknownState) {
+        if (loadedState === Mir.HiddenState || loadedState === Mir.UnknownState) {
             // Sanitize any transient state left over in the database by a previous
             // buggy save (e.g. Hidden/Unknown), so a bad row can't keep suppressing
             // this app's surfaces forever.
