@@ -8,9 +8,8 @@ msgstr ""
 "Project-Id-Version: lomiri\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-24 18:23+0000\n"
-"PO-Revision-Date: 2026-11-02 15:50+0000\n"
-"Last-Translator: Khmelyauskas “JasonWalt Baba” Alexander "
-"<khmelyauskasalexander@users.noreply.hosted.weblate.org>\n"
+"PO-Revision-Date: 2026-11-06 02:31+0000\n"
+"Last-Translator: Daniel Frost <danfro@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Tajik <https://hosted.weblate.org/projects/lomiri/lomiri/tg/>"
 "\n"
 "Language: tg\n"
@@ -18,9 +17,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.11.dev0\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
 
 #: data/lomiri.desktop.in:3 qml/Components/KeyboardShortcutsOverlay.qml:55
+#, fuzzy
 msgid "Lomiri"
 msgstr "Ломири"
 
@@ -49,6 +49,7 @@ msgid "Password: "
 msgstr "Рамз "
 
 #: plugins/LightDM/Greeter.cpp:214
+#, fuzzy
 msgid "Username"
 msgstr "Номи корбар"
 
@@ -91,7 +92,7 @@ msgstr "Миёнабурро кушоед"
 
 #: plugins/WindowManager/Screen.cpp:160
 msgid "Unknown"
-msgstr "Номаълум"
+msgstr ""
 
 #: plugins/WindowManager/Screen.cpp:162
 msgid "VGA"
@@ -103,615 +104,601 @@ msgstr "DVI"
 
 #: plugins/WindowManager/Screen.cpp:168
 msgid "Composite"
-msgstr "Композитӣ"
+msgstr ""
 
 #: plugins/WindowManager/Screen.cpp:170
 msgid "S-Video"
-msgstr "S-Видео"
+msgstr ""
 
 #: plugins/WindowManager/Screen.cpp:176
 msgid "Internal"
-msgstr "Абадӣ"
+msgstr ""
 
 #: plugins/WindowManager/Screen.cpp:178
 msgid "Component"
-msgstr "Ҷузъ"
+msgstr ""
 
 #: plugins/WindowManager/Screen.cpp:180
 msgid "DisplayPort"
-msgstr "НамоишПорт"
+msgstr ""
 
 #: plugins/WindowManager/Screen.cpp:183
 msgid "HDMI"
-msgstr "HDMI"
+msgstr ""
 
 #: plugins/WindowManager/Screen.cpp:185
 msgid "TV"
-msgstr "Телевизион"
+msgstr ""
 
 #: plugins/WindowManager/Screen.cpp:187
 msgid "Virtual"
-msgstr "Маҷозӣ"
+msgstr ""
 
 #: plugins/Wizard/System.cpp:216
-#, qt-format
+#, fuzzy, qt-format
 msgid "Lomiri on %1"
-msgstr "Ломири дар %1"
+msgstr "Ломири"
 
 #: qml/Components/Dialogs.qml:188
 msgctxt "Title: Lock/Log out dialog"
 msgid "Log out"
-msgstr "Баромадан"
+msgstr ""
 
 #: qml/Components/Dialogs.qml:189
 msgid "Are you sure you want to log out?"
-msgstr "Оё мутмаин ҳастед, ки мехоҳед аз система хориҷ шавед?"
+msgstr ""
 
 #: qml/Components/Dialogs.qml:192
 msgctxt "Button: Lock the system"
 msgid "Lock"
-msgstr "Қулф"
+msgstr ""
 
 #: qml/Components/Dialogs.qml:203
 msgctxt "Button: Log out from the system"
 msgid "Log Out"
-msgstr "Баромадан"
+msgstr ""
 
 #: qml/Components/Dialogs.qml:211 qml/Components/Dialogs.qml:310
 #: qml/Greeter/GreeterView.qml:452 qml/Wizard/Pages/passcode-confirm.qml:32
 #: qml/Wizard/Pages/passcode-set.qml:32
+#, fuzzy
 msgid "Cancel"
-msgstr "Бекор кардан"
+msgstr "Cancel"
 
 #: qml/Components/Dialogs.qml:223
 msgctxt "Title: Reboot dialog"
 msgid "Reboot"
-msgstr "Бозоғозӣ"
+msgstr ""
 
 #: qml/Components/Dialogs.qml:224
 msgid "Are you sure you want to reboot?"
-msgstr "Оё мутмаин ҳастед, ки мехоҳед бозоғозӣ кунед?"
+msgstr ""
 
 #: qml/Components/Dialogs.qml:227
 msgid "No"
-msgstr "Не"
+msgstr ""
 
 #: qml/Components/Dialogs.qml:235
 msgid "Yes"
-msgstr "Бале"
+msgstr ""
 
 #: qml/Components/Dialogs.qml:255
 msgctxt "Title: Power off/Restart dialog"
 msgid "Power"
-msgstr "Қудрат"
+msgstr ""
 
 #: qml/Components/Dialogs.qml:256
 msgid ""
 "Are you sure you would like\n"
 "to power off?"
 msgstr ""
-"Оё мутмаин ҳастед, ки мехоҳед\n"
-"дастгоҳро хомӯш кунед?"
 
 #: qml/Components/Dialogs.qml:260
 msgctxt "Button: Power off the system"
 msgid "Power off"
-msgstr "Хомӯш кардан"
+msgstr ""
 
 #: qml/Components/Dialogs.qml:275
 msgctxt "Button: Restart the system"
 msgid "Restart"
-msgstr "Оғози дубора"
+msgstr ""
 
 #: qml/Components/Dialogs.qml:288
 msgctxt "Button: Restart the system to Recovery"
 msgid "Restart to Recovery"
-msgstr "Бозоғозӣ барои барқарорсозӣ"
+msgstr ""
 
 #: qml/Components/Dialogs.qml:302
 msgid "Screenshot"
-msgstr "Скриншот"
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:41
 msgid "Keyboard Shortcuts"
-msgstr "Тугмаҳои миёнабур"
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:62
 msgid "PrtScr"
-msgstr "PrtScr / ПринтСкрин"
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:67
 msgid "Takes a screenshot."
-msgstr "Аз экран акс мегирад."
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:75
 msgid "Alt + PrtScr"
-msgstr "Альт + PrtScr"
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:80
 msgid "Takes a screenshot of the current window."
-msgstr "Аз равзанаи ҷорӣ скриншот мегирад."
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:88
 msgid "Super + Space"
-msgstr "Super + Фосила"
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:93
 msgid "Switches to next keyboard layout."
-msgstr "Ба тарҳбандии навбатии клавиатура мегузарад."
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:101
 msgid "Super + Shift + Space"
-msgstr "Super + Shift + Фосила"
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:106
 msgid "Switches to previous keyboard layout."
-msgstr "Ба тарҳбандии қаблии клавиатура мегузарад."
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:114
 msgid "Ctrl + Alt + T"
-msgstr "Ctrl + Alt + T"
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:119
 msgid "Starts the Terminal application."
-msgstr "Барномаи «Терминал»-ро оғоз мекунад."
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:131
 msgid "Launcher"
-msgstr "Оғозгар"
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:138
 msgid "Super (Hold)"
-msgstr "Super (Нигоҳ доштан)"
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:143
 msgid "Opens the launcher, displays shortcuts."
-msgstr "Оғозгарро мекушояд, миёнабурҳоро намоиш медиҳад."
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:151
 msgid "Alt + F1"
-msgstr "Alt + F1"
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:156
 msgid "Opens launcher keyboard navigation mode."
-msgstr "Ҳолати паймоиши клавиатураи оғозгарро мекушояд."
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:164
 msgid "Super + Tab"
-msgstr "Супер + Tab"
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:169
 msgid "Switches applications via the launcher."
-msgstr "Барномаҳоро тавассути оғозгар (launcher) иваз мекунад."
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:177
 msgid "Super + 1 to 0"
-msgstr "Super + аз 1 то 0"
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:182
 msgid "Same as clicking on a launcher icon."
-msgstr "Ҳамон тавре ки бо пахш кардани нишонаи оғозкунанда."
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:190
 msgid "Super + A"
-msgstr "Super + A"
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:195
 msgid "Opens the Application Drawer."
-msgstr "Феҳристи барномаҳоро мекушояд."
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:206
 msgid "Switching"
-msgstr "Ивазкунӣ"
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:213
 msgid "Alt + Tab"
-msgstr "Alt + Tab"
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:218
 msgid "Switches between applications."
-msgstr "Гузариш байни барномаҳо."
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:226
 msgid "Super + W"
-msgstr "Супер + W"
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:231
 msgid "Opens the desktop spread."
-msgstr "Саҳифабандии мизи кориро мекушояд."
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:239
 msgid "Cursor Left or Right"
-msgstr "Курсор ба чап ё рост"
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:244
 msgid "Moves the focus."
-msgstr "Тамаркузро интиқол медиҳад."
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:260
 msgid "Windows"
-msgstr "Тирезаҳо"
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:267
 msgid "Ctrl + Super + D"
-msgstr "Ctrl + Супер + D"
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:272
 msgid "Minimizes all windows."
-msgstr "Ҳамаи тирезаҳоро хурд мекунад."
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:280
 msgid "Ctrl + Super + Up"
-msgstr "Ctrl + Super + Боло"
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:285
 msgid "Maximizes the current window."
-msgstr "Равзанаи ҷориро ба андозаи пурра васеъ мекунад."
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:293
 msgid "Ctrl + Super + Down"
-msgstr "Ctrl + Super + Поён"
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:298
 msgid "Minimizes or restores the current window."
-msgstr "Равзанаи ҷориро хурд ё барқарор мекунад."
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:306
 #: qml/Components/KeyboardShortcutsOverlay.qml:417
 msgid "Ctrl + Super + Left or Right"
-msgstr "Ctrl + Super + Чап ё Рост"
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:311
 msgid "Semi-maximizes the current window."
-msgstr "Равзанаи ҷориро қисман ба андозаи максималӣ мерасонад."
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:319
 msgid "Alt + F4"
-msgstr "Alt + F4"
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:324
 msgid "Closes the current window."
-msgstr "Равзанаи ҷориро мебандад."
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:335
 msgid "Screens and Workspaces"
-msgstr "Экрану фазоҳои корӣ"
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:342
 msgid "Ctrl + Alt + Left or Right"
-msgstr "Ctrl + Alt + Чап ё Рост"
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:347
 msgid "Switches between workspaces."
-msgstr "Байни фазоҳои корӣ иваз мекунад."
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:355
 msgid "Ctrl + Alt + Up or Down"
-msgstr "Ctrl + Alt + Боло ё Поён"
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:360
 msgid "Switches between screens."
-msgstr "Гузариш байни экранҳо."
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:368
 msgid "Ctrl + Alt + Shift + Left or Right"
-msgstr "Ctrl + Alt + Shift + Чап ё Рост"
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:373
 msgid "Moves current app between workspaces."
-msgstr "Барномаи ҷориро байни фазоҳои корӣ интиқол медиҳад."
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:381
 msgid "Ctrl + Alt + Shift + Up or Down"
-msgstr "Ctrl + Alt + Shift + Боло ё Поён"
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:386
 msgid "Moves current app between screens."
-msgstr "Барномаи ҷориро байни экранҳо интиқол медиҳад."
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:397
 msgid "Stages"
-msgstr "Марҳилаҳо"
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:404
 msgid "Super + S"
-msgstr "Супер + С (S)"
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:409
 msgid "Shows or hides the side stage."
-msgstr "Саҳнаи паҳлуиро намоиш медиҳад ё пинҳон мекунад."
+msgstr ""
 
 #: qml/Components/KeyboardShortcutsOverlay.qml:423
 msgid "Moves app between main stage and side stage."
-msgstr "Барномаро байни саҳнаи асосӣ ва саҳнаи паҳлӯӣ интиқол медиҳад."
+msgstr ""
 
 #: qml/Components/Lockscreen.qml:223 qml/Greeter/GreeterView.qml:472
 msgid "Return to Call"
-msgstr "Бозгашт ба занг"
+msgstr ""
 
 #: qml/Components/Lockscreen.qml:223
 msgid "Emergency Call"
-msgstr "Занги фаврӣ"
+msgstr ""
 
 #: qml/Components/Lockscreen.qml:256
 msgid "OK"
-msgstr "ДУРУСТ"
+msgstr ""
 
 #: qml/Components/ModeSwitchWarningDialog.qml:33
 msgid "Apps may have unsaved data:"
-msgstr "Барномаҳо метавонанд маълумоти захиранашуда дошта бошанд:"
+msgstr ""
 
 #: qml/Components/ModeSwitchWarningDialog.qml:60
 msgctxt ""
 "Re-dock means connect the device again to an external screen/mouse/keyboard"
 msgid "Re-dock, save your work and close these apps to continue."
 msgstr ""
-"Дастгоҳро дубора пайваст кунед, кори худро захира намоед ва барои идома "
-"додан, ин барномаҳоро пӯшед."
 
 #: qml/Components/ModeSwitchWarningDialog.qml:67
 msgid "Or force close now (unsaved data will be lost)."
-msgstr "Ё ҳозир маҷбуран пӯшед (маълумоти захиранашуда гум мешавад)."
+msgstr ""
 
 #: qml/Components/ModeSwitchWarningDialog.qml:80
 msgid "OK, I will reconnect"
-msgstr "Хуб, ман дубора пайваст мешавам"
+msgstr ""
 
 #: qml/Components/ModeSwitchWarningDialog.qml:81
 msgid "Reconnect now!"
-msgstr "Ҳоло дубора пайваст шавед!"
+msgstr ""
 
 #: qml/Components/ModeSwitchWarningDialog.qml:94
 msgid "Close all"
-msgstr "Ҳамаашро пӯшед"
+msgstr ""
 
 #: qml/Components/SharingPicker.qml:54
 msgid "Preview Share Item"
-msgstr "Пешнамоиши мубодилаи ашё"
+msgstr ""
 
 #: qml/Components/VirtualTouchPad.qml:371
 msgid ""
 "Your device is now connected to an external display. Use this screen as a "
 "touch pad to interact with the pointer."
 msgstr ""
-"Дастгоҳи шумо ҳоло ба экрани беруна пайваст аст. Аз ин экран ҳамчун панели "
-"ламсӣ барои идора кардани нишондиҳанда истифода баред."
 
 #: qml/Components/VirtualTouchPad.qml:381
 msgid "Tap left button to click."
-msgstr "Барои зер кардан, тугмаи чапро пахш кунед."
+msgstr ""
 
 #: qml/Components/VirtualTouchPad.qml:393
 msgid "Tap right button to right click."
-msgstr "Барои иҷрои клики рост, тугмаи тарафи ростро пахш кунед."
+msgstr ""
 
 #: qml/Components/VirtualTouchPad.qml:405
 msgid "Swipe with two fingers to scroll."
-msgstr "Барои ҳаракат додан, бо ду ангушт лағжонед."
+msgstr ""
 
 #: qml/Components/VirtualTouchPad.qml:450
 msgid "Find more settings in the system settings."
-msgstr "Танзимоти бештарро дар танзимоти система пайдо кунед."
+msgstr ""
 
 #: qml/Greeter/CoverPage.qml:161
 msgid "Fully charged"
-msgstr "Пурра пур шудааст"
+msgstr ""
 
 #: qml/Greeter/CoverPage.qml:169
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1104
 #, qt-format
 msgid "%1 hour"
 msgid_plural "%1 hours"
-msgstr[0] "%1 соат"
+msgstr[0] ""
 
 #: qml/Greeter/CoverPage.qml:172
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1108
 #, qt-format
 msgid "%1 minute"
 msgid_plural "%1 minutes"
-msgstr[0] "%1 дақиқа"
+msgstr[0] ""
 
 #: qml/Greeter/CoverPage.qml:179
 #, qt-format
 msgid "%1, %2 until full"
-msgstr "%1, %2 то пурра шудан"
+msgstr ""
 
 #: qml/Greeter/CoverPage.qml:182
 #, qt-format
 msgid "%1 until full"
-msgstr "%1 то пурра шудан"
+msgstr ""
 
 #: qml/Greeter/CoverPage.qml:198
 #: tests/qmltests/Greeter/tst_GreeterView.qml:1242
 msgid "Unlock"
-msgstr "Кушодан"
+msgstr ""
 
 #: qml/Greeter/DelayedLockscreen.qml:43
 msgid "Device Locked"
-msgstr "Дастгоҳ қулф шудааст"
+msgstr ""
 
 #: qml/Greeter/DelayedLockscreen.qml:58
 msgid "You have been locked out due to too many failed passphrase attempts."
 msgstr ""
-"Дастрасии шумо бинобар кӯшишҳои зиёди номуваффақ барои ворид кардани рамз "
-"масдуд шудааст."
 
 #: qml/Greeter/DelayedLockscreen.qml:59
 msgid "You have been locked out due to too many failed passcode attempts."
 msgstr ""
-"Шумо аз сабаби борҳо ворид кардани рамзи нодуруст, аз дастрасӣ маҳрум шудед."
 
 #: qml/Greeter/DelayedLockscreen.qml:68
 #, qt-format
 msgid "Please wait %1 minute and then try again…"
 msgid_plural "Please wait %1 minutes and then try again…"
-msgstr[0] "Лутфан, %1 дақиқа мунтазир шавед ва сипас дубора кӯшиш кунед…"
+msgstr[0] ""
 
 #: qml/Greeter/Greeter.qml:637 tests/qmltests/Greeter/tst_Greeter.qml:578
 #: tests/qmltests/Greeter/tst_Greeter.qml:597
 #: tests/qmltests/Greeter/tst_Greeter.qml:625
 #: tests/qmltests/Greeter/tst_Greeter.qml:637
 msgid "Try again"
-msgstr "Як бори дигар санҷед"
+msgstr ""
 
 #: qml/Greeter/Greeter.qml:638 tests/qmltests/Greeter/tst_Greeter.qml:552
 #: tests/qmltests/Greeter/tst_Greeter.qml:603
 msgid "Enter passphrase to unlock"
-msgstr "Барои кушодан ибораи рамзиро ворид кунед"
+msgstr ""
 
 #: qml/Greeter/Greeter.qml:639
 msgid "Enter passcode to unlock"
-msgstr "Барои кушодан рамзро ворид кунед"
+msgstr ""
 
 #: qml/Greeter/GreeterView.qml:472
 msgid "Emergency"
-msgstr "Ҳолати фавқулода"
+msgstr ""
 
 #: qml/Greeter/PromptList.qml:143
 msgid "Passphrase"
-msgstr "Ибораи рамзӣ"
+msgstr ""
 
 #: qml/Greeter/PromptList.qml:143
 msgid "Passcode"
-msgstr "Рамз"
+msgstr ""
 
 #: qml/Greeter/SessionsList.qml:124
 msgid "Select desktop environment"
-msgstr "Муҳити мизи корӣ-ро интихоб кунед"
+msgstr ""
 
 #: qml/Launcher/Drawer.qml:239
 msgid "Search…"
-msgstr "Ҷустуҷӯ…"
+msgstr ""
 
 #: qml/Launcher/PullToRefreshScopeStyle.qml:56
 msgid "Pull to refresh…"
-msgstr "Барои навсозӣ кашед…"
+msgstr ""
 
 #: qml/Launcher/PullToRefreshScopeStyle.qml:61
 msgid "Release to refresh…"
-msgstr "Барои навсозӣ раҳо кунед…"
+msgstr ""
 
 #: qml/Notifications/NotificationMenuItemFactory.qml:124
 msgid "Show password"
-msgstr "Нишон додани парол"
+msgstr ""
 
 #: qml/Notifications/Notification.qml:318
 msgid "New message"
-msgstr "Паёми нав"
+msgstr ""
 
 #: qml/Panel/ActiveCallHint.qml:79
 msgid "Tap to return to call..."
-msgstr "Барои баргаштан ба занг ламс кунед..."
+msgstr ""
 
 #: qml/Panel/ActiveCallHint.qml:93
 msgid "Conference"
-msgstr "Конфронс"
+msgstr ""
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:975
 msgid "Nothing is playing"
-msgstr "Ҳеҷ чиз пахш намешавад"
+msgstr ""
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1113
 #, qt-format
 msgid "%1 second"
 msgid_plural "%1 seconds"
-msgstr[0] "%1 сония"
+msgstr[0] ""
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1116
 msgid "0 seconds"
-msgstr "0 сония"
+msgstr ""
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1118
 #, qt-format
 msgid "%1 remaining"
-msgstr "%1 боқӣ мондааст"
+msgstr ""
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1129
 msgid "In queue…"
-msgstr "Дар навбат…"
+msgstr ""
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1133
 msgid "Downloading"
-msgstr "Боргирӣ"
+msgstr ""
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1135
 msgid "Paused, tap to resume"
-msgstr "Таваққуф шуд, барои идома додан ламс кунед"
+msgstr ""
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1137
 msgid "Canceled"
-msgstr "Бекор карда шуд"
+msgstr ""
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1139
 msgid "Finished"
-msgstr "Анҷом ёфт"
+msgstr ""
 
 #: qml/Panel/Indicators/IndicatorMenuItemFactory.qml:1141
 msgid "Failed, tap to retry"
-msgstr "Наком шуд, барои дубора кӯшиш кардан ламс кунед"
+msgstr ""
 
 #: qml/Panel/Indicators/MessageMenuItemFactory.qml:151
 #: qml/Panel/Indicators/MessageMenuItemFactory.qml:210
 msgctxt "Button: Send a reply message"
 msgid "Send"
-msgstr "Фиристодан"
+msgstr ""
 
 #: qml/Panel/Indicators/MessageMenuItemFactory.qml:152
 msgctxt "Label: Hint in message indicator line edit"
 msgid "Reply"
-msgstr "Ҷавоб додан"
+msgstr ""
 
 #: qml/Panel/Indicators/MessageMenuItemFactory.qml:209
 msgctxt "Button: Call back on phone"
 msgid "Call back"
-msgstr "Аз нав занг задан"
+msgstr ""
 
 #: qml/Panel/PanelMenuPage.qml:93
 msgid "Back"
-msgstr "Бозгашт"
+msgstr ""
 
 #: qml/Stage/SideStage.qml:88
 msgid "Drag using 3 fingers any application from one window to the other"
 msgstr ""
-"Бо истифода аз 3 ангушт, ягон барномаро аз як равзана ба равзанаи дигар кашед"
 
 #: qml/Stage/Stage.qml:994
 msgid "No running apps"
-msgstr "Ҳеҷ барномае кор намекунад"
+msgstr ""
 
 #: qml/Tutorial/TutorialLeftLong.qml:49
 msgid "Long swipe from the left edge to open the Application Drawer"
 msgstr ""
-"Барои кушодани рӯйхати барномаҳо, аз канори чап ба самти дарун ангушти худро "
-"дароз кашед"
 
 #: qml/Tutorial/TutorialLeft.qml:47
 msgid "Short swipe from the left edge to open the launcher"
-msgstr "Барои кушодани оғозгар (launcher), аз канори чап каме лағжонед"
+msgstr ""
 
 #: qml/Tutorial/TutorialRight.qml:54
 msgid "Push your mouse against the right edge to view your open apps"
-msgstr "Барои дидани барномаҳои кушодаатон, мушро ба канори рост баред"
+msgstr ""
 
 #: qml/Tutorial/TutorialRight.qml:55
 msgid "Swipe from the right edge to view your open apps"
 msgstr ""
-"Барои дидани барномаҳои кушодаатон аз канори рост ба самти дохил лағжонед"
 
 #: qml/Tutorial/TutorialTop.qml:53
 msgid "Swipe from the top edge to access notifications and quick settings"
 msgstr ""
-"Барои дастрасӣ ба огоҳиномаҳо ва танзимоти зуд, аз канори болоӣ ба самти "
-"дохил лағжонед"
 
 #: qml/Wizard/Page.qml:59
 msgctxt "Button: Go back one page in the Wizard"
 msgid "Back"
-msgstr "Бозгашт"
+msgstr ""
 
 #: qml/Wizard/Pages/10-welcome.qml:29
 msgid "Language"
-msgstr "Забон"
+msgstr ""
 
 #: qml/Wizard/Pages/10-welcome.qml:184
 #: qml/Wizard/Pages/10-welcome-update.qml:136
@@ -721,260 +708,255 @@ msgstr "Забон"
 #: qml/Wizard/Pages/passcode-desktop.qml:154
 #: qml/Wizard/Pages/password-set.qml:153
 msgid "Next"
-msgstr "Баъдӣ"
+msgstr ""
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
 #: qml/Wizard/Pages/10-welcome-update.qml:98
 #, qt-format
 msgid "Welcome to %1 %2"
-msgstr "Хуш омадед ба %1 %2"
+msgstr ""
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
 #: qml/Wizard/Pages/10-welcome-update.qml:115
 #, qt-format
 msgid "We will make sure your device is ready to use %1 %2"
 msgstr ""
-"Мо боварӣ ҳосил мекунем, ки дастгоҳи шумо барои истифода омода аст %1 %2"
 
 #: qml/Wizard/Pages/11-changelog.qml:28
 msgid "What's new"
-msgstr "Чӣ чизи нав"
+msgstr ""
 
 #: qml/Wizard/Pages/11-changelog.qml:74
 msgid "Loading..."
-msgstr "Боргирӣ..."
+msgstr ""
 
 #: qml/Wizard/Pages/20-keyboard.qml:31
 msgid "Select Keyboard"
-msgstr "Интихоби клавиатура"
+msgstr ""
 
 #: qml/Wizard/Pages/20-keyboard.qml:71
 msgid "Keyboard language"
-msgstr "Забони клавиатура"
+msgstr ""
 
 #: qml/Wizard/Pages/20-keyboard.qml:93
 msgid "Keyboard layout"
-msgstr "Ҷойгиршавии тугмаҳои клавиатура"
+msgstr ""
 
 #: qml/Wizard/Pages/20-keyboard.qml:152 qml/Wizard/Pages/30-wifi.qml:212
 #: qml/Wizard/Pages/60-account.qml:72 qml/Wizard/Pages/79-system-update.qml:164
 #: qml/Wizard/Pages/sim.qml:101
 msgid "Skip"
-msgstr "Гузаштан"
+msgstr ""
 
 #: qml/Wizard/Pages/30-wifi.qml:30
 msgid "Connect to Wi‑Fi"
-msgstr "Ба Wi-Fi пайваст шавед"
+msgstr ""
 
 #: qml/Wizard/Pages/30-wifi.qml:138
 msgid "Connected"
-msgstr "Пайваст"
+msgstr ""
 
 #: qml/Wizard/Pages/30-wifi.qml:171
 msgid "Available Wi-Fi networks"
-msgstr "Шабакаҳои Wi-Fi-и дастрас"
+msgstr ""
 
 #: qml/Wizard/Pages/30-wifi.qml:172
 msgid "No available Wi-Fi networks"
-msgstr "Ҳеҷ шабакаи Wi-Fi дастрас нест"
+msgstr ""
 
 #: qml/Wizard/Pages/50-timezone.qml:30
 msgid "Time Zone"
-msgstr "Минтақаи вақт"
+msgstr ""
 
 #: qml/Wizard/Pages/50-timezone.qml:182
 msgid "Enter your city"
-msgstr "Шаҳри худро ворид кунед"
+msgstr ""
 
 #: qml/Wizard/Pages/60-account.qml:24
 msgid "Personalize Your Device"
-msgstr "Дастгоҳи худро фардӣ созед"
+msgstr ""
 
 #: qml/Wizard/Pages/60-account.qml:54
 msgid "Preferred Name"
-msgstr "Номи дилхоҳ"
+msgstr ""
 
 #: qml/Wizard/Pages/70-passwd-type.qml:40
 msgid "Lock Screen"
-msgstr "Экрани қулф"
+msgstr ""
 
 #: qml/Wizard/Pages/70-passwd-type.qml:103
 msgctxt "Label: Type of security method"
 msgid "Create new password"
-msgstr "Эҷоди пароли нав"
+msgstr ""
 
 #: qml/Wizard/Pages/70-passwd-type.qml:105
 msgctxt "Label: Type of security method"
 msgid "Create passcode (numbers only)"
-msgstr "Рамз эҷод кунед (танҳо рақамҳо)"
+msgstr ""
 
 #: qml/Wizard/Pages/70-passwd-type.qml:107
 msgctxt "Label: Type of security method"
 msgid "No lock code"
-msgstr "Рамзи қулф вуҷуд надорад"
+msgstr ""
 
 #: qml/Wizard/Pages/79-system-update.qml:30
 msgid "Update Device"
-msgstr "Навсозии дастгоҳ"
+msgstr ""
 
 #: qml/Wizard/Pages/79-system-update.qml:57
 msgid ""
 "There is a system update available and ready to install. Afterwards, the "
 "device will automatically restart."
 msgstr ""
-"Навсозии система дастрас аст ва барои насб омода мебошад. Пас аз он, дастгоҳ "
-"ба таври худкор бозоғоз мешавад."
 
 #: qml/Wizard/Pages/79-system-update.qml:96
 msgctxt "string identifying name of the update"
 msgid "Ubuntu Touch system"
-msgstr "Системаи Ubuntu Touch"
+msgstr ""
 
 #: qml/Wizard/Pages/79-system-update.qml:103
 #, qt-format
 msgctxt "version of the system update"
 msgid "Version %1"
-msgstr "Версияи %1"
+msgstr ""
 
 #: qml/Wizard/Pages/79-system-update.qml:115
 msgid "This could take a few minutes..."
-msgstr "Ин метавонад чанд дақиқа вақт гирад..."
+msgstr ""
 
 #: qml/Wizard/Pages/79-system-update.qml:129
 msgid "Install and restart now"
-msgstr "Ҳоло насб кунед ва аз нав оғоз намоед"
+msgstr ""
 
 #: qml/Wizard/Pages/80-finished.qml:93
 msgid "Welcome Back"
-msgstr "Бозгашт муборак"
+msgstr ""
 
 #. TRANSLATORS: %1 contains the distro name
 #: qml/Wizard/Pages/80-finished.qml:95
 #, qt-format
 msgid "Welcome to %1"
-msgstr "Хуш омадед ба %1"
+msgstr ""
 
 #: qml/Wizard/Pages/80-finished.qml:111
 msgid "You are ready to use your device now"
-msgstr "Шумо ҳоло омодаед, ки аз дастгоҳи худ истифода баред"
+msgstr ""
 
 #: qml/Wizard/Pages/80-finished.qml:131
 msgid "Continue"
-msgstr "Идома диҳед"
+msgstr ""
 
 #: qml/Wizard/Pages/80-finished.qml:131
 msgid "Get Started"
-msgstr "Оғоз кунед"
+msgstr ""
 
 #: qml/Wizard/Pages/passcode-confirm.qml:43
 #: qml/Wizard/Pages/passcode-desktop.qml:104
 msgid "Confirm passcode"
-msgstr "Рамзро тасдиқ кунед"
+msgstr ""
 
 #: qml/Wizard/Pages/passcode-confirm.qml:45
 msgid "Incorrect passcode."
-msgstr "Рамзи нодуруст."
+msgstr ""
 
 #: qml/Wizard/Pages/passcode-confirm.qml:45
 msgctxt "Enter the passcode again"
 msgid "Please re-enter."
-msgstr "Лутфан, дубора ворид шавед."
+msgstr ""
 
 #: qml/Wizard/Pages/passcode-desktop.qml:31
 msgid "Lock Screen Passcode"
-msgstr "Рамзи экрани қулф"
+msgstr ""
 
 #: qml/Wizard/Pages/passcode-desktop.qml:68
 msgid "Enter at least 4 numbers to setup your passcode"
-msgstr "Барои танзими рамзи худ, ҳадди ақал 4 рақам ворид кунед"
+msgstr ""
 
 #: qml/Wizard/Pages/passcode-desktop.qml:84
 #: qml/Wizard/Pages/passcode-set.qml:54
 msgid "Choose passcode"
-msgstr "Рамзро интихоб кунед"
+msgstr ""
 
 #: qml/Wizard/Pages/passcode-desktop.qml:139
 msgid "Passcode too short"
-msgstr "Рамз хеле кӯтоҳ аст"
+msgstr ""
 
 #: qml/Wizard/Pages/passcode-desktop.qml:141
 msgid "Passcodes match"
-msgstr "Рамзҳо мувофиқат мекунанд"
+msgstr ""
 
 #: qml/Wizard/Pages/passcode-desktop.qml:143
 msgid "Passcodes do not match"
-msgstr "Рамзҳо мувофиқат намекунанд"
+msgstr ""
 
 #: qml/Wizard/Pages/passcode-set.qml:62
 msgid "Passcode must be at least 4 characters long"
-msgstr "Рамз бояд ҳадди ақал аз 4 аломат иборат бошад"
+msgstr ""
 
 #: qml/Wizard/Pages/password-set.qml:31
 msgid "Lock Screen Password"
-msgstr "Рамзи экрани қулф"
+msgstr ""
 
 #: qml/Wizard/Pages/password-set.qml:68
 msgid "Enter at least 8 characters"
-msgstr "Ҳадди ақал 8 аломат ворид кунед"
+msgstr ""
 
 #: qml/Wizard/Pages/password-set.qml:80
 msgid "Choose password"
-msgstr "Рамзро интихоб кунед"
+msgstr ""
 
 #: qml/Wizard/Pages/password-set.qml:110
 msgid "Confirm password"
-msgstr "Калидвожаро Тасдиқ Кунед"
+msgstr ""
 
 #: qml/Wizard/Pages/sim.qml:27
 msgid "No SIM card installed"
-msgstr "Корти SIM насб нашудааст"
+msgstr ""
 
 #: qml/Wizard/Pages/sim.qml:54
 msgid "SIM card added"
-msgstr "Корти SIM илова карда шуд"
+msgstr ""
 
 #: qml/Wizard/Pages/sim.qml:55
 msgid "You must restart the device to access the mobile network."
 msgstr ""
-"Барои дастрасӣ ба шабакаи мобилӣ, шумо бояд дастгоҳро аз нав оғоз намоед."
 
 #: qml/Wizard/Pages/sim.qml:59
 msgid "Restart"
-msgstr "Оғози дубора"
+msgstr ""
 
 #: qml/Wizard/Pages/sim.qml:78
 msgid "You won’t be able to make calls or use text messaging without a SIM."
 msgstr ""
-"Бе корти SIM шумо наметавонед занг занед ё аз паёмҳои матнӣ истифода баред."
 
 #: qml/Wizard/Pages/sim.qml:90
 msgid "To proceed with no SIM tap Skip."
-msgstr "Барои идома додан бидуни SIM, тугмаи «Гузаштан»-ро пахш кунед."
+msgstr ""
 
 #: qml/Wizard/PasswordMeter.qml:87
 msgid "Password too short"
-msgstr "Рамз хеле кӯтоҳ аст"
+msgstr ""
 
 #: qml/Wizard/PasswordMeter.qml:89
 msgid "Passwords match"
-msgstr "Паролҳо мувофиқат мекунанд"
+msgstr ""
 
 #: qml/Wizard/PasswordMeter.qml:91
 msgid "Passwords do not match"
-msgstr "Паролҳо мувофиқат намекунанд"
+msgstr ""
 
 #: qml/Wizard/PasswordMeter.qml:95
 msgid "Strong password"
-msgstr "Рамзи қавӣ"
+msgstr ""
 
 #: qml/Wizard/PasswordMeter.qml:97
 msgid "Fair password"
-msgstr "Рамзи қобили қабул"
+msgstr ""
 
 #: qml/Wizard/PasswordMeter.qml:99
 msgid "Weak password"
-msgstr "Рамзи заиф"
+msgstr ""
 
 #: qml/Wizard/PasswordMeter.qml:101
 msgid "Very weak password"
-msgstr "Рамзи хеле заиф"
+msgstr ""
