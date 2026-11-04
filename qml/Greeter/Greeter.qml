@@ -603,7 +603,6 @@ Showable {
         property var operation: null
         readonly property bool idEnabled: root.active &&
                                           root.allowFingerprint &&
-                                          Powerd.status === Powerd.On &&
                                           Biometryd.available &&
                                           AccountsService.enableFingerprintIdentification
 
@@ -654,6 +653,9 @@ Showable {
                 failOperation("not the selected user");
                 return;
             }
+            // Turn screen on signaling user fingerprint unlock is registered
+            Powerd.setStatus(Powerd.On, Powerd.Unlock);
+
             console.log("Identified user by fingerprint:", result);
             if (loader.item) {
                 loader.item.showFakePassword();

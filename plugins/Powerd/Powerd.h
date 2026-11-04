@@ -39,6 +39,7 @@ public:
         Notification    = 4, // Display changed state due to user notification
         SnapDecision    = 5, // Display changed state due to snap decision prompt
         CallDone        = 6, // Display changed state due to voice call end
+        Unlock          = 7, // Display changed state due to unlock
     };
     Q_ENUM(DisplayStateChangeReason)
 
