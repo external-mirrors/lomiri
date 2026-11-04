@@ -42,6 +42,8 @@ QtObject {
 
     readonly property alias collapsedPanelHeight: priv.collapsedPanelHeight
 
+    readonly property alias biometricUnlockScreenOff: priv.biometricUnlockScreenOff
+
     readonly property var deviceConfig: DeviceConfig {}
 
     readonly property var binding: Binding {
@@ -67,6 +69,7 @@ QtObject {
         property string name: deviceConfig.name
         property bool supportsMultiColorLed: deviceConfig.supportsMultiColorLed
         property bool supportsRebootToRecovery: deviceConfig.supportsRebootToRecovery
+        property bool biometricUnlockScreenOff: deviceConfig.biometricUnlockScreenOff
 
         property int collapsedPanelHeight: deviceConfig.collapsedPanelHeight
 

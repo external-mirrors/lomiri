@@ -75,9 +75,15 @@ Showable {
     property bool hasKeyboard: false
     property int orientation
 
+    property alias deviceConfiguration: _deviceConfiguration
+
     signal tease()
     signal sessionStarted()
     signal emergencyCall()
+
+    DeviceConfiguration {
+        id: _deviceConfiguration
+    }
 
     function forceShow() {
         if (!active) {
@@ -603,6 +609,8 @@ Showable {
         property var operation: null
         readonly property bool idEnabled: root.active &&
                                           root.allowFingerprint &&
+                                          (deviceConfiguration.biometricUnlockScreenOff ||
+                                            Powerd.status === Powerd.On) &&
                                           Biometryd.available &&
                                           AccountsService.enableFingerprintIdentification
 
@@ -654,7 +662,9 @@ Showable {
                 return;
             }
             // Turn screen on signaling user fingerprint unlock is registered
-            Powerd.setStatus(Powerd.On, Powerd.Unlock);
+            if (deviceConfiguration.biometricUnlockScreenOff) {
+                Powerd.setStatus(Powerd.On, Powerd.Unlock);
+            }
 
             console.log("Identified user by fingerprint:", result);
             if (loader.item) {

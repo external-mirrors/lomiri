@@ -144,3 +144,8 @@ bool DeviceConfig::supportsRebootToRecovery() const
 {
     return m_info->get("supportsRebootToRecovery", "false") == "true";
 }
+
+bool DeviceConfig::biometricUnlockScreenOff() const
+{
+    return m_info->get("biometricUnlockScreenOff", "false") == "true";
+}
