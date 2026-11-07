@@ -16,6 +16,7 @@
 
 import "Gradient.js" as Gradient
 import QtQuick 2.15
+import QtQuick.Window 2.2
 import Lomiri.Components 1.3
 
 Item {
@@ -351,8 +352,9 @@ Item {
 
                     property real baseOpacity: 1
 
-                    width: units.dp(5) * parent.radius / 200
-                    height: units.dp(5) * parent.radius / 200
+                    // 200 is in panel pixels, radius in logical pixels.
+                    width: units.dp(5) * parent.radius * Screen.devicePixelRatio / 200
+                    height: width
                     opacity: 0.0
                     smooth: true
                     state: index < currentDay ? "filled" : index == currentDay ? "pointer" : "unfilled"
