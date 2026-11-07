@@ -634,7 +634,7 @@ StyledItem {
             maxMenuWidth: units.gu(40) * settings.indicatorMenuWidth
             minimizedPanelHeight: shell.screenIndex === 0
                                && shell.orientation === Qt.PortraitOrientation
-                               && deviceConfig.collapsedPanelHeight
+                               && deviceConfig.collapsedPanelHeight / Screen.devicePixelRatio
                                || units.gu(3)
             expandedPanelHeight: units.gu(7)
             applicationMenuContentX: launcher.lockedVisible ? launcher.panelWidth : 0
