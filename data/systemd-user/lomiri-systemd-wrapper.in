@@ -42,6 +42,12 @@ else
     # Remove conflicting environment variables from Mir1 times
     unset MIR_SERVER_NAME
     unset MIR_SERVER_HOST_SOCKET
+
+    # Mir 2 scales outputs itself: qtmir takes the grid unit from deviceinfo,
+    # and clients scale from the Wayland output. GRID_UNIT_PX is in physical
+    # pixels, so a client that still sees it would scale twice.
+    unset GRID_UNIT_PX
+    systemctl --user unset-environment GRID_UNIT_PX || true
 fi
 
 # TODO: maybe handle some kind of collision?
