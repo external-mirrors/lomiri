@@ -14,6 +14,7 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
+import QtQuick.Window 2.2
 import QtQuick 2.15
 import Lomiri.Components 1.3
 import Lomiri.Components.Themes 1.3
@@ -91,6 +92,10 @@ Item {
     Image {
         id: overlaidImage
         anchors.centerIn: parent
+        // Splash images are sized in panel pixels, QML works in logical pixels.
+        width: implicitWidth / Screen.devicePixelRatio
+        height: implicitHeight / Screen.devicePixelRatio
+        fillMode: Image.PreserveAspectFit
         anchors.verticalCenterOffset: header.visible ? header.height / 2 : 0
         asynchronous: true
         cache: false
