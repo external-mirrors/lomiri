@@ -76,13 +76,6 @@ plugins/Lomiri/ApplicationMenu/dbusapplicationmenuregistry.cpp
 plugins/Lomiri/ApplicationMenu/dbusapplicationmenuregistry.h
 plugins/Lomiri/ApplicationMenu/plugin.cpp
 plugins/Lomiri/ApplicationMenu/plugin.h
-plugins/Lomiri/DownloadDaemonListener/DownloadTracker.cpp
-plugins/Lomiri/DownloadDaemonListener/DownloadTracker.h
-plugins/Lomiri/DownloadDaemonListener/interface/downloadtrackeradaptor.cpp
-plugins/Lomiri/DownloadDaemonListener/interface/downloadtrackeradaptor.h
-plugins/Lomiri/DownloadDaemonListener/interface/metatypes.h
-plugins/Lomiri/DownloadDaemonListener/plugin.cpp
-plugins/Lomiri/DownloadDaemonListener/plugin.h
 plugins/Lomiri/Gestures/AxisVelocityCalculator.cpp
 plugins/Lomiri/Gestures/AxisVelocityCalculator.h
 plugins/Lomiri/Gestures/Direction.cpp

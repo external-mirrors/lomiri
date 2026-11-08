@@ -48,7 +48,6 @@ templates:
     - libqtdbusmock1-dev
     - libqtdbustest1-dev
     - liblomirisystemsettings-dev
-    - liblomiri-download-manager-common-dev
     - liblomirigestures-dev
     - liblomirigestures5-private-dev
     - libudev-dev
