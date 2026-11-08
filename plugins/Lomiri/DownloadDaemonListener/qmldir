@@ -1,3 +1,0 @@
-module Lomiri.DownloadDaemonListener
-plugin DownloadDaemonListener
-typeinfo DownloadDaemonListener.qmltypes
