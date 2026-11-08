@@ -283,17 +283,12 @@ plugins/Wizard/PageList.cpp
 plugins/Wizard/PageList.h
 plugins/Wizard/plugin.cpp
 plugins/Wizard/plugin.h
-plugins/Wizard/QtMir/Application/OSKController.qml
 plugins/Wizard/Status.cpp
 plugins/Wizard/Status.h
 plugins/Wizard/System.cpp
 plugins/Wizard/System.h
 plugins/Wizard/timezonemodel.cpp
 plugins/Wizard/timezonemodel.h
-plugins/Wizard/Utils/plugin.cpp
-plugins/Wizard/Utils/plugin.h
-plugins/Wizard/Utils/qsortfilterproxymodelqml.cpp
-plugins/Wizard/Utils/qsortfilterproxymodelqml.h
 qml/ApplicationMenus/ApplicationMenuItemFactory.qml
 qml/ApplicationMenus/ApplicationMenusLimits.qml
 qml/ApplicationMenus/MenuBar.qml
