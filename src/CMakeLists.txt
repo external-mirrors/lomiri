@@ -41,10 +41,6 @@ set(SOURCE_FILES
     ${QML_FILES} # This is to make qml and image files appear in the IDE's project tree
 )
 
-if (ENABLE_TOUCH_EMULATION)
-    set(SOURCE_FILES ${SOURCE_FILES} MouseTouchAdaptor.cpp)
-endif()
-
 pkg_check_modules(SYSTEMD REQUIRED libsystemd)
 
 include_directories(
@@ -65,10 +61,6 @@ target_link_libraries(${SHELL_APP}
     lomiri-connectivity-qt1
     lomiri-private
 )
-
-if (ENABLE_TOUCH_EMULATION)
-    target_link_libraries(${SHELL_APP} ${MOUSETOUCHADAPTOR_LIBS_LDFLAGS})
-endif()
 
 # install binaries
 install(TARGETS ${SHELL_APP}

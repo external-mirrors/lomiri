@@ -24,10 +24,6 @@
 
 #include "ApplicationArguments.h"
 
-#ifdef LOMIRI_ENABLE_TOUCH_EMULATION
-#include "MouseTouchAdaptor.h"
-#endif
-
 #include <qtmir/mirserverapplication.h>
 
 class LomiriApplication : public qtmir::MirServerApplication
@@ -42,10 +38,6 @@ public:
 private:
     void setupQmlEngine();
     ApplicationArguments m_qmlArgs;
-
-    #ifdef LOMIRI_ENABLE_TOUCH_EMULATION
-    MouseTouchAdaptor *m_mouseTouchAdaptor{nullptr};
-    #endif
 
     QQmlEngine *m_qmlEngine{nullptr};
 };

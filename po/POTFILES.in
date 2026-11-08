@@ -519,8 +519,6 @@ src/LomiriApplication.h
 src/LomiriCommandLineParser.cpp
 src/LomiriCommandLineParser.h
 src/main.cpp
-src/MouseTouchAdaptor.cpp
-src/MouseTouchAdaptor.h
 src/qmldebuggerutils.h
 src/UnixSignalHandler.cpp
 src/UnixSignalHandler.h
@@ -893,6 +891,8 @@ tests/qmltests/utils/Lomiri/Test/tst_LomiriTest.qml
 tests/qmltests/Wizard/tst_Wizard.qml
 tests/uqmlscene/main.cpp
 tests/utils/modules/Lomiri/SelfTest/LomiriTestCase.qml
+tests/utils/modules/Lomiri/SelfTest/MouseTouchAdaptor.cpp
+tests/utils/modules/Lomiri/SelfTest/MouseTouchAdaptor.h
 tests/utils/modules/Lomiri/SelfTest/MouseTouchEmulationCheckbox.qml
 tests/utils/modules/Lomiri/SelfTest/plugin.cpp
 tests/utils/modules/Lomiri/SelfTest/plugin.h

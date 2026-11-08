@@ -19,7 +19,7 @@
 #include "testutil.h"
 
 #ifdef LOMIRI_ENABLE_TOUCH_EMULATION
-#include <MouseTouchAdaptor.h>
+#include "MouseTouchAdaptor.h"
 #endif
 
 #include "TouchEventSequenceWrapper.h"

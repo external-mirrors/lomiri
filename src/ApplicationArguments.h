@@ -36,9 +36,6 @@ class ApplicationArguments : public QObject,
     Q_PROPERTY(bool hasTestability READ hasTestability CONSTANT)
     Q_PROPERTY(bool hasFrameless READ hasFrameless CONSTANT)
     Q_PROPERTY(bool hasFullscreen READ hasFullscreen CONSTANT)
-#ifdef LOMIRI_ENABLE_TOUCH_EMULATION
-    Q_PROPERTY(bool hasMouseToTouch READ hasMouseToTouch CONSTANT)
-#endif
 
 public:
     ApplicationArguments(QCoreApplication *app);

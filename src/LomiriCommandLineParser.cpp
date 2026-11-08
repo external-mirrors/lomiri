@@ -38,12 +38,6 @@ LomiriCommandLineParser::LomiriCommandLineParser(const QCoreApplication &app)
         QStringLiteral("Run without window borders"));
     parser.addOption(framelessOption);
 
-    #ifdef LOMIRI_ENABLE_TOUCH_EMULATION
-    QCommandLineOption mousetouchOption(QStringLiteral("mousetouch"),
-        QStringLiteral("Allow the mouse to provide touch input"));
-    parser.addOption(mousetouchOption);
-    #endif
-
     QCommandLineOption windowGeometryOption(QStringList() << QStringLiteral("windowgeometry"),
             QStringLiteral("Specify the window geometry as [<width>x<height>]"), QStringLiteral("windowgeometry"), QStringLiteral("1"));
     parser.addOption(windowGeometryOption);
@@ -79,10 +73,6 @@ LomiriCommandLineParser::LomiriCommandLineParser(const QCoreApplication &app)
 
     m_hasTestability = parser.isSet(testabilityOption);
     m_hasFrameless = parser.isSet(framelessOption);
-
-    #ifdef LOMIRI_ENABLE_TOUCH_EMULATION
-    m_hasMouseToTouch = parser.isSet(mousetouchOption);
-    #endif
 
     m_hasFullscreen = parser.isSet(fullscreenOption);
     resolveMode(parser, modeOption);
