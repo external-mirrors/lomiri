@@ -566,10 +566,6 @@ tests/mocks/Lomiri/Connectivity/networking-status.cpp
 tests/mocks/Lomiri/Connectivity/networking-status.h
 tests/mocks/Lomiri/Connectivity/plugin.cpp
 tests/mocks/Lomiri/Connectivity/plugin.h
-tests/mocks/Lomiri/DownloadDaemonListener/MockDownloadTracker.cpp
-tests/mocks/Lomiri/DownloadDaemonListener/MockDownloadTracker.h
-tests/mocks/Lomiri/DownloadDaemonListener/plugin.cpp
-tests/mocks/Lomiri/DownloadDaemonListener/plugin.h
 tests/mocks/Lomiri/Indicators/ActionRootState.qml
 tests/mocks/Lomiri/Indicators/fakeindicatorsmodel.cpp
 tests/mocks/Lomiri/Indicators/fakeindicatorsmodeldata.js
@@ -609,7 +605,6 @@ tests/mocks/Lomiri/Notifications/MockNotificationModel.h
 tests/mocks/Lomiri/Notifications/plugin.cpp
 tests/mocks/Lomiri/Notifications/plugin.h
 tests/mocks/Lomiri/Platform/MockPlatform.qml
-tests/mocks/Lomiri/SystemSettings/Diagnostics/MockDiagnostics.qml
 tests/mocks/Lomiri/SystemSettings/LanguagePlugin/MockKeyboardPlugin.qml
 tests/mocks/Lomiri/SystemSettings/LanguagePlugin/MockLanguagePlugin.qml
 tests/mocks/Lomiri/SystemSettings/SecurityPrivacy/MockSecurityPrivacy.cpp
@@ -630,7 +625,6 @@ tests/mocks/Lomiri/Telephony/MockTelepathyHelper.cpp
 tests/mocks/Lomiri/Telephony/MockTelepathyHelper.h
 tests/mocks/Lomiri/Telephony/plugin.cpp
 tests/mocks/Lomiri/Telephony/plugin.h
-tests/mocks/Lomiri/Web/WebView.qml
 tests/mocks/Powerd/plugin.cpp
 tests/mocks/Powerd/plugin.h
 tests/mocks/Powerd/Powerd.cpp
