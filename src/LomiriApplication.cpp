@@ -103,14 +103,6 @@ LomiriApplication::LomiriApplication(int & argc, char ** argv)
                 << errorComponent->errorString();
         return;
     }
-
-    #ifdef LOMIRI_ENABLE_TOUCH_EMULATION
-    // You will need this if you want to interact with touch-only components using a mouse
-    // Needed only when manually testing on a desktop.
-    if (m_qmlArgs.hasMouseToTouch()) {
-        m_mouseTouchAdaptor = MouseTouchAdaptor::instance();
-    }
-    #endif
 }
 
 LomiriApplication::~LomiriApplication()
@@ -120,11 +112,6 @@ LomiriApplication::~LomiriApplication()
 
 void LomiriApplication::destroyResources()
 {
-    #ifdef LOMIRI_ENABLE_TOUCH_EMULATION
-    delete m_mouseTouchAdaptor;
-    m_mouseTouchAdaptor = nullptr;
-    #endif
-
     delete m_qmlEngine;
     m_qmlEngine = nullptr;
 }
