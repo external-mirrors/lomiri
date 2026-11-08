@@ -1,9 +1,5 @@
 find_package(QmlPlugins)
 
-add_definitions(-DQT_NO_KEYWORDS)
-
-pkg_check_modules(LOMIRIGESTURES REQUIRED LomiriGestures)
-
 include_directories(
     ${CMAKE_SOURCE_DIR}/src
 )

@@ -18,16 +18,6 @@ include_directories(
     ${liblomiri-private_SOURCE_DIR}
 )
 
-file(GLOB_RECURSE QML_FILES
-    ${CMAKE_SOURCE_DIR}/qml/*
-    ${CMAKE_SOURCE_DIR}/tests/*.qml
-    ${CMAKE_SOURCE_DIR}/tests/*.js
-    ${CMAKE_SOURCE_DIR}/tests/*.jpg
-    ${CMAKE_SOURCE_DIR}/tests/*.png
-    ${CMAKE_SOURCE_DIR}/tests/*.sci
-    ${CMAKE_SOURCE_DIR}/tests/*.svg
-)
-
 set(SOURCE_FILES
     ApplicationArguments.cpp
     main.cpp
@@ -38,7 +28,6 @@ set(SOURCE_FILES
     UnixSignalHandler.cpp
     DebuggingController.cpp
     WindowManagementPolicy.cpp
-    ${QML_FILES} # This is to make qml and image files appear in the IDE's project tree
 )
 
 pkg_check_modules(SYSTEMD REQUIRED libsystemd)

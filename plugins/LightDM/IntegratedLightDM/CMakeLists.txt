@@ -1,14 +1,7 @@
-set(PLUGIN_CLASSNAME "IntegratedLightDM")
-
 add_definitions(-DINTEGRATED_LIGHTDM)
-
-foreach(include_directory ${QMLPLUGIN_INCLUDES})
-        list(APPEND RELATIVE_QMLPLUGIN_INCLUDES ../${include_directory})
-endforeach()
 
 include_directories(
     . #QLightDM
-    ${QMLPLUGIN_INCLUDES}
     ${liblomiri-private_SOURCE_DIR}
     ${CMAKE_CURRENT_BINARY_DIR}
 )

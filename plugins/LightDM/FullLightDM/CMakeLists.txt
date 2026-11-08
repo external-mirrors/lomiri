@@ -1,5 +1,3 @@
-set(PLUGIN_CLASSNAME "FullLightDM")
-
 add_definitions(-DFULL_LIGHTDM)
 
 include_directories(

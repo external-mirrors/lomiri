@@ -1,8 +1,5 @@
 
 include_directories(
-    ${Qt5Core_INCLUDE_DIRS}
-    ${Qt5DBus_INCLUDE_DIRS}
-    ${Qt5Test_INCLUDE_DIRS}
     ${QTDBUSTEST_INCLUDE_DIRS}
     ${CMAKE_CURRENT_BINARY_DIR}
     ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Platform

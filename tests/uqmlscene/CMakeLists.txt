@@ -1,5 +1,4 @@
 add_executable(uqmlscene
-    ${shellapplication_MOC_SRCS}
     main.cpp
     ${CMAKE_SOURCE_DIR}/src/DebuggingController.cpp
     )
@@ -19,14 +18,11 @@ include_directories(
 include_directories(
     ${CMAKE_CURRENT_BINARY_DIR}
     ${CMAKE_SOURCE_DIR}/src
-    ${CMAKE_SOURCE_DIR}/libs/LomiriGestures
     ${liblomiri-private_SOURCE_DIR}
 )
 
 target_link_libraries(uqmlscene
     Qt5::Qml Qt5::Quick Qt5::Test Qt5::DBus
-    ${Qt5Qml_LIBRARIES}
-    ${Qt5Quick_LIBRARIES}
     ${XCB_LDFLAGS}
     LomiriGestures
     lomiri-private

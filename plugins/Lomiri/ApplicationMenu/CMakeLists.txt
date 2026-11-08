@@ -1,5 +1,3 @@
-find_package(Qt5DBus REQUIRED)
-
 include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_CURRENT_BINARY_DIR}

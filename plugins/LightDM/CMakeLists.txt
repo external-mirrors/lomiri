@@ -1,8 +1,5 @@
 pkg_check_modules(LIBUSERMETRICSOUTPUT REQUIRED libusermetricsoutput-1)
 
-find_package(Qt5Core REQUIRED)
-find_package(Qt5Quick REQUIRED)
-
 include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_CURRENT_BINARY_DIR}

@@ -1,5 +1,3 @@
-find_package(Qt5DBus REQUIRED)
-
 include_directories(
     ${CMAKE_SOURCE_DIR}/plugins/Lomiri/ApplicationMenu
     ${CMAKE_CURRENT_SOURCE_DIR}

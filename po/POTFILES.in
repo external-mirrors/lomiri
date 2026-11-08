@@ -787,8 +787,6 @@ tests/plugins/Utils/WindowInputMonitorTest.cpp
 tests/plugins/Utils/WindowStateStorageTest.cpp
 tests/plugins/WindowManager/QtMirApplicationMocks.h
 tests/plugins/WindowManager/tst_TopLevelWindowModel.cpp
-tests/plugins/Wizard/tst_pagelist.cpp
-tests/plugins/Wizard/tst_system.cpp
 tests/qmltests/ApplicationMenuDataLoader.qml
 tests/qmltests/ApplicationMenus/tst_MenuBar.qml
 tests/qmltests/ApplicationMenus/tst_MenuPopup.qml

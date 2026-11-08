@@ -3,11 +3,6 @@
 # Eventually this should be dropped in favor of the upstream
 # QInputInfo API.
 
-project(InputInfo)
-
-find_package(Qt5Core REQUIRED)
-find_package(Qt5Quick REQUIRED)
-
 pkg_check_modules(LIBUDEV REQUIRED libudev)
 pkg_check_modules(LIBEVDEV REQUIRED libevdev)
 

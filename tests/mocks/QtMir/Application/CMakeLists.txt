@@ -29,8 +29,6 @@ add_library(FakeQtMirApplicationQml MODULE
     ${FakeQtMirApplicationQml_SOURCES}
 )
 
-#add_dependencies(FakeQtMirApplicationQml windowmanagementpolicy)
-
 target_link_libraries(FakeQtMirApplicationQml
     ${MIRAL_LDFLAGS}
     mockwindowmanagmentpolicy

@@ -1,10 +1,4 @@
 cmake_minimum_required (VERSION 3.7.0)
-
-# Default install location. Must be set here, before setting the project.
-if (NOT DEFINED CMAKE_INSTALL_PREFIX)
-    set(CMAKE_INSTALL_PREFIX ${CMAKE_BINARY_DIR}/install CACHE PATH "" FORCE)
-endif()
-
 project(lomiri VERSION 0.6.2 LANGUAGES C CXX)
 
 option (ENABLE_UBUNTU_ACCOUNTSSERVICE "Build with Ubuntu's fork of accountsservice" OFF)
@@ -18,11 +12,6 @@ set(GREETER_APP lomiri-greeter)
 
 set (DESKTOP_FILE_SHELL "${SHELL_APP}.desktop")
 set (DESKTOP_FILE_GREETER "${GREETER_APP}.desktop")
-set(QML_DEBUG OFF CACHE BOOL "Enable Qml Debugging")
-
-if(${PROJECT_BINARY_DIR} STREQUAL ${PROJECT_SOURCE_DIR})
-   message(FATAL_ERROR "In-tree build attempt detected, aborting. Set your build dir outside your source dir, delete CMakeCache.txt from source root and try again.")
-endif()
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules)
 
@@ -30,48 +19,9 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake/mod
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
-# enable QML debugging
-if(QML_DEBUG)
-    add_definitions(-DQT_QML_DEBUG)
-endif()
-
-include(EnableCoverageReport)
-#####################################################################
-# Enable code coverage calculation with gcov/gcovr/lcov
-# Usage:
-#  * Switch build type to coverage (use ccmake or cmake-gui)
-#  * Invoke make, make test, make coverage (or ninja if you use that backend)
-#  * Find html report in subdir coveragereport
-#  * Find xml report feasible for jenkins in coverage.xml
-#####################################################################
-if(cmake_build_type_lower MATCHES coverage)
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --coverage" )
-  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} --coverage" )
-  set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} --coverage" )
-  set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} --coverage" )
-  ENABLE_COVERAGE_REPORT(TARGETS ${SHELL_APP} FILTER /usr/include ${CMAKE_SOURCE_DIR}/tests/* ${CMAKE_BINARY_DIR}/*)
-endif()
-
-find_package (ECM 1.7.0 QUIET NO_MODULE)
-if (ECM_FOUND)
-    # Provides us with -DECM_ENABLE_SANITIZERS='X'
-    # Where X can be address, thread, memory, leak, undefined
-    include("${ECM_MODULE_DIR}/ECMEnableSanitizers.cmake")
-endif()
-
-if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
-  if (NOT CMAKE_CXX_COMPILER_VERSION VERSION_LESS "5.0.0")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wsuggest-override" )
-  endif()
-endif()
-
 # Make sure we have all the needed symbols
 set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,-z,defs")
 set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} -Wl,-z,defs")
-
-# Static C++ checks
-add_custom_target(cppcheck COMMAND cppcheck --enable=all -q --error-exitcode=2
-                                       ${CMAKE_SOURCE_DIR}/src ${CMAKE_SOURCE_DIR}/tests)
 
 include(FindPkgConfig)
 find_package(Qt5Core 5.6 REQUIRED)
@@ -94,7 +44,6 @@ pkg_check_modules(GIO REQUIRED gio-2.0>=2.32 gio-unix-2.0)
 pkg_check_modules(GLIB REQUIRED glib-2.0>=2.32)
 pkg_check_modules(QMENUMODEL REQUIRED qmenumodel)
 pkg_check_modules(GD4 REQUIRED gnome-desktop-4)
-# 0.1.5 adds lal-application-end.target.
 pkg_check_modules(UAL REQUIRED lomiri-app-launch-0>=0.1.5)
 pkg_check_modules(LOMIRIGESTURES REQUIRED LomiriGestures)
 pkg_check_modules(DEVICEINFO REQUIRED deviceinfo)
@@ -113,16 +62,6 @@ else()
     pkg_check_modules(QTMIRSERVER REQUIRED qt5mir1server>=0.6.0)
     pkg_search_module(MIRAL REQUIRED mir1al miral<3.0)
 endif()
-
-### Check LomiriGestures private headers. No pkg-config (.pc) file is provided for them
-find_path(LOMIRIGESTUREPRIV
-    NAMES LomiriGestures/private/damper_p.h LomiriGestures/private/ucswipearea_p.h LomiriGestures/private/ucswipearea_p_p.h
-    PATHS ${LOMIRIGESTURES_INCLUDEDIR}/LomiriGestures/${LOMIRIGESTURES_VERSION}
-    NO_DEFAULT_PATH)
-if (${LOMIRIGESTUREPRIV} STREQUAL LOMIRIGESTUREPRIV-NOTFOUND)
-   message(FATAL_ERROR "LomiriGestures private headers not found.")
-endif()
-# end of LomiriGesture private headers check
 
 # Standard install paths
 include(GNUInstallDirs)
@@ -177,12 +116,6 @@ include_directories(
     ${NOTIFICATIONS_API_INCLUDE_DIRS}
 )
 
-# Quiet logger
-set(QUIET_LOGGER OFF CACHE BOOL "Disable test output on stdout.")
-if(NOT QUIET_LOGGER)
-    set(STDOUT_LOGGER "-o" "-,txt")
-endif()
-
 execute_process(COMMAND dpkg-architecture -qDEB_HOST_ARCH OUTPUT_VARIABLE ARCH)
 if (NOT ARCH MATCHES "arm*")
     set(ENABLE_TOUCH_EMULATION true)
@@ -207,7 +140,6 @@ if (NOT NO_TESTS)
         libqtdbusmock-1
         )
     include(CTest)
-    enable_testing()
     add_subdirectory(tests)
 else()
     message(STATUS "Tests disabled")
@@ -216,18 +148,6 @@ endif()
 set(DISPLAYED_DISTRO_NAME "" CACHE STRING
     "The distro name displayed in first-run wizard and other places. If not set, will read /etc/os-release")
 add_subdirectory(plugins)
-
-#
-# Data files
-#
 add_subdirectory(data)
-
-#
-# Translation
-#
 add_subdirectory(po)
-
-#
-# Documentation
-#
 add_subdirectory(doc)

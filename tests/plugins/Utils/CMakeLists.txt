@@ -1,12 +1,7 @@
 include_directories(
-    ${UtilsQmlPlugin_SOURCE_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR}/../../../plugins/Utils
     ${CMAKE_CURRENT_BINARY_DIR}
     )
-
-add_definitions(-DCONFIG_TESTING)
-
-execute_process(COMMAND mktemp -d OUTPUT_VARIABLE TMPDIR OUTPUT_STRIP_TRAILING_WHITESPACE)
 
 foreach(util_test
     QLimitProxyModel

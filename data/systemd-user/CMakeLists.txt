@@ -4,11 +4,7 @@ if (${SYSTEMD_FOUND})
     find_program(DUAE_BIN dbus-update-activation-environment REQUIRED)
     find_program(XWAYLAND_BIN Xwayland REQUIRED)
 
-    if (${SYSTEMD_VERSION} VERSION_LESS 247)
-        pkg_get_variable(SYSTEMD_USER_UNIT_DIR systemd systemduserunitdir)
-    else()
-        pkg_get_variable(SYSTEMD_USER_UNIT_DIR systemd systemd_user_unit_dir)
-    endif()
+    pkg_get_variable(SYSTEMD_USER_UNIT_DIR systemd systemd_user_unit_dir)
 
     # lomiri-<MODE>.service
 

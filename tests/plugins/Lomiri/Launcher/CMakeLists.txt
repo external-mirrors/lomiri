@@ -1,5 +1,3 @@
-pkg_check_modules(GSETTINGS_QT REQUIRED gsettings-qt)
-
 include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_CURRENT_BINARY_DIR}
