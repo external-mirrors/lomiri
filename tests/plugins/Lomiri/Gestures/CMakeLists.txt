@@ -1,8 +1,5 @@
 include(QmlTest)
 
-pkg_check_modules(LOMIRIGESTURES REQUIRED LomiriGestures)
-
-# DANGER! DANGER! Using Qt's private API!
 include_directories(
     SYSTEM
     ${Qt5Quick_PRIVATE_INCLUDE_DIRS}

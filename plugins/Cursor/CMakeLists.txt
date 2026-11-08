@@ -26,7 +26,6 @@ add_library(Cursor-qml SHARED
 
 target_link_libraries(Cursor-qml
     xcursorloader-static
-    ${QT5PLATFORM_SUPPORT_LDFLAGS}
     Qt5::Qml Qt5::Quick Qt5::Svg
 )
 

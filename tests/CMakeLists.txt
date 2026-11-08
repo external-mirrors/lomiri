@@ -121,11 +121,6 @@ function(add_lomiri_qmltest PATH COMPONENT_NAME)
     )
 endfunction()
 
-# add a graphical qml benchmark
-function(add_lomiri_qmlbenchmark PATH COMPONENT_NAME ITERATIONS)
-    add_lomiri_qmltest(${PATH} ${COMPONENT_NAME} ITERATIONS ${ITERATIONS} ${ARGN})
-endfunction()
-
 # add files needed for qml tests, just here for better alignment with add_lomiri_qmltest
 function(add_lomiri_qmltest_data PATH COMPONENT_NAME)
     add_qml_test_data("${PATH}" "${COMPONENT_NAME}")
@@ -151,5 +146,4 @@ install(DIRECTORY data graphics
 add_subdirectory(plugins)
 add_subdirectory(qmltests)
 add_subdirectory(whitespace)
-add_subdirectory(imports)
 add_subdirectory(copyright)

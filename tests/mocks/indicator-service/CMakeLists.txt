@@ -1,5 +1,3 @@
-project(mock-indicator-service)
-
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c99")
 
 include_directories(

@@ -1,7 +1,5 @@
 include_directories(
   ${CMAKE_CURRENT_BINARY_DIR}
-  ${Qt5Core_INCLUDE_DIRS}
-  ${Qt5Quick_INCLUDE_DIRS}
 )
 
 set(GSettingsQML_SOURCES

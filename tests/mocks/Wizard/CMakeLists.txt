@@ -1,5 +1,3 @@
-pkg_search_module(GD4 REQUIRED gnome-desktop-4)
-
 include_directories(
     ${GD4_INCLUDE_DIRS} ${GLIB_INCLUDE_DIRS} ${GEONAMES_INCLUDE_DIRS}
     ${CMAKE_SOURCE_DIR}/plugins/Wizard

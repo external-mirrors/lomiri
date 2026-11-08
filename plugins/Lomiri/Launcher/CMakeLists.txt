@@ -1,5 +1,3 @@
-pkg_check_modules(GSETTINGS_QT REQUIRED gsettings-qt)
-
 add_definitions(-DSM_BUSNAME=systemBus)
 
 include_directories(

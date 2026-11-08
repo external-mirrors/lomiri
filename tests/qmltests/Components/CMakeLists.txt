@@ -1,7 +1,5 @@
 add_definitions(-DTEST_DIR="qmltests/Components")
 
-pkg_check_modules(LOMIRIGESTURES REQUIRED LomiriGestures)
-
 ########## tst_DragHandle
 
 include_directories(

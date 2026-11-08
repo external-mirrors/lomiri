@@ -1,8 +1,3 @@
-include_directories(
-  ${Qt5Core_INCLUDE_DIRS}
-  ${Qt5Quick_INCLUDE_DIRS}
-)
-
 set(QMenuModelQml_SOURCES
   actiondata.h
   actionstateparser.cpp
@@ -13,8 +8,6 @@ set(QMenuModelQml_SOURCES
 
 add_library(QMenuModelQml SHARED ${QMenuModelQml_SOURCES})
 target_link_libraries(QMenuModelQml
-  ${Qt5Core_LIBRARIES}
-  ${Qt5Quick_LIBRARIES}
   Qt5::Core Qt5::Quick
 )
 
