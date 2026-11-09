@@ -1,13 +1,12 @@
 ---
 clickable_minimum_required: 8.7.0
-framework: ubuntu-touch-24.04-1.x
+framework: ubuntu-touch-26.04-1.x
 restrict_arch: amd64
 is_app: false
 
 templates:
   dep: &dep
     dependencies_host:
-    - python3-setuptools:native
     - cmake
     - cmake-extras
     - dbus-test-runner
@@ -17,46 +16,59 @@ templates:
     - g++
     - gdb
     - graphviz
-    - pkg-config
+    - pkgconf
     - python3-all
+    - python3-setuptools:native
     - xvfb
     - xwayland
 
     dependencies_target:
-    - libmir1client-dev
-    - libsystemd-dev
-    - android-headers
-    - lomiri-schemas
-    - libandroid-properties-dev
-    - liblomiri-connectivity-qt1-dev
+    - fonts-ubuntu
+    - libdeviceinfo-dev
     - libevdev-dev
     - libgeonames-dev
-    - libgl1-mesa-dev
+    - libgl-dev
     - libgl1-mesa-dri
-    - libgles2-mesa-dev
     - libglib2.0-dev
     - libgnome-desktop-4-dev
     - libgsettings-qt-dev
-    - libhardware-dev
+    - libldm-common-dev
     - liblightdm-qt5-3-dev
+    - liblomiri-api-dev
+    - liblomiri-app-launch-dev
+    - liblomiri-connectivity-qt1-dev
+    - liblomiri-download-manager-common-dev
+    - liblomiri-shell-notifications-dev
+    - liblomirigestures-dev
+    - liblomirigestures5-private-dev
+    - liblomirisystemsettings-dev
+    - libmiral-dev
+    - libmiroil-dev
     - libpam0g-dev
     - libpulse-dev
     - libqmenumodel-dev
+    - libqt5mir1server-dev
+    - libqt5mir2server-dev
     - libqt5sql5-sqlite
     - libqt5svg5-dev
     - libqt5xmlpatterns5-dev
     - libqtdbusmock1-dev
     - libqtdbustest1-dev
-    - liblomirisystemsettings-dev
-    - liblomiri-download-manager-common-dev
-    - liblomirigestures-dev
-    - liblomirigestures5-private-dev
+    - libsystemd-dev
     - libudev-dev
-    - liblomiri-api-dev
-    - libusermetricsoutput1-dev
+    - libusermetricsoutput-dev
     - libx11-dev
     - libxcb1-dev
     - libxi-dev
+    - lomiri-schemas
+    - lomiri-wallpapers
+    - qml-module-lomiri-components
+    - qml-module-lomiri-components-extras
+    - qml-module-lomiri-content
+    - qml-module-lomiri-layouts
+    - qml-module-lomiri-settings-components
+    - qml-module-lomiri-settings-menus
+    - qml-module-lomiri-test
     - qml-module-qt-labs-folderlistmodel
     - qml-module-qt-labs-settings
     - qml-module-qtmultimedia
@@ -65,10 +77,6 @@ templates:
     - qml-module-qtquick-xmllistmodel
     - qml-module-qtquick2
     - qml-module-qttest
-    - qml-module-lomiri-components
-    - qml-module-lomiri-layouts
-    - qml-module-lomiri-settings-components
-    - qml-module-lomiri-test
     - qtbase5-dev
     - qtbase5-dev-tools
     - qtbase5-private-dev
@@ -76,16 +84,7 @@ templates:
     - qtdeclarative5-dev
     - qtdeclarative5-dev-tools
     - qtdeclarative5-private-dev
-    - qtdeclarative5-ubuntu-content1
-    - fonts-ubuntu
-    - lomiri-wallpapers
-    - qtmir
-    - qml-module-qtmir
-    - libqt5mir1server-dev
-    - liblomiri-app-launch-dev
-    - libdeviceinfo-dev
-    - mir1test-dev
-    - qml-module-lomiri-settings-menus
+    - systemd-dev
 
 <<: *dep
 
