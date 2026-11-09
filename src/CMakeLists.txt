@@ -1,8 +1,5 @@
 add_subdirectory(liblomiri-private)
 
-pkg_check_modules(CONNECTIVITY REQUIRED lomiri-connectivity-qt1)
-pkg_check_modules(GSETTINGS_QT REQUIRED gsettings-qt)
-
 include_directories(
     SYSTEM
     ${Qt5Gui_PRIVATE_INCLUDE_DIRS}
@@ -29,8 +26,6 @@ set(SOURCE_FILES
     DebuggingController.cpp
     WindowManagementPolicy.cpp
 )
-
-pkg_check_modules(SYSTEMD REQUIRED libsystemd)
 
 include_directories(
     ${SYSTEMD_INCLUDE_DIRS}

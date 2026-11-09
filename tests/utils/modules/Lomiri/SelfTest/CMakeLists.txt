@@ -18,14 +18,12 @@ set(LomiriTestQML_SOURCES
     TouchEventSequenceWrapper.cpp
 )
 
-if (ENABLE_TOUCH_EMULATION)
-    set(LomiriTestQML_SOURCES ${LomiriTestQML_SOURCES} MouseTouchAdaptor.cpp)
-endif()
-
 add_library(LomiriTestQml MODULE ${LomiriTestQML_SOURCES})
 target_link_libraries(LomiriTestQml ${LOMIRIGESTURES_LIBRARIES} Qt5::Core Qt5::Quick Qt5::Test)
 
-if (ENABLE_TOUCH_EMULATION)
+if (MOUSETOUCHADAPTOR_LIBS_FOUND)
+    target_sources(LomiriTestQml PRIVATE MouseTouchAdaptor.cpp)
+    target_compile_definitions(LomiriTestQml PRIVATE LOMIRI_ENABLE_TOUCH_EMULATION)
     target_link_libraries(LomiriTestQml ${MOUSETOUCHADAPTOR_LIBS_LDFLAGS})
 endif()
 
