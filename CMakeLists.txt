@@ -23,7 +23,6 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,-z,defs")
 set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} -Wl,-z,defs")
 
-include(FindPkgConfig)
 find_package(Qt5Core 5.6 REQUIRED)
 find_package(Qt5Qml 5.6 REQUIRED)
 find_package(Qt5Quick 5.6 REQUIRED)
@@ -35,7 +34,9 @@ find_package(Qt5Test 5.6 REQUIRED)
 find_package(Qt5Svg 5.6 REQUIRED)
 find_package(Qt5Network 5.6 REQUIRED)
 find_package(Qt5Xml 5.6 REQUIRED)
+
 find_package(Intl REQUIRED)
+find_package(PkgConfig REQUIRED)
 
 pkg_check_modules(APPLICATION_API REQUIRED lomiri-shell-application=28)
 pkg_check_modules(NOTIFICATIONS_API REQUIRED lomiri-shell-notifications=3)
@@ -49,6 +50,13 @@ pkg_check_modules(LOMIRIGESTURES REQUIRED LomiriGestures)
 pkg_check_modules(DEVICEINFO REQUIRED deviceinfo)
 pkg_check_modules(LOMIRISCHEMA REQUIRED lomiri-schemas>=0.1.13)
 pkg_check_modules(LIBLIGHTDM REQUIRED liblightdm-qt5-3)
+pkg_check_modules(CONNECTIVITY REQUIRED lomiri-connectivity-qt1)
+pkg_check_modules(GSETTINGS_QT REQUIRED gsettings-qt)
+pkg_check_modules(LIBSYSTEMD REQUIRED libsystemd)
+pkg_check_modules(LIBUSERMETRICSOUTPUT REQUIRED libusermetricsoutput-1)
+pkg_check_modules(LIBUDEV REQUIRED libudev)
+pkg_check_modules(LIBEVDEV REQUIRED libevdev)
+pkg_check_modules(SYSTEMD systemd)
 
 option(WITH_MIR2 "Build against Mir 2" OFF)
 
@@ -116,16 +124,6 @@ include_directories(
     ${NOTIFICATIONS_API_INCLUDE_DIRS}
 )
 
-execute_process(COMMAND dpkg-architecture -qDEB_HOST_ARCH OUTPUT_VARIABLE ARCH)
-if (NOT ARCH MATCHES "arm*")
-    set(ENABLE_TOUCH_EMULATION true)
-    add_definitions(-DLOMIRI_ENABLE_TOUCH_EMULATION)
-    pkg_check_modules(MOUSETOUCHADAPTOR_LIBS REQUIRED x11 xcb xi)
-else()
-    set(ENABLE_TOUCH_EMULATION false)
-    message(STATUS "Touch emulation support disabled.")
-endif()
-
 # add subdirectories to build
 add_subdirectory(include)
 add_subdirectory(src)
@@ -135,10 +133,6 @@ add_subdirectory(qml)
 # Tests
 set(NO_TESTS OFF CACHE BOOL "Disable tests.")
 if (NOT NO_TESTS)
-    pkg_check_modules(QTDBUSTEST REQUIRED
-        libqtdbustest-1
-        libqtdbusmock-1
-        )
     include(CTest)
     add_subdirectory(tests)
 else()

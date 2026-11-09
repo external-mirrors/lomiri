@@ -1,5 +1,3 @@
-pkg_check_modules(SYSTEMD systemd)
-
 if (${SYSTEMD_FOUND})
     find_program(DUAE_BIN dbus-update-activation-environment REQUIRED)
     find_program(XWAYLAND_BIN Xwayland REQUIRED)

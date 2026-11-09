@@ -3,12 +3,6 @@ add_executable(uqmlscene
     ${CMAKE_SOURCE_DIR}/src/DebuggingController.cpp
     )
 
-pkg_check_modules(XCB REQUIRED xcb)
-
-if (NOT "${XCB_INCLUDE_DIRS}" STREQUAL "")
-    set_target_properties(uqmlscene PROPERTIES INCLUDE_DIRECTORIES ${XCB_INCLUDE_DIRS})
-endif()
-
 include_directories(
     SYSTEM
     ${Qt5Quick_PRIVATE_INCLUDE_DIRS}
@@ -23,7 +17,6 @@ include_directories(
 
 target_link_libraries(uqmlscene
     Qt5::Qml Qt5::Quick Qt5::Test Qt5::DBus
-    ${XCB_LDFLAGS}
     LomiriGestures
     lomiri-private
     )

@@ -3,9 +3,6 @@
 # Eventually this should be dropped in favor of the upstream
 # QInputInfo API.
 
-pkg_check_modules(LIBUDEV REQUIRED libudev)
-pkg_check_modules(LIBEVDEV REQUIRED libevdev)
-
 include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_CURRENT_BINARY_DIR}
