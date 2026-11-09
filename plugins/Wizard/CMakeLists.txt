@@ -1,5 +1,3 @@
-include_directories(SYSTEM ${GD4_INCLUDE_DIRS} ${GLIB_INCLUDE_DIRS} ${GEONAMES_INCLUDE_DIRS})
-
 add_library(Wizard-qml MODULE
     plugin.cpp
     PageList.cpp
@@ -11,9 +9,12 @@ add_library(Wizard-qml MODULE
     Changelog.cpp
 )
 
-target_link_libraries(Wizard-qml
-    Qt5::DBus Qt5::Qml
-    ${GD4_LDFLAGS} ${GLIB_LDFLAGS} ${GEONAMES_LDFLAGS}
+target_link_libraries(Wizard-qml PRIVATE
+    PkgConfig::GD4
+    PkgConfig::GEONAMES
+    PkgConfig::GLIB
+    Qt::DBus
+    Qt::Qml
 )
 
 if (NOT "${DISPLAYED_DISTRO_NAME}" STREQUAL "")

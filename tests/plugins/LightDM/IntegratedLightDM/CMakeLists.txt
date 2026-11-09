@@ -1,5 +1,4 @@
 include_directories(
-    ${GLIB_INCLUDE_DIRS}
     ${CMAKE_CURRENT_BINARY_DIR}
     )
 
@@ -8,14 +7,16 @@ add_executable(GreeterDBusTestExec
     ${CMAKE_SOURCE_DIR}/plugins/LightDM/Greeter.cpp
     ${CMAKE_SOURCE_DIR}/plugins/LightDM/PromptsModel.cpp
     )
-# This add_dependencies is needed since we're linking with with -L and -l below
-# make seems to work but ninja breaks without it
-add_dependencies(GreeterDBusTestExec MockLightDM)
-target_link_libraries(GreeterDBusTestExec
-    ${Intl_LIBRARIES}
-    Qt5::Core Qt5::DBus Qt5::Quick Qt5::Test
+
+target_link_libraries(GreeterDBusTestExec PRIVATE
     MockLightDM
-    )
+    Intl::Intl
+    Qt::Core
+    Qt::DBus
+    Qt::Quick
+    Qt::Test
+)
+
 target_include_directories(GreeterDBusTestExec PUBLIC
     ${CMAKE_SOURCE_DIR}/plugins/LightDM
     )
@@ -35,10 +36,14 @@ add_executable(GreeterPamTestExec
     pam.cpp
     ${CMAKE_SOURCE_DIR}/plugins/LightDM/IntegratedLightDM/liblightdm/GreeterPrivate.cpp
     )
-target_link_libraries(GreeterPamTestExec
-    Qt5::Concurrent Qt5::Core Qt5::Test
+
+target_link_libraries(GreeterPamTestExec PRIVATE
     integratedLightDM
-    )
+    PkgConfig::GLIB
+    Qt::Concurrent
+    Qt::Core
+    Qt::Test
+)
 
 target_include_directories(GreeterPamTestExec PUBLIC
     ${CMAKE_SOURCE_DIR}/plugins/LightDM/IntegratedLightDM
@@ -55,11 +60,13 @@ add_executable(GreeterSessionsModelTestExec
     ${CMAKE_SOURCE_DIR}/plugins/LightDM/SessionsModel.cpp
     ${CMAKE_SOURCE_DIR}/plugins/Utils/lomirisortfilterproxymodelqml.cpp
     )
-add_dependencies(GreeterSessionsModelTestExec MockLightDM)
-target_link_libraries(GreeterSessionsModelTestExec
-    Qt5::Core Qt5::Test
+
+target_link_libraries(GreeterSessionsModelTestExec PRIVATE
     MockLightDM
-    )
+    Qt::Core
+    Qt::Test
+)
+
 target_include_directories(GreeterSessionsModelTestExec PUBLIC
     ${CMAKE_SOURCE_DIR}/plugins/LightDM
     ${CMAKE_SOURCE_DIR}/plugins/Utils
@@ -79,14 +86,14 @@ add_executable(GreeterUsersModelTestExec
     ${CMAKE_SOURCE_DIR}/plugins/LightDM/UsersModel.cpp
     ${CMAKE_SOURCE_DIR}/plugins/Utils/lomirisortfilterproxymodelqml.cpp
     )
-# This add_dependencies is needed since we're linking with with -L and -l below
-# make seems to work but ninja breaks without it
-add_dependencies(GreeterUsersModelTestExec MockLightDM)
-target_link_libraries(GreeterUsersModelTestExec
-    ${Intl_LIBRARIES}
-    Qt5::Core Qt5::Test
+
+target_link_libraries(GreeterUsersModelTestExec PRIVATE
     MockLightDM
-    )
+    Intl::Intl
+    Qt::Core
+    Qt::Test
+)
+
 target_include_directories(GreeterUsersModelTestExec PUBLIC
     ${CMAKE_SOURCE_DIR}/plugins/LightDM
     ${CMAKE_SOURCE_DIR}/plugins/Utils
@@ -106,14 +113,14 @@ add_executable(GreeterPromptsModelTestExec
     ${CMAKE_SOURCE_DIR}/plugins/LightDM/PromptsModel.cpp
     ${CMAKE_SOURCE_DIR}/plugins/Utils/lomirisortfilterproxymodelqml.cpp
     )
-# This add_dependencies is needed since we're linking with with -L and -l below
-# make seems to work but ninja breaks without it
-add_dependencies(GreeterPromptsModelTestExec MockLightDM)
-target_link_libraries(GreeterPromptsModelTestExec
-    ${Intl_LIBRARIES}
-    Qt5::Core Qt5::Test
+
+target_link_libraries(GreeterPromptsModelTestExec PRIVATE
     MockLightDM
-    )
+    Intl::Intl
+    Qt::Core
+    Qt::Test
+)
+
 target_include_directories(GreeterPromptsModelTestExec PUBLIC
     ${CMAKE_SOURCE_DIR}/plugins/LightDM
     ${CMAKE_SOURCE_DIR}/plugins/Utils
@@ -130,13 +137,17 @@ add_lomiri_uitest(GreeterPrompts GreeterPromptsModelTestExec
 add_executable(GreeterIntegratedTestExec
     integrated.cpp
     )
-target_link_libraries(GreeterIntegratedTestExec
-    Qt5::Core Qt5::DBus Qt5::Quick Qt5::Test
-    ${GLIB_LIBRARIES}
+
+target_link_libraries(GreeterIntegratedTestExec PRIVATE
     integratedLightDMSession
-    )
+    PkgConfig::GLIB
+    Qt::Core
+    Qt::DBus
+    Qt::Quick
+    Qt::Test
+)
+
 target_include_directories(GreeterIntegratedTestExec PUBLIC
-    ${GLIB_INCLUDE_DIRS}
     ${CMAKE_SOURCE_DIR}/plugins/LightDM/IntegratedLightDM/liblightdm
     )
 install(TARGETS GreeterIntegratedTestExec

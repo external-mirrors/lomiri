@@ -14,12 +14,14 @@ add_library(IntegratedLightDM-qml MODULE
     ${RELATIVE_QMLPLUGIN_SRC}
     )
 
-target_link_libraries(IntegratedLightDM-qml
+target_link_libraries(IntegratedLightDM-qml PRIVATE
     integratedLightDM
     lomiri-private
-    ${LIBUSERMETRICSOUTPUT_LDFLAGS}
-    Qt5::DBus Qt5::Gui Qt5::Qml
-    )
+    PkgConfig::LIBUSERMETRICSOUTPUT
+    Qt::DBus
+    Qt::Gui
+    Qt::Qml
+)
 
 add_lomiri_plugin(IntegratedLightDM 0.1 LightDM/IntegratedLightDM TARGETS IntegratedLightDM-qml)
 

@@ -6,8 +6,6 @@
 include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_CURRENT_BINARY_DIR}
-    ${LIBUDEV_INCLUDE_DIRS}
-    ${LIBEVDEV_INCLUDE_DIRS}
 )
 
 set(InputInfo_SOURCES
@@ -21,10 +19,12 @@ add_library(InputInfo SHARED
     ${InputInfo_SOURCES}
 )
 
-target_link_libraries(InputInfo
-    ${LIBUDEV_LDFLAGS}
-    ${LIBEVDEV_LDFLAGS}
-    Qt5::Core Qt5::Qml Qt5::Quick
+target_link_libraries(InputInfo PRIVATE
+    PkgConfig::LIBEVDEV
+    PkgConfig::LIBUDEV
+    Qt::Core
+    Qt::Qml
+    Qt::Quick
 )
 
 add_lomiri_plugin(Lomiri.InputInfo 0.1 Lomiri/InputInfo TARGETS InputInfo)

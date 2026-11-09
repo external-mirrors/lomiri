@@ -10,7 +10,13 @@ foreach(util_test
     WindowStateStorage
 )
     add_executable(${util_test}TestExec ${util_test}Test.cpp ModelTest.cpp)
-    target_link_libraries(${util_test}TestExec Qt5::Test Qt5::Core Qt5::Qml Utils-qml)
+    target_link_libraries(${util_test}TestExec PRIVATE
+        lomiri-shell-application
+        Utils-qml
+        Qt::Core
+        Qt::Qml
+        Qt::Test
+    )
     install(TARGETS ${util_test}TestExec
         DESTINATION "${SHELL_PRIVATE_FULL_LIBEXECDIR}/tests/plugins/Utils"
     )
@@ -25,7 +31,7 @@ add_lomiri_qmlunittest(. UtilsStyle)
 
 # URLDispatcher test needs dbus-test-runner because it claims a dbus name
 add_executable(URLDispatcherTestExec URLDispatcherTest.cpp)
-target_link_libraries(URLDispatcherTestExec Qt5::Test Qt5::Core Qt5::Qml Utils-qml)
+target_link_libraries(URLDispatcherTestExec PRIVATE Qt::Test Qt::Core Qt::DBus Qt::Qml Utils-qml)
 install(TARGETS URLDispatcherTestExec
     DESTINATION "${SHELL_PRIVATE_FULL_LIBEXECDIR}/tests/plugins/Utils"
 )

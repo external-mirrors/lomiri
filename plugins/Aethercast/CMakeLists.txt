@@ -23,5 +23,5 @@ target_include_directories(
     ${CMAKE_CURRENT_BINARY_DIR}
 )
 
-target_link_libraries(Aethercast-qml Qt5::Qml Qt5::DBus)
+target_link_libraries(Aethercast-qml PRIVATE Qt::Qml Qt::DBus)
 add_lomiri_plugin(Aethercast 0.1 Aethercast TARGETS Aethercast-qml)

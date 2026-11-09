@@ -12,7 +12,6 @@ include_directories(
     ${CMAKE_CURRENT_BINARY_DIR}
     ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Session
     ${liblomiri-private_SOURCE_DIR}
-    ${GLIB_INCLUDE_DIRS}
 )
 
 add_definitions(-DSM_BUSNAME=sessionBus)
@@ -26,7 +25,7 @@ add_executable(LightDMServer
     LogindServer.cpp
     server.cpp
 )
-target_link_libraries(LightDMServer Qt5::Core Qt5::DBus)
+target_link_libraries(LightDMServer PRIVATE Qt::Core Qt::DBus)
 install(TARGETS LightDMServer
     DESTINATION "${SHELL_PRIVATE_FULL_LIBEXECDIR}/tests/plugins/Lomiri/Session"
     )
@@ -35,9 +34,7 @@ install(TARGETS LightDMServer
 add_library(SessionBackendTestPreload SHARED
     preload.c
 )
-target_link_libraries(SessionBackendTestPreload
-    ${GLIB_LIBRARIES}
-    )
+target_link_libraries(SessionBackendTestPreload PRIVATE PkgConfig::GLIB)
 install(TARGETS SessionBackendTestPreload
     DESTINATION "${SHELL_PRIVATE_FULL_LIBEXECDIR}/tests/plugins/Lomiri/Session"
     )
@@ -47,11 +44,14 @@ add_executable(sessionbackendtestExec
     sessionbackendtest.cpp
     ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Session/dbuslomirisessionservice.cpp
 )
-target_link_libraries(sessionbackendtestExec
+target_link_libraries(sessionbackendtestExec PRIVATE
     lomiri-private
-    ${GLIB_LIBRARIES}
-    )
-target_link_libraries(sessionbackendtestExec Qt5::Test Qt5::Core Qt5::Qml Qt5::DBus)
+    PkgConfig::GLIB
+    Qt::Core
+    Qt::DBus
+    Qt::Qml
+    Qt::Test
+)
 install(TARGETS sessionbackendtestExec
     DESTINATION "${SHELL_PRIVATE_FULL_LIBEXECDIR}/tests/plugins/Lomiri/Session"
 )

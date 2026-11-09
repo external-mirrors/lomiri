@@ -9,17 +9,23 @@ include_directories(
 
 include_directories(
     SYSTEM
-    ${LOMIRIGESTURES_INCLUDE_DIRS}
-    ${Qt5Gui_PRIVATE_INCLUDE_DIRS}
-    ${Qt5Quick_PRIVATE_INCLUDE_DIRS}
     ${LOMIRIGESTURES_INCLUDEDIR}/LomiriGestures/${LOMIRIGESTURES_VERSION}
     )
 
 add_executable(DragHandleTestExec tst_DragHandle.cpp)
-target_link_libraries(DragHandleTestExec
-    Qt5::Test Qt5::Core Qt5::Qml Qt5::Gui Qt5::Quick
-    LomiriGesturesQml ${LOMIRIGESTURES_LIBRARIES}
-    )
+
+target_link_libraries(DragHandleTestExec PRIVATE
+    LomiriGesturesQml
+    PkgConfig::LOMIRIGESTURES
+    Qt::Core
+    Qt::Gui
+    Qt::GuiPrivate
+    Qt::Qml
+    Qt::Quick
+    Qt::QuickPrivate
+    Qt::Test
+)
+
 install(TARGETS DragHandleTestExec
     DESTINATION "${SHELL_PRIVATE_FULL_LIBEXECDIR}/tests/qmltests/Components"
     )
@@ -34,10 +40,19 @@ add_lomiri_qmltest_data(. tst_DragHandle)
 
 ########## tst_EdgeDragEvaluator
 add_executable(EdgeDragEvaluatorTestExec tst_EdgeDragEvaluator.cpp)
-target_link_libraries(EdgeDragEvaluatorTestExec
-    Qt5::Test Qt5::Core Qt5::Qml Qt5::Gui Qt5::Quick
-    LomiriGesturesQml ${LOMIRIGESTURES_LIBRARIES}
-    )
+
+target_link_libraries(EdgeDragEvaluatorTestExec PRIVATE
+    LomiriGesturesQml
+    PkgConfig::LOMIRIGESTURES
+    Qt::Core
+    Qt::Gui
+    Qt::GuiPrivate
+    Qt::Qml
+    Qt::Quick
+    Qt::QuickPrivate
+    Qt::Test
+)
+
 install(TARGETS EdgeDragEvaluatorTestExec
     DESTINATION "${SHELL_PRIVATE_FULL_LIBEXECDIR}/tests/qmltests/Components"
     )

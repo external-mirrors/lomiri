@@ -23,6 +23,6 @@ add_library(MockInputInfo SHARED
     ${MockInputInfo_SOURCES}
 )
 
-target_link_libraries(MockInputInfo Qt5::Core Qt5::Qml Qt5::Quick)
+target_link_libraries(MockInputInfo PRIVATE Qt::Core Qt::Qml Qt::Quick)
 
 add_lomiri_mock(Lomiri.InputInfo 0.1 Lomiri/InputInfo TARGETS MockInputInfo)

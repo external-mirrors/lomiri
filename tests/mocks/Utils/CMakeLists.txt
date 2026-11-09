@@ -4,13 +4,6 @@ include_directories(
     ${CMAKE_SOURCE_DIR}/plugins/Utils
 )
 
-include_directories(
-    SYSTEM
-    ${Qt5Gui_PRIVATE_INCLUDE_DIRS}
-    ${Qt5Quick_PRIVATE_INCLUDE_DIRS}
-    ${GIO_INCLUDE_DIRS}
-)
-
 set(QMLPLUGIN_SRC
     ${CMAKE_SOURCE_DIR}/plugins/Utils/activefocuslogger.cpp
     ${CMAKE_SOURCE_DIR}/plugins/Utils/qlimitproxymodelqml.cpp
@@ -28,15 +21,6 @@ set(QMLPLUGIN_SRC
     ${CMAKE_SOURCE_DIR}/plugins/Utils/tabfocusfence.cpp
     ${CMAKE_SOURCE_DIR}/plugins/Utils/expressionfiltermodel.cpp
     ${CMAKE_SOURCE_DIR}/plugins/Utils/quicklistproxymodel.cpp
-    ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/ApplicationManagerInterface.h
-    ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/ApplicationInfoInterface.h
-    ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/MirSurfaceInterface.h
-    ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/MirSurfaceListInterface.h
-    ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/Mir.h
-    ${CMAKE_SOURCE_DIR}/include/lomiri/shell/launcher/AppDrawerModelInterface.h
-    ${CMAKE_SOURCE_DIR}/include/lomiri/shell/launcher/LauncherModelInterface.h
-    ${CMAKE_SOURCE_DIR}/include/lomiri/shell/launcher/LauncherItemInterface.h
-    ${CMAKE_SOURCE_DIR}/include/lomiri/shell/launcher/QuickListModelInterface.h
     constants.cpp
     plugin.cpp
     windowstatestorage.cpp
@@ -49,9 +33,17 @@ add_library(FakeUtils-qml SHARED
     ${QMLPLUGIN_SRC}
     )
 
-target_link_libraries(FakeUtils-qml
-    ${GIO_LDFLAGS}
-    Qt5::Qml Qt5::Quick Qt5::DBus Qt5::Network Qt5::Gui
+target_link_libraries(FakeUtils-qml PRIVATE
+    lomiri-shell-application
+    lomiri-shell-launcher
+    PkgConfig::GIO
+    Qt::DBus
+    Qt::Gui
+    Qt::GuiPrivate
+    Qt::Network
+    Qt::Qml
+    Qt::Quick
+    Qt::QuickPrivate
 )
 
 # Because this is an internal support library, we want

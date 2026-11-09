@@ -6,14 +6,6 @@ include_directories(
     ${liblomiri-private_SOURCE_DIR}
 )
 
-include_directories(
-    SYSTEM
-    ${GSETTINGS_QT_INCLUDE_DIRS}
-    ${GLIB_INCLUDE_DIRS}
-    ${GIO_INCLUDE_DIRS}
-    ${UAL_INCLUDE_DIRS}
-    )
-
 set(QMLLAUNCHERPLUGIN_SRC
     plugin.cpp
     launchermodel.cpp
@@ -28,28 +20,24 @@ set(QMLLAUNCHERPLUGIN_SRC
     xdgwatcher.cpp
     iconcachewatcher.cpp
     ${CMAKE_SOURCE_DIR}/plugins/AccountsService/AccountsServiceDBusAdaptor.cpp
-    ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/ApplicationManagerInterface.h
-    ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/ApplicationInfoInterface.h
-    ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/MirSurfaceListInterface.h
-    ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/MirSurfaceInterface.h
-    ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/Mir.h
-    ${CMAKE_SOURCE_DIR}/include/lomiri/shell/launcher/LauncherItemInterface.h
-    ${CMAKE_SOURCE_DIR}/include/lomiri/shell/launcher/LauncherModelInterface.h
-    ${CMAKE_SOURCE_DIR}/include/lomiri/shell/launcher/QuickListModelInterface.h
-    ${CMAKE_SOURCE_DIR}/include/lomiri/shell/launcher/AppDrawerModelInterface.h
     )
 
 add_library(LomiriLauncher-qml MODULE
     ${QMLLAUNCHERPLUGIN_SRC}
     )
 
-target_link_libraries(LomiriLauncher-qml
+target_link_libraries(LomiriLauncher-qml PRIVATE
     lomiri-private
-    ${GSETTINGS_QT_LDFLAGS}
-    ${GLIB_LIBRARIES}
-    ${GIO_LIBRARIES}
-    ${UAL_LIBRARIES}
-    Qt5::DBus Qt5::Qml Qt5::Gui Qt5::Concurrent
-    )
+    lomiri-shell-application
+    lomiri-shell-launcher
+    PkgConfig::GIO
+    PkgConfig::GLIB
+    PkgConfig::GSETTINGS_QT
+    PkgConfig::LAL
+    Qt::Concurrent
+    Qt::DBus
+    Qt::Gui
+    Qt::Qml
+)
 
 add_lomiri_plugin(Lomiri.Launcher 0.1 Lomiri/Launcher TARGETS LomiriLauncher-qml)

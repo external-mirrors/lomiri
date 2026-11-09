@@ -1,17 +1,6 @@
 add_subdirectory(liblomiri-private)
 
 include_directories(
-    SYSTEM
-    ${Qt5Gui_PRIVATE_INCLUDE_DIRS}
-    ${Qt5Quick_PRIVATE_INCLUDE_DIRS}
-    ${GSETTINGS_QT_INCLUDE_DIRS}
-    ${CONNECTIVITY_INCLUDE_DIRS}
-    ${QTMIRSERVER_INCLUDE_DIRS}
-    ${MIROIL_INCLUDE_DIRS}
-    ${DEVICEINFO_INCLUDE_DIRS}
-)
-
-include_directories(
     ${liblomiri-private_SOURCE_DIR}
 )
 
@@ -27,24 +16,30 @@ set(SOURCE_FILES
     WindowManagementPolicy.cpp
 )
 
-include_directories(
-    ${SYSTEMD_INCLUDE_DIRS}
-)
-
 add_executable(${SHELL_APP} ${SOURCE_FILES})
 
-target_link_libraries(${SHELL_APP}
-    Qt5::DBus Qt5::Gui Qt5::Qml Qt5::Quick Qt5::Test
-    ${GSETTINGS_QT_LDFLAGS}
-    ${QTMIRSERVER_LDFLAGS}
-    ${SYSTEMD_LDFLAGS}
-    ${Intl_LIBRARIES}
-    ${MIROIL_LDFLAGS}
-    ${DEVICEINFO_LDFLAGS}
-    LomiriGestures
-    lomiri-connectivity-qt1
+target_link_libraries(${SHELL_APP} PRIVATE
     lomiri-private
+    Intl::Intl
+    PkgConfig::APPLICATION_API
+    PkgConfig::CONNECTIVITY
+    PkgConfig::DEVICEINFO
+    PkgConfig::GSETTINGS_QT
+    PkgConfig::LIBSYSTEMD
+    PkgConfig::LOMIRIGESTURES
+    PkgConfig::QTMIRSERVER
+    Qt::DBus
+    Qt::Gui
+    Qt::GuiPrivate
+    Qt::Qml
+    Qt::Quick
+    Qt::QuickPrivate
+    Qt::Test
 )
+
+if (WITH_MIR2)
+    target_link_libraries(${SHELL_APP} PRIVATE PkgConfig::MIROIL)
+endif()
 
 # install binaries
 install(TARGETS ${SHELL_APP}

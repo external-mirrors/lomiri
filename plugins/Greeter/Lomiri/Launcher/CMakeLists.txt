@@ -3,7 +3,6 @@ add_definitions(-DSM_BUSNAME=systemBus)
 include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_SOURCE_DIR}/plugins/AccountsService
-    ${GSETTINGS_QT_INCLUDE_DIRS}
     ${liblomiri-private_SOURCE_DIR}
 )
 
@@ -14,20 +13,20 @@ set(QMLLAUNCHERPLUGINAS_SRC
     quicklistmodel.cpp
     quicklistentry.cpp
     ${CMAKE_SOURCE_DIR}/plugins/AccountsService/AccountsServiceDBusAdaptor.cpp
-    ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/ApplicationManagerInterface.h
-    ${CMAKE_SOURCE_DIR}/include/lomiri/shell/launcher/LauncherItemInterface.h
-    ${CMAKE_SOURCE_DIR}/include/lomiri/shell/launcher/LauncherModelInterface.h
-    ${CMAKE_SOURCE_DIR}/include/lomiri/shell/launcher/QuickListModelInterface.h
     )
 
 add_library(LomiriLauncherAS-qml MODULE
     ${QMLLAUNCHERPLUGINAS_SRC}
     )
 
-target_link_libraries(LomiriLauncherAS-qml
+target_link_libraries(LomiriLauncherAS-qml PRIVATE
     lomiri-private
-    ${GSETTINGS_QT_LDFLAGS}
-    Qt5::DBus Qt5::Qml Qt5::Gui
-    )
+    lomiri-shell-application
+    lomiri-shell-launcher
+    PkgConfig::GSETTINGS_QT
+    Qt::DBus
+    Qt::Gui
+    Qt::Qml
+)
 
 add_lomiri_greeter_plugin(Lomiri.Launcher 0.1 Lomiri/Launcher TARGETS LomiriLauncherAS-qml)

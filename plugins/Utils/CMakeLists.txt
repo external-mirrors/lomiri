@@ -3,22 +3,9 @@ include_directories(
     ${CMAKE_CURRENT_BINARY_DIR}
 )
 
-include_directories(
-    SYSTEM
-    ${Qt5Gui_PRIVATE_INCLUDE_DIRS}
-    ${Qt5Quick_PRIVATE_INCLUDE_DIRS}
-    ${DEVICEINFO_INCLUDE_DIRS}
-)
-
 set(QMLPLUGIN_SRC
     activefocuslogger.cpp
-    ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/ApplicationManagerInterface.h
-    ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/ApplicationInfoInterface.h
     applicationsfiltermodel.cpp
-    ${CMAKE_SOURCE_DIR}/include/lomiri/shell/launcher/AppDrawerModelInterface.h
-    ${CMAKE_SOURCE_DIR}/include/lomiri/shell/launcher/LauncherItemInterface.h
-    ${CMAKE_SOURCE_DIR}/include/lomiri/shell/launcher/LauncherModelInterface.h
-    ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/Mir.h
     appdrawerproxymodel.cpp
     constants.cpp
     WindowInputMonitor.cpp
@@ -48,8 +35,20 @@ add_library(Utils-qml SHARED
     )
 
 target_link_libraries(Utils-qml
-    Qt5::Qml Qt5::Quick Qt5::DBus Qt5::Network Qt5::Gui Qt5::Sql Qt5::Concurrent
-    ${DEVICEINFO_LDFLAGS}
+    PUBLIC
+        lomiri-shell-application
+        Qt::Sql
+    PRIVATE
+        lomiri-shell-launcher
+        PkgConfig::DEVICEINFO
+        Qt::Concurrent
+        Qt::DBus
+        Qt::Gui
+        Qt::GuiPrivate
+        Qt::Network
+        Qt::Qml
+        Qt::Quick
+        Qt::QuickPrivate
 )
 
 # Because this is an internal support library, we want

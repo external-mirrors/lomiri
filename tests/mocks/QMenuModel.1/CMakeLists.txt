@@ -7,9 +7,8 @@ set(QMenuModelQml_SOURCES
 )
 
 add_library(QMenuModelQml SHARED ${QMenuModelQml_SOURCES})
-target_link_libraries(QMenuModelQml
-  Qt5::Core Qt5::Quick
-)
+
+target_link_libraries(QMenuModelQml PRIVATE Qt::Core Qt::Quick)
 
 set_target_properties(QMenuModelQml PROPERTIES
                       OUTPUT_NAME qmenumodel

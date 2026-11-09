@@ -14,11 +14,12 @@ add_library(MockAccountsService-qml MODULE
     plugin.cpp
     )
 
-target_link_libraries(MockAccountsService-qml
-    ${Intl_LIBRARIES}
-    Qt5::DBus Qt5::Qml
+target_link_libraries(MockAccountsService-qml PRIVATE
     MockLightDM
-    )
+    Intl::Intl
+    Qt::DBus
+    Qt::Qml
+)
 
 add_lomiri_mock(AccountsService 0.1 AccountsService
     TARGETS MockAccountsService-qml

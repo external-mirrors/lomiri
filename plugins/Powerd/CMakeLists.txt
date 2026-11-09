@@ -1,7 +1,3 @@
-include_directories(
-    ${GIO_INCLUDE_DIRS}
-)
-
 add_definitions(-DSM_BUSNAME=systemBus)
 
 add_library(Powerd-qml MODULE
@@ -9,9 +5,10 @@ add_library(Powerd-qml MODULE
     Powerd.cpp
     )
 
-target_link_libraries(Powerd-qml
-    Qt5::DBus Qt5::Qml
-    ${GIO_LDFLAGS}
-    )
+target_link_libraries(Powerd-qml PRIVATE
+    PkgConfig::GIO
+    Qt::DBus
+    Qt::Qml
+)
 
 add_lomiri_plugin(Powerd 0.1 Powerd TARGETS Powerd-qml)

@@ -1,5 +1,4 @@
 include_directories(
-    ${GD4_INCLUDE_DIRS} ${GLIB_INCLUDE_DIRS} ${GEONAMES_INCLUDE_DIRS}
     ${CMAKE_SOURCE_DIR}/plugins/Wizard
 )
 
@@ -14,5 +13,12 @@ add_library(MockWizard-qml MODULE
     ${CMAKE_SOURCE_DIR}/plugins/Wizard/keyboardLayoutsModel.cpp
 )
 
-target_link_libraries(MockWizard-qml Qt5::DBus Qt5::Qml ${GD4_LDFLAGS} ${GLIB_LDFLAGS} ${GEONAMES_LDFLAGS})
+target_link_libraries(MockWizard-qml PRIVATE
+    PkgConfig::GD4
+    PkgConfig::GEONAMES
+    PkgConfig::GLIB
+    Qt::DBus
+    Qt::Qml
+)
+
 add_lomiri_mock(Wizard 0.1 Wizard TARGETS MockWizard-qml)

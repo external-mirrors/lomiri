@@ -9,14 +9,9 @@ make_dbus_class(Broadcast com.lomiri.Shell.Greeter.Broadcast)
 add_definitions(-DSM_BUSNAME=sessionBus)
 
 include_directories(
-    ${GLIB_INCLUDE_DIRS}
     ${CMAKE_CURRENT_BINARY_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_SOURCE_DIR}/plugins/SessionBroadcast
-)
-
-link_libraries(
-    ${GLIB_LIBRARIES}
 )
 
 add_executable(MockBroadcastServer
@@ -24,7 +19,9 @@ add_executable(MockBroadcastServer
     server.cpp
     BroadcastServer.cpp
 )
-target_link_libraries(MockBroadcastServer Qt5::Core Qt5::DBus)
+
+target_link_libraries(MockBroadcastServer PRIVATE Qt::Core Qt::DBus)
+
 install(TARGETS MockBroadcastServer
     DESTINATION "${SHELL_PRIVATE_FULL_LIBEXECDIR}/tests/plugins/SessionBroadcast"
 )
@@ -34,7 +31,15 @@ add_executable(sessionbroadcasttestExec
     ${CMAKE_SOURCE_DIR}/plugins/SessionBroadcast/SessionBroadcast.cpp
     sessionbroadcasttest.cpp
 )
-target_link_libraries(sessionbroadcasttestExec Qt5::Test Qt5::Core Qt5::Qml Qt5::DBus)
+
+target_link_libraries(sessionbroadcasttestExec PRIVATE
+    PkgConfig::GLIB
+    Qt::Core
+    Qt::DBus
+    Qt::Qml
+    Qt::Test
+)
+
 install(TARGETS sessionbroadcasttestExec
     DESTINATION "${SHELL_PRIVATE_FULL_LIBEXECDIR}/tests/plugins/SessionBroadcast"
 )

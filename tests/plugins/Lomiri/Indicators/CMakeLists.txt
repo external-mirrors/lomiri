@@ -5,8 +5,6 @@ include_directories(
     ${CMAKE_CURRENT_BINARY_DIR}
     ${INDICATORS_DIR}
     ${TEST_DIR}/mocks/QMenuModel.1
-    ${GLIB_INCLUDE_DIRS}
-    ${GIO_INCLUDE_DIRS}
     )
 
 macro(indicator_test TEST)
@@ -17,25 +15,22 @@ macro(indicator_test TEST)
             ${TEST}Test.cpp
             ${test_ADDITIONAL_CPPS}
         )
-    target_link_libraries(${TEST}Exec
-        Qt5::Test Qt5::Core Qt5::Qml Qt5::DBus
+    target_link_libraries(${TEST}Exec PRIVATE
         ${test_ADDITIONAL_LIBS}
-        ${GLIB_LIBRARIES}
-        ${GIO_LIBRARIES}
-        ${QMENUMODEL_LDFLAGS}
-        )
+        PkgConfig::GIO
+        PkgConfig::GLIB
+        PkgConfig::QMENUMODEL
+        Qt::Core
+        Qt::DBus
+        Qt::Gui
+        Qt::Qml
+        Qt::Test
+        Qt::Widgets
+    )
     install(TARGETS ${TEST}Exec
         DESTINATION "${SHELL_PRIVATE_FULL_LIBEXECDIR}/tests/plugins/Lomiri/Indicators"
         )
-
-    set(ldpath "")
-    foreach(lib ${test_ADDITIONAL_LIBS})
-        set(ldpath "$<TARGET_FILE_DIR:${lib}>:")
-    endforeach(lib)
-
-    add_lomiri_unittest(${TEST} ${TEST}Exec
-        ENVIRONMENT "LD_LIBRARY_PATH=${ldpath}"
-        )
+    add_lomiri_unittest(${TEST} ${TEST}Exec)
 endmacro(indicator_test)
 
 indicator_test(IndicatorsManager ADDITIONAL_LIBS IndicatorsQml)

@@ -6,13 +6,6 @@ include_directories(
     ${liblomiri-private_SOURCE_DIR}
     )
 
-include_directories(
-    SYSTEM
-    ${GSETTINGS_QT_INCLUDE_DIRS}
-    ${GLIB_INCLUDE_DIRS}
-    ${UAL_INCLUDE_DIRS}
-    )
-
 add_definitions(-DSM_BUSNAME=sessionBus)
 add_definitions(-DTEST_DIR="plugins/Lomiri/Launcher")
 
@@ -28,22 +21,23 @@ add_executable(launchermodeltestExec
     ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Launcher/dbusinterface.cpp
     ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Launcher/quicklistentry.cpp
     ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Launcher/ualwrapper.cpp
-    ${CMAKE_SOURCE_DIR}/include/lomiri/shell/launcher/LauncherItemInterface.h
-    ${CMAKE_SOURCE_DIR}/include/lomiri/shell/launcher/LauncherModelInterface.h
-    ${CMAKE_SOURCE_DIR}/include/lomiri/shell/launcher/QuickListModelInterface.h
-    ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/ApplicationManagerInterface.h
-    ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/MirSurfaceListInterface.h
-    ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/MirSurfaceInterface.h
-    ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/Mir.h
-    ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/ApplicationInfoInterface.h
     )
-target_link_libraries(launchermodeltestExec
+
+target_link_libraries(launchermodeltestExec PRIVATE
     lomiri-private
-    ${GSETTINGS_QT_LDFLAGS}
-    ${GLIB_LIBRARIES}
-    ${UAL_LIBRARIES}
-    Qt5::Test Qt5::Core Qt5::DBus Qt5::Xml Qt5::Gui Qt5::Qml
-    )
+    lomiri-shell-application
+    lomiri-shell-launcher
+    PkgConfig::GLIB
+    PkgConfig::GSETTINGS_QT
+    PkgConfig::LAL
+    Qt::Core
+    Qt::DBus
+    Qt::Gui
+    Qt::Qml
+    Qt::Test
+    Qt::Xml
+)
+
 add_dependencies(launchermodeltestExec mock-server)
 install(TARGETS launchermodeltestExec
     DESTINATION "${SHELL_PRIVATE_FULL_LIBEXECDIR}/tests/plugins/Lomiri/Launcher"
@@ -66,20 +60,27 @@ add_executable(appdrawermodeltestExec
     xdgwatcher.cpp
     iconcachewatcher.cpp
     ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Launcher/appdrawermodel.cpp
-    ${CMAKE_SOURCE_DIR}/include/lomiri/shell/launcher/AppDrawerModelInterface.h
     ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Launcher/launcheritem.cpp
     ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Launcher/quicklistmodel.cpp
     ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Launcher/quicklistentry.cpp
-    ${CMAKE_SOURCE_DIR}/include/lomiri/shell/launcher/LauncherItemInterface.h
-    ${CMAKE_SOURCE_DIR}/include/lomiri/shell/launcher/QuickListModelInterface.h
     )
-target_link_libraries(appdrawermodeltestExec
+
+target_link_libraries(appdrawermodeltestExec PRIVATE
     lomiri-private
-    ${GSETTINGS_QT_LDFLAGS}
-    ${GLIB_LIBRARIES}
-    ${UAL_LIBRARIES}
-    Qt5::Test Qt5::Core Qt5::DBus Qt5::Xml Qt5::Gui Qt5::Qml Qt5::Concurrent
-    )
+    lomiri-shell-application
+    lomiri-shell-launcher
+    PkgConfig::GLIB
+    PkgConfig::GSETTINGS_QT
+    PkgConfig::LAL
+    Qt::Concurrent
+    Qt::Core
+    Qt::DBus
+    Qt::Gui
+    Qt::Qml
+    Qt::Test
+    Qt::Xml
+)
+
 add_dependencies(appdrawermodeltestExec mock-server)
 install(TARGETS appdrawermodeltestExec
     DESTINATION "${SHELL_PRIVATE_FULL_LIBEXECDIR}/tests/plugins/Lomiri/Launcher"

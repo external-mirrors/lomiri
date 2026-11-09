@@ -3,16 +3,6 @@ include_directories(
     ${CMAKE_CURRENT_BINARY_DIR}
 )
 
-include_directories(
-    SYSTEM
-    ${GLIB_INCLUDE_DIRS}
-)
-include_directories(
-    SYSTEM
-    ${GIO_INCLUDE_DIRS}
-    ${QMENUMODEL_INCLUDE_DIRS}
-)
-
 set(IndicatorsQML_SOURCES
     actionrootstate.cpp
     indicator.cpp
@@ -35,11 +25,14 @@ add_library(IndicatorsQml SHARED
     ${IndicatorsQML_SOURCES}
 )
 
-target_link_libraries(IndicatorsQml
-    ${GLIB_LIBRARIES}
-    ${GIO_LIBRARIES}
-    ${QMENUMODEL_LDFLAGS}
-    Qt5::Core Qt5::Qml Qt5::Quick Qt5::DBus
+target_link_libraries(IndicatorsQml PRIVATE
+    PkgConfig::GIO
+    PkgConfig::GLIB
+    PkgConfig::QMENUMODEL
+    Qt::Core
+    Qt::DBus
+    Qt::Qml
+    Qt::Quick
 )
 
 add_lomiri_plugin(Lomiri.Indicators 0.1 Lomiri/Indicators TARGETS IndicatorsQml)

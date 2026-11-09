@@ -1,7 +1,7 @@
-pkg_check_modules(QTDBUSTEST REQUIRED libqtdbustest-1 libqtdbusmock-1)
+pkg_check_modules(QTDBUSTEST REQUIRED IMPORTED_TARGET libqtdbustest-1 libqtdbusmock-1)
 
 if(NOT CMAKE_SYSTEM_PROCESSOR MATCHES "^(arm|aarch64)")
-    pkg_check_modules(MOUSETOUCHADAPTOR_LIBS REQUIRED x11 xcb xi)
+    pkg_check_modules(MOUSETOUCHADAPTOR_LIBS REQUIRED IMPORTED_TARGET x11 xcb xi)
 endif()
 
 include(QmlTest)

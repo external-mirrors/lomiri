@@ -2,10 +2,7 @@ include(QmlTest)
 
 include_directories(
     SYSTEM
-    ${Qt5Quick_PRIVATE_INCLUDE_DIRS}
-    ${LOMIRIGESTURES_INCLUDE_DIRS}
     ${LOMIRIGESTURES_INCLUDEDIR}/LomiriGestures/${LOMIRIGESTURES_VERSION}
-    ${Qt5Gui_PRIVATE_INCLUDE_DIRS}
 )
 
 include_directories(
@@ -15,9 +12,16 @@ include_directories(
 
 macro(build_gesture_test CLASSNAME)
     add_executable(${CLASSNAME}TestExec tst_${CLASSNAME}.cpp GestureTest.cpp TestItem.cpp)
-    target_link_libraries(${CLASSNAME}TestExec
-        Qt5::Test Qt5::Core Qt5::Qml Qt5::Gui Qt5::Quick
-        LomiriGesturesQml ${LOMIRIGESTURES_LIBRARIES}
+    target_link_libraries(${CLASSNAME}TestExec PRIVATE
+        LomiriGesturesQml
+        PkgConfig::LOMIRIGESTURES
+        Qt::Core
+        Qt::Gui
+        Qt::GuiPrivate
+        Qt::Qml
+        Qt::Quick
+        Qt::QuickPrivate
+        Qt::Test
     )
     install(TARGETS ${CLASSNAME}TestExec
         DESTINATION "${SHELL_PRIVATE_FULL_LIBEXECDIR}/tests/plugins/Lomiri/Gestures"

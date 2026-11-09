@@ -6,9 +6,7 @@ add_library(ProcessControl-qml MODULE
     plugin.cpp
 )
 
-target_link_libraries(ProcessControl-qml
-    Qt5::DBus Qt5::Qml
-)
+target_link_libraries(ProcessControl-qml PRIVATE Qt::DBus Qt::Qml)
 
 target_include_directories(ProcessControl-qml PRIVATE ${CMAKE_CURRENT_BINARY_DIR})
 

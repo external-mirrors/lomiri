@@ -5,11 +5,6 @@ include_directories(
     ${CMAKE_CURRENT_BINARY_DIR}
     )
 
-include_directories(
-    SYSTEM
-    ${LIBLIGHTDM_INCLUDE_DIRS}
-    )
-
 foreach(source_file ${QMLPLUGIN_SRC})
     list(APPEND RELATIVE_QMLPLUGIN_SRC ../${source_file})
 endforeach()
@@ -18,12 +13,14 @@ add_library(FullLightDM-qml MODULE
     ${RELATIVE_QMLPLUGIN_SRC}
     )
 
-target_link_libraries(FullLightDM-qml
+target_link_libraries(FullLightDM-qml PRIVATE
     lomiri-private
-    ${LIBLIGHTDM_LDFLAGS}
-    ${LIBUSERMETRICSOUTPUT_LDFLAGS}
-    ${Intl_LIBRARIES}
-    Qt5::DBus Qt5::Gui Qt5::Qml
-    )
+    PkgConfig::LIBLIGHTDM
+    PkgConfig::LIBUSERMETRICSOUTPUT
+    Intl::Intl
+    Qt::DBus
+    Qt::Gui
+    Qt::Qml
+)
 
 add_lomiri_plugin(FullLightDM 0.1 LightDM/FullLightDM TARGETS FullLightDM-qml)

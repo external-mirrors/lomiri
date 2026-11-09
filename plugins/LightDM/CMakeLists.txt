@@ -3,7 +3,6 @@ include_directories(
     ${CMAKE_CURRENT_BINARY_DIR}
     ${CMAKE_SOURCE_DIR}/plugins/Utils
     ${liblomiri-private_SOURCE_DIR}
-    ${LIBUSERMETRICSOUTPUT_INCLUDE_DIRS}
 )
 
 set(QMLPLUGIN_SRC

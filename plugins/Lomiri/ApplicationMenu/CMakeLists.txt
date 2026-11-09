@@ -12,6 +12,6 @@ qt5_add_dbus_adaptor(applicationMenu_SRCS com.lomiri.MenuRegistrar.xml dbusappli
 
 add_library(ApplicationMenu-qml MODULE ${applicationMenu_SRCS})
 
-target_link_libraries(ApplicationMenu-qml Qt5::DBus Qt5::Qml)
+target_link_libraries(ApplicationMenu-qml PRIVATE Qt::DBus Qt::Qml)
 
 add_lomiri_plugin(Lomiri.ApplicationMenu 0.1 Lomiri/ApplicationMenu TARGETS ApplicationMenu-qml)
