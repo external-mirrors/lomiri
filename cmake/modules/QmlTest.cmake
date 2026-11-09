@@ -142,7 +142,7 @@ function(add_manual_qml_test PATH COMPONENT_NAME)
 
     add_manual_test(${COMPONENT_NAME} qmlscene
         ${ARGN}
-        ARGS ${CMAKE_CURRENT_SOURCE_DIR}/${PATH}/tst_${COMPONENT_NAME}.qml ${QMLTEST_ARGS}
+        ARGS ${CMAKE_CURRENT_SOURCE_DIR}/${PATH}/tst_${COMPONENT_NAME}.qml ${QMLTEST_ARGS} -I ${CMAKE_SOURCE_DIR}/qml/Panel/WithCutouts
     )
 
     if (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/${PATH}/tst_${COMPONENT_NAME}.qml")
