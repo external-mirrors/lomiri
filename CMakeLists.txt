@@ -1,4 +1,4 @@
-cmake_minimum_required (VERSION 3.7.0)
+cmake_minimum_required(VERSION 3.28)
 project(lomiri VERSION 0.6.2 LANGUAGES C CXX)
 
 option (ENABLE_UBUNTU_ACCOUNTSSERVICE "Build with Ubuntu's fork of accountsservice" OFF)
