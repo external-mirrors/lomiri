@@ -10,6 +10,6 @@ add_library(QtMultimedia-qml MODULE
     declarativeplaylist.cpp
     )
 
-target_link_libraries(QtMultimedia-qml Qt5::Qml Qt5::Quick)
+target_link_libraries(QtMultimedia-qml PRIVATE Qt::Qml Qt::Quick)
 
 add_lomiri_mock(QtMultimedia 5.0 QtMultimedia TARGETS QtMultimedia-qml)

@@ -9,6 +9,6 @@ set(MOCK_BIOMETRYD_SOURCES
 
 add_library(MockBiometryd MODULE ${MOCK_BIOMETRYD_SOURCES})
 
-target_link_libraries(MockBiometryd Qt5::Qml Qt5::Quick Qt5::Core)
+target_link_libraries(MockBiometryd PRIVATE Qt::Qml Qt::Quick Qt::Core)
 
 add_lomiri_mock(Biometryd 0.0 Biometryd TARGETS MockBiometryd)

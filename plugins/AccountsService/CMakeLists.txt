@@ -1,5 +1,4 @@
 add_definitions(-DSM_BUSNAME=systemBus)
-include_directories(${GLIB_INCLUDE_DIRS})
 
 add_library(AccountsService-qml MODULE
     AccountsService.cpp
@@ -7,10 +6,11 @@ add_library(AccountsService-qml MODULE
     plugin.cpp
     )
 
-target_link_libraries(AccountsService-qml
-    Qt5::DBus Qt5::Qml
-    ${GLIB_LIBRARIES}
-    )
+target_link_libraries(AccountsService-qml PRIVATE
+    PkgConfig::GLIB
+    Qt::DBus
+    Qt::Qml
+)
 
 add_lomiri_plugin(AccountsService 0.1 AccountsService TARGETS AccountsService-qml)
 

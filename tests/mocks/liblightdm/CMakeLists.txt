@@ -15,7 +15,7 @@ if (${LIBLIGHTDM_VERSION} VERSION_LESS 1.32.0)
     target_compile_definitions(MockLightDM PUBLIC LIGHTDM_COMPAT_QT4)
 endif()
 
-target_link_libraries(MockLightDM Qt5::DBus Qt5::Gui)
+target_link_libraries(MockLightDM PRIVATE Qt::DBus Qt::Gui)
 
 set_target_properties(MockLightDM PROPERTIES
                       OUTPUT_NAME lightdm-qt5-3

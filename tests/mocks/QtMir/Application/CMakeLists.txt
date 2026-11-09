@@ -1,6 +1,4 @@
 include_directories(
-    SYSTEM
-    ${MIRAL_INCLUDE_DIRS}
     ${liblomiri-private_SOURCE_DIR}
 )
 
@@ -15,13 +13,6 @@ set(FakeQtMirApplicationQml_SOURCES
     ObjectListModel.h
     SurfaceManager.cpp
     VirtualKeyboard.cpp
-    ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/ApplicationInfoInterface.h
-    ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/ApplicationManagerInterface.h
-    ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/Mir.h
-    ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/MirSurfaceInterface.h
-    ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/MirSurfaceItemInterface.h
-    ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/MirSurfaceListInterface.h
-    ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/SurfaceManagerInterface.h
     resources/surfaces.qrc
 )
 
@@ -29,21 +20,26 @@ add_library(FakeQtMirApplicationQml MODULE
     ${FakeQtMirApplicationQml_SOURCES}
 )
 
-target_link_libraries(FakeQtMirApplicationQml
-    ${MIRAL_LDFLAGS}
+target_link_libraries(FakeQtMirApplicationQml PRIVATE
+    lomiri-shell-application
     mockwindowmanagmentpolicy
+    PkgConfig::MIRAL
+    Qt::Core
+    Qt::DBus
+    Qt::Quick
 )
 
 add_library(NonMirQtMirApplicationQml MODULE ${FakeQtMirApplicationQml_SOURCES})
 set_target_properties(NonMirQtMirApplicationQml PROPERTIES OUTPUT_NAME FakeQtMirApplicationQml)
 
-target_link_libraries(NonMirQtMirApplicationQml
-    ${MIRAL_LDFLAGS}
+target_link_libraries(NonMirQtMirApplicationQml PRIVATE
+    lomiri-shell-application
     mockwindowmanagmentpolicy
-    Qt5::Core Qt5::Quick Qt5::DBus
+    PkgConfig::MIRAL
+    Qt::Core
+    Qt::DBus
+    Qt::Quick
 )
-
-target_link_libraries(FakeQtMirApplicationQml Qt5::Core Qt5::Quick Qt5::DBus)
 
 add_lomiri_mock(QtMir.Application 0.1 QtMir/Application TARGETS FakeQtMirApplicationQml)
 add_lomiri_mock(QtMir.Application 0.1 QtMir/Application

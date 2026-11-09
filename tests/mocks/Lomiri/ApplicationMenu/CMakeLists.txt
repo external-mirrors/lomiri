@@ -11,6 +11,6 @@ set(FakeApplicationMenu_SRCS
 
 add_library(FakeApplicationMenu-qml MODULE ${FakeApplicationMenu_SRCS})
 
-target_link_libraries(FakeApplicationMenu-qml Qt5::Qml Qt5::DBus)
+target_link_libraries(FakeApplicationMenu-qml PRIVATE Qt::Qml Qt::DBus)
 
 add_lomiri_mock(Lomiri.ApplicationMenu 1.0 Lomiri/ApplicationMenu PREFIX mocks TARGETS FakeApplicationMenu-qml)

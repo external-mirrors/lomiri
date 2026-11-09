@@ -1,6 +1,5 @@
 
 include_directories(
-    ${QTDBUSTEST_INCLUDE_DIRS}
     ${CMAKE_CURRENT_BINARY_DIR}
     ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Platform
 )
@@ -10,12 +9,12 @@ add_executable(platformtest
     ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Platform/platform.cpp
     )
 
-target_link_libraries(platformtest
-    Qt5::Core
-    Qt5::DBus
-    Qt5::Test
-    ${QTDBUSTEST_LDFLAGS}
-    )
+target_link_libraries(platformtest PRIVATE
+    PkgConfig::QTDBUSTEST
+    Qt::Core
+    Qt::DBus
+    Qt::Test
+)
 
 
 install(TARGETS platformtest

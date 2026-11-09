@@ -4,11 +4,6 @@ include_directories(
 )
 
 set(MockLauncherModel_SOURCES
-    ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/ApplicationManagerInterface.h
-    ${CMAKE_SOURCE_DIR}/include/lomiri/shell/launcher/LauncherItemInterface.h
-    ${CMAKE_SOURCE_DIR}/include/lomiri/shell/launcher/LauncherModelInterface.h
-    ${CMAKE_SOURCE_DIR}/include/lomiri/shell/launcher/QuickListModelInterface.h
-    ${CMAKE_SOURCE_DIR}/include/lomiri/shell/launcher/AppDrawerModelInterface.h
     plugin.cpp
     MockLauncherModel.cpp
     MockLauncherItem.cpp
@@ -19,6 +14,11 @@ set(MockLauncherModel_SOURCES
 
 add_library(MockLauncherPlugin MODULE ${MockLauncherModel_SOURCES})
 
-target_link_libraries(MockLauncherPlugin Qt5::Core Qt5::Quick)
+target_link_libraries(MockLauncherPlugin PRIVATE
+    lomiri-shell-application
+    lomiri-shell-launcher
+    Qt::Core
+    Qt::Quick
+)
 
 add_lomiri_mock(Lomiri.Launcher 0.1 Lomiri/Launcher TARGETS MockLauncherPlugin)

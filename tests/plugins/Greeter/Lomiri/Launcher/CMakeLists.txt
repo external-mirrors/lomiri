@@ -17,17 +17,20 @@ add_executable(launchermodelastestExec
     ${CMAKE_SOURCE_DIR}/plugins/Greeter/Lomiri/Launcher/launcheritem.cpp
     ${CMAKE_SOURCE_DIR}/plugins/Greeter/Lomiri/Launcher/quicklistmodel.cpp
     ${CMAKE_SOURCE_DIR}/plugins/Greeter/Lomiri/Launcher/quicklistentry.cpp
-    ${CMAKE_SOURCE_DIR}/include/lomiri/shell/launcher/LauncherItemInterface.h
-    ${CMAKE_SOURCE_DIR}/include/lomiri/shell/launcher/LauncherModelInterface.h
-    ${CMAKE_SOURCE_DIR}/include/lomiri/shell/launcher/QuickListModelInterface.h
-    ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/ApplicationManagerInterface.h
-    ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/ApplicationInfoInterface.h
     )
-target_link_libraries(launchermodelastestExec
+
+target_link_libraries(launchermodelastestExec PRIVATE
     lomiri-private
-    ${GSETTINGS_QT_LDFLAGS}
-    Qt5::Test Qt5::Core Qt5::DBus Qt5::Gui Qt5::Qml
-    )
+    lomiri-shell-application
+    lomiri-shell-launcher
+    PkgConfig::GSETTINGS_QT
+    Qt::Core
+    Qt::DBus
+    Qt::Gui
+    Qt::Qml
+    Qt::Test
+)
+
 add_dependencies(launchermodelastestExec mock-server)
 install(TARGETS launchermodelastestExec
     DESTINATION "${SHELL_PRIVATE_FULL_LIBEXECDIR}/tests/plugins/Greeter/Lomiri/Launcher"

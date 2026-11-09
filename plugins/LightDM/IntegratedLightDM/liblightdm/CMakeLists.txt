@@ -15,21 +15,23 @@ add_library(integratedLightDMSession STATIC ${LibLightDM_SOURCES})
 include_directories(
     ${CMAKE_SOURCE_DIR}/plugins/AccountsService
     ${CMAKE_CURRENT_BINARY_DIR}
-    ${GLIB_INCLUDE_DIRS}
-    ${LIBUSERMETRICSOUTPUT_INCLUDE_DIRS}
 )
 
-target_link_libraries(integratedLightDM
-    ${GLIB_LIBRARIES}
-    ${LIBUSERMETRICSOUTPUT_LDFLAGS}
-    -lpam
-    Qt5::Concurrent Qt5::DBus Qt5::Gui
+target_link_libraries(integratedLightDM PRIVATE
+    PkgConfig::GLIB
+    PkgConfig::LIBUSERMETRICSOUTPUT
+    PkgConfig::PAM
+    Qt::Concurrent
+    Qt::DBus
+    Qt::Gui
 )
-target_link_libraries(integratedLightDMSession
-    ${GLIB_LIBRARIES}
-    ${LIBUSERMETRICSOUTPUT_LDFLAGS}
-    -lpam
-    Qt5::Concurrent Qt5::DBus Qt5::Gui
+target_link_libraries(integratedLightDMSession PRIVATE
+    PkgConfig::GLIB
+    PkgConfig::LIBUSERMETRICSOUTPUT
+    PkgConfig::PAM
+    Qt::Concurrent
+    Qt::DBus
+    Qt::Gui
 )
 
 set_target_properties(integratedLightDM PROPERTIES

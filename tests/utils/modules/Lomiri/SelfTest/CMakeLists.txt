@@ -6,9 +6,6 @@ include_directories(
 
 include_directories(
     SYSTEM
-    ${Qt5Gui_PRIVATE_INCLUDE_DIRS}
-    ${Qt5Quick_PRIVATE_INCLUDE_DIRS}
-    ${LOMIRIGESTURES_INCLUDE_DIRS}
     ${LOMIRIGESTURES_INCLUDEDIR}/LomiriGestures/${LOMIRIGESTURES_VERSION}
 )
 
@@ -19,12 +16,20 @@ set(LomiriTestQML_SOURCES
 )
 
 add_library(LomiriTestQml MODULE ${LomiriTestQML_SOURCES})
-target_link_libraries(LomiriTestQml ${LOMIRIGESTURES_LIBRARIES} Qt5::Core Qt5::Quick Qt5::Test)
+
+target_link_libraries(LomiriTestQml PRIVATE
+    PkgConfig::LOMIRIGESTURES
+    Qt::Core
+    Qt::GuiPrivate
+    Qt::Quick
+    Qt::QuickPrivate
+    Qt::Test
+)
 
 if (MOUSETOUCHADAPTOR_LIBS_FOUND)
     target_sources(LomiriTestQml PRIVATE MouseTouchAdaptor.cpp)
     target_compile_definitions(LomiriTestQml PRIVATE LOMIRI_ENABLE_TOUCH_EMULATION)
-    target_link_libraries(LomiriTestQml ${MOUSETOUCHADAPTOR_LIBS_LDFLAGS})
+    target_link_libraries(LomiriTestQml PRIVATE PkgConfig::MOUSETOUCHADAPTOR_LIBS)
 endif()
 
 # To find libLomiriGestures.so

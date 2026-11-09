@@ -11,18 +11,17 @@ add_executable(TopLevelWindowModelTestExec
 
     ${CMAKE_SOURCE_DIR}/tests/mocks/QtMir/Application/MirSurfaceListModel.cpp
 
-    ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/ApplicationInfoInterface.h
-    ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/ApplicationManagerInterface.h
-    ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/Mir.h
-    ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/MirSurfaceInterface.h
-    ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/MirSurfaceListInterface.h
-    ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/SurfaceManagerInterface.h
     )
 
-target_link_libraries(TopLevelWindowModelTestExec
-    Qt5::Test Qt5::Core Qt5::Gui Qt5::Qml Qt5::Quick
-    windowmanager-qml
+target_link_libraries(TopLevelWindowModelTestExec PRIVATE
     lomiri-private
+    lomiri-shell-application
+    Qt::Core
+    Qt::Gui
+    Qt::Qml
+    Qt::Quick
+    Qt::Test
+    windowmanager-qml
 )
 
 install(TARGETS TopLevelWindowModelTestExec

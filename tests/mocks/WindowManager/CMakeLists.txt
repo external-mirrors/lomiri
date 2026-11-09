@@ -1,26 +1,18 @@
 include_directories(
-    SYSTEM
-    ${QTMIRSERVER_INCLUDE_DIRS}
-    ${Qt5Gui_PRIVATE_INCLUDE_DIRS}
-)
-
-include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_CURRENT_BINARY_DIR}
     ${CMAKE_SOURCE_DIR}/plugins/WindowManager
     ${liblomiri-private_SOURCE_DIR}
-    ${MIROIL_INCLUDE_DIRS}
 )
 
 add_library(mockwindowmanagmentpolicy SHARED
     WindowManagementPolicy.cpp
 )
-target_link_libraries(mockwindowmanagmentpolicy
-    ${MIRAL_LDFLAGS}
+target_link_libraries(mockwindowmanagmentpolicy PRIVATE
     lomiri-private
+    PkgConfig::MIRAL
+    Qt::Core
 )
-
-target_link_libraries (mockwindowmanagmentpolicy Qt5::Core)
 
 install(TARGETS mockwindowmanagmentpolicy
     DESTINATION ${SHELL_INSTALL_QML}/mocks/WindowManager
@@ -44,20 +36,22 @@ set(WINDOWMANAGER_SRC
     MockScreenWindow.cpp
     MockScreensConfiguration.cpp
     WindowManagerPlugin.cpp
-    ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/ApplicationInfoInterface.h
-    ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/ApplicationManagerInterface.h
-    ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/Mir.h
-    ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/MirSurfaceInterface.h
-    ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/MirSurfaceListInterface.h
-    ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/SurfaceManagerInterface.h
 )
 
 add_library(MockWindowManager-qml SHARED ${WINDOWMANAGER_SRC})
 
-target_link_libraries(MockWindowManager-qml
-    ${QTMIRSERVER_LDFLAGS}
+target_link_libraries(MockWindowManager-qml PRIVATE
+    lomiri-private
+    lomiri-shell-application
     mockwindowmanagmentpolicy
+    PkgConfig::QTMIRSERVER
+    Qt::Gui
+    Qt::GuiPrivate
+    Qt::Qml
+    Qt::Quick
 )
 
-target_link_libraries (MockWindowManager-qml Qt5::Qml Qt5::Quick Qt5::Gui)
+if (WITH_MIR2)
+    target_link_libraries(MockWindowManager-qml PRIVATE PkgConfig::MIROIL)
+endif()
 add_lomiri_mock(WindowManager 1.0 WindowManager TARGETS MockWindowManager-qml)

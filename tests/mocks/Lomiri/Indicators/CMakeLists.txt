@@ -22,9 +22,11 @@ add_library(IndicatorsFakeQml SHARED
 )
 add_definitions(-DLOMIRIINDICATORS_LIBRARY)
 
-target_link_libraries(IndicatorsFakeQml
+target_link_libraries(IndicatorsFakeQml PRIVATE
     QMenuModelQml
-    Qt5::Core Qt5::Qml Qt5::Quick
+    Qt::Core
+    Qt::Qml
+    Qt::Quick
 )
 
 set_target_properties(IndicatorsFakeQml PROPERTIES

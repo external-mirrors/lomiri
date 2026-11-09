@@ -3,5 +3,6 @@ add_library(FakeUInput-qml MODULE
     mockuinput.cpp
 )
 
-target_link_libraries(FakeUInput-qml Qt5::Qml)
+target_link_libraries(FakeUInput-qml PRIVATE Qt::Qml)
+
 add_lomiri_mock(UInput 0.1 UInput TARGETS FakeUInput-qml)
