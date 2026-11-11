@@ -11,9 +11,9 @@ set(LibLightDM_SOURCES
 
 add_library(integratedLightDM STATIC ${LibLightDM_SOURCES})
 
-include_directories(
+target_include_directories(integratedLightDM PRIVATE
     ${CMAKE_SOURCE_DIR}/plugins/AccountsService
-    ${CMAKE_CURRENT_BINARY_DIR}
+    ${CMAKE_SOURCE_DIR}/plugins/LightDM
 )
 
 target_link_libraries(integratedLightDM PRIVATE

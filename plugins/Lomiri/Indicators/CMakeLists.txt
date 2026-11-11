@@ -1,8 +1,3 @@
-include_directories(
-    ${CMAKE_CURRENT_SOURCE_DIR}
-    ${CMAKE_CURRENT_BINARY_DIR}
-)
-
 set(IndicatorsQML_SOURCES
     actionrootstate.cpp
     indicator.cpp
@@ -26,6 +21,7 @@ add_library(IndicatorsQml SHARED
 )
 
 target_link_libraries(IndicatorsQml PRIVATE
+    lomiri-paths
     PkgConfig::GIO
     PkgConfig::GLIB
     PkgConfig::QMENUMODEL

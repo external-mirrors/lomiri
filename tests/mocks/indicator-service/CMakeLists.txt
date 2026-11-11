@@ -1,9 +1,5 @@
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c99")
 
-include_directories(
-    ${CMAKE_CURRENT_SOURCE_DIR}
-)
-
 add_executable(${MOCK_INDICATOR_SERVICE_APP}
     mock-indicator-service.c
 )

@@ -1,17 +1,13 @@
-include_directories(
-    ${CMAKE_CURRENT_SOURCE_DIR}
-    ${CMAKE_CURRENT_BINARY_DIR}
-    ${CMAKE_SOURCE_DIR}/plugins/WindowManager
-    ${liblomiri-private_SOURCE_DIR}
-)
-
 add_library(mockwindowmanagmentpolicy SHARED
     WindowManagementPolicy.cpp
 )
-target_link_libraries(mockwindowmanagmentpolicy PRIVATE
-    lomiri-private
-    PkgConfig::MIRAL
-    Qt::Core
+
+target_link_libraries(mockwindowmanagmentpolicy
+    PUBLIC
+        lomiri-private
+    PRIVATE
+        PkgConfig::MIRAL
+        Qt::Core
 )
 
 install(TARGETS mockwindowmanagmentpolicy
@@ -39,6 +35,10 @@ set(WINDOWMANAGER_SRC
 )
 
 add_library(MockWindowManager-qml SHARED ${WINDOWMANAGER_SRC})
+
+target_include_directories(MockWindowManager-qml PRIVATE
+    ${CMAKE_SOURCE_DIR}/plugins/WindowManager
+)
 
 target_link_libraries(MockWindowManager-qml PRIVATE
     lomiri-private

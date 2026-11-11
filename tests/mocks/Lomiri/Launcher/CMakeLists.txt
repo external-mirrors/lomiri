@@ -1,8 +1,3 @@
-include_directories(
-    ${CMAKE_CURRENT_SOURCE_DIR}
-    ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Launcher/
-)
-
 set(MockLauncherModel_SOURCES
     plugin.cpp
     MockLauncherModel.cpp
@@ -14,7 +9,12 @@ set(MockLauncherModel_SOURCES
 
 add_library(MockLauncherPlugin MODULE ${MockLauncherModel_SOURCES})
 
+target_include_directories(MockLauncherPlugin PRIVATE
+    ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Launcher
+)
+
 target_link_libraries(MockLauncherPlugin PRIVATE
+    lomiri-paths
     lomiri-shell-application
     lomiri-shell-launcher
     Qt::Core

@@ -1,9 +1,5 @@
 add_subdirectory(liblomiri-private)
 
-include_directories(
-    ${liblomiri-private_SOURCE_DIR}
-)
-
 set(SOURCE_FILES
     ApplicationArguments.cpp
     main.cpp
@@ -19,6 +15,7 @@ set(SOURCE_FILES
 add_executable(${SHELL_APP} ${SOURCE_FILES})
 
 target_link_libraries(${SHELL_APP} PRIVATE
+    lomiri-paths
     lomiri-private
     Intl::Intl
     PkgConfig::APPLICATION_API

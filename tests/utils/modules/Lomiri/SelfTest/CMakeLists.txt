@@ -1,14 +1,5 @@
 find_package(QmlPlugins)
 
-include_directories(
-    ${CMAKE_SOURCE_DIR}/src
-)
-
-include_directories(
-    SYSTEM
-    ${LOMIRIGESTURES_INCLUDEDIR}/LomiriGestures/${LOMIRIGESTURES_VERSION}
-)
-
 set(LomiriTestQML_SOURCES
     testutil.cpp
     plugin.cpp
@@ -17,8 +8,12 @@ set(LomiriTestQML_SOURCES
 
 add_library(LomiriTestQml MODULE ${LomiriTestQML_SOURCES})
 
+target_include_directories(LomiriTestQml PRIVATE
+    ${CMAKE_SOURCE_DIR}/src
+)
+
 target_link_libraries(LomiriTestQml PRIVATE
-    PkgConfig::LOMIRIGESTURES
+    lomiri-gestures-private
     Qt::Core
     Qt::GuiPrivate
     Qt::Quick

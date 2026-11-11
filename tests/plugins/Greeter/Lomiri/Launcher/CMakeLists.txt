@@ -1,11 +1,3 @@
-include_directories(
-    ${CMAKE_CURRENT_SOURCE_DIR}
-    ${CMAKE_CURRENT_BINARY_DIR}
-    ${CMAKE_SOURCE_DIR}/plugins/AccountsService
-    ${CMAKE_SOURCE_DIR}/plugins/Greeter/Lomiri/Launcher
-    ${liblomiri-private_SOURCE_DIR}
-    )
-
 add_definitions(-DTEST_DIR="plugins/Greeter/Lomiri/Launcher")
 
 ### LauncherModelASTest
@@ -18,7 +10,14 @@ add_executable(launchermodelastestExec
     ${CMAKE_SOURCE_DIR}/plugins/Greeter/Lomiri/Launcher/quicklistentry.cpp
     )
 
+target_include_directories(launchermodelastestExec PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_SOURCE_DIR}/plugins/AccountsService
+    ${CMAKE_SOURCE_DIR}/plugins/Greeter/Lomiri/Launcher
+)
+
 target_link_libraries(launchermodelastestExec PRIVATE
+    lomiri-paths
     lomiri-private
     lomiri-shell-application
     lomiri-shell-launcher

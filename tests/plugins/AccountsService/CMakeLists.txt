@@ -13,12 +13,6 @@ make_dbus_class(AccountsUser org.freedesktop.Accounts.User)
 make_dbus_class(AccountsPrivate com.lomiri.shell.AccountsService.Private)
 make_dbus_class(LscInput com.lomiri.SystemCompositor.Input)
 
-include_directories(
-    ${CMAKE_CURRENT_BINARY_DIR}
-    ${CMAKE_CURRENT_SOURCE_DIR}
-    ${CMAKE_SOURCE_DIR}/plugins/AccountsService
-    )
-
 add_executable(mock-server
     ${CMAKE_CURRENT_BINARY_DIR}/AccountsAdaptor.cpp
     ${CMAKE_CURRENT_BINARY_DIR}/AccountsPrivateAdaptor.cpp
@@ -33,6 +27,11 @@ add_executable(mock-server
     PropertiesServer.cpp
     LscServer.cpp
     )
+target_include_directories(mock-server PRIVATE
+    ${CMAKE_CURRENT_BINARY_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_SOURCE_DIR}/plugins/AccountsService
+)
 target_link_libraries(mock-server PRIVATE Qt::Core Qt::DBus)
 install(TARGETS mock-server
     DESTINATION "${SHELL_PRIVATE_FULL_LIBEXECDIR}/tests/plugins/AccountsService"
@@ -43,7 +42,11 @@ add_executable(test-accountsservice
     ${CMAKE_SOURCE_DIR}/plugins/AccountsService/AccountsServiceDBusAdaptor.cpp
     client.cpp
     )
+target_include_directories(test-accountsservice PRIVATE
+    ${CMAKE_SOURCE_DIR}/plugins/AccountsService
+)
 target_link_libraries(test-accountsservice PRIVATE
+    lomiri-paths
     PkgConfig::GLIB
     Qt::Core
     Qt::DBus

@@ -1,10 +1,5 @@
 add_definitions(-DFULL_LIGHTDM)
 
-include_directories(
-    ../
-    ${CMAKE_CURRENT_BINARY_DIR}
-    )
-
 foreach(source_file ${QMLPLUGIN_SRC})
     list(APPEND RELATIVE_QMLPLUGIN_SRC ../${source_file})
 endforeach()
@@ -12,6 +7,8 @@ endforeach()
 add_library(FullLightDM-qml MODULE
     ${RELATIVE_QMLPLUGIN_SRC}
     )
+
+target_include_directories(FullLightDM-qml PRIVATE ${CMAKE_SOURCE_DIR}/plugins/Utils)
 
 target_link_libraries(FullLightDM-qml PRIVATE
     lomiri-private

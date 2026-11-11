@@ -65,6 +65,13 @@ else()
     pkg_search_module(MIRAL REQUIRED IMPORTED_TARGET mir1al miral<3.0)
 endif()
 
+# Interface library making the private lomiri gestures headers available
+add_library(lomiri-gestures-private INTERFACE)
+target_include_directories(lomiri-gestures-private SYSTEM INTERFACE
+    ${LOMIRIGESTURES_INCLUDEDIR}/LomiriGestures/${LOMIRIGESTURES_VERSION}
+)
+target_link_libraries(lomiri-gestures-private INTERFACE PkgConfig::LOMIRIGESTURES)
+
 # Standard install paths
 include(GNUInstallDirs)
 
@@ -110,11 +117,6 @@ add_definitions(-DQT_STRICT_ITERATORS)
 add_definitions(-DQT_USE_QSTRINGBUILDER)
 
 set(MOCK_INDICATOR_SERVICE_APP lomiri-mock-indicator-service)
-
-include_directories(
-    ${CMAKE_SOURCE_DIR}/include
-    ${CMAKE_BINARY_DIR}/include
-)
 
 # add subdirectories to build
 add_subdirectory(include)

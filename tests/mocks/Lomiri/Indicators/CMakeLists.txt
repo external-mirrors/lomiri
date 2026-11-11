@@ -1,10 +1,3 @@
-include_directories(
-    ${CMAKE_CURRENT_SOURCE_DIR}
-    ${CMAKE_CURRENT_BINARY_DIR}
-    ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Indicators
-    ${CMAKE_SOURCE_DIR}/tests/mocks/QMenuModel.1
-)
-
 set(IndicatorsFakeQml_SOURCES
     fakeplugin.cpp
     fakeindicatorsmodel.cpp
@@ -21,6 +14,11 @@ add_library(IndicatorsFakeQml SHARED
     ${IndicatorsFakeQml_SOURCES}
 )
 add_definitions(-DLOMIRIINDICATORS_LIBRARY)
+
+target_include_directories(IndicatorsFakeQml PRIVATE
+    ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Indicators
+    ${CMAKE_SOURCE_DIR}/tests/mocks/QMenuModel.1
+)
 
 target_link_libraries(IndicatorsFakeQml PRIVATE
     QMenuModelQml

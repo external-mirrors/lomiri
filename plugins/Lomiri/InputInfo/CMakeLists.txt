@@ -3,11 +3,6 @@
 # Eventually this should be dropped in favor of the upstream
 # QInputInfo API.
 
-include_directories(
-    ${CMAKE_CURRENT_SOURCE_DIR}
-    ${CMAKE_CURRENT_BINARY_DIR}
-)
-
 set(InputInfo_SOURCES
     plugin.cpp
     qinputinfo.cpp
@@ -18,6 +13,8 @@ set(InputInfo_SOURCES
 add_library(InputInfo SHARED
     ${InputInfo_SOURCES}
 )
+
+target_include_directories(InputInfo PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 
 target_link_libraries(InputInfo PRIVATE
     PkgConfig::LIBEVDEV

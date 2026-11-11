@@ -2,21 +2,16 @@ add_definitions(-DTEST_DIR="qmltests/Components")
 
 ########## tst_DragHandle
 
-include_directories(
-    ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Gestures
-    ${CMAKE_CURRENT_BINARY_DIR}
-    )
-
-include_directories(
-    SYSTEM
-    ${LOMIRIGESTURES_INCLUDEDIR}/LomiriGestures/${LOMIRIGESTURES_VERSION}
-    )
-
 add_executable(DragHandleTestExec tst_DragHandle.cpp)
+
+target_include_directories(DragHandleTestExec PRIVATE
+    ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Gestures
+)
 
 target_link_libraries(DragHandleTestExec PRIVATE
     LomiriGesturesQml
-    PkgConfig::LOMIRIGESTURES
+    lomiri-gestures-private
+    lomiri-paths
     Qt::Core
     Qt::Gui
     Qt::GuiPrivate
@@ -41,9 +36,14 @@ add_lomiri_qmltest_data(. tst_DragHandle)
 ########## tst_EdgeDragEvaluator
 add_executable(EdgeDragEvaluatorTestExec tst_EdgeDragEvaluator.cpp)
 
+target_include_directories(EdgeDragEvaluatorTestExec PRIVATE
+    ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Gestures
+)
+
 target_link_libraries(EdgeDragEvaluatorTestExec PRIVATE
     LomiriGesturesQml
-    PkgConfig::LOMIRIGESTURES
+    lomiri-gestures-private
+    lomiri-paths
     Qt::Core
     Qt::Gui
     Qt::GuiPrivate

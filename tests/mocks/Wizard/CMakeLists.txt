@@ -1,7 +1,3 @@
-include_directories(
-    ${CMAKE_SOURCE_DIR}/plugins/Wizard
-)
-
 add_library(MockWizard-qml MODULE
     mockplugin.cpp
     MockSystem.cpp
@@ -13,7 +9,12 @@ add_library(MockWizard-qml MODULE
     ${CMAKE_SOURCE_DIR}/plugins/Wizard/keyboardLayoutsModel.cpp
 )
 
+target_include_directories(MockWizard-qml PRIVATE
+    ${CMAKE_SOURCE_DIR}/plugins/Wizard
+)
+
 target_link_libraries(MockWizard-qml PRIVATE
+    lomiri-paths
     PkgConfig::GD4
     PkgConfig::GEONAMES
     PkgConfig::GLIB

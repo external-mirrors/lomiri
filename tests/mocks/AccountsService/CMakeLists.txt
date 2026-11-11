@@ -1,10 +1,3 @@
-include_directories(
-    ${CMAKE_CURRENT_BINARY_DIR}
-    ${CMAKE_SOURCE_DIR}/plugins/LightDM
-    ${CMAKE_SOURCE_DIR}/plugins/LightDM/IntegratedLightDM
-    ${CMAKE_SOURCE_DIR}/plugins/Utils
-    )
-
 add_library(MockAccountsService-qml MODULE
     ${CMAKE_SOURCE_DIR}/plugins/LightDM/Greeter.cpp
     ${CMAKE_SOURCE_DIR}/plugins/LightDM/PromptsModel.cpp
@@ -14,7 +7,14 @@ add_library(MockAccountsService-qml MODULE
     plugin.cpp
     )
 
+target_include_directories(MockAccountsService-qml PRIVATE
+    ${CMAKE_SOURCE_DIR}/plugins/LightDM
+    ${CMAKE_SOURCE_DIR}/plugins/LightDM/IntegratedLightDM
+    ${CMAKE_SOURCE_DIR}/plugins/Utils
+)
+
 target_link_libraries(MockAccountsService-qml PRIVATE
+    lomiri-paths
     MockLightDM
     Intl::Intl
     Qt::DBus

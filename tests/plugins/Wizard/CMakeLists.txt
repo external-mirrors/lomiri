@@ -1,13 +1,9 @@
-include_directories(
-    ${CMAKE_CURRENT_BINARY_DIR}
-    ${CMAKE_SOURCE_DIR}/plugins/Wizard
-)
-
 add_executable(tst-wizard-pagelist
     tst_pagelist.cpp
     ${CMAKE_SOURCE_DIR}/plugins/Wizard/PageList.cpp
 )
-target_link_libraries(tst-wizard-pagelist PRIVATE Qt::Core Qt::Qml Qt::Test)
+target_include_directories(tst-wizard-pagelist PRIVATE ${CMAKE_SOURCE_DIR}/plugins/Wizard)
+target_link_libraries(tst-wizard-pagelist PRIVATE lomiri-paths Qt::Core Qt::Qml Qt::Test)
 install(TARGETS tst-wizard-pagelist
     DESTINATION "${SHELL_PRIVATE_FULL_LIBEXECDIR}/tests/plugins/Wizard"
 )
@@ -17,6 +13,7 @@ add_executable(tst-wizard-system
     tst_system.cpp
     ${CMAKE_SOURCE_DIR}/plugins/Wizard/System.cpp
 )
+target_include_directories(tst-wizard-system PRIVATE ${CMAKE_SOURCE_DIR}/plugins/Wizard)
 target_link_libraries(tst-wizard-system PRIVATE Qt::Core Qt::DBus Qt::Qml Qt::Test)
 install(TARGETS tst-wizard-system
     DESTINATION "${SHELL_PRIVATE_FULL_LIBEXECDIR}/tests/plugins/Wizard"

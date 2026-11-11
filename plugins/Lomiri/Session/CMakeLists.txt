@@ -1,9 +1,3 @@
-include_directories(
-    ${CMAKE_CURRENT_SOURCE_DIR}
-    ${CMAKE_CURRENT_BINARY_DIR}
-    ${liblomiri-private_SOURCE_DIR}
-)
-
 set(QMLSESSIONPLUGIN_SRC
     plugin.cpp
     dbuslomirisessionservice.cpp

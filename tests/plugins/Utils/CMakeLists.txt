@@ -1,8 +1,3 @@
-include_directories(
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../../plugins/Utils
-    ${CMAKE_CURRENT_BINARY_DIR}
-    )
-
 foreach(util_test
     QLimitProxyModel
     LomiriSortFilterProxyModel
@@ -10,6 +5,9 @@ foreach(util_test
     WindowStateStorage
 )
     add_executable(${util_test}TestExec ${util_test}Test.cpp ModelTest.cpp)
+    target_include_directories(${util_test}TestExec PRIVATE
+        ${CMAKE_SOURCE_DIR}/plugins/Utils
+    )
     target_link_libraries(${util_test}TestExec PRIVATE
         lomiri-shell-application
         Utils-qml
@@ -31,6 +29,7 @@ add_lomiri_qmlunittest(. UtilsStyle)
 
 # URLDispatcher test needs dbus-test-runner because it claims a dbus name
 add_executable(URLDispatcherTestExec URLDispatcherTest.cpp)
+target_include_directories(URLDispatcherTestExec PRIVATE ${CMAKE_SOURCE_DIR}/plugins/Utils)
 target_link_libraries(URLDispatcherTestExec PRIVATE Qt::Test Qt::Core Qt::DBus Qt::Qml Utils-qml)
 install(TARGETS URLDispatcherTestExec
     DESTINATION "${SHELL_PRIVATE_FULL_LIBEXECDIR}/tests/plugins/Utils"
