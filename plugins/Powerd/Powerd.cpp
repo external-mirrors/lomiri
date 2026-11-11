@@ -52,7 +52,7 @@ Powerd::Powerd(QObject* parent)
     lomiriScreen = new QDBusInterface(QStringLiteral("com.canonical.Unity.Screen"),
                                      QStringLiteral("/com/canonical/Unity/Screen"),
                                      QStringLiteral("com.canonical.Unity.Screen"),
-                                     QDBusConnection::SM_BUSNAME(), this);
+                                     QDBusConnection::systemBus(), this);
 
     lomiriScreen->connection().connect(QStringLiteral("com.canonical.Unity.Screen"),
                                       QStringLiteral("/com/canonical/Unity/Screen"),

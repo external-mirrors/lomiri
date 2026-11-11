@@ -14,8 +14,6 @@ include_directories(
     ${liblomiri-private_SOURCE_DIR}
 )
 
-add_definitions(-DSM_BUSNAME=sessionBus)
-
 ### LightDMServer
 add_executable(LightDMServer
     ${CMAKE_CURRENT_BINARY_DIR}/LightDMSessionAdaptor.cpp
@@ -61,6 +59,7 @@ add_lomiri_unittest(SessionBackend dbus-test-runner
                 XDG_SESSION_PATH=/session XDG_SESSION_ID=2
     ARG_PREFIX "--parameter"
     ARGS
+        --bus-type both
         --task $<TARGET_FILE:LightDMServer>
         --task-name server
         --ignore-return

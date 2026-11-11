@@ -1,5 +1,3 @@
-add_definitions(-DSM_BUSNAME=systemBus)
-
 add_library(SessionBroadcast-qml MODULE
     SessionBroadcast.cpp
     plugin.cpp

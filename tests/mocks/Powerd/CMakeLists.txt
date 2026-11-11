@@ -1,5 +1,3 @@
-add_definitions(-DSM_BUSNAME=sessionBus)
-
 add_library(MockPowerd-qml MODULE
     plugin.cpp
     Powerd.cpp

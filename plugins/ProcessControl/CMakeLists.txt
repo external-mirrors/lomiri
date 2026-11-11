@@ -1,5 +1,3 @@
-add_definitions(-DSM_BUSNAME=sessionBus)
-
 add_library(ProcessControl-qml MODULE
     LocationWatcher.cpp
     ProcessControl.cpp

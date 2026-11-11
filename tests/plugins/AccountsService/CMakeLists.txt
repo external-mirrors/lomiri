@@ -19,8 +19,6 @@ include_directories(
     ${CMAKE_SOURCE_DIR}/plugins/AccountsService
     )
 
-add_definitions(-DSM_BUSNAME=sessionBus)
-
 add_executable(mock-server
     ${CMAKE_CURRENT_BINARY_DIR}/AccountsAdaptor.cpp
     ${CMAKE_CURRENT_BINARY_DIR}/AccountsPrivateAdaptor.cpp
@@ -58,6 +56,7 @@ install(TARGETS test-accountsservice
 add_lomiri_unittest(AccountsService dbus-test-runner
     ARG_PREFIX "--parameter"
     ARGS
+        --bus-type both
         --task $<TARGET_FILE:mock-server>
         --task-name server
         --ignore-return

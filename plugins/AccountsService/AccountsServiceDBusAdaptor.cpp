@@ -26,7 +26,7 @@ AccountsServiceDBusAdaptor::AccountsServiceDBusAdaptor(QObject* parent)
     m_accountsManager(nullptr),
     m_ignoreNextChanged(false)
 {
-    QDBusConnection connection = QDBusConnection::SM_BUSNAME();
+    QDBusConnection connection = QDBusConnection::systemBus();
     QDBusConnectionInterface *interface = connection.interface();
     interface->startService(QStringLiteral("org.freedesktop.Accounts"));
     m_accountsManager = new QDBusInterface(QStringLiteral("org.freedesktop.Accounts"),

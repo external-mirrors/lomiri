@@ -4,8 +4,6 @@ include_directories(
     ${liblomiri-private_SOURCE_DIR}
 )
 
-add_definitions(-DSM_BUSNAME=systemBus)
-
 set(QMLSESSIONPLUGIN_SRC
     plugin.cpp
     dbuslomirisessionservice.cpp

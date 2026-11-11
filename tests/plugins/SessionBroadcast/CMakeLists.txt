@@ -6,8 +6,6 @@ endmacro(make_dbus_class)
 
 make_dbus_class(Broadcast com.lomiri.Shell.Greeter.Broadcast)
 
-add_definitions(-DSM_BUSNAME=sessionBus)
-
 include_directories(
     ${CMAKE_CURRENT_BINARY_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR}
@@ -47,6 +45,7 @@ install(TARGETS sessionbroadcasttestExec
 add_lomiri_unittest(SessionBroadcast dbus-test-runner
     ARG_PREFIX "--parameter"
     ARGS
+        --bus-type both
         --task $<TARGET_FILE:MockBroadcastServer>
         --task-name server
         --ignore-return
