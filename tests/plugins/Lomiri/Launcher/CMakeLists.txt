@@ -6,7 +6,6 @@ include_directories(
     ${liblomiri-private_SOURCE_DIR}
     )
 
-add_definitions(-DSM_BUSNAME=sessionBus)
 add_definitions(-DTEST_DIR="plugins/Lomiri/Launcher")
 
 ### LauncherModelTest
@@ -47,6 +46,7 @@ add_lomiri_unittest(LauncherModel dbus-test-runner
     ENVIRONMENT "APPDIR=${CMAKE_CURRENT_BINARY_DIR}/applications"
     ARG_PREFIX "--parameter"
     ARGS
+        --bus-type both
         --task $<TARGET_FILE:mock-server>
         --ignore-return
         --task $<TARGET_FILE:launchermodeltestExec>

@@ -77,7 +77,7 @@ public:
                                 QStringLiteral("GetSession"));
             // Can't use QByteArray as-is; QDbus will interpret it as 'ay'
             msg << QString::fromLocal8Bit(sessionEnv);
-            QDBusReply<QDBusObjectPath> reply = QDBusConnection::SM_BUSNAME().call(msg);
+            QDBusReply<QDBusObjectPath> reply = QDBusConnection::systemBus().call(msg);
 
             if (reply.isValid()) {
                 return reply.value().path();
@@ -103,7 +103,7 @@ public:
             msg << DISPLAY_KEY;
 
             // org.freedesktop.DBus.Properties.Get returns DBus variant.
-            QDBusReply<QDBusVariant> reply = QDBusConnection::SM_BUSNAME().call(msg);
+            QDBusReply<QDBusVariant> reply = QDBusConnection::systemBus().call(msg);
 
             if (reply.isValid()) {
                 // We're the only callsite, so it's not worth writing full
@@ -136,13 +136,13 @@ public:
 
         if (!logindSessionPath.isEmpty()) {
             // start watching the Active property
-            QDBusConnection::SM_BUSNAME().connect(LOGIN1_SERVICE, logindSessionPath, QStringLiteral("org.freedesktop.DBus.Properties"), QStringLiteral("PropertiesChanged"),
+            QDBusConnection::systemBus().connect(LOGIN1_SERVICE, logindSessionPath, QStringLiteral("org.freedesktop.DBus.Properties"), QStringLiteral("PropertiesChanged"),
                                                   this, SLOT(onPropertiesChanged(QString,QVariantMap,QStringList)));
 
             setupSystemdInhibition();
 
             // re-enable the inhibition upon resume from sleep
-            QDBusConnection::SM_BUSNAME().connect(LOGIN1_SERVICE, LOGIN1_PATH, LOGIN1_IFACE, QStringLiteral("PrepareForSleep"),
+            QDBusConnection::systemBus().connect(LOGIN1_SERVICE, LOGIN1_PATH, LOGIN1_IFACE, QStringLiteral("PrepareForSleep"),
                                                   this, SLOT(onResuming(bool)));
         }
     }
@@ -161,7 +161,7 @@ public:
         msg << "Lomiri handles power events"; // why
         msg << "block"; // mode
 
-        QDBusPendingCall pendingCall = QDBusConnection::SM_BUSNAME().asyncCall(msg);
+        QDBusPendingCall pendingCall = QDBusConnection::systemBus().asyncCall(msg);
         QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(pendingCall, this);
         connect(watcher, &QDBusPendingCallWatcher::finished,
             this, [this](QDBusPendingCallWatcher* watcher) {
@@ -179,7 +179,7 @@ public:
     bool checkLogin1Call(const QString &method) const
     {
         QDBusMessage msg = QDBusMessage::createMethodCall(LOGIN1_SERVICE, LOGIN1_PATH, LOGIN1_IFACE, method);
-        QDBusReply<QString> reply = QDBusConnection::SM_BUSNAME().call(msg);
+        QDBusReply<QString> reply = QDBusConnection::systemBus().call(msg);
         return reply.isValid() && (reply == QStringLiteral("yes") || reply == QStringLiteral("challenge"));
     }
 
@@ -190,7 +190,7 @@ public:
                                                           LOGIN1_IFACE,
                                                           method);
         msg.setArguments(args);
-        QDBusConnection::SM_BUSNAME().asyncCall(msg);
+        QDBusConnection::systemBus().asyncCall(msg);
     }
 
     void setActive(bool active)
@@ -222,7 +222,7 @@ public:
         msg << LOGIN1_SESSION_IFACE;
         msg << ACTIVE_KEY;
 
-        QDBusPendingCall pendingCall = QDBusConnection::SM_BUSNAME().asyncCall(msg);
+        QDBusPendingCall pendingCall = QDBusConnection::systemBus().asyncCall(msg);
         QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(pendingCall, this);
         connect(watcher, &QDBusPendingCallWatcher::finished,
             this, [this](QDBusPendingCallWatcher* watcher) {
@@ -256,7 +256,7 @@ public:
         msg << LOGIN1_SESSION_IFACE;
         msg << IDLE_SINCE_KEY;
 
-        QDBusReply<QVariant> reply = QDBusConnection::SM_BUSNAME().call(msg);
+        QDBusReply<QVariant> reply = QDBusConnection::systemBus().call(msg);
         if (reply.isValid()) {
             return reply.value().value<quint64>();
         } else {
@@ -273,7 +273,7 @@ public:
                                                           LOGIN1_SESSION_IFACE,
                                                           QStringLiteral("SetIdleHint"));
         msg << idle;
-        QDBusConnection::SM_BUSNAME().asyncCall(msg);
+        QDBusConnection::systemBus().asyncCall(msg);
     }
 
     bool isUserInGroup(const QString &user, const QString &groupName) const
@@ -326,10 +326,10 @@ DBusLomiriSessionService::DBusLomiriSessionService()
 {
     if (!d->logindSessionPath.isEmpty()) {
         // connect our PromptLock() slot to the logind's session Lock() signal
-        QDBusConnection::SM_BUSNAME().connect(LOGIN1_SERVICE, d->logindSessionPath, LOGIN1_SESSION_IFACE, QStringLiteral("Lock"), this, SLOT(PromptLock()));
+        QDBusConnection::systemBus().connect(LOGIN1_SERVICE, d->logindSessionPath, LOGIN1_SESSION_IFACE, QStringLiteral("Lock"), this, SLOT(PromptLock()));
         // ... and our Unlocked() signal to the logind's session Unlock() signal
         // (lightdm handles the unlocking by calling logind's Unlock method which in turn emits this signal we connect to)
-        QDBusConnection::SM_BUSNAME().connect(LOGIN1_SERVICE, d->logindSessionPath, LOGIN1_SESSION_IFACE, QStringLiteral("Unlock"), this, SLOT(doUnlock()));
+        QDBusConnection::systemBus().connect(LOGIN1_SERVICE, d->logindSessionPath, LOGIN1_SESSION_IFACE, QStringLiteral("Unlock"), this, SLOT(doUnlock()));
         connect(d, &DBusLomiriSessionServicePrivate::prepareForSleep, this, &DBusLomiriSessionService::PromptLock);
     } else {
         qWarning() << "Failed to connect to logind's session Lock/Unlock signals";
@@ -464,7 +464,7 @@ void DBusLomiriSessionService::switchToGreeter()
                                                       QStringLiteral("org.freedesktop.DisplayManager.Session"),
                                                       QStringLiteral("Lock"));
 
-    QDBusPendingCall pendingCall = QDBusConnection::SM_BUSNAME().asyncCall(msg);
+    QDBusPendingCall pendingCall = QDBusConnection::systemBus().asyncCall(msg);
     QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(pendingCall, this);
     connect(watcher, &QDBusPendingCallWatcher::finished,
         this, [this](QDBusPendingCallWatcher* watcher) {

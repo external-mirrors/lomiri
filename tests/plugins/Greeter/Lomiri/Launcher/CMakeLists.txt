@@ -6,7 +6,6 @@ include_directories(
     ${liblomiri-private_SOURCE_DIR}
     )
 
-add_definitions(-DSM_BUSNAME=sessionBus)
 add_definitions(-DTEST_DIR="plugins/Greeter/Lomiri/Launcher")
 
 ### LauncherModelASTest
@@ -38,6 +37,7 @@ install(TARGETS launchermodelastestExec
 add_lomiri_unittest(LauncherModelAS dbus-test-runner
     ARG_PREFIX "--parameter"
     ARGS
+        --bus-type both
         --task $<TARGET_FILE:mock-server>
         --ignore-return
         --task $<TARGET_FILE:launchermodelastestExec>

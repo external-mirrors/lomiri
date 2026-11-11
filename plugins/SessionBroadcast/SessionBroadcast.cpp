@@ -26,7 +26,7 @@ SessionBroadcast::SessionBroadcast(QObject* parent)
 {
     m_username = QString::fromUtf8(g_get_user_name());
 
-    auto connection = QDBusConnection::SM_BUSNAME();
+    auto connection = QDBusConnection::systemBus();
     auto interface = connection.interface();
     interface->startService(QStringLiteral("com.lomiri.Shell.Greeter.Broadcast"));
 

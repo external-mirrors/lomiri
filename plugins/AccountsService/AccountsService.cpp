@@ -88,7 +88,7 @@ AccountsService::AccountsService(QObject* parent, const QString &user)
     m_syscompInput = new QDBusInterface(QStringLiteral("com.lomiri.SystemCompositor.Input"),
                                         QStringLiteral("/com/lomiri/SystemCompositor/Input"),
                                         QStringLiteral("com.lomiri.SystemCompositor.Input"),
-                                        QDBusConnection::SM_BUSNAME(), this);
+                                        QDBusConnection::systemBus(), this);
 
     connect(m_service, &AccountsServiceDBusAdaptor::propertiesChanged, this, &AccountsService::onPropertiesChanged);
     connect(m_service, &AccountsServiceDBusAdaptor::maybeChanged, this, &AccountsService::onMaybeChanged);

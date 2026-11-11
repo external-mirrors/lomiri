@@ -139,7 +139,7 @@ add_executable(GreeterIntegratedTestExec
     )
 
 target_link_libraries(GreeterIntegratedTestExec PRIVATE
-    integratedLightDMSession
+    integratedLightDM
     PkgConfig::GLIB
     Qt::Core
     Qt::DBus
@@ -156,11 +156,12 @@ install(TARGETS GreeterIntegratedTestExec
 add_lomiri_unittest(GreeterIntegrated dbus-test-runner
     ARG_PREFIX "--parameter"
     ARGS
+        --bus-type both
         --task $<TARGET_FILE:mock-server>
         --task-name server
         --ignore-return
         --task $<TARGET_FILE:GreeterIntegratedTestExec>
         --task-name client
         --wait-for org.freedesktop.Accounts
-    DEPENDS integratedLightDMSession
+    DEPENDS integratedLightDM
     )

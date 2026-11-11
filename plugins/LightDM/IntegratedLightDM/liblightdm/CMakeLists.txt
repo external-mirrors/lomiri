@@ -10,7 +10,6 @@ set(LibLightDM_SOURCES
     )
 
 add_library(integratedLightDM STATIC ${LibLightDM_SOURCES})
-add_library(integratedLightDMSession STATIC ${LibLightDM_SOURCES})
 
 include_directories(
     ${CMAKE_SOURCE_DIR}/plugins/AccountsService
@@ -25,16 +24,5 @@ target_link_libraries(integratedLightDM PRIVATE
     Qt::DBus
     Qt::Gui
 )
-target_link_libraries(integratedLightDMSession PRIVATE
-    PkgConfig::GLIB
-    PkgConfig::LIBUSERMETRICSOUTPUT
-    PkgConfig::PAM
-    Qt::Concurrent
-    Qt::DBus
-    Qt::Gui
-)
 
-set_target_properties(integratedLightDM PROPERTIES
-                      COMPILE_FLAGS "-DSM_BUSNAME=systemBus -fPIC")
-set_target_properties(integratedLightDMSession PROPERTIES
-                      COMPILE_FLAGS "-DSM_BUSNAME=sessionBus -fPIC")
+set_target_properties(integratedLightDM PROPERTIES POSITION_INDEPENDENT_CODE ON)

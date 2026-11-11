@@ -1,5 +1,3 @@
-add_definitions(-DSM_BUSNAME=systemBus)
-
 add_library(Powerd-qml MODULE
     plugin.cpp
     Powerd.cpp
