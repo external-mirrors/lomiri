@@ -1,9 +1,3 @@
-include_directories(
-    ${CMAKE_CURRENT_SOURCE_DIR}
-    ${CMAKE_SOURCE_DIR}/plugins/AccountsService
-    ${liblomiri-private_SOURCE_DIR}
-)
-
 set(QMLLAUNCHERPLUGINAS_SRC
     plugin.cpp
     launchermodelas.cpp
@@ -16,6 +10,8 @@ set(QMLLAUNCHERPLUGINAS_SRC
 add_library(LomiriLauncherAS-qml MODULE
     ${QMLLAUNCHERPLUGINAS_SRC}
     )
+
+target_include_directories(LomiriLauncherAS-qml PRIVATE ${CMAKE_SOURCE_DIR}/plugins/AccountsService)
 
 target_link_libraries(LomiriLauncherAS-qml PRIVATE
     lomiri-private

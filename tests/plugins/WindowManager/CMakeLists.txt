@@ -1,10 +1,3 @@
-include_directories(
-    ${CMAKE_SOURCE_DIR}/plugins/WindowManager
-    ${CMAKE_CURRENT_BINARY_DIR}
-    ${CMAKE_SOURCE_DIR}/tests/mocks
-    ${liblomiri-private_SOURCE_DIR}
-    )
-
 add_executable(TopLevelWindowModelTestExec
     tst_TopLevelWindowModel.cpp
     QtMirApplicationMocks.h
@@ -12,6 +5,11 @@ add_executable(TopLevelWindowModelTestExec
     ${CMAKE_SOURCE_DIR}/tests/mocks/QtMir/Application/MirSurfaceListModel.cpp
 
     )
+
+target_include_directories(TopLevelWindowModelTestExec PRIVATE
+    ${CMAKE_SOURCE_DIR}/plugins/WindowManager
+    ${CMAKE_SOURCE_DIR}/tests/mocks
+)
 
 target_link_libraries(TopLevelWindowModelTestExec PRIVATE
     lomiri-private

@@ -1,13 +1,12 @@
 
-include_directories(
-    ${CMAKE_CURRENT_BINARY_DIR}
-    ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Platform
-)
-
 add_executable(platformtest
     platformtest.cpp
     ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Platform/platform.cpp
     )
+
+target_include_directories(platformtest PRIVATE
+    ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Platform
+)
 
 target_link_libraries(platformtest PRIVATE
     PkgConfig::QTDBUSTEST

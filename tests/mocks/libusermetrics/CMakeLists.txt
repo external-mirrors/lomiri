@@ -6,12 +6,9 @@ set(mock_SOURCES
 
 add_library(MockUserMetrics SHARED ${mock_SOURCES})
 
-target_link_libraries(MockUserMetrics PRIVATE Qt::Gui)
+target_include_directories(MockUserMetrics PRIVATE ${CMAKE_SOURCE_DIR}/plugins/Utils)
 
-include_directories(
-    ${CMAKE_SOURCE_DIR}/plugins/Utils
-    ${CMAKE_CURRENT_BINARY_DIR}
-)
+target_link_libraries(MockUserMetrics PRIVATE Qt::Gui)
 
 set_target_properties(MockUserMetrics PROPERTIES
                       OUTPUT_NAME usermetricsoutput

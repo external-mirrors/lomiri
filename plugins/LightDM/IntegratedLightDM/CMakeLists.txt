@@ -1,11 +1,5 @@
 add_definitions(-DINTEGRATED_LIGHTDM)
 
-include_directories(
-    . #QLightDM
-    ${liblomiri-private_SOURCE_DIR}
-    ${CMAKE_CURRENT_BINARY_DIR}
-)
-
 foreach(source_file ${QMLPLUGIN_SRC})
     list(APPEND RELATIVE_QMLPLUGIN_SRC ../${source_file})
 endforeach()
@@ -13,6 +7,11 @@ endforeach()
 add_library(IntegratedLightDM-qml MODULE
     ${RELATIVE_QMLPLUGIN_SRC}
     )
+
+target_include_directories(IntegratedLightDM-qml PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_SOURCE_DIR}/plugins/Utils
+)
 
 target_link_libraries(IntegratedLightDM-qml PRIVATE
     integratedLightDM

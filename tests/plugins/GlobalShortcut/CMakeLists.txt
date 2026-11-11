@@ -1,12 +1,18 @@
-include_directories(
-    ${CMAKE_SOURCE_DIR}/plugins/GlobalShortcut
-    ${CMAKE_CURRENT_BINARY_DIR}
-    )
-
 add_definitions(-DTEST_DIR="plugins/GlobalShortcut")
 
 add_executable(GlobalShortcutTestExec GlobalShortcutTest.cpp ${CMAKE_SOURCE_DIR}/plugins/GlobalShortcut/globalshortcut.cpp)
-target_link_libraries(GlobalShortcutTestExec PRIVATE Qt::Test Qt::Quick GlobalShortcut-qml)
+
+target_include_directories(GlobalShortcutTestExec PRIVATE
+    ${CMAKE_SOURCE_DIR}/plugins/GlobalShortcut
+)
+
+target_link_libraries(GlobalShortcutTestExec PRIVATE
+    lomiri-paths
+    Qt::Test
+    Qt::Quick
+    GlobalShortcut-qml
+)
+
 install(TARGETS GlobalShortcutTestExec
     DESTINATION "${SHELL_PRIVATE_FULL_LIBEXECDIR}/tests/plugins/GlobalShortcut"
 )

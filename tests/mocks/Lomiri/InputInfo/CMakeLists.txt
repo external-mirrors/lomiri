@@ -3,12 +3,6 @@
 # and brought in sync if our snapshot is updated.
 # Long term goal is to merge the InputInfo API upstream.
 
-include_directories(
-    ${CMAKE_CURRENT_SOURCE_DIR}
-    ${CMAKE_CURRENT_BINARY_DIR}
-    ${CMAKE_SOURCE_DIR}/plugins/Lomiri/InputInfo/
-)
-
 add_definitions(-DLOMIRI_MOCKS)
 
 set(MockInputInfo_SOURCES
@@ -23,6 +17,16 @@ add_library(MockInputInfo SHARED
     ${MockInputInfo_SOURCES}
 )
 
-target_link_libraries(MockInputInfo PRIVATE Qt::Core Qt::Qml Qt::Quick)
+target_include_directories(MockInputInfo PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_SOURCE_DIR}/plugins/Lomiri/InputInfo
+)
+
+target_link_libraries(MockInputInfo PRIVATE
+    lomiri-paths
+    Qt::Core
+    Qt::Qml
+    Qt::Quick
+)
 
 add_lomiri_mock(Lomiri.InputInfo 0.1 Lomiri/InputInfo TARGETS MockInputInfo)

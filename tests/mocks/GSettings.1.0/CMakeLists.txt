@@ -1,7 +1,3 @@
-include_directories(
-  ${CMAKE_CURRENT_BINARY_DIR}
-)
-
 set(GSettingsQML_SOURCES
   fake_gsettings.cpp
   plugin.cpp

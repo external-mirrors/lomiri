@@ -1,20 +1,14 @@
 include(QmlTest)
 
-include_directories(
-    SYSTEM
-    ${LOMIRIGESTURES_INCLUDEDIR}/LomiriGestures/${LOMIRIGESTURES_VERSION}
-)
-
-include_directories(
-    ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Gestures
-    ${CMAKE_CURRENT_BINARY_DIR}
-    )
-
 macro(build_gesture_test CLASSNAME)
     add_executable(${CLASSNAME}TestExec tst_${CLASSNAME}.cpp GestureTest.cpp TestItem.cpp)
+    target_include_directories(${CLASSNAME}TestExec PRIVATE
+        ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Gestures
+    )
     target_link_libraries(${CLASSNAME}TestExec PRIVATE
         LomiriGesturesQml
-        PkgConfig::LOMIRIGESTURES
+        lomiri-gestures-private
+        lomiri-paths
         Qt::Core
         Qt::Gui
         Qt::GuiPrivate

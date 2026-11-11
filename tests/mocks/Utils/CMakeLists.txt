@@ -1,9 +1,3 @@
-include_directories(
-    ${CMAKE_CURRENT_SOURCE_DIR}
-    ${CMAKE_CURRENT_BINARY_DIR}
-    ${CMAKE_SOURCE_DIR}/plugins/Utils
-)
-
 set(QMLPLUGIN_SRC
     ${CMAKE_SOURCE_DIR}/plugins/Utils/activefocuslogger.cpp
     ${CMAKE_SOURCE_DIR}/plugins/Utils/qlimitproxymodelqml.cpp
@@ -32,6 +26,11 @@ set(QMLPLUGIN_SRC
 add_library(FakeUtils-qml SHARED
     ${QMLPLUGIN_SRC}
     )
+
+target_include_directories(FakeUtils-qml PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_SOURCE_DIR}/plugins/Utils
+)
 
 target_link_libraries(FakeUtils-qml PRIVATE
     lomiri-shell-application

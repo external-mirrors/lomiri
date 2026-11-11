@@ -5,6 +5,7 @@ add_library(AccountsService-qml MODULE
     )
 
 target_link_libraries(AccountsService-qml PRIVATE
+    lomiri-paths
     PkgConfig::GLIB
     Qt::DBus
     Qt::Qml

@@ -1,12 +1,6 @@
 set(INDICATORS_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../../../../plugins/Lomiri/Indicators)
 set(TEST_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../../..)
 
-include_directories(
-    ${CMAKE_CURRENT_BINARY_DIR}
-    ${INDICATORS_DIR}
-    ${TEST_DIR}/mocks/QMenuModel.1
-    )
-
 macro(indicator_test TEST)
     set(multi_value_keywords ADDITIONAL_CPPS ADDITIONAL_LIBS)
     cmake_parse_arguments(test "" "" "${multi_value_keywords}" ${ARGN})
@@ -15,8 +9,13 @@ macro(indicator_test TEST)
             ${TEST}Test.cpp
             ${test_ADDITIONAL_CPPS}
         )
+    target_include_directories(${TEST}Exec PRIVATE
+        ${INDICATORS_DIR}
+        ${TEST_DIR}/mocks/QMenuModel.1
+    )
     target_link_libraries(${TEST}Exec PRIVATE
         ${test_ADDITIONAL_LIBS}
+        lomiri-paths
         PkgConfig::GIO
         PkgConfig::GLIB
         PkgConfig::QMENUMODEL

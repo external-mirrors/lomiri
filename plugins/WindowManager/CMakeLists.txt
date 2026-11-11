@@ -1,8 +1,3 @@
-include_directories(
-    ${CMAKE_CURRENT_SOURCE_DIR}
-    ${liblomiri-private_SOURCE_DIR}
-)
-
 set(WINDOWMANAGER_SRC
     AvailableDesktopArea.cpp
     TopLevelWindowModel.cpp

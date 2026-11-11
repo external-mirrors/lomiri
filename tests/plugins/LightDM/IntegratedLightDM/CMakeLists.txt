@@ -1,7 +1,3 @@
-include_directories(
-    ${CMAKE_CURRENT_BINARY_DIR}
-    )
-
 add_executable(GreeterDBusTestExec
     dbus.cpp
     ${CMAKE_SOURCE_DIR}/plugins/LightDM/Greeter.cpp
@@ -9,6 +5,7 @@ add_executable(GreeterDBusTestExec
     )
 
 target_link_libraries(GreeterDBusTestExec PRIVATE
+    lomiri-paths
     MockLightDM
     Intl::Intl
     Qt::Core

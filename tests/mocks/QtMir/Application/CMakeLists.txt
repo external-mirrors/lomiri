@@ -1,7 +1,3 @@
-include_directories(
-    ${liblomiri-private_SOURCE_DIR}
-)
-
 set(FakeQtMirApplicationQml_SOURCES
     plugin.cpp
     ApplicationInfo.cpp
@@ -21,6 +17,7 @@ add_library(FakeQtMirApplicationQml MODULE
 )
 
 target_link_libraries(FakeQtMirApplicationQml PRIVATE
+    lomiri-paths
     lomiri-shell-application
     mockwindowmanagmentpolicy
     PkgConfig::MIRAL
@@ -33,6 +30,7 @@ add_library(NonMirQtMirApplicationQml MODULE ${FakeQtMirApplicationQml_SOURCES})
 set_target_properties(NonMirQtMirApplicationQml PROPERTIES OUTPUT_NAME FakeQtMirApplicationQml)
 
 target_link_libraries(NonMirQtMirApplicationQml PRIVATE
+    lomiri-paths
     lomiri-shell-application
     mockwindowmanagmentpolicy
     PkgConfig::MIRAL

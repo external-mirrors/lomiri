@@ -17,7 +17,7 @@
  *      Michael Zanetti <michael.zanetti@canonical.com>
  */
 
-#include <MockQuickListModel.h>
+#include "MockQuickListModel.h"
 
 using namespace lomiri::shell::launcher;
 

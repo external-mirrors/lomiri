@@ -13,3 +13,5 @@ add_library(
 
   ${XCURSOR_SOURCES}
 )
+
+target_include_directories(xcursorloader-static PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})

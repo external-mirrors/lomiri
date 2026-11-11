@@ -1,11 +1,3 @@
-include_directories(
-    ${CMAKE_CURRENT_SOURCE_DIR}
-    ${CMAKE_CURRENT_BINARY_DIR}
-    ${CMAKE_SOURCE_DIR}/plugins/AccountsService
-    ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Launcher
-    ${liblomiri-private_SOURCE_DIR}
-    )
-
 add_definitions(-DTEST_DIR="plugins/Lomiri/Launcher")
 
 ### LauncherModelTest
@@ -22,7 +14,14 @@ add_executable(launchermodeltestExec
     ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Launcher/ualwrapper.cpp
     )
 
+target_include_directories(launchermodeltestExec PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_SOURCE_DIR}/plugins/AccountsService
+    ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Launcher
+)
+
 target_link_libraries(launchermodeltestExec PRIVATE
+    lomiri-paths
     lomiri-private
     lomiri-shell-application
     lomiri-shell-launcher
@@ -65,7 +64,14 @@ add_executable(appdrawermodeltestExec
     ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Launcher/quicklistentry.cpp
     )
 
+target_include_directories(appdrawermodeltestExec PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_SOURCE_DIR}/plugins/AccountsService
+    ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Launcher
+)
+
 target_link_libraries(appdrawermodeltestExec PRIVATE
+    lomiri-paths
     lomiri-private
     lomiri-shell-application
     lomiri-shell-launcher

@@ -1,4 +1,6 @@
 configure_file(paths.h.in ${CMAKE_CURRENT_BINARY_DIR}/paths.h @ONLY)
+add_library(lomiri-paths INTERFACE)
+target_include_directories(lomiri-paths INTERFACE ${CMAKE_CURRENT_BINARY_DIR})
 
 file(GLOB SHELL_APP_HDRS CONFIGURE_DEPENDS
     ${APPLICATION_API_INCLUDEDIR}/lomiri/shell/application/*.h

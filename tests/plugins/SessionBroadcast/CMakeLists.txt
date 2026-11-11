@@ -6,16 +6,15 @@ endmacro(make_dbus_class)
 
 make_dbus_class(Broadcast com.lomiri.Shell.Greeter.Broadcast)
 
-include_directories(
-    ${CMAKE_CURRENT_BINARY_DIR}
-    ${CMAKE_CURRENT_SOURCE_DIR}
-    ${CMAKE_SOURCE_DIR}/plugins/SessionBroadcast
-)
-
 add_executable(MockBroadcastServer
     ${CMAKE_CURRENT_BINARY_DIR}/BroadcastAdaptor.cpp
     server.cpp
     BroadcastServer.cpp
+)
+
+target_include_directories(MockBroadcastServer PRIVATE
+    ${CMAKE_CURRENT_BINARY_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
 target_link_libraries(MockBroadcastServer PRIVATE Qt::Core Qt::DBus)
@@ -28,6 +27,10 @@ install(TARGETS MockBroadcastServer
 add_executable(sessionbroadcasttestExec
     ${CMAKE_SOURCE_DIR}/plugins/SessionBroadcast/SessionBroadcast.cpp
     sessionbroadcasttest.cpp
+)
+
+target_include_directories(sessionbroadcasttestExec PRIVATE
+    ${CMAKE_SOURCE_DIR}/plugins/SessionBroadcast
 )
 
 target_link_libraries(sessionbroadcasttestExec PRIVATE

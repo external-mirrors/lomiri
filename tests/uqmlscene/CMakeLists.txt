@@ -3,10 +3,8 @@ add_executable(uqmlscene
     ${CMAKE_SOURCE_DIR}/src/DebuggingController.cpp
     )
 
-include_directories(
-    ${CMAKE_CURRENT_BINARY_DIR}
+target_include_directories(uqmlscene PRIVATE
     ${CMAKE_SOURCE_DIR}/src
-    ${liblomiri-private_SOURCE_DIR}
 )
 
 target_link_libraries(uqmlscene PRIVATE

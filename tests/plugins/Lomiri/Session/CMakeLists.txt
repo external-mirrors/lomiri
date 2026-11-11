@@ -8,12 +8,6 @@ make_dbus_class(LightDMSession org.freedesktop.DisplayManager.Session)
 make_dbus_class(LogindManager org.freedesktop.login1.Manager)
 make_dbus_class(LogindSession org.freedesktop.login1.Session)
 
-include_directories(
-    ${CMAKE_CURRENT_BINARY_DIR}
-    ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Session
-    ${liblomiri-private_SOURCE_DIR}
-)
-
 ### LightDMServer
 add_executable(LightDMServer
     ${CMAKE_CURRENT_BINARY_DIR}/LightDMSessionAdaptor.cpp
@@ -22,6 +16,9 @@ add_executable(LightDMServer
     LightDMServer.cpp
     LogindServer.cpp
     server.cpp
+)
+target_include_directories(LightDMServer PRIVATE
+    ${CMAKE_CURRENT_BINARY_DIR}
 )
 target_link_libraries(LightDMServer PRIVATE Qt::Core Qt::DBus)
 install(TARGETS LightDMServer
@@ -41,6 +38,9 @@ install(TARGETS SessionBackendTestPreload
 add_executable(sessionbackendtestExec
     sessionbackendtest.cpp
     ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Session/dbuslomirisessionservice.cpp
+)
+target_include_directories(sessionbackendtestExec PRIVATE
+    ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Session
 )
 target_link_libraries(sessionbackendtestExec PRIVATE
     lomiri-private

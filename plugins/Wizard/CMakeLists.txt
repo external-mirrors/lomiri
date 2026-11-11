@@ -10,6 +10,7 @@ add_library(Wizard-qml MODULE
 )
 
 target_link_libraries(Wizard-qml PRIVATE
+    lomiri-paths
     PkgConfig::GD4
     PkgConfig::GEONAMES
     PkgConfig::GLIB
