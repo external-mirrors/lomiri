@@ -24,5 +24,3 @@ target_link_libraries(integratedLightDM PRIVATE
     Qt::DBus
     Qt::Gui
 )
-
-set_target_properties(integratedLightDM PROPERTIES POSITION_INDEPENDENT_CODE ON)

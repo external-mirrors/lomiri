@@ -1,5 +1,3 @@
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC")
-
 set(
   XCURSOR_SOURCES
 

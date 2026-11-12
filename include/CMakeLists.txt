@@ -1,3 +1,8 @@
+pkg_get_variable(LOMIRI_SYSTEM_SETTINGS_PRIVATE_PLUGINDIR LomiriSystemSettings plugin_private_module_dir)
+if(LOMIRI_SYSTEM_SETTINGS_PRIVATE_PLUGINDIR STREQUAL "")
+    message(FATAL_ERROR "Could not determine LomiriSystemSettings private plugin installation dir.")
+endif()
+
 configure_file(paths.h.in ${CMAKE_CURRENT_BINARY_DIR}/paths.h @ONLY)
 add_library(lomiri-paths INTERFACE)
 target_include_directories(lomiri-paths INTERFACE ${CMAKE_CURRENT_BINARY_DIR})
