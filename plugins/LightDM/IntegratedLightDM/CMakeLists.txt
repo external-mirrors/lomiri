@@ -1,5 +1,3 @@
-add_definitions(-DINTEGRATED_LIGHTDM)
-
 foreach(source_file ${QMLPLUGIN_SRC})
     list(APPEND RELATIVE_QMLPLUGIN_SRC ../${source_file})
 endforeach()
@@ -13,7 +11,10 @@ target_include_directories(IntegratedLightDM-qml PRIVATE
     ${CMAKE_SOURCE_DIR}/plugins/Utils
 )
 
+target_compile_definitions(IntegratedLightDM-qml PRIVATE INTEGRATED_LIGHTDM)
+
 target_link_libraries(IntegratedLightDM-qml PRIVATE
+    lomiri-paths
     integratedLightDM
     lomiri-private
     PkgConfig::LIBUSERMETRICSOUTPUT

@@ -1,10 +1,10 @@
-add_definitions(-DTEST_DIR="plugins/GlobalShortcut")
-
 add_executable(GlobalShortcutTestExec GlobalShortcutTest.cpp ${CMAKE_SOURCE_DIR}/plugins/GlobalShortcut/globalshortcut.cpp)
 
 target_include_directories(GlobalShortcutTestExec PRIVATE
     ${CMAKE_SOURCE_DIR}/plugins/GlobalShortcut
 )
+
+target_compile_definitions(GlobalShortcutTestExec PRIVATE TEST_DIR="plugins/GlobalShortcut")
 
 target_link_libraries(GlobalShortcutTestExec PRIVATE
     lomiri-paths

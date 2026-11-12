@@ -1,5 +1,3 @@
-add_definitions(-DTEST_DIR="qmltests/Components")
-
 ########## tst_DragHandle
 
 add_executable(DragHandleTestExec tst_DragHandle.cpp)
@@ -7,6 +5,8 @@ add_executable(DragHandleTestExec tst_DragHandle.cpp)
 target_include_directories(DragHandleTestExec PRIVATE
     ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Gestures
 )
+
+target_compile_definitions(DragHandleTestExec PRIVATE TEST_DIR="qmltests/Components")
 
 target_link_libraries(DragHandleTestExec PRIVATE
     LomiriGesturesQml
@@ -39,6 +39,8 @@ add_executable(EdgeDragEvaluatorTestExec tst_EdgeDragEvaluator.cpp)
 target_include_directories(EdgeDragEvaluatorTestExec PRIVATE
     ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Gestures
 )
+
+target_compile_definitions(EdgeDragEvaluatorTestExec PRIVATE TEST_DIR="qmltests/Components")
 
 target_link_libraries(EdgeDragEvaluatorTestExec PRIVATE
     LomiriGesturesQml

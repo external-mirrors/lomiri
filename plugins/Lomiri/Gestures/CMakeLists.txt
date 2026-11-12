@@ -1,6 +1,3 @@
-# in order to include Qt's private headers
-remove_definitions(-DQT_NO_KEYWORDS)
-
 set(LomiriGesturesQml_SOURCES
     plugin.cpp
     AxisVelocityCalculator.cpp
@@ -12,9 +9,9 @@ set(LomiriGesturesQml_SOURCES
     TouchGestureArea.cpp
 )
 
-add_definitions(-DLOMIRIGESTURESQML_LIBRARY)
-
 add_library(LomiriGesturesQml SHARED ${LomiriGesturesQml_SOURCES})
+
+target_compile_definitions(LomiriGesturesQml PRIVATE LOMIRIGESTURESQML_LIBRARY)
 
 target_link_libraries(LomiriGesturesQml PRIVATE
     lomiri-gestures-private

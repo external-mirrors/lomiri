@@ -1,5 +1,3 @@
-add_definitions(-D_DEFAULT_SOURCE=1)
-
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC")
 
 set(
@@ -15,3 +13,5 @@ add_library(
 )
 
 target_include_directories(xcursorloader-static PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+
+target_compile_definitions(xcursorloader-static PRIVATE _DEFAULT_SOURCE=1)

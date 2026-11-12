@@ -15,6 +15,7 @@
  *
  */
 
+#include "paths.h"
 #include "SessionsModel.h"
 #include <QtCore/QDebug>
 #include <QtCore/QFile>
@@ -147,6 +148,7 @@ SessionsModel::SessionsModel(QObject* parent)
             m_iconSearchDirectories[i] = snapRoot + m_iconSearchDirectories[i].path();
         }
     }
+    m_iconSearchDirectories.append(QUrl(qmlDirectory() + "/Greeter/graphics/session_icons"));
 
     setModel(m_model);
     setSortCaseSensitivity(Qt::CaseInsensitive);

@@ -59,6 +59,7 @@ add_executable(GreeterSessionsModelTestExec
     )
 
 target_link_libraries(GreeterSessionsModelTestExec PRIVATE
+    lomiri-paths
     MockLightDM
     Qt::Core
     Qt::Test
