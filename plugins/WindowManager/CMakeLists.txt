@@ -16,9 +16,9 @@ set(WINDOWMANAGER_SRC
     InputMethodManager.cpp
 )
 
-add_definitions(-DWINDOWMANAGERQML_LIBRARY)
-
 add_library(windowmanager-qml SHARED ${WINDOWMANAGER_SRC})
+
+target_compile_definitions(windowmanager-qml PRIVATE WINDOWMANAGERQML_LIBRARY)
 
 target_link_libraries(windowmanager-qml
     PUBLIC

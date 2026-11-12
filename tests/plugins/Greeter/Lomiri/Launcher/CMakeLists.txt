@@ -1,6 +1,3 @@
-add_definitions(-DTEST_DIR="plugins/Greeter/Lomiri/Launcher")
-
-### LauncherModelASTest
 add_executable(launchermodelastestExec
     launchermodelastest.cpp
     ${CMAKE_SOURCE_DIR}/plugins/AccountsService/AccountsServiceDBusAdaptor.cpp
@@ -15,6 +12,8 @@ target_include_directories(launchermodelastestExec PRIVATE
     ${CMAKE_SOURCE_DIR}/plugins/AccountsService
     ${CMAKE_SOURCE_DIR}/plugins/Greeter/Lomiri/Launcher
 )
+
+target_compile_definitions(launchermodelastestExec PRIVATE TEST_DIR="plugins/Greeter/Lomiri/Launcher")
 
 target_link_libraries(launchermodelastestExec PRIVATE
     lomiri-paths

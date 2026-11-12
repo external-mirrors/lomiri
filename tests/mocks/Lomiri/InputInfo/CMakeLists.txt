@@ -3,8 +3,6 @@
 # and brought in sync if our snapshot is updated.
 # Long term goal is to merge the InputInfo API upstream.
 
-add_definitions(-DLOMIRI_MOCKS)
-
 set(MockInputInfo_SOURCES
     plugin.cpp
     qinputdeviceinfo_mock.cpp
@@ -21,6 +19,8 @@ target_include_directories(MockInputInfo PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_SOURCE_DIR}/plugins/Lomiri/InputInfo
 )
+
+target_compile_definitions(MockInputInfo PRIVATE LOMIRI_MOCKS)
 
 target_link_libraries(MockInputInfo PRIVATE
     lomiri-paths

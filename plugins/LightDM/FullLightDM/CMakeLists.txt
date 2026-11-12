@@ -1,5 +1,3 @@
-add_definitions(-DFULL_LIGHTDM)
-
 foreach(source_file ${QMLPLUGIN_SRC})
     list(APPEND RELATIVE_QMLPLUGIN_SRC ../${source_file})
 endforeach()
@@ -10,7 +8,10 @@ add_library(FullLightDM-qml MODULE
 
 target_include_directories(FullLightDM-qml PRIVATE ${CMAKE_SOURCE_DIR}/plugins/Utils)
 
+target_compile_definitions(FullLightDM-qml PRIVATE FULL_LIGHTDM)
+
 target_link_libraries(FullLightDM-qml PRIVATE
+    lomiri-paths
     lomiri-private
     PkgConfig::LIBLIGHTDM
     PkgConfig::LIBUSERMETRICSOUTPUT

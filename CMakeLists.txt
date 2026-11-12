@@ -3,10 +3,6 @@ project(lomiri VERSION 0.6.2 LANGUAGES C CXX)
 
 option (ENABLE_UBUNTU_ACCOUNTSSERVICE "Build with Ubuntu's fork of accountsservice" OFF)
 
-if (ENABLE_UBUNTU_ACCOUNTSSERVICE)
-    add_compile_definitions (ENABLE_UBUNTU_ACCOUNTSSERVICE)
-endif ()
-
 set(SHELL_APP lomiri)
 set(GREETER_APP lomiri-greeter)
 
@@ -62,11 +58,16 @@ target_include_directories(lomiri-gestures-private SYSTEM INTERFACE
 )
 target_link_libraries(lomiri-gestures-private INTERFACE PkgConfig::LOMIRIGESTURES)
 
+add_compile_definitions(
+    QT_NO_KEYWORDS
+    QT_STRICT_ITERATORS
+    QT_USE_QSTRINGBUILDER
+)
+
 # Standard install paths
 include(GNUInstallDirs)
 
 set(SHELL_APP_FULL_DIR ${CMAKE_INSTALL_FULL_DATADIR}/lomiri)
-add_definitions(-DSHELL_APP_FULL_DIR=\"${SHELL_APP_FULL_DIR}\")
 set(SHELL_PRIVATE_FULL_LIBDIR ${CMAKE_INSTALL_FULL_LIBDIR}/lomiri)
 set(SHELL_PRIVATE_FULL_LIBEXECDIR ${CMAKE_INSTALL_FULL_LIBEXECDIR}/lomiri)
 
@@ -95,16 +96,6 @@ endif()
 if (Werror)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror")
 endif()
-
-# gtk and lomiri-core (actually sigc++) do not like Qt defining macros named
-# "signals" and "slots"
-add_definitions(-DQT_NO_KEYWORDS)
-
-# Save a few container detach and conversions
-add_definitions(-DQT_STRICT_ITERATORS)
-
-# Use the fast string builder
-add_definitions(-DQT_USE_QSTRINGBUILDER)
 
 set(MOCK_INDICATOR_SERVICE_APP lomiri-mock-indicator-service)
 

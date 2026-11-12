@@ -14,11 +14,12 @@ set(IndicatorsQML_SOURCES
     lomirimenumodelstack.cpp
     ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Platform/platform.cpp
 )
-add_definitions(-DLOMIRIINDICATORS_LIBRARY)
 
 add_library(IndicatorsQml SHARED
     ${IndicatorsQML_SOURCES}
 )
+
+target_compile_definitions(IndicatorsQml PRIVATE LOMIRIINDICATORS_LIBRARY)
 
 target_link_libraries(IndicatorsQml PRIVATE
     lomiri-paths

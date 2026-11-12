@@ -4,6 +4,10 @@ add_library(AccountsService-qml MODULE
     plugin.cpp
     )
 
+if(ENABLE_UBUNTU_ACCOUNTSSERVICE)
+    target_compile_definitions(AccountsService-qml PRIVATE ENABLE_UBUNTU_ACCOUNTSSERVICE)
+endif()
+
 target_link_libraries(AccountsService-qml PRIVATE
     lomiri-paths
     PkgConfig::GLIB

@@ -1,5 +1,3 @@
-add_definitions(-DTEST_DIR="plugins/Lomiri/Launcher")
-
 ### LauncherModelTest
 add_executable(launchermodeltestExec
     launchermodeltest.cpp

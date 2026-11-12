@@ -32,6 +32,9 @@ target_include_directories(mock-server PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_SOURCE_DIR}/plugins/AccountsService
 )
+if(ENABLE_UBUNTU_ACCOUNTSSERVICE)
+    target_compile_definitions(mock-server PRIVATE ENABLE_UBUNTU_ACCOUNTSSERVICE)
+endif()
 target_link_libraries(mock-server PRIVATE Qt::Core Qt::DBus)
 install(TARGETS mock-server
     DESTINATION "${SHELL_PRIVATE_FULL_LIBEXECDIR}/tests/plugins/AccountsService"
@@ -45,6 +48,9 @@ add_executable(test-accountsservice
 target_include_directories(test-accountsservice PRIVATE
     ${CMAKE_SOURCE_DIR}/plugins/AccountsService
 )
+if(ENABLE_UBUNTU_ACCOUNTSSERVICE)
+    target_compile_definitions(test-accountsservice PRIVATE ENABLE_UBUNTU_ACCOUNTSSERVICE)
+endif()
 target_link_libraries(test-accountsservice PRIVATE
     lomiri-paths
     PkgConfig::GLIB
