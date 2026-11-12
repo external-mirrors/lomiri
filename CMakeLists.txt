@@ -1,23 +1,15 @@
 cmake_minimum_required(VERSION 3.28)
 project(lomiri VERSION 0.6.2 LANGUAGES C CXX)
 
-option (ENABLE_UBUNTU_ACCOUNTSSERVICE "Build with Ubuntu's fork of accountsservice" OFF)
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules)
 
-set(SHELL_APP lomiri)
-set(GREETER_APP lomiri-greeter)
+option(ENABLE_UBUNTU_ACCOUNTSSERVICE "Build with Ubuntu's fork of accountsservice" OFF)
+option(CMAKE_COMPILE_WARNING_AS_ERROR "Treat warnings as errors" OFF)
+option(WITH_MIR2 "Build against Mir 2" OFF)
+set(DISPLAYED_DISTRO_NAME "" CACHE STRING "Shown in the first-run wizard, falls back to /etc/os-release")
 
-set (DESKTOP_FILE_SHELL "${SHELL_APP}.desktop")
-set (DESKTOP_FILE_GREETER "${GREETER_APP}.desktop")
-
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules)
-
-# Instruct CMake to run moc and rcc automatically when needed.
-set(CMAKE_AUTOMOC ON)
-set(CMAKE_AUTORCC ON)
-
-# Make sure we have all the needed symbols
-set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,-z,defs")
-set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} -Wl,-z,defs")
+include(CTest)
+include(GNUInstallDirs)
 
 set(QT_VERSION_MAJOR 5)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS
@@ -48,8 +40,6 @@ pkg_check_modules(PAM REQUIRED IMPORTED_TARGET pam)
 pkg_check_modules(QMENUMODEL REQUIRED IMPORTED_TARGET qmenumodel)
 pkg_check_modules(SYSTEMD systemd)
 
-option(WITH_MIR2 "Build against Mir 2" OFF)
-
 if (WITH_MIR2)
     pkg_check_modules(QTMIRSERVER REQUIRED IMPORTED_TARGET qt5mir2server>=0.6.0)
     pkg_check_modules(MIRAL REQUIRED IMPORTED_TARGET miral>=3.0)
@@ -66,65 +56,41 @@ target_include_directories(lomiri-gestures-private SYSTEM INTERFACE
 )
 target_link_libraries(lomiri-gestures-private INTERFACE PkgConfig::LOMIRIGESTURES)
 
+set(CMAKE_C_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+set(CMAKE_CXX_VISIBILITY_PRESET hidden)
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+
+add_link_options(LINKER:--no-undefined)
+add_compile_options(-Wall -Wextra -pedantic)
 add_compile_definitions(
     QT_NO_KEYWORDS
     QT_STRICT_ITERATORS
     QT_USE_QSTRINGBUILDER
 )
 
-# Standard install paths
-include(GNUInstallDirs)
+set(SHELL_APP lomiri)
+set(GREETER_APP lomiri-greeter)
+set(DESKTOP_FILE_SHELL "${SHELL_APP}.desktop")
+set(DESKTOP_FILE_GREETER "${GREETER_APP}.desktop")
 
 set(SHELL_APP_FULL_DIR ${CMAKE_INSTALL_FULL_DATADIR}/lomiri)
 set(SHELL_PRIVATE_FULL_LIBDIR ${CMAKE_INSTALL_FULL_LIBDIR}/lomiri)
 set(SHELL_PRIVATE_FULL_LIBEXECDIR ${CMAKE_INSTALL_FULL_LIBEXECDIR}/lomiri)
-
-# Convention for where lomiri's own QML plugins install to and get loaded
-# from; other packages implementing a shell interface (e.g. qtmir,
-# lomiri-notifications) install their QML plugins here too.
 set(SHELL_INSTALL_QML ${CMAKE_INSTALL_FULL_LIBDIR}/lomiri/qml)
 
-execute_process(COMMAND ${PKG_CONFIG_EXECUTABLE} --variable=plugin_private_module_dir LomiriSystemSettings OUTPUT_VARIABLE LOMIRI_SYSTEM_SETTINGS_PRIVATE_PLUGINDIR OUTPUT_STRIP_TRAILING_WHITESPACE)
-if(LOMIRI_SYSTEM_SETTINGS_PRIVATE_PLUGINDIR STREQUAL "")
-    message(FATAL_ERROR "Could not determine LomiriSystemSettings private plugin installation dir.")
-endif()
-
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fvisibility=hidden")
-
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-permissive -pedantic -Wall -Wextra")
-
-set (CMAKE_CXX_STANDARD 20)
-
-if ("${CMAKE_BUILD_TYPE}" STREQUAL "release" OR "${CMAKE_BUILD_TYPE}" STREQUAL "relwithdebinfo")
-    option(Werror "Treat warnings as errors" ON)
-else()
-    option(Werror "Treat warnings as errors" OFF)
-endif()
-
-if (Werror)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror")
-endif()
-
-set(MOCK_INDICATOR_SERVICE_APP lomiri-mock-indicator-service)
-
-# add subdirectories to build
+add_subdirectory(data)
+add_subdirectory(doc)
 add_subdirectory(include)
+add_subdirectory(plugins)
+add_subdirectory(po)
+add_subdirectory(qml)
 add_subdirectory(src)
 add_subdirectory(tools)
-add_subdirectory(qml)
-
-# Tests
-set(NO_TESTS OFF CACHE BOOL "Disable tests.")
-if (NOT NO_TESTS)
-    include(CTest)
+if(BUILD_TESTING)
     add_subdirectory(tests)
-else()
-    message(STATUS "Tests disabled")
 endif()
-
-set(DISPLAYED_DISTRO_NAME "" CACHE STRING
-    "The distro name displayed in first-run wizard and other places. If not set, will read /etc/os-release")
-add_subdirectory(plugins)
-add_subdirectory(data)
-add_subdirectory(po)
-add_subdirectory(doc)

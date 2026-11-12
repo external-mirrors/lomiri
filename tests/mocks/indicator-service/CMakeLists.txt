@@ -1,12 +1,8 @@
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c99")
-
-add_executable(${MOCK_INDICATOR_SERVICE_APP}
+add_executable(lomiri-mock-indicator-service
     mock-indicator-service.c
 )
 
-target_link_libraries(${MOCK_INDICATOR_SERVICE_APP} PRIVATE PkgConfig::GIO)
+target_link_libraries(lomiri-mock-indicator-service PRIVATE PkgConfig::GIO)
 
-set_target_properties(${MOCK_INDICATOR_SERVICE_APP} PROPERTIES COMPILE_FLAGS -fPIC)
-
-install(TARGETS ${MOCK_INDICATOR_SERVICE_APP}
+install(TARGETS lomiri-mock-indicator-service
         RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
