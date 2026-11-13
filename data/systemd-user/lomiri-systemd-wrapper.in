@@ -40,6 +40,7 @@ else
     export MIR_SERVER_WAYLAND_HOST="/run/wayland-syscomp"
 
     # Remove conflicting environment variables from Mir1 times
+    export LSC_SESSION_NAME="$MIR_SERVER_NAME"
     unset MIR_SERVER_NAME
     unset MIR_SERVER_HOST_SOCKET
 fi
