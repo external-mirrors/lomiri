@@ -23,7 +23,7 @@ set(LomiriTestQML_SOURCES
 )
 
 if (ENABLE_TOUCH_EMULATION)
-    set(LomiriTestQML_SOURCES ${LomiriTestQML_SOURCES} ${CMAKE_SOURCE_DIR}/src/MouseTouchAdaptor.cpp)
+    set(LomiriTestQML_SOURCES ${LomiriTestQML_SOURCES} MouseTouchAdaptor.cpp)
 endif()
 
 add_library(LomiriTestQml MODULE ${LomiriTestQML_SOURCES})

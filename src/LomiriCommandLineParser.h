@@ -29,10 +29,6 @@ public:
     bool hasTestability() const { return m_hasTestability; }
     bool hasFrameless() const { return m_hasFrameless; }
 
-    #ifdef LOMIRI_ENABLE_TOUCH_EMULATION
-    bool hasMouseToTouch() const { return m_hasMouseToTouch; }
-    #endif
-
     bool hasFullscreen() const { return m_hasFullscreen; }
     QString mode() const { return m_mode; }
 
@@ -48,10 +44,6 @@ protected:
     QSize m_windowGeometry;
     bool m_hasTestability;
     bool m_hasFrameless;
-
-    #ifdef LOMIRI_ENABLE_TOUCH_EMULATION
-    bool m_hasMouseToTouch;
-    #endif
 
     bool m_hasFullscreen;
     QString m_mode;
