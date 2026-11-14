@@ -23,14 +23,14 @@
 #include <QPointer>
 #include <QTimer>
 
-#include <lomirigesturesglobal.h>
+#include "LomiriGesturesQmlGlobal.h"
 
 /*
    Notifies when a point, mouse or touch, is pressed outside its area.
 
    Only enable it while needed.
  */
-class LOMIRIGESTURES_EXPORT PressedOutsideNotifier : public QQuickItem {
+class LOMIRIGESTURESQML_EXPORT PressedOutsideNotifier : public QQuickItem {
     Q_OBJECT
 
 public:

@@ -1,14 +1,20 @@
-set(MOCK_BIOMETRYD_SOURCES
-    plugin.cpp
-    MockBiometryd.cpp
-    MockDevice.cpp
-    MockIdentifier.cpp
-    MockObserver.cpp
-    MockOperation.cpp
+qt_add_qml_module(mockbiometrydplugin
+    URI Biometryd
+    VERSION 0.0
+    PLUGIN_TARGET mockbiometrydplugin
+    SOURCES
+        MockBiometryd.cpp
+        MockDevice.cpp
+        MockIdentifier.cpp
+        MockObserver.cpp
+        MockOperation.cpp
+        plugin.cpp
 )
 
-add_library(MockBiometryd MODULE ${MOCK_BIOMETRYD_SOURCES})
+target_link_libraries(mockbiometrydplugin PRIVATE
+    Qt::Core
+    Qt::Qml
+    Qt::Quick
+)
 
-target_link_libraries(MockBiometryd PRIVATE Qt::Qml Qt::Quick Qt::Core)
-
-add_lomiri_mock(Biometryd 0.0 Biometryd TARGETS MockBiometryd)
+install_qml_module(mockbiometrydplugin DESTINATION ${SHELL_INSTALL_QML}/mocks)

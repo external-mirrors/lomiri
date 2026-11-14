@@ -1,7 +1,12 @@
-add_library(UInput-qml MODULE
-    plugin.cpp
-    uinput.cpp
+qt_add_qml_module(uinputplugin
+    URI UInput
+    VERSION 0.1
+    PLUGIN_TARGET uinputplugin
+    SOURCES
+        plugin.cpp
+        uinput.cpp
 )
 
-target_link_libraries(UInput-qml PRIVATE Qt::Qml)
-add_lomiri_plugin(UInput 0.1 UInput TARGETS UInput-qml)
+target_link_libraries(uinputplugin PRIVATE Qt::Qml)
+
+install_qml_module(uinputplugin DESTINATION ${SHELL_INSTALL_QML})

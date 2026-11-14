@@ -1,3 +1,2 @@
 module LightDM.IntegratedLightDM
-plugin IntegratedLightDM-qml
-typeinfo IntegratedLightDM.qmltypes
+plugin integratedlightdmplugin

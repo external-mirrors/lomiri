@@ -1,2 +1,2 @@
 module Lomiri.InputInfo
-plugin MockInputInfo
+plugin mockinputinfoplugin

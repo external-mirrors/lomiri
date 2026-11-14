@@ -1,8 +1,12 @@
-add_library(MockPowerd-qml MODULE
-    plugin.cpp
-    Powerd.cpp
-    )
+qt_add_qml_module(mockpowerdplugin
+    URI Powerd
+    VERSION 0.1
+    PLUGIN_TARGET mockpowerdplugin
+    SOURCES
+        plugin.cpp
+        Powerd.cpp
+)
 
-target_link_libraries(MockPowerd-qml PRIVATE Qt::Qml)
+target_link_libraries(mockpowerdplugin PRIVATE Qt::Qml)
 
-add_lomiri_mock(Powerd 0.1 Powerd TARGETS MockPowerd-qml)
+install_qml_module(mockpowerdplugin DESTINATION ${SHELL_INSTALL_QML}/mocks)

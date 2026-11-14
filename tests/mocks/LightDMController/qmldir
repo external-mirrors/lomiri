@@ -1,2 +1,2 @@
 module LightDMController
-plugin LightDMController
+plugin lightdmcontrollerplugin

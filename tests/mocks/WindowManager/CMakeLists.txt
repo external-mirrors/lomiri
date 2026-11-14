@@ -14,33 +14,33 @@ install(TARGETS mockwindowmanagmentpolicy
     DESTINATION ${SHELL_INSTALL_QML}/mocks/WindowManager
     )
 
-set(WINDOWMANAGER_SRC
-    ${CMAKE_SOURCE_DIR}/plugins/WindowManager/AvailableDesktopArea.cpp
-    ${CMAKE_SOURCE_DIR}/plugins/WindowManager/Screen.cpp
-    ${CMAKE_SOURCE_DIR}/plugins/WindowManager/ScreenAttached.cpp
-    ${CMAKE_SOURCE_DIR}/plugins/WindowManager/Screens.cpp
-    ${CMAKE_SOURCE_DIR}/plugins/WindowManager/ScreenWindow.cpp
-    ${CMAKE_SOURCE_DIR}/plugins/WindowManager/TopLevelWindowModel.cpp
-    ${CMAKE_SOURCE_DIR}/plugins/WindowManager/Window.cpp
-    ${CMAKE_SOURCE_DIR}/plugins/WindowManager/WindowMargins.cpp
-    ${CMAKE_SOURCE_DIR}/plugins/WindowManager/WindowManagerObjects.cpp
-    ${CMAKE_SOURCE_DIR}/plugins/WindowManager/WorkspaceManager.cpp
-    ${CMAKE_SOURCE_DIR}/plugins/WindowManager/WorkspaceModel.cpp
-    ${CMAKE_SOURCE_DIR}/plugins/WindowManager/Workspace.cpp
-    ${CMAKE_SOURCE_DIR}/plugins/WindowManager/InputMethodManager.cpp
-    MockScreens.cpp
-    MockScreenWindow.cpp
-    MockScreensConfiguration.cpp
-    WindowManagerPlugin.cpp
+qt_add_qml_module(mockwindowmanagerplugin
+    URI WindowManager
+    VERSION 1.0
+    PLUGIN_TARGET mockwindowmanagerplugin
+    SOURCES
+        MockScreens.cpp
+        MockScreensConfiguration.cpp
+        MockScreenWindow.cpp
+        WindowManagerPlugin.cpp
+        ${CMAKE_SOURCE_DIR}/plugins/WindowManager/AvailableDesktopArea.cpp
+        ${CMAKE_SOURCE_DIR}/plugins/WindowManager/InputMethodManager.cpp
+        ${CMAKE_SOURCE_DIR}/plugins/WindowManager/Screen.cpp
+        ${CMAKE_SOURCE_DIR}/plugins/WindowManager/ScreenAttached.cpp
+        ${CMAKE_SOURCE_DIR}/plugins/WindowManager/Screens.cpp
+        ${CMAKE_SOURCE_DIR}/plugins/WindowManager/ScreenWindow.cpp
+        ${CMAKE_SOURCE_DIR}/plugins/WindowManager/TopLevelWindowModel.cpp
+        ${CMAKE_SOURCE_DIR}/plugins/WindowManager/Window.cpp
+        ${CMAKE_SOURCE_DIR}/plugins/WindowManager/WindowManagerObjects.cpp
+        ${CMAKE_SOURCE_DIR}/plugins/WindowManager/WindowMargins.cpp
+        ${CMAKE_SOURCE_DIR}/plugins/WindowManager/Workspace.cpp
+        ${CMAKE_SOURCE_DIR}/plugins/WindowManager/WorkspaceManager.cpp
+        ${CMAKE_SOURCE_DIR}/plugins/WindowManager/WorkspaceModel.cpp
 )
 
-add_library(MockWindowManager-qml SHARED ${WINDOWMANAGER_SRC})
+target_include_directories(mockwindowmanagerplugin PRIVATE ${CMAKE_SOURCE_DIR}/plugins/WindowManager)
 
-target_include_directories(MockWindowManager-qml PRIVATE
-    ${CMAKE_SOURCE_DIR}/plugins/WindowManager
-)
-
-target_link_libraries(MockWindowManager-qml PRIVATE
+target_link_libraries(mockwindowmanagerplugin PRIVATE
     lomiri-private
     lomiri-shell-application
     mockwindowmanagmentpolicy
@@ -52,6 +52,7 @@ target_link_libraries(MockWindowManager-qml PRIVATE
 )
 
 if (WITH_MIR2)
-    target_link_libraries(MockWindowManager-qml PRIVATE PkgConfig::MIROIL)
+    target_link_libraries(mockwindowmanagerplugin PRIVATE PkgConfig::MIROIL)
 endif()
-add_lomiri_mock(WindowManager 1.0 WindowManager TARGETS MockWindowManager-qml)
+
+install_qml_module(mockwindowmanagerplugin DESTINATION ${SHELL_INSTALL_QML}/mocks)

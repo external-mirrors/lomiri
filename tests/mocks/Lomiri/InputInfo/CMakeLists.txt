@@ -1,32 +1,27 @@
-# TODO: This is a copy of the plugin in plugins/Lomiri/InputInfo which in
-# turn is a copy of the WIP upstream InputInfo API. This needs to be updated
-# and brought in sync if our snapshot is updated.
-# Long term goal is to merge the InputInfo API upstream.
-
-set(MockInputInfo_SOURCES
-    plugin.cpp
-    qinputdeviceinfo_mock.cpp
-    mockcontroller.cpp
-    ${CMAKE_SOURCE_DIR}/plugins/Lomiri/InputInfo/qinputinfo.cpp
-    ${CMAKE_SOURCE_DIR}/plugins/Lomiri/InputInfo/qdeclarativeinputdevicemodel.cpp
+qt_add_qml_module(mockinputinfoplugin
+    URI Lomiri.InputInfo
+    VERSION 0.1
+    PLUGIN_TARGET mockinputinfoplugin
+    SOURCES
+        mockcontroller.cpp
+        plugin.cpp
+        qinputdeviceinfo_mock.cpp
+        ${CMAKE_SOURCE_DIR}/plugins/Lomiri/InputInfo/qdeclarativeinputdevicemodel.cpp
+        ${CMAKE_SOURCE_DIR}/plugins/Lomiri/InputInfo/qinputinfo.cpp
 )
 
-add_library(MockInputInfo SHARED
-    ${MockInputInfo_SOURCES}
-)
-
-target_include_directories(MockInputInfo PRIVATE
+target_include_directories(mockinputinfoplugin PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_SOURCE_DIR}/plugins/Lomiri/InputInfo
 )
 
-target_compile_definitions(MockInputInfo PRIVATE LOMIRI_MOCKS)
+target_compile_definitions(mockinputinfoplugin PRIVATE LOMIRI_MOCKS)
 
-target_link_libraries(MockInputInfo PRIVATE
+target_link_libraries(mockinputinfoplugin PRIVATE
     lomiri-paths
     Qt::Core
     Qt::Qml
     Qt::Quick
 )
 
-add_lomiri_mock(Lomiri.InputInfo 0.1 Lomiri/InputInfo TARGETS MockInputInfo)
+install_qml_module(mockinputinfoplugin DESTINATION ${SHELL_INSTALL_QML}/mocks)

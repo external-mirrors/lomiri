@@ -1,14 +1,20 @@
-add_library(QtMultimedia-qml MODULE
-    plugin.cpp
-    mediaplayer.cpp
-    videooutput.cpp
-    declarativeplaylist.cpp
-    )
+qt_add_qml_module(mockqtmultimediaplugin
+    URI QtMultimedia
+    VERSION 5.0
+    PLUGIN_TARGET mockqtmultimediaplugin
+    SOURCES
+        declarativeplaylist.cpp
+        mediaplayer.cpp
+        plugin.cpp
+        videooutput.cpp
+    QML_FILES
+        VideoSurface.qml
+)
 
-target_link_libraries(QtMultimedia-qml PRIVATE
+target_link_libraries(mockqtmultimediaplugin PRIVATE
     lomiri-paths
     Qt::Qml
     Qt::Quick
 )
 
-add_lomiri_mock(QtMultimedia 5.0 QtMultimedia TARGETS QtMultimedia-qml)
+install_qml_module(mockqtmultimediaplugin DESTINATION ${SHELL_INSTALL_QML}/mocks)

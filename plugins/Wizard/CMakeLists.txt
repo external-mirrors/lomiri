@@ -1,15 +1,19 @@
-add_library(Wizard-qml MODULE
-    plugin.cpp
-    PageList.cpp
-    System.cpp
-    LocalePlugin.cpp
-    timezonemodel.cpp
-    Status.cpp
-    keyboardLayoutsModel.cpp
-    Changelog.cpp
+qt_add_qml_module(wizardplugin
+    URI Wizard
+    VERSION 0.1
+    PLUGIN_TARGET wizardplugin
+    SOURCES
+        Changelog.cpp
+        keyboardLayoutsModel.cpp
+        LocalePlugin.cpp
+        PageList.cpp
+        plugin.cpp
+        Status.cpp
+        System.cpp
+        timezonemodel.cpp
 )
 
-target_link_libraries(Wizard-qml PRIVATE
+target_link_libraries(wizardplugin PRIVATE
     lomiri-paths
     PkgConfig::GD4
     PkgConfig::GEONAMES
@@ -19,10 +23,10 @@ target_link_libraries(Wizard-qml PRIVATE
 )
 
 if (NOT "${DISPLAYED_DISTRO_NAME}" STREQUAL "")
-    target_compile_definitions(Wizard-qml PRIVATE
+    target_compile_definitions(wizardplugin PRIVATE
         -DLOMIRI_DISPLAYED_DISTRO_NAME="${DISPLAYED_DISTRO_NAME}")
 endif ()
 
-add_lomiri_plugin(Wizard 0.1 Wizard TARGETS Wizard-qml)
+install_qml_module(wizardplugin DESTINATION ${SHELL_INSTALL_QML})
 
 install(FILES 50-com.lomiri.wizard.rules DESTINATION "${CMAKE_INSTALL_FULL_DATADIR}/polkit-1/rules.d")

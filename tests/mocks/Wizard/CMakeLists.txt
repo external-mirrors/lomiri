@@ -1,19 +1,21 @@
-add_library(MockWizard-qml MODULE
-    mockplugin.cpp
-    MockSystem.cpp
-    ${CMAKE_SOURCE_DIR}/plugins/Wizard/Changelog.cpp
-    ${CMAKE_SOURCE_DIR}/plugins/Wizard/PageList.cpp
-    ${CMAKE_SOURCE_DIR}/plugins/Wizard/timezonemodel.cpp
-    ${CMAKE_SOURCE_DIR}/plugins/Wizard/LocalePlugin.cpp
-    ${CMAKE_SOURCE_DIR}/plugins/Wizard/Status.cpp
-    ${CMAKE_SOURCE_DIR}/plugins/Wizard/keyboardLayoutsModel.cpp
+qt_add_qml_module(mockwizardplugin
+    URI Wizard
+    VERSION 0.1
+    PLUGIN_TARGET mockwizardplugin
+    SOURCES
+        mockplugin.cpp
+        MockSystem.cpp
+        ${CMAKE_SOURCE_DIR}/plugins/Wizard/Changelog.cpp
+        ${CMAKE_SOURCE_DIR}/plugins/Wizard/keyboardLayoutsModel.cpp
+        ${CMAKE_SOURCE_DIR}/plugins/Wizard/LocalePlugin.cpp
+        ${CMAKE_SOURCE_DIR}/plugins/Wizard/PageList.cpp
+        ${CMAKE_SOURCE_DIR}/plugins/Wizard/Status.cpp
+        ${CMAKE_SOURCE_DIR}/plugins/Wizard/timezonemodel.cpp
 )
 
-target_include_directories(MockWizard-qml PRIVATE
-    ${CMAKE_SOURCE_DIR}/plugins/Wizard
-)
+target_include_directories(mockwizardplugin PRIVATE ${CMAKE_SOURCE_DIR}/plugins/Wizard)
 
-target_link_libraries(MockWizard-qml PRIVATE
+target_link_libraries(mockwizardplugin PRIVATE
     lomiri-paths
     PkgConfig::GD4
     PkgConfig::GEONAMES
@@ -22,4 +24,4 @@ target_link_libraries(MockWizard-qml PRIVATE
     Qt::Qml
 )
 
-add_lomiri_mock(Wizard 0.1 Wizard TARGETS MockWizard-qml)
+install_qml_module(mockwizardplugin DESTINATION ${SHELL_INSTALL_QML}/mocks)

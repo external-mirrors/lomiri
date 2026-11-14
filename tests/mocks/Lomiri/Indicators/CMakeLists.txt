@@ -1,35 +1,37 @@
-set(IndicatorsFakeQml_SOURCES
-    fakeplugin.cpp
-    fakeindicatorsmodel.cpp
-    fakelomirimenumodelcache.cpp
-    ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Indicators/indicators.h
-    ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Indicators/menucontentactivator.cpp
-    ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Indicators/modelprinter.cpp
-    ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Indicators/sharedlomirimenumodel.cpp
-    ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Indicators/lomirimenumodelcache.cpp
-    ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Indicators/lomirimenumodelstack.cpp
+qt_add_qml_module(mockindicatorsplugin
+    URI Lomiri.Indicators
+    VERSION 0.1
+    PLUGIN_TARGET mockindicatorsplugin
+    SOURCES
+        fakeindicatorsmodel.cpp
+        fakelomirimenumodelcache.cpp
+        fakeplugin.cpp
+        ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Indicators/indicators.h
+        ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Indicators/lomirimenumodelcache.cpp
+        ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Indicators/lomirimenumodelstack.cpp
+        ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Indicators/menucontentactivator.cpp
+        ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Indicators/modelprinter.cpp
+        ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Indicators/sharedlomirimenumodel.cpp
+    QML_FILES
+        ActionRootState.qml
+        fakeindicatorsmodeldata.js
+        IndicatorsModel.qml
+        ModelActionRootState.qml
 )
 
-add_library(IndicatorsFakeQml SHARED
-    ${IndicatorsFakeQml_SOURCES}
-)
+target_include_directories(mockindicatorsplugin PRIVATE ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Indicators)
 
-target_include_directories(IndicatorsFakeQml PRIVATE
-    ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Indicators
-    ${CMAKE_SOURCE_DIR}/tests/mocks/QMenuModel.1
-)
+target_compile_definitions(mockindicatorsplugin PRIVATE LOMIRIINDICATORS_LIBRARY)
 
-target_compile_definitions(IndicatorsFakeQml PRIVATE LOMIRIINDICATORS_LIBRARY)
-
-target_link_libraries(IndicatorsFakeQml PRIVATE
-    QMenuModelQml
+target_link_libraries(mockindicatorsplugin PRIVATE
+    mockqmenumodelplugin
     Qt::Core
     Qt::Qml
     Qt::Quick
 )
 
-set_target_properties(IndicatorsFakeQml PROPERTIES
-    INSTALL_RPATH "${SHELL_INSTALL_QML}/mocks/QMenuModel.1"
+set_target_properties(mockindicatorsplugin PROPERTIES
+    INSTALL_RPATH "${SHELL_INSTALL_QML}/mocks/QMenuModel"
 )
 
-add_lomiri_mock(Lomiri.Indicators 0.1 Lomiri/Indicators TARGETS IndicatorsFakeQml)
+install_qml_module(mockindicatorsplugin DESTINATION ${SHELL_INSTALL_QML}/mocks)

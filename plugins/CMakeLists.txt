@@ -1,15 +1,4 @@
-find_package(QmlPlugins)
-
-# Set up and install a plugin for lomiri.
-#
-# add_lomiri_plugin(plugin version path
-#     [...]  # See export_qmlfiles and export_qmlplugin documentation for more options
-# )
-
-macro(add_lomiri_plugin PLUGIN VERSION PATH)
-    export_qmlfiles(${PLUGIN} ${PATH} DESTINATION ${SHELL_INSTALL_QML} ${ARGN})
-    export_qmlplugin(${PLUGIN} ${VERSION} ${PATH} DESTINATION ${SHELL_INSTALL_QML} ${ARGN})
-endmacro()
+include(QtUtils)
 
 add_subdirectory(AccountsService)
 add_subdirectory(Aethercast)

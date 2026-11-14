@@ -1,2 +1,2 @@
 module SessionBroadcast
-plugin MockSessionBroadcast-qml
+plugin mocksessionbroadcastplugin

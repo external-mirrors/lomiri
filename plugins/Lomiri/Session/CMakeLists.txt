@@ -1,14 +1,14 @@
-set(QMLSESSIONPLUGIN_SRC
-    plugin.cpp
-    dbuslomirisessionservice.cpp
-    orientationlock.cpp
-    )
+qt_add_qml_module(sessionplugin
+    URI Lomiri.Session
+    VERSION 0.1
+    PLUGIN_TARGET sessionplugin
+    SOURCES
+        dbuslomirisessionservice.cpp
+        orientationlock.cpp
+        plugin.cpp
+)
 
-add_library(LomiriSession-qml MODULE
-    ${QMLSESSIONPLUGIN_SRC}
-    )
-
-target_link_libraries(LomiriSession-qml PRIVATE
+target_link_libraries(sessionplugin PRIVATE
     lomiri-private
     PkgConfig::GIO
     PkgConfig::GLIB
@@ -16,5 +16,4 @@ target_link_libraries(LomiriSession-qml PRIVATE
     Qt::Qml
 )
 
-# export the qmldir and qmltypes files
-add_lomiri_plugin(Lomiri.Session 0.1 Lomiri/Session TARGETS LomiriSession-qml)
+install_qml_module(sessionplugin DESTINATION ${SHELL_INSTALL_QML})

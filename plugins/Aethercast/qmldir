@@ -1,3 +1,2 @@
 module Aethercast
-plugin Aethercast-qml
-typeinfo Aethercast.qmltypes
+plugin aethercastplugin

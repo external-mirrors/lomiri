@@ -1,17 +1,25 @@
-set(applicationMenu_SRCS
-    applicationmenuregistry.cpp
-    dbusapplicationmenuregistry.cpp
-    plugin.cpp)
+qt_add_dbus_adaptor(generated_srcs
+    com.lomiri.MenuRegistrar.xml
+    dbusapplicationmenuregistry.h
+    DBusApplicationMenuRegistry
+)
 
-qt5_add_dbus_adaptor(applicationMenu_SRCS com.lomiri.MenuRegistrar.xml dbusapplicationmenuregistry.h DBusApplicationMenuRegistry)
+qt_add_qml_module(applicationmenuplugin
+    URI Lomiri.ApplicationMenu
+    VERSION 0.1
+    PLUGIN_TARGET applicationmenuplugin
+    SOURCES
+        applicationmenuregistry.cpp
+        dbusapplicationmenuregistry.cpp
+        plugin.cpp
+        ${generated_srcs}
+)
 
-add_library(ApplicationMenu-qml MODULE ${applicationMenu_SRCS})
-
-target_include_directories(ApplicationMenu-qml PRIVATE
+target_include_directories(applicationmenuplugin PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_CURRENT_BINARY_DIR}
 )
 
-target_link_libraries(ApplicationMenu-qml PRIVATE Qt::DBus Qt::Qml)
+target_link_libraries(applicationmenuplugin PRIVATE Qt::DBus Qt::Qml)
 
-add_lomiri_plugin(Lomiri.ApplicationMenu 0.1 Lomiri/ApplicationMenu TARGETS ApplicationMenu-qml)
+install_qml_module(applicationmenuplugin DESTINATION ${SHELL_INSTALL_QML})

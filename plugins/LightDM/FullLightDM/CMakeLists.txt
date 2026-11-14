@@ -2,15 +2,18 @@ foreach(source_file ${QMLPLUGIN_SRC})
     list(APPEND RELATIVE_QMLPLUGIN_SRC ../${source_file})
 endforeach()
 
-add_library(FullLightDM-qml MODULE
-    ${RELATIVE_QMLPLUGIN_SRC}
-    )
+qt_add_qml_module(fulllightdmplugin
+    URI LightDM.FullLightDM
+    VERSION 0.1
+    PLUGIN_TARGET fulllightdmplugin
+    SOURCES ${RELATIVE_QMLPLUGIN_SRC}
+)
 
-target_include_directories(FullLightDM-qml PRIVATE ${CMAKE_SOURCE_DIR}/plugins/Utils)
+target_include_directories(fulllightdmplugin PRIVATE ${CMAKE_SOURCE_DIR}/plugins/Utils)
 
-target_compile_definitions(FullLightDM-qml PRIVATE FULL_LIGHTDM)
+target_compile_definitions(fulllightdmplugin PRIVATE FULL_LIGHTDM)
 
-target_link_libraries(FullLightDM-qml PRIVATE
+target_link_libraries(fulllightdmplugin PRIVATE
     lomiri-paths
     lomiri-private
     PkgConfig::LIBLIGHTDM
@@ -21,4 +24,4 @@ target_link_libraries(FullLightDM-qml PRIVATE
     Qt::Qml
 )
 
-add_lomiri_plugin(FullLightDM 0.1 LightDM/FullLightDM TARGETS FullLightDM-qml)
+install_qml_module(fulllightdmplugin DESTINATION ${SHELL_INSTALL_QML})

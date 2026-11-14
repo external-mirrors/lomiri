@@ -1,2 +1,2 @@
 module GlobalShortcut
-plugin GlobalShortcut-qml
+plugin globalshortcutplugin

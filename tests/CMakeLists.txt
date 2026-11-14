@@ -5,6 +5,7 @@ if(NOT CMAKE_SYSTEM_PROCESSOR MATCHES "^(arm|aarch64)")
 endif()
 
 include(QmlTest)
+include(QtUtils)
 
 # QML tests that do not require graphical capabilities.
 add_meta_test(unittests)

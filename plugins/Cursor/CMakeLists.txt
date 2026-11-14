@@ -1,18 +1,20 @@
 add_subdirectory(3rd_party)
 
-set(QMLPLUGIN_SRC
-    plugin.cpp
-    CursorImageInfo.cpp
-    CursorImageProvider.cpp
-    MousePointer.cpp
-    InputDispatcherFilter.cpp
-    )
+qt_add_qml_module(cursorplugin
+    URI Cursor
+    VERSION 1.1
+    PLUGIN_TARGET cursorplugin
+    SOURCES
+        CursorImageInfo.cpp
+        CursorImageProvider.cpp
+        InputDispatcherFilter.cpp
+        MousePointer.cpp
+        plugin.cpp
+    QML_FILES
+        Cursor.qml
+)
 
-add_library(Cursor-qml SHARED
-    ${QMLPLUGIN_SRC}
-    )
-
-target_link_libraries(Cursor-qml PRIVATE
+target_link_libraries(cursorplugin PRIVATE
     lomiri-shell-application
     xcursorloader-static
     Qt::GuiPrivate
@@ -21,4 +23,4 @@ target_link_libraries(Cursor-qml PRIVATE
     Qt::Svg
 )
 
-add_lomiri_plugin(Cursor 1.1 Cursor TARGETS Cursor-qml)
+install_qml_module(cursorplugin DESTINATION ${SHELL_INSTALL_QML})

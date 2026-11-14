@@ -1,10 +1,12 @@
-set(CONNECTIVITY_SOURCES
-    plugin.cpp
-    ModemConnectivity.cpp
+qt_add_qml_module(modemconnectivityplugin
+    URI Lomiri.ModemConnectivity
+    VERSION 0.1
+    PLUGIN_TARGET modemconnectivityplugin
+    SOURCES
+        ModemConnectivity.cpp
+        plugin.cpp
 )
 
-add_library(ModemConnectivity MODULE ${CONNECTIVITY_SOURCES})
+target_link_libraries(modemconnectivityplugin PRIVATE Qt::Core Qt::DBus Qt::Qml)
 
-target_link_libraries(ModemConnectivity PRIVATE Qt::Qml Qt::DBus Qt::Core)
-
-add_lomiri_plugin(Lomiri.ModemConnectivity 0.1 Lomiri/ModemConnectivity TARGETS ModemConnectivity)
+install_qml_module(modemconnectivityplugin DESTINATION ${SHELL_INSTALL_QML})

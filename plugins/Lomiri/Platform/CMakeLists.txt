@@ -1,9 +1,12 @@
-set(platformplugin_SRCS
-    platform.cpp
-    plugin.cpp)
+qt_add_qml_module(platformplugin
+    URI Lomiri.Platform
+    VERSION 1.0
+    PLUGIN_TARGET platformplugin
+    SOURCES
+        platform.cpp
+        plugin.cpp
+)
 
-add_library(Platform-qml SHARED ${platformplugin_SRCS})
+target_link_libraries(platformplugin PRIVATE Qt::DBus Qt::Qml)
 
-target_link_libraries(Platform-qml PRIVATE Qt::DBus Qt::Qml)
-
-add_lomiri_plugin(Lomiri.Platform 1.0 Lomiri/Platform TARGETS Platform-qml)
+install_qml_module(platformplugin DESTINATION ${SHELL_INSTALL_QML})

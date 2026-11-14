@@ -1,22 +1,17 @@
-# This is a temporary snapshot of the WIP QInputInfo API as we
-# require this in lomiri now but upstream isn't finished yet.
-# Eventually this should be dropped in favor of the upstream
-# QInputInfo API.
-
-set(InputInfo_SOURCES
-    plugin.cpp
-    qinputinfo.cpp
-    qdeclarativeinputdevicemodel.cpp
-    linux/qinputdeviceinfo_linux.cpp
+qt_add_qml_module(inputinfoplugin
+    URI Lomiri.InputInfo
+    VERSION 0.1
+    PLUGIN_TARGET inputinfoplugin
+    SOURCES
+        linux/qinputdeviceinfo_linux.cpp
+        plugin.cpp
+        qdeclarativeinputdevicemodel.cpp
+        qinputinfo.cpp
 )
 
-add_library(InputInfo SHARED
-    ${InputInfo_SOURCES}
-)
+target_include_directories(inputinfoplugin PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 
-target_include_directories(InputInfo PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
-
-target_link_libraries(InputInfo PRIVATE
+target_link_libraries(inputinfoplugin PRIVATE
     PkgConfig::LIBEVDEV
     PkgConfig::LIBUDEV
     Qt::Core
@@ -24,4 +19,4 @@ target_link_libraries(InputInfo PRIVATE
     Qt::Quick
 )
 
-add_lomiri_plugin(Lomiri.InputInfo 0.1 Lomiri/InputInfo TARGETS InputInfo)
+install_qml_module(inputinfoplugin DESTINATION ${SHELL_INSTALL_QML})

@@ -1,14 +1,18 @@
-add_library(ProcessControl-qml MODULE
-    LocationWatcher.cpp
-    ProcessControl.cpp
-    plugin.cpp
+qt_add_qml_module(processcontrolplugin
+    URI ProcessControl
+    VERSION 0.1
+    PLUGIN_TARGET processcontrolplugin
+    SOURCES
+        LocationWatcher.cpp
+        plugin.cpp
+        ProcessControl.cpp
 )
 
-target_link_libraries(ProcessControl-qml PRIVATE Qt::DBus Qt::Qml)
+target_link_libraries(processcontrolplugin PRIVATE Qt::DBus Qt::Qml)
 
-target_include_directories(ProcessControl-qml PRIVATE ${CMAKE_CURRENT_BINARY_DIR})
+target_include_directories(processcontrolplugin PRIVATE ${CMAKE_CURRENT_BINARY_DIR})
 
-add_lomiri_plugin(ProcessControl 0.1 ProcessControl TARGETS ProcessControl-qml)
+install_qml_module(processcontrolplugin DESTINATION ${SHELL_INSTALL_QML})
 
 set(DBUS_IFACE_DIR "${CMAKE_INSTALL_DATADIR}/dbus-1/interfaces")
 

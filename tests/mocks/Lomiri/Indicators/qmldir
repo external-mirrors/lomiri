@@ -1,6 +1,5 @@
 module Lomiri.Indicators
-plugin IndicatorsFakeQml
-typeinfo Indicators.qmltypes
+plugin mockindicatorsplugin
 
 ActionRootState 0.1 ActionRootState.qml
 IndicatorsModel 0.1 IndicatorsModel.qml

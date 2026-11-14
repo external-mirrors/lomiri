@@ -1,3 +1,2 @@
 module Lomiri.ApplicationMenu
-plugin ApplicationMenu-qml
-typeinfo ApplicationMenu.qmltypes
+plugin applicationmenuplugin

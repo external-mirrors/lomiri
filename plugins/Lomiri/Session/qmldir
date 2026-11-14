@@ -1,3 +1,2 @@
 module Lomiri.Session
-plugin LomiriSession-qml
-typeinfo LomiriSession.qmltypes
+plugin sessionplugin

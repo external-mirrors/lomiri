@@ -1,2 +1,2 @@
 module Lomiri.SystemSettings.SecurityPrivacy
-plugin MockSecurityPrivacy
+plugin mocksecurityprivacyplugin

@@ -1,3 +1,2 @@
 module Biometryd
-plugin MockBiometryd
-typeinfo Biometryd.qmltypes
+plugin mockbiometrydplugin

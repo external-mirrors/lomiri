@@ -1,2 +1,2 @@
 module UInput
-plugin FakeUInput-qml
+plugin mockuinputplugin

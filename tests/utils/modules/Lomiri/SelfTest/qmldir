@@ -1,6 +1,5 @@
 module Lomiri.SelfTest
-plugin LomiriTestQml
-typeinfo Test.qmltypes
+plugin selftestplugin
 
 LomiriTestCase 0.1 LomiriTestCase.qml
 StageTestCase 0.1 StageTestCase.qml

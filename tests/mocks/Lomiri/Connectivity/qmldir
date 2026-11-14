@@ -1,2 +1,2 @@
 module Lomiri.Connectivity
-plugin connectivity-qml
+plugin mockconnectivityplugin

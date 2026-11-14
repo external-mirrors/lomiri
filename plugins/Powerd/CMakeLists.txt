@@ -1,12 +1,16 @@
-add_library(Powerd-qml MODULE
-    plugin.cpp
-    Powerd.cpp
-    )
+qt_add_qml_module(powerdplugin
+    URI Powerd
+    VERSION 0.1
+    PLUGIN_TARGET powerdplugin
+    SOURCES
+        plugin.cpp
+        Powerd.cpp
+)
 
-target_link_libraries(Powerd-qml PRIVATE
+target_link_libraries(powerdplugin PRIVATE
     PkgConfig::GIO
     Qt::DBus
     Qt::Qml
 )
 
-add_lomiri_plugin(Powerd 0.1 Powerd TARGETS Powerd-qml)
+install_qml_module(powerdplugin DESTINATION ${SHELL_INSTALL_QML})

@@ -1,17 +1,22 @@
-set(QMenuModelQml_SOURCES
-  actiondata.h
-  actionstateparser.cpp
-  dbus-enums.h
-  plugin.cpp
-  ayatanamenumodel.cpp
+# Some tests need to link this as a library while also including
+# it as a QML module, so only build it as a single shared library.
+add_library(mockqmenumodelplugin SHARED plugin.cpp)
+qt_add_qml_module(mockqmenumodelplugin
+    URI QMenuModel
+    VERSION 1.0
+    PLUGIN_TARGET mockqmenumodelplugin
+    SOURCES
+        actiondata.h
+        actionstateparser.cpp
+        ayatanamenumodel.cpp
+        dbus-enums.h
+    QML_FILES
+        AyatanaMenuAction.qml
+        QDBusActionGroup.qml
 )
 
-add_library(QMenuModelQml SHARED ${QMenuModelQml_SOURCES})
+target_include_directories(mockqmenumodelplugin PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
-target_link_libraries(QMenuModelQml PRIVATE Qt::Core Qt::Quick)
+target_link_libraries(mockqmenumodelplugin PRIVATE Qt::Core Qt::Quick)
 
-set_target_properties(QMenuModelQml PROPERTIES
-                      OUTPUT_NAME qmenumodel
-                      VERSION 1)
-
-add_lomiri_mock(QMenuModel 1.0 QMenuModel.1 TARGETS QMenuModelQml)
+install_qml_module(mockqmenumodelplugin DESTINATION ${SHELL_INSTALL_QML}/mocks)

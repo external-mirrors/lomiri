@@ -1,3 +1,2 @@
 module QtMir.Application
-plugin FakeQtMirApplicationQml
-typeinfo Application.qmltypes
+plugin mockqtmirapplicationplugin

@@ -1,2 +1,2 @@
 module BatteryMonitor
-plugin BatteryMonitor
+plugin batterymonitorplugin

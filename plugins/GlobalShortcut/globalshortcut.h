@@ -30,7 +30,7 @@
  *
  * When the shortcut is detected, the signal triggered() gets emitted.
  */
-class GlobalShortcut: public QQuickItem
+class Q_DECL_EXPORT GlobalShortcut: public QQuickItem
 {
     Q_OBJECT
     /**
