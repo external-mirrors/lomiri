@@ -1,18 +1,20 @@
-find_package(QmlPlugins)
-
-set(LomiriTestQML_SOURCES
-    testutil.cpp
-    plugin.cpp
-    TouchEventSequenceWrapper.cpp
+qt_add_qml_module(selftestplugin
+    URI Lomiri.SelfTest
+    VERSION 0.1
+    PLUGIN_TARGET selftestplugin
+    SOURCES
+        plugin.cpp
+        testutil.cpp
+        TouchEventSequenceWrapper.cpp
+    QML_FILES
+        LomiriTestCase.qml
+        MouseTouchEmulationCheckbox.qml
+        StageTestCase.qml
 )
 
-add_library(LomiriTestQml MODULE ${LomiriTestQML_SOURCES})
+target_include_directories(selftestplugin PRIVATE ${CMAKE_SOURCE_DIR}/src)
 
-target_include_directories(LomiriTestQml PRIVATE
-    ${CMAKE_SOURCE_DIR}/src
-)
-
-target_link_libraries(LomiriTestQml PRIVATE
+target_link_libraries(selftestplugin PRIVATE
     lomiri-gestures-private
     Qt::Core
     Qt::GuiPrivate
@@ -22,12 +24,12 @@ target_link_libraries(LomiriTestQml PRIVATE
 )
 
 if (MOUSETOUCHADAPTOR_LIBS_FOUND)
-    target_sources(LomiriTestQml PRIVATE MouseTouchAdaptor.cpp)
-    target_compile_definitions(LomiriTestQml PRIVATE LOMIRI_ENABLE_TOUCH_EMULATION)
-    target_link_libraries(LomiriTestQml PRIVATE PkgConfig::MOUSETOUCHADAPTOR_LIBS)
+    target_sources(selftestplugin PRIVATE MouseTouchAdaptor.cpp)
+    target_compile_definitions(selftestplugin PRIVATE LOMIRI_ENABLE_TOUCH_EMULATION)
+    target_link_libraries(selftestplugin PRIVATE PkgConfig::MOUSETOUCHADAPTOR_LIBS)
 endif()
 
 # To find libLomiriGestures.so
-set_target_properties(LomiriTestQml PROPERTIES INSTALL_RPATH "${SHELL_PRIVATE_FULL_LIBDIR}")
+set_target_properties(selftestplugin PROPERTIES INSTALL_RPATH "${SHELL_PRIVATE_FULL_LIBDIR}")
 
-add_lomiri_mock(Lomiri.SelfTest 0.1 Lomiri/SelfTest PREFIX utils TARGETS LomiriTestQml)
+install_qml_module(selftestplugin DESTINATION ${SHELL_INSTALL_QML}/utils)

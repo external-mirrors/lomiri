@@ -1,16 +1,18 @@
-set(MockNotificationsPlugin_SOURCES
-    plugin.cpp
-    MockNotification.cpp
-    MockNotificationModel.cpp
-    MockActionModel.cpp
+qt_add_qml_module(mocknotificationsplugin
+    URI Lomiri.Notifications
+    VERSION 1.0
+    PLUGIN_TARGET mocknotificationsplugin
+    SOURCES
+        MockActionModel.cpp
+        MockNotification.cpp
+        MockNotificationModel.cpp
+        plugin.cpp
 )
 
-add_library(MockNotificationsPlugin MODULE ${MockNotificationsPlugin_SOURCES})
-
-target_link_libraries(MockNotificationsPlugin PRIVATE
+target_link_libraries(mocknotificationsplugin PRIVATE
     PkgConfig::NOTIFICATIONS_API
     Qt::Core
     Qt::Quick
 )
 
-add_lomiri_mock(Lomiri.Notifications 1.0 Lomiri/Notifications TARGETS MockNotificationsPlugin)
+install_qml_module(mocknotificationsplugin DESTINATION ${SHELL_INSTALL_QML}/mocks)

@@ -1,38 +1,42 @@
-set(QMLPLUGIN_SRC
-    ${CMAKE_SOURCE_DIR}/plugins/Utils/activefocuslogger.cpp
-    ${CMAKE_SOURCE_DIR}/plugins/Utils/qlimitproxymodelqml.cpp
-    ${CMAKE_SOURCE_DIR}/plugins/Utils/lomirisortfilterproxymodelqml.cpp
-    ${CMAKE_SOURCE_DIR}/plugins/Utils/lomirimenumodelpaths.cpp
-    ${CMAKE_SOURCE_DIR}/plugins/Utils/windowinputfilter.cpp
-    ${CMAKE_SOURCE_DIR}/plugins/Utils/easingcurve.cpp
-    ${CMAKE_SOURCE_DIR}/plugins/Utils/inputwatcher.cpp
-    ${CMAKE_SOURCE_DIR}/plugins/Utils/timezoneFormatter.cpp
-    ${CMAKE_SOURCE_DIR}/plugins/Utils/applicationsfiltermodel.cpp
-    ${CMAKE_SOURCE_DIR}/plugins/Utils/inputeventgenerator.cpp
-    ${CMAKE_SOURCE_DIR}/plugins/Utils/deviceconfig.cpp
-    ${CMAKE_SOURCE_DIR}/plugins/Utils/globalfunctions.cpp
-    ${CMAKE_SOURCE_DIR}/plugins/Utils/appdrawerproxymodel.cpp
-    ${CMAKE_SOURCE_DIR}/plugins/Utils/tabfocusfence.cpp
-    ${CMAKE_SOURCE_DIR}/plugins/Utils/expressionfiltermodel.cpp
-    ${CMAKE_SOURCE_DIR}/plugins/Utils/quicklistproxymodel.cpp
-    constants.cpp
-    plugin.cpp
-    windowstatestorage.cpp
-    URLDispatcher.cpp
-    deviceinfo.cpp
-    displaycutoutsmodel.cpp
-    )
+qt_add_qml_module(mockutilsplugin
+    URI Utils
+    VERSION 0.1
+    PLUGIN_TARGET mockutilsplugin
+    SOURCES
+        constants.cpp
+        deviceinfo.cpp
+        displaycutoutsmodel.cpp
+        plugin.cpp
+        URLDispatcher.cpp
+        windowstatestorage.cpp
+        ${CMAKE_SOURCE_DIR}/plugins/Utils/activefocuslogger.cpp
+        ${CMAKE_SOURCE_DIR}/plugins/Utils/appdrawerproxymodel.cpp
+        ${CMAKE_SOURCE_DIR}/plugins/Utils/applicationsfiltermodel.cpp
+        ${CMAKE_SOURCE_DIR}/plugins/Utils/deviceconfig.cpp
+        ${CMAKE_SOURCE_DIR}/plugins/Utils/easingcurve.cpp
+        ${CMAKE_SOURCE_DIR}/plugins/Utils/expressionfiltermodel.cpp
+        ${CMAKE_SOURCE_DIR}/plugins/Utils/globalfunctions.cpp
+        ${CMAKE_SOURCE_DIR}/plugins/Utils/inputeventgenerator.cpp
+        ${CMAKE_SOURCE_DIR}/plugins/Utils/inputwatcher.cpp
+        ${CMAKE_SOURCE_DIR}/plugins/Utils/lomirimenumodelpaths.cpp
+        ${CMAKE_SOURCE_DIR}/plugins/Utils/lomirisortfilterproxymodelqml.cpp
+        ${CMAKE_SOURCE_DIR}/plugins/Utils/qlimitproxymodelqml.cpp
+        ${CMAKE_SOURCE_DIR}/plugins/Utils/quicklistproxymodel.cpp
+        ${CMAKE_SOURCE_DIR}/plugins/Utils/tabfocusfence.cpp
+        ${CMAKE_SOURCE_DIR}/plugins/Utils/timezoneFormatter.cpp
+        ${CMAKE_SOURCE_DIR}/plugins/Utils/windowinputfilter.cpp
+    QML_FILES
+        EdgeBarrierSettings.qml
+        Style.js
+        WindowInputMonitor.qml
+)
 
-add_library(FakeUtils-qml SHARED
-    ${QMLPLUGIN_SRC}
-    )
-
-target_include_directories(FakeUtils-qml PRIVATE
+target_include_directories(mockutilsplugin PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_SOURCE_DIR}/plugins/Utils
 )
 
-target_link_libraries(FakeUtils-qml PRIVATE
+target_link_libraries(mockutilsplugin PRIVATE
     lomiri-shell-application
     lomiri-shell-launcher
     PkgConfig::GIO
@@ -45,10 +49,4 @@ target_link_libraries(FakeUtils-qml PRIVATE
     Qt::QuickPrivate
 )
 
-# Because this is an internal support library, we want
-# to expose all symbols in it. Consider changing this
-# either to a static library or just using the
-# files directly in targets.
-set_target_properties(FakeUtils-qml PROPERTIES COMPILE_FLAGS -fvisibility=default)
-
-add_lomiri_mock(Utils 0.1 Utils TARGETS FakeUtils-qml)
+install_qml_module(mockutilsplugin DESTINATION ${SHELL_INSTALL_QML}/mocks)

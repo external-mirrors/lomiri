@@ -1,8 +1,12 @@
-add_library(FakeUInput-qml MODULE
-    plugin.cpp
-    mockuinput.cpp
+qt_add_qml_module(mockuinputplugin
+    URI UInput
+    VERSION 0.1
+    PLUGIN_TARGET mockuinputplugin
+    SOURCES
+        mockuinput.cpp
+        plugin.cpp
 )
 
-target_link_libraries(FakeUInput-qml PRIVATE Qt::Qml)
+target_link_libraries(mockuinputplugin PRIVATE Qt::Qml)
 
-add_lomiri_mock(UInput 0.1 UInput TARGETS FakeUInput-qml)
+install_qml_module(mockuinputplugin DESTINATION ${SHELL_INSTALL_QML}/mocks)

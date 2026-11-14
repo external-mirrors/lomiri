@@ -1,2 +1,2 @@
 module Lomiri.Telephony
-plugin FakeLomiriTelephonyQml
+plugin mocktelephonyplugin

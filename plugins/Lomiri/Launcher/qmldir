@@ -1,3 +1,2 @@
 module Lomiri.Launcher
-plugin LomiriLauncher-qml
-typeinfo Launcher.qmltypes
+plugin launcherplugin

@@ -1,8 +1,12 @@
-add_library(MockHfd-qml MODULE
-    plugin.cpp
-    Leds.cpp
-    )
+qt_add_qml_module(mockhfdplugin
+    URI Hfd
+    VERSION 0.1
+    PLUGIN_TARGET mockhfdplugin
+    SOURCES
+        Leds.cpp
+        plugin.cpp
+)
 
-target_link_libraries(MockHfd-qml PRIVATE Qt::Qml Qt::Gui)
+target_link_libraries(mockhfdplugin PRIVATE Qt::Gui Qt::Qml)
 
-add_lomiri_mock(Hfd 0.1 Hfd TARGETS MockHfd-qml)
+install_qml_module(mockhfdplugin DESTINATION ${SHELL_INSTALL_QML}/mocks)

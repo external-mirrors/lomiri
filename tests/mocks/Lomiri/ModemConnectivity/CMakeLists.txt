@@ -1,10 +1,16 @@
-set(MOCK_MODEMCONNECTIVITY_SOURCES
-    plugin.cpp
-    MockModemConnectivity.cpp
+qt_add_qml_module(mockmodemconnectivityplugin
+    URI Lomiri.ModemConnectivity
+    VERSION 0.1
+    PLUGIN_TARGET mockmodemconnectivityplugin
+    SOURCES
+        MockModemConnectivity.cpp
+        plugin.cpp
 )
 
-add_library(MockModemConnectivity MODULE ${MOCK_MODEMCONNECTIVITY_SOURCES})
+target_link_libraries(mockmodemconnectivityplugin PRIVATE
+    Qt::Core
+    Qt::Qml
+    Qt::Quick
+)
 
-target_link_libraries(MockModemConnectivity PRIVATE Qt::Qml Qt::Quick Qt::Core)
-
-add_lomiri_mock(Lomiri.ModemConnectivity 0.1 Lomiri/ModemConnectivity TARGETS MockModemConnectivity)
+install_qml_module(mockmodemconnectivityplugin DESTINATION ${SHELL_INSTALL_QML}/mocks)

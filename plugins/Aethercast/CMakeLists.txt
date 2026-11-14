@@ -10,18 +10,19 @@ qt_add_dbus_interface(
     freedesktop_properties
 )
 
-add_library(Aethercast-qml MODULE
-    plugin.cpp
-    displays.cpp
-    ${DBUS_INTERFACE}
-    ${FREEDESKTOP_PROPERTIES}
+qt_add_qml_module(aethercastplugin
+    URI Aethercast
+    VERSION 1.0
+    PLUGIN_TARGET aethercastplugin
+    SOURCES
+        displays.cpp
+        plugin.cpp
+        ${DBUS_INTERFACE}
+        ${FREEDESKTOP_PROPERTIES}
 )
 
-target_include_directories(
-    Aethercast-qml
-    PRIVATE
-    ${CMAKE_CURRENT_BINARY_DIR}
-)
+target_include_directories(aethercastplugin PRIVATE ${CMAKE_CURRENT_BINARY_DIR})
 
-target_link_libraries(Aethercast-qml PRIVATE Qt::Qml Qt::DBus)
-add_lomiri_plugin(Aethercast 0.1 Aethercast TARGETS Aethercast-qml)
+target_link_libraries(aethercastplugin PRIVATE Qt::Qml Qt::DBus)
+
+install_qml_module(aethercastplugin DESTINATION ${SHELL_INSTALL_QML})

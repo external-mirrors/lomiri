@@ -1,3 +1,2 @@
 module SessionBroadcast
-plugin SessionBroadcast-qml
-typeinfo SessionBroadcast.qmltypes
+plugin sessionbroadcastplugin

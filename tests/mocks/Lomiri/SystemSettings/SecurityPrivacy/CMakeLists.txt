@@ -1,10 +1,16 @@
-set(MOCK_SECURITYPRIVACY_SOURCES
-    plugin.cpp
-    MockSecurityPrivacy.cpp
+qt_add_qml_module(mocksecurityprivacyplugin
+    URI Lomiri.SystemSettings.SecurityPrivacy
+    VERSION 1.0
+    PLUGIN_TARGET mocksecurityprivacyplugin
+    SOURCES
+        MockSecurityPrivacy.cpp
+        plugin.cpp
 )
 
-add_library(MockSecurityPrivacy MODULE ${MOCK_SECURITYPRIVACY_SOURCES})
+target_link_libraries(mocksecurityprivacyplugin PRIVATE
+    Qt::Core
+    Qt::Qml
+    Qt::Quick
+)
 
-target_link_libraries(MockSecurityPrivacy PRIVATE Qt::Qml Qt::Quick Qt::Core)
-
-add_lomiri_mock(Lomiri.SystemSettings.SecurityPrivacy 1.0 Lomiri/SystemSettings/SecurityPrivacy TARGETS MockSecurityPrivacy)
+install_qml_module(mocksecurityprivacyplugin DESTINATION ${SHELL_INSTALL_QML}/mocks)

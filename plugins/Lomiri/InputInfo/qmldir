@@ -1,3 +1,2 @@
 module Lomiri.InputInfo
-plugin InputInfo
-typeinfo InputInfo.qmltypes
+plugin inputinfoplugin

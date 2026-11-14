@@ -1,3 +1,2 @@
 module Lomiri.Launcher
-plugin LomiriLauncherAS-qml
-typeinfo Launcher.qmltypes
+plugin greeterlauncherplugin

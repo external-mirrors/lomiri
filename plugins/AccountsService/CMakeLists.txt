@@ -1,21 +1,25 @@
-add_library(AccountsService-qml MODULE
-    AccountsService.cpp
-    AccountsServiceDBusAdaptor.cpp
-    plugin.cpp
-    )
+qt_add_qml_module(accountsserviceplugin
+    URI AccountsService
+    VERSION 0.1
+    PLUGIN_TARGET accountsserviceplugin
+    SOURCES
+        AccountsService.cpp
+        AccountsServiceDBusAdaptor.cpp
+        plugin.cpp
+)
 
 if(ENABLE_UBUNTU_ACCOUNTSSERVICE)
-    target_compile_definitions(AccountsService-qml PRIVATE ENABLE_UBUNTU_ACCOUNTSSERVICE)
+    target_compile_definitions(accountsserviceplugin PRIVATE ENABLE_UBUNTU_ACCOUNTSSERVICE)
 endif()
 
-target_link_libraries(AccountsService-qml PRIVATE
+target_link_libraries(accountsserviceplugin PRIVATE
     lomiri-paths
     PkgConfig::GLIB
     Qt::DBus
     Qt::Qml
 )
 
-add_lomiri_plugin(AccountsService 0.1 AccountsService TARGETS AccountsService-qml)
+install_qml_module(accountsserviceplugin DESTINATION ${SHELL_INSTALL_QML})
 
 set(DBUS_IFACE_DIR "${CMAKE_INSTALL_FULL_DATADIR}/dbus-1/interfaces")
 set(ACCOUNTS_IFACE_DIR "${CMAKE_INSTALL_FULL_DATADIR}/accountsservice/interfaces")

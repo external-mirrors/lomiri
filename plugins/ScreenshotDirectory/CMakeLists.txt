@@ -1,9 +1,12 @@
-set(PLUGIN_SOURCES
-  ScreenshotDirectory.cpp
-  plugin.cpp
+qt_add_qml_module(screenshotdirectoryplugin
+    URI ScreenshotDirectory
+    VERSION 0.1
+    PLUGIN_TARGET screenshotdirectoryplugin
+    SOURCES
+        plugin.cpp
+        ScreenshotDirectory.cpp
 )
 
-add_library(ScreenshotDirectory-qml MODULE ${PLUGIN_SOURCES})
-target_link_libraries(ScreenshotDirectory-qml PRIVATE Qt::Qml Qt::Gui Qt::Quick)
+target_link_libraries(screenshotdirectoryplugin PRIVATE Qt::Gui Qt::Qml Qt::Quick)
 
-add_lomiri_plugin(ScreenshotDirectory 0.1 ScreenshotDirectory TARGETS ScreenshotDirectory-qml)
+install_qml_module(screenshotdirectoryplugin DESTINATION ${SHELL_INSTALL_QML})

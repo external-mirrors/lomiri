@@ -1,3 +1,2 @@
 module Lomiri.ModemConnectivity
-plugin ModemConnectivity
-typeinfo ModemConnectivity.qmltypes
+plugin modemconnectivityplugin

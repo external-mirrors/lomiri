@@ -1,19 +1,19 @@
-set(MockLauncherModel_SOURCES
-    plugin.cpp
-    MockLauncherModel.cpp
-    MockLauncherItem.cpp
-    MockQuickListModel.cpp
-    MockAppDrawerModel.cpp
-    ${CMAKE_SOURCE_DIR}/plugins/Utils/applicationsfiltermodel.cpp
+qt_add_qml_module(mocklauncherplugin
+    URI Lomiri.Launcher
+    VERSION 0.1
+    PLUGIN_TARGET mocklauncherplugin
+    SOURCES
+        MockAppDrawerModel.cpp
+        MockLauncherItem.cpp
+        MockLauncherModel.cpp
+        MockQuickListModel.cpp
+        plugin.cpp
+        ${CMAKE_SOURCE_DIR}/plugins/Utils/applicationsfiltermodel.cpp
 )
 
-add_library(MockLauncherPlugin MODULE ${MockLauncherModel_SOURCES})
+target_include_directories(mocklauncherplugin PRIVATE ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Launcher)
 
-target_include_directories(MockLauncherPlugin PRIVATE
-    ${CMAKE_SOURCE_DIR}/plugins/Lomiri/Launcher
-)
-
-target_link_libraries(MockLauncherPlugin PRIVATE
+target_link_libraries(mocklauncherplugin PRIVATE
     lomiri-paths
     lomiri-shell-application
     lomiri-shell-launcher
@@ -21,4 +21,4 @@ target_link_libraries(MockLauncherPlugin PRIVATE
     Qt::Quick
 )
 
-add_lomiri_mock(Lomiri.Launcher 0.1 Lomiri/Launcher TARGETS MockLauncherPlugin)
+install_qml_module(mocklauncherplugin DESTINATION ${SHELL_INSTALL_QML}/mocks)

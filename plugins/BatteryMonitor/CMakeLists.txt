@@ -1,10 +1,12 @@
-set(SRC
-    plugin.cpp
-    BatteryMonitor.cpp
+qt_add_qml_module(batterymonitorplugin
+    URI BatteryMonitor
+    VERSION 1.0
+    PLUGIN_TARGET batterymonitorplugin
+    SOURCES
+        BatteryMonitor.cpp
+        plugin.cpp
 )
 
-add_library(BatteryMonitor MODULE ${SRC})
+target_link_libraries(batterymonitorplugin PRIVATE Qt::DBus Qt::Qml)
 
-target_link_libraries(BatteryMonitor PRIVATE Qt::DBus Qt::Qml)
-
-add_lomiri_plugin(BatteryMonitor 1.0 BatteryMonitor TARGETS BatteryMonitor)
+install_qml_module(batterymonitorplugin DESTINATION ${SHELL_INSTALL_QML})

@@ -1,14 +1,11 @@
-add_library(LightDMController MODULE
-    plugin.cpp
-    )
-
-target_include_directories(LightDMController PUBLIC
-    ${CMAKE_SOURCE_DIR}/tests/mocks/liblightdm/
-    )
-
-target_link_libraries(LightDMController PRIVATE
-    MockLightDM
-    Qt::Qml
+qt_add_qml_module(lightdmcontrollerplugin
+    URI LightDMController
+    VERSION 0.1
+    PLUGIN_TARGET lightdmcontrollerplugin
+    SOURCES
+        plugin.cpp
 )
 
-add_lomiri_mock(LightDMController 0.1 LightDMController TARGETS LightDMController)
+target_link_libraries(lightdmcontrollerplugin PRIVATE MockLightDM Qt::Qml)
+
+install_qml_module(lightdmcontrollerplugin DESTINATION ${SHELL_INSTALL_QML}/mocks)

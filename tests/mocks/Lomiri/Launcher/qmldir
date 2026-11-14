@@ -1,3 +1,2 @@
 module Lomiri.Launcher
-plugin MockLauncherPlugin
-typeinfo Launcher.qmltypes
+plugin mocklauncherplugin

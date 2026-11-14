@@ -1,4 +1,2 @@
 module Lomiri.Notifications
-plugin MockNotificationsPlugin
-typeinfo Notifications.qmltypes
-
+plugin mocknotificationsplugin

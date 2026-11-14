@@ -2,18 +2,21 @@ foreach(source_file ${QMLPLUGIN_SRC})
     list(APPEND RELATIVE_QMLPLUGIN_SRC ../${source_file})
 endforeach()
 
-add_library(IntegratedLightDM-qml MODULE
-    ${RELATIVE_QMLPLUGIN_SRC}
-    )
+qt_add_qml_module(integratedlightdmplugin
+    URI LightDM.IntegratedLightDM
+    VERSION 0.1
+    PLUGIN_TARGET integratedlightdmplugin
+    SOURCES ${RELATIVE_QMLPLUGIN_SRC}
+)
 
-target_include_directories(IntegratedLightDM-qml PRIVATE
+target_include_directories(integratedlightdmplugin PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_SOURCE_DIR}/plugins/Utils
 )
 
-target_compile_definitions(IntegratedLightDM-qml PRIVATE INTEGRATED_LIGHTDM)
+target_compile_definitions(integratedlightdmplugin PRIVATE INTEGRATED_LIGHTDM)
 
-target_link_libraries(IntegratedLightDM-qml PRIVATE
+target_link_libraries(integratedlightdmplugin PRIVATE
     lomiri-paths
     integratedLightDM
     lomiri-private
@@ -23,6 +26,6 @@ target_link_libraries(IntegratedLightDM-qml PRIVATE
     Qt::Qml
 )
 
-add_lomiri_plugin(IntegratedLightDM 0.1 LightDM/IntegratedLightDM TARGETS IntegratedLightDM-qml)
+install_qml_module(integratedlightdmplugin DESTINATION ${SHELL_INSTALL_QML})
 
 add_subdirectory(liblightdm)

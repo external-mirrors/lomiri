@@ -1,1 +1,9 @@
-add_lomiri_mock(Cursor 1.1 Cursor)
+qt_add_qml_module(mockcursorplugin
+    URI Cursor
+    VERSION 1.1
+    PLUGIN_TARGET mockcursorplugin
+    QML_FILES
+        Cursor.qml
+)
+
+install_qml_module(mockcursorplugin DESTINATION ${SHELL_INSTALL_QML}/mocks)

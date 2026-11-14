@@ -1,3 +1,2 @@
 module Hfd
-plugin MockHfd-qml
-typeinfo hfd.qmltypes
+plugin mockhfdplugin

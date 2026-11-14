@@ -1,10 +1,12 @@
-add_library(connectivity-qml SHARED
-    networking-status.cpp
-    plugin.cpp
+qt_add_qml_module(mockconnectivityplugin
+    URI Lomiri.Connectivity
+    VERSION 1.0
+    PLUGIN_TARGET mockconnectivityplugin
+    SOURCES
+        networking-status.cpp
+        plugin.cpp
 )
-target_link_libraries(connectivity-qml PRIVATE Qt::Qml)
 
-# copy qmldir file into build directory for shadow builds
-file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/qmldir"
-    DESTINATION ${CMAKE_CURRENT_BINARY_DIR}
-    )
+target_link_libraries(mockconnectivityplugin PRIVATE Qt::Qml)
+
+install_qml_module(mockconnectivityplugin DESTINATION ${SHELL_INSTALL_QML}/mocks)

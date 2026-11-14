@@ -1,14 +1,15 @@
-set(FakeApplicationMenu_SRCS
-    ${CMAKE_SOURCE_DIR}/plugins/Lomiri/ApplicationMenu/applicationmenuregistry.cpp
-    mockapplicationmenuregistry.cpp
-    plugin.cpp)
-
-add_library(FakeApplicationMenu-qml MODULE ${FakeApplicationMenu_SRCS})
-
-target_include_directories(FakeApplicationMenu-qml PRIVATE
-    ${CMAKE_SOURCE_DIR}/plugins/Lomiri/ApplicationMenu
+qt_add_qml_module(mockapplicationmenuplugin
+    URI Lomiri.ApplicationMenu
+    VERSION 1.0
+    PLUGIN_TARGET mockapplicationmenuplugin
+    SOURCES
+        mockapplicationmenuregistry.cpp
+        plugin.cpp
+        ${CMAKE_SOURCE_DIR}/plugins/Lomiri/ApplicationMenu/applicationmenuregistry.cpp
 )
 
-target_link_libraries(FakeApplicationMenu-qml PRIVATE Qt::Qml Qt::DBus)
+target_include_directories(mockapplicationmenuplugin PRIVATE ${CMAKE_SOURCE_DIR}/plugins/Lomiri/ApplicationMenu)
 
-add_lomiri_mock(Lomiri.ApplicationMenu 1.0 Lomiri/ApplicationMenu PREFIX mocks TARGETS FakeApplicationMenu-qml)
+target_link_libraries(mockapplicationmenuplugin PRIVATE Qt::DBus Qt::Qml)
+
+install_qml_module(mockapplicationmenuplugin DESTINATION ${SHELL_INSTALL_QML}/mocks)

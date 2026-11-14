@@ -5,12 +5,9 @@ foreach(util_test
     WindowStateStorage
 )
     add_executable(${util_test}TestExec ${util_test}Test.cpp ModelTest.cpp)
-    target_include_directories(${util_test}TestExec PRIVATE
-        ${CMAKE_SOURCE_DIR}/plugins/Utils
-    )
     target_link_libraries(${util_test}TestExec PRIVATE
         lomiri-shell-application
-        Utils-qml
+        lomiriutils
         Qt::Core
         Qt::Qml
         Qt::Test
@@ -18,9 +15,7 @@ foreach(util_test
     install(TARGETS ${util_test}TestExec
         DESTINATION "${SHELL_PRIVATE_FULL_LIBEXECDIR}/tests/plugins/Utils"
     )
-    add_lomiri_unittest(${util_test} ${util_test}TestExec ADD_TEST
-        ENVIRONMENT LD_LIBRARY_PATH=${CMAKE_BINARY_DIR}/plugins/Utils
-    )
+    add_lomiri_unittest(${util_test} ${util_test}TestExec ADD_TEST)
 
 endforeach()
 
@@ -29,13 +24,17 @@ add_lomiri_qmlunittest(. UtilsStyle)
 
 # URLDispatcher test needs dbus-test-runner because it claims a dbus name
 add_executable(URLDispatcherTestExec URLDispatcherTest.cpp)
-target_include_directories(URLDispatcherTestExec PRIVATE ${CMAKE_SOURCE_DIR}/plugins/Utils)
-target_link_libraries(URLDispatcherTestExec PRIVATE Qt::Test Qt::Core Qt::DBus Qt::Qml Utils-qml)
+target_link_libraries(URLDispatcherTestExec PRIVATE
+    lomiriutils
+    Qt::Core
+    Qt::DBus
+    Qt::Qml
+    Qt::Test
+)
 install(TARGETS URLDispatcherTestExec
     DESTINATION "${SHELL_PRIVATE_FULL_LIBEXECDIR}/tests/plugins/Utils"
 )
 add_lomiri_unittest(URLDispatcher dbus-test-runner
     ARG_PREFIX "--parameter"
     ARGS --task $<TARGET_FILE:URLDispatcherTestExec>
-    ENVIRONMENT LD_LIBRARY_PATH=${CMAKE_BINARY_DIR}/plugins/Utils
 )
