@@ -31,6 +31,20 @@ QtObject {
 
     property int loadedState
 
+    // Apps can hide their window on close, so the state
+    // may be Hidden by the time we save. Keep the last good one.
+    property int lastRestorableState: Mir.RestoredState
+    readonly property int targetState: target ? target.windowState : Mir.UnknownState
+    onTargetStateChanged: {
+        if (isRestorable(targetState))
+            lastRestorableState = targetState;
+    }
+
+    function isRestorable(state) {
+        return state !== Mir.UnknownState && state !== Mir.MinimizedState
+            && state !== Mir.HiddenState && state !== Mir.AttachedState;
+    }
+
     function load(constrain) {
         var defaultWidth = units.gu(60);
         var defaultHeight = units.gu(50);
@@ -70,10 +84,7 @@ QtObject {
     }
 
     function save() {
-        var state = target.windowState;
-        if (state === Mir.MinimizedState)
-            state = target.prevWindowState;
-
+        var state = isRestorable(targetState) ? targetState : lastRestorableState;
         WindowStateStorage.saveState(target.appId, state);
         WindowStateStorage.saveGeometry(target.appId, Qt.rect(target.normalX, target.normalY, target.normalWidth, target.normalHeight));
     }
