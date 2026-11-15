@@ -58,7 +58,7 @@ set_greeter_var XDG_SESSION_DESKTOP lomiri
 set_greeter_var DESKTOP_SESSION $XDG_SESSION_DESKTOP
 
 set_greeter_var QT_IM_MODULE Maliit
-set_greeter_var QT_QPA_PLATFORM ubuntumirclient
+set_greeter_var QT_QPA_PLATFORM wayland-egl
 
 # We disable ofono using pulse.  It causes problems with racing with the user's
 # pulse.  We need to come up with a better long-term fix for this, because we
