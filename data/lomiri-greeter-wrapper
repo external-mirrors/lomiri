@@ -45,6 +45,12 @@ set_greeter_var()
 # Pass the system-compositor's host socket
 MIR_SOCKET_ARG="MIR_SERVER_WAYLAND_HOST=/run/wayland-syscomp"
 
+# Unset imported-but-conflicting environment variables
+# TODO: Remove during transition to full Mir 2
+export LSC_SESSION_NAME="$MIR_SERVER_NAME"
+unset MIR_SERVER_NAME
+unset MIR_SERVER_HOST_SOCKET
+
 echo "DBUS_SESSION_BUS_ADDRESS=${DBUS_SESSION_BUS_ADDRESS}" >"$XDG_RUNTIME_DIR/dbus-session"
 
 # If touch session script (which sets up grid units and mir variables) is available, use it
