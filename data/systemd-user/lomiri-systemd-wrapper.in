@@ -9,41 +9,23 @@
 # must be fed by the raw input event stream from Unity8).
 export QML_NO_TOUCH_COMPRESSION=1
 
-# Detect whether we're running on Mir 1 or Mir 2
-# TODO: phase out
-LEGACY_MIR=false
-ldd $(which lomiri) 2>/dev/null | grep -q "libmir1.*\.so\..*" && LEGACY_MIR=true
-
 # Unlikely under systemd, but just in case.
 if [ -z "$XDG_RUNTIME_DIR" ]; then
     XDG_RUNTIME_DIR=/run/user/$(id -u)
     export XDG_RUNTIME_DIR
 fi
 
-# TODO: phase out
-if [ "${LEGACY_MIR}" = "true" ]; then
-    export MIR_SERVER_ENABLE_MIRCLIENT=1
-    export MIR_SERVER_PROMPT_FILE=1
-    export MIR_SERVER_FILE="${XDG_RUNTIME_DIR}/mir_socket"
+# We want Mir2's Wayland graphics platform to be used, so that
+# we can connect to the system compositor via Wayland also.
+# This turns the user session's shell into a Wayland client
+# to lomiri-system-compositor, using libhybris' "wayland" EGL
+# platform as compared to the "null" one with Mirclient.
+export MIR_SERVER_WAYLAND_HOST="/run/wayland-syscomp"
 
-    rm -f "$MIR_SERVER_FILE"
-    rm -f "${MIR_SERVER_FILE}_trusted"
-
-    dbus-update-activation-environment --systemd MIR_SOCKET="${MIR_SERVER_FILE}"
-else
-    # TODO: Keep this once we phase out Mirclient support completely
-    # We want Mir2's Wayland graphics platform to be used, so that
-    # we can connect to the system compositor via Wayland also.
-    # This turns the user session's shell into a Wayland client
-    # to lomiri-system-compositor, using libhybris' "wayland" EGL
-    # platform as compared to the "null" one with Mirclient.
-    export MIR_SERVER_WAYLAND_HOST="/run/wayland-syscomp"
-
-    # Remove conflicting environment variables from Mir1 times
-    export LSC_SESSION_NAME="$MIR_SERVER_NAME"
-    unset MIR_SERVER_NAME
-    unset MIR_SERVER_HOST_SOCKET
-fi
+# Remove conflicting environment variables from Mir1 times
+export LSC_SESSION_NAME="$MIR_SERVER_NAME"
+unset MIR_SERVER_NAME
+unset MIR_SERVER_HOST_SOCKET
 
 # TODO: maybe handle some kind of collision?
 export WAYLAND_DISPLAY=wayland-0
