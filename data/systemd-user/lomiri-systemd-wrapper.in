@@ -39,8 +39,14 @@ export QT_QPA_PLATFORM=mirserver
 # Allow Lomiri to assume user's logind Display session.
 export LOMIRI_AS_SYSTEMD_UNIT=1
 
+# Support X11 apps via XWayland
 export MIR_SERVER_ENABLE_X11=1
 export MIR_SERVER_XWAYLAND_PATH=@CMAKE_INSTALL_FULL_LIBEXECDIR@/Xwayland.lomiri
+
+# Qt platform theme for improved icon handling, kinetic scroll tuning &
+# touch/click distance
+export QT_QPA_PLATFORMTHEME=lomiri
+dbus-update-activation-environment --systemd QT_QPA_PLATFORMTHEME
 
 # Lomiri cannot work with software rendering
 unset LIBGL_ALWAYS_SOFTWARE
