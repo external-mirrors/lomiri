@@ -10,12 +10,12 @@ Build-Depends:
  dh-apparmor,
  dh-sequence-user-session-migration,
  cmake,
- cmake-extras,
  dbus-test-runner,
  doxyqml,
  fonts-ubuntu <!nocheck>,
  gdb,
  graphviz,
+ libaudit-dev,
  libdeviceinfo-dev,
  libevdev-dev,
  libgeonames-dev,
@@ -285,6 +285,7 @@ Description: Shell of the Lomiri Operating Environment (common files)
 
 Package: lomiri-tests
 Architecture: any
+Build-Profiles: <!noinsttest>
 Multi-Arch: foreign
 Depends:
  dbus-test-runner,

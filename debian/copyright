@@ -341,7 +341,6 @@ Files: build.sh
  src/main.cpp
  src/qmldebuggerutils.h
  tests/copyright/check_copyright.sh
- tests/imports/check_imports.py
  tests/mocks/AccountsService/AccountsService.cpp
  tests/mocks/AccountsService/AccountsService.h
  tests/mocks/AccountsService/plugin.cpp
@@ -947,7 +946,8 @@ Copyright: 2013, Canonical Ltd.
   2016, Canonical Ltd.
 License: LGPL-2.1
 
-Files: plugins/Lomiri/Launcher/xdgwatcher.cpp
+Files: cmake/modules/QtUtils.cmake
+ plugins/Lomiri/Launcher/xdgwatcher.cpp
  plugins/Lomiri/Launcher/xdgwatcher.h
  plugins/ProcessControl/CMakeLists.txt
  plugins/ProcessControl/LocationWatcher.cpp
@@ -972,6 +972,7 @@ Copyright: 2019, UBports Foundation.
   2021, UBports Foundation
   2022, UBports Foundation
   2025, UBports Foundation
+  2026, UBports Foundation
 License: GPL-3
 
 Files: plugins/Wizard/System.cpp
@@ -1040,13 +1041,6 @@ Files: plugins/BatteryMonitor/BatteryMonitor.cpp
  plugins/BatteryMonitor/plugin.h
 Copyright: 2023, Muhammad <muhammad23012009@hotmail.com>
 License: GPL-3
-
-Files: cmake/modules/EnableCoverageReport.cmake
- cmake/modules/FindLcov.cmake
- cmake/modules/Findgcovr.cmake
-Copyright: 2010, Johannes Wienke <jwienke at techfak dot uni-bielefeld dot de>
-  2011, Johannes Wienke <jwienke at techfak dot uni-bielefeld dot de>
-License: GPL-2+
 
 Files: qml/Greeter/ButtonPrompt.qml
  qml/Greeter/PinPrompt.qml
@@ -1139,7 +1133,6 @@ Files:
  LGPL_EXCEPTION.txt
  README.md
  clickable.yaml
- cmake/modules/ParseArguments.cmake
  cmake/modules/QmlTest.cmake
  cmake/modules/autopilot.cmake
  data/51-lomiri-greeter.conf
@@ -1179,7 +1172,6 @@ Files:
  plugins/LightDM/IntegratedLightDM/CMakeLists.txt
  plugins/LightDM/IntegratedLightDM/liblightdm/CMakeLists.txt
  plugins/LightDM/IntegratedLightDM/qmldir
- plugins/LightDM/qmldir
  plugins/Lomiri/ApplicationMenu/CMakeLists.txt
  plugins/Lomiri/ApplicationMenu/com.lomiri.MenuRegistrar.xml
  plugins/Lomiri/ApplicationMenu/qmldir
@@ -1351,7 +1343,6 @@ Files:
  tests/graphics/avatars/funky@12.png
  tests/graphics/clock@18.png
  tests/graphics/screenshots/gallery@12.png
- tests/imports/CMakeLists.txt
  tests/mocks/AccountsService/CMakeLists.txt
  tests/mocks/AccountsService/qmldir
  tests/mocks/Biometryd/CMakeLists.txt
@@ -1471,8 +1462,6 @@ Files:
  tests/qmltests/Wizard/licenses/en_US.html
  tests/qmltests/Wizard/licenses/fr_CA.html
  tests/qmltests/Wizard/licenses/fr_FR.html
- tests/qmltests/modules/CMakeLists.txt
- tests/qmltests/modules/Lomiri/CMakeLists.txt
  tests/scripts/README
  tests/uqmlscene/CMakeLists.txt
  tests/uqmlscene/README
@@ -1544,25 +1533,6 @@ License: Expat
  LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
  OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-License: GPL-2+
- This program is free software; you can redistribute it and/or modify
- it under the terms of the GNU General Public License as published by
- the Free Software Foundation; either version 2 of the License, or
- (at your option) any later version.
- .
- This program is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
- .
- You should have received a copy of the GNU General Public License
- along with this program; if not, write to the
- Free Software Foundation, Inc.,
- 31 Milk Street, # 960789, Boston, MA 02196, USA.
- .
- On Debian systems, the complete text of the GNU General Public License
- version 2 can be found in `/usr/share/common-licenses/GPL-2'.
 
 License: GPL-3
  This program is free software: you can redistribute it and/or modify

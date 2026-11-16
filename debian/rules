@@ -9,7 +9,8 @@ export DEB_BUILD_MAINT_OPTIONS=hardening=+all
 	dh $@
 
 FLAGS := -DDISPLAYED_DISTRO_NAME="Ubuntu Touch" \
-	-DENABLE_UBUNTU_ACCOUNTSSERVICE=$(if $(shell dpkg-vendor --derives-from Ubuntu && echo y),ON,OFF)
+	-DENABLE_UBUNTU_ACCOUNTSSERVICE=$(if $(shell dpkg-vendor --derives-from Ubuntu && echo y),ON,OFF) \
+	-DBUILD_TESTING=$(if $(filter lomiri-tests,$(shell dh_listpackages)),ON,OFF)
 
 override_dh_auto_configure:
 	dh_auto_configure --builddirectory=build-mir1-qt5 -- $(FLAGS)
@@ -69,7 +70,7 @@ override_dh_makeshlibs:
 override_dh_shlibdeps:
 	# Some mock libraries link against liblightdm-qt5-3.so which we want to
 	# avoid, since we only really link against our mock one, not the system one.
-	dh_shlibdeps -XlibMockAccountsService-qml.so -Llomiri-qt5-mir2
+	dh_shlibdeps -Xlibmockaccountsserviceplugin.so -Xliblightdmcontrollerplugin.so -Llomiri-qt5-mir2
 
 get-orig-source:
 	uscan --noconf --force-download --rename --download-current-version --destdir=..
