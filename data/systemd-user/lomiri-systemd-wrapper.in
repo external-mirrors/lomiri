@@ -9,26 +9,28 @@
 # must be fed by the raw input event stream from Unity8).
 export QML_NO_TOUCH_COMPRESSION=1
 
-# TODO: maybe allow this to be configurable somehow?
-export MIR_SERVER_ENABLE_MIRCLIENT=1
-export MIR_SERVER_PROMPT_FILE=1
-
 # Unlikely under systemd, but just in case.
 if [ -z "$XDG_RUNTIME_DIR" ]; then
     XDG_RUNTIME_DIR=/run/user/$(id -u)
     export XDG_RUNTIME_DIR
 fi
 
-export MIR_SERVER_FILE="${XDG_RUNTIME_DIR}/mir_socket"
+# We want Mir2's Wayland graphics platform to be used, so that
+# we can connect to the system compositor via Wayland also.
+# This turns the user session's shell into a Wayland client
+# to lomiri-system-compositor, using libhybris' "wayland" EGL
+# platform as compared to the "null" one with Mirclient.
+export MIR_SERVER_WAYLAND_HOST="/run/wayland-syscomp"
 
-rm -f "$MIR_SERVER_FILE"
-rm -f "${MIR_SERVER_FILE}_trusted"
+# Remove conflicting environment variables from Mir1 times
+export LSC_SESSION_NAME="$MIR_SERVER_NAME"
+unset MIR_SERVER_NAME
+unset MIR_SERVER_HOST_SOCKET
 
 # TODO: maybe handle some kind of collision?
 export WAYLAND_DISPLAY=wayland-0
 
 # Propegate our socket path for launching applications
-dbus-update-activation-environment --systemd MIR_SOCKET="${MIR_SERVER_FILE}"
 dbus-update-activation-environment --systemd WAYLAND_DISPLAY
 
 # Ensure that Lomiri uses the correct QPA.
@@ -37,8 +39,14 @@ export QT_QPA_PLATFORM=mirserver
 # Allow Lomiri to assume user's logind Display session.
 export LOMIRI_AS_SYSTEMD_UNIT=1
 
+# Support X11 apps via XWayland
 export MIR_SERVER_ENABLE_X11=1
 export MIR_SERVER_XWAYLAND_PATH=@CMAKE_INSTALL_FULL_LIBEXECDIR@/Xwayland.lomiri
+
+# Qt platform theme for improved icon handling, kinetic scroll tuning &
+# touch/click distance
+export QT_QPA_PLATFORMTHEME=lomiri
+dbus-update-activation-environment --systemd QT_QPA_PLATFORMTHEME
 
 # Lomiri cannot work with software rendering
 unset LIBGL_ALWAYS_SOFTWARE

@@ -2114,8 +2114,22 @@ FocusScope {
                     panelState: root.panelState
                     altDragEnabled: root.mode == "windowed"
 
+                    // QtWayland doesn't tell clients that the OSK is visible, hence they cannot adjust their presentation.
+                    // input-method-v2 having a concept of a visual keyboard area and v3 not having it complicates things.
+                    readonly property int oskOffset : {
+                        // Don't unnecessarily cause a windowed app to be resized when the OSK
+                        // gets summoned in windowed mode.
+                        if (root.mode !== "staged")
+                            return 0;
+
+                        if (priv.focusedAppDelegate !== appDelegate)
+                            return 0;
+
+                        return priv.virtualKeyboardHeight;
+                    }
+
                     requestedWidth: appDelegate.requestedWidth
-                    requestedHeight: appDelegate.requestedHeight
+                    requestedHeight: appDelegate.requestedHeight - oskOffset
 
                     onCloseClicked: { appDelegate.close(); }
                     onMaximizeClicked: {

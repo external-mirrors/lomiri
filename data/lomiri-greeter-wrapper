@@ -29,6 +29,7 @@ cleanup()
     if [ -n "$CMD_PID" ]; then
         kill "$CMD_PID"
     fi
+
     exit 0
 }
 
@@ -38,8 +39,17 @@ set_greeter_var()
     dbus-update-activation-environment --systemd "$1=$2"
 }
 
-SUB_SOCKET=$XDG_RUNTIME_DIR/mir_socket
-rm -f $SUB_SOCKET # clear socket in case we were hard shut down
+# Sanity fallback for our own Wayland socket
+[ -z "${WAYLAND_DISPLAY}" ] && export WAYLAND_DISPLAY=wayland-0
+
+# Pass the system-compositor's host socket
+MIR_SOCKET_ARG="MIR_SERVER_WAYLAND_HOST=/run/wayland-syscomp"
+
+# Unset imported-but-conflicting environment variables
+# TODO: Remove during transition to full Mir 2
+export LSC_SESSION_NAME="$MIR_SERVER_NAME"
+unset MIR_SERVER_NAME
+unset MIR_SERVER_HOST_SOCKET
 
 echo "DBUS_SESSION_BUS_ADDRESS=${DBUS_SESSION_BUS_ADDRESS}" >"$XDG_RUNTIME_DIR/dbus-session"
 
@@ -54,7 +64,7 @@ set_greeter_var XDG_SESSION_DESKTOP lomiri
 set_greeter_var DESKTOP_SESSION $XDG_SESSION_DESKTOP
 
 set_greeter_var QT_IM_MODULE Maliit
-set_greeter_var QT_QPA_PLATFORM ubuntumirclient
+set_greeter_var QT_QPA_PLATFORM wayland-egl
 
 # We disable ofono using pulse.  It causes problems with racing with the user's
 # pulse.  We need to come up with a better long-term fix for this, because we
@@ -88,10 +98,10 @@ if [ -n "$(command -v device-info)" ]; then
 fi
 
 export GRID_UNIT_PX="${GRID_UNIT_PX:-18}"
-export MIR_SERVER_ENABLE_MIRCLIENT=1
 
-rm "$XDG_RUNTIME_DIR/mir_socket"
-exec env MIR_SERVER_FILE=$SUB_SOCKET $TOUCH_WRAPPER $@ &
+rm "${XDG_RUNTIME_DIR}/${WAYLAND_DISPLAY}"
+
+exec env $MIR_SOCKET_ARG $TOUCH_WRAPPER $@ &
 CMD_PID=$!
 
 count=0
@@ -99,16 +109,14 @@ limit=60
 while [ true ]; do
     count=$((count + 1))
     [ $count -gt $limit ] && break
-    [ -e "$XDG_RUNTIME_DIR/mir_socket" ] && break
+    [ -e "${XDG_RUNTIME_DIR}/${WAYLAND_DISPLAY}" ] && break
     sleep 1s
 done
 
-systemctl --user restart maliit-server.service &
-systemctl --user restart lomiri-indicators.target &
+systemctl --user restart maliit-server.service --no-block
+systemctl --user restart lomiri-indicators.target --no-block
 
 wait $CMD_PID
 CMD_PID=
 
-systemctl --user stop maliit-server.service
-systemctl --user stop lomiri-indicators.target
-
+systemctl --user start exit.target --no-block
