@@ -32,6 +32,13 @@ inline QString stringFromEdid(const miroil::Edid& edid)
     return str;
 }
 
+// Outputs without an EDID (e.g. nested Wayland outputs) would all share one
+// key, so one display's settings would be applied to the others.
+inline bool hasIdentity(const miroil::Edid& edid)
+{
+    return edid.product_code != 0 || edid.serial_number != 0;
+}
+
 }
 
 DisplayConfigurationStorage::DisplayConfigurationStorage()
@@ -40,6 +47,9 @@ DisplayConfigurationStorage::DisplayConfigurationStorage()
 
 void DisplayConfigurationStorage::save(const miroil::DisplayId &displayId, const miroil::DisplayConfigurationOptions &options)
 {
+    if (!hasIdentity(displayId.edid))
+        return;
+
     const QString dbPath = QStandardPaths::writableLocation(QStandardPaths::GenericCacheLocation) + QStringLiteral("/lomiri/");
     QFile f(dbPath + stringFromEdid(displayId.edid) + ".edid");
 
@@ -68,6 +78,9 @@ void DisplayConfigurationStorage::save(const miroil::DisplayId &displayId, const
 
 bool DisplayConfigurationStorage::load(const miroil::DisplayId &displayId, miroil::DisplayConfigurationOptions &options) const
 {
+    if (!hasIdentity(displayId.edid))
+        return false;
+
     const QString dbPath = QStandardPaths::writableLocation(QStandardPaths::GenericCacheLocation) + QStringLiteral("/lomiri/");
     QFile f(dbPath + stringFromEdid(displayId.edid) + ".edid");
 

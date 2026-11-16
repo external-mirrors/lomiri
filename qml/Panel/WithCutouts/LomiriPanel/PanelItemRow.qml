@@ -16,6 +16,7 @@
  */
 
 import QtQuick 2.15
+import QtQuick.Window 2.2
 import Lomiri.Components 1.3
 import Utils 0.1
 import "../../.."
@@ -106,6 +107,15 @@ Item {
         function onCountChanged() {
             d.recalculateItems();
         }
+    }
+
+    // deviceinfo cutouts are in panel pixels, QML works in logical pixels.
+    function cutoutAt(index) {
+        const c = cutoutsModel.data(cutoutsModel.index(index, 0));
+        if (!c)
+            return c;
+        const r = Screen.devicePixelRatio;
+        return Qt.rect(c.x / r, c.y / r, c.width / r, c.height / r);
     }
 
     function updateItemFromLateralPosition() {
@@ -221,7 +231,7 @@ Item {
                     }
                 }
                 for (let i = 0; i < cutoutsModel.rowCount(); i++) {
-                    const cutout = cutoutsModel.data(cutoutsModel.index(i, 0));
+                    const cutout = cutoutAt(i);
                     if ((d.isFlipped && cutout[posField] + cutout[sizeField] > root.lastSelectedX) || (!d.isFlipped && cutout[posField] < root.lastSelectedX)) {
                         sumBefore += cutout[sizeField];
                     }
@@ -243,7 +253,7 @@ Item {
                 screenX = currentX - flickable[flickableField];
 
                 for (let ci = 0; ci < cutoutsModel.rowCount(); ci++) {
-                    const cutout = cutoutsModel.data(cutoutsModel.index(ci, 0));
+                    const cutout = cutoutAt(ci);
                     const cutoutSize = Math.floor(cutout[sizeField]);
                     const cutoutPos = Math.floor(d.isFlipped ? root[sizeField] - cutout[posField] - cutoutSize : cutout[posField]);
 
@@ -260,12 +270,12 @@ Item {
                 currentX += itemSize;
             }
 
-            const lastCutout = cutoutsModel.data(cutoutsModel.index(cutoutsModel.rowCount() - 1, 0));
+            const lastCutout = cutoutAt(cutoutsModel.rowCount() - 1);
             const lastSectionSize = Math.floor(root[sizeField] - (lastCutout ? lastCutout[posField] - lastCutout[sizeField] : 0));
             const lastItemSize = repeater.itemAt(repeater.count - 1) ? Math.ceil(repeater.itemAt(repeater.count - 1)[sizeField]) : 0;
             let cutoutsSize = 0;
             for (let i = 0; i < cutoutsModel.rowCount(); i++) {
-                const cutout = cutoutsModel.data(cutoutsModel.index(i, 0));
+                const cutout = cutoutAt(i);
                 cutoutsSize += cutout[sizeField];
             }
             if (lastSectionSize < lastItemSize) {
