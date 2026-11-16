@@ -12,7 +12,7 @@ target_link_libraries(mockwindowmanagmentpolicy
 
 install(TARGETS mockwindowmanagmentpolicy
     DESTINATION ${SHELL_INSTALL_QML}/mocks/WindowManager
-    )
+)
 
 qt_add_qml_module(mockwindowmanagerplugin
     URI WindowManager

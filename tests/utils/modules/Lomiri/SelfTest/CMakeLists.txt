@@ -29,7 +29,4 @@ if (MOUSETOUCHADAPTOR_LIBS_FOUND)
     target_link_libraries(selftestplugin PRIVATE PkgConfig::MOUSETOUCHADAPTOR_LIBS)
 endif()
 
-# To find libLomiriGestures.so
-set_target_properties(selftestplugin PROPERTIES INSTALL_RPATH "${SHELL_PRIVATE_FULL_LIBDIR}")
-
 install_qml_module(selftestplugin DESTINATION ${SHELL_INSTALL_QML}/utils)

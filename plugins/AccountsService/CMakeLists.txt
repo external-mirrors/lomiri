@@ -21,15 +21,18 @@ target_link_libraries(accountsserviceplugin PRIVATE
 
 install_qml_module(accountsserviceplugin DESTINATION ${SHELL_INSTALL_QML})
 
-set(DBUS_IFACE_DIR "${CMAKE_INSTALL_FULL_DATADIR}/dbus-1/interfaces")
-set(ACCOUNTS_IFACE_DIR "${CMAKE_INSTALL_FULL_DATADIR}/accountsservice/interfaces")
+# This is installed in <datadir>/dbus-1/interfaces, but then we also
+# need to place a symlink to it in <datadir>/accountsservice/interfaces
+set(DBUS_IFACE_FILE com.lomiri.shell.AccountsService.xml)
 
-install(FILES com.lomiri.shell.AccountsService.xml
-        DESTINATION "${DBUS_IFACE_DIR}"
-    )
+install(FILES ${DBUS_IFACE_FILE}
+    DESTINATION ${CMAKE_INSTALL_DATADIR}/dbus-1/interfaces
+)
 
-# Create accountsservice symlink for above dbus interface
-install(CODE "
-execute_process(COMMAND mkdir -p \"\$ENV{DESTDIR}${ACCOUNTS_IFACE_DIR}\")
-execute_process(COMMAND ln -sf ../../dbus-1/interfaces/com.lomiri.shell.AccountsService.xml \"\$ENV{DESTDIR}${ACCOUNTS_IFACE_DIR}\")
-    ")
+file(CREATE_LINK ../../dbus-1/interfaces/${DBUS_IFACE_FILE}
+    ${CMAKE_CURRENT_BINARY_DIR}/${DBUS_IFACE_FILE}
+    SYMBOLIC
+)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${DBUS_IFACE_FILE}
+    DESTINATION ${CMAKE_INSTALL_DATADIR}/accountsservice/interfaces
+)

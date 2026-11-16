@@ -1,10 +1,8 @@
-set(mock_SOURCES
+add_library(MockUserMetrics SHARED
     ColorTheme.cpp
     UserMetrics.cpp
     ${CMAKE_SOURCE_DIR}/plugins/Utils/qvariantlistmodel.cpp
-    )
-
-add_library(MockUserMetrics SHARED ${mock_SOURCES})
+)
 
 target_include_directories(MockUserMetrics PRIVATE ${CMAKE_SOURCE_DIR}/plugins/Utils)
 
@@ -16,4 +14,4 @@ set_target_properties(MockUserMetrics PROPERTIES
 
 install(TARGETS MockUserMetrics
     DESTINATION ${SHELL_INSTALL_QML}/mocks/libusermetrics
-    )
+)

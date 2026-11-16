@@ -7,7 +7,7 @@ set(QMLPLUGIN_SRC
     PromptsModel.cpp
     SessionsModel.cpp
     UsersModel.cpp
-    )
+)
 
 add_subdirectory(FullLightDM)
 add_subdirectory(IntegratedLightDM)

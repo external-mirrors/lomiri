@@ -1,14 +1,4 @@
-set(
-  XCURSOR_SOURCES
-
-  xcursor.c
-)
-
-add_library(
-  xcursorloader-static STATIC
-
-  ${XCURSOR_SOURCES}
-)
+add_library(xcursorloader-static STATIC xcursor.c)
 
 target_include_directories(xcursorloader-static PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 

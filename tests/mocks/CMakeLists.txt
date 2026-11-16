@@ -1,4 +1,3 @@
-
 add_subdirectory(AccountsService)
 add_subdirectory(Biometryd)
 add_subdirectory(Cursor)
@@ -20,7 +19,4 @@ add_subdirectory(Wizard)
 add_subdirectory(Utils)
 add_subdirectory(UInput)
 
-install(
-  DIRECTORY data
-  DESTINATION ${SHELL_APP_FULL_DIR}/mocks
-)
+install(DIRECTORY data DESTINATION ${SHELL_APP_FULL_DIR}/mocks)

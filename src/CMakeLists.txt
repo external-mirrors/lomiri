@@ -1,6 +1,6 @@
 add_subdirectory(liblomiri-private)
 
-set(SOURCE_FILES
+add_executable(${SHELL_APP}
     ApplicationArguments.cpp
     main.cpp
     CachingNetworkManagerFactory.cpp
@@ -11,8 +11,6 @@ set(SOURCE_FILES
     DebuggingController.cpp
     WindowManagementPolicy.cpp
 )
-
-add_executable(${SHELL_APP} ${SOURCE_FILES})
 
 target_link_libraries(${SHELL_APP} PRIVATE
     lomiri-paths
@@ -38,7 +36,4 @@ if (WITH_MIR2)
     target_link_libraries(${SHELL_APP} PRIVATE PkgConfig::MIROIL)
 endif()
 
-# install binaries
-install(TARGETS ${SHELL_APP}
-     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
-     )
+install(TARGETS ${SHELL_APP} RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})

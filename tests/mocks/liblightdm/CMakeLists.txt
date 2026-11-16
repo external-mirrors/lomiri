@@ -1,15 +1,13 @@
-set(MockLightDM_SOURCES
+add_library(MockLightDM SHARED
     MockController.cpp
     MockGreeter.cpp
     MockSessionsModel.cpp
     MockUsersModel.cpp
-    )
-
-add_library(MockLightDM SHARED ${MockLightDM_SOURCES})
+)
 
 target_include_directories(MockLightDM PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}
-    )
+)
 
 if (${LIBLIGHTDM_VERSION} VERSION_LESS 1.32.0)
     target_compile_definitions(MockLightDM PUBLIC LIGHTDM_COMPAT_QT4)
@@ -23,4 +21,4 @@ set_target_properties(MockLightDM PROPERTIES
 
 install(TARGETS MockLightDM
     DESTINATION ${SHELL_INSTALL_QML}/mocks/liblightdm
-    )
+)
