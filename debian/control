@@ -117,7 +117,7 @@ Description: LightDM Greeter for the Lomiri Operating Environment
 Package: lomiri
 Architecture: all
 Depends:
- lomiri-qt5-mir1 | lomiri-qt5-mir2,
+ lomiri-qt5-mir2 | lomiri-qt5-mir1,
  ${misc:Depends},
 Description: Shell of the Lomiri Operating Environment
  Shell of the Lomiri Operating environment optimized for touch based
