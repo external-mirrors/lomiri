@@ -29,4 +29,4 @@ endif ()
 
 install_qml_module(wizardplugin DESTINATION ${SHELL_INSTALL_QML})
 
-install(FILES 50-com.lomiri.wizard.rules DESTINATION "${CMAKE_INSTALL_FULL_DATADIR}/polkit-1/rules.d")
+install(FILES 50-com.lomiri.wizard.rules DESTINATION "${CMAKE_INSTALL_DATADIR}/polkit-1/rules.d")

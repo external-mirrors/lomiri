@@ -1,4 +1,4 @@
-set(LibLightDM_SOURCES
+add_library(integratedLightDM STATIC
     Greeter.cpp
     SessionsModel.cpp
     UsersModel.cpp
@@ -7,9 +7,7 @@ set(LibLightDM_SOURCES
     UsersModelPrivate.cpp
     ${CMAKE_SOURCE_DIR}/plugins/AccountsService/AccountsServiceDBusAdaptor.cpp
     ${CMAKE_SOURCE_DIR}/plugins/Utils/qvariantlistmodel.cpp
-    )
-
-add_library(integratedLightDM STATIC ${LibLightDM_SOURCES})
+)
 
 target_include_directories(integratedLightDM PRIVATE
     ${CMAKE_SOURCE_DIR}/plugins/AccountsService

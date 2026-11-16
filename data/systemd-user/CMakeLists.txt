@@ -2,7 +2,9 @@ if (${SYSTEMD_FOUND})
     find_program(DUAE_BIN dbus-update-activation-environment REQUIRED)
     find_program(XWAYLAND_BIN Xwayland REQUIRED)
 
-    pkg_get_variable(SYSTEMD_USER_UNIT_DIR systemd systemd_user_unit_dir)
+    pkg_get_variable(SYSTEMD_USER_UNIT_DIR systemd systemd_user_unit_dir
+        DEFINE_VARIABLES prefix=${CMAKE_INSTALL_PREFIX}
+    )
 
     # lomiri-<MODE>.service
 

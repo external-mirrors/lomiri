@@ -19,9 +19,7 @@ add_custom_target(${DESKTOP_FILE_GREETER} ALL
             -d ${CMAKE_SOURCE_DIR}/po
 )
 
-add_custom_target(pkgversion ALL
-    COMMAND echo ${PROJECT_VERSION} | head -n1 > ${CMAKE_CURRENT_BINARY_DIR}/version
-)
+file(CONFIGURE OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/version CONTENT "${PROJECT_VERSION}\n")
 
 install(PROGRAMS lomiri-greeter-wrapper DESTINATION ${CMAKE_INSTALL_BINDIR})
 install(FILES 51-lomiri-greeter.conf    DESTINATION ${CMAKE_INSTALL_DATADIR}/lightdm/lightdm.conf.d)

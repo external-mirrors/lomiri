@@ -1,8 +1,6 @@
 file(GLOB QML_JS_FILES *.qml *.js qmldir)
 
-install(FILES ${QML_JS_FILES}
-    DESTINATION ${SHELL_APP_FULL_DIR}
-    )
+install(FILES ${QML_JS_FILES} DESTINATION ${SHELL_APP_FULL_DIR})
 
 set(QML_DIRS
     ApplicationMenus
@@ -16,8 +14,6 @@ set(QML_DIRS
     Rotation
     Tutorial
     Wizard
-    )
+)
 
-install(DIRECTORY ${QML_DIRS}
-    DESTINATION ${SHELL_APP_FULL_DIR}
-    )
+install(DIRECTORY ${QML_DIRS} DESTINATION ${SHELL_APP_FULL_DIR})
