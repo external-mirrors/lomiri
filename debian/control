@@ -38,7 +38,6 @@ Build-Depends:
  libpam0g-dev,
  libpulse-dev,
  libqmenumodel-dev,
- libqt5mir1server-dev (>= 0.6.0),
  libqt5mir2server-dev,
  libqt5sql5-sqlite <!nocheck>,
  libqt5svg5-dev,
@@ -117,7 +116,7 @@ Description: LightDM Greeter for the Lomiri Operating Environment
 Package: lomiri
 Architecture: all
 Depends:
- lomiri-qt5-mir2 | lomiri-qt5-mir1,
+ lomiri-qt5-mir2,
  ${misc:Depends},
 Description: Shell of the Lomiri Operating Environment
  Shell of the Lomiri Operating environment optimized for touch based
@@ -126,74 +125,6 @@ Description: Shell of the Lomiri Operating Environment
  shell driving Ubuntu Touch based mobile devices.
  .
  Metapackage for the currently stable version of the Lomiri shell.
-
-Package: lomiri-qt5-mir1
-Architecture: any
-Depends:
- accountsservice-ubuntu-schemas (>= 0.0.7),
- dmz-cursor-theme,
- gsettings-desktop-schemas,
- libcap2-bin,
- libglib2.0-bin,
- lomiri-application-impl-28,
- lomiri-common (= ${source:Version}),
- lomiri-notifications-impl-3,
- lomiri-system-settings,
- python3:any,
- qml-module-biometryd,
- qml-module-gsettings,
- qml-module-hfd,
- qml-module-lomiri-components | qml-module-lomiri-components-gles (>= 1.3.2030),
- qml-module-lomiri-components-extras,
- qml-module-lomiri-content,
- qml-module-lomiri-layouts,
- qml-module-lomiri-settings-components,
- qml-module-lomiri-settings-menus,
- qml-module-lomiri-telephony,
- qml-module-lomiri-thumbnailer,
- qml-module-qmenumodel1 (>= 0.9.1-1ubports2~),
- qml-module-qt-labs-folderlistmodel,
- qml-module-qt-labs-settings,
- qml-module-qtmir0.1 (>= 0.4.8),
- qml-module-qtmultimedia,
- qml-module-qtqml-statemachine,
- qml-module-qtquick-layouts,
- qml-module-qtquick-xmllistmodel,
- qtdeclarative5-lomiri-notifications-plugin (>= 0.1.2) | lomiri-notifications-impl,
- qtmir-qt5-mir1,
- ${misc:Depends},
- ${shlibs:Depends},
-Recommends:
- ayatana-indicator-keyboard,
- ayatana-indicator-session,
- lomiri-app-launch,
- lomiri-greeter-session-broadcast,
-Breaks:
- indicator-network (<< 0.5.1+14.10.20141014),
- lomiri (<< ${source:Version}),
- lomiri-common (<< ${source:Version}),
- lomiri-private (<< ${source:Version}),
- lomiri-scope-tool,
- lomiri-touch-session (<< 0.107),
-Conflicts:
- lomiri-qt5-mir2,
- lomiri-system-settings-wizard,
-Provides:
- indicator-renderer,
- notification-daemon,
-Replaces:
- lomiri (<< ${source:Version}),
- lomiri-common (<< ${source:Version}),
- lomiri-private (<< ${source:Version}),
- lomiri-scope-tool,
- lomiri-touch-session (<< 0.82~),
-Description: Shell of the Lomiri Operating Environment (Mir 1)
- Shell of the Lomiri Operating environment optimized for touch based
- human-machine interaction, but also supporting convergence (i.e.
- switching between tablet/phone and desktop mode). Lomiri is the user
- shell driving Ubuntu Touch based mobile devices.
- .
- This package provides the Lomiri shell built against Mir 1.
 
 Package: lomiri-qt5-mir2
 Architecture: any

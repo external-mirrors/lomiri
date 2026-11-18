@@ -23,7 +23,6 @@ templates:
     - xwayland
 
     dependencies_target:
-    - libmir1client-dev
     - libsystemd-dev
     - android-headers
     - lomiri-schemas
@@ -80,10 +79,11 @@ templates:
     - lomiri-wallpapers
     - qtmir
     - qml-module-qtmir
-    - libqt5mir1server-dev
+    - libqt5mir2server-dev
+    - libmiral-dev
+    - libmiroil-dev
     - liblomiri-app-launch-dev
     - libdeviceinfo-dev
-    - mir1test-dev
     - qml-module-lomiri-settings-menus
 
 <<: *dep
