@@ -12,42 +12,25 @@ FLAGS := -DDISPLAYED_DISTRO_NAME="Ubuntu Touch" \
 	-DENABLE_UBUNTU_ACCOUNTSSERVICE=$(if $(shell dpkg-vendor --derives-from Ubuntu && echo y),ON,OFF)
 
 override_dh_auto_configure:
-	dh_auto_configure --builddirectory=build-mir1-qt5 -- $(FLAGS)
-	dh_auto_configure --builddirectory=build-mir2-qt5 -- $(FLAGS) -DWITH_MIR2=ON
+	dh_auto_configure -- $(FLAGS)
 
 override_dh_auto_build:
 	# doc is not a default target
-	dh_auto_build --builddirectory=build-mir1-qt5 -- -O all
-	dh_auto_build --builddirectory=build-mir2-qt5 -- -O all doc
+	dh_auto_build -- -O all doc
 
 override_dh_auto_test:
 	# Run the entire test battery
 	# Parallel tests have a risk of starting xvfb on the same DISPLAY multiple times,
 	# causing the whole battery to fail.
-	dh_auto_test --builddirectory=build-mir1-qt5 --no-parallel -- -O -k xvfballtests
-	dh_auto_test --builddirectory=build-mir2-qt5 --no-parallel -- -O -k xvfballtests
-
-override_dh_auto_install:
-	dh_auto_install --builddirectory=build-mir1-qt5 --destdir=debian/tmp-mir1-qt5
-	dh_auto_install --builddirectory=build-mir2-qt5 --destdir=debian/tmp-mir2-qt5
-
-override_dh_auto_clean:
-	dh_auto_clean --builddirectory=build-mir1-qt5
-	dh_auto_clean --builddirectory=build-mir2-qt5
-	rm -rf debian/tmp-mir1-qt5 debian/tmp-mir2-qt5
+	dh_auto_test --no-parallel -- -O -k xvfballtests
 
 execute_before_dh_install:
-	cd debian/tmp-mir2-qt5/usr/share/doc/lomiri/html/ && rdfind -makesymlinks true .
-	cd debian/tmp-mir2-qt5/usr/share/doc/lomiri/html/ && symlinks -rc .
+	cd debian/tmp/usr/share/doc/lomiri/html/ && rdfind -makesymlinks true .
+	cd debian/tmp/usr/share/doc/lomiri/html/ && symlinks -rc .
 
-override_dh_install:
-	dh_install --sourcedir=debian/tmp-mir1-qt5 -plomiri-qt5-mir1
-	dh_install --sourcedir=debian/tmp-mir2-qt5 -Nlomiri-qt5-mir1
+execute_after_dh_install:
 	install -Dm644 debian/session-migrations/com.canonical.unity.AccountsService.xml \
 		debian/lomiri-common/usr/share/dbus-1/interfaces/com.canonical.unity.AccountsService.xml
-
-override_dh_missing:
-	dh_missing --sourcedir=debian/tmp-mir2-qt5
 
 execute_after_dh_installdocs:
 	# Remove results.txt for reproducible builds
