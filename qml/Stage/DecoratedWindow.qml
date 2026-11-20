@@ -56,6 +56,7 @@ FocusScope {
     property real requestedHeight
     property real scaleToPreviewProgress: 0
     property int scaleToPreviewSize: units.gu(30)
+    property real scaleToPreviewAspectRatio: 1
 
     property alias surfaceOrientationAngle: applicationWindow.surfaceOrientationAngle
 
@@ -130,15 +131,15 @@ FocusScope {
                 name: "preview"; when: root.scaleToPreviewProgress > 0
                 PropertyChanges {
                     target: root
-                    implicitWidth: MathUtils.linearAnimation(0, 1, applicationWindow.requestedWidth, root.scaleToPreviewSize, root.scaleToPreviewProgress)
+                    implicitWidth: MathUtils.linearAnimation(0, 1, applicationWindow.requestedWidth, root.scaleToPreviewSize * root.scaleToPreviewAspectRatio, root.scaleToPreviewProgress)
                     implicitHeight: MathUtils.linearAnimation(0, 1, applicationWindow.requestedHeight, root.scaleToPreviewSize, root.scaleToPreviewProgress)
                 }
                 PropertyChanges {
                     target: applicationWindow;
 //                    requestedWidth: applicationWindow.oldRequestedWidth
 //                    requestedHeight: applicationWindow.oldRequestedHeight
-                    width: MathUtils.linearAnimation(0, 1, applicationWindow.requestedWidth, applicationWindow.minSize, root.scaleToPreviewProgress)
-                    height: MathUtils.linearAnimation(0, 1, applicationWindow.requestedHeight, applicationWindow.minSize, root.scaleToPreviewProgress)
+                    width: MathUtils.linearAnimation(0, 1, applicationWindow.requestedWidth, applicationWindow.previewCropWidth, root.scaleToPreviewProgress)
+                    height: MathUtils.linearAnimation(0, 1, applicationWindow.requestedHeight, applicationWindow.previewCropHeight, root.scaleToPreviewProgress)
                     itemScale: root.implicitWidth / width
                 }
             }
@@ -185,7 +186,9 @@ FocusScope {
         focus: true
 
         property real itemScale: 1
-        property real minSize: Math.min(root.scaleToPreviewSize, Math.min(requestedHeight, Math.min(requestedWidth, Math.min(implicitHeight, implicitWidth))))
+        // Largest area with the preview's aspect ratio that fits into the window
+        readonly property real previewCropWidth: Math.min(requestedWidth, requestedHeight * root.scaleToPreviewAspectRatio)
+        readonly property real previewCropHeight: previewCropWidth / root.scaleToPreviewAspectRatio
 
         transform: [
             Rotation {

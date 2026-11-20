@@ -27,6 +27,7 @@ Item {
     property var model: null
     property int leftMargin: 0
     property var spreadFlickable
+    property real spreadItemAspectRatio: 1
 
     // some config options
     property real contentMargin: 0.1 * root.height
@@ -54,7 +55,7 @@ Item {
     readonly property real spreadWidth: rightStackXPos - leftStackXPos
     readonly property real spreadHeight: root.height
     readonly property real spreadItemHeight: spreadHeight - contentMargin * 2
-    readonly property real spreadItemWidth: stackHeight
+    readonly property real spreadItemWidth: stackHeight * spreadItemAspectRatio
 
     readonly property real dynamicLeftRotationAngle: leftRotationAngle * rotationAngleFactor
     readonly property real dynamicRightRotationAngle: rightRotationAngle * rotationAngleFactor
@@ -91,7 +92,7 @@ Item {
         return MathUtils.clamp(valueAtReferencePoint + itemOverlapValueChange * (spreadAspectRatio - spreadAspectRatioReferencePoint), minOverlap, maxOverlap)
     }
 
-    readonly property real visibleItemCount: (spreadWidth / spreadItemWidth) / (1 - itemOverlap)
+    readonly property real visibleItemCount: (spreadWidth / stackHeight) / (1 - itemOverlap)
 
     readonly property real spreadTotalWidth: Math.max(2,totalItemCount) * spreadWidth / visibleItemCount
 

@@ -879,6 +879,7 @@ FocusScope {
             leftMargin: root.availableDesktopArea.x
             model: root.topLevelSurfaceList
             spreadFlickable: floatingFlickable
+            spreadItemAspectRatio: root.availableDesktopArea.width / root.availableDesktopArea.height
             z: root.topLevelSurfaceList.count
 
             onLeaveSpread: {
@@ -2110,6 +2111,7 @@ FocusScope {
                     width: implicitWidth
                     height: implicitHeight
                     highlightSize: windowInfoItem.iconMargin
+                    scaleToPreviewAspectRatio: spreadItem.spreadItemAspectRatio
                     boundsItem: root.availableDesktopArea
                     panelState: root.panelState
                     altDragEnabled: root.mode == "windowed"
