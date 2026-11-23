@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: unity\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-24 18:23+0000\n"
-"PO-Revision-Date: 2026-11-23 20:49+0000\n"
+"PO-Revision-Date: 2026-11-24 04:41+0000\n"
 "Last-Translator: Grzegorz Szymaszek <gszymaszek@short.pl>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/lomiri/lomiri/pl/>"
 "\n"
@@ -729,13 +729,14 @@ msgstr "Dalej"
 #: qml/Wizard/Pages/10-welcome-update.qml:98
 #, qt-format
 msgid "Welcome to %1 %2"
-msgstr "Witamy w systemie %1 %2"
+msgstr "Witamy w środowisku %1 %2"
 
 #. TRANSLATORS: %1 contains the distro name, %2 the version
 #: qml/Wizard/Pages/10-welcome-update.qml:115
 #, qt-format
 msgid "We will make sure your device is ready to use %1 %2"
-msgstr "Upewnimy się, że Twoje urządzenie jest gotowe do używania systemu %1 %2"
+msgstr ""
+"Upewnimy się, że Twoje urządzenie jest gotowe do używania środowiska %1 %2"
 
 #: qml/Wizard/Pages/11-changelog.qml:28
 msgid "What's new"
@@ -853,7 +854,7 @@ msgstr "Witamy z powrotem"
 #: qml/Wizard/Pages/80-finished.qml:95
 #, qt-format
 msgid "Welcome to %1"
-msgstr "Witamy w systemie %1"
+msgstr "Witamy w środowisku %1"
 
 #: qml/Wizard/Pages/80-finished.qml:111
 msgid "You are ready to use your device now"
