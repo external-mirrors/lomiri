@@ -91,7 +91,8 @@ LocalComponents.Page {
             text: (
                 System.isUpdate
                     ? i18n.tr("Welcome Back")
-                    // TRANSLATORS: %1 contains the distro name
+                    // TRANSLATORS: %1 is the distro or desktop environment
+                    // name, or both ("Lomiri on <distro name>")
                     : i18n.tr("Welcome to %1").arg(System.distroName)
             )
             color: whiteColor

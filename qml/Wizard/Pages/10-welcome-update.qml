@@ -94,7 +94,8 @@ LocalComponents.Page {
             fontSize: "x-large"
             font.weight: Font.Light
             lineHeight: 1.2
-            // TRANSLATORS: %1 contains the distro name, %2 the version
+            // TRANSLATORS: %1 is the distro or desktop environment name, or
+            // both ("Lomiri on <distro name>"); %2 is the version
             text: i18n.tr("Welcome to %1 %2")
                 .arg(distroName).arg(distroVersion)
             color: whiteColor
@@ -111,7 +112,8 @@ LocalComponents.Page {
             fontSize: "large"
             font.weight: Font.Light
             lineHeight: 1.2
-            // TRANSLATORS: %1 contains the distro name, %2 the version
+            // TRANSLATORS: %1 is the distro or desktop environment name, or
+            // both ("Lomiri on <distro name>"); %2 is the version
             text: i18n.tr("We will make sure your device is ready to use %1 %2")
                 .arg(distroName).arg(distroVersion)
             color: whiteColor
