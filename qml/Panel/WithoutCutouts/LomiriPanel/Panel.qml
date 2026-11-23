@@ -148,7 +148,7 @@ Item {
                 margins: -units.gu(1)
             }
             visible: !__indicators.fullyClosed
-            source: "graphics/rectangular_dropshadow.sci"
+            source: "../../graphics/rectangular_dropshadow.sci"
         }
 
         BorderImage {
@@ -158,7 +158,7 @@ Item {
                 margins: -units.gu(1)
             }
             visible: !__applicationMenus.fullyClosed
-            source: "graphics/rectangular_dropshadow.sci"
+            source: "../../graphics/rectangular_dropshadow.sci"
         }
 
         BorderImage {
@@ -168,7 +168,7 @@ Item {
                 bottomMargin: -units.gu(1)
             }
             visible: panelState.dropShadow
-            source: "graphics/rectangular_dropshadow.sci"
+            source: "../../graphics/rectangular_dropshadow.sci"
         }
 
         Rectangle {
